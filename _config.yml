@@ -1,6 +1,6 @@
 # General
-name: Random Thoughts
-description: "Tech, Science, Experience."
+name: Minimal-Block
+description: "Minimalistic, friendly, responsive."
 url: http://localhost:4000
 
 markdown: kramdown
@@ -11,9 +11,9 @@ permalink: /:title
 
 # Social share and comments.
 disqus-id: yourusername
-twitter: twitter.com/ebeid_elsayed
-github: github.com/ebeid
-linkedin: linkedin.com/in/ebeidelsayed
+twitter: yourusername
+github: yourusername
+google: +yourusername
 
 # RSS feed
 rss-feed-limit: 10
