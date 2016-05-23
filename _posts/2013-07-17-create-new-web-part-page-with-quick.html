@@ -1,0 +1,14 @@
+---
+layout: post
+title: Create a new Web Part Page with Quick Launch menu
+date: '2013-07-17T10:20:00.001-05:00'
+author: Ebeid Soliman ElSayed
+tags:
+- SharePoint 2010
+- SharePoint Designer 2010
+modified_time: '2013-07-17T10:20:55.849-05:00'
+blogger_id: tag:blogger.com,1999:blog-59384554657271185.post-3147025565333079798
+blogger_orig_url: http://ebeid-soliman.blogspot.com/2013/07/create-new-web-part-page-with-quick.html
+---
+
+<p>This post is about a simple task we do daily in SharePoint 2010, creating a new Web Part page. Every time we need a new Web Part page, we go to <em>All Site Content</em> &gt; <em>Create</em> &gt; <em>Web Part Page </em>&gt; <em>Create</em>. Now we have a Web Part page but no quick launch menu on the left.</p> <p>To show the quick launch menu on the new created page: </p> <ul> <li>Open the page for editing in SharePoint 2010.</li> <li>Switch to the Code view.</li> <li>Click on the Advanced Mode button on the ribbon.</li> <li>Now look for the following code snippet and delete it.</li></ul> <blockquote> <p><font color="#0000ff">&lt;SharePoint:UIVersionedContent ID="WebPartPageHideQLStyles" UIVersion="4"runat="server"&gt;<br>&lt;ContentTemplate&gt;<br>body # {s4-leftpanel<br>display: none;<br>}<br>. s4 {ca-<br>margin-left: 0px;<br>}<br>&lt;/ style&gt;<br>&lt;/ ContentTemplate&gt;<br>&lt;/ SharePoint: UIVersionedContent&gt;</font></p></blockquote> <ul> <li>Now look for the following snippet and delete it.</li></ul> <blockquote> <p><font color="#0000ff">&lt;asp:Content ContentPlaceHolderId="PlaceHolderLeftNavBar" runat="server"&gt;<br>&lt;/ asp: Content&gt;</font></p></blockquote> <ul> <li>Save and Close</li></ul> <p>Now when you open the page, the quick launch navigation will be there.</p>  
