@@ -124,6 +124,19 @@ keep_files:
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
+# Front Matter Defaults : https://mmistakes.github.io/minimal-mistakes/docs/configuration/#front-matter-defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
 
 # Conversion
 markdown: kramdown
