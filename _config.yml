@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Science, Tech, Practice"
 title_separator          : "-"
 name                     : "Your Name"
 description              : "An amazing website."
@@ -61,11 +61,11 @@ google_ad_slot           :
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Ebeid Soliman ElSayed"
   avatar           : "bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  bio              : "Software engineer who makes the world a better place, one line of code at a time."
+  location         : "San Francisco, CA"
+  email            : "Ebeid[AT]gatech[dot]edu"
   uri              :
   bitbucket        :
   codepen          :
@@ -78,13 +78,13 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : https://www.linkedin.com/in/ebeidelsayed
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  stackoverflow    : http://stackoverflow.com/users/1779039/ebeid-soliman-el-sayed
   steam            :
   tumblr           :
-  twitter          :
+  twitter          : https://twitter.com/ebeid_elsayed
   vine             :
   weibo            :
   xing             :
