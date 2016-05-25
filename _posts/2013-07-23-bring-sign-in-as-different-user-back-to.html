@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Bring “Sign in as Different User” back to SharePoint 2013
 date: '2013-07-23T17:36:00.001-05:00'
 author: Ebeid Soliman ElSayed
@@ -10,4 +9,4 @@ blogger_id: tag:blogger.com,1999:blog-59384554657271185.post-3596697447652063456
 blogger_orig_url: http://ebeid-soliman.blogspot.com/2013/07/bring-sign-in-as-different-user-back-to.html
 ---
 
-<p>If you new to SharePoint 2013 like me and get confused looking for “Sign in as a Different User” menu command, don’t worry it is not there by design but we can easily bring it back.</p> <p>Do the following steps to get the link back:</p> <ul> <li>Locate the file \15\TEMPLATE\CONTROLTEMPLATES\Welcome.ascx and open it for editing.  <li>Add the following snippet before the existing element that have id of “ID_RequestAccess”. </li></ul> <pre class="prettyprint lang-html"><br /><SharePoint:MenuItemTemplate runat="server" ID="ID_LoginAsDifferentUser"<br /> Text="<%$Resources:wss,personalactions_loginasdifferentuser%>"<br /> Description="<%$Resources:wss,personalactions_loginasdifferentuserdescription%>"<br /> MenuGroupId="100"<br /> Sequence="100"<br /> UseShortId="true"<br /> /><br /></pre><br /><p>Save and close the file. Now you should get the link “Sign in as Different User” back.</p>  
+<p>If you new to SharePoint 2013 like me and get confused looking for “Sign in as a Different User” menu command, don’t worry it is not there by design but we can easily bring it back.</p> <p>Do the following steps to get the link back:</p> <ul> <li>Locate the file \15\TEMPLATE\CONTROLTEMPLATES\Welcome.ascx and open it for editing.  <li>Add the following snippet before the existing element that have id of “ID_RequestAccess”. </li></ul> <pre class="prettyprint lang-html"><br /><SharePoint:MenuItemTemplate runat="server" ID="ID_LoginAsDifferentUser"<br /> Text="<%$Resources:wss,personalactions_loginasdifferentuser%>"<br /> Description="<%$Resources:wss,personalactions_loginasdifferentuserdescription%>"<br /> MenuGroupId="100"<br /> Sequence="100"<br /> UseShortId="true"<br /> /><br /></pre><br /><p>Save and close the file. Now you should get the link “Sign in as Different User” back.</p>
