@@ -1,7 +1,8 @@
 ---
 title:  "Syntax Analysis using Microsoft Roslyn"
-date: '2013-08-20T15:49:00.000-05:00'
+date: 2013-08-20T15:49:00.000-05:00
 author: "Ebeid Soliman ElSayed"
+
 sidebar:
   - title: "Title"
     image: http://placehold.it/350x250
@@ -14,6 +15,7 @@ tags:
   - Microsoft Roslyn
   - Syntax Trees
   - Compilers
+  
 modified_time: '2013-08-27T12:32:23.977-05:00'
 thumbnail: http://lh5.ggpht.com/-6V0B2FzeqNI/UhKWo51Pb9I/AAAAAAAAB3w/WrQuffKQF-k/s72-c/Reference%252520Manager%252520-%252520RoslynDemo1_2013-08-19_15-25-47_thumb%25255B1%25255D.png?imgmax=800
 blogger_id: tag:blogger.com,1999:blog-59384554657271185.post-8492979314992483465
