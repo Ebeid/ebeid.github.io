@@ -2,14 +2,6 @@
 title:  "Syntax Analysis using Microsoft Roslyn"
 date: 2013-08-20T15:49:00.000-05:00
 
-sidebar:
-  - title: "Title"
-    image: http://placehold.it/350x250
-    image_alt: "image"
-    text: "Some text here."
-  - title: "Another Title"
-    text: "More text here."
-
 tags:
   - Microsoft Roslyn
   - Syntax Trees
