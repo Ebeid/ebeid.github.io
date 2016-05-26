@@ -11,7 +11,7 @@ title                    : "Science, Tech, Experience"
 title_separator          : "-"
 name                     : "Your Name"
 description              : "An amazing website."
-url                      : "https://ebeid.github.io"
+url                      : "http://ebeid.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
