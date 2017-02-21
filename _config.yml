@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "Science, Tech, Experience"
 title_separator          : "-"
-name                     : "Your Name"
+name                     : "Ebeid Soliman ElSayed"
 description              : "An amazing website."
 url                      : "http://ebeid.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -63,9 +63,9 @@ google_ad_slot           :
 author:
   name             : "Ebeid Soliman ElSayed"
   avatar           : "bio-photo.jpg"
-  bio              : "Software engineer who makes the world a better place, one line of code at a time."
+  bio              : "A muslim, Husband, father, and a dreamer."
   location         : "San Francisco, CA"
-  email            : "Ebeid[AT]gatech[dot]edu"
+  email            : "Ebeid@gatech.edu"
   uri              :
   bitbucket        :
   codepen          :
@@ -73,18 +73,18 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : https://github.com/Ebeid
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : https://www.linkedin.com/in/ebeidelsayed
+  linkedin         : ebeidelsayed
   pinterest        :
   soundcloud       :
-  stackoverflow    : http://stackoverflow.com/users/1779039/ebeid-soliman-el-sayed
+  stackoverflow    : 1779039/ebeid-soliman-el-sayed
   steam            :
   tumblr           :
-  twitter          : https://twitter.com/ebeid_elsayed
+  twitter          : ebeid_elsayed
   vine             :
   weibo            :
   xing             :
