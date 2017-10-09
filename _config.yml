@@ -9,13 +9,8 @@
 locale                   : "en-US"
 title                    : "Science, Tech, Experience"
 title_separator          : "-"
-<<<<<<< HEAD
-name                     : "Ebeid ElSayed"
-description              : "Ebeid ElSayed's website. Opinions are mine."
-=======
 name                     : "Ebeid Soliman ElSayed"
-description              : "An amazing website."
->>>>>>> e4edaac43a56290d8e1207369a5e20e7001d783c
+description              : "Ebeid ElSayed's website. Opinions are mine."
 url                      : "http://ebeid.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
