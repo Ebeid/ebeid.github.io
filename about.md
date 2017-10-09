@@ -4,12 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I'm a software engineer who always seeks new challenges and learning opportunities. Currently I'm a part-time gradute student at Georgia Institute of Technology.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+Check my resume ([one page](Ebeid_ElSayed_One_Page_Resume.pdf), [full](Ebeid_ElSayed_Full_Resume.pdf)) for more details about my experience and credentials. Contact me via [email](ebeid@gatech.edu), [LinkedIn](https://www.linkedin.com/in/ebeidelsayed/), or [schedule time to talk](https://calendly.com/ebeid).
