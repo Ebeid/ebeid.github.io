@@ -9,8 +9,13 @@
 locale                   : "en-US"
 title                    : "Science, Tech, Experience"
 title_separator          : "-"
+<<<<<<< HEAD
 name                     : "Ebeid ElSayed"
 description              : "Ebeid ElSayed's website. Opinions are mine."
+=======
+name                     : "Ebeid Soliman ElSayed"
+description              : "An amazing website."
+>>>>>>> e4edaac43a56290d8e1207369a5e20e7001d783c
 url                      : "http://ebeid.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
@@ -63,25 +68,25 @@ google_ad_slot           :
 author:
   name             : "Ebeid Soliman ElSayed"
   avatar           : "bio-photo.jpg"
-  bio              : "Software engineer who makes the world a better place, one line of code at a time."
+  bio              : "A muslim, Husband, father, and a dreamer."
   location         : "San Francisco, CA"
-  email            : "Ebeid[AT]gatech[dot]edu"
+  email            : "Ebeid@gatech.edu"
   uri              :
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
-  facebook         :
+  facebook         : ebeid.soliman
   foursquare       :
-  github           :
+  github           : Ebeid
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : https://www.linkedin.com/in/ebeidelsayed
+  linkedin         : ebeidelsayed
   pinterest        :
   soundcloud       :
-  stackoverflow    : http://stackoverflow.com/users/1779039/ebeid-soliman-el-sayed
+  stackoverflow    : 1779039/ebeid-soliman-el-sayed
   steam            :
   tumblr           :
   twitter          : https://twitter.com/ebeidelsayed
