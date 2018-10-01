@@ -1,0 +1,1 @@
+In this post we will create our Docker Lab which basically a Linux CentOS virtual machine
