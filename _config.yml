@@ -1,5 +1,6 @@
 title: Ebeid ElSayed
-description: Notes about stuff that I care about, enjoy!
+description: Notes about stuff I care about, enjoy!
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-hacker
+show_downloads: false
