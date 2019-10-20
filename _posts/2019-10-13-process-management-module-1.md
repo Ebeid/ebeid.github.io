@@ -1,11 +1,11 @@
 ---
-title:  "Operations Management - Module 1 : Operastions Strategy"
+title:  "Operations Management - Module 1 : Process Analysis"
 header:
   teaser: "/assets/images/500x300.png"
 categories: 
-  - Jekyll
+  - iMBA
 tags:
-  - update
+  - Operations Management
 ---
 
 This post is my notes for module 1 of course [Operations Management: Analysis and Improvement Methods](https://www.coursera.org/learn/operations-management/home/welcome) by Professor [Udatta Palekar](https://www.linkedin.com/in/udatta-palekar-56a16017)
@@ -151,5 +151,31 @@ Job applicants for a warehouse position have to undergo a medical examination as
 - The bottleneck process has 100% utilization.
 - Utilization = Actual Production Rate / Avaiable Capacity
   - Example ![Example](/assets/images/process-management-00005.png "Example")
-- Utilization = Time Used for Production / Available Time
-  - for activity 1 to produce 7.5 units per hour it needs 45 minutes (6 * 7.5). Hence Utilization is 45/60 = 75%
+    - Utilization = Time Used for Production / Available Time
+    - for activity 1 to produce 7.5 units per hour it needs 45 minutes (6 * 7.5). Hence Utilization is 45/60 = 75%
+  - Another example 
+    - ![Example](/assets/images/process-management-00006.png "Example")
+    - ![Example](/assets/images/process-management-00007.png "Example")
+
+**Implied Utilization**
+
+What if the demain is less or more than the process flow rate ? In this case: </br>
+Implied Utilization = Demand Rate / Available Capacity </br>
+![Example](/assets/images/process-management-00008.png "Example")
+
+- If the demand rate is higher than the available capacity then implied utilization will be grater than 100%
+- This means that this process need more resources to meet its demand
+
+**Capacity in a continuous flow process**
+- Process is continuous and there is not intermediate inventories between tasks. 
+- If one task stoped, the whole process have to stop.
+- ![Example](/assets/images/process-management-00009.png "Example")
+- If any task (sprayer) need to stop for maintenance or cleaning, then that wait time get added to the total cycle time.
+- For this example assume the cycle time is 3 hours. Then total cycle time is 3.5 hours.
+- ![Example](/assets/images/process-management-00010.png "Example")
+
+**Little's Law**
+
+- Assumptions
+  - System is in steady state: Rate of arrival = Rate of departure
+  - Average values of metrics being considered [not for each individual flow unit]
