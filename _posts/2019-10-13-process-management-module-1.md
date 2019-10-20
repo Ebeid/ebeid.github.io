@@ -84,7 +84,7 @@ Which process type should one choose ?
 - mass customization high-high 
 - one of a kind low-low
 
-**Process Flow Analysis Metrics**
+### Process Flow Analysis Metrics
 - Cycle Time: time between two consecutive flow units departing the process.
 - Flow Rate: rate at which units depart the system within a unit of time (e.g hour). Flow Rate = 1/(Cycle Time)
 - Flow Time or Throuput Time: time it takes for a flow unit to go through the entire process. [Departure time - arrival time time].
@@ -126,7 +126,8 @@ Job applicants for a warehouse position have to undergo a medical examination as
   - So, for this process as a whole flow time is 65 minutes. 
   - In other words an applicant who enters the process will take 65 minutes to complete this particular process. 
 
-**Activity Capacity** 
+### Activity Capacity
+
 - Cycle time = processing time / number of parallel stations
 - Flow rate = 1 / Cycle time
 - The activity is capable of producing the flow rate. We define this as the capacity of the activity.
@@ -174,8 +175,13 @@ Implied Utilization = Demand Rate / Available Capacity </br>
 - For this example assume the cycle time is 3 hours. Then total cycle time is 3.5 hours.
 - ![Example](/assets/images/process-management-00010.png "Example")
 
-**Little's Law**
+### Little's Law
 
 - Assumptions
   - System is in steady state: Rate of arrival = Rate of departure
   - Average values of metrics being considered [not for each individual flow unit]
+- Little' Law : I = R * T
+  - I = Inventory
+  - R = Flow Rate
+  - T = Flow Time
+  
