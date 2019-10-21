@@ -3,9 +3,9 @@ title:  "Twelve-Factor Applications"
 header:
   teaser: "/assets/images/500x300.png"
 categories: 
-  - Jekyll
+  - concepts
 tags:
-  - update
+  - cloud
 ---
 
 This post is just my notes about [Twelve-Factor Applications](https://www.12factor.net/). You can consider it my extended version of the original website.
