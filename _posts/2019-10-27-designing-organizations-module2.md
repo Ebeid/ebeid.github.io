@@ -142,3 +142,55 @@ It is the combination of skills, knowledge, tools, techniques, and actions that 
 - Small-batch/Unit   S > D > P
 - Large-batch/Mass   D > P > S
 - Continuous Process D > S > P
+
+### Types of workflow interdependencies
+ 
+ - In a resturant, the key tasks are : Cook, Serve, Order, Pay, Eat
+ - Family Resturant : Order, Cook, Serve, Eat, Pay
+    - Deliver bigger menu, but slower
+ - Fast-food Resturant : Cook, Order, Pay, Serve, Eat
+    - Deliver smaller menu, but faster
+- Sequence doesn't have to be one directional in every organization
+- Types of workflow interdependencies
+    - Pooled: each department or unit contributes separately to the performance of the whole organization. [Low interdependencies]
+    - Sequential: actions of one unit directly affect the actions of another unit in a predetermined sequence. [Medium interdependencies]
+    - Reciprocal: actions of one unit affect the actions of other units but the sequence is not predetermined. [High interdependencies]
+
+With interdependencies comes high coordination mechanisms.
+[TODO] screenshot
+
+### Models of competitive strategy and managerial action
+
+- Five Forces
+- Core Competence
+- Game Theory
+- Competing on the edge
+- Blue Ocean Strategy
+
+[TODO] screenshot
+
+### Assumptions about the external environment 
+
+- Is the environment predictable ?
+- Is the environment changeable ?
+
+[TODO] screenshot
+
+### How do you know that your strategy for competitive advantage is not working
+
+If some (5) of the following statements are true:
+
+- Our investment decisions are not producing any meaningful return.
+- Competition is emerging from places we didn't expect
+- Customers are finding cheaper or similar solutions
+- Customers are no longer excited about what we have to offer
+- We are unable to attract critical talent
+- Some of our very best talent are leaving
+- Our stock is not gaining any value
+- I don't buy my own company's products or services
+
+### Summary
+
+- Contingencies are factors that directly influence our organizational design
+- Contingencies are both external and internal
+- Contingencies are not static but constantly changing
