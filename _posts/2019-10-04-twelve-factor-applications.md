@@ -64,6 +64,8 @@ Strictly separate build and run stages
 
 ## Facor 6 - Processes
 Execute the app as one or more stateless processes
+- These processes are stateless and sharenothing
+  - Anything that needs to persist must be stored in a stateful backing service [database or shared files]
 
 ## Facor 7 - Port binding
 Export services via port binding
