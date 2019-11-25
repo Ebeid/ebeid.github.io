@@ -64,14 +64,23 @@ Strictly separate build and run stages
 
 ## Facor 6 - Processes
 Execute the app as one or more stateless processes
-- These processes are stateless and sharenothing
+- These processes are stateless and [share-nothing](http://db.cs.berkeley.edu/papers/hpts85-nothing.pdf)
   - Anything that needs to persist must be stored in a stateful backing service [database or shared files]
+  - Stateless means that app must not assume that anything is cached in memory or on disk while serving requests or jobs
+    - No more sticky sessions
 
 ## Facor 7 - Port binding
 Export services via port binding
+- This is usually done using dependency declaration to add a webserver library to the app (Jetty for Java).
+- 12 factors apps doesn't depend on execution enviroments like web servers
+- All services should be exposed by port binding, not only HTTP services
+- This enables one app to become the backing service to another app.
 
 ## Facor 8 - Concurrency
 Scale out via the process model
+- Processes are first class citizens
+- Each workload type get assigned to a different process type (web process, worker process,...).
+- App must be able to span multiple processes on multiple physical machines.
 
 ## Facor 9 - Disposability
 Maximize robustness with fast startup and graceful shutdown
