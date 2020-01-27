@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\assets",
+    "\\assets\\pdf",
+    "\\_posts"
   ],
+  "SelectedNode": "\\_posts\\2019-10-04-twelve-factor-applications.md",
   "PreviewInSolutionExplorer": false
 }
