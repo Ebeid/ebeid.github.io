@@ -1,9 +1,9 @@
 ---
-author: "Michael Henderson"
-date: 2014-09-28
+author: Michael Henderson
+date: "2014-09-28"
+highlight: true
 linktitle: Creating a New Theme
 title: Creating a New Theme
-highlight: true
 ---
 
 
