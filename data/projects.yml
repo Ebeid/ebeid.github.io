@@ -1,6 +1,0 @@
-name: Projects
-source:
-  - icon: fa fa-github
-    name: Interview-School
-    description: A repository to help engineers preparing for interviews.
-    url: https://github.com/pmdamora/rails-weather
