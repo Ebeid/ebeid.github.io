@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Overview of Microsoft Roslyn – The first compiler-as-service product</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-08-19-overview-of-microsoft-roslyn-first.html/">Overview of Microsoft Roslyn – The first compiler-as-service product</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          August 19, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Microsoft Roslyn</span>
+            
+            <span class="label label-success">Syntax Trees</span>
+            
+            <span class="label label-success">Compilers</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <h3 id="introduction">Introduction</h3>
+<p>From developer perspective, compilers are black boxes &ndash; source code
+goes in one end, magic happens in the middle, and object files or
+assemblies come out the other end. During their job, compilers build up
+a deep understanding of our code. For decades this valuable information
+was unreachable.</p>
+<p>The <a href="http://msdn.microsoft.com/en-us/vstudio/roslyn.aspx" title="Microsoft® “Roslyn” CTP">Roslyn
+project</a>
+aims to open compilers for developers and offer it as services. Through
+Roslyn, compilers become services with APIs that can be used for code
+related tasks in your tools and applications.</p>
+<p>In order to understand the APIs that Roslyn offers, we need to
+understand the general compiler phases:</p>
+<ol>
+<li><strong>The parse phase</strong> where source is tokenized and parsed into syntax
+that follows the language grammar.</li>
+<li><strong>The declaration phase</strong> where declarations from source and
+imported metadata are analyzed to form named symbols.</li>
+<li><strong>The binding phase</strong> where identifiers in the code are matched to
+symbols.</li>
+<li><strong>The emitting phase</strong> where all the information built up by the
+compiler is emitted as an assembly.</li>
+</ol>
+<p>For each phase of these phases, Roslyn provides a set of APIs to access
+its services and an object model that allow access to the information at
+that phase.</p>
+<ol>
+<li>The parsing phase is exposed as a syntax tree</li>
+<li>The declaration phase as a hierarchical symbol table</li>
+<li>The binding phase as a model that exposes the result of the
+compiler’s semantic analysis</li>
+<li>The emit phase as an API that produces IL byte codes.</li>
+</ol>
+<p><a href="http://lh4.ggpht.com/-G6peFhOXyKY/UhJzZkdvJOI/AAAAAAAAB3Q/qPuGiNoV4hI/s1600-h/image%25255B1%25255D.png"><!-- raw HTML omitted --></a></p>
+<h3 id="rosyln-api-layers">Rosyln API Layers</h3>
+<p><a href="http://lh6.ggpht.com/-nGfOiFYAeds/Ug1kKiCGrBI/AAAAAAAAB24/RR_eYmi5C4o/s1600-h/image%25255B13%25255D.png"><!-- raw HTML omitted --></a></p>
+<ol>
+<li><strong>Compiler APIs</strong> contains a representation of a single invocation
+of a compiler (including assembly references, compiler options, and
+source code files) which provides the object models that corresponds
+to the compiler pahases.
+<ol>
+<li><strong>Scripting APIs</strong> represents a runtime execution context for
+C# or VB piece of code. It contains a scripting engine that
+allows evaluation of expressions and statements as top-level
+constructs in programs.</li>
+</ol>
+</li>
+<li><strong>Services APIs</strong> represents the starting point for doing code
+analysis and refactoring over entire solutions by organizing all the
+information about the projects in a solution into single object
+model, offering you direct access to the compiler layer object
+models without needing to parse files, configure options or manage
+project to project dependencies. In addition, the services layer
+surfaces a set of commonly used APIs used when implementing code
+analysis and refactoring tools that function <em>within a host
+environment</em> like the Visual Studio IDE.</li>
+<li><strong>Editor Services APIs</strong> allows a user to easily extend Visual
+Studio IDE features (such as IntelliSense, refactorings, and code
+formatting). This layer has a dependency on the Visual Studio text
+editor and the Visual Studio software development kit (SDK).</li>
+</ol>
+<h3 id="working-with-syn-tax">Working with Syn tax</h3>
+<p>The fundamental data structure exposed by the Compiler APIs is the
+syntax tree. It represents the lexical and syntactic structure of source
+code, No part of the source code is understood without it first being
+identified. These trees enable tools to manipulate source code without
+editing it as text.</p>
+<h4 id="syntax-trees-attributes">Syntax Trees Attributes</h4>
+<p>Syntax trees have three key attributes:</p>
+<ol>
+<li><strong>Full fidelity</strong> which means that the syntax tree contains every
+piece of information found in the source text, every grammatical
+construct, every lexical token, and everything else in between
+including whitespace, comments, and preprocessor directives.</li>
+<li><strong>Round-trippable</strong> which means that it can be traced back to the
+text it was parsed from and get the text representation of the
+sub-tree rooted at that node. This means that syntax trees can be
+used as a way to construct and edit source text. By creating a tree
+you have by implication created the equivalent source code, and by
+editing a syntax tree, making a new tree out of changes to an
+existing tree, you have effectively edited the source code.</li>
+<li><strong>Immutable and thread-safe which</strong> means that after a tree is
+obtained, it is a snapshot of the current state of the code, and
+never changes. This allows multiple users to interact with the same
+syntax tree at the same time in different threads without locking or
+duplication.</li>
+</ol>
+<h4 id="syntax-tree-elements">Syntax Tree Elements</h4>
+<p>Each syntax tree is made up of <em>nodes, tokens,</em> and <em>trivia.</em></p>
+<p><strong>Syntax Nodes</strong>: the primary elements of syntax trees. It represent
+syntactic constructs such as declarations, statements, clauses, and
+expressions. They are non-terminal nodes in the syntax tree, which means
+they always have other nodes and tokens as children. Each category of
+syntax nodes is represented by a separate class derived from
+<em>SyntaxNode</em>.</p>
+<p><em>Parent</em> property returns the node parent.</p>
+<p><em>ChildNodes()</em> returns a list of child nodes in sequential order based
+on its position in the source text. This list does not contain tokens.</p>
+<p><em>DescendantNodes(), DescendantTokens(), and DescendantTrivia()</em> returns
+a list of child nodes in sequential order based on its position in the
+source text.</p>
+<p>Each syntax node subclass exposes all the same children through strongly
+typed properties.</p>
+<p><em>BinaryExpressionSyntax</em> node class</p>
+<ul>
+<li>Property <em>Left/Right</em> of type <em>ExpressionSyntax</em></li>
+<li>Property <em>OperatorToken</em> of type <em>SyntaxToken</em></li>
+</ul>
+<p>IfStatementSyntax node class</p>
+<ul>
+<li>Optional property <em>ElseClauseSyntax</em> which returns null if the child
+is not present.</li>
+</ul>
+<p><strong>Syntax Tokens</strong> are the terminals of the language grammar,
+representing the smallest syntactic fragments of the code. They are
+never parents of other nodes or tokens. Syntax tokens consist of
+keywords, identifiers, literals, and punctuation.</p>
+<p><strong>Syntax Trivia</strong> represent the parts of the source text that are
+largely insignificant for normal understanding of the code, such as
+whitespace, comments, and preprocessor directives. Because trivia are
+not part of the normal language syntax and can appear anywhere between
+any two tokens, they are not included in the syntax tree as a child of a
+node. you can access them through token’s <em>LeadingTrivia</em> or
+<em>TrailingTrivia</em> collections.</p>
+<p><strong>Spans</strong> In order to make each node knows its position within the
+source text, each node has two properties of type <em>TextSpan</em>. A TextSpan
+object is the beginning position and a count of characters, both
+represented as integers. Each node has two TextSpan properties:</p>
+<ul>
+<li>The <em>Span</em> property is the text span from the start of the first
+token in the node’s sub-tree to the end of the last token. This span
+does not include any leading or trailing trivia.</li>
+<li>The <em>FullSpan</em> property is the text span that includes the node’s
+normal span, plus the span of any leading or trailing trivia.</li>
+</ul>
+<p><strong>Kinds</strong> Each node, token, or trivia has a <em>Kind</em> property, of type
+<em>SyntaxKind</em>, that identifies the exact syntax element represented. The
+Kind property allows for easy disambiguation of syntax node types that
+share the same node class.</p>
+<p><strong>Errors</strong> When the parser encounters code that does not conform to the
+defined syntax of the language, it uses one of two techniques to create
+a syntax tree.</p>
+<ul>
+<li>If the parser expects a particular kind of token, but does not find
+it, it may insert a <em>missing token</em> into the syntax tree in the
+location that the token was expected. A missing token represents the
+actual token that was expected, but it has an empty span, and its
+<em>IsMissing</em> property returns true.</li>
+<li>The parser may skip tokens until it finds one where it can continue
+parsing. In this case, the skipped tokens that were skipped are
+attached as a trivia node with the kind <em>SkippedTokens</em>.</li>
+</ul>
+<p>In this post we explored Microsoft Roslyn, an interesting product that
+offer the compiler as a service and opens a lot of doors in front of
+developers to develop code-focused tools and applications. In later
+posts we will gradually show Roslyn in action.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 23, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-23-getting-started-with-microsoft-roslyn_9468.html/">Syntax Modification using Microsoft Roslyn</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 22, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-22-getting-started-with-microsoft-roslyn_22.html/">Semantic Analysis using Microsoft Roslyn</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 20, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-20-getting-started-with-microsoft-roslyn/">Syntax Analysis using Microsoft Roslyn</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Asserts in NUnit</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2011-10-21-asserts-in-nunit.html/">Asserts in NUnit</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          October 21, 2011
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">NUnit</span>
+            
+            <span class="label label-success">Unit testing</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Assertions (or asserts for short) are helper methods that can assist us
+in determining whether a method under test is performing correctly or
+not. They let us assert conditions, data, and so on. All assertion
+methods will report failures (that’s when the assertion is false) or
+errors (that’s when we get an unexpected exception) and report these
+through the NUnit test runner. when a failure or error occurs, execution
+of the current test method is aborted. Other Test within the same test
+fixture will still be run.</p>
+<p><strong><!-- raw HTML omitted -->Classic Asserts<!-- raw HTML omitted --></strong></p>
+<ul>
+<li>Assert.AreEqual (<em>expected</em>, <em>actual</em>, string <em>message</em>)
+<ul>
+<li>For floating-point numbers we need to specify the tolerance of
+the equality.</li>
+<li>Assert.AreEqual(3.33, 10.0/3.0, 0.01)  // Checks the result but
+looks only for the first two decimal places.</li>
+</ul>
+</li>
+<li>Assert.Less(x, y)     // asserts that x &lt; y</li>
+<li>Assert.Greater(x, y)      // asserts that x &gt; y</li>
+<li>Assert.LessOrEqual(x, y)    // asserts that x &lt;= y</li>
+<li>Assert.GreaterOrEqual(x, y)    // asserts that x &gt;= y</li>
+<li>Assert.IsNull(object, string <em>message</em>)</li>
+<li>Assert.IsNotNull(object, string <em>message</em>)</li>
+<li>Assert.AreSame(expected, actual, string <em>message</em>)</li>
+<li>Assert.IsTrue(bool condition, string <em>message)</em></li>
+<li>Assert.IsFalse(bool condition, string <em>message)</em></li>
+<li>Assert.Fail(string <em>message)</em>
+<ul>
+<li>Fails the test immediately, can be used to mark sections of code
+that should not be reached.</li>
+</ul>
+</li>
+</ul>
+<p>*<em>message</em> in all previous statements is optional.</p>
+<p><strong><!-- raw HTML omitted -->Constrain-Based Asserts<!-- raw HTML omitted --></strong></p>
+<p>These are new assertion style introduced in NUnit 2.4. That new style
+enable many expectations to be evaluated together in a single assertion:</p>
+<p>Assert.That(4, Is.LessThan(5) &amp; Is.GreatThan(0));</p>
+<ul>
+<li>Assert.That(actual, <strong>Is.EqualTo</strong>(expected))</li>
+<li>Assert.That(actual, <strong>Is.Not.EqualTo</strong>(expected));</li>
+<li>Assert.That(actual, <strong>Is.AtMost</strong>(expected));        //equivalent to
+Assert.LessOrEqual()</li>
+<li>Assert.That(actual, <strong>Is.Atleast</strong>(expected));        //equivalent
+to Assert.GreaterOrEqual()</li>
+<li>Assert.That(expected, <strong>Is.Null</strong>);</li>
+<li>Assert.That(expected, <strong>Is.Not.Null</strong>);                 //equivalent
+to Assert.That(expected, !Is.Null);</li>
+<li>Assert.That(expected, <strong>Is.Empty</strong>);                   //for
+collections and strings</li>
+<li>Assert.That(actual, <strong>Is.InstanceOfType</strong>(expected));</li>
+<li>Assert.That(actual, <strong>Has.Length</strong>(expected));</li>
+<li>Assert.That(actualCollection, <strong>List.Contains</strong>(expectedValue));
+<ul>
+<li>Assert.That({5, 3, 2}, List.contains(2))   //will pass</li>
+</ul>
+</li>
+<li>Assert.That(actualCollection, <strong>Is.SubsetOf</strong>(expectedCollection));
+<ul>
+<li>Assert.That({5, 3, 2}, Is.SubsetOf({5, 4, 3, 2, 1})</li>
+</ul>
+</li>
+<li>Assert.That(<em>actual</em>, <strong>Text.StartsWith</strong>(<em>expected</em>)); //asserts
+that the <em>expected</em> string is at the beginning of <em>actual</em></li>
+<li>Assert.That(<em>actual</em>, <strong>Text.Matches</strong>(<em>expected</em>));    //asserts
+that the <em>expected</em> regular expression string matches <em>actual</em></li>
+<li>FileAssert.AreEqual(FileInfo expected, FileInfo actual);
+<ul>
+<li>FileAssert.AreEqual(String pathToExpected, String PathTo
+Actual);</li>
+</ul>
+</li>
+</ul>
+<p><strong><!-- raw HTML omitted -->NUnit and Exceptions<!-- raw HTML omitted --></strong></p>
+<p>Part of your code behavior may be throwing a specific exception in
+certain cases. If you want to assert that your code throws the
+exceptions that it designed to throw, you need to tag your test method
+with attribute: <strong>[ExpectedException(typeof(<em>ExpectedException</em>))]</strong>.</p>
+<pre><code>   1:  [TestFixture]
+
+
+
+
+   2:  public class ImportListTest
+
+
+
+
+   3:  {
+
+
+
+
+   4:      [Test]
+
+
+
+
+   5:      [ExpectedException(typeof(ArgumentNullException))]
+
+
+
+
+   6:      public void NullList()
+
+
+
+
+   7:      {
+
+
+
+
+   8:          Class1.ImportList(null);
+
+
+
+
+   9:      }
+
+
+
+
+  10:  }
+</code></pre>
+<p>This test method in now expected to throw an exception [from the call
+to ImportList(null)]. If it doesn’t, the test will fail. If a different
+exception is thrown (even a superclass of the one specified), the test
+fails. The test passes only if the exact exception specified is thrown.</p>
+<p><strong><!-- raw HTML omitted -->Temporarily ignoring tests<!-- raw HTML omitted --></strong></p>
+<p>If you wrote the test code first and will start writing code
+incrementally (something like TDD), you may temporarily ignore tests
+that you still implementing the code required to pass them. You could
+just tag these tests with attribute <strong>[Ignore(“Optional Message”)] .</strong>
+NUnit will report that these tests were skipped and show a yellow bar in
+the GUI, so you won’t forget about it later.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        May 2, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-05-02-parameterized-test-patterns-using.html/">Parameterized Test Patterns using Microsoft Pex</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        April 24, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-04-24-getting-started-with-microsoft-pex.html/">Getting started with Microsoft Pex</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        October 21, 2011
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2011-10-21-structuring-unit-tests-in-nunit.html/">Structuring unit tests in NUnit</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

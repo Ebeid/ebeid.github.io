@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Semantic Analysis using Microsoft Roslyn</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-08-22-getting-started-with-microsoft-roslyn_22.html/">Semantic Analysis using Microsoft Roslyn</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          August 22, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Microsoft Roslyn</span>
+            
+            <span class="label label-success">Syntax Trees</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>In a previous
+<a href="http://ebeid-soliman.blogspot.com/2013/08/getting-started-with-microsoft-roslyn.html" title="Getting Started with Microsoft Rosyln Syntax Analysis">post</a>
+we talked about using Microsoft Rosyln Syntax API to deal with syntax
+text in terms of SyntaxTrees and SyntaxNodes. But as we we all know, a
+single source code or code snippet can’t make a useful program. 99% of
+the time we end up with many source code files that depend on so many
+externals: assembly references, namespace imports, or other code files.
+The meaning (semantic) of SyntaxNodes depend heavily on these externals
+and may change due changes in these externals even if its enclosing
+source code file have not been changed.</p>
+<p>The <em>Compilation</em> class help us deal with source text in the context of
+its dependents and externals. A <em>Compilation</em> is analogous to a single
+project as seen by the compiler and represents everything needed to
+compile a Visual Basic or C# program such as assembly references,
+compiler options, and the set of source files to be compiled. With this
+context you can reason about the meaning of code. <em>Compilations</em> allow
+you to find <em>Symbols</em> – entities such as types, namespaces, members, and
+variables which names and other expressions refer to. The process of
+associating names and expressions with <em>Symbols</em> is called <em>Binding</em>.</p>
+<h3 id="creating-a-compilation">Creating a Compilation</h3>
+<p>In this following example we will create a SyntaxTree for our
+traditional HelloWorld program. Then we created a <em>Compilation</em> out of
+this <em>SyntaxTree</em> and added a reference to MS Core Library.</p>
+<pre><code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Roslyn.Compilers;
+using Roslyn.Compilers.CSharp;
+using Roslyn.Services;
+using Roslyn.Services.CSharp;
+
+namespace RoslynDemo3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SyntaxTree tree = SyntaxTree.ParseText(
+@&quot;using System;
+using System.Collections.Generic;
+using System.Text;
+ 
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(&quot;&quot;Hello, World!&quot;&quot;);
+        }
+    }
+}&quot;);
+
+            var root = (CompilationUnitSyntax)tree.GetRoot();
+
+            Compilation compilation = Compilation.Create(&quot;HelloWorld&quot;)
+                             .AddReferences(MetadataReference.CreateAssemblyReference(&quot;mscorlib&quot;))
+                             .AddSyntaxTrees(tree);
+
+            foreach (MetadataReference reference in compilation.ExternalReferences)
+                Console.WriteLine(reference.Display);
+
+            Console.ReadLine();
+        }
+    }
+}
+</code></pre>
+<p>You can supply all the syntax trees, assembly references, and options in
+one call or you can spread them out over multiple calls. To add the
+reference we just used the metadata name, which is the same name you
+find when you add a reference through Visual Studio’s Reference
+Manager.<a href="http://lh3.ggpht.com/-SY9CyKMyaCM/UhZUTP24PDI/AAAAAAAAB5A/vWZ5XJMs0F0/s1600-h/Reference%252520Manager%252520-%252520RoslynDemo3_2013-08-22_09-54-14%25255B4%25255D.png"><!-- raw HTML omitted --></a></p>
+<p>Now when you run your program, you should get an output similar to the
+following:<a href="http://lh6.ggpht.com/-U_zCXJBEenA/UhZUUEB_lsI/AAAAAAAAB5Q/ymx_BAwVuKc/s1600-h/FProjectsRoslynDemo3RoslynDemo3binDebugRoslynDemo3.exe_2013-08-22_10-00-45%25255B4%25255D.png"><!-- raw HTML omitted --></a></p>
+<h3 id="the-semanticmodel">The SemanticModel</h3>
+<p>Once we have a <em>Compilation</em> we can get a <em>SemanticModel</em> for any
+<em>SyntaxTree</em> in that <em><strong>Compilation</strong></em>. <strong>SemanticModel</strong>s can be
+queried to answer questions like “What names are in scope at this
+location?” “What members are accessible from this method?” “What
+variables are used in this block of text?” and “What does this
+name/expression refer to?”</p>
+<p>In the following example we going to modify our example a little bit. We
+will get the semantic model of our HelloWorld program. Then use this
+model to get semantic Symbol that represents the first using statement
+(of type NameSpaceSymbol). Then we use that symbol to get a list of
+namespaces inside the System namespace.</p>
+<pre><code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Roslyn.Compilers;
+using Roslyn.Compilers.CSharp;
+using Roslyn.Services;
+using Roslyn.Services.CSharp;
+
+namespace RoslynDemo3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SyntaxTree tree = SyntaxTree.ParseText(
+@&quot;using System;
+using System.Collections.Generic;
+using System.Text;
+ 
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(&quot;&quot;Hello, World!&quot;&quot;);
+        }
+    }
+}&quot;);
+
+            var root = (CompilationUnitSyntax)tree.GetRoot();
+
+            Compilation compilation = Compilation.Create(&quot;HelloWorld&quot;)
+                             .AddReferences(MetadataReference.CreateAssemblyReference(&quot;mscorlib&quot;))
+                             .AddSyntaxTrees(tree);
+
+            var model = compilation.GetSemanticModel(tree);
+            var nameInfo = model.GetSymbolInfo(root.Usings[0].Name);
+            var systemSymbol = (NamespaceSymbol)nameInfo.Symbol;
+
+            foreach (var ns in systemSymbol.GetNamespaceMembers())
+                Console.WriteLine(ns.Name);
+            Console.ReadLine();
+        }
+    }
+}
+</code></pre>
+<p>When you run the above code you should get an output like the following:</p>
+<p><a href="http://lh5.ggpht.com/-RW9HkoTzIPU/UhZhM93zdEI/AAAAAAAAB5o/HMdxNhYzC-M/s1600-h/FProjectsRoslynDemo3RoslynDemo3binDebugRoslynDemo3.exe_2013-08-22_13-23-45%25255B2%25255D.png"><!-- raw HTML omitted --></a></p>
+<p>You can also use the query methods we showed in the previous
+<a href="http://ebeid-soliman.blogspot.com/2013/08/getting-started-with-microsoft-roslyn.html" title="Getting started with Microsoft Roslyn Syntax Analysis">post</a>
+to retrieve a certain node and then use the semantic model to get more
+information about that node. You could use the code below to get the
+node that represent the “Hello, World!” string in our code snippet, get
+information about its symbol type (System.String) , and even get
+information about the assembly that contains this type.</p>
+<pre><code>            var helloWorldString = root.DescendantNodes()
+                                       .OfType()
+                                       .First();
+            var literalInfo = model.GetTypeInfo(helloWorldString);
+            Console.WriteLine(literalInfo.Type.ContainingAssembly.BaseName);
+</code></pre>
+<p>or enumerate the public methods of the <em>System.String</em> class</p>
+<pre><code>            var stringTypeSymbol = (NamedTypeSymbol)literalInfo.Type;
+ 
+            Console.Clear();
+            foreach (var name in (from method in stringTypeSymbol.GetMembers()
+                                                              .OfType()
+                               where method.ReturnType == stringTypeSymbol &amp;&amp;
+                                     method.DeclaredAccessibility == 
+                                                Accessibility.Public
+                               select method.Name).Distinct())
+            {
+                Console.WriteLine(name);
+            }
+</code></pre>
+<p>Somehow, we just scratched the surface of sematic analysis in this post.
+using both syntax and semantic analysis we can do more advanced and
+meaningful code focused tasks (which we will do in the next post).</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 23, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-23-getting-started-with-microsoft-roslyn_9468.html/">Syntax Modification using Microsoft Roslyn</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 20, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-20-getting-started-with-microsoft-roslyn/">Syntax Analysis using Microsoft Roslyn</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 19, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-19-overview-of-microsoft-roslyn-first.html/">Overview of Microsoft Roslyn – The first compiler-as-service product</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

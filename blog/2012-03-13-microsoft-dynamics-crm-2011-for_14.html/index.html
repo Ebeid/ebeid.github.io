@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Microsoft Dynamics CRM 2011 for Developers | Creating Custom Reports Using Microsoft SQL Server 2008 Reporting Services</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2012-03-13-microsoft-dynamics-crm-2011-for_14.html/">Microsoft Dynamics CRM 2011 for Developers | Creating Custom Reports Using Microsoft SQL Server 2008 Reporting Services</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          March 13, 2012
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Microsoft Dynamics CRM 2011</span>
+            
+            <span class="label label-success">FetchXML - Business Intelligence Development Studio</span>
+            
+            <span class="label label-success">Business Intelligence Development Studio CRM Report Authoring Extension</span>
+            
+            <span class="label label-success">SQL Server Reporting Services</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <h4 id="contents"><strong>Contents</strong></h4>
+<ol>
+<li>Introduction</li>
+<li>Setup the Development Environment</li>
+<li>Report Development Process</li>
+<li>Create Custom Reports Using Business Intelligence Development Studio
+<ol>
+<li>Create a Custom SQL-Based Report</li>
+<li>Create a Custom Fetch-Based Report</li>
+</ol>
+</li>
+<li>Import Custom Reports into Dynamics CRM</li>
+</ol>
+<p><strong>Introduction</strong></p>
+<p>Microsoft Dynamics CRM provides many out-of-box reports for viewing
+business data. You can view a list of reports you have access to by
+navigating to Workplace &gt; My Work &gt; Reports. You can also see a
+list of all reports available by navigating to Settings &gt;
+Customization &gt; Customizations &gt; Customize the System &gt; Report
+[left navigation]. In both lists, you can select a report and click
+Run Report from the ribbon to preview the report in running mode.</p>
+<p>You can create custom reports using one of the out-of-box reports as
+templates, or create a custom report from scratch. There are two types
+of reports in Microsoft Dynamics CRM:</p>
+<ul>
+<li><strong>SQL-Based Reports</strong> Use SQL queries to retrieve data from filtered
+views defined by the system. The default out-of-box reports are
+SQL-based reports. You can’t deploy SQL-based reports for Dynamics
+CRM online.</li>
+<li><strong>Fetch-Based Reports</strong> Use FetchXML queries to retrieve data. They
+are introduced in Dynamics CRM 2011 and can be deployed both on
+on-premise and online. All reports created using the Report Wizard
+in the web interface, are fetch-based reports.</li>
+</ul>
+<p><strong>Setup the Development Environment</strong></p>
+<p>To write custom reports for Microsoft Dynamics CRM you need the
+following:</p>
+<ul>
+<li>Microsoft SQL Server 2008 Reporting Services (or 2008 R2) in native
+mode installation.</li>
+<li>Business Intelligence Development Studio. This is the report
+authoring environment in Visual Studio that hosts the Report
+Designer (available on the Microsoft SQL Server setup CD).</li>
+<li>Microsoft Dynamics CRM Report Authoring Extension. You will need
+this when creating a custom fetch-based reports. You can install it
+from <a href="http://www.microsoft.com/download/en/details.aspx?id=27823">http://www.microsoft.com/download/en/details.aspx?id=27823</a> or
+from the BIDSExtension folder in the Microsoft Dynamics CRM setup
+DVD.</li>
+</ul>
+<p><strong>Report Development Process</strong></p>
+<p>The following lists the steps for developing custom Microsoft Dynamics
+CRM reports. You may have to repeat some steps while you develop a
+report:</p>
+<ol>
+<li>Develop a report concept or specification based on what business
+information is to be displayed.</li>
+<li>Decide on the type of report you want to create: SQL-based or
+Fetch-based. Microsoft Dynamics CRM Online users can only create
+custom Fetch-based reports.</li>
+<li>Download an existing Microsoft Dynamics CRM report definition
+(.rdl), and modify it or create a new report by using Business
+Intelligence Development Studio.</li>
+<li>Create basic report parameters.</li>
+<li>Specify datasets and filtering criteria for retrieving data:
+<ul>
+<li>For SQL-based reports, create datasets that contain Microsoft
+Dynamics CRM data obtained from the filtered views.</li>
+<li>Enable pre-filtering on the primary entities.</li>
+</ul>
+</li>
+<li>Define the basic layout of the report, including headers and
+footers.</li>
+<li>Add report items as required based on the report specification.</li>
+<li>Preview the report in Microsoft Visual Studio, and resolve any
+errors.</li>
+<li>Deploy the report to the reporting server by using Microsoft
+Dynamics CRM.</li>
+<li>Run the deployed report to verify.</li>
+</ol>
+<p><strong>Create Custom Reports Using Business Intelligence Development Studio</strong></p>
+<p><strong>Create a Custom SQL-Based Report</strong></p>
+<p>To create a c ustom SQL-based report using Business Intelligence
+Development Studio:</p>
+<p>1- Open Business Intelligence Development Studio, and create a report
+server project.</p>
+<p><a href="http://lh6.ggpht.com/-dpQXMjSJORM/T1_OFc1tU5I/AAAAAAAAAVQ/LrYaco45lgo/s1600-h/xRM_Demo2---Microsoft-Visual-Studio_%25255B9%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>2- In Solution Explorer, right-click the <strong>Reports</strong> folder, and then
+click <strong>Add New Report</strong>.</p>
+<p><a href="http://lh5.ggpht.com/-HuqXDtblv-M/T1_OGiUnurI/AAAAAAAAAVg/mu5unb1ioTM/s1600-h/xRM_Demo2---Microsoft-Visual-Studio_%25255B11%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>3- Click <strong>Next</strong> on the Report Wizard welcome screen.</p>
+<p>4- On the Select the Data Source page, click <strong>New Data Source</strong>, and
+specify the following details:</p>
+<ul>
+<li><strong>Name</strong>: Type a name for the data source.</li>
+<li><strong>Type</strong>: Select <strong>Microsoft SQL Server</strong>.</li>
+</ul>
+<p><a href="http://lh4.ggpht.com/-GRyw77MrdHg/T1_OHp9KsKI/AAAAAAAAAVw/LRssllCzblU/s1600-h/Report-Wizard_2012-03-12_17-53-253.jpg"><!-- raw HTML omitted --></a></p>
+<ul>
+<li><strong>Connection String</strong>: Specify the connection string to connect to
+the instance of the Microsoft SQL Server database. To build the
+connection string, click <strong>Edit</strong>. To supply credentials, click
+<strong>Credentials</strong>. Click <strong>Next</strong>.</li>
+</ul>
+<blockquote>
+<p><a href="http://lh4.ggpht.com/-1GYV0Eewvp0/T1_OIw9RrQI/AAAAAAAAAWA/5v3Zzg13CUQ/s1600-h/Connection-Properties_2012-03-12_17-%25255B1%25255D.jpg"><!-- raw HTML omitted --></a></p>
+</blockquote>
+<p>3- On the Design the Query page, type the SQL query to use in the
+report. You could also click Query Builder button to open the Query
+Builder window. Right click in the empty area at the top of the dialog
+and choose Add Table</p>
+<p><a href="http://lh3.ggpht.com/-42i9hc-FEd8/T1_OJePyrsI/AAAAAAAAAWQ/sfIXXeOKwLY/s1600-h/xRM_Demo2---Microsoft-Visual-Studio_%25255B8%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>then click on the Views tab, hold the CTRL key and and select the views
+that you will use in your report and click Add</p>
+<p><a href="http://lh4.ggpht.com/-u-BC28YWmrM/T1_OKS3P33I/AAAAAAAAAWg/cNGBQyQtJsM/s1600-h/Add-Table_2012-03-12_17-59-134.jpg"><!-- raw HTML omitted --></a></p>
+<p>select the columns you want, test your query results [We just retrieved
+the account name, city, country]</p>
+<p><a href="http://lh6.ggpht.com/-q69G8B1Z3LI/T1_OK_6jW2I/AAAAAAAAAWw/IMHVnCPdlqQ/s1600-h/Query-Designer_2012-03-12_18-02-203.jpg"><!-- raw HTML omitted --></a></p>
+<p>when you satisfied with your query results, click Ok to use the query in
+the report</p>
+<p><a href="http://lh3.ggpht.com/-38xP0A3cYtg/T1_OLix99tI/AAAAAAAAAXA/ryQClGMbgZc/s1600-h/Report-Wizard_2012-03-12_18-03-193.jpg"><!-- raw HTML omitted --></a></p>
+<p>click <strong>Next</strong>.</p>
+<p>4- On the Select the Report Type page, select a <strong>Tabular</strong> report or a
+<strong>Matrix</strong> report, and click <strong>Next</strong>. [we used Tabular, which is the
+most common report format]</p>
+<p><a href="http://lh4.ggpht.com/-wutKFJhRhKw/T1_OMV7v2cI/AAAAAAAAAXQ/5fsNV61SNxc/s1600-h/Report-Wizard_2012-03-12_18-03-243.jpg"><!-- raw HTML omitted --></a></p>
+<p>5- Specify the fields that will be included in the report. You can add
+fields in three different sections [Page, Group, Details]. Page can be
+used for granular grouping like Country in our case, it will displayed
+on the page header only. Group can be used to more specific grouping
+within the page, like City in our case. Details is the place where
+individual records will be rendered, like our accounts names. Select
+each column name from the list on the left and click the designated
+section button to add the column to it.</p>
+<p><a href="http://lh4.ggpht.com/-BxjJIuildAU/T1_ONBmIaQI/AAAAAAAAAXg/V68o0DFOYaU/s1600-h/Report-Wizard_2012-03-12_18-04-413.jpg"><!-- raw HTML omitted --></a></p>
+<p>Then click <strong>Next</strong>.</p>
+<p>6- Select a stepped layout and click <strong>Next</strong>.</p>
+<p><a href="http://lh3.ggpht.com/-ehUcLZUoDqc/T1_OOCCb6yI/AAAAAAAAAXw/dK_BXtWM4OM/s1600-h/Report-Wizard_2012-03-12_18-05-163.jpg"><!-- raw HTML omitted --></a></p>
+<p>7- Select a style to apply to the report, and then click <strong>Next</strong>.</p>
+<p><a href="http://lh5.ggpht.com/-rNKs_52bvZ4/T1_OO_UKuOI/AAAAAAAAAYA/vBLwv4xrNzI/s1600-h/Report-Wizard_2012-03-12_18-05-223.jpg"><!-- raw HTML omitted --></a></p>
+<p>8- Verify the fields that will be included in the report, and name the
+report. Click <strong>Finish</strong>.</p>
+<p><a href="http://lh4.ggpht.com/-N4_zRUgIibI/T1_OPRoL-YI/AAAAAAAAAYQ/ZAx5mUETiKc/s1600-h/Report-Wizard_2012-03-12_18-05-283.jpg"><!-- raw HTML omitted --></a></p>
+<p>This will generate an .rdl file with the specified report name. You can
+use the .rdl file to publish your custom report in Microsoft Dynamics
+CRM.</p>
+<p><a href="http://lh4.ggpht.com/-Rvqzd4CmHe8/T1_OQcbHT1I/AAAAAAAAAYk/hbJifDq7UQk/s1600-h/xRM_Demo2---Microsoft-Visual-Studio_%25255B5%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p><strong>Create a Custom Fetch-Based Report</strong></p>
+<p>Creating a custom Fetch-based report is similar to creating a custom
+SQL-based report except for the data source name and the report query
+specified while creating the report definition.</p>
+<p>Since you have the capability to create SQL-based reports for
+on-premise, most people will not use Fetch-based reports for on-premise.
+Let’s learn how to get the data source name for our CRM On-Line
+organization. It consists of:</p>
+<ul>
+<li><!-- raw HTML omitted -->Organization URL<!-- raw HTML omitted --> something like
+<a href="https://xrmdemo5.crm.dynamics.com">https://xrmdemo5.crm.dynamics.com</a></li>
+<li><!-- raw HTML omitted -->Organization unique name<!-- raw HTML omitted --> you can get
+it by navigating to <!-- raw HTML omitted -->Settings<!-- raw HTML omitted --> &gt;
+<!-- raw HTML omitted -->Customization<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Customizations<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Developer Resources<!-- raw HTML omitted --> &gt; it will be on this
+page</li>
+</ul>
+<p><a href="http://lh4.ggpht.com/-t8Ik73WXzeY/T1_ORW2bumI/AAAAAAAAAY0/wI7veidjHGM/s1600-h/Developer%252520res%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>Put the two parts separated by semi-colon will form your connection
+string, like
+<a href="https://xrmdemo5.crm.dynamics.com" title="https://xrmdemo5.crm.dynamics.com"></a><a href="https://xrmdemo5.crm.dynamics.com;4c69b8c565264033b4707c804cba7aa2">https://xrmdemo5.crm.dynamics.com</a>;4c69b8c565264033b4707c804cba7aa2
+put that connection string in a text file for later use.</p>
+<p>Now, lets learn how to create a query for our Fetch-based report. There
+are two ways to do that:</p>
+<ol>
+<li>Manually type the FetchXML query (which I don’t personally prefer)</li>
+<li>Obtain the FetchXML queries from the CRM web client and then modify
+it.</li>
+</ol>
+<p>To obtain FetchXML queries you can navigate to any entity listing in CRM
+web client, like Accounts. Then click Advanced Find on the ribbon</p>
+<p><a href="http://lh4.ggpht.com/-cGFULnOxXAU/T1_OR2Lp0HI/AAAAAAAAAZE/y19B3ipN-R4/s1600-h/adv%252520fnd%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<p>This will open the Advanced Find dialog</p>
+<p><a href="http://lh4.ggpht.com/-_0B4c0N_rC4/T1_OS8U9iNI/AAAAAAAAAZU/J4C6sWsjDc4/s1600-h/adv%252520fnd%2525202%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>Then click New to start creating a new query.</p>
+<p>1- You can select the Entity (Table) from the <!-- raw HTML omitted -->Look For<!-- raw HTML omitted --> combo-box.</p>
+<p>2- You can create your query where conditions. Click <!-- raw HTML omitted -->Select<!-- raw HTML omitted --> link to select the desired column</p>
+<p><a href="http://lh6.ggpht.com/-LKJpI_VuIyE/T1_OTxtDkeI/AAAAAAAAAZk/fLGbvPwg_Pc/s1600-h/adv%252520fnd%2525203%25255B4%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>You can then click <!-- raw HTML omitted -->Equals<!-- raw HTML omitted --> link to specify
+the operator used in the where condition. You can then click <!-- raw HTML omitted -->Enter Text<!-- raw HTML omitted --> link to specify the value used in
+the condition</p>
+<p><a href="http://lh4.ggpht.com/-3-kYmbBMvOw/T1_OUo6e1OI/AAAAAAAAAZ0/D3fap7E_6-4/s1600-h/adv%252520fnd%2525204%25255B6%25255D.jpg"><!-- raw HTML omitted --></a><a href="http://lh4.ggpht.com/-g52z0YfZIYA/T1_OVetvodI/AAAAAAAAAaE/UiUt7ydKlL0/s1600-h/adv%252520fnd%2525205%25255B4%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>when you have multiple conditions, you can select them and use the <!-- raw HTML omitted -->Group AND<!-- raw HTML omitted --> and <!-- raw HTML omitted -->Group
+OR<!-- raw HTML omitted --> on the ribbon to build your query logic.</p>
+<p>3- You can specify the columns you want retrieve. Click Edit Columns in
+the ribbon, this will open the Edit Columns dialog</p>
+<p><a href="http://lh4.ggpht.com/-mR3GFdPsQp4/T1_OV4JVPoI/AAAAAAAAAaU/fNILclJTDVA/s1600-h/Edit%252520Columns%252520--%252520Webpage%252520Dialog_2012-03-13_13-07-57%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>The area on the left shows the query columns and the sequence they
+appear. You can click <!-- raw HTML omitted -->Add Columns<!-- raw HTML omitted --> from
+the left to add more columns from this entity or any of entities related
+to it.</p>
+<p><a href="http://lh3.ggpht.com/-vyXgT5-xjmo/T1_OW4R4jMI/AAAAAAAAAak/S6DipAJxsPo/s1600-h/Add%252520Columns%252520--%252520Webpage%252520Dialog_2012-03-13_13-10-04%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>Select Address 1: City and Address 1: Country and click Ok.</p>
+<p>4- You can specify the query sorting. Click Configure Sorting on the
+left to open the Configure Sort Order dialog</p>
+<p><a href="http://lh3.ggpht.com/-A11tUiNzM5Q/T1_OXmLNd7I/AAAAAAAAAa0/mflhQcJZu0k/s1600-h/Configure%252520Sort%252520Order%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>You can specify two columns only for the sorting criteria.</p>
+<p>5- You can remove any column by click its name on the right and click
+<!-- raw HTML omitted -->Remove<!-- raw HTML omitted --> from the left.</p>
+<p>When you done with editing the query columns click <!-- raw HTML omitted -->OK<!-- raw HTML omitted --> to return to the <!-- raw HTML omitted -->Advanced Find<!-- raw HTML omitted --> window. Now, click Download Fetch
+XML on the ribbon to download the Fetch query in a .xml file format to
+use inside SQL Business Intelligence Development Studio.</p>
+<p>Now to add a custom Fetch-based report to our Report project, Right
+click <strong>Reports</strong> folder and click <strong>Add New Report</strong>. Click Next on the
+Report Wizard welcome screen.</p>
+<p>1- On the Sele ct the Data Source page, click <strong>New Data Source</strong>, and
+specify the following details:</p>
+<ul>
+<li><strong>Name</strong>: Type a name for the data source.</li>
+<li><strong>Type</strong>: Select <strong>Microsoft Dynamics CRM Fetch</strong>.</li>
+<li><strong>Connection String</strong>: copy the connection string we prepared
+earlier and past it here.</li>
+<li>Click on <!-- raw HTML omitted -->Credentials<!-- raw HTML omitted --> and enter your
+live account and password you used in CRM Online and click Ok. Then
+click <!-- raw HTML omitted -->Next<!-- raw HTML omitted --></li>
+</ul>
+<p><a href="http://lh5.ggpht.com/-qI1zanzK3Cs/T1_OYYvU2iI/AAAAAAAAAbE/oevV7XyVsvA/s1600-h/Data%252520Source%252520Credentials_2012-03-13_15-07-56%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>2- On the Design the Query page, click on <!-- raw HTML omitted -->Query
+Builder<!-- raw HTML omitted -->. On the Query Designer dialog, click <!-- raw HTML omitted -->Import<!-- raw HTML omitted --> and browse to the xml file you
+downloaded earlier.</p>
+<p><a href="http://lh6.ggpht.com/-p37QAViwHSM/T1_OZPDm-1I/AAAAAAAAAbU/6ccY9T7Zro0/s1600-h/Query%252520Designer_2012-03-13_15-24-04%25255B4%25255D.jpg"><!-- raw HTML omitted --></a> </p>
+<p>You can click on Run to test the query. Click Ok to close the Query
+Designer dialog, and Click Next.</p>
+<p>Complete the Wizard steps just like the SQL-based report, it is the
+same.</p>
+<p>As you can create queries using Business Intelligence Development
+Studio, you can also use it to modify complex queries.</p>
+<p><strong>Import Custom Reports into Dynamics CRM</strong></p>
+<p>To complete the cycle and let the report used by your organization, you
+need to import it into CRM. Follow the following steps to import our
+report:</p>
+<p>1- Navigate to <!-- raw HTML omitted -->My Work<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Reports<!-- raw HTML omitted --> &gt; click <!-- raw HTML omitted -->New<!-- raw HTML omitted --> on the ribbon. The <!-- raw HTML omitted -->New Report<!-- raw HTML omitted --> window will open.</p>
+<p><a href="http://lh5.ggpht.com/-anZBNpdszCo/T1_OaDa9xzI/AAAAAAAAAbk/mHxTnCZRGcg/s1600-h/Report%252520New%252520-%252520Windows%252520Internet%252520Explorer_2012-03-13_17-07-32%25255B4%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>Click <!-- raw HTML omitted -->Browse<!-- raw HTML omitted --> and select your .rdl report
+file. Enter the report name. Near the bottom of the window there is a
+Display In field which decides areas where your reports will be
+displayed. By default new reports will be displayed in Reports area, 
+You can click the eclipse button if you want to make it displayed in
+forms or lists of the related entities, then select desired values and
+move them to <!-- raw HTML omitted -->Selected Values<!-- raw HTML omitted --> list.</p>
+<p><a href="http://lh4.ggpht.com/-vyGO7lQCLtM/T1_Oa7-pYsI/AAAAAAAAAb0/WZhBBqgxsKs/s1600-h/Select%252520Values%252520--%252520Webpage%252%0A520Dialog_2012-03-13_17-20-21%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>In the New Report window, if you want to make the report accessible by
+the whole organization click the Administration tab and change the <!-- raw HTML omitted -->Viewable By<!-- raw HTML omitted --> field from Individual to
+Organization.</p>
+<p><a href="http://lh3.ggpht.com/-hbRCYFBZ-M4/T1_ObrMdi3I/AAAAAAAAAcE/BRluTrS-xqY/s1600-h/Report%252520New%252520-%252520Windows%252520Internet%252520Explorer_2012-03-13_17-14-18%25255B5%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>Click <!-- raw HTML omitted -->Save and Close<!-- raw HTML omitted -->. Now our report will
+be available in the Reports area of configured accessibility level
+[Organization or Individual].</p>
+<blockquote>
+<p>To copy a report between organizations or deployments, include the
+report and any custom entities the report uses in a solution. This
+ensures that the entity types are mapped automatically by the system</p>
+</blockquote>
+<p>In this post we used the Business Intelligence Development Studio to
+create both SQL-based and Fetch-based custom reports for on-premise and
+on-line CRM deployments. We also learned how to upload our reports to
+Dynamics CRM and make them accessible to the whole organization and
+through many access points.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 23, 2012
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2012-03-23-microsoft-dynamics-crm-2011-for_23.html/">Microsoft Dynamics CRM 2011 for Developers | Plug-ins</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 2, 2012
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2012-03-02-accessing-microsoft-dynamics-crm-2011.html/">Microsoft Dynamics CRM 2011 for Developers - Accessing Microsoft Dynamics CRM 2011 using WCF</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

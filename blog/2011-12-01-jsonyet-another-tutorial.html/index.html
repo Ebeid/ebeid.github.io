@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>JSON–yet another tutorial :)</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2011-12-01-jsonyet-another-tutorial.html/">JSON–yet another tutorial :)</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          December 1, 2011
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">JSON</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <h4 id="what-is-json">What is JSON?</h4>
+<p><strong><a href="http://json.org/">JSON</a></strong> (or <strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject
+<strong>N</strong>otation) is a highly portable data interchange format. While its
+structure is recognized natively by Javascript (as it <em>is</em> Javascript),
+its formatting conventions are easily recognized by other C-like
+languages.</p>
+<p>JSON is built on two structures:</p>
+<ul>
+<li>A collection of name/value pairs. In various languages, this is
+realized as an object, record, struct, dictionary, hash table, keyed
+list, or associative array. Example:</li>
+</ul>
+<!-- raw HTML omitted -->
+<pre><code>var jason = {
+ &quot;age&quot; : &quot;28&quot;,
+ &quot;hometown&quot; : &quot;Cairo, Egypt&quot;,
+ &quot;gender&quot; : &quot;male&quot;
+ };
+</code></pre>
+<blockquote>
+<p>The object created in the example could be accessed like any other
+object.</p>
+</blockquote>
+<ul>
+<li>An ordered list of values. In most languages, this is realized as an
+array, vector, list, or sequence. Example,</li>
+</ul>
+<!-- raw HTML omitted -->
+<pre><code>var family = [{
+ &quot;name&quot; : &quot;Jason&quot;,
+ &quot;age&quot; : &quot;24&quot;,
+ &quot;gender&quot; : &quot;male&quot;
+ },
+ {
+ &quot;name&quot; : &quot;Kyle&quot;,
+ &quot;age&quot; : &quot;21&quot;,
+ &quot;gender&quot; : &quot;male&quot;
+ }];
+</code></pre>
+<blockquote>
+<p>This array could be accessed like any array of objects.</p>
+</blockquote>
+<p>Since JSON and XML are both used for data exchange, you may find
+yourself in the middle of deciding which format to use.</p>
+<h5 id="reasons-to-choose-json-over-xml">Reasons to choose JSON over XML</h5>
+<ol>
+<li>JSON is easier to read than XML (especially of large amounts of
+data)</li>
+<li>JSON requires less tags than XML – XML items must be wrapped in open
+and close tags whereas JSON you just name the tag once</li>
+<li>Because JSON is transportation-independent, you can just bypass the
+XMLHttpRequest object for getting your data.</li>
+<li>JavaScript is not just data – you can also put methods and all sorts
+of goodies in JSON format.</li>
+<li>JSON is better at helping procedural decisions in your JavaScript
+based on objects and their values (or methods).</li>
+<li>You can get JSON data from anywhere, not just your own domain.</li>
+</ol>
+<h5 id="reasons-to-choose-xml-over-json">Reasons to choose XML over JSON</h5>
+<ol>
+<li>Easy to take XML and apply XSLT to make XHTML.</li>
+<li>XML is supported by many more desktop applications than JSON.</li>
+<li>XML can put JSON in it on the way back to the client.</li>
+<li>AJAX includes XML in it and not JSON.</li>
+</ol>
+<h4 id="net-support-for-json">.Net Support for JSON</h4>
+<h4 id="span-classapple-style-span-stylefont-weight-normal-net-framework-provides-systemwebscriptserializationjavascriptserializer-to-serialize-and-deserialize-objects-here-is-a-simple-examplespan"><!-- raw HTML omitted -->.Net framework provides System.Web.Script.Serialization.JavaScriptSerializer to serialize and deserialize objects. Here is a simple example:<!-- raw HTML omitted --></h4>
+<pre><code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace JSON_Demo1
+{
+  public partial class Page1 : System.Web.UI.Page
+  {
+      protected void Page_Load(object sender, EventArgs e)
+      {
+          Employee oEmployee1 = new Employee { Name = &quot;Emp1&quot;, ID = &quot;11&quot;, Age = &quot;30&quot; };
+          Employee oEmployee2 = new Employee { Name = &quot;Emp2&quot;, ID = &quot;22&quot;, Age = &quot;31&quot; };
+          Employee oEmployee3 = new Employee { Name = &quot;Emp3&quot;, ID = &quot;33&quot;, Age = &quot;20&quot; };
+          List oList = new List() { oEmployee1, oEmployee2, oEmployee3 };
+          System.Web.Script.Serialization.JavaScriptSerializer oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+          string sJSON = oSerializer.Serialize(oList);
+          Response.Write(sJSON);
+      }
+  }
+  public class Employee
+  {
+      public string Name { get; set; }
+      public string Age { get; set; }
+      public string ID { get; set; }
+  }
+}
+</code></pre>
+<p>When you run the above application, you will see the JSON array on the
+response like so:</p>
+<p><a href="http://lh3.ggpht.com/-YyboQaEuXN0/TtgREFLqnwI/AAAAAAAAALA/UZBtgfZSlP0/s1600-h/JSON_Demo11%25255B3%25%0A25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>Now let’s change this example a little bit so we can make Ajax call to
+get the JSON data and parse it using javaScript. Change the code-behind
+to look like:</p>
+<pre><code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.Services;
+
+namespace JSON_Demo1
+{
+  public partial class Page1 : System.Web.UI.Page
+  {
+      protected void Page_Load(object sender, EventArgs e)
+      {
+          Response.Write(GetJSONData());
+      }
+
+      [WebMethod()]
+      public static string GetJSONData()
+      {
+          Employee oEmployee1 = new Employee { Name = &quot;Emp1&quot;, ID = &quot;11&quot;, Age = &quot;30&quot; };
+          Employee oEmployee2 = new Employee { Name = &quot;Emp2&quot;, ID = &quot;22&quot;, Age = &quot;31&quot; };
+          Employee oEmployee3 = new Employee { Name = &quot;Emp3&quot;, ID = &quot;33&quot;, Age = &quot;20&quot; };
+          List oList = new List() { oEmployee1, oEmployee2, oEmployee3 };
+          System.Web.Script.Serialization.JavaScriptSerializer oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+          return oSerializer.Serialize(oList);
+      }
+  }
+  public class Employee
+  {
+      public string Name { get; set; }
+      public string Age { get; set; }
+      public string ID { get; set; }
+  }
+
+}
+</code></pre>
+<p>now change the .aspx page to look like:</p>
+<pre><code>&lt;%@ Page Language=&quot;C#&quot; AutoEventWireup=&quot;true&quot; CodeBehind=&quot;Page1.aspx.cs&quot; Inherits=&quot;JSON_Demo1.Page1&quot; %&gt;
+
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head runat=&quot;server&quot;&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;
+      $(document).ready(function () {
+          $.ajax({
+              type: &quot;POST&quot;,
+              url: &quot;Page1.aspx/GetJSONData&quot;,
+              contentType: &quot;application/json; charset=utf-8&quot;,
+              dataType: &quot;json&quot;,
+              success: function (msg) {
+                  BuildTable(msg.d);
+                  }
+          });
+      });
+    
+      function BuildTable(msg) {
+          var table = '&lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;Name&lt;/th&gt; &lt;th&gt;ID&lt;/th&gt; &lt;th&gt;Age&lt;/th&gt; &lt;/thead&gt; &lt;tbody&gt;';
+          var myJSONObject = eval( msg );
+          for (var i = 0; i &lt; 3; i++) {              
+              var row = '&lt;tr&gt;';
+              row += '&lt;td&gt;' + myJSONObject[i].Name + '&lt;/td&gt;';
+              row += '&lt;td&gt;' + myJSONO
+bject[i].ID + '&lt;/td&gt;';
+              row += '&lt;td&gt;' + myJSONObject[i].Age + '&lt;/td&gt;';
+              row += '&lt;/tr&gt;';
+              table += row;
+          }
+          table += '&lt;/tbody&gt;&lt;/table&gt;';
+          $('#Container').html(table);
+      }
+      &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;Container&quot;&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Now let’s run the application and see the output:</p>
+<p><a href="http://lh3.ggpht.com/-BV1Tl-JzV38/TtgRE5nPvJI/AAAAAAAAALQ/U494e_qrJeU/s1600-h/JSON_Demo12%25255B4%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>In the previous example, we created a WebMethod, then call it from
+jQuery and pass the output of it to JavaScript method
+<strong>BuildTable(msg)</strong>. This method convert the string msg into a JSON
+array of objects and then loop on that array to build the shown simple
+data table. We also rendered the JSON data to the browser directly from
+server-side code, just to show the original data and how it transformed
+using JSON.</p>
+<p>In this post we gave a brief background about JSON, when use it and when
+use XML to send data, how .Net provides native serializer for JSON, and
+how to deserialize it using JavaScript. We may look into more advanced
+topics regarding JSON in future posts.</p>
+<p>Good Luck</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 12, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-12-getting-started-with-mongodb-part-2.html/">Getting Started with MongoDB – Part 2</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 12, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-12-getting-started-with-mongodb-part-1.html/">Getting Started with MongoDB – Part 1</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Parameterized Unit Tests on Ebeid ElSayed</title>
+    <link>https://ebeid.github.io/tags/parameterized-unit-tests/</link>
+    <description>Recent content in Parameterized Unit Tests on Ebeid ElSayed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 02 May 2013 16:08:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://ebeid.github.io/tags/parameterized-unit-tests/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Parameterized Test Patterns using Microsoft Pex</title>
+      <link>https://ebeid.github.io/blog/2013-05-02-parameterized-test-patterns-using.html/</link>
+      <pubDate>Thu, 02 May 2013 16:08:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2013-05-02-parameterized-test-patterns-using.html/</guid>
+      <description>We talked before about the difference between unit tests and parameterized unit tests. In this post we will talk about common patterns for writing good parameterized unit tests. Keep in mind that we will use these tests with Microsoft Pex (as an automatic test input generation tool) to get test inputs that trigger all the possible scenarios of the code-under-test.
+ Before anything, let’s clarify what are the questions we want to answer using the parameterized unit tests.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with Microsoft Pex</title>
+      <link>https://ebeid.github.io/blog/2013-04-24-getting-started-with-microsoft-pex.html/</link>
+      <pubDate>Wed, 24 Apr 2013 03:06:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2013-04-24-getting-started-with-microsoft-pex.html/</guid>
+      <description>Microsoft Pex is a white box test generation for .NET that came out of Microsoft Research and have been successfully integrated into Visual Studio 2010. It have been a result of collaborative work between Microsoft Research and the Automated Software Engineering Research Group at North Carolina State University led by Dr. Tao Xie.
+You can download and install Microsoft Pex for Visual Studio 2010 from here. We have talked in a previous post about parameterized unit tests and the possibilities it brings.</description>
+    </item>
+    
+    <item>
+      <title>Unit Tests vs Parametrized Unit Tests</title>
+      <link>https://ebeid.github.io/blog/2013-04-22-unit-tests-vs-parameterized-unit-tests.html/</link>
+      <pubDate>Mon, 22 Apr 2013 17:17:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2013-04-22-unit-tests-vs-parameterized-unit-tests.html/</guid>
+      <description>Unit Tests Using the conventions of NUnit unit tests as test methods contained in test classes. A parameterless method decorated with a custom attribute like [TestMethod] is a test method. Usually, each unit test explores a particular aspect of the behavior of the class-under-test.
+Here is a unit test written in C# that adds an element to a .NET ArrayList instance. The test first creates a new array list, where the parameter to the constructor is the initial capacity, then adds a new object to the array list, and finally checks that the addition was correctly performed by verifying that a subsequent index lookup operation returns the new object.</description>
+    </item>
+    
+  </channel>
+</rss>

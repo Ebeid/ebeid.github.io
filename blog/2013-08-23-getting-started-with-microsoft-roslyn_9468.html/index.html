@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Syntax Modification using Microsoft Roslyn</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-08-23-getting-started-with-microsoft-roslyn_9468.html/">Syntax Modification using Microsoft Roslyn</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          August 23, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Microsoft Roslyn</span>
+            
+            <span class="label label-success">Syntax Trees</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>In the previous two posts we just used the analysis capabilities of
+Microsoft
+<a href="http://msdn.microsoft.com/en-us/vstudio/roslyn.aspx" title="Microsoft® “Roslyn” CTP">Roslyn</a>.
+In other words, we only get information about the code under inspection,
+we never changed it. In this post we going to change the code through
+Roslyn.</p>
+<p>Before we start we need to highlight that data structures that represent
+code under inspection in Roslyn APIs are immutable. This means that it
+cannot be changed after they are created (in order to safely share them
+between tools). This applies to syntax trees, compilations, symbols,
+semantic models, and every other data structure in the Roslyn API.
+Instead of modification, new objects are created based on specified
+differences to the old ones.</p>
+<h3 id="creating-and-modifying-trees">Creating and Modifying Trees</h3>
+<p>We used <em>SyntaxTree</em> before to create syntax trees from a code snippet.
+For creating a syntax tree bit-by-bit, you have to compose syntax nodes
+hierarchically in a bottom-up fashion. To create <em>SyntaxNodes</em> you must
+use the <em>Syntax</em> class factory methods. For each kind of node, token, or
+trivia there is a factory method which can be used to create an instance
+of that type.</p>
+<p>In the following example we going to replace a using directive by a new
+one we create.</p>
+<pre><code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Roslyn.Compilers;
+using Roslyn.Compilers.CSharp;
+using Roslyn.Services;
+using Roslyn.Services.CSharp;
+
+namespace RoslynDemo4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SyntaxTree tree = SyntaxTree.ParseText(
+@&quot;using System;
+using System.Collections;
+using System.Linq;
+using System.Text;
+ 
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(&quot;&quot;Hello, World!&quot;&quot;);
+        }
+    }
+}&quot;);
+
+            var root = (CompilationUnitSyntax)tree.GetRoot();
+            // Get the old Using directive [using System.Collections;]
+            var oldUsing = root.Usings[1];
+
+            // Construct the new Using directive
+            NameSyntax name = Syntax.IdentifierName(&quot;System&quot;);
+            name = Syntax.QualifiedName(name, Syntax.IdentifierName(&quot;Collections&quot;));
+            name = Syntax.QualifiedName(name, Syntax.IdentifierName(&quot;Generic&quot;));
+            var newUsing = oldUsing.WithName(name);
+
+            // Replace the old Using directive by the new Using directive
+            root = root.ReplaceNode(oldUsing, newUsing);
+
+            SyntaxTree newTree = SyntaxTree.Create(root);
+            Console.WriteLine(newTree.ToString());
+            Console.ReadLine();
+        }
+    }
+}
+</code></pre>
+<p><em>NameSyntax</em> is the base class for the following names that can appear
+in C# code:</p>
+<ul>
+<li><em>IdentifierNameSyntax</em> which represents simple single identifier
+names like <strong>System</strong> and <em>Roslyn</em></li>
+<li><em>GenericNameSyntax</em> which represents a generic type or method name
+such as <em>List&lt;int&gt;</em></li>
+<li><em>QualifiedNameSyntax</em> which represents a qualified name of the form
+&lt;left-name&gt;.&lt;right-identifier-or-generic-name&gt; such as
+<em>System.IO</em></li>
+</ul>
+<p>In our example we constructed a NameSyntax to represent
+System.Collections.Generic incrementally. Then we used the ReplaceNode
+method to replace the <em>using System.Collections;</em> directive with the
+<em>using System.Collections.Generic;</em> directive. We then constructed a new
+SyntaxTree using the modified root and print it. You should see the
+modified HelloWorld
+program:<a href="http://lh4.ggpht.com/-t0gfBkNjX-M/Uhd4BF8o72I/AAAAAAAAB6A/ec4zCJYhKtQ/s1600-h/fileFProjectsRoslynDemo4RoslynDemo4binDebugRoslynDemo4.EXE_2013-08-23_09-38-56%25255B4%25255D.png"><!-- raw HTML omitted --></a></p>
+<h3 id="modifying-syntax-trees-using-syntaxrewriters">Modifying Syntax Trees using SyntaxRewriters</h3>
+<p>In a previous
+<a href="http://ebeid-soliman.blogspot.com/2013/08/getting-started-with-microsoft-roslyn.html" title="Getting started with Microsoft Roslyn Syntax Analysis">post</a>
+we implemented our <em>SyntaxWalker</em>. Now we going to use the same
+technique and implement our <em>SyntaxRewriter</em>. Both SyntaxWalker and
+SyntaxRewriter are subclasses of SyntaxVisitor which recursively visit
+every node in the syntax tree starting from the passed node. The
+<em>SyntaxRewriter</em> class can be used to apply a transformation to a
+specific type of <em>SyntaxNode</em>**.** It is also possible to apply a set of
+transformations to multiple types of *SyntaxNode* wherever they appear
+in a syntax tree. It uses <a href="http://en.wikipedia.org/wiki/Depth-first_search" title="Depth-first search [Wikipedia]">depth-first
+search</a>
+algorithm for SyntaxTree traversal.</p>
+<p>In the following example we will implement our own <em>SyntaxRewriter</em>
+which will replace all variable declaration types with the <em>var</em> type.
+Create a new Console application and add a new class myRewriter to it.
+Edit the myRewriter.cs to look like:</p>
+<pre><code>using System;
+using Roslyn.Compilers;
+using Roslyn.Compilers.CSharp;
+
+namespace RoslynDemo5
+{
+    class myRewriter : SyntaxRewriter
+    {
+        private readonly SemanticModel SemanticModel;
+
+        public myRewriter(SemanticModel semanticModel)
+        {
+            this.SemanticModel = semanticModel;
+        }
+
+        public override SyntaxNode VisitLocalDeclarationStatement(LocalDeclarationStatementSyntax node)
+        {
+            // To avoid the case of multiple variables in a single declaration like the following one
+            // Type variable1 = expression1,
+            //      variable2 = expression2;
+            if (node.Declaration.Variables.Count &gt; 1)
+            {
+                return node;
+            }
+
+            // To avoid the case of case of a declation without an initializer like the following
+            // Type variable;
+            if (node.Declaration.Variables[0].Initializer == null)
+            {
+                return node;
+            }
+            
+            // Get the first varaible in the declation
+            VariableDeclaratorSyntax declarator = node.Declaration.Variables.First(); 
+            // Get the Type used in the declaration
+            TypeSyntax variableTypeName = node.Declaration.Type;
+            // Bind the Type used in the declaration to a Symbol
+            TypeSymbol variableType = (TypeSymbol)SemanticModel.GetSymbolInfo(variableTypeName).Symbol;
+            // Get the whole intialization expression
+            TypeInfo initializerInfo = SemanticModel.GetTypeInfo(declarator.Initializer.Value);
+            if (variableType == initializerInfo.Type)
+            {
+                // Constructing a new Type with the same leading/trailing in the old type to maintain vertical whitespace and indentation
+                TypeSyntax varTypeName = Syntax.IdentifierName(&quot;var&quot;).
+                    WithLeadingTrivia(
+                    variableTypeName.GetLeadingTrivia()
+                    ).
+                    WithTrailingTrivia(
+                    variableTypeName.GetTrailingTrivia()
+                    );
+                // Do the replacement and return the new node
+                return node.ReplaceNode(variableTypeName, varTypeName);
+            }
+            else
+            {
+                return node;
+            }
+        }
+    }
+}
+</code></pre>
+<p>myRewriter class is simply inheriting from <em>SyntaxRewriter</em> class and
+implments the <em>VisitLocalDeclarationStatment()</em> method. This method is
+called by the <em>Visit</em> method on <em>SyntaxRewriter</em>, which recursively
+visits a node and each of its children. The
+<em>VisitLocalDeclarationStatment</em> method is called on local declaration
+statements only. It tokes the starting SyntaxNode, if you passed the
+tree root (as we will do) it will visit the the local declaration
+statements that exists in the whole program.</p>
+<p>Our rewriter takes the semantic model under inspection in the
+constructor.</p>
+<p>In the <em>VisitLocalDeclarationStatment</em> method we check the declaration
+statement to filter out the cases that are not within our interest. For
+these cases we return the node unchanged.</p>
+<p>For the cases we interested in, we retrieve the variable and the type
+used for its declaration. Get a symbol for the type and the whole
+initialization expression.</p>
+<p>Then we check that the type used in the declaration is the type used in
+the initialization to avoid the situations where the declaration may be
+casting the initializer expression to a base class or interface.
+Removing the explicit type in these cases would change the semantics of
+a program.</p>
+<p>Then we construct a new TypeSyntax representing the var type with any
+leading or trailing tivia (white spaces and tabs) to conserve the
+indentation. Then we replace the node and return the new node.</p>
+<p>Let’s go back to our Main method in the Program.cs file. In order to use
+the myRewriter class, edit the Main method to look like:</p>
+<pre><code> static void Main(string[] args)
+        {
+            // Create a test Compilation of our current project
+            Compilation test = CreateTestCompilation();
+
+            // Loop on each SyntaxTree in the Compilation
+            foreach (SyntaxTree sourceTree in test.SyntaxTrees)
+            {
+                // Get the tree SemanticModel
+                SemanticModel model = test.GetSemanticModel(sourceTree);
+                // intialize myRewriter using the tree SemanticModel
+                myRewriter rewriter = new myRewriter(model);
+                // put our rewriter into action
+                SyntaxNode newSource = rewriter.Visit(sourceTree.GetRoot());
+
+                if (newSource != sourceTree.GetRoot())
+                    Console.WriteLine(newSource.GetText().ToString());
+                Console.ReadLine();
+            }
+        }
+</code></pre>
+<p>Here we create a test <em>Compilation</em> using CreateTestCompilation method,
+which we will add soon. We then loop for each <em>SyntaxTree</em> in this test
+Compilation. For each SyntaxTree we get the <em>SemanticModel</em> and pass it
+to our myRewriter constructor. Then we call the <em>Visit()</em> method on the
+SyntaxTree root. This will cause our VisitLocalDeclarationStatement
+method to be called and do its syntax transformation task. If the new
+SyntaxTree is different than the old SyntaxTree, this means that we did
+syntax modifications and we print the new code.</p>
+<p>Now it add the following method to your code inside Program.cs.</p>
+<pre><code>private static Compilation CreateTestCompilation()
+        {
+            SyntaxTree programTree = SyntaxTree.ParseFile(@&quot;..\..\Program.cs&quot;); 
+            SyntaxTree rewriterTree = SyntaxTree.ParseFile(@&quot;..\..\myRewriter.cs&quot;);
+
+            List sourceTrees = new List();
+            sourceTrees.Add(programTree);
+            sourceTrees.Add(rewriterTree);
+
+            MetadataReference mscorlib = MetadataReference.CreateAssemblyReference(&quot;mscorlib&quot;);
+            MetadataReference roslynCompilers = MetadataReference.CreateAssemblyReference(&quot;Roslyn.Compilers&quot;);
+            MetadataReference csCompiler = MetadataReference.CreateAssemblyReference(&quot;Roslyn.Compilers.CSharp&quot;);
+
+            List references = new List();
+            references.Add(mscorlib);
+            references.Add(roslynCompilers);
+            references.Add(csCompiler);
+
+            return Compilation.Create(&quot;TransformationCS&quot;, null, sourceTrees, references);
+
+        }
+</code></pre>
+<p>This method basically creates two <em>SyntaxTree</em>s of our project code.
+Then make a list of the required references for these source code files.
+Then it sum it all in the factory method <em>Compilation.Create()</em> and
+return the resulted Compilation object.</p>
+<p>When you run the project, you will see a modified version of the
+Program.cs file. Notice that our myRewriter class replaced the type used
+in all variables declarations to be of type <em>var</em>.</p>
+<p><a href="http://lh6.ggpht.com/-L36L9BUDvEk/UhflwCwirMI/AAAAAAAAB6Y/EMlpBv0QsWU/s1600-h/fileFProjectsRoslynDemo5RoslynDemo5binDebugRoslynDemo5.EXE_2013-08-23_13-28-40%25255B4%25255D.png"><!-- raw HTML omitted --></a></p>
+<p>pressing Enter will bring the modified version of myRewriter.cs file,
+which have the same kind of change.</p>
+<p><a href="http://lh4.ggpht.com/-pNltonsaGUk/Uhflw8LN2eI/AAAAAAAAB6k/fqVyrh7nAvY/s1600-h/fileFProjectsRoslynDemo5RoslynDemo5binDebugRoslynDemo5.EXE_2013-08-23_17-33-15%25255B4%25255D.png"><!-- raw HTML omitted --></a></p>
+<p>We have used the Roslyn Compiler APIs to write our own <em>SyntaxRewriter</em>
+that searches all files in a C# project for certain syntactic pattern,
+analyzes the semantics of source code that matches that pattern, and
+transforms it.</p>
+<p>Now you can grab a paper and pencil, and start designing the next big
+thing in refactoring tools industry :)</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 22, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-22-getting-started-with-microsoft-roslyn_22.html/">Semantic Analysis using Microsoft Roslyn</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 20, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-20-getting-started-with-microsoft-roslyn/">Syntax Analysis using Microsoft Roslyn</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 19, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-19-overview-of-microsoft-roslyn-first.html/">Overview of Microsoft Roslyn – The first compiler-as-service product</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

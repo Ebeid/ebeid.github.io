@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Python Notes 12 : Network clients</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2009-05-15-python-notes-12-network-clients.html/">Python Notes 12 : Network clients</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          May 15, 2009
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>After we have explored the basics of network programming in brief in the
+<a href="http://ebeid-soliman.blogspot.com/2009/05/python-notes-11-introduction-to-network.html">previous
+post</a>,
+we will discuss network clients in more details in this post.</p>
+<p><strong>Understanding Sockets</strong><br>
+Sockets are an extension to the operating system&rsquo;s I/O system that
+enable communication between processes and machines. It can be treated
+the same as standard files, with the same interface methods so in many
+cases, a program need not know whether it&rsquo;s writing data to a file, the
+terminal, or a TCP connection. While many files are opened with the open
+() call, sockets are created with the socket () call and additional
+calls are needed to connect and activate them.</p>
+<p><strong>Creating Sockets</strong></p>
+<p>For a client program, creating a socket is generally a two-step process.</p>
+<ol>
+<li>Create the actual socket object.</li>
+<li>Connect the socket to the remote server.</li>
+</ol>
+<p>When you create a socket object, you need to tell the system two things:</p>
+<ul>
+<li>The communication type: the underlying protocol used to transmit
+data. Examples of protocols include IPv4 (current Internet
+standard), IPv6 (future Internet standard), IPX/ SPX (NetWare), and
+AFP (Apple file sharing). By far the most common is IPv4.</li>
+<li>The protocol family: defines how data is transmitted.<br>
+For Internet communications, which make up the bulk of this book,
+the communication type is almost always AF_INET (corresponding to
+IPv4). The protocol family is typically either:
+<ul>
+<li>SOCK_STREAM for TCP communications or</li>
+<li>SOCK_DGRAM for UDP communications</li>
+</ul>
+</li>
+</ul>
+<p>For a TCP connection, creating a socket generally uses<br>
+code like this:</p>
+<p>s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) To connect the
+socket, you&rsquo;ll generally need to provide a tuple containing the remote
+hostname or IP address and the remote port. Connecting a socket
+typically looks like this:<br>
+s.connect((&ldquo;<a href="http://www.example.com">www.example.com</a>&rdquo;, 80))</p>
+<p><strong>Finding the port number</strong></p>
+<p>Most operating systems ship with a list of well-known server port
+numbers which you can query. On windows systems, you can find this file
+at C:\Windows\System32\drivers\etc\services. To query this list,
+you need two parameters:</p>
+<ul>
+<li>A protocol name</li>
+<li>A port name.</li>
+</ul>
+<p>This query is like:</p>
+<blockquote>
+<p>&gt;&gt;&gt;print socket.getservbyname(‘ftp’,’tcp’)</p>
+</blockquote>
+<blockquote>
+<p>21</p>
+</blockquote>
+<p>You didn&rsquo;t have to know in advance that FTP uses port 80.</p>
+<p><strong>Getting Information from a Socket</strong><br>
+Once you&rsquo;ve established a socket connection, you can find out some
+useful information from it.</p>
+<p>s.getsockname() #Get your IP address and port number</p>
+<p>s.getpeername() #Get the remote machine IP address and port number</p>
+<p><strong>Socket Exceptions</strong></p>
+<p>Different network calls can raise different exceptions when network
+errors occur. Python&rsquo;s socket module actually defines four possible
+exceptions:</p>
+<ul>
+<li>socket.error for general I/O and communication problems.</li>
+<li>socket.gaierror for errors looking up address information</li>
+<li>socket.herror for other addressing errors.</li>
+<li>socket.timeout for handling timeouts that occur after settimeout()
+has been called on a socket.</li>
+</ul>
+<p><strong>Complete Example</strong></p>
+<p>The example program takes three command-line arguments: a host to which
+it will connect, a port number or name on the server, and a file to
+request from the server. The program will connect to the server, send a
+simple HTTP<br>
+request for the given filename, and display the result. Along the way,
+it exercises care to handle various types of potential errors.</p>
+<blockquote>
+<p>import socket, sys<br>
+host = sys.argv[l]<br>
+textport = sys.argv[2]<br>
+filename = sys.argv[3]<br>
+try:<br>
+    s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)<br>
+except socket.error, e: <br>
+    print &ldquo;Strange error creating socket: %s&rdquo; % e <br>
+    sys.exit(l)<br>
+    # Try parsing it as a numeric port number.<br>
+try:<br>
+    port = int(textport)<br>
+except ValueError:<br>
+    # That didn&rsquo;t work, so it&rsquo;s probably a protocol name.<br>
+    # Look it up instead,<br>
+try:<br>
+    port = socket.getservbyname(textport, &lsquo;tcp&rsquo;)<br>
+    except socket.error, e:<br>
+    print &ldquo;Couldn&rsquo;t find your port: %s&rdquo; % e<br>
+    sys.exit(i)</p>
+</blockquote>
+<blockquote>
+<p>try:<br>
+    s.connect((host, port))<br>
+except socket.gaierror, e:<br>
+    print &ldquo;Address-related error connecting to server: %s&rdquo; % e<br>
+    sys.exit(i)<br>
+except socket.error, e:<br>
+    print &ldquo;Connection error: %s&rdquo; % e<br>
+    sys.exit(l)<br>
+try:<br>
+    s.sendall(&ldquo;CET %s HTTP/1.0\r\n\r\n&rdquo; % filename)<br>
+except socket.error, e:<br>
+    print &ldquo;Error sending data: %s&rdquo; % e<br>
+    sys.exit(i)<br>
+while 1:<br>
+    try:<br>
+        buf = s.recvB048)<br>
+    except socket.error, e:<br>
+        print &ldquo;Error receiving data: %s&rdquo; % e<br>
+        sys.exit(l)<br>
+    if not len(buf):<br>
+        break<br>
+    sys.stdout.write(buf)</p>
+</blockquote>
+<p><strong>Using User Datagram Protocol</strong></p>
+<p>In UDP there is no sufficient control over how data is sent and
+received. Working with UDP clients differs than TCP clients in the
+following:</p>
+<ul>
+<li>When create the socket ask for SOCKDGRAM<br>
+instead of SOCKSTREAM; this indicates to the operating system that
+the socket will<br>
+be used for UDP instead of TCP communications.</li>
+<li>When call socket.getservbyname(), pass ‘udp’ instead of ‘tcp’.</li>
+</ul>
+<p>In this post we discussed network clients in a little bit depth. In the
+next post we will discuss network servers.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

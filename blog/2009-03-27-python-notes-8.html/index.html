@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Python Notes – 8 : Object-Oriented Basics</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2009-03-27-python-notes-8.html/">Python Notes – 8 : Object-Oriented Basics</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          March 27, 2009
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Python</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Welcome to our eighth note in our Python learning process. This note
+will talk about object oriented features in Python.</p>
+<h4 id="classes-and-objects">Classes and Objects</h4>
+<p>A class definition looks like this:</p>
+<blockquote>
+<p>class Point:</p>
+</blockquote>
+<blockquote>
+<p>    pass</p>
+</blockquote>
+<p>Class definitions can appear anywhere in a program, but they are usually
+near the beginning (after the import statements). By creating the Point
+class, we created a new type, also called Point. The members of this
+type are called instances of the type or objects. Creating a new
+instance is called instantiation. To instantiate a Point object, we call
+a function named Point:</p>
+<blockquote>
+<p>&gt;&gt;&gt; blank = Point()</p>
+</blockquote>
+<p>The variable blank is assigned a reference to a new Point object. A
+function like Point that creates new objects is called a constructor. If
+you tried to get the type of blank, you got instance:</p>
+<blockquote>
+<p>&gt;&gt;&gt; type(blank)</p>
+</blockquote>
+<blockquote>
+<p>&lt;type &lsquo;instance&rsquo;&gt;</p>
+</blockquote>
+<p>If you tried to print blank:</p>
+<blockquote>
+<p>&gt;&gt;&gt; print blank</p>
+</blockquote>
+<blockquote>
+<p>&lt;__main__.point instance at 0x01922AF8&gt;</p>
+</blockquote>
+<p>The result indicates that blank is an instance of the Point class and it
+was defined in __main__ . 0x01922AF8 is the unique identifier for
+this object, written in hexadecimal (base 16).</p>
+<h4 id="attributes">Attributes</h4>
+<p>We can add new data to an instance using dot notation:</p>
+<blockquote>
+<p>&gt;&gt;&gt; blank.x = 3.0</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; blank.y = 4.0</p>
+</blockquote>
+<p>These new data items called attributes.</p>
+<blockquote>
+<p>&gt;&gt;&gt; print blank.y</p>
+</blockquote>
+<blockquote>
+<p>4.0</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; x = blank.x</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; print x</p>
+</blockquote>
+<blockquote>
+<p>3.0</p>
+</blockquote>
+<h4 id="sameness">Sameness</h4>
+<p>To find out if two references refer to the same object, use the ==
+operator. For example:</p>
+<blockquote>
+<p>&gt;&gt;&gt; p1 = Point()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p1.x = 3</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p1.y = 4</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p2 = Point()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p2.x = 3</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p2.y = 4</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p1 == p2</p>
+</blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+<p>Even though p1 and p2 contain the same coordinates, they are not the
+same object. If we assign p1 to p2, then the two variables are aliases
+of the same object:</p>
+<blockquote>
+<p>&gt;&gt;&gt; p2 = p1</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p1 == p2</p>
+</blockquote>
+<blockquote>
+<p>1</p>
+</blockquote>
+<p>This type of equality is called <em>shallow equality</em> because it compares
+only the references, not the contents of the objects. To compare the
+contents of the objects - <em>deep equality</em> - we can write our own
+function to do that, like that:</p>
+<blockquote>
+<p>def samePoint(p1, p2) :</p>
+</blockquote>
+<blockquote>
+<p>    return (p1.x == p2.x) and (p1.y == p2.y)</p>
+</blockquote>
+<p>Now if we create two different objects that contain the same data, we
+can use samePoint to find out if they represent the same point.</p>
+<blockquote>
+<p>&gt;&gt;&gt; p1 = Point()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p1.x = 3</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p1.y = 4</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p2 = Point()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p2.x = 3</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p2.y = 4</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; samePoint(p1, p2)</p>
+</blockquote>
+<blockquote>
+<p>1</p>
+</blockquote>
+<h4 id="copying">Copying</h4>
+<p>Aliasing can make a program difficult to read because changes made in
+one place might have unexpected effects in another place. Copying an
+object is often an alternative to aliasing. The copy module contains a
+function called copy that can duplicate any object:</p>
+<blockquote>
+<p>&gt;&gt;&gt; import copy</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p1 = Point()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p1.x = 3</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p1.y = 4</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p2 = copy.copy(p1)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p1 == p2</p>
+</blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; samePoint(p1, p2)</p>
+</blockquote>
+<blockquote>
+<p>1</p>
+</blockquote>
+<p>Copy works fine for objects that doesn&rsquo;t contain any embedded objects.
+If the object contains references to other objects, Copy will copy the
+embedded references to the destination. This ends up that the both
+copies reference the same internal objects.</p>
+<p>You can use deepcopy which copies not only the object but also any
+embedded objects.</p>
+<blockquote>
+<p>&gt;&gt;&gt; b2 = copy.deepcopy(b1)</p>
+</blockquote>
+<p>Now b1 and b2 are completely separate objects.</p>
+<h4 id="the-initialization-method">The initialization method</h4>
+<p>The initialization method is a special method that is invoked when an
+object is created. The name of this method is __init__.</p>
+<blockquote>
+<p>class point:</p>
+</blockquote>
+<blockquote>
+<p>    def __init__(self, x = 0, y = 0):</p>
+</blockquote>
+<blockquote>
+<p>        Self.x = x</p>
+</blockquote>
+<blockquote>
+<p>        Slef.y = y</p>
+</blockquote>
+<p>When we invoke the point constructor, the arguments we provide are
+passed along to init:</p>
+<blockquote>
+<p>&gt;&gt;&gt; first = point(5,7)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; first.x</p>
+</blockquote>
+<blockquote>
+<p>5</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; first.y</p>
+</blockquote>
+<blockquote>
+<p>7</p>
+</blockquote>
+<p>Because the parameters are optional, we can omit them:</p>
+<blockquote>
+<p>&gt;&gt;&gt; second = point()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; second.x</p>
+</blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; second.y</p>
+</blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+<p>We can also provide a subset of the parameters by naming them
+explicitly:</p>
+<p>&gt;&gt;&gt; third = point(y=10)</p>
+<blockquote>
+<p>&gt;&gt;&gt; third.x</p>
+</blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; third.y</p>
+</blockquote>
+<blockquote>
+<p>10</p>
+</blockquote>
+<h4 id="the-__str__-method">The __str__ method</h4>
+<p>The __str__ method of any class is called by the Python in any
+operation that requires the class instance to be converted to string.
+Operations like that are print. Syntax like that:</p>
+<blockquote>
+<p>class xyz:</p>
+</blockquote>
+<blockquote>
+<p>    def __str__(self):</p>
+</blockquote>
+<blockquote>
+<p>        return &ldquo;Our class xyz&rdquo;</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; a = xyz()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; a</p>
+</blockquote>
+<blockquote>
+<p>&lt;__main__.xyz instance at 0x02627300&gt;</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; print y</p>
+</blockquote>
+<blockquote>
+<p>Our class xyz</p>
+</blockquote>
+<h4 id="instances-as-parameters">Instances as parameters</h4>
+<p>You can pass an instance as a parameter in the usual way. For example:</p>
+<blockquote>
+<p>def printPoint(p):</p>
+</blockquote>
+<blockquote>
+<p>    print &lsquo;(&rsquo; + str(p.x) + &lsquo;, ' + str(p.y) + &lsquo;)&rsquo;</p>
+</blockquote>
+<h4 id="instances-as-return-values">Instances as return values</h4>
+<p>Functions can return instances. For example:</p>
+<blockquote>
+<p>def sumPoints(A,B)</p>
+</blockquote>
+<blockquote>
+<p>    Z = Point ()</p>
+</blockquote>
+<blockquote>
+<p>    Z.x = A.x + B.x</p>
+</blockquote>
+<blockquote>
+<p>    Z.y = A.y + B.y</p>
+</blockquote>
+<blockquote>
+<p>    return Z</p>
+</blockquote>
+<h4 id="operator-overloading">Operator overloading</h4>
+<p>Operator overloading means changing the definition and behavior of the
+built-in operators when they are applied to user-defined types. For
+example, to override the addition operator + , we provide a method named
+__add__ in our point class :</p>
+<blockquote>
+<p>class Point:</p>
+<p>    def __add__(self, other):</p>
+</blockquote>
+<blockquote>
+<p>        return Point(self.x + other.x, self.y + other.y)</p>
+</blockquote>
+<p>the first parameter is the object on which the method is invoked. The
+second parameter is conveniently named other to distinguish it from
+self. Now, when we apply the + operator to Point objects, Python invokes
+add :</p>
+<blockquote>
+<p>&gt;&gt;&gt; p1 = Point(3, 4)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p2 = Point(5, 7)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; p3 = p1 + p2</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; print p3</p>
+</blockquote>
+<blockquote>
+<p>(8, 11)</p>
+</blockquote>
+<p>The expression p1 + p2 is equivalent to p1. add (p2), but obviously more
+elegant. You can change the behavior of many operators through
+overloading their respective functions, which are available at
+<a href="http://www.python.org/doc/2.2/ref/numeric-types.html">http://www.python.org/doc/2.2/ref/numeric-types.html</a></p>
+<h4 id="inheritance">Inheritance</h4>
+<p>Inheritance is the ability to define a new class that is a modified
+version of an existing class. The new class inherits all of the methods
+of the existing class. The new class may be called child class or
+subclass. The syntax is like:</p>
+<blockquote>
+<p>class class1(object):</p>
+</blockquote>
+<blockquote>
+<p>    K = 7</p>
+</blockquote>
+<blockquote>
+<p>    def __init__(self, color='green&rsquo;):</p>
+</blockquote>
+<blockquote>
+<p>        Self.color = color</p>
+</blockquote>
+<blockquote>
+<p>    def Hello1(self):</p>
+</blockquote>
+<blockquote>
+<p>        Print &ldquo;Hello from class1&rdquo;</p>
+</blockquote>
+<blockquote>
+<p>    def printColor(self):</p>
+</blockquote>
+<blockquote>
+<p>        print &ldquo;preferred &ldquo;, self.color</p>
+</blockquote>
+<blockquote>
+<p>class class2(class1):</p>
+</blockquote>
+<blockquote>
+<p>    def Hello2(self):</p>
+</blockquote>
+<blockquote>
+<p>    print &ldquo;Hello from class2&rdquo;</p>
+</blockquote>
+<blockquote>
+<p>    print self.k</p>
+</blockquote>
+<p>Here class2 is the child of class1.</p>
+<blockquote>
+<p>&gt;&gt;&gt; c1 = class1(&lsquo;blue&rsquo;)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; c2 = class2(&lsquo;red&rsquo;)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; c1.Hello1()</p>
+</blockquote>
+<blockquote>
+<p>Hello from class1</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; c2.Hello2()</p>
+</blockquote>
+<blockquote>
+<p>Hello from class2</p>
+</blockquote>
+<blockquote>
+<p>7</p>
+</blockquote>
+<p>Child class can access parent class methods</p>
+<blockquote>
+<p>&gt;&gt;&gt; c2.Hello1()</p>
+</blockquote>
+<blockquote>
+<p>Hello from class1</p>
+<p>The parent constructor called automatically for Childs, as following:</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; c1.printColor()</p>
+</blockquote>
+<blockquote>
+<p>preferred blue</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; c2.printColor()</p>
+</blockquote>
+<blockquote>
+<p>preferred red</p>
+</blockquote>
+<p>You can check for class methods, attributes using hasattr method:</p>
+<blockquote>
+<p>if hasattr(class1, &ldquo;Hello2&rdquo;):</p>
+</blockquote>
+<blockquote>
+<p>    print c1.Hello2()</p>
+</blockquote>
+<blockquote>
+<p>else:</p>
+</blockquote>
+<blockquote>
+<p>    print &ldquo;Class1 does not contain method Hello2()&rdquo;</p>
+<p>Class1 does not contain method Hello2()</p>
+</blockquote>
+<p>To check the inheritance relation between two class :</p>
+<blockquote>
+<p>if issubclass(class2, class1)</p>
+</blockquote>
+<blockquote>
+<p>     Print &ldquo;Class2 is a subclass of Class1”</p>
+</blockquote>
+<p>In this note we tried to cover as much as we can of the Python object
+oriented features. We give it a more advanced note in the future.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 15, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-08-15-using-python-scripts-with-iis-7.html/">Using Python Scripts with IIS 7</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 28, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-03-28-python-notes-10.html/">Python Notes – 10 : Threading</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 27, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-03-27-python-notes-9.html/">Python Notes – 9 : Serialization</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

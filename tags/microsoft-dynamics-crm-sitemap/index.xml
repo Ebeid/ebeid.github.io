@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microsoft Dynamics CRM SiteMap on Ebeid ElSayed</title>
+    <link>https://ebeid.github.io/tags/microsoft-dynamics-crm-sitemap/</link>
+    <description>Recent content in Microsoft Dynamics CRM SiteMap on Ebeid ElSayed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 11 Mar 2012 06:10:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://ebeid.github.io/tags/microsoft-dynamics-crm-sitemap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Microsoft Dynamics CRM 2011 for Developers | Web Resources Part 1</title>
+      <link>https://ebeid.github.io/blog/2012-03-11-microsoft-dynamics-crm-2011-for.html/</link>
+      <pubDate>Sun, 11 Mar 2012 06:10:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2012-03-11-microsoft-dynamics-crm-2011-for.html/</guid>
+      <description>Contents  Introduction Types of Web Resources Where can Web Resources be Used ? Web Resources Limitations Web Resources Management Using Web Resources on a Form Using Web Resources from the Form Navigation  Using Web Resources on a Dashboard Using Web Resources Direct from SiteMap  Using Web Resources as a Solution Configuration Page Referencing Other Web Resources  Introduction
+Web resources are a new feature of Dynamics CRM 2011 that allows storing of client side content in the CRM server database in order to be used for extending the Dynamics CRM web application.</description>
+    </item>
+    
+  </channel>
+</rss>

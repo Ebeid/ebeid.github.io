@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Ebeid ElSayed</title>
+    <link>https://ebeid.github.io/tags/python/</link>
+    <description>Recent content in Python on Ebeid ElSayed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 15 Aug 2009 00:31:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://ebeid.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Python Scripts with IIS 7</title>
+      <link>https://ebeid.github.io/blog/2009-08-15-using-python-scripts-with-iis-7.html/</link>
+      <pubDate>Sat, 15 Aug 2009 00:31:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2009-08-15-using-python-scripts-with-iis-7.html/</guid>
+      <description>Here are the steps you should make if you want to use python scripts on IIS 7:
+ Please make sure Python is installed properly or refer to Python Notes – 1 : Setup for installation steps. Make sure CGI module is installed in IIS 7.  Control Panel -&amp;gt; Programs -&amp;gt; Program and Features -&amp;gt; Turn Windows features on and off -&amp;gt; Internet Information Services -&amp;gt; World Wide Web Services -&amp;gt; Application Development Features -&amp;gt; CGI module (Ensure that it is selected).</description>
+    </item>
+    
+    <item>
+      <title>Python Notes – 10 : Threading</title>
+      <link>https://ebeid.github.io/blog/2009-03-28-python-notes-10.html/</link>
+      <pubDate>Sat, 28 Mar 2009 07:55:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2009-03-28-python-notes-10.html/</guid>
+      <description>Welcome to our tenth note in the Python learning process. In this note we will talk about threading, threads communication and synchronization.
+Threads basics A running program is called a &amp;ldquo;process&amp;rdquo;. Each process has memory, list of open files, stack, program counter, etc…. Normally, a process executes statements in a single sequence of control-flow.
+The following commands create an entirely new process: fork(),system(), popen(), etc… This child process runs independently of the parent.</description>
+    </item>
+    
+    <item>
+      <title>Python Notes – 9 : Serialization</title>
+      <link>https://ebeid.github.io/blog/2009-03-27-python-notes-9.html/</link>
+      <pubDate>Fri, 27 Mar 2009 01:53:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2009-03-27-python-notes-9.html/</guid>
+      <description>Welcome to our ninth note in our Python learning process. We talked previously about files and how to handle it but we talked about writing and reading only the primitive data types as integers and strings. We also talked about objects and classes. Now, what if we want to write a compound data type or a complex object to a file. This note will talk about writing objects to files, which is called object serialization.</description>
+    </item>
+    
+    <item>
+      <title>Python Notes – 8 : Object-Oriented Basics</title>
+      <link>https://ebeid.github.io/blog/2009-03-27-python-notes-8.html/</link>
+      <pubDate>Fri, 27 Mar 2009 01:51:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2009-03-27-python-notes-8.html/</guid>
+      <description>Welcome to our eighth note in our Python learning process. This note will talk about object oriented features in Python.
+Classes and Objects A class definition looks like this:
+ class Point:
+   pass
+ Class definitions can appear anywhere in a program, but they are usually near the beginning (after the import statements). By creating the Point class, we created a new type, also called Point. The members of this type are called instances of the type or objects.</description>
+    </item>
+    
+    <item>
+      <title>Python Notes – 7 : Files &amp; directories</title>
+      <link>https://ebeid.github.io/blog/2009-03-23-python-notes-7.html/</link>
+      <pubDate>Mon, 23 Mar 2009 10:12:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2009-03-23-python-notes-7.html/</guid>
+      <description>Welcome to our seventh note in our Python learning process. This note will talk specifically about files, directories, and exceptions.
+Files Opening a file creates a file object. Syntax is like that:
+ &amp;gt;&amp;gt;&amp;gt; f = open(&amp;ldquo;test.dat&amp;rdquo;,&amp;ldquo;w&amp;rdquo;)  &amp;gt;&amp;gt;&amp;gt; print f  &amp;lt;open file &amp;lsquo;test.dat&amp;rsquo;, mode &amp;lsquo;w&amp;rsquo; at fe820&amp;gt; The first parameter to open is the file name, the second parameter is the mode. Modes are: w for write, r for read.</description>
+    </item>
+    
+    <item>
+      <title>Python Notes – 6 : Tuples &amp; Dictionaries</title>
+      <link>https://ebeid.github.io/blog/2009-03-23-python-notes-6.html/</link>
+      <pubDate>Mon, 23 Mar 2009 09:06:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2009-03-23-python-notes-6.html/</guid>
+      <description>Welcome to our sixth note in our Python learning process. In this note we will talk about tuples and dictionaries.
+Tuples Tuples are similar to lists but its elements can&amp;rsquo;t be modified. Syntactically, a tuple is a comma-separated list of values:
+ &amp;gt;&amp;gt;&amp;gt; tuple = &amp;lsquo;a&amp;rsquo;, &amp;lsquo;b&amp;rsquo;, &amp;lsquo;c&amp;rsquo;, &amp;lsquo;d&amp;rsquo;, &amp;lsquo;e&amp;rsquo;
+ Although it is not necessary, it is conventional to enclose tuples in parentheses:
+ &amp;gt;&amp;gt;&amp;gt; tuple = (&amp;lsquo;a&amp;rsquo;, &amp;lsquo;b&amp;rsquo;, &amp;lsquo;c&amp;rsquo;, &amp;lsquo;d&amp;rsquo;, &amp;lsquo;e&amp;rsquo;)</description>
+    </item>
+    
+    <item>
+      <title>Python Notes – 5 : Objects &amp; Values</title>
+      <link>https://ebeid.github.io/blog/2009-03-23-python-notes-5.html/</link>
+      <pubDate>Mon, 23 Mar 2009 07:49:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2009-03-23-python-notes-5.html/</guid>
+      <description>Welcome to our fifth note in our Python learning process. In this note we will talk about one of the core concepts of the Python language semantics .
+Objects and Values
+An object is something a variable can refer to. Every object has a unique identifier, which we can obtain with the id function.
+ &amp;gt;&amp;gt;&amp;gt; a = &amp;ldquo;banana&amp;quot;  &amp;gt;&amp;gt;&amp;gt; b = &amp;ldquo;banana&amp;quot;  &amp;gt;&amp;gt;&amp;gt; id(a)  135044008  &amp;gt;&amp;gt;&amp;gt; id(b)  135044008 Interestingly, lists behave differently.</description>
+    </item>
+    
+    <item>
+      <title>Python Notes – 3 : Control Statements</title>
+      <link>https://ebeid.github.io/blog/2009-03-19-python-notes-3.html/</link>
+      <pubDate>Thu, 19 Mar 2009 08:59:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2009-03-19-python-notes-3.html/</guid>
+      <description>Welcome to our third note in our Python learning process. In this note we will talk about conditional statements, iteration and keyboard input.
+Conditional Statements The normal flow of statements execution is sequential where the interpreter executes the statements in the same sequence that it appears in the script. If your program logic requires a different flow than the that, you should use conditional statements. The syntax looks like:
+ if x%2 == 0:  print x, &amp;ldquo;is even&amp;quot;  else:  print x, &amp;ldquo;is odd&amp;quot; The statement indentation is the only statement scope identifier.</description>
+    </item>
+    
+    <item>
+      <title>Python Notes – 2 : Variables, Statements, Expressions, Operators, and Functions</title>
+      <link>https://ebeid.github.io/blog/2009-03-18-python-notes-2.html/</link>
+      <pubDate>Wed, 18 Mar 2009 15:25:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2009-03-18-python-notes-2.html/</guid>
+      <description>Welcome to our second note in our Python learning process. In this note we will talk about variables, statements, expressions, operators, comments, and functions. These are the very basic building blocks of you programs whatever its final size
+Variables The assignment statement creates new variables and gives them values
+ &amp;gt;&amp;gt;&amp;gt; message = &amp;ldquo;What&amp;rsquo;s up, Doc?&amp;rdquo;
+  &amp;gt;&amp;gt;&amp;gt; n = 17
+  &amp;gt;&amp;gt;&amp;gt; pi = 3.14159
+ Python is a dynamically typed language.</description>
+    </item>
+    
+    <item>
+      <title>Python Notes – 1 : Setup</title>
+      <link>https://ebeid.github.io/blog/2009-03-18-python-notes-1.html/</link>
+      <pubDate>Wed, 18 Mar 2009 08:55:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2009-03-18-python-notes-1.html/</guid>
+      <description>I write this notes about Python during my learning process of it. I&amp;rsquo;m not an expert in Python. I&amp;rsquo;m just writing this notes while I learn Python aiming to help others who are learning it too. Never hesitate to comment on anything you want.
+Origins of Python  Developed by Guido van Rossum. Derived from ABC, a teaching language that was developed in 1980s.  Why Pyhton ?  Python code is pretty simple, compact and easy to learn.</description>
+    </item>
+    
+  </channel>
+</rss>

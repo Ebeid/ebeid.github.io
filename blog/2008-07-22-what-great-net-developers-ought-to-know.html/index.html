@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>What Great .NET Developers Ought To Know Answers</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2008-07-22-what-great-net-developers-ought-to-know.html/">What Great .NET Developers Ought To Know Answers</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          July 22, 2008
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <h1 id="everyone-who-writes-code">Everyone who writes code</h1>
+<ul>
+<li>Describe the difference between a Thread and a Process?</li>
+<li>What is a Windows Service and how does its lifecycle differ from a
+&ldquo;standard&rdquo; EXE?</li>
+<li>What is the maximum amount of memory any single process on Windows
+can address? Is this different than the maximum virtual memory for
+the system? How would this affect a system design?</li>
+<li>What is the difference between an EXE and a DLL?</li>
+<li>What is strong-typing versus weak-typing? Which is preferred? Why?</li>
+<li>Corillian&rsquo;s product is a &ldquo;Component Container.&rdquo; Name at least 3
+component containers that ship now with the Windows Server Family.</li>
+<li>What is a PID? How is it useful when troubleshooting a system?</li>
+<li>How many processes can listen on a single TCP/IP port?</li>
+<li>What is the GAC? What problem does it solve ?</li>
+</ul>
+<p><strong>Mid-Level .NET Developer</strong></p>
+<ul>
+<li>Describe the difference between Interface-oriented, Object-oriented
+and Aspect-oriented programming.</li>
+<li>Describe what an Interface is and how it’s different from a Class.</li>
+<li>What is Reflection?</li>
+<li>What is the difference between XML Web Services using ASMX and .NET
+Remoting using SOAP?</li>
+<li>Are the type system represented by XmlSchema and the CLS isomorphic?</li>
+<li>Conceptually, what is the difference between early-binding and
+late-binding?</li>
+<li>Is using Assembly.Load a static reference or dynamic reference?</li>
+<li>When would using Assembly.LoadFrom or Assembly.LoadFile be
+appropriate?</li>
+<li>What is an Asssembly Qualified Name? Is it a filename? How is it
+different?</li>
+<li>Is this valid? Assembly.Load(&ldquo;foo.dll&rdquo;);</li>
+<li>How is a strongly-named assembly different from one that isn’t
+strongly-named?</li>
+<li>Can DateTimes be null?</li>
+<li>What is the JIT? What is NGEN? What are limitations and benefits of
+each?</li>
+<li>How does the generational garbage collector in the .NET CLR manage
+object lifetime?</li>
+<li>What is non-deterministic finalization?</li>
+<li>What is the difference between Finalize() and Dispose()?</li>
+<li>How is the using() pattern useful? What is IDisposable? How does it
+support deterministic finalization?</li>
+<li>What does this useful command line do? tasklist /m &ldquo;mscor*&rdquo;</li>
+<li>What is the difference between in-proc and out-of-proc?</li>
+<li>What technology enables out-of-proc communication in .NET?</li>
+<li>When you’re running a component within ASP.NET, what process is it
+running within on Windows XP? Windows 2000? Windows 2003?</li>
+</ul>
+<p><strong>Senior Developers/Architects</strong></p>
+<ul>
+<li>What’s wrong with a line like this? DateTime.Parse(myString);</li>
+<li>What are PDBs? Where must they be located for debugging to work?</li>
+<li>What is cyclomatic complexity and why is it important?</li>
+<li>Write a standard lock() plus “double check” to create a critical
+section around a variable access.</li>
+<li>What is FullTrust? Do GAC’ed assemblies have FullTrust?</li>
+<li>What benefit does your code receive if you decorate it with
+attributes demanding specific Security permissions?</li>
+<li>What does this do? gacutil /l find /i &ldquo;Corillian&rdquo;</li>
+<li>What does this do? sn -t foo.dll</li>
+<li>What ports must be open for DCOM over a firewall? What is the
+purpose of Port 135?</li>
+<li>Contrast OOP and SOA. What are tenets of each?</li>
+<li>How does the XmlSerializer work? What ACL permissions does a process
+using it require?</li>
+<li>Why is catch(Exception) almost always a bad idea?</li>
+<li>What is the difference between Debug.Write and Trace.Write? When
+should each be used?</li>
+<li>What is the difference between a Debug and Release build? Is there a
+significant speed difference? Why or why not?</li>
+<li>Does JITting occur per-assembly or per-method? How does this affect
+the working set?</li>
+<li>Contrast the use of an abstract base class against an interface?</li>
+<li>What is the difference between a.Equals(b) and a == b?</li>
+<li>In the context of a comparison, what is object identity versus
+object equivalence?</li>
+<li>How would one do a deep copy in .NET?</li>
+<li>Explain current thinking around IClonable.</li>
+<li>What is boxing?</li>
+<li>Is string a value type or a reference type?</li>
+<li>What is the significance of the &ldquo;PropertySpecified&rdquo; pattern used by
+the XmlSerializer? What problem does it attempt to solve?</li>
+<li>Why are out parameters a bad idea in .NET? Are they?</li>
+<li>Can attributes be placed on specific parameters to a method? Why is
+this useful?</li>
+</ul>
+<p><strong>C# Component Developers</strong></p>
+<ul>
+<li>Juxtapose the use of override with new. What is shadowing?</li>
+<li>Explain the use of virtual, sealed, override, and abstract.</li>
+<li>Explain the importance and use of each component of this string:
+Foo.Bar, Version=2.0.205.0, Culture=neutral,
+PublicKeyToken=593777ae2d274679d</li>
+<li>Explain the differences between public, protected, private and
+internal.</li>
+<li>What benefit do you get from using a Primary Interop Assembly (PIA)?</li>
+<li>By what mechanism does NUnit know what methods to test?</li>
+<li>What is the difference between:</li>
+</ul>
+<p>catch(Exception e){throw e;}</p>
+<p>and</p>
+<p>catch(Exception e){throw;}</p>
+<ul>
+<li>What is the difference between typeof(foo) and myFoo.GetType()?</li>
+<li>Explain what’s happening in the first constructor:</li>
+</ul>
+<p>public class c</p>
+<p>{</p>
+<p>public c(string a) : this() {;};</p>
+<p>public c() {;}</p>
+<p>}</p>
+<p>How is this construct useful?</p>
+<ul>
+<li>What is this? Can this be used within a static method?</li>
+</ul>
+<p><strong>ASP.NET (UI) Developers</strong></p>
+<ul>
+<li>Describe how a browser-based Form POST becomes a Server-Side event
+like Button1_OnClick.</li>
+<li>What is a PostBack?</li>
+<li>What is ViewState? How is it encoded? Is it encrypted? Who uses
+ViewState?</li>
+<li>What is the element and what two ASP.NET technologies is it used
+for?</li>
+<li>What three Session State providers are available in ASP.NET 1.1?
+What are the pros and cons of each?</li>
+<li>What is Web Gardening? How would using it affect a design?</li>
+<li>Given one ASP.NET application, how many application objects does it
+have on a single proc box? A dual? A dual with Web Gardening
+enabled? How would this affect a design?</li>
+<li>Are threads reused in ASP.NET between reqeusts? Does every
+HttpRequest get its own thread? Should you use Thread Local storage
+with ASP.NET?</li>
+<li>Is the [ThreadStatic] attribute useful in ASP.NET? Are there side
+effects? Good or bad?</li>
+<li>Give an example of how using an HttpHandler could simplify an
+existing design that serves Check Images from an .aspx page.</li>
+<li>What kinds of events can an HttpModule subscribe to? What influence
+can they have on an implementation? What can be done without
+recompiling the ASP.NET Application?</li>
+<li>Describe ways to present an arbitrary endpoint (URL) and route
+requests to that endpoint to ASP.NET.</li>
+<li>Explain how cookies work. Give an example of Cookie abuse.</li>
+<li>Explain the importance of HttpRequest.ValidateInput()?</li>
+<li>What kind of data is passed via HTTP Headers?</li>
+<li>Juxtapose the HTTP verbs GET and POST. What is HEAD?</li>
+<li>Name and describe at least a half dozen HTTP Status Codes and what
+they express to the requesting client.</li>
+<li>How does if-not-modified-since work? How can it be programmatically
+implemented with ASP.NET?Explain &lt;@OutputCache%&gt; and the usage
+of VaryByParam, VaryByHeader.</li>
+<li>How does VaryByCustom work?</li>
+<li>How would one implement ASP.NET HTML output caching, caching
+outgoing versions of pages generated via all values of q= except
+where q=5 (as in <a href="http://localhost/page.aspx?q=5">http://localhost/page.aspx?q=5</a>)?</li>
+</ul>
+<p><strong>Developers using XML</strong></p>
+<ul>
+<li>What is the purpose of XML Namespaces?</li>
+<li>When is the DOM appropriate for use? When is it not? Are there size
+limitations?</li>
+<li>What is the WS-I Basic Profile and why is it important?</li>
+<li>Write a small XML document that uses a default namespace and a
+qualified (prefixed) namespace. Include elements from both
+namespace.</li>
+<li>What is the one fundamental difference between Elements and Attri
+butes?</li>
+<li>What is the difference between Well-Formed XML and Valid XML?</li>
+<li>How would you validate XML using .NET?</li>
+<li>Why is this almost always a bad idea? When is it a good idea?
+myXmlDocument.SelectNodes(&quot;//mynode&rdquo;);</li>
+<li>Describe the difference between pull-style parsers (XmlReader) and
+eventing-readers (Sax)</li>
+<li>What is the difference between XPathDocument and XmlDocument?
+Describe situations where one should be used over the other.</li>
+<li>What is the difference between an XML &ldquo;Fragment&rdquo; and an XML
+&ldquo;Document.&rdquo;</li>
+<li>What does it meant to say “the canonical” form of XML?</li>
+<li>Why is the XML InfoSet specification different from the Xml DOM?
+What does the InfoSet attempt to solve?</li>
+<li>Contrast DTDs versus XSDs. What are their similarities and
+differences? Which is preferred and why?</li>
+<li>Does System.Xml support DTDs? How?</li>
+<li>Can any XML Schema be represented as an object graph? Vice versa?</li>
+</ul>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

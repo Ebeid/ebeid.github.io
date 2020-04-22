@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>SQL Server Metadata</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2010-04-11-sql-server-metadata.html/">SQL Server Metadata</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          April 11, 2010
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">SQL</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Many times when you need to troubleshoot an SQL Server issue, you will
+need to collect metadata about the server, databases, and server
+resources in general. Here we will briefly review the mechanisms to
+collect these metadata.</p>
+<h3 id="system-base-tables">System Base Tables</h3>
+<p>SQL server maintains a set of tables that store information about all
+the objects, data types, constraints, configuration options, and
+resources available to SQL Server. These tables are called the <em>system
+base tables.</em></p>
+<ul>
+<li>Some of these tables exist in <em>master</em> database –&gt; contain
+system-wide information.</li>
+<li>Some exist in every database –&gt; contain database specific
+information.</li>
+</ul>
+<p>You can access these tables names only if you are logged in as a system
+administrator. You can access through:</p>
+<ul>
+<li>
+<p>Run sp_help</p>
+</li>
+<li>
+<p>Run</p>
+<pre><code>use master; 
+
+select name from sys.objects 
+
+where type_desc = 'SYSTEM_TABLE';
+</code></pre>
+</li>
+</ul>
+<p>If you tried to select data from any of these system tables, you will
+got 208 error indicating that the object name is invalid. The only way
+to access these data is through <a href="http://ebeid-soliman.blogspot.com/2010/04/sql-server-dedicated-administrator.html" title="dedicated administrator connection (DAC)">dedicated administrator connection
+(DAC)</a>.</p>
+<p>Keep in mind that these system base tables are used for internal
+purposes only within the database engine and are not intended for
+general use. They are subject to change and compatibility is not
+guaranteed.</p>
+<h3 id="compatibility-views">Compatibility Views</h3>
+<p>Although it is possible to see data in the system tables in versions of
+SQL Server before 2005, it wasn’t recommended. For compatibility, SQL
+server 2005 and 2008 provided a set of <a href="http://msdn.microsoft.com/en-us/library/ms187376.aspx" title="Compatibility Views on MSDN">compatibility
+views</a>
+that allow access to a subset of the SQL server 2000 system tables.
+These views should be used for backward compatibility only; going
+forward, you should use catalog views.</p>
+<h3 id="catalog-views">Catalog Views</h3>
+<p>SQL Server 2005 introduced a set of catalog views as a general interface
+to the persisted system metadata. All the catalog views are in the sys
+schema, and you must reference the schema name when access the objects
+like:</p>
+<pre><code>select name from sys.databases;
+</code></pre>
+<p>For a complete list of catalog views categories, please consult
+<a href="http://msdn.microsoft.com/en-us/library/ms174365.aspx.">http://msdn.microsoft.com/en-us/library/ms174365.aspx.</a></p>
+<h3 id="information-schema-views">Information Schema Views</h3>
+<p>The information schema views comply with SQL-92 standard and all of it
+are in a schema called INFORMATION_SCHEMA. If you need to write a
+portable application that access the metadata you should use these
+views. This compliance come with the price of limited provided
+information (it provide the standard defined information only). If you
+need metadata about non-standard features, use catalog views.</p>
+<p>For a complete list of Information schema views and its closest map to
+catalog views, please consult
+<a href="http://msdn.microsoft.com/en-us/library/ms186778.aspx">http://msdn.microsoft.com/en-us/library/ms186778.aspx</a></p>
+<h3 id="system-functions">System Functions</h3>
+<p>Give us individual property values for many SQL Server instance,
+objects, databases. The values returned by system functions are scalar,
+so they can be used as values returned by <em>SELECT</em> statements like:</p>
+<pre><code>select DATABASEPROPERTYEX('msdb','Recovery');
+</code></pre>
+<p>For a complete list of system functions and its types, review
+<a href="http://msdn.microsoft.com/en-us/library/ms187786.aspx">http://msdn.microsoft.com/en-us/library/ms187786.aspx</a></p>
+<h3 id="system-stored-procedures">System Stored Procedures</h3>
+<p>System Stored Procedures are the original metadata access tool but it
+had a drawback, basically you have to accept the data that it returns.
+Some of the procedures allow parameters but they are very limited.
+Catalog views are more enhanced and flexible in controlling what data
+appears.</p>
+<p>I hope this brief post gives you an overall image about SQL Server
+metadata access mechanisms and which one to use according to your
+situation. </p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

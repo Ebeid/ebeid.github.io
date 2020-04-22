@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MSMQ on Ebeid ElSayed</title>
+    <link>https://ebeid.github.io/tags/msmq/</link>
+    <description>Recent content in MSMQ on Ebeid ElSayed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 22 Nov 2011 11:52:00 -0600</lastBuildDate>
+    
+	<atom:link href="https://ebeid.github.io/tags/msmq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>An introduction to Microsoft Message Queuing–Part 2</title>
+      <link>https://ebeid.github.io/blog/2011-11-22-in-previous-post-we-explored-very-basic.html/</link>
+      <pubDate>Tue, 22 Nov 2011 11:52:00 -0600</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2011-11-22-in-previous-post-we-explored-very-basic.html/</guid>
+      <description>In the previous post, we explored very basic concepts of MSMQ. We used non-transactional queue to send and receive a message. In this post we will try to dive more into Message Queuing Queues.
+Simply, queues are logical containers that Message Queuing uses to store and later forward messages, providing the bases for the loosely coupled aspects of Message Queuing. Queues can be created by applications and by Message Queuing. Queues created by applications or by users in an MMC snap-in are referred to as application queues.</description>
+    </item>
+    
+    <item>
+      <title>An introduction to Microsoft Message Queuing</title>
+      <link>https://ebeid.github.io/blog/2011-11-17-introduction-to-microsoft-message.html/</link>
+      <pubDate>Thu, 17 Nov 2011 06:49:00 -0600</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2011-11-17-introduction-to-microsoft-message.html/</guid>
+      <description>What is MSMQ ? Message Queuing (also known as MSMQ) is a messaging infrastructure and a development tool for creating distributed messaging applications for Microsoft Windows operating systems. Applications developed for Message Queuing send messages to queues, which are temporary storage locations, from which messages can proceed to their final destination as conditions permit.
+Installing MSMQ The procedures to install MSMQ on Windows Server 2008, Winows Server 2008 R2, Windows 7, Windows Vista, Windows XP, and Windows Server 2003 are available here</description>
+    </item>
+    
+  </channel>
+</rss>

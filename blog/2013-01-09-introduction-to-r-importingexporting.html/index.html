@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Introduction to R – Importing/Exporting Data to External Files</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-01-09-introduction-to-r-importingexporting.html/">Introduction to R – Importing/Exporting Data to External Files</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          January 9, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">R Programming Language</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>There are many functions that read/write data in R and export it files</p>
+<p>read.table, read.csv for reading tabular data and return it in data
+frames from delimited files. read.csv is identical to read.table except
+that default separator is coma. There are so many arguments for these
+functions, the most commonly used arguments are:</p>
+<ul>
+<li>file : string –&gt; file name or URL</li>
+<li>header : logical –&gt; TRUE if the file first line is a header line,
+FALSE if first line is data.</li>
+<li>sep : string –&gt; represents the data separator</li>
+<li>quote “ string –&gt; if character values are enclosed in quotes,
+this argument should specify the type of quotes.</li>
+<li>colClasses : string vector –&gt; represent the data tyoe of each
+column in file.</li>
+<li>nrows : integer –&gt; the number of rows in file (optional)</li>
+<li>comment.char : string –&gt; the comment indicator string</li>
+<li>skip : integer –&gt; number of lines to skip from the file beginning</li>
+<li>stringsAsFactors : logical –&gt; should character variables be coded
+as factors?</li>
+</ul>
+<p>save the following file into your default user directory</p>
+<p><a href="http://lh4.ggpht.com/-XFXKQZoMle8/UO4DsM-tzxI/AAAAAAAAAxA/eBqs0b2HXg0/s1600-h/ReadingWriting%252520Data%252520Part%2525201%252520%2525281255%252529%252520-%252520Google%252520Chrome_2013-01-09_16-40-34%25255B4%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>now you can load it into R</p>
+<p><a href="http://lh4.ggpht.com/-_--ZXYp7KsU/UO4Ds2jONWI/AAAAAAAAAxQ/0w7OjOfsHJo/s1600-h/RGui%252520%25252864-bit%252529_2013-01-09_16-39-34%25255B5%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>You may process this data and want to save it again in another file. To
+save data as text file, use write.table which have many parameters
+similar to read.table. There are many wrapper functions that call
+write.table with different defaults like write.csv()</p>
+<p><a href="http://lh5.ggpht.com/-JLb5CQd1RS0/UO4DtjIsMNI/AAAAAAAAAxg/uVfx-j2VKwQ/s1600-h/RGui%252520%25252864-bit%252529_2013-01-09_17-50-00%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>readLines and writeLines can be used to read/write certain number of
+lines of a text file.</p>
+<p>There are more read/write functions that are available in R but we
+introduced here only the most commonly used ones.</p>
+<p><strong>Get/Set your working directory</strong></p>
+<p>You may be wondering how R knows the path to data.csv file ? R look for
+files in the user working directory for files and this working directory
+by default is your documents folder (t hat’s why we save the file in “My
+Documents” in the first place&rdquo;). To know you working directory, use
+getwd()</p>
+<p><a href="http://lh6.ggpht.com/-yB0OfsVt_c4/UO8o6eyZMJI/AAAAAAAAA1s/eAGq8Jn9mSE/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_08-50-40%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>to change your working directory, go to File &gt;&gt; Change dir and
+select your new working directory and click Ok.</p>
+<p>You can use dir() to list all files in your working directory.</p>
+<p>Stay tuned for more R notes.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 21, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-01-21-introduction-to-r-charts-and-graphics.html/">Introduction to R – Charts and Graphics</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 17, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-01-17-introduction-to-r-random-variables.html/">Introduction to R – Random Variables Generation &amp; Probability Distribution Functions</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 16, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-01-16-introduction-to-r-basic-debugging.html/">Introduction to R – Basic Debugging</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

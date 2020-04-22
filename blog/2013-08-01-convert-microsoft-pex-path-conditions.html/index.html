@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Convert Microsoft Pex path conditions from Z3 native format to SMT-LIB</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-08-01-convert-microsoft-pex-path-conditions.html/">Convert Microsoft Pex path conditions from Z3 native format to SMT-LIB</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          August 1, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Microsoft Pex</span>
+            
+            <span class="label label-success">Z3</span>
+            
+            <span class="label label-success">SMT-LIB</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>We talked before about <a href="http://ebeid-soliman.blogspot.com/2013/07/get-path-conditions-from-microsoft-pex.html" title="Get path conditions from Microsoft Pex">getting the code path conditions from Microsoft
+Pex</a>
+as in
+<a href="http://research.microsoft.com/en-us/um/redmond/projects/z3/old/index.html" title="Z3 : An Efficient Theorem Prover">Z3</a>
+native format(.z3 file).</p>
+<p>Sometimes you may need to convert from Z3 native format to
+<a href="http://www.smt-lib.org/" title="SMT-LIB The Satisfiability Modulo Theories Library">SMT-LIB</a>
+standard. You can do that using the <a href="http://ebeid-soliman.blogspot.com/2013/07/the-z3-constraint-solver-developer.html" title="The Z3 Constraint Solver, a developer perspective">Z3 C#
+APIs</a>.
+The only trick here is: you have to use the Microsoft.Z3.dll that come
+with your current Microsoft Pex installation (C:\Program
+Files\Microsoft Pex\bin\Microsoft.Z3.dll).</p>
+<p>To show how it works, let’s create a new C# console application. Add
+refeerence to Microsoft.Z3.dll that come with your Pex installation.</p>
+<p>Edit your code to look like:</p>
+<pre><code>using System;
+using System.IO;
+using Microsoft.Z3;
+
+namespace Z3ToSMTLIB
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            if(args.Length == 0)
+                Console.WriteLine(&quot;Please provide input file name.&quot;);
+            if (!File.Exists(args[0]))
+                Console.WriteLine(&quot;The specified file doesn't exist.&quot;);
+            using (Context ctx = new Context(new Config()))
+            {
+                string SMTLIB= ctx.ParseZ3File(args[0]).ToString();
+                StreamWriter writer = new StreamWriter(args[0].TrimEnd(&quot;z3&quot;.ToCharArray()) + &quot;SMTLIB&quot;);
+                writer.Write(SMTLIB);
+                writer.Close();
+            }
+        }
+    }
+}
+</code></pre>
+<p>Right click your project in the solution explorer and select Add
+&gt;&gt; New Item &gt;&gt; select Application Configuration File
+&gt;&gt; click Add. Edit the newly created App.config file to look like:
+<a href="http://lh5.ggpht.com/-FZnsrOJ7QM4/Ugp0HznPK6I/AAAAAAAAB1o/-vgKoRVAUAI/s1600-h/Z3ToSMTLIB%252520-%252520Microsoft%252520Visual%252520Studio_2013-08-13_12-58-55%25255B4%25255D.png"><!-- raw HTML omitted --></a>Now
+you can run your code and pass a file in Z3 native format and get a file
+in SMT-LIB format. This SMT-LIB format opens a lot of possibilities that
+we will explore later.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 13, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-13-how-to-debug-your-pex-parameterized.html/">How to debug your Pex parameterized unit tests</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 30, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-30-the-z3-constraint-solver-developer.html/">The Z3 Constraint Solver, a developer perspective</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 24, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-24-get-path-conditions-from-microsoft-pex.html/">Get path conditions from Microsoft Pex</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Unit Tests vs Parametrized Unit Tests</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-04-22-unit-tests-vs-parameterized-unit-tests.html/">Unit Tests vs Parametrized Unit Tests</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          April 22, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Microsoft Pex</span>
+            
+            <span class="label label-success">Parameterized Unit Tests</span>
+            
+            <span class="label label-success">Unit Tests</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <h3 id="unit-tests">Unit Tests</h3>
+<p>Using the conventions of NUnit unit tests as test methods contained in
+test classes. A parameterless method decorated with a custom attribute
+like [TestMethod] is a test method. Usually, each unit test explores a
+particular aspect of the behavior of the class-under-test.</p>
+<p>Here is a unit test written in C# that adds an element to a .NET
+ArrayList instance. The test first creates a new array list, where the
+parameter to the constructor is the initial capacity, then adds a new
+object to the array list, and finally checks that the addition was
+correctly performed by verifying that a subsequent index lookup
+operation returns the new object.</p>
+<pre><code>[TestMethod] 
+void TestAdd() 
+{ 
+ ArrayList a = new ArrayList(0); 
+ object o = new object(); 
+ a.Add(o); 
+ Assert.IsTrue(a[0] == o); 
+}
+</code></pre>
+<p>It is important to note that unit tests include a test oracle that
+compares observed behavior with expected results. By convention, the
+test oracle of a unit test is encoded using assertions. The test fails
+if any assertion fails or an exception is thrown. Unit test frame- works
+can also deal with expected exceptions. For a quick introduction about
+NUnit refer previous
+<a href="http://ebeid-soliman.blogspot.com/search/label/NUnit">posts</a>.</p>
+<p>A test suite produced by unit testing with high code coverage gives
+confidence in the correctness of the tested code. However, writing unit
+tests to achieve high coverage can be time-consuming and tedious given
+that test execution frameworks only automate the test executions. You
+still have to write your test cases !</p>
+<p>To address this problem, several automatic unit test generation tools
+such as Parasoft JTest or jCUTE can automatically generate conventional
+unit tests. These tools, nevertheless, cannot guarantee high code
+coverage, unless testers manually write some tests.</p>
+<h3 id="heading"> </h3>
+<h3 id="parametrized-unit-tests">Parametrized Unit Tests</h3>
+<p>The unit test above specifies the behavior of the array list by example.
+Strictly speaking, this unit test only says that by adding a new object
+to an empty array list, this object becomes the first element of the
+list. What about other array lists and other objects?</p>
+<pre><code>[TestAxiom]
+void TestAdd(ArrayList a, object o) 
+{
+ Assume.IsTrue(a!=null);
+ int i = a.Count;
+ a.Add(o);
+ Assert.IsTrue(a[i] == o);
+}
+</code></pre>
+<p>By adding parameters we can turn a closed unit test into a universally
+quantified conditional axiom that must hold for all inputs under
+specified assumptions.</p>
+<p>Adding parameters to a unit test improves its expressiveness as a
+specification of intended behavior, but we lose concrete test cases. We
+can no longer execute this test axiom by itself. We need actual
+parameters. But which values must be provided to ensure sufficient and
+comprehensive testing? Which values can be chosen at all?</p>
+<p>In the ArrayList example, if we study the internal structure of the .NET
+Framework implementation, we observe that there are two cases of
+interest. One occurs when adding an element to an array list that
+already has enough room for the new element (i.e. the array list’s
+capacity is greater than the current number of elements in the array
+list). The other occurs when the internal capacity of the array list
+must be increased before adding the element.</p>
+<p>If we assume that library methods invoked by the ArrayList
+implementation are themselves correctly implemented, we can deduce that
+running exactly two test cases is sufficient to guarantee that the
+parametrized TestAdd(&hellip;) succeeds for all array lists and all objects.</p>
+<pre><code>[TestMethod]
+void TestAddNoOverflow() 
+{
+ TestAdd(new ArrayList(1), new object());
+}
+
+[TestMethod]
+void TestAddWithOverflow() 
+{
+ TestAdd(new ArrayList(0), new object());
+}
+</code></pre>
+<p>Splitting axioms and test cases in this way is a separa tion of
+concerns:</p>
+<ul>
+<li>First, we describe expected behavior as parametrized unit tests.</li>
+<li>Then we study the case distinctions made by the code paths of the
+program under test to determine which inputs make sense for testing.</li>
+</ul>
+<p>So, parametrized unit tests are more general specifications than
+conventional unit tests because it specifies the behavior for the whole
+input classes other than for a single concrete value of the input. But
+it needs concrete parameter values to be executed.</p>
+<p>The good news is, Given a parametrized unit test, a test-generation
+tool, such as Microsoft Pex, can automatically generate tests with
+concrete inputs for the parameters to achieve high coverage. Pex
+explores the behaviors of a parametrized unit test using a technique
+called dynamic <a href="http://en.wikipedia.org/wiki/Symbolic_execution">symbolic
+execution</a>. Dynamic
+Symbolic Execution (DSE) is a variation of symbolic execution, which
+systematically explores feasible paths of the program under test by
+running the program with different test inputs to achieve high
+structural coverage. It collects the symbolic constraints on inputs
+obtained from predicates (condition statements like if else, switch,…)
+in branch statements along the execution and relies on a <a href="http://en.wikipedia.org/wiki/Constraint_satisfaction_problem">constraint
+solver</a>
+[like
+<a href="http://research.microsoft.com/apps/pubs/default.aspx?id=70224">Zap</a> or
+<a href="http://www.hpl.hp.com/techreports/2003/HPL-2003-148.html">Simplify</a>]
+to solve the constraints and generate new test input for exploring new
+path. For each set of concrete test input that leads to a new path that
+achieves new coverage, Pex generates a corresponding conventional unit
+test. So, all what you have to do is write your parametrized unit test.</p>
+<p>In this post we gave a brief overview about parametrized unit tests and
+its related research areas. It’s a very important concept to understand
+before start learning Microsoft Pex, which we will start . In later
+posts, we will explore Microsoft Pex in detail.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 13, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-13-how-to-debug-your-pex-parameterized.html/">How to debug your Pex parameterized unit tests</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 1, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-01-convert-microsoft-pex-path-conditions.html/">Convert Microsoft Pex path conditions from Z3 native format to SMT-LIB</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 24, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-24-get-path-conditions-from-microsoft-pex.html/">Get path conditions from Microsoft Pex</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Ebeid ElSayed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ebeid.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>concepts</title>
+      <link>https://ebeid.github.io/categories/concepts/</link>
+      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ebeid.github.io/categories/concepts/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>projects</title>
@@ -17,6 +26,15 @@
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
       
       <guid>https://ebeid.github.io/categories/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jekyll update</title>
+      <link>https://ebeid.github.io/categories/jekyll-update/</link>
+      <pubDate>Sun, 29 May 2016 15:58:38 -0700</pubDate>
+      
+      <guid>https://ebeid.github.io/categories/jekyll-update/</guid>
       <description></description>
     </item>
     

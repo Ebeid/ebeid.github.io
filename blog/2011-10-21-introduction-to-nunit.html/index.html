@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Introduction to NUnit</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2011-10-21-introduction-to-nunit.html/">Introduction to NUnit</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          October 21, 2011
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">NUnit</span>
+            
+            <span class="label label-success">Unit testing</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p><!-- raw HTML omitted -->**What is unit testing?**<!-- raw HTML omitted --></p>
+<p>According to <a href="http://www-128.ibm.com/developerworks/library/j-test.html">Jeff
+Canna</a>, unit
+testing ensures that a particular method of a class successfully
+performs a set of specific tasks. Each test confirms that a method
+produces the expected output when given a known input.</p>
+<p><strong><!-- raw HTML omitted -->What is NUnit?<!-- raw HTML omitted --></strong> NUnit is an open
+source framework that facilitates unit testing for all .NET languages.
+It allows you to build your test cases directly into the code of the
+project.</p>
+<p><strong><!-- raw HTML omitted -->How do I get NUnit?<!-- raw HTML omitted --></strong> Download the
+appropriate file from <a href="http://www.nunit.org/index.php?p=download">here</a>
+and install it. That’s it !!</p>
+<p><strong><!-- raw HTML omitted -->Write your code<!-- raw HTML omitted --></strong></p>
+<p>We will write our code now and let it drive our testing cases and
+exploration of NUnit. Make a new project, class library that similar to
+the code below. Below an implementation of a “largest” method that
+returns the largest number in a list.</p>
+<pre><code>   1:  using System;
+
+
+
+
+   2:  namespace ClassLibrary1
+
+
+
+
+   3:  {
+
+
+
+
+   4:      public class Cmp
+
+
+
+
+   5:      {
+
+
+
+
+   6:          public static int Largest(int[] list)
+
+
+
+
+   7:          {            
+
+
+
+
+   8:              int max = Int32.MaxValue;
+
+
+
+
+   9:              for (int index = 0; index &lt; list.Length - 1; index++)
+
+
+
+
+  10:              {
+
+
+
+
+  11:                  if (list[index] &gt; max)
+
+
+
+
+  12:                      max = list[index];
+
+
+
+
+  13:              }
+
+
+
+
+  14:              return max;
+
+
+
+
+  15:          }
+
+
+
+
+  16:      }
+
+
+
+
+  17:  }
+</code></pre>
+<p><strong><!-- raw HTML omitted -->Test your code<!-- raw HTML omitted --></strong></p>
+<p>Now it comes to the testing step. Writing test cases is a big topic to
+be discussed here. We will try to make our first t est as simple as
+possible because there is much to be tested the first time besides the
+code itself. First, add reference to NUnit and then write our test
+cases.</p>
+<ol>
+<li>Right click on the references in “Solution Explorer” and click add a
+reference.</li>
+<li>Click on tab “Browse”</li>
+<li>Navigate to your NUnit directory and go into the bin subdirectory.
+For me this directory is in “C:\Program Files (x86)\NUnit
+2.5.10\bin\net-2.0\framework”</li>
+<li>Select <!-- raw HTML omitted -->nunit.framework.dll<!-- raw HTML omitted --> and click
+OK.</li>
+</ol>
+<p>Then add a new class library to the project and add the code below to
+it. This code uses the NUnit namespace, attributes, Assert, and Is. We
+will explain all of these in detail in further posts. For now, just
+build the project.</p>
+<pre><code>   1:  using System;
+
+
+
+
+   2:  using NUnit.Framework;
+
+
+
+
+   3:  namespace ClassLibrary1
+
+
+
+
+   4:  {
+
+
+
+
+   5:      [TestFixture]
+
+
+
+
+   6:      public class CmpTest
+
+
+
+
+   7:      {
+
+
+
+
+   8:          [Test]
+
+
+
+
+   9:          public void LargestOf3()
+
+
+
+
+  10:          {
+
+
+
+
+  11:              int[] numbers = new int[] { 8, 9, 7 };
+
+
+
+
+  12:              Assert.That(Cmp.Largest(numbers), Is.EqualTo(9));
+
+
+
+
+  13:          }
+
+
+
+
+  14:      }
+
+
+
+
+  15:  }
+</code></pre>
+<p><strong><!-- raw HTML omitted -->Run your tests<!-- raw HTML omitted --></strong></p>
+<p>Now we have got our code, and our test cases. The next step is to run
+that test cases to test our code and that is the role of <em>test runners.</em>
+A test runner knows to look for the [TestFixture] attribute of a class
+and for the [Test] methods within it. The runner will run the tests,
+accumulate some statistics on which tests passed and failed, and report
+the results to you. There are many test runners, you can use the NUnit
+GUI which is installed by default with NUnit (will be located in the
+programs menu of the start menu).</p>
+<p><strong><!-- raw HTML omitted -->Using NUnit GUI<!-- raw HTML omitted --></strong></p>
+<p>In the NUnit GUI, select File &gt; Open or press Ctrl + O. This would
+show the Open Project dialog. Browse to the folder which contains the
+assembly containing your tests and open it.</p>
+<p><a href="http://lh5.ggpht.com/-ZzfW7Wivl68/TqGpFxFkxxI/AAAAAAAAAJA/MxxwI9pvD7Y/s1600-h/NUnit14.jpg"><!-- raw HTML omitted --></a></p>
+<p>Now you can test your code by clicking the Run button.</p>
+<p><a href="http://lh4.ggpht.com/-pyKIWMEDcu4/TqGpGQw5GhI/AAAAAAAAAJQ/5aPwJG1wfmw/s1600-h/NUnit24.jpg"><!-- raw HTML omitted --></a></p>
+<p>When we run a selected test, the GUI will display a large, colored,
+status bar. If all the tests pass, the bar is bright green. If any test
+fails, the bar is red. If any test was skipped, the bar is yellow.</p>
+<p>It is obvious that our test case here have been failed. Try to fix the
+code and run the test again until it succeed
+<!-- raw HTML omitted --></p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        May 2, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-05-02-parameterized-test-patterns-using.html/">Parameterized Test Patterns using Microsoft Pex</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        April 24, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-04-24-getting-started-with-microsoft-pex.html/">Getting started with Microsoft Pex</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        October 21, 2011
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2011-10-21-structuring-unit-tests-in-nunit.html/">Structuring unit tests in NUnit</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Requirements Engineering on Ebeid ElSayed</title>
+    <link>https://ebeid.github.io/tags/requirements-engineering/</link>
+    <description>Recent content in Requirements Engineering on Ebeid ElSayed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 17 Dec 2010 08:02:00 -0600</lastBuildDate>
+    
+	<atom:link href="https://ebeid.github.io/tags/requirements-engineering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Business analysis &amp; Requirements Engineering Certifications</title>
+      <link>https://ebeid.github.io/blog/2010-12-17-business-analysis-requirements.html/</link>
+      <pubDate>Fri, 17 Dec 2010 08:02:00 -0600</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2010-12-17-business-analysis-requirements.html/</guid>
+      <description>I was searching for certifications on requirements engineering and I found that there is a lot of mixing between business analysis and requirements engineering. This mix exists both on the daily use, professional certifications and organizations.
+Starting by the definitions:
+ Business analysis is the discipline of identifying business needs and determining solutions to business problems. Solutions often include a systems development component, but may also consist of process improvement, organizational change or strategic planning and policy development.</description>
+    </item>
+    
+  </channel>
+</rss>

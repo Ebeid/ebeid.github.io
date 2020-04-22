@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Introduction to R – Random Variables Generation &amp; Probability Distribution Functions</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-01-17-introduction-to-r-random-variables.html/">Introduction to R – Random Variables Generation &amp; Probability Distribution Functions</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          January 17, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">R Programming Language</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Simulation is important topic for statistical applications and
+scientific purposes in general.</p>
+<h2 id="generating-random-numbers">Generating Random Numbers</h2>
+<p>The first step in simulation is to generate random values based on your
+variables distribution. R has a large number of functions that generate
+the standard random variables.</p>
+<p>for <!-- raw HTML omitted -->Normal random variable generation<!-- raw HTML omitted --></p>
+<p><strong>rnorm()</strong> simulate a simple random normal variable with a given mean
+and standard deviation and generate as many random values as requested.</p>
+<p><a href="http://lh3.ggpht.com/-L1OgbWvZGQg/UPiEGXhhdOI/AAAAAAAAA9M/HIgesG3k6rM/s1600-h/RGui-64-bit_2013-01-17_10-01-509.jpg"><!-- raw HTML omitted --></a></p>
+<p>When generating any random variable setting the random number seed with
+set.seed ensures reproducibility. In the following example, notice that
+the first and the third sets are identical (both called set.seed with 1
+before generating the numbers), and the second is different (because we
+didn’t set the seed)</p>
+<p><a href="http://lh6.ggpht.com/-KeCPVNBsq9U/UPiEHqE70OI/AAAAAAAAA9Y/r8zJWZWmMRM/s1600-h/RGui-64-bit_2013-01-17_10-32-056.jpg"><!-- raw HTML omitted --></a></p>
+<p>for <!-- raw HTML omitted -->Poisson random variable generation<!-- raw HTML omitted --></p>
+<p><strong>rpois()</strong> simulate a Poisson random variable with a given rate
+(lambda) and generate as many random values as requested.</p>
+<p><a href="http://lh6.ggpht.com/-e-VGmx4XFak/UPiEJOH1QjI/AAAAAAAAA9s/IdlDTyGvWy8/s1600-h/RGui-64-bit_2013-01-17_10-39-537.jpg"><!-- raw HTML omitted --></a></p>
+<h2 id="radom-sampling">Radom sampling</h2>
+<p>The sample function draws randomly from a specified set of (scalar)
+objects allowing you to sample from arbitrary distributions (sample
+space).</p>
+<p><a href="http://lh3.ggpht.com/-_hfkS6ikEZU/UPiEKSKdK1I/AAAAAAAAA94/9lbqtAwPVJw/s1600-h/RGui-64-bit_2013-01-17_11-31-033.jpg"><!-- raw HTML omitted --></a></p>
+<p>if you didn’t specified the number of values you want, sample will give
+you random permutation of the sequence.</p>
+<p><a href="http://lh3.ggpht.com/-_HItEjFiA40/UPiELhIcaFI/AAAAAAAAA-M/V_KAoEGyuRU/s1600-h/RGui-64-bit_2013-01-17_11-32-513.jpg"><!-- raw HTML omitted --></a></p>
+<p>as you noticed, by default sample will not repeat values, set parameter
+replace= TRUE to make it repeat .</p>
+<p><a href="http://lh6.ggpht.com/-ZULOobh0XA0/UPiENGjFKpI/AAAAAAAAA-Y/Qt02UFLlf_4/s1600-h/RGui-64-bit_2013-01-17_11-36-093.jpg"><!-- raw HTML omitted --></a></p>
+<h2 id="probability-distribution-functions">Probability distribution functions</h2>
+<p>Probability distributions usually have four functions associated with
+them. The functions are prefixed with:</p>
+<ul>
+<li><strong>r</strong> for random number generation</li>
+<li><strong>d</strong> for density</li>
+<li><strong>p</strong> for cumulative distribution</li>
+<li><strong>q</strong> for quantile function</li>
+</ul>
+<p>some useful distributions are:</p>
+<!-- raw HTML omitted -->
+<p>function names are : prefix + distribution nickname. rnorm, rpois,
+rbinom,….. –&gt; for random number generation, and so on.</p>
+<p>In this note we introduced the basic functions for random number
+generation based on variable distribution type, arbitrary random
+sampling, and the associated probability distributions functions. Later
+will present each of them in detail.</p>
+<p>Stay tuned for more R notes.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 21, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-01-21-introduction-to-r-charts-and-graphics.html/">Introduction to R – Charts and Graphics</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 16, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-01-16-introduction-to-r-basic-debugging.html/">Introduction to R – Basic Debugging</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 15, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-01-15-introduction-to-r-control-structures.html/">Introduction to R – Control Structures</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

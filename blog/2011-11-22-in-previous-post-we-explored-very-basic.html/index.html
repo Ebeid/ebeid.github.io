@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>An introduction to Microsoft Message Queuing–Part 2</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2011-11-22-in-previous-post-we-explored-very-basic.html/">An introduction to Microsoft Message Queuing–Part 2</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          November 22, 2011
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">MSMQ</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>In the <a href="http://ebeid-soliman.blogspot.com/2011/11/introduction-to-microsoft-message.html" title="An introduction to Microsoft Message Queuing">previous
+post</a>,
+we explored very basic concepts of MSMQ. We used non-transactional queue
+to send and receive a message. In this post we will try to dive more
+into Message Queuing Queues.</p>
+<p>Simply, queues are logical containers that Message Queuing uses to store
+and later forward messages, providing the bases for the loosely coupled
+aspects of Message Queuing. Queues can be created by applications and by
+Message Queuing. Queues created by applications or by users in an MMC
+snap-in are referred to as <em><strong>application queues</strong></em>. Queues created by
+Message Queuing are referred to as <em><strong>system-generated queues</strong></em> (we
+will talk about system- generated queues in another post).</p>
+<p>Depending on the service provided by the queue, <strong>application queues</strong>
+can be <!-- raw HTML omitted -->public<!-- raw HTML omitted --> or <!-- raw HTML omitted -->private<!-- raw HTML omitted -->, and they can be <!-- raw HTML omitted -->transactional<!-- raw HTML omitted --> or <!-- raw HTML omitted -->nontransactional<!-- raw HTML omitted -->.</p>
+<p><strong>Application queues</strong> can play any of the following roles:</p>
+<ul>
+<li>Destination queues : any queue used to send/receive messages between
+applications.</li>
+<li>Administration queues : used for <em>acknowledgment messages</em> returned
+by Message Queuing or <em>connector applications</em>.</li>
+<li>Response queues : used by receiving applications to return <em>response
+messages</em> to the sending application.</li>
+<li>Report queues : used to store <em>report messages</em> returned by Message
+Queuing.</li>
+</ul>
+<h5 id="destination-queues">Destination Queues</h5>
+<p>Destination queues are any queue used to send/receive messages between
+applications. The sending application on computer 1 sends the messages
+to the queue and the receiving application on computer 2 reads the
+messages from the queue. Typically, destination queues are located on
+the same computer as the receiving application in order to minimize
+network traffic.</p>
+<p><strong><!-- raw HTML omitted -->Public Versus Private Queues<!-- raw HTML omitted --></strong> The
+decision to use public or private destination queues depends primarily
+on whether you want other applications to be able to locate the queues
+or not. Message Queuing registers private queues locally by storing a
+description of each queue in a separate file in the local queue storage
+(LQS) folder on the local computer (the default Lqs folder is
+%windir%\System32\MSMQ\Storage\Lqs). Also a description of each
+public queue created on the local computer is also stored locally in a
+separate file in the Lqs folder.</p>
+<p>Adv. of Public Queues:</p>
+<ul>
+<li>Registered in the directory service, so it can be located by other
+Message Queuing applications.</li>
+<li>Persistent and its registration information can be backed up.</li>
+</ul>
+<p>Adv. of Private Queues:</p>
+<ul>
+<li>Requires minimal directory service overhead(faster to create, no
+latency, and no replication)</li>
+<li>Can be created and deleted when the <em>directory service</em> is not
+working</li>
+<li>Can be accessed directly by name without query the directory
+service.</li>
+</ul>
+<p>Div. of Private Queues:</p>
+<ul>
+<li>It is registered on local computer, so it is properties cannot be
+obtained by Message Queuing applications running on remote
+computers. Private queues can be exposed to other applications by
+making the location of the private queue known to the applications.
+To distribute the location of a private queue, an application can
+send the format name of the private queue as the response queue
+property of a message.</li>
+</ul>
+<p><strong><!-- raw HTML omitted -->Transactional Versus Nontransactional
+Queues<!-- raw HTML omitted --></strong> The decision to use transactional or nontransactional
+queues is based on whether the applications accessing the queue will be
+sending and receiving messages within the context of a transaction. So,
+what is a transaction ? a transaction is to execute a multiple-steps
+process such that either all or none of the steps will complete. In
+reality, transactions are handled by rolling back any steps that have
+already occurred if the entire transaction is not completed
+successfully.</p>
+<p>When sending messages, only transactional queues can accept messages
+sent in the context of a transaction. These messages are also referred
+to as transactional messages. In a similar way, nontransactional queues
+can only accept messages sent outside the context of a transaction. Note
+that only transactional messages are delivered with
+exactly-once-delivery (EOD) guarantees.</p>
+<p>When receiving messages, only local transactional queues can be accessed
+within the context of a transaction. The transactional queue must be
+local to the receiving application. On the other hand, nontransactional
+queues can be accessed within or outside of a transaction. Also,
+transactional queues, local or remote, can be accessed outside of a
+transaction (because we ask it to do less than what it can do).</p>
+<p>If you just want to be able to recover lost messages, don’t use
+transactional queues. You can set the <em>Recoverable</em> property of a every
+message you sent. Or you can sent the queue property
+DefaultPropertiesToSend.Recoverable to true.</p>
+<h5 id="creating-a-transactional-queue">Creating a Transactional Queue</h5>
+<ul>
+<li>Through the snap in : just check the check-box Transactional below
+the queue name textbox.</li>
+<li>Programmatically : just like privateQueue =
+MessageQueue.Create(&quot;.\\Private$\\privateQueue&rdquo;, true);</li>
+</ul>
+<p>MessageQueue have a property called Transactional that you can check to
+ensure that the queue is transactional</p>
+<p>MSMQ supports two types of transactions: Internal and External.</p>
+<h5 id="internal-transactions">Internal Transactions</h5>
+<p>Class MessageQueueTransaction can be used to Begin(), Commit(), Abort()
+the transaction. It also can be passed through Send() and Receive()
+methods to that operation falls under a transaction. The class also
+exposes a Status property to give the transaction status. Transaction
+status can be one of:</p>
+<ul>
+<li>Initialized : The transaction has been initialized but not yet
+started.</li>
+<li>Pending : The transaction has been began but not committed or
+aborted yet.</li>
+<li>Committed : The transaction has been committed.</li>
+<li>Aborted : The transaction has been aborted.</li>
+</ul>
+<p><strong>Transaction Types</strong> when sending or receiving using MessageQueue class
+through transactional queues, you could pass one of the values in
+MessageQueueTransactionType enumeration. This specifies how you would
+like to interact with the queue. These values are:</p>
+<ul>
+<li>Single : each queue operation will be doine in a separate internal
+transaction.</li>
+<li>None : enable you to receive a message from a transactional queue,
+but outside a transaction. It also enables us to send a
+transactional message to a non-transactional queue.</li>
+<li>Automatic : used with external transactions to direct the send or
+receive operations to use an already existing transaction context.</li>
+</ul>
+<p>Now lets compile these pieces into one example to get sense of what
+internal transactional queues means.</p>
+<pre><code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Messaging;
+
+namespace MSMQ_Demo3
+{
+ class Program
+ {
+     static void Main(string[] args)
+     {
+         MessageQueueTransaction mqTran = new MessageQueueTransaction();
+         MessageQueue queueA = MessageQueue.Create(&quot;.\\Private$\\TranQueueA&quot;, true);
+         MessageQueue queueB = MessageQueue.Create(&quot;.\\Private$\\TranQueueB&quot;, true);
+         mqTran.Begin();
+         try
+         {
+             queueA.Send(&quot;Message A&quot;, &quot;Label A&quot;, mqTran );
+             queueB.Send(&quot;Message B&quot;, &quot;Label B&quot;, mqTran );
+             mqTran.Commit();
+         }
+         catch(Exception ex)
+         {
+
+         mqTran.Abort();
+             Console.WriteLine(ex.Message);
+         }             
+
+         MessageQueue queueC = new MessageQueue(&quot;.\\Private$\\TranQueueA&quot;);
+         MessageQueue queueD = new MessageQueue(&quot;.\\Private$\\TranQueueB&quot;);
+         string strMsg = &quot;&quot;;
+         mqTran.Begin();
+         try
+         {
+             Message msg = queueC.Receive(mqTran);
+             msg.Formatter = new XmlMessageFormatter(new Type[1] { typeof(string) });
+             strMsg = msg.Body.ToString();
+             msg = queueD.Receive(mqTran);
+             msg.Formatter = new XmlMessageFormatter(new Type[1] { typeof(string) });
+             strMsg += &quot; \n &quot;;
+             strMsg += msg.Body.ToString();
+             Console.WriteLine(strMsg);
+             mqTran.Commit();
+         }
+         catch (Exception ex)
+         {
+             mqTran.Abort();
+             Console.WriteLine(ex.Message);
+         }
+         Console.WriteLine();
+     }
+  
+ }
+}
+</code></pre>
+<p><!-- raw HTML omitted -->In
+this example we created two transactional queues, send two messages to
+them. Then we received these messages. Both the sending and receiving
+done in a transaction that commits only after the success of all
+operations. If any errors happened, we abort the whole transaction and
+rollback all operations done in it.<!-- raw HTML omitted --></p>
+<p>In future posts we will talk more about MSQM details.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        November 17, 2011
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2011-11-17-introduction-to-microsoft-message.html/">An introduction to Microsoft Message Queuing</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

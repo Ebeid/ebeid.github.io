@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>An introduction to Microsoft Message Queuing</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2011-11-17-introduction-to-microsoft-message.html/">An introduction to Microsoft Message Queuing</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          November 17, 2011
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">MSMQ</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p><strong>What is MSMQ ?</strong> Message Queuing (also known as MSMQ) is a messaging
+infrastructure and a development tool for creating distributed messaging
+applications for Microsoft Windows operating systems. Applications
+developed for Message Queuing send messages to queues, which are
+temporary storage locations, from which messages can proceed to their
+final destination as conditions permit.</p>
+<p><strong>Installing MSMQ</strong> The procedures to install MSMQ on Windows Server
+2008, Winows Server 2008 R2, Windows 7, Windows Vista, Windows XP, and
+Windows Server 2003 are available
+<a href="http://msdn.microsoft.com/en-us/library/aa967729.aspx" title="Installing Message Queuing (MSMQ)">here</a></p>
+<p><strong>Basic Messaging</strong></p>
+<p><a href="http://lh4.ggpht.com/-BIn-NR6GGNQ/TsUC7bfFDKI/AAAAAAAAAKo/nn1sOeBP1ow/s1600-h/MSMQ1%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>The image shows the basic messaging scenario. You have two applications:
+a sending application and a receiving application. A sending application
+prepares a message and puts it into a queue. A message can be any piece
+of information that the receiving application understands. The receiving
+application receives the message from the queue and processes it. One
+thing to note here is that the sender and the receiver are not tightly
+coupled and they can work without the other application being online.</p>
+<p><strong>Messaging in .Net</strong> To build a messaging application we need to create
+at least three components: queue, application to send messages, and
+another application to receive these messages.</p>
+<p><strong>Types of queues</strong> The basic types of MSMQ queues are: private and
+public. Public queues are those that are published in the active
+directory. So, applications running on different servers throughout the
+network can find and use public queues through the active directory.
+Private queues on the other hand are available locally on a particular
+machine and are not published in the active directory.</p>
+<p><strong>Creating a Queue</strong> Queues can be created either programmatically or
+through the computer management snap-in (if you installed MSMQ on your
+machine).</p>
+<ul>
+<li>
+<p><strong>Programmatically</strong> The System.Messaging.M<code>essageQueue </code>class
+provides all the necessary functionality to work with and manipulate
+MSMQ queues. It is like a wrapper around message queuing.
+MessageQueue.Create(path) creates a non-transactional message queue
+at the specified path (we will talk about transactional and
+non-transactional queues later). For public queues, path is
+MachineName\QueueName. For private queues,
+MachineName\Private$\QueueName. You can use &ldquo;.&rdquo; for the local
+computer. Code should look like:</p>
+<p>MessageQueue privateQueue = MessageQueue.Create(&quot;.\Private$\privateQueue&rdquo;);</p>
+</li>
+<li>
+<p><strong>Through the computer management snap-in</strong> Open the computer
+management snap-in (right click computer, then manage). Navigate to
+Services and Applications, then Message Queuing. Right click on
+Private Queues –&gt; New –&gt; Private Queue. Or right click on
+public Queues –&gt; New –&gt; Public Queue.</p>
+</li>
+</ul>
+<p><a href="http://lh6.ggpht.com/--VAHZ6yAB10/TsVgDjIqZ8I/AAAAAAAAAKw/GdRORuiOjfI/s1600-h/MMC%25255B5%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p><strong>Sending a message</strong> Use Send() method of your previously created
+MessageQueue object like so</p>
+<pre><code>privateQueue.Send(&quot;Message Body (could be any managed object)&quot;, &quot;Message Label&quot;);
+</code></pre>
+<p><strong>Receiving a message</strong> There are two types of operations with respect
+to reading a message fom the Queue: Peeking and Receiving. When we
+receive a message from the queue, the message is removed from the queue.
+Peeking is similar to Receiving but here the message is not removed from
+the queue. Code could look like</p>
+<pre><code>MessageQueue anotherPrivateQueue = new MessageQueue(&quot;.\\Private$\\privateQueue&quot;);
+
+
+
+
+System.Messaging.Message msg = anotherPrivateQueue.Receive();
+</code></pre>
+<p><strong>Additional Considerations</strong> before writing the first complete
+messaging application</p>
+<ul>
+<li>You have to check if there is already a Message Queuing queue with
+the same name before creating your new queue. Use
+MessageQueue.Exists(path) to check for queue existence.</li>
+<li>When receiving a message and before accessing its body, you have to
+set the Formatter property of the Message object. There is a lot of
+built-in formatters. For now, we can use XMLFormatter.</li>
+</ul>
+<p>Now, let’s get things together into a “Hello, World” example. Open
+Visual Studio, New project, Windows forms. All reference to
+System.Messaging namespace. Then edit your code to look like so:</p>
+<pre><code>using System;
+
+using System.Collections.Generic;
+
+using System.Linq;
+
+using System.Text;
+
+using System.Messaging;
+
+
+
+namespace MSMQ_Demo
+
+{
+
+    class Program
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+            try
+
+            {
+
+                MessageQueue privateQueue;
+
+                if (!MessageQueue.Exists(&quot;.\\Private$\\privateQueue&quot;))
+
+                    privateQueue = MessageQueue.Create(&quot;.\\Private$\\privateQueue&quot;);
+
+                else
+
+                    privateQueue = new MessageQueue(&quot;.\\Private$\\privateQueue&quot;);
+
+
+
+                privateQueue.Send(&quot;Hello, World !&quot;, &quot;Message Label&quot;);
+
+                MessageQueue anotherPrivateQueue = new MessageQueue(&quot;.\\Private$\\privateQueue&quot;);
+
+                System.Messaging.Message msg = anotherPrivateQueue.Receive();
+
+                msg.Formatter = new System.Messaging.XmlMessageFormatter(new Type[1] { typeof(string) });
+
+                Console.WriteLine(msg.Body.ToString());
+
+            }
+
+            catch (Exception ex)
+
+            {
+
+                Console.WriteLine(ex.Message);
+
+            }
+
+        }
+
+    }
+
+}
+</code></pre>
+<p>If you run the project, you will see a message-box displaying “Hello,
+World !”. This message content created by had been sent from MSMQ queue,
+received by another MSMQ, and processed. In our example both the sending
+and the receiving queues exist in the same application for the sake of
+simplicity. In real world applications they reside in very different
+areas.</p>
+<p>This is a very basic introduction to MSMQ and non-transactional queues.
+In future posts, we will explore more advanced topics in MSMQ.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        November 22, 2011
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2011-11-22-in-previous-post-we-explored-very-basic.html/">An introduction to Microsoft Message Queuing–Part 2</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

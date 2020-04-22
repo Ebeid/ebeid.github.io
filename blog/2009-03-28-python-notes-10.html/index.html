@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Python Notes – 10 : Threading</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2009-03-28-python-notes-10.html/">Python Notes – 10 : Threading</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          March 28, 2009
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Python</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Welcome to our tenth note in the Python learning process. In this note
+we will talk about threading, threads communication and synchronization.</p>
+<h4 id="threads-basics">Threads basics</h4>
+<p>A running program is called a &ldquo;process&rdquo;. Each process has memory, list
+of open files, stack, program counter, etc…. Normally, a process
+executes statements in a single sequence of control-flow.</p>
+<p>The following commands create an entirely new process: fork(),system(),
+popen(), etc… This child process runs independently of the parent. Has
+own set of resources. There is minimal sharing of information between
+parent and child.</p>
+<p>On the other side, a thread is kind of like a process (it’s a sequence
+of control-flow). Except that it exists entirely inside a process and
+shares resources. A single process may have multiple threads of
+execution. This is extremely useful when an application wants to perform
+many concurrent tasks on shared data.</p>
+<h4 id="problems-with-threads">Problems with Threads</h4>
+<ul>
+<li>Scheduling : To execute a threaded program, must rapidly switch
+between threads. This can be done by the user process (user-level
+threads) or Can be done by the kernel (kernel-level threads).</li>
+<li>Resource Sharing : Since threads share memory and other resources,
+you must be very careful. Operation performed in one thread could
+cause problems in another.</li>
+<li>Synchronization : Threads often need to coordinate actions because
+they can get &ldquo;race conditions&rdquo; (outcome dependent on order of thread
+execution). You will often need to use locking primitives (mutual
+exclusion locks, semaphores, etc&hellip;)</li>
+</ul>
+<h4 id="python-threads">Python Threads</h4>
+<p>Python supports threads on the following platforms : Solaris, Windows,
+systems that support the POSIX threads library (pthreads).</p>
+<p>Thread scheduling is tightly controlled by a global interpreter lock and
+scheduler. Only a single thread is allowed to be executing in the Python
+interpreter at once. Thread switching only occurs between the execution
+of individual byte-codes. Long-running calculations in C/C++ can block
+execution of all other threads. However, most I/O operations do not
+block.</p>
+<p>Python threads are somewhat more restrictive than in C. Effectiveness
+may be limited on multiple CPUs (due to interpreter lock). Threads can
+interact strangely with other Python modules (especially signal
+handling). Not all extension modules are thread-safe.</p>
+<h4 id="the-thread-module">The thread module</h4>
+<p>The thread module provides low-level access to threads, thread creation,
+and Simple mutex locks.</p>
+<h5 id="creating-a-new-thread">Creating a new thread</h5>
+<p>Thread.start_new_thread(func,[args [,kwargs]]) Executes a function
+in a new thread. Syntax like:</p>
+<blockquote>
+<p>import thread</p>
+</blockquote>
+<blockquote>
+<p>import time</p>
+</blockquote>
+<blockquote>
+<p>def print_time(delay):</p>
+</blockquote>
+<blockquote>
+<p>    while 1:</p>
+</blockquote>
+<blockquote>
+<p>    time.sleep(delay)</p>
+</blockquote>
+<blockquote>
+<p>    print time.ctime(time.time())</p>
+</blockquote>
+<blockquote>
+<p>thread.start_new_thread(print_time,(5,))      # Start the thread</p>
+</blockquote>
+<blockquote>
+<p># Go do something else</p>
+</blockquote>
+<blockquote>
+<p>statements</p>
+</blockquote>
+<blockquote>
+<p>…….</p>
+</blockquote>
+<p>The function print_time will execute in a separate thread and will
+continue printing the time every 5 seconds. Python will continue
+executing our statements also.</p>
+<h5 id="thread-termination">Thread termination</h5>
+<p>Thread silently exits when the function returns. Thread can explicitly
+exit by calling thread.exit() or sys.exit(). Also uncaught exception
+causes thread termination (and prints error message). Other threads
+continue to run even if one had an error.</p>
+<h5 id="simple-locks">Simple locks</h5>
+<p>allocate_lock(). Creates a lock object, initially unlocked. Only one
+thread can acquire the lock at once. Threads block indefinitely until
+lock becomes available.</p>
+<blockquote>
+<p>import thread</p>
+</blockquote>
+<blockquote>
+<p>lk = thread.allocate_lock()</p>
+</blockquote>
+<blockquote>
+<p>def foo():</p>
+</blockquote>
+<blockquote>
+<p>    lk.acquire()         # Acquire the lock</p>
+</blockquote>
+<blockquote>
+<p>    …                     #critical section</p>
+</blockquote>
+<blockquote>
+<p>    lk.release()         # Release the lock</p>
+</blockquote>
+<p>You might use this if two or more threads were allowed to update a
+shared data structure.</p>
+<h5 id="the-main-thread">The main thread</h5>
+<p>When Python starts, it runs as a single thread of execution. This is
+called the &ldquo;main thread.&rdquo; which is on its own and it’s not a big deal.
+However, if you launch other threads it has some special properties.</p>
+<h5 id="termination-of-the-main-thread">Termination of the main thread</h5>
+<p>If the main thread exits and other threads are active, the behavior is
+system dependent. Usually, this immediately terminates the execution of
+all other threads without cleanup. Cleanup actions of the main thread
+may be limited as well.</p>
+<h5 id="signal-handling">Signal handling</h5>
+<p>Signals can only be caught and handled by the main thread of execution.
+Otherwise you will get an error (in the signal module). The
+keyboard-interrupt can be caught by any thread (non-deterministically).</p>
+<h4 id="the-threading-module">The threading module</h4>
+<p>The threading module is a high-level threads module that implements
+threads as classes (similar to Java). It provides an assortment of
+synchronization and locking primitives. It is built using the low-level
+thread module.</p>
+<h5 id="creating-a-new-thread-as-a-class">Creating a new thread (as a class)</h5>
+<p>When defining threads as classes all you need to supply is the
+following:</p>
+<ol>
+<li>A constructor that calls threading.Thread.__init__(self)</li>
+<li>A run() method that performs the actual work of the thread.</li>
+</ol>
+<p>A few additional methods are also available</p>
+<ul>
+<li>t.join([timeout])    # Wait for thread t to terminate</li>
+<li>t.getName()          # Get the name of the thread</li>
+<li>t.setName(name)   # Set the name of the thread</li>
+<li>t.isAlive()             # Return 1 if thread is alive.</li>
+<li>t.isDaemon()         # Return daemonic flag</li>
+<li>t.setDaemon(val)   # Set daemonic flag</li>
+</ul>
+<p>Example: Inherit from the &ldquo;Thread&rdquo; class, provide required methods, and
+utilize the available methods.</p>
+<blockquote>
+<p>import threading, time</p>
+</blockquote>
+<blockquote>
+<p>class PrintTime(threading.Thread):</p>
+</blockquote>
+<blockquote>
+<p>    def __init__(self,interval):</p>
+</blockquote>
+<blockquote>
+<p>        threading.Thread.__init__(self)         # Required</p>
+</blockquote>
+<blockquote>
+<p>        self.interval = interval</p>
+</blockquote>
+<blockquote>
+<p>    def run(sel f):</p>
+</blockquote>
+<blockquote>
+<p>        while 1:</p>
+</blockquote>
+<blockquote>
+<p>        time.sleep(self.interval) </p>
+</blockquote>
+<blockquote>
+<p>        print time.ctime(time.time())</p>
+</blockquote>
+<blockquote>
+<p>t = PrintTime(5)                                   # Create a thread
+object</p>
+</blockquote>
+<blockquote>
+<p>t.start()                                             # Start it</p>
+</blockquote>
+<h5 id="daemon-threads">Daemon threads</h5>
+<p>Normally, interpreter exits only when all threads have terminated.
+However, a thread can be flagged as a daemon thread (runs in
+background). Interpreter really only exits when all non-daemonic threads
+exit. You can use this to launch threads that run forever, but which can
+be safely killed.</p>
+<h4 id="threads-synchronization">Threads synchronization</h4>
+<p>The threading module provides the following synchronization primitives:</p>
+<ul>
+<li>Mutual exclusion locks</li>
+<li>Reentrant locks</li>
+<li>Conditional variables</li>
+<li>Semaphores</li>
+<li>Events</li>
+</ul>
+<p>When would you need these threads synchronization mechanisms ?</p>
+<ul>
+<li>When threads are updating shared data structures.</li>
+<li>When threads need to coordinate their actions in some manner
+(events).</li>
+</ul>
+<h5 id="the-lock-object">The Lock object</h5>
+<p>Provides a simple mutual exclusion lock. Only one thread is allowed to
+acquire the lock at once. Most useful for coordinating access to shared
+data.</p>
+<blockquote>
+<p>import threading</p>
+</blockquote>
+<blockquote>
+<p>data = [ ]                            # Some data</p>
+</blockquote>
+<blockquote>
+<p>lck = threading.Lock()            # Create a lock</p>
+</blockquote>
+<blockquote>
+<p>def put_obj(obj):</p>
+</blockquote>
+<blockquote>
+<p>    lck.acquire()</p>
+</blockquote>
+<blockquote>
+<p>    data.append(obj)</p>
+</blockquote>
+<blockquote>
+<p>    lck.release()</p>
+</blockquote>
+<blockquote>
+<p>def get_obj():</p>
+</blockquote>
+<blockquote>
+<p>    lck.acquire()</p>
+</blockquote>
+<blockquote>
+<p>    r = data.pop()</p>
+</blockquote>
+<blockquote>
+<p>    lck.release()</p>
+</blockquote>
+<blockquote>
+<p>    return r</p>
+</blockquote>
+<h5 id="the-rlock-object">The RLock object</h5>
+<p>A mutual-exclusion lock that allows repeated acquisition by the same
+thread. Allows nested acquire(), release() operations in the thread that
+owns the lock. Only the outermost release() operation actually releases
+the lock.</p>
+<blockquote>
+<p>import threading</p>
+</blockquote>
+<blockquote>
+<p>data = [ ]                  # Some data</p>
+</blockquote>
+<blockquote>
+<p>lck = threading.Lock()  # Create a lock</p>
+<blockquote>
+<p>def put_obj(obj):</p>
+</blockquote>
+<blockquote>
+<p>    lck.acquire()</p>
+</blockquote>
+<blockquote>
+<p>    data.append(obj)</p>
+</blockquote>
+<blockquote>
+<p>    &hellip;</p>
+</blockquote>
+<blockquote>
+<p>    put_obj(otherobj)   # Some kind of recursion</p>
+</blockquote>
+<blockquote>
+<p>    &hellip;</p>
+</blockquote>
+<blockquote>
+<p>    lck.release()</p>
+</blockquote>
+<blockquote>
+<p>def get_obj():</p>
+</blockquote>
+<blockquote>
+<p>    lck.acquire()</p>
+</blockquote>
+<blockquote>
+<p>    r = data.pop()</p>
+</blockquote>
+<blockquote>
+<p>    lck.release()</p>
+</blockquote>
+<blockquote>
+<p>    return r</p>
+</blockquote>
+<h5 id="the-condition-object">The Condition object</h5>
+<p>Creates a condition variable. Synchronization primitive typically used
+when a thread is interested in an event or state change. Could help in
+the producer-consumer classic problem.</p>
+<blockquote>
+<p>data = []                      # Create data queue and a
+condition variable</p>
+</blockquote>
+<blockquote>
+<p>cv = threading.Condition()</p>
+</blockquote>
+<blockquote>
+<p># Consumer thread</p>
+</blockquote>
+<blockquote>
+<p>def consume_item():</p>
+</blockquote>
+<blockquote>
+<p>    cv.acquire()              # Acquire the lock</p>
+</blockquote>
+<blockquote>
+<p>    while not len(data):</p>
+</blockquote>
+<blockquote>
+<p>        cv.wait()             # Wait for data to show up</p>
+</blockquote>
+<blockquote>
+<p>    r = data.pop()</p>
+</blockquote>
+<blockquote>
+<p>    cv.release()             # Release the lock</p>
+</blockquote>
+<blockquote>
+<p>    return r</p>
+</blockquote>
+<blockquote>
+<p># Producer thread</p>
+</blockquote>
+<blockquote>
+<p>def produce_item(obj):</p>
+</blockquote>
+<blockquote>
+<p>    cv.acquire()            # Acquire the lock</p>
+</blockquote>
+<blockquote>
+<p>    data.append(obj)</p>
+</blockquote>
+<blockquote>
+<p>    cv.notify()              # Notify a consumer</p>
+</blockquote>
+<blockquote>
+<p>    cv.release()           # Release the lock</p>
+</blockquote>
+<h5 id="semaphores">Semaphores</h5>
+<p>A locking primitive based on a counter. Each acquire() method
+decrements the counter. Each release() method increments the counter.
+If the counter reaches zero, future acquire() methods block. Common
+use: limiting the number of threads allowed to execute code</p>
+<blockquote>
+<p>sem = threading.Semaphore(5)      # No more than 5 threads allowed</p>
+</blockquote>
+<p>&lt; blockquote&gt;</p>
+<p>def fetch_file(host,filename):</p>
+</blockquote>
+<blockquote>
+<p>    sem.acquire()                         # Decrements count or
+blocks if zero</p>
+</blockquote>
+<blockquote>
+<p>    &hellip;</p>
+</blockquote>
+<blockquote>
+<p>    sem.release()                         # Increment count</p>
+</blockquote>
+<h5 id="events">Events</h5>
+<p>A communication primitive for coordinating threads. One thread signals
+an &ldquo;event&rdquo; while other threads wait for it to happen.</p>
+<blockquote>
+<p>e = Event()                       # Create an event object</p>
+</blockquote>
+<blockquote>
+<p>def signal_event():             # Signal the event</p>
+</blockquote>
+<blockquote>
+<p>     e.set()</p>
+</blockquote>
+<blockquote>
+<p>def wait_for_event():         # Wait for event</p>
+</blockquote>
+<blockquote>
+<p>    e.wait()</p>
+</blockquote>
+<blockquote>
+<p>def clear_event():             # Clear event</p>
+</blockquote>
+<blockquote>
+<p>    e.clear()</p>
+</blockquote>
+<p>Event is similar to a condition variable, but all threads waiting for
+event are awakened.</p>
+<h5 id="locks-and-blocking">Locks and Blocking</h5>
+<p>By default, all locking primitives block until lock is acquired. In
+general, this is uninterruptible. Fortunately, most primitives provide a
+non-blocking option</p>
+<blockquote>
+<p>if not lck.acquire(0):</p>
+</blockquote>
+<blockquote>
+<p>     # lock couldn’t be acquired!</p>
+</blockquote>
+<p>This works for Lock, RLock, and Semaphore objects. On the other hand
+condition variables and events provide a timeout option</p>
+<blockquote>
+<p>cv = Condition()</p>
+</blockquote>
+<blockquote>
+<p>&hellip;</p>
+</blockquote>
+<blockquote>
+<p>cv.wait(60.0)                  # Wait 60 seconds for notification</p>
+</blockquote>
+<p>On timeout, the function simply returns. Up to caller to detect errors.</p>
+<h4 id="the-queue-module">The Queue Module</h4>
+<p>Provides a multi-producer, multi-consumer FIFO queue object. It can be
+used to safely exchange data between multiple threads.</p>
+<ul>
+<li>q = Queue(maxsize)    # Create a queue.</li>
+<li>q.qsize()                   # Return current size.</li>
+<li>q.empty()                 # Test if empty.</li>
+<li>q.full()                     # Test if full.</li>
+<li>q.put(item)               # Put an item on the queue.</li>
+<li>q.get()  60;                  # Get item from queue</li>
+</ul>
+<p>The Queue object also supports non-blocking put/get.</p>
+<ul>
+<li>q.put_nowait(item).</li>
+<li>q.get_nowait()</li>
+</ul>
+<p>These raise the Queue.Full or Queue.Empty exceptions if an error occurs.
+Return values for qsize(), empty(), and full() are approximate.</p>
+<h4 id="things-to-consider-when-using-threads">Things to consider when using threads</h4>
+<ul>
+<li>Global interpreter lock makes it difficult to fully utilize multiple
+CPUs.</li>
+<li>You don’t get the degree of parallelism you might expect.</li>
+<li>Not all modules are thread-friendly. Example: gethostbyname() blocks
+all threads if nameserver down.</li>
+</ul>
+<p>In this note we will talked about threading, threads communication and
+synchronization. In the upcoming notes, we will talk about more advanced
+topics in Python programming.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 15, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-08-15-using-python-scripts-with-iis-7.html/">Using Python Scripts with IIS 7</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 27, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-03-27-python-notes-9.html/">Python Notes – 9 : Serialization</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 27, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-03-27-python-notes-8.html/">Python Notes – 8 : Object-Oriented Basics</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Getting Started with Apache Cassandra</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-07-09-getting-started-with-apache-cassandra.html/">Getting Started with Apache Cassandra</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          July 9, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Apache Cassandra</span>
+            
+            <span class="label label-success">Cassandra</span>
+            
+            <span class="label label-success">NoSQL</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Apache <a href="http://cassandra.apache.org/">Cassandra</a> is “an open source,
+distributed, decentralized, elastically scalable, highly available,
+fault-tolerant, tuneably consistent, column-oriented database that bases
+its distribution design on Amazon’s
+<a href="http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf" title="Dynamo: Amazon’s Highly Available Key-value Store">Dynamo</a>
+and its data model on Google’s
+<a href="http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/bigtable-osdi06.pdf" title="Bigtable: A Distributed Storage System for Structured Data">Bigtable</a>”
+(source: “Cassandra: The Definitive Guide,” O’Reilly Media, 2010, p.
+14).</p>
+<p>Cassandra is built to store lots of data across a variety of machines
+arranged in a ring, in other words scaling horizontally, rather than
+vertically.</p>
+<h4 id="data-model">Data Model</h4>
+<p><strong>Cassandra is based on a key-value model</strong> and it is organized
+according to the following concepts:</p>
+<ul>
+<li><strong>Column</strong> is a key-value pair.</li>
+</ul>
+<p><a href="http://lh4.ggpht.com/-Nm7Y_Z0Xj7c/UdSeu3ZA_FI/AAAAAAAABp0/CKu7ogaPdQk/s1600-h/Cassandra_DataModel_CheatSheet.pdf%252520-%252520Adobe%252520Reader_2013-07-03_15-59-51%25255B2%25255D.png"><!-- raw HTML omitted --></a></p>
+<ul>
+<li><strong>Column Family</strong> is a set of key-value pairs (columns in
+Cassandra’s terminology). They are sorted by their keys. Families
+are referenced and sorted by row keys.</li>
+</ul>
+<p><a href="http://lh5.ggpht.com/-KQ-fcGadYec/UdSevuHSxFI/AAAAAAAABqE/NZFQ8j55DaY/s1600-h/Cassandra_DataModel_CheatSheet.pdf%252520-%252520Adobe%252520Reader_2013-07-03_16-03-39%25255B5%25255D.png"><!-- raw HTML omitted --></a></p>
+<ul>
+<li><strong>Super Column</strong> the value of a key-value pair can be a sequence of
+key-value pairs as well. In this case, the outer column would be
+called <em>super column</em>.</li>
+</ul>
+<p><a href="http://lh3.ggpht.com/-e67Sbx-MBZI/UdSewXapJpI/AAAAAAAABqU/5Yhu4wezOCw/s1600-h/Cassandra_DataModel_CheatSheet.pdf%252520-%252520Adobe%252520Reader_2013-07-03_16-39-29%25255B2%25255D.png"><!-- raw HTML omitted --></a></p>
+<ul>
+<li>Columns and Super Columns can equally be used within Column Families</li>
+</ul>
+<p><a href="http://lh6.ggpht.com/-cX1ZLQgqBJ8/UdSexIyVfQI/A%0AAAAAAAABqg/_mOTEsywGqo/s1600-h/Cassandra_DataModel_CheatSheet.pdf%252520-%252520Adobe%252520Reader_2013-07-03_16-44-41%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<ul>
+<li>Columns or Super Columns are stored ordered by names within their
+Column Families</li>
+</ul>
+<p>For a better understanding of Cassandra’s data model, refer to this
+<a href="http://maxgrinev.com/2010/07/09/a-quick-introduction-to-the-cassandra-data-model/" title="A Quick Introduction to the Cassandra Data Model">article</a>
+by <a href="https://twitter.com/maxgrinev">Maxim Grinev</a>.</p>
+<h4 id="heading"> </h4>
+<h4 id="installation">Installation</h4>
+<ol>
+<li>Download the latest Cassandra version from
+<a href="http://cassandra.apache.org/download/" title="Cassandra Downloads Page">here</a>
+(I got version 1.2.6).</li>
+<li>Extract the archive (I extracted it to <em>C:\apache-cassandra-1.2.6</em>
+)</li>
+<li>If you don’t have Java installed on your machine, go and get it
+installed.</li>
+<li>Add environment variables
+<ol>
+<li>Reight-click the my Computer icon on your desktop or start menu.</li>
+<li>Click the Advanced tab (or the Advanced System Settings)</li>
+<li>Under System Variables, click New (adjust for your own
+directories)
+<ol>
+<li>Variable Name :  CASSANDRA_HOME</li>
+<li>Variable Value : C:\apache-cassandra-1.2.6</li>
+<li>click OK</li>
+</ol>
+</li>
+<li>Under System Variables, click New (adjust for your own
+directories)
+<ol>
+<li>Variable Name : JAVA_HOME</li>
+<li>Variable Value : C:\Program Files\Java\jre7</li>
+<li>click OK</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Now, open command window and navigate to your bin directory inside
+Cassandra directory (C:\apache-cassandra-1.2.6\bin in my case).</li>
+<li>Launch Cassandra by executing the comand <em><strong>cassandra –f</strong></em> (the
+“-f” causes it to run in the foreground). You will see lots of
+messages coming out. If everything goes fine, it will end up with
+something like this:</li>
+</ol>
+<p><a href="http://lh3.ggpht.com/-UnPiaJX8RoY/UdRyUOwWQBI/AAAAAAAABpM/5XG9a3FWj4k/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra%252520%252520-f_2013-07-03_11-18-19%25255B4%25255D.png"><!-- raw HTML omitted --></a></p>
+<p>Now we have a running Cassandra server is expecting incoming connections
+on port 9160.</p>
+<p>Once Cassandra is up and running on your machine, we can connect to the
+running instance using the Cassandra command-line interface, launched by
+running “cassandra-cli.bat”, from the Cassandra “bin” directory.</p>
+<p><a href="http://lh6.ggpht.com/-vurPz2Ai75k/UdRyUwqKVDI/AAAAAAAABpc/q_TMwpoNSpE/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-03_12-16-36%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<h4 id="commads">Commads</h4>
+<ul>
+<li><strong>show api version;</strong> to show the current api version.</li>
+<li><strong>describe cluster;</strong> to show a description of the current cluster.</li>
+</ul>
+<p><a href="http://lh6.ggpht.com/-E6BbthLOQG0/UddSpGviRLI/AAAAAAAABq8/RJxQT9gGMiM/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_12-59-46%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<ul>
+<li><strong>create keyspace</strong> <em>TestKS;</em> to create a keyspace and it have to be
+a unique name.</li>
+<li><strong>use</strong> <em>TestKS;</em> to switch to keyspace TestKS.</li>
+<li><strong>create column family</strong> <em>TestCF;</em> to create a column family TestCF
+within the current keyspace.
+<ul>
+<li>No other schema definition is required, the column family is a
+collection of name/value pairs.</li>
+</ul>
+</li>
+<li><code>set TestCF[ascii('TestKey')][ascii('column1')]=ascii('TestValue'); </code>to
+insert the TestKey/TestValue key/value pair into the column named
+column1 within the column family TestCF. You can use the <strong>with ttl
+=</strong> <em>x</em> setting at the end of the set command to make the column
+self-delete aft <em>x</em> seconds of the insertion time.
+<ul>
+<li>by default Cassandra treats data as byte arrays but you can
+convert to other types such as <strong>Long</strong>, <strong>int</strong>, <strong>integer</strong>,….
+Also <strong>timeuuid()</strong> generates new UUID. For full information
+about set command: <strong>type help set;</strong></li>
+</ul>
+</li>
+<li><code>get TestCF[ascii(&quot;TestKey&quot;)]; to retrieve the value stored in the key TestKey within the column family TestCF</code></li>
+</ul>
+<p><a href="http://lh3.ggpht.com/-Hn5eUsyN27I/UddSp6PwwrI/AAAAAAAABrM/GULnZQPMVF0/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_11-15-32%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<ul>
+<li><strong>del</strong> <em>TestCF[ascii(‘TestKey’)][ascii(‘column2’)];</em> rows and
+columns can be deleted by specifying the row key and/or the column
+name<br>
+with the del (delete) command.</li>
+</ul>
+<p><a href="http://lh4.ggpht.com/--hQRoa3rknY/UddSqlWO_gI/AAAAAAAABrY/FYwX-Qf8PIY/s160%0A0-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_15-29-44%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<ul>
+<li><strong>list</strong> <em>TestCF;</em> list the data inside a column family</li>
+</ul>
+<p><a href="http://lh3.ggpht.com/-pShPLfMYEdk/UddSrTgOB_I/AAAAAAAABro/wvTp08iV5V8/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_16-05-31%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<ul>
+<li><strong>drop column family</strong> <em>TestCF;</em> removes a column family.</li>
+<li><strong>drop</strong> <strong>keyspace</strong> <em>TestKS;</em> removes a key space.</li>
+</ul>
+<p><a href="http://lh4.ggpht.com/-02x8jN7oqZU/UddSr2JdHKI/AAAAAAAABr4/zfbolqgsGZ8/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_16-25-05%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<p>==&gt; You can insert to super columns much like inserting to normal
+columns. They can be read with get, written with set, and deleted with
+del. The super column version of these commands uses an extra [&lsquo;xxx&rsquo;]
+to represent the extra sub-index level.</p>
+<p><a href="http://lh3.ggpht.com/-fHySsJpN8OU/UddSs3kUrNI/AAAAAAAABsM/zG7er1ADQJA/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_17-07-44%25255B5%25255D.png"><!-- raw HTML omitted --></a></p>
+<ul>
+<li><strong>assume</strong> <em>TestCF</em> <strong>comparator as ascii;</strong> it decodes and helps
+display results of get and list requests inside the command-line
+interface. It can be used in the same way to set the <strong>validator</strong>
+and <strong>keys</strong>. By default, columns with no metadata are displayed in
+a hex format. This is done because row keys, column names, and
+column values are byte arrays. After using assume the column and
+value will be displayed rather than the hex code.</li>
+</ul>
+<p><a href="http://lh6.ggpht.com/-5-u5Iae2Wr8/UddStkmE9oI/AAAAAAAABsY/YZOLw550oUo/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_17-29-07%25255B4%25255D.png"><!-- raw HTML omitted --></a></p>
+<ul>
+<li><strong>Type Enforcement</strong> : Cassandra is designed to store and retrieve
+simple byte arrays but it also have support for <a href="http://www.datastax.com/docs/1.1/references/cql/cql_data_types" title="CQL Data Types">built-in
+types</a>.
+When creating or updating a column family, the user can supply
+column metadata that instructs the CLI Cassandra client on how to
+display data and help the server enforce types during insertion
+operations.<br>
+<strong>create column family User with comparator = UTF8Type;<br>
+update column family User with<br>
+        column_metadata =<br>
+        [<br>
+        {column_name: first, validation_class: AsciiType},<br>
+        {column_name: last, validation_class: AsciiType},<br>
+        {column_name: age, validation_class: IntegerType,
+index_type: KEYS}<br>
+        ];</strong></li>
+<li><strong>Querying data</strong> :</li>
+</ul>
+<p><strong>set User[ascii(&lsquo;jsmith&rsquo;)][ascii(&lsquo;first&rsquo;)] = ascii(&lsquo;John&rsquo;);<br>
+set User[ascii(&lsquo;jsmith&rsquo;)][ascii(&lsquo;last&rsquo;)] = ascii(&lsquo;Smith&rsquo;);<br>
+set User[ascii(&lsquo;jsmith&rsquo;)][ascii(&lsquo;age&rsquo;)] = &lsquo;38&rsquo;;</strong></p>
+<p><strong>get User where age = &lsquo;38&rsquo;;</strong></p>
+<ul>
+<li><strong>Update</strong> is the same as set.</li>
+</ul>
+<p><strong>set User[ascii(&lsquo;jsmith&rsquo;)][ascii(&lsquo;first&rsquo;)] = ascii(&lsquo;Jack&rsquo;);</strong></p>
+<ul>
+<li><strong>Quite</strong> the client;</li>
+</ul>
+<p><strong>quit;</strong></p>
+<p> </p>
+<p>In this post we just touched the Cassandra’s iceberg. In later posts we
+will dig more in it and how to write .net programs against it.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 12, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-12-getting-started-with-mongodb-part-2.html/">Getting Started with MongoDB – Part 2</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 12, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-12-getting-started-with-mongodb-part-1.html/">Getting Started with MongoDB – Part 1</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 3, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-03-redis-101-part-2.html/">Redis 101– Part 2</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

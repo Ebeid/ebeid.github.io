@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Python Notes – 9 : Serialization</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2009-03-27-python-notes-9.html/">Python Notes – 9 : Serialization</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          March 27, 2009
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Python</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Welcome to our ninth note in our Python learning process. We talked
+previously about files and how to handle it but we talked about writing
+and reading only the primitive data types as integers and strings. We
+also talked about objects and classes. Now, what if we want to write a
+compound data type or a complex object to a file. This note will talk
+about writing objects to files, which is called object serialization.</p>
+<h4 id="pickle">pickle</h4>
+<p>The pickle module is a Python built-in module that object serialization
+and de-serialization. To store a data structure, use the dump method and
+then close the file in the usual way:</p>
+<blockquote>
+<p>&gt;&gt;&gt; pickle.dump(12.3, f)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; pickle.dump([1,2,3], f)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; f.close()</p>
+</blockquote>
+<p>Then we can open the file for reading and load the data structures we
+dumped:</p>
+<blockquote>
+<p>&gt;&gt;&gt; f = open(&ldquo;test.pck&rdquo;,&ldquo;r&rdquo;)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; x = pickle.load(f)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; x</p>
+</blockquote>
+<blockquote>
+<p>12.3</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; type(x)</p>
+</blockquote>
+<blockquote>
+<p>&lt;type &lsquo;float&rsquo;&gt;</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; y = pickle.load(f)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; y</p>
+</blockquote>
+<blockquote>
+<p>[1, 2, 3]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; type(y)</p>
+</blockquote>
+<blockquote>
+<p>&lt;type &lsquo;list&rsquo;&gt;</p>
+</blockquote>
+<p>Each time we invoke load, we get a single value from the file, complete
+with its original type.</p>
+<h4 id="what-can-be-serialized-and-de-serialized">What can be serialized and de-serialized</h4>
+<p>The following types can be serialized and de-serialized using pickle:</p>
+<ul>
+<li>None, True, and False</li>
+<li>integers, long integers, floating point numbers, complex numbers</li>
+<li>normal and Unicode strings</li>
+<li>tuples, lists, sets, and dictionaries containing only picklable
+objects</li>
+<li>functions defined at the top level of a module</li>
+<li>built-in functions defined at the top level of a module</li>
+<li>classes that are defined at the top level of a module</li>
+<li>instances of such classes whose__dict__ or __setstate__() is
+picklable</li>
+</ul>
+<h4 id="things-to-consider-when-using-pickle">Things to consider when using pickle</h4>
+<ul>
+<li>Attempts to pickle unpicklable objects will raise the picklingError
+exception; when this happens, an unspecified number of bytes may
+have already been written to the underlying file.</li>
+<li>Trying to pickle a highly recursive data structure may exceed the
+maximum recursion depth, a RuntimeError will be raised in this case.
+You can carefully raise this limit with sys.setrecursionlimit().</li>
+</ul>
+<h4 id="cpickle">cPickle</h4>
+<p>The cPickle is an optimized version of pickle written in C, so it can be
+up to 1000 faster than pickle.</p>
+<h4 id="marshal">marshal</h4>
+<p>The marshal module can also be used for serialization. Marshal is
+similar to pickle, but is intended only for simple objects. Can’t handle
+recursion or class instances. On the plus side, it’s pretty fast if you
+just want to save simple objects to a file. Data is stored in a binary
+architecture independent format.To serialize:</p>
+<blockquote>
+<p>import marshal</p>
+</blockquote>
+<blockquote>
+<p>marshal.dump(obj,file)                  # Write obj to file</p>
+</blockquote>
+<p>To unserialize:</p>
+<blockquote>
+<p>obj = marshal.load(file)</p>
+</blockquote>
+<h4 id="shelve">shelve</h4>
+<p>The shelve module provides a persistent dictionary. It is works like a
+dictionary, but data is stored on disk.</p>
+<p>Keys must be strings. Data can be any object serializable with pickle.</p>
+<blockquote>
+<p>import shelve</p>
+</blockquote>
+<blockquote>
+<p>d = shelve.open(&ldquo;data&rdquo;) # Open a ’shelf’</p>
+</blockquote>
+<blockquote>
+<p>d[’foo’] = 42 # Save data</p>
+</blockquote>
+<blockquote>
+<p>x = d[’bar’] # Retrieve data</p>
+</blockquote>
+<h4 id="shelf-operations">Shelf operations</h4>
+<blockquote>
+<p>d[key] = obj              # Store an object</p>
+</blockquote>
+<blockquote>
+<p>obj = d[key]              # Retrieve an object</p>
+</blockquote>
+<blockquote>
+<p>del d[key]                 # Delete an object</p>
+</blockquote>
+<blockquote>
+<p>d.has_key(key)          # Test for existence of key</p>
+</blockquote>
+<blockquote>
+<p>d.keys()                   # Return a list of all keys</p>
+</blockquote>
+<blockquote>
+<p>d.close()                  # Close the shelf</p>
+</blockquote>
+<p>In this note will talked about writing objects to files, which is called
+object serialization. Object serialization is very useful in persisting
+your application logic to resume its execution later, transfer of
+execution to remote machine, and many other applications scenarios.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 15, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-08-15-using-python-scripts-with-iis-7.html/">Using Python Scripts with IIS 7</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 28, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-03-28-python-notes-10.html/">Python Notes – 10 : Threading</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 27, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-03-27-python-notes-8.html/">Python Notes – 8 : Object-Oriented Basics</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

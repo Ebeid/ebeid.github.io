@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Getting Started with MongoDB – Part 2</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-2.html/">Getting Started with MongoDB – Part 2</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          July 12, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">MongoDB</span>
+            
+            <span class="label label-success">JSON</span>
+            
+            <span class="label label-success">NoSQL</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>In the previous post we explored the basics of MongoDB. In this post we
+going to dig deeper in MongoDB.</p>
+<h3 id="indexing">Indexing</h3>
+<p>Whenever a new collection is created, MongoDB automatically creates an
+index by the <em>_id</em> field. These indexes can be found in the
+system.indexes collection. You can show all indexes in the database
+using db.system.indexes.find() . Most queries will include more fields
+than just the _id, so we need to make indexes on those fields.</p>
+<p>Before creating more indexes, let’s see what is the performance of a
+sample query without creating any indexes other than the automatically
+created one for _id. Create the following function to generate random
+phone numbers.</p>
+<blockquote>
+<p>function (area,start,stop) {<br>
+for(var i=start; i &lt; stop; i++) {<br>
+var country = 1 + ((Math.random() * 8) &lt;&lt; 0);<br>
+var num = (country * 1e10) + (area * 1e7) + i;<br>
+db.phones.insert({<br>
+_id: num,<br>
+components: {<br>
+country: country,<br>
+area: area,<br>
+prefix: (i * 1e-4) &lt;&lt; 0,<br>
+number: i<br>
+},<br>
+display: &ldquo;+&rdquo; + country + &quot; &quot; + area + &ldquo;-&rdquo; + i<br>
+});</p>
+</blockquote>
+<p>Run the function with a three-digit area code (like 800) and a range of
+seven digit numbers (5,550,000 to 5,650,000)</p>
+<blockquote>
+<p>populatePhones( 800, 5550000, 5650000 )</p>
+</blockquote>
+<p>Now we expecting to see a new index created for our new collection.</p>
+<blockquote>
+<p>&gt; db.system.indexes.find()<br>
+{ &ldquo;v&rdquo; : 1, &ldquo;key&rdquo; : { &ldquo;_id&rdquo; : 1 }, &ldquo;ns&rdquo; : &ldquo;newdb.towns&rdquo;, &ldquo;name&rdquo; :
+&ldquo;_id_&rdquo; }<br>
+{ &ldquo;v&rdquo; : 1, &ldquo;key&rdquo; : { &ldquo;_id&rdquo; : 1 }, &ldquo;ns&rdquo; : &ldquo;newdb.countries&rdquo;, &ldquo;name&rdquo; :
+&ldquo;_id_&rdquo; }<br>
+{ &ldquo;v&rdquo; : 1, &ldquo;key&rdquo; : { &ldquo;_id&rdquo; : 1 }, &ldquo;ns&rdquo; : &ldquo;newdb.phones&rdquo;, &ldquo;name&rdquo; :
+&ldquo;_id_&rdquo; }</p>
+</blockquote>
+<p>Now let’s check the query without an index. The explain() method is used
+to output details of a given operation and can help us here.</p>
+<blockquote>
+<p>&gt; db.phones.find( { display : &ldquo;+1 800-5650001&rdquo; } ).explain()<br>
+{<br>
+        &ldquo;cursor&rdquo; : &ldquo;<strong><!-- raw HTML omitted -->BasicCursor<!-- raw HTML omitted --></strong>&quot;,<br>
+        &ldquo;isMultiKey&rdquo; : false,<br>
+        &ldquo;n&rdquo; : 0,<br>
+        &ldquo;nscannedObjects&rdquo; : 100000,<br>
+        &ldquo;nscanned&rdquo; : 100000,<br>
+        &ldquo;nscannedObjectsAllPlans&rdquo; : 100000,<br>
+        &ldquo;nscannedAllPlans&rdquo; : 100000,<br>
+        &ldquo;scanAndOrder&rdquo; : false,<br>
+        &ldquo;indexOnly&rdquo; : false,<br>
+        &ldquo;nYields&rdquo; : 0,<br>
+        &ldquo;nChunkSkips&rdquo; : 0,<br>
+        &ldquo;millis&rdquo; : <strong><!-- raw HTML omitted -->134<!-- raw HTML omitted --></strong>,<br>
+        &ldquo;indexBounds&rdquo; : {</p>
+</blockquote>
+<blockquote>
+<p>        },<br>
+        &ldquo;server&rdquo; : &ldquo;ESOLIMAN:27017&rdquo;<br>
+}</p>
+</blockquote>
+<p>Just to make things simple, we will look at the millis field only which
+gives the milliseconds needed to complete the query. Now it is 134.</p>
+<p>Now we going to create an index and see how it improves our query
+execution time. We create an index by calling
+<strong>ensureIndex(fields,options)</strong> on the collection. The fields parameter
+is an object containing the fields to be indexed against. The options
+parameter describes the type of index to make. On production
+environments, creating an index on a large collection can be slow and
+resource-intensive, you should create them in off-peak times. In our
+case we going to build a unique index on the display field and we will
+drop duplicate entries.</p>
+<blockquote>
+<p>&gt; db.phones.ensureIndex(<br>
+&hellip; { display : 1 },<br>
+&hellip; { unique : true, dropDups : true }<br>
+&hellip; )</p>
+</blockquote>
+<p>lets try explain() of find() and see the new value for millis field.
+Query execution time improved, from 134 down to 16.</p>
+<blockquote>
+<p>&gt; db.phones.find( { display : &ldquo;+1 800-5650001&rdquo; } ).explain()<br>
+{<br>
+        &ldquo;cursor&rdquo; : &ldquo;<strong><!-- raw HTML omitted -->BtreeCursor
+display_1<!-- raw HTML omitted --></strong>&quot;,<br>
+        &ldquo;isMultiKey&rdquo; : false,<br>
+        &ldquo;n&rdquo; : 0,<br>
+        &ldquo;nscannedObjects&rdquo; : 0,<br>
+        &ldquo;nscanned&rdquo; : 0,<br>
+        &ldquo;nscannedObjectsAllPlans&rdquo; : 0,<br>
+        &ldquo;nscannedAllPlans&rdquo; : 0,<br>
+        &ldquo;scanAndOrder&rdquo; : false,<br>
+        &ldquo;indexOnly&rdquo; : false,<br>
+        &ldquo;nYields&rdquo; : 0,<br>
+        &ldquo;nChunkSkips&rdquo; : 0,<br>
+        &ldquo;millis&rdquo; : <strong><!-- raw HTML omitted -->16<!-- raw HTML omitted --></strong>,<br>
+        &ldquo;indexBounds&rdquo; : {<br>
+                &ldquo;display&rdquo; : [<br>
+                        [<br>
+                                &ldquo;+1 800-5650001&rdquo;,<br>
+                                &ldquo;+1 800-5650001&rdquo;<br>
+                        ]<br>
+                ]<br>
+        },<br>
+        &ldquo;server&rdquo; : &ldquo;ESOLIMAN:27017&rdquo;<br>
+}</p>
+</blockquote>
+<p>Notice the cursor changed from a Basic to a B-tree cursor. MongoDB is no
+longer doing<br>
+a full collection scan but instead walking the tree to retrieve the
+value.</p>
+<p>Mongo can build your index on nested values: db.phones.ensureIndex({
+&ldquo;components.area&rdquo;: 1 }, { background : 1 })</p>
+<h3 id="aggregations">Aggregations</h3>
+<p><strong>count()</strong> counts the number of matching documents. It takes a query
+and returns a number.</p>
+<blockquote>
+<p>&gt; db.phones.count({&lsquo;components.number&rsquo;: { $gt : 5599999 } })<br>
+100000</p>
+</blockquote>
+<p><strong>distinct()</strong> returns each matching value where one or more exists.</p>
+<blockquote>
+<p>&gt; db.phones.distinct(&lsquo;components.number&rsquo;, {&lsquo;components.number&rsquo;: {
+$lt : 5550005 } })<br>
+[ 5550000, 5550001, 5550002, 5550003, 5550004 ]</p>
+</blockquote>
+<p><strong>group()</strong> groups documents in a collection by the specified keys and
+performs simple aggregation functions such as computing counts and sums.
+It is similar to GROUP BY in SQL. It accepts the following parameters</p>
+<ul>
+<li><em>key</em> – Specifies one or more document fields to group by.</li>
+<li><em>reduce</em> – Specifies a function for the group operation perform on
+the documents during the grouping operation, such as compute a sum
+or a count. The aggregation function takes two arguments: the
+current document and the aggregate result for the previous documents
+in the group.</li>
+<li><em>initial</em> – Initializes the aggregation result document.</li>
+<li><em>keyf</em> – Optional. Alternative to the key field. Specifies a
+function that creates a “key object” for use as the grouping key.
+Use the keyf instead of key to group by calculated fields rather
+than existing document fields. Like HAVING in SQL.</li>
+<li>cond&lt; /em&gt; – Optional. Specifies the selection criteria to
+determine which documents in the collection to process. If you omit
+the cond field, db.collection.group() processes all the documents in
+the collection for the group operation.</li>
+<li><em>finalize</em> – Optional. Specifies a function that runs each item in
+the result set before db.collection.group() returns the final value.
+This function can either modify the result document or replace the
+result document as a whole.</li>
+</ul>
+<blockquote>
+<p>&gt; db.phones.group({<br>
+&hellip; initial : { count : 0 },<br>
+&hellip; reduce : function(phone, output) { output.count++; },<br>
+&hellip; cond : { &lsquo;components.number&rsquo; : { $gt : 5599999 } },<br>
+&hellip; key : { &lsquo;components.area&rsquo; : true }<br>
+&hellip; })<br>
+[<br>
+        {<br>
+                &ldquo;components.area&rdquo; : 800,<br>
+                &ldquo;count&rdquo; : 50000<br>
+        },<br>
+        {<br>
+                &ldquo;components.area&rdquo; : 855,<br>
+                &ldquo;count&rdquo; : 50000<br>
+        }<br>
+]</p>
+</blockquote>
+<p>The first thing we did here was set an initial object with a field named
+count set to 0—fields created here will appear in the output. Next we
+describe what to do with this field by declaring a reduce function that
+adds one for every document we encounter. Finally, we gave group a
+condition restricting which documents to reduce over.</p>
+<h3 id="server-side-commands">Server-Side Commands</h3>
+<p>All queries and operations we did till now, execute on the client side.
+The db object provides a command named eval(), which passes the given
+function to the server. This dramatically reduces the communication
+between client and server. It is similar to stored procedures in SQL.</p>
+<p>There is a also a set of prebuilt commands that can be executed on the
+server. Use db.listCommands() to get a list of these
+<a href="http://docs.mongodb.org/manual/reference/method/db.listCommands/#db.listCommands" title="db.listCommands()">commands</a>.
+To run any command on the server use db.runCommand() like
+db.runCommand({ &ldquo;count&rdquo; : &ldquo;phones&rdquo; })</p>
+<p>Although it is not recommended, you can <a href="http://docs.mongodb.org/manual/tutorial/store-javascript-function-on-server/" title="Store a JavaScript function on the Server">store a JavaScript function on
+the
+server</a>
+for later reuse.</p>
+<h3 id="mapreduce">MapReduce</h3>
+<p><a href="http://research.google.com/archive/mapreduce.html" title="MapReduce: Simplified Data Processing on Large Clusters">MapReduce</a>
+is a framework for parallelizing problems. Generally speaking the
+parallelization happens on two steps:</p>
+<ul>
+<li><strong>&ldquo;Map&rdquo; step:</strong> The master node takes the input, divides it into
+smaller sub-problems, and distributes them to worker nodes. A worker
+node may do this again in turn, leading to a multi-level
+<a href="http://en.wikipedia.org/wiki/Tree_(data_structure)">tree</a>
+structure. The worker node processes the smaller problem, and passes
+the answer back to its master node.</li>
+<li><strong>&ldquo;Reduce&rdquo; step:</strong> The master node then collects the answers to all
+the sub-problems and combines them in some way to form the output –
+the answer to the problem it was originally trying to solve.</li>
+</ul>
+<p>To show the MapReduce framework in action, let’s build on the phones
+collections that we created previously. Let’s generate a report that
+counts all phone numbers that contain the same digits for each country.</p>
+<p>First we create a <em>helper</em> function that extracts an array of all
+distinct numbers (this step is not a MapReduce step).</p>
+<blockquote>
+<p>&gt; distinctDigits = function(phone) {<br>
+&hellip; var<br>
+&hellip; number = phone.components.number + &lsquo;',<br>
+&hellip; seen = [],<br>
+&hellip; result = [],<br>
+&hellip; i = number.length;<br>
+&hellip; while(i&ndash;) {<br>
+&hellip;  seen[+number[i]] = 1;<br>
+&hellip;  }<br>
+&hellip; for (i=0; i&lt;10; i++) {<br>
+&hellip;  if (seen[i]) {<br>
+&hellip;   result[result.length] = i;<br>
+&hellip;   }<br>
+&hellip;  }<br>
+&hellip; return result;<br>
+&hellip; }</p>
+</blockquote>
+<blockquote>
+<p>&gt; db.eval(&ldquo;distinctDigits(db.phones.findOne({ &lsquo;components.number&rsquo; :
+5551213 }))&quot;)<br>
+[ 1, 2, 3, 5 ]</p>
+</blockquote>
+<p>Now let’s find find distinct numbers of each country. Since we need to
+query by country later, we will add the distinct digits array and
+country as compound key. For each distinct digits array in each country,
+we will add a count field that hold the value 1.</p>
+<blockquote>
+<p>&gt; map = function() {<br>
+&hellip; var digits = distinctDigits(this);<br>
+&hellip; emit( { digits : digits, country : this.components.country } , {
+count : 1 } );<br>
+&hellip; }</p>
+</blockquote>
+<p>The reducer function will all these 1s that have been emitted from the
+map function.</p>
+<blockquote>
+<p>&gt;reduce = function(key, values) {<br>
+&hellip; var total = 0;<br>
+&hellip; for(var i=0; i&lt;values.length; i++) {<br>
+&hellip;  total += values[i].count;<br>
+&hellip;  }<br>
+&hellip;  return { count : total };<br>
+&hellip; }</p>
+</blockquote>
+<p>Now it is time to put all pieces together and start the whole thing (the
+input collection, map function, reduce function, output collection).</p>
+<blockquote>
+<p>&gt; results = db.runCommand({<br>
+&hellip; mapReduce : &lsquo;phones&rsquo;,<br>
+&hellip; map : map,<br>
+&hellip; reduce : reduce,<br>
+&hellip; out : &lsquo;phones.report&rsquo;<br>
+&hellip; })<br>
+{<br>
+        &ldquo;result&rdquo; : &ldquo;phones.report&rdquo;,<br>
+        &ldquo;timeMillis&rdquo; : 21084,<br>
+        &ldquo;counts&rdquo; : {<br>
+                &ldquo;input&rdquo; : 200000,<br>
+                &ldquo;emit&rdquo; : 200000,<br>
+                &ldquo;reduce&rdquo; : 48469,<br>
+                &ldquo;output&rdquo; : 3489<br>
+        },<br>
+        &ldquo;ok&rdquo; : 1<br>
+}</p>
+</blockquote>
+<p>Now you can query the output collection like any other collection</p>
+<blockquote>
+<p>&gt; db.phones.report.find()<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  4,  5,  6 ], &ldquo;country&rdquo; :
+1 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 37 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  4,  5,  6 ], &ldquo;country&rdquo; :
+2 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 23 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  4,  5,  6 ], &ldquo;country&rdquo; :
+3 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 17 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  4,  5,  6 ], &ldquo;country&rdquo; :
+4 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 29 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  4,  5,  6 ], &ldquo;country&rdquo; :
+5 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 34 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  4,  5,  6 ], &ldquo;country&rdquo; :
+6 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 35 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  4,  5,  6 ], &ldquo;country&rdquo; :
+7 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 33 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  4,  5,  6 ], &ldquo;country&rdquo; :
+8 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 32 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5 ], &ldquo;country&rdquo; : 1 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 5 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5 ], &ldquo;country&rdquo; : 2 },
+&ldquo;val ue&rdquo; : { &ldquo;count&rdquo; : 7 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5 ], &ldquo;country&rdquo; : 3 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 3 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5 ], &ldquo;country&rdquo; : 4 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 6 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5 ], &ldquo;country&rdquo; : 5 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 5 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5 ], &ldquo;country&rdquo; : 6 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 10 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5 ], &ldquo;country&rdquo; : 7 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 5 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5 ], &ldquo;country&rdquo; : 8 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 7 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5,  6 ], &ldquo;country&rdquo; : 1 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 95 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5,  6 ], &ldquo;country&rdquo; : 2 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 104 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5,  6 ], &ldquo;country&rdquo; : 3 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 108 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5,  6 ], &ldquo;country&rdquo; : 4 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 113 } }<br>
+Type &ldquo;it&rdquo; for more</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<dl>
+<dt>&gt; db.phones.report.find({'_id.country&rsquo; : 8})</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  4,  5,  6 ], &ldquo;country&rdquo; :</dt>
+<dt>8 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 32 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5 ], &ldquo;country&rdquo; : 8 },</dt>
+<dt>&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 7 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5,  6 ], &ldquo;country&rdquo; : 8 },</dt>
+<dt>&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 127 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5,  6,  7 ], &ldquo;country&rdquo; :</dt>
+<dt>8 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 28 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5,  6,  8 ], &ldquo;country&rdquo; :</dt>
+<dt>8 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 27 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5,  6,  9 ], &ldquo;country&rdquo; :</dt>
+<dt>8 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 29 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5,  7 ], &ldquo;country&rdquo; : 8 },</dt>
+<dt>&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 10 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5,  8 ], &ldquo;country&rdquo; : 8 },</dt>
+<dt>&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 7 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5,  9 ], &ldquo;country&rdquo; : 8 },</dt>
+<dt>&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 8 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  4,  5 ], &ldquo;country&rdquo; : 8 },</dt>
+<dt>&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 3 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  4,  5,  6 ], &ldquo;country&rdquo; : 8 },</dt>
+<dt>&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 121 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  4,  5,  6,  7 ], &ldquo;country&rdquo; :</dt>
+<dt>8 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 25 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  4,  5,  6,  8 ], &ldquo;country&rdquo; :</dt>
+<dt>8 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 27 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  4,  5,  6,  9 ], &ldquo;country&rdquo; :</dt>
+<dt>8 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 17 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  4,  5,  7 ], &ldquo;country&rdquo; : 8 },</dt>
+<dt>&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 4 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  4,  5,  8 ], &ldquo;country&rdquo; : 8 },</dt>
+<dt>&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 4 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  4,  5,  9 ], &ldquo;country&rdquo; : 8 },</dt>
+<dt>&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 7 } }</dt>
+<dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  5 ], &ldquo;country&rdquo; : 8 }, &ldquo;value&rdquo;</dt>
+<dd>{ &ldquo;count&rdquo; : 14 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  5,  6 ], &ldquo;country&rdquo; : 8 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 162 } }<br>
+{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  5,  6,  7 ], &ldquo;country&rdquo; : 8 },
+&ldquo;value&rdquo; : { &ldquo;count&rdquo; : 95 } }<br>
+Type &ldquo;it&rdquo; for more</dd>
+</dl>
+</blockquote>
+<p>The unique emitted key s are under the field <em>_id</em>, and all of the data
+returned from the reducers are<br>
+under the field <em>value</em>. If you prefer that the mapreducer just output
+the results, rather than outputting to a collection, you can set the out
+value to { inline : 1 }, but bear in mind there is a limit to the size
+of a result you can output (16 MB).</p>
+<p>In some situations you may need to feed the reducer function’s output
+into another reducer function. In these situations we need to carefully
+handle both cases: either map’s output or another reduce’s output.</p>
+<p>MongoDB have so many features that we didn’t even mentioned here. In
+later posts will continue working on them.</p>
+<h3 id="heading"></h3>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 12, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-12-getting-started-with-mongodb-part-1.html/">Getting Started with MongoDB – Part 1</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 9, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-09-getting-started-with-apache-cassandra.html/">Getting Started with Apache Cassandra</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 3, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-03-redis-101-part-2.html/">Redis 101– Part 2</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

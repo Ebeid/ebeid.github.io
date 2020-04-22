@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Python Notes – 6 : Tuples &amp; Dictionaries</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2009-03-23-python-notes-6.html/">Python Notes – 6 : Tuples &amp; Dictionaries</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          March 23, 2009
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Python</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Welcome to our sixth note in our Python learning process. In this note
+we will talk about tuples and dictionaries.</p>
+<h4 id="tuples">Tuples</h4>
+<p>Tuples are similar to lists but its elements can&rsquo;t be modified.
+Syntactically, a tuple is a comma-separated list of values:</p>
+<blockquote>
+<p>&gt;&gt;&gt; tuple = &lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &lsquo;d&rsquo;, &lsquo;e&rsquo;</p>
+</blockquote>
+<p>Although it is not necessary, it is conventional to enclose tuples in
+parentheses:</p>
+<blockquote>
+<p>&gt;&gt;&gt; tuple = (&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &lsquo;d&rsquo;, &lsquo;e&rsquo;)</p>
+</blockquote>
+<p>To create a tuple with a single element, we have to include the ¯nal
+comma:</p>
+<blockquote>
+<p>&gt;&gt;&gt; t1 = (&lsquo;a&rsquo;,)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; type(t1)</p>
+</blockquote>
+<blockquote>
+<p>&lt;type &lsquo;tuple&rsquo;&gt;</p>
+</blockquote>
+<p>Without the comma, Python treats (&lsquo;a&rsquo;) as a string in parentheses:</p>
+<blockquote>
+<p>&gt;&gt;&gt; t2 = (&lsquo;a&rsquo;)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; type(t2)</p>
+</blockquote>
+<blockquote>
+<p>&lt;type &lsquo;string&rsquo;&gt;</p>
+</blockquote>
+<h4 id="tuple-assignment">Tuple assignment</h4>
+<p>Tuples assignment could be used to perform multiple assignments in one
+statement. For example, to swap a and b we can make it like that:</p>
+<blockquote>
+<p>&gt;&gt;&gt; a, b = b, a</p>
+</blockquote>
+<p>The left side is a tuple of variables; the right side is a tuple of
+values. Each value is assigned to its respective variable.</p>
+<h4 id="dictionaries">Dictionaries</h4>
+<p>Dictionaries are like lists and tuples in that all of them are compound
+types.</p>
+<p>Dictionaries are different than lists and tuples in that it can use any
+immutable type as an index not only integers like tuples and lists.
+Dictionaries are not ordered.</p>
+<p>To create an empty dictionary and then add elements to it:</p>
+<blockquote>
+<p>&gt;&gt;&gt; eng2sp = {}</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; eng2sp[&lsquo;one&rsquo;] = &lsquo;uno&rsquo;</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; eng2sp[&lsquo;two&rsquo;] = &lsquo;dos&rsquo;</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; print eng2sp</p>
+</blockquote>
+<blockquote>
+<p>{&lsquo;one&rsquo;: &lsquo;uno&rsquo;, &lsquo;two&rsquo;: &lsquo;dos&rsquo;}</p>
+</blockquote>
+<p>You can also create the dictionary by providing a list of key-value
+pairs:</p>
+<blockquote>
+<p>&gt;&gt;&gt; eng2sp = {&lsquo;one&rsquo;: &lsquo;uno&rsquo;, &lsquo;two&rsquo;: &lsquo;dos&rsquo;, &lsquo;three&rsquo;: &lsquo;tres&rsquo;}</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; print eng2sp</p>
+</blockquote>
+<blockquote>
+<p>{&lsquo;one&rsquo;: &lsquo;uno&rsquo;, &lsquo;three&rsquo;: &lsquo;tres&rsquo;, &lsquo;two&rsquo;: &lsquo;dos&rsquo;}</p>
+</blockquote>
+<h4 id="dictionary-operations">Dictionary Operations</h4>
+<p>del statement removes a key-value pair from a dictionary.</p>
+<blockquote>
+<p>&gt;&gt;&gt; inventory = {&lsquo;apples&rsquo;: 430, &lsquo;bananas&rsquo;: 312, &lsquo;oranges&rsquo;:
+525, &lsquo;pears&rsquo;: 217}</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; print inventory</p>
+</blockquote>
+<blockquote>
+<p>{&lsquo;oranges&rsquo;: 525, &lsquo;apples&rsquo;: 430, &lsquo;pears&rsquo;: 217, &lsquo;bananas&rsquo;: 312}</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; del inventory[&lsquo;pears&rsquo;]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; print inventory</p>
+</blockquote>
+<blockquote>
+<p>{&lsquo;oranges&rsquo;: 525, &lsquo;apples&rsquo;: 430, &lsquo;bananas&rsquo;: 312}</p>
+</blockquote>
+<p>The len function also works on dictionaries; it returns the number of
+key-value pairs:</p>
+<blockquote>
+<p>&gt;&gt;&gt; len(inventory)</p>
+</blockquote>
+<blockquote>
+<p>4</p>
+</blockquote>
+<h4 id="dictionary-methods">Dictionary methods</h4>
+<p>The keys method takes a dictionary and returns a list of the keys.</p>
+<blockquote>
+<p>&lt; p&gt;&gt;&gt;&gt; eng2sp.keys()</p>
+</blockquote>
+<blockquote>
+<p>[&lsquo;one&rsquo;, &lsquo;three&rsquo;, &lsquo;two&rsquo;]</p>
+</blockquote>
+<p>The values method is similar; it returns a list of the values in the
+dictionary:</p>
+<blockquote>
+<p>&gt;&gt;&gt; eng2sp.values()</p>
+</blockquote>
+<blockquote>
+<p>[&lsquo;uno&rsquo;, &lsquo;tres&rsquo;, &lsquo;dos&rsquo;]</p>
+</blockquote>
+<p>The items method returns both, in the form of a list of tuples|one for
+each key-value pair:</p>
+<blockquote>
+<p>&gt;&gt;&gt; eng2sp.items()</p>
+</blockquote>
+<blockquote>
+<p>[(&lsquo;one&rsquo;,&lsquo;uno&rsquo;), (&lsquo;three&rsquo;, &lsquo;tres&rsquo;), (&lsquo;two&rsquo;, &lsquo;dos&rsquo;)]</p>
+</blockquote>
+<p>The method has_key takes a key and returns true (1) if the key appears
+in the dictionary:</p>
+<blockquote>
+<p>&gt;&gt;&gt; eng2sp.has_key(&lsquo;one&rsquo;)</p>
+</blockquote>
+<blockquote>
+<p>1</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; eng2sp.has_key(&lsquo;deux&rsquo;)</p>
+</blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+<h4 id="aliasing-and-copying">Aliasing and copying</h4>
+<p>Dictionaries are objects that can be aliased like that:</p>
+<blockquote>
+<p>&gt;&gt;&gt; opposites = {&lsquo;up&rsquo;: &lsquo;down&rsquo;, &lsquo;right&rsquo;: &lsquo;wrong&rsquo;, &lsquo;true&rsquo;:
+&lsquo;false&rsquo;}</p>
+</blockquote>
+<blockquote>
+<p>&gt;&gt;&gt; alias = opposites</p>
+</blockquote>
+<p>Or copied to a new fresh copy like that:</p>
+<blockquote>
+<p>&gt;&gt;&gt; copy = opposites.copy()</p>
+</blockquote>
+<p>This note completed the compound data types talk we started before with
+lists. Lists, tuples, and dictionaries are the compound data types that
+Python provides. You can use them as is or you can use them to build a
+more complex data types and containers.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 15, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-08-15-using-python-scripts-with-iis-7.html/">Using Python Scripts with IIS 7</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 28, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-03-28-python-notes-10.html/">Python Notes – 10 : Threading</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 27, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-03-27-python-notes-9.html/">Python Notes – 9 : Serialization</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Getting started with Microsoft Code Digger</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-04-26-getting-started-with-microsoft-code.html/">Getting started with Microsoft Code Digger</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          April 26, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Microsoft Pex</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Microsoft Code Digger is Visual Studio 2012 extension that have been
+released few days ago by RiSE team at Microsoft Research (the same team
+who developed Pex). You can download the it from the Visual Studio
+Gallery
+<a href="http://visualstudiogallery.msdn.microsoft.com/fb5badda-4ea3-4314-a723-a1975cbdabb4">here</a>.</p>
+<p>Microsoft Code Digger uses the same engine that Pex uses, and the same
+techniques under the hood (dynamic symbolic execution and constraint
+solvers). The only constrain that Code Digger have is that it only works
+on public .NET code in Portable Class Libraries.</p>
+<h3 id="lets-try-it">Let’s try it</h3>
+<p>After installing the Code Digger extension for Visual Studio 2012,
+create a Portable Class Library. Let’s use the Triang() method we used
+in previous posts as an example here. Your code should look like:</p>
+<pre><code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace PortableClassLibrary1
+{
+    public class Class1
+    {
+        public static int Triang(int Side1, int Side2, int Side3)
+        {
+            int triOut;
+
+            // triOut is output from the routine:
+            //   Triang = 1 if triangle is scalene
+            //   Triang = 2 if triangle is isosceles
+            //   Triang = 3 if triangle is equilateral
+            //   Triang = 4 if not a triangle
+
+            // A quick confirmation that it's a valid triangle
+            if (Side1 &lt;= 0 || Side2 &lt;= 0 || Side3 &lt;= 0)
+            {
+                triOut = 4;
+                return (triOut);
+            }
+
+            // Detect any sides of equal sides
+            triOut = 0;
+            if (Side1 == Side2)
+                triOut = triOut + 1;
+            if (Side1 == Side3)
+                triOut = triOut + 2;
+            if (Side2 == Side3)
+                triOut = triOut + 3;
+            if (triOut == 0)
+            {
+                if ((Side1 + Side2 &lt;= Side3) || (Side2 + Side3 &lt;= Side1) || (Side1 + Side3 &lt;= Side2)) // confirm that it is a valid triangle 
+                    triOut = 4;
+                else
+                    triOut = 1;
+                return (triOut);
+            }
+
+            if (triOut &gt; 3)
+                triOut = 3;
+            else if ((triOut == 1) &amp;&amp; (Side1 + Side2 &gt; Side3))
+                triOut = 2;
+            else if ((triOut == 2) &amp;&amp; (Side1 + Side3 &gt; Side2))
+                triOut = 2;
+            else if ((triOut == 3) &amp;&amp; (Side2 + Side3 &gt; Side1))
+                triOut = 2;
+            else
+                triOut = 4;
+            return (triOut);
+        }
+    }
+}
+</code></pre>
+<p>Right click inside Triang() method and wait for few seconds. You will
+see the below Inputs / Outputs pane.</p>
+<p><a href="http://lh6.ggpht.com/-k2dprYyaE8U/UXgyA4-6wAI/AAAAAAAABKM/-gDylz5tgW8/s1600-h/PortableClassLibrary1%252520-%252520Microsoft%252520Visual%252520Studio_2013-04-24_14-17-51%25255B4%25255D.jpg"><!-- raw HTML omitted --></a> </p>
+<p>It’s the same set we got before from Pex and for the same reasons. No
+surprises, both tools use the same engine under hood.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 13, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-13-how-to-debug-your-pex-parameterized.html/">How to debug your Pex parameterized unit tests</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 1, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-01-convert-microsoft-pex-path-conditions.html/">Convert Microsoft Pex path conditions from Z3 native format to SMT-LIB</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 24, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-24-get-path-conditions-from-microsoft-pex.html/">Get path conditions from Microsoft Pex</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

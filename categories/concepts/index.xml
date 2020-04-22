@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>concepts on Ebeid ElSayed</title>
+    <link>https://ebeid.github.io/categories/concepts/</link>
+    <description>Recent content in concepts on Ebeid ElSayed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ebeid.github.io/categories/concepts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Twelve-Factor Applications</title>
+      <link>https://ebeid.github.io/blog/twelve-factor-applications/</link>
+      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/twelve-factor-applications/</guid>
+      <description>This post is just my notes about Twelve-Factor Applications. You can consider it my extended version of the original website.
+&amp;ldquo;Twelve-factor applications&amp;rdquo; is a methodology that focus mainly on developing software-as-a-service applications (or SAAS for short). Although that&amp;rsquo;s was the main concern, factors in this methodology can be used or inspire engineering practices in other types of software development.
+Facor 1 - Codebase One codebase tracked in revision control, many deploys.</description>
+    </item>
+    
+  </channel>
+</rss>

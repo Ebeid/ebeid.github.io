@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Introduction to R – Functions</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-01-13-introduction-to-r-functions.html/">Introduction to R – Functions</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          January 13, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">R Programming Language</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <h2 id="span-stylecolor-black-font-size-x-small-font-weight-boldfunctionsspan"><!-- raw HTML omitted -->Functions<!-- raw HTML omitted --></h2>
+<p><!-- raw HTML omitted -->Functions are just like what you
+remember from math class. Most functions are in the following form:
+<em>f(argument1, argument2, &hellip;)</em> Where f is the name of the function, and
+argument1, argument2, . . . are the arguments<br>
+to the function. Here are a few examples of built-in functions:<!-- raw HTML omitted --><br>
+<a href="http://lh5.ggpht.com/-RJ4ylIVjALY/UO8nenj7uLI/AAAAAAAAAyI/EPSaz5GvCkQ/s1600-h/RGui-64-bit_2013-01-08_16-25-25_thum%25255B2%25255D.jpg"><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></a><br>
+<!-- raw HTML omitted -->Note in the last example that if you
+give the argument in the default order, you can omit the names. Some
+built-in functions have operator form like the following examples:
+<!-- raw HTML omitted --><br>
+<a href="http://lh6.ggpht.com/-YYkQD8uVMjM/UO8ngRXxMcI/AAAAAAAAAyY/IQoravsvJQ8/s1600-h/RGui-64-bit_2013-01-08_16-29-23_thum%25255B2%25255D.jpg"><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></a><br>
+<!-- raw HTML omitted -->A function in R is just another object
+that is assigned to a symbol. You can define your own functions in R,
+assign them a name, and then call them just like the built-in functions.
+Writing your function code on the R Console is hard, so R provided a
+simple text editor for that. To write your code go to File &gt;&gt; New
+Script. This will open the R Editor, enter the following code<!-- raw HTML omitted --><br>
+<a href="http://lh5.ggpht.com/-iRli5V_53xg/UO8nh3vi_MI/AAAAAAAAAyk/Nwkq3RuOD28/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_09-05-56%25255B3%25255D.jpg"><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></a><br>
+<!-- raw HTML omitted --><!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->You could select the code, copy and
+paste it in R console. Now you can call the function to get its result
+(note that entering the function name and hitting enter retrieves the
+function code. This is a useful trick to view function code before using
+it).<!-- raw HTML omitted --><br>
+<a href="http://lh5.ggpht.com/-RLsFaxc0Dbs/UO8nja4EAKI/AAAAAAAAAy0/VZRZ-y__3rM/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_10-29-47%25255B3%25255D.jpg"><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></a><br>
+<!-- raw HTML omitted -->Now lets go back to the editor and
+save the code in our working directory in MyCode.R (.R is the extension
+for R code files). To load the code in any R code file inside the
+console for use, use source() and pass the file name for it. Then you
+can use the code inside that file in the console. Each time you edit
+that code file, you have to call source() again to load the latest
+code.<!-- raw HTML omitted --><br>
+<a href="http://lh3.ggpht.com/-0na61sPgPTA/UO8nkYuSVbI/AAAAAAAAAzE/LkeEJHPqtUM/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_10-40-49%25255B4%25255D.jpg"><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></a></p>
+<h2 id="span-stylecolor-black-font-size-x-small-font-weight-boldargumentsspan"><!-- raw HTML omitted -->Arguments<!-- raw HTML omitted --></h2>
+<p><!-- raw HTML omitted -->A function definition in R includes
+the arguments’ names (in the previous example we didn’t use any
+arguments).<!-- raw HTML omitted --><br>
+<a href="http://lh3.ggpht.com/-60VMdZrd5kw/UO8nlv4F3wI/AAAAAAAAAzY/t_DHVMvLQls/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_11-08-31%25255B3%25255D.jpg"><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></a><br>
+<!-- raw HTML omitted -->Optionally, you can include <strong>default
+values for arguments</strong>. If you specify a default value for an argument,
+it will be considered optional (can be omitted from the function call).
+If you provided a value for an argument with default value, your value
+will override the default one. Non-optional parameters have to be
+provided in the function call.<!-- raw HTML omitted --><br>
+<a href="http://lh3.ggpht.com/-MHn_6h0dZgQ/UO8nnAarg6I/AAAAAAAAAzk/ErLFJGdL_is/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_11-26-13%25255B3%25255D.jpg"><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></a><br>
+<!-- raw HTML omitted --><!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->If you want to specify a
+<strong>variable-length argument list</strong>, specify (…) in the arguments to the
+function. Everything other than the named arguments, will be stored in
+the ellipsis … .To can then convert the ellipsis to a list to work with
+it.<!-- raw HTML omitted --><br>
+<a href="http://lh4.ggpht.com/-z11PJxH1swA/UO8noM8YEmI/AAAAAAAAAz0/RS5jK6fNelo/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_12-31-13%25255B3%25255D.jpg"><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></a><br>
+<!-- raw HTML omitted -->You can also refer directly to items
+within the ellipsis using the variables ..1 for the first item, ..2 for
+second and so on to ..9. Any argument that appear after the ellipsis in
+the function call, have to be named explicitly. <!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->You can get the set of arguments
+accepted by a function, use the args function. NULL represents the
+function body.<!-- raw HTML omitted --><br>
+<a href="http://lh5.ggpht.com/-c45-HARKbaQ/UO8npLfFnxI/AAAAAAAAA0I/mnnEmQES-Hw/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_14-30-46%25255B5%25255D.jpg"><!-- raw HTML omitted --></a><br>
+<!-- raw HTML omitted -->You can pass named arguments any ware
+in the function call by their name. Unnamed arguments have to match the
+order that they are listed in the function definition. The following
+lm() function calls are equivalent :<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->lm(data = mydata, y ~ x, model =
+FALSE, 1:100)<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->lm(y ~ x, mydata, 1:100, model =
+FALSE)<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->Named argument are helpful if you have
+a long argument list which you remember it by arguments’ names, not the
+order.<!-- raw HTML omitted --></p>
+<h2 id="span-stylefont-size-x-smallspan-stylecolor-black-font-weight-boldlazy-evaluationspanspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->Lazy Evaluation<!-- raw HTML omitted --><!-- raw HTML omitted --></h2>
+<p>Arguments to functions are evaluated <em>lazily,</em> so they are evaluated
+only as needed. The function below never uses the argument b, so calling
+f(2) will not produce an error because the 2 gets positionally matched
+to a (the only variable needed).<br>
+<a href="http://lh5.ggpht.com/-OaJNnmJrj2k/UPbevJneacI/AAAAAAAAA4s/QMhSO8PZ02g/s1600-h/RGui-64-bit_2013-01-15_17-07-503.jpg"><!-- raw HTML omitted --></a><br>
+even if you will use a missing argument, R will not give an error until
+the first use of this missing argument. Everything before that will
+execute normally.<br>
+<a href="http://lh3.ggpht.com/-kghNTF3oDPw/UPbewri2AYI/AAAAAAAAA48/3T6Npejnx1Q/s1600-h/RGui%252520%25252864-bit%252529_2013-01-16_07-49-45%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<h2 id="span-stylefont-size-x-smallspan-stylecolor-black-font-weight-boldreturn-values-spanspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->Return Values <!-- raw HTML omitted --><!-- raw HTML omitted --></h2>
+<p>You can use the return function to specify the value to be returned by
+the function. Also R will return the last evaluated expression as the
+result of the function if no return() is found.<br>
+<a href="http://lh3.ggpht.com/-2E3VsuC%0ADvW8/UO8nqJp36jI/AAAAAAAAA0Y/gHBUo6WY-TA/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_12-52-41%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<h2 id="span-stylecolor-black-font-size-x-smallspan-stylefont-weight-boldfunctions-as-argumentsspanspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->Functions as Arguments<!-- raw HTML omitted --><!-- raw HTML omitted --></h2>
+<p>Many functions in R can take other functions as arguments. An example of
+these functions, the sapply function iterates through each element in a
+vector, applying another function to each element in the vector and
+returning the results.<br>
+<a href="http://lh4.ggpht.com/-hx8geuw0Imo/UO8nrZpfrKI/AAAAAAAAA0k/7QNIP15UTiM/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_13-07-51%25255B5%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<h2 id="span-stylecolor-black-font-size-x-smallspan-stylefont-weight-boldanonymous-functionsspanspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->Anonymous Functions<!-- raw HTML omitted --><!-- raw HTML omitted --></h2>
+<p>You create functions that do not have names. These are called anonymous
+functions. Anonymous functions are usually passed as arguments to other
+functions.<br>
+<a href="http://lh5.ggpht.com/-DTxF9mAqz_c/UO8nsYXMbBI/AAAAAAAAA00/6-9wwwpgpxY/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_13-32-56%25255B4%25255D.jpg"><!-- raw HTML omitted --></a><br>
+the R interpreter assigns the anonymous function <em>functions(x) {x * 7}</em>
+to the argument <em>f</em> of function <em>apply.to.three</em> then assigns 3 to the
+argument x of the anonymous function. So, it will ends up by evaluating
+3 * 7 and returns the result.<br>
+anonymous functions can also be used with sapply()<br>
+<a href="http://lh6.ggpht.com/-6wjJKug7ZQg/UO8ntrvQsoI/AAAAAAAAA1I/fgW4bO8QI8M/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_13-43-09%25255B3%25255D.jpg"><!-- raw HTML omitted --></a><br>
+it is possible also to define an anonymous function and apply it
+directly to an argument.<br>
+<a href="http://lh6.ggpht.com/-nRKv_f-jvuE/UO8nuiSI-aI/AAAAAAAAA1Y/UHH1hixpFj4/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_13-45-53%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<h2 id="span-stylecolor-blackspan-stylefont-size-x-small-font-weight-boldscoping-rulesspanspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->Scoping rules<!-- raw HTML omitted --><!-- raw HTML omitted --></h2>
+<p>How does R know which value to assign to which symbol ? How does R know
+what value to assign to the symbol lm ? Why doesn’t it give it the value
+of lm that is in the stats package ?<br>
+<a href="http://lh4.ggpht.com/-zbDk7sUXkZE/UPbexSKAn3I/AAAAAAAAA5M/aVuoJe0EVlw/s1600-h/RGui%252520%25252864-bit%252529_2013-01-16_09-13-32%25255B3%25255D.jpg"><!-- raw HTML omitted --></a><br>
+When R tries to bind a value to a symbol, it searches through a series
+of environments (sets of symbols, objects,…) to find the appropriate
+value. When you are working on the command line and need to retrieve the
+value of an R object, the search begins with the global environment you
+working in it and look for a symbol name matching the one requested. If
+not found, R starts searching the namespaces of each of the packages on
+the search list. You can get the search list using search() function.
+.<em>GlobalEnv</em> represents your current working environment on the R
+command line, and its always the first element of the search list. The
+<em>base</em> package is always the last one. The order on the list matters<br>
+<a href="http://lh3.ggpht.com/-27gudoBehk0/UPbeyqTCrKI/AAAAAAAAA5Y/lDvKRbZT54U/s1600-h/RGui%252520%25252864-bit%252529_2013-01-16_09-25-18%25255B5%25255D.jpg"><!-- raw HTML omitted --></a><br>
+If you loaded a package with library the namespace of that package will
+be in the 2nd position of the search list, and everything else will be
+shifted down the list.<br>
+<a href="http://lh3.ggpht.com/-eWjqT7iiJd0/UPbezgqmpWI/AAAAAAAAA5s/z_HeEKUhmnU/s1600-h/RGui%252520%25252864-bit%252529_2013-01-16_09-34-34%25255B4%25255D.jpg"><!-- raw HTML omitted --></a><br>
+You can also load package on the command line window by going to
+Packages &gt;&gt; Load package &gt;&gt; then select the desired package
+and click Ok.<br>
+You can configure which packages to be loaded automatically on startup
+to be available for you. To do that open C:\Program
+Files\R\&lt;Your-R-Version&gt;\etc\Rprofile.site using Notepad and
+append the following to the bottom of the file. You can append whatever
+package you want to the vestor c and it will be loaded for your on
+startup.<br>
+<em><!-- raw HTML omitted -->local({<br>
+old &lt;- getOption(&ldquo;defaultPackages&rdquo;)<br>
+options(defaultPackages = c(old, &ldquo;car&rdquo;, &ldquo;RODBC&rdquo;, &ldquo;foreign&rdquo;, &ldquo;DA AG&rdquo;,
+&ldquo;MASS&rdquo;, <!-- raw HTML omitted --></em><br>
+<em><!-- raw HTML omitted -->&quot;lattice &ldquo;,
+&ldquo;latticedl&rdquo;, &ldquo;sciplot&rdquo;, &ldquo;tree&rdquo;, &ldquo;lme4&rdquo;))<br>
+})<!-- raw HTML omitted --></em><br>
+<strong>Lexical Scoping Rules (or Static Scoping Rules)</strong>  determines how a
+value is associated with a free variable in a function. <!-- raw HTML omitted -->The values of <em><!-- raw HTML omitted -->free
+variables<!-- raw HTML omitted --></em> are searched for in the <em><!-- raw HTML omitted -->environments<!-- raw HTML omitted --></em> in which the function was
+defined<!-- raw HTML omitted -->.<br>
+So what is a a free variable ? a free variable is not a formal argument
+(arguments declared in function signature) nor a local variable that is
+declared and assigned in the function body. In the following example, x
+and y are formal arguments. z is a free variable. <!-- raw HTML omitted -->f &lt;- function(x, y) { x^2 + y / z }<!-- raw HTML omitted --><br>
+So what is an environment ? an environment is a collection of (symbol,
+value) pairs. Every environment has a parent environment, and it is
+possible for an environment to have multiple children. A function + an
+environment = a closure or function closure.<br>
+So, searching for the value for a free variable starts in the
+environment in which the function was defined, if not found, the search
+continued to the parent environment. The search continues until we hit
+the top-level environment ( workspace or the namespace of the package).
+After that the search continues down the search list until we hit the
+empty environment. If not found, an error is thrown.<br>
+You can get the environment of a function using environment() (for
+functions coded on the command line, that will be the global
+environment). You can get the parent of an environment using
+parent.env() (for functions coded on command line, it will be send item
+in the search list).<br>
+<a href="http://lh4.ggpht.com/-8JjPCBw1zDI/UPbe05sWvBI/AAAAAAAAA58/pcws4QV15TE/s1600-h/RGui%252520%25252864-bit%252529_2013-01-16_10-37-17%25255B5%25255D.jpg"><!-- raw HTML omitted --></a><br>
+<strong>Why does knowing lexical scoping rules matters ?</strong> Typically, a
+function is defined in the global environment, so that the values of
+free variables will be found in the user’s workspace (which is the right
+approach). However, in R you can define functions inside other
+functions, in this case the environment in which a function is defined
+is the body of another function.<br>
+In this post we talked about functions and using it weather from the
+console or from external files, functions as parameters, anonymous
+functions, and many other low level stuff.<br>
+Stay tuned for more R notes.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 21, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-01-21-introduction-to-r-charts-and-graphics.html/">Introduction to R – Charts and Graphics</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 17, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-01-17-introduction-to-r-random-variables.html/">Introduction to R – Random Variables Generation &amp; Probability Distribution Functions</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 16, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-01-16-introduction-to-r-basic-debugging.html/">Introduction to R – Basic Debugging</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

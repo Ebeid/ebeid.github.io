@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis on Ebeid ElSayed</title>
+    <link>https://ebeid.github.io/tags/redis/</link>
+    <description>Recent content in Redis on Ebeid ElSayed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 03 Jul 2013 12:47:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://ebeid.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis 101– Part 2</title>
+      <link>https://ebeid.github.io/blog/2013-07-03-redis-101-part-2.html/</link>
+      <pubDate>Wed, 03 Jul 2013 12:47:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2013-07-03-redis-101-part-2.html/</guid>
+      <description>We introduced many of the Redis’s fundamental concepts and commands in the last post. In this post we going to introduce some advanced features.
+Publish-Subscribe Previously we queued data that could be read by a blocking pop command. Using that queue, we made a very basic publish-subscribe model. Any number of messages could be pushed to this queue, and a single queue reader would pop messages as they were available. This is powerful but limited.</description>
+    </item>
+    
+    <item>
+      <title>Running multiple Redis instances on the same server</title>
+      <link>https://ebeid.github.io/blog/2013-07-02-running-multiple-redis-instances-on.html/</link>
+      <pubDate>Tue, 02 Jul 2013 11:42:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2013-07-02-running-multiple-redis-instances-on.html/</guid>
+      <description>Redis runs as a background process that listens to a specific port (6379 by default) for incoming requests from clients. Running multiple instances requires a separate conf file and a new init script. The conf file specifies details for the new instance, and the init script handles starting/stopping of the instance background process.
+Make a copy of the redis.conf file at C:\Program Files\Redis\Conf and give it a new name redis-s1.conf. Leave both files in the same directory C:\Program Files\Redis\Conf</description>
+    </item>
+    
+    <item>
+      <title>Redis 101</title>
+      <link>https://ebeid.github.io/blog/2013-06-26-redis-101.html/</link>
+      <pubDate>Wed, 26 Jun 2013 15:29:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2013-06-26-redis-101.html/</guid>
+      <description>Redis (REmote DIctionary Service) is an open-source networked in-memory key-value data store. First released in 2009, currently sponsored by VMware, and since then it have been ranked the most popular key-value store by DB-Engine. Redis creator Salvatore Sanfilippo refers to his project as a “data structure server” to capture its unique handling of complex data types and other features. Interested ? Enough talking, let’s get down to business.
+Download Redis installer from here.</description>
+    </item>
+    
+  </channel>
+</rss>

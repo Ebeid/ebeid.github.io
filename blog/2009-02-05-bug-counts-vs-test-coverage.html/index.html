@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Bug Counts vs. Test Coverage</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2009-02-05-bug-counts-vs-test-coverage.html/">Bug Counts vs. Test Coverage</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          February 5, 2009
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p><!-- raw HTML omitted -->**What to Do When Bug
+Counts Don’t Speak for Themselves?**<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->Bug counts on a project speak volumes
+about the quality of testing for a particular product and how vigorous
+the test team is working to &ldquo;assure quality.&rdquo; Bug counts are invariably
+a primary area of test metrics that are reported to management. What is
+the rationale behind drawing so much attention to the number of bugs
+being found through the course of a project?<br>
+I have heard it said that QE’s job is to find bugs. If this is the
+assumption of management, bug counts will be an important indicator to
+them that QE is doing its job. They expect to see bug counts rise
+dramatically in the early stages of testing, and they expect to see the
+find rate decrease as the project comes to an end. These are
+management’s statistical expectations when they believe bug counts are a
+metric to assess quality of testing.<br>
+If high bug counts, then, are an indicator that quality is going up, low
+bug counts can be seen as an indicator that something just isn’t right
+with the testing process. Management might imagine different problems
+that are preventing bugs from being found:</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li><!-- raw HTML omitted -->Test coverage isn’t complete;
+maybe major areas of functionality aren’t being tested. <!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted -->Testing is only scratching the
+surface of all functionality, not digging in to the real
+complexities of the code. <!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted -->Our testers just aren’t that
+good.<!-- raw HTML omitted --></li>
+</ul>
+<p><!-- raw HTML omitted -->Management might see red flags when
+bug counts are low, but a number of causes may contribute to low bug
+counts. On the second or third iteration of a product, the bulk of the
+defects may have been found on an earlier cycle. Or especially good
+development practices may have been implemented: strong unit testing,
+code reviews, good documentation, and not working developers to death.
+These are supposed to result in lower bug counts.<br>
+Ultimately, however, QE will justify low bug counts when it can justify
+its test coverage. If the product under test is being tested with
+thorough coverage, the bug count should be treated only as a supporting
+statistic, not the primary one. After all, <strong>we all know that a quality
+product hasn’t been reached when a certain bug count is reached. Quality
+is achieved when test coverage is maximized and bug finds decrease to a
+minimum.</strong><br>
+There are several things you can do when bug counts are low and
+management is questioning the quality of testing:<br>
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ol>
+<li><!-- raw HTML omitted --><strong>Take stock</strong>. Call a meeting
+with your test team, go through the areas of test, possibly even
+some test cases themselves, and get a general feel for how much test
+coverage you really have. Maybe you’ll discover that an area of test
+really is being missed. Perhaps there is some misunderstanding of
+who should be testing what and some functionality fell between the
+cracks. Brainstorm more testing methods and techniques, and generate
+ideas of how your team can broaden the testing efforts. Before going
+to other groups or departments, get a solid understanding of where
+your team is in the process. <!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted --><strong>Talk to development</strong>. Go over
+your current test coverage with development, and see if they have
+any input on areas you might also investigate. Ask them what the
+trouble spots are, if they can suggest lower-level tests that may
+ferret out more bugs, and possibly even conduct a test case review
+with them. On my last project, we sent out the test cases of a
+certain functionality to the appropriate developer for review.
+Though many times developers can be reluctant to help testers,
+demonstrate to t hem that it is in their best interest that we
+thoroughly test their code—if it’s solid, they have nothing to worry
+about. <!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted --><strong>Communicate with management</strong>.
+When bug counts are low, use test coverage to justify them. This
+doesn’t mean dismissing the fact that the bug count is low. It means
+using the bug count as an indicator to do some analysis into the
+testing practices you are doing, and verifying that high test
+coverage is being achieved. If it is, explain to management your
+findings. Demonstrate by solid metrics that you are performing
+thorough testing, that you can’t force bug counts to go up, and that
+maybe—just maybe—a low bug count means you’ve got a quality product
+on your hands!<!-- raw HTML omitted --></li>
+</ol>
+<p><!-- raw HTML omitted -->One thing to bear in mind: while you
+can use the above methods during testing cycles to understand and cope
+with a low bug count, the ideas are still applicable before testing even
+begins, while test cases are being written for a project, and while
+development is still in full swing. Good test coverage is something to
+be planned ahead of time, and having gone through the effort of mapping
+coverage and functional test cases early in the project, you will
+prevent yourself from spending valuable testing cycles repeating
+tasks.<br>
+While low bug counts can cause people in both development and management
+to question the effectiveness of the testing, do not be defensive about
+it. Use it as a trigger to prove what you should already know—your
+testing efforts are appropriate, effective, and your coverage is
+maximized. Don’t let your bug counts do the talking—your test coverage
+should say it all.<!-- raw HTML omitted --></p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

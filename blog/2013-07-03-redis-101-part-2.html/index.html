@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Redis 101– Part 2</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-07-03-redis-101-part-2.html/">Redis 101– Part 2</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          July 3, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Redis</span>
+            
+            <span class="label label-success">NoSQL</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>We introduced many of the <a href="http://redis.io/" title="Redis">Redis</a>’s
+fundamental concepts and commands in the last post. In this post we
+going to introduce some advanced features.</p>
+<h4 id="publish-subscribe">Publish-Subscribe</h4>
+<p>Previously we queued data that could be read by a blocking pop command.
+Using that queue, we made a very basic publish-subscribe model. Any
+number of messages could be pushed to this queue, and a single queue
+reader would pop messages as they were available. This is powerful but
+limited. Redis provides some specialized publish-subscribe (or pub-sub)
+commands.</p>
+<ul>
+<li><strong>SUBSCRIBE</strong> subscribe a client to a key, known as a channel in
+pub-sub terminology; client will block until messages are available.</li>
+</ul>
+<p><a href="http://lh5.ggpht.com/-OQmPeb9nXDw/UdMSI39yu4I/AAAAAAAABoE/f6ZtB-tKFcI/s1600-h/Redis%252520Client_2013-07-01_16-25-11%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><strong>PUBLISH</strong> will push message into the channel returning how many
+subscribers have received it</p>
+<ul>
+<li>Publisher window
+<a href="http://lh4.ggpht.com/-MllJeVI0lUo/UdMSKhNqh4I/AAAAAAAABoU/XoYUIVVhJQk/s1600-h/Redis%252520Client_2013-07-01_16-27-41%25255B5%25255D.png"><!-- raw HTML omitted --></a></li>
+<li>Subscriber window receives : the string “message”, the channel name,
+the published message value
+<a href="http://lh3.ggpht.com/-C5wonBQou-M/UdMSMZlSS8I/AAAAAAAABok/nt53yVvAZrU/s1600-h/Redis%252520Client_2013-07-01_16-28-53%25255B5%25255D.png"><!-- raw HTML omitted --></a></li>
+</ul>
+<p>UNSUBSCRIBE unsubscribe or disconnect from the specified channel. If no
+channel name provided, it will disconnect from all channels.</p>
+<h4 id="server-information">Server Information</h4>
+<ul>
+<li><strong>INFO</strong> returns a list of server data, including version, process
+ID, memory used, and uptime.</li>
+</ul>
+<p>In order to change any of the Redis’s default configurations, you need
+to edit redis.config file at C:\Program Files\Redis\conf . It is
+fairly self-explanatory.</p>
+<h4 id="durability">Durability</h4>
+<p>Redis has a few persistence options:</p>
+<p>No persistence at all, which simply keeps all values in main memory.</p>
+<p>Forced save</p>
+<ul>
+<li>Use command <strong>SAVE</strong> to force server to save database to disk.</li>
+<li>Use command <strong>BGSAVE</strong> to force server to save database to disk
+asynchronously in the background.</li>
+<li>Use command <strong>LASTSAVE</strong> to get a timestamp of the last time a Redis
+disk write succeeded (also provided through the <em>last_save_time</em>
+field in the server <strong>INFO</strong> output).</li>
+</ul>
+<h4 id="snapshotting">Snapshotting</h4>
+<p>By default Redis saves snapshots of the dataset on disk, in a binary
+file called dump.rdb. You can configure Redis to have it save the da
+taset every N seconds if there are at least M changes in the dataset, or
+you can manually force it by calling the SAVE or BGSAVE commands as we
+said before. For example, the following configuration will make Redis
+automatically dump the dataset to disk every 60 seconds if at least 1000
+keys changed (This strategy is known as <em>snapshotting</em>.):</p>
+<p>save 60 1000 </p>
+<h4 id="heading"> </h4>
+<h4 id="append-only-file">Append-only file</h4>
+<p>Snapshotting is not very durable. If your computer running Redis stops,
+the latest data written on Redis will get lost. While this may not be a
+big deal for some applications, there are use cases for full durability,
+and in these cases Redis was not a viable option.</p>
+<p>The <em>append-only file</em> is an alternative, fully-durable strategy for
+Redis. It became available in version 1.1. You can turn on the AOF in
+your configuration file:</p>
+<p>appendonly yes</p>
+<p>Then we must decide how often a command is appended to the file. Setting
+<em>always</em> is the more durable, since every command is saved. By default
+<em>everysec</em> is enabled, which saves up and writes commands only once a
+second. This is a decent trade-off, since it’s fast enough, and worst
+case you’ll lose only the last one second of data. Finally, <em>no</em> is an
+option, which just lets the OS handle flushing. It can be fairly
+infrequent, and not recommended.</p>
+<p>appendfsync always</p>
+<p># appendfsync everysec</p>
+<p># appendfsync no</p>
+<p>From now on, every time Redis receives a command that changes the
+dataset (e.g. SET) it will append it to the AOF. When you restart Redis
+it will re-play the AOF to rebuild the state. Append-only has more
+detailed parameters, you could refer to the online documentation for
+more details.</p>
+<h4 id="heading-1"> </h4>
+<h4 id="security">Security</h4>
+<p>Redis provides command-level security through obscurity, by allowing you
+to hide or suppress commands. This will rename the FLUSHALL command
+(remove all keys from the system) into some hard-to-guess value like
+c283d93ac9528f986023793b411e4ba2:</p>
+<p>rename-command FLUSHALL c283d93ac9528f986023793b411e4ba2</p>
+<p>If we attempt to execute FLUSHALL against this server, we’ll be hit with
+an error. We can also disable the command entirely by setting it to a
+blank string.</p>
+<p>rename-command FLUSHALL &quot;&rdquo;</p>
+<p>You can set any number of commands to a blank string to allow only a
+customized subset of the Redis’s commands.</p>
+<h4 id="benchmarking">Benchmarking</h4>
+<p>Redis provides an excellent benchmarking tool. It connects locally to
+port 6379 by default and issues 10,000 requests using 50 parallel
+clients. Tool test many commands and have a long output report. Tool is
+in C:\Program Files\Redis\</p>
+<p><a href="http://lh3.ggpht.com/-6I5RaONmt9E/UdMSNw-YfBI/AAAAAAAABo0/dTB6z-FLRv0/s1600-h/CWindowssystem32cmd.exe_2013-07-02_09-15-52%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<h4 id="replication">Replication</h4>
+<p>Redis supports master-slave replication. One server is the master by
+default if you don’t set it as a slave of anything. Data will be
+replicated to any number of slave servers. Configuring master-slave
+setting is the same as running another instance with the slaveof option
+in the salve’s conf file set to the master IP and port. Refer to our
+previous
+<a href="http://ebeid-soliman.blogspot.com/2013/07/running-multiple-redis-instances-on.html" title="Running multiple Redis instances on the same server">post</a>
+for more details.</p>
+<p>This concludes out Redis 101 tutorial, we tried to touch all basic and
+moderat e features in it. Later we going to show how to write C#
+programs against Redis.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 12, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-12-getting-started-with-mongodb-part-2.html/">Getting Started with MongoDB – Part 2</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 12, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-12-getting-started-with-mongodb-part-1.html/">Getting Started with MongoDB – Part 1</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 9, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-09-getting-started-with-apache-cassandra.html/">Getting Started with Apache Cassandra</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

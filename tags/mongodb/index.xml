@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MongoDB on Ebeid ElSayed</title>
+    <link>https://ebeid.github.io/tags/mongodb/</link>
+    <description>Recent content in MongoDB on Ebeid ElSayed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 12 Jul 2013 17:15:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://ebeid.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started with MongoDB – Part 2</title>
+      <link>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-2.html/</link>
+      <pubDate>Fri, 12 Jul 2013 17:15:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-2.html/</guid>
+      <description>In the previous post we explored the basics of MongoDB. In this post we going to dig deeper in MongoDB.
+Indexing Whenever a new collection is created, MongoDB automatically creates an index by the _id field. These indexes can be found in the system.indexes collection. You can show all indexes in the database using db.system.indexes.find() . Most queries will include more fields than just the _id, so we need to make indexes on those fields.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with MongoDB – Part 1</title>
+      <link>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-1.html/</link>
+      <pubDate>Fri, 12 Jul 2013 13:46:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-1.html/</guid>
+      <description>MongoDB (from &amp;ldquo;humongous&amp;rdquo;) is an open source document-oriented database system developed and supported by 10gen (founded by Dwight Merriman). First publicly released in 2009, and since then it have been a rising star in the NoSQL world. MongoDB stores structured data as JSON-like documents with dynamic schemas (technically data is stored in a binary form of JSON known as BSON), making the integration of data in certain types of applications easier and faster.</description>
+    </item>
+    
+  </channel>
+</rss>

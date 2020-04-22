@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Engineering Education on Ebeid ElSayed</title>
+    <link>https://ebeid.github.io/tags/software-engineering-education/</link>
+    <description>Recent content in Software Engineering Education on Ebeid ElSayed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 27 Dec 2010 18:54:00 -0600</lastBuildDate>
+    
+	<atom:link href="https://ebeid.github.io/tags/software-engineering-education/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How I prepared for CSDP ?</title>
+      <link>https://ebeid.github.io/blog/2010-12-27-how-i-prepared-for-csdp.html/</link>
+      <pubDate>Mon, 27 Dec 2010 18:54:00 -0600</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2010-12-27-how-i-prepared-for-csdp.html/</guid>
+      <description>After I became an IEEE Certified Software Development Professional, many of my friends asked me about it and how to prepare for it. As a CSDP holder, let me introduce CSDP for you and how I prepared for it.
+The CSDP credential is intended for mid-career software development professionals that want to confirm their proficiency of standard software development practices and advance in their careers.
+Who is eligible to take the CSDP?</description>
+    </item>
+    
+    <item>
+      <title>Business analysis &amp; Requirements Engineering Certifications</title>
+      <link>https://ebeid.github.io/blog/2010-12-17-business-analysis-requirements.html/</link>
+      <pubDate>Fri, 17 Dec 2010 08:02:00 -0600</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2010-12-17-business-analysis-requirements.html/</guid>
+      <description>I was searching for certifications on requirements engineering and I found that there is a lot of mixing between business analysis and requirements engineering. This mix exists both on the daily use, professional certifications and organizations.
+Starting by the definitions:
+ Business analysis is the discipline of identifying business needs and determining solutions to business problems. Solutions often include a systems development component, but may also consist of process improvement, organizational change or strategic planning and policy development.</description>
+    </item>
+    
+    <item>
+      <title>How to educate the next generation of software engineers ?</title>
+      <link>https://ebeid.github.io/blog/2010-09-01-how-to-educate-next-generation-of.html/</link>
+      <pubDate>Wed, 01 Sep 2010 05:51:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2010-09-01-how-to-educate-next-generation-of.html/</guid>
+      <description>After my completion of my master in software engineering at Nile University which we faced many problems at it (I hope it be better in the future), I tried to search for what globally constitutes a master of software engineering and I found the following:
+ The last effort to create a reference curriculum for graduate software engineering education was by the SEI in the early 1990s. There were, in effect, no current community-endorsed recommendations on what to teach software engineers.</description>
+    </item>
+    
+  </channel>
+</rss>

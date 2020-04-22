@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Getting Started with MongoDB – Part 1</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-1.html/">Getting Started with MongoDB – Part 1</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          July 12, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">MongoDB</span>
+            
+            <span class="label label-success">JSON</span>
+            
+            <span class="label label-success">NoSQL</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p><strong>MongoDB</strong> (from &ldquo;hu<strong>mongo</strong>us&rdquo;) is an open source <a href="http://en.wikipedia.org/wiki/Document-oriented_database">document-oriented
+database</a>
+system developed and supported by
+<a href="http://www.blogger.com/www.10gen.com">10gen</a> (founded by <a href="https://twitter.com/dmerr">Dwight
+Merriman</a>). First publicly released in 2009,
+and since then it have been a rising star in the NoSQL world. MongoDB
+stores structured data as <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>-like
+documents with dynamic schemas (technically data is stored in a binary
+form of JSON known as <a href="http://en.wikipedia.org/wiki/BSON">BSON</a>), making
+the integration of data in certain types of applications easier and
+faster.</p>
+<h4 id="installation">Installation</h4>
+<ol>
+<li>Download the latest mongoDB version from
+<a href="http://www.mongodb.org/downloads" title="downloads page">here</a>.</li>
+<li>Extract the archive to your preferred location (in my case
+C:\mongodb). MongoDB is self-contained and does not have any other
+system dependencies. You can run MongoDB from any folder you choose.
+You may install MongoDB in any directory.</li>
+<li>MongoDB requires a data folder to store its files (default is
+C:\data\db ). You may specify a different path with the dbpath
+setting when lunching mongod.exe.</li>
+</ol>
+<h4 id="starting-the-server">Starting the Server</h4>
+<p>To start MongoDB, open the command prompt window, and run mongod.exe
+from the bin directory (specify the data path if needed)<br>
+<a href="http://lh4.ggpht.com/-usyjMRcQvaY/UeBs-Hy35mI/AAAAAAAABvE/H8AjQbagqRs/s1600-h/CWindowssystem32cmd.exe%252520-%252520mongod.exe%252520%252520--dbpath%252520Cmongodbdata_2013-07-09_16-10-49.png"><!-- raw HTML omitted --></a>The
+<code>waiting for connections</code> message in the console output indicates that
+the mongod.exe process is running successfully and waiting for
+connections on port 27017</p>
+<h4 id="connecting-to-the-server">Connecting to the Server</h4>
+<p>To connect to the server, open another command prompt window and run
+mongo.exe from the bin directory.<br>
+<a href="http://lh6.ggpht.com/-yAQeNKOIJ7E/UdyKNGd5VrI/AAAAAAAABt4/HJt-3Qz1R0U/s1600-h/CWindowssystem32cmd.exe%252520-%252520mongo_2013-07-09_16-27-37%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<h4 id="run-mongodb-as-a-windows-service">Run MongoDB as a Windows Service</h4>
+<ol>
+<li>Create a log file for MongoDB (in my case
+c:\mongodb\log\mongo.log ).</li>
+<li>Create a data directory for MongoDB (in my case c:\mongodb\data ).</li>
+<li>Open the command prompt window as an administrator.</li>
+<li>Run the following command <!-- raw HTML omitted -->*C:\mongodb\bin&gt;mongod.exe –install –rest
+–master &ndash;logpath &ldquo;c:\mongodb\log\mongo.log&rdquo;*<!-- raw HTML omitted --></li>
+<li>Run <!-- raw HTML omitted -->regedit<!-- raw HTML omitted --> from start menu.</li>
+<li>Go to <em>HKEY_LOCAL_MACHINE &gt;&gt; SYSTEM &gt;&gt;
+CurrentControlSet &gt;&gt; services</em></li>
+<li>Find the MongoDB directory &amp; edit the <!-- raw HTML omitted --><em>ImagePath</em><!-- raw HTML omitted --> key.</li>
+<li>Set value as <em><!-- raw HTML omitted -->c:\mongodb\bin\mongod
+&ndash;service  &ndash;rest&amp;n bsp; &ndash;master 
+&ndash;logpath=C:\mongodb\log\mongo.log 
+&ndash;dbpath=C:\mongodb\data<!-- raw HTML omitted --></em></li>
+<li>Save and exit registry editor</li>
+<li>Open ComponentServices from Start menu &gt;&gt; Run</li>
+<li>Locate the Mongo DB service, and reigh click &gt;&gt; Properties.</li>
+<li>Set the Startup Type to Automatic. Then start the service.
+<ol>
+<li>To run the MongoDB service from command window, use <em><!-- raw HTML omitted -->net start MongoDB<!-- raw HTML omitted --></em></li>
+</ol>
+</li>
+<li>Check at <a href="http://localhost:28017/">http://localhost:28017/</a> to see , MongoDB should return
+stats.</li>
+</ol>
+<p><!-- raw HTML omitted -->In case you want to remove MongoDB service
+<!-- raw HTML omitted --><em><!-- raw HTML omitted -->C:\mongodb\bin\mongod.exe
+–remove<!-- raw HTML omitted --></em></p>
+<h4 id="data-model">Data Model</h4>
+<p>Data in MongoDB has a <em>flexible</em> schema.</p>
+<ul>
+<li>Database consists on a set of collections.</li>
+<li>Collections consists of a set of documents.
+<ul>
+<li>Documents in the same collection do not need to have the same
+set of fields or structure.</li>
+<li>Common fields in a collection’s documents can hold different
+types of data.</li>
+</ul>
+</li>
+</ul>
+<p>Based on what we mentioned, you could say that MongoDB is schema-less.
+But you may refer to this <a href="http://docs.mongodb.org/manual/core/data-modeling/" title="Data Modeling Considerations for MongoDB Applications">data modeling
+article</a>
+before doing real work on MongoDB.</p>
+<h4 id="crud-operations">CRUD operations</h4>
+<ul>
+<li>When you start the mongo shell, it connect to test database by
+default. To create a new database or switch to another database, use
+<em><strong><!-- raw HTML omitted -->use newdb<!-- raw HTML omitted --></strong></em></li>
+<li><!-- raw HTML omitted -->To show a list of databases, use <em><strong>show
+dbs</strong></em> (databases are created when you insert the first values in
+it. This means that any database have been created but no values
+inserted in it, it really doesn’t exist).<!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted -->To confirm the current session database,
+use <em><strong>db</strong></em><!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted -->To create a collection, just insert an
+initial record to it. Since Mongo is schema-less, there is no need
+to define anything up front. The following code creates/inserts a
+towns collection:<!-- raw HTML omitted --></li>
+</ul>
+<p><!-- raw HTML omitted -->db.towns.insert({<br>
+name: &ldquo;New York&rdquo;,<br>
+population: 22200000,<br>
+last_census: ISODate(&ldquo;2009-07-31&rdquo;),<br>
+famous_for: [ &ldquo;statue of liberty&rdquo;, &ldquo;food&rdquo; ],<br>
+mayor : {<br>
+name : &ldquo;Michael Bloomberg&rdquo;,<br>
+party : &ldquo;I&rdquo;<br>
+}<br>
+})<!-- raw HTML omitted --></p>
+<ul>
+<li>brackets like {&hellip;} denote an object with key-value pairs.</li>
+<li>brackets like [&hellip;] denote an array.</li>
+<li>You can nest these values to any depth.</li>
+</ul>
+<p>To show a list of collections, use <em><strong>show collections</strong></em>.</p>
+<p>To list the contents of a collection, use <em><strong>db.towns.find()</strong></em></p>
+<ul>
+<li>You will see a system generated field <strong>_id</strong> ( composed of a
+timestamp, client machine ID, client process ID, and a 3-byte
+incremented counter) (you can override this system generated</li>
+</ul>
+<p>MongoDB commands are JavaScript functions.</p>
+<ul>
+<li><strong>db</strong> is a JavaScript object that contains information about the
+current database. Try <!-- raw HTML omitted --><strong>typeof db</strong><!-- raw HTML omitted --></li>
+<li><strong>db.<em>x</em></strong> is a JavaScript object that represent a collection named
+<em>x</em> within the current database. Try <!-- raw HTML omitted --><strong>typeof db.towns</strong><!-- raw HTML omitted --></li>
+<li><strong>db.<em>x</em>.help()</strong> will list available functions related to the given
+object. Try <!-- raw HTML omitted --><strong>typeof
+db.towns.insert</strong><!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted -->If you want to inspect the source code of
+a function, call it without parameter or parentheses.<!-- raw HTML omitted --></li>
+</ul>
+<p><!-- raw HTML omitted --><strong>Functions</strong> You can create JavaScript
+functions and call them on the mongo shell like:<!-- raw HTML omitted --></p>
+<blockquote>
+<p><!-- raw HTML omitted -->function insertCity( name, population,
+last_census, famous_for, mayor_info) {<br>
+db.towns.insert({<br>
+name:name,<br>
+population:population,<br>
+last_census: ISODate(last_census),<br>
+famous_for:famous_for,<br>
+mayor : mayor_in fo<br>
+});<br>
+}<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->insertCity(&ldquo;Punxsutawney&rdquo;, 6200,
+&lsquo;2008-31-01&rsquo;, [&ldquo;phil the groundhog&rdquo;], { name : &ldquo;Jim Wehrle&rdquo; } )<br>
+insertCity(&ldquo;Portland&rdquo;, 582000, &lsquo;2007-20-09&rsquo;, [&ldquo;beer&rdquo;, &ldquo;food&rdquo;], {
+name : &ldquo;Sam Adams&rdquo;, party : &ldquo;D&rdquo; } )<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->Now have three towns in our
+collection<!-- raw HTML omitted --><br>
+<a href="http://lh5.ggpht.com/-xbNkGCPlb9o/Ud8r1wrCQ9I/AAAAAAAABvU/WjQaiWPOKL8/s1600-h/Command%252520Prompt%252520-%252520mongo_2013-07-11_14-35-39%25255B1%25255D.png"><!-- raw HTML omitted --></a></p>
+</blockquote>
+<ul>
+<li>To get a specific document, we only need _id passed to <strong>find()</strong>
+function in type ObjectId(<strong>findOne()</strong> retrieves only one matching
+document). String can be converted to ObjectId using
+<strong>ObjectId(str)</strong> function.</li>
+</ul>
+<p> <!-- raw HTML omitted -->db.towns.find({ &ldquo;_id&rdquo; :
+ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) })<!-- raw HTML omitted --></p>
+<ul>
+<li>The find() function also accepts an optional second parameter: a
+fields object we can use to filter which fields are retrieved. If we
+want only the town name (along with _id), pass in name with a value
+resolving to 1 (or true).</li>
+</ul>
+<p><!-- raw HTML omitted -->db.towns.find({ &ldquo;_id&rdquo; :
+ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) }, { name : 1})<!-- raw HTML omitted --></p>
+<ul>
+<li>To retrieve all fields except name, set name to 0 (or false or
+null).</li>
+</ul>
+<p><!-- raw HTML omitted -->db.towns.find({ &ldquo;_id&rdquo; :
+ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) }, { name : 0})<!-- raw HTML omitted --></p>
+<ul>
+<li><!-- raw HTML omitted -->You can retrieve documents based on
+criteria other than _id. You can use regular expressions or any
+<a href="http://docs.mongodb.org/manual/reference/operator/" title="Query, Update and Projection Operators">operator</a>.<!-- raw HTML omitted --></li>
+</ul>
+<p>db.towns.find( { name : /^P/, population : { $lt : 10000 } }, { name :
+1, population : 1 } )<br>
+We said before that the query language is JavaScript, which means we can
+construct operations as we would construct objects. In the following
+query, we build a criteria where the population must be between 10.000
+and 1 million. Ranges work also on dates.<br>
+<!-- raw HTML omitted -->&gt; var population_range = {}<br>
+&gt; population_range[&lsquo;$lt&rsquo;] = 100000<br>
+100000<br>
+&gt; population_range[&lsquo;$gt&rsquo;] = 10000<br>
+10000<br>
+&gt; population_range[&lsquo;$lt&rsquo;] = 1000000<br>
+1000000<br>
+&gt; population_range[&lsquo;$gt&rsquo;] = 10000<br>
+10000<br>
+&gt; db.towns.find( {name : /^P/, population : population_range },
+{name: 1})<br>
+{ &ldquo;_id&rdquo; : ObjectId(&ldquo;51df08e72476b99608460870&rdquo;), &ldquo;name&rdquo; : &ldquo;Portland&rdquo;
+}<!-- raw HTML omitted --></p>
+<ul>
+<li><!-- raw HTML omitted -->You can also query based on values in
+nested arrays, either matching exact values or matching partial
+values or all matching values or the lack of matching values.<!-- raw HTML omitted --></li>
+</ul>
+<p><!-- raw HTML omitted -->&gt; db.towns.find( { famous_for : &lsquo;food&rsquo; },
+{ _id : 0, name : 1, famous_for : 1 } )<br>
+{ &ldquo;name&rdquo; : &ldquo;New York&rdquo;, &ldquo;famous_for&rdquo; : [  &ldquo;statue of liberty&rdquo;,  &ldquo;food&rdquo;
+] }<br>
+{ &ldquo;name&rdquo; : &ldquo;Portland&rdquo;, &ldquo;famous_for&rdquo; : [  &ldquo;beer&rdquo;,  &ldquo;food&rdquo; ] }<br>
+&gt; db.towns.find( { famous_for : /statue/ }, { _id : 0, name : 1,
+famous_for : 1 } )<br>
+{ &ldquo;name&rdquo; : &ldquo;New York&rdquo;, &ldquo;famous_for&rdquo; : [  &ldquo;statue of liberty&rdquo;,  &ldquo;food&rdquo;
+] }<br>
+&gt; db.towns.find( { famous_for : { $all : [&lsquo;food&rsquo;, &lsquo;beer&rsquo;] } }, {
+_id : 0, name:1, famous_for:1 } )<br>
+{ &ldquo;name&rdquo; : &ldquo;Portland&rdquo;, &ldquo;famous_for&rdquo; : [  &ldquo;beer&rdquo;,  &ldquo;food&rdquo; ] }<br>
+&gt; db.towns.find( { famous_for : { $nin : [&lsquo;food&rsquo;, &lsquo;beer&rsquo;] } }, {
+_id : 0, name : 1, famous_for : 1 } )<br>
+{ &ldquo;name&rdquo; : &ldquo;Punxsutawney&rdquo;, &ldquo;famous_for&rdquo; : [  &ldquo;phil the groundhog&rdquo; ]
+}<!-- raw HTML omitted --></p>
+<ul>
+<li>You can query a sub-document by giving the field name as a string
+separating nested layers with a dot.</li>
+</ul>
+<dl>
+<dt><!-- raw HTML omitted -->&gt; db.towns.find( { &lsquo;mayor.party&rsquo; : &lsquo;I&rsquo; }, {</dt>
+<dt>_id : 0, name : 1, mayor : 1 } )</dt>
+<dt>{ &ldquo;name&rdquo; : &ldquo;New York&rdquo;, &ldquo;mayor&rdquo; : { &ldquo;name&rdquo; : &ldquo;Michael Bloomberg&rdquo;, &ldquo;party&rdquo;</dt>
+<dd>&ldquo;I&rdquo; } }<!-- raw HTML omitted --></dd>
+</dl>
+<ul>
+<li>To query the nonexistence of a field value</li>
+</ul>
+<p><!-- raw HTML omitted -->&gt; db.towns.find( { &lsquo;mayor.party&rsquo; : {
+$exists : false } }, { _id : 0, name : 1, mayor : 1 } )<br>
+{ &ldquo;name&rdquo; : &ldquo;Punxsutawney&rdquo;, &ldquo;mayor&rdquo; : { &ldquo;name&rdquo; : &ldquo;jim Wehrle&rdquo; }
+}<!-- raw HTML omitted --></p>
+<ul>
+<li>
+<h3 id="elemmatch">elemMatch</h3>
+</li>
+</ul>
+<p>$elemMatch helps us specify if a document or a nested document matches
+all of our criteria, the document counts as a match and returned. We can
+use any advanced operators within this criteria. To show it in action,
+let’s insert some data into a new collection <em>countries</em><br>
+<!-- raw HTML omitted -->&gt; db.countries.insert({ _id : &ldquo;us&rdquo;,<br>
+&hellip; name : &ldquo;United States&rdquo;,<br>
+&hellip; exports : {<br>
+&hellip;  foods : [<br>
+&hellip;   { name : &ldquo;bacon&rdquo;, tasty : true },<br>
+&hellip;   { name : &ldquo;burgers&rdquo; }<br>
+&hellip;          ]<br>
+&hellip;            }<br>
+&hellip; })<br>
+&gt; db.countries.insert({ _id : &ldquo;ca&rdquo;,<br>
+&hellip; name : &ldquo;Canada&rdquo;,<br>
+&hellip; exports : {<br>
+&hellip;  foods : [<br>
+&hellip;   { name : &ldquo;bacon&rdquo;, tasty : false },<br>
+&hellip;   { name : &ldquo;syrup&rdquo;, tasty : true }<br>
+&hellip;          ]<br>
+&hellip;             }<br>
+&hellip; })<br>
+&gt; db.countries.insert({ _id : &ldquo;mx&rdquo;,<br>
+&hellip; name : &ldquo;Mexico&rdquo;,<br>
+&hellip; exports : {<br>
+&hellip;  foods : [<br>
+&hellip;   { name : &ldquo;salsa&rdquo;, tasty : true, condiment : true }<br>
+&hellip;          ]<br>
+&hellip;           }<br>
+&hellip; })<br>
+&gt; print( db.countries.count() )<br>
+3<!-- raw HTML omitted --><br>
+Now if we need to select countries that export tasty bacon, we should
+$elemMatch in a query like:<br>
+<!-- raw HTML omitted -->&gt; db.countries.find(<br>
+&hellip; {<br>
+&hellip;   &lsquo;exports.foods&rsquo; : {<br>
+&hellip;    $elemMatch : {<br>
+&hellip;      name : &ldquo;bacon&rdquo;,<br>
+&hellip;      tasty : true<br>
+&hellip;     }<br>
+&hellip;   }<br>
+&hellip; },<br>
+&hellip; { _id : 0, name : 1 }<br>
+&hellip; )<br>
+{ &ldquo;name&rdquo; : &ldquo;United States&rdquo; }<!-- raw HTML omitted --><br>
+If we didn’t used $elemMatch and wrote a query like the following, it
+will return countries that export bacon or tasty food, not tasty bacon<br>
+<!-- raw HTML omitted -->&gt; db.countries.find(<br>
+&hellip; { &lsquo;exports.foods.name&rsquo; : &lsquo;bacon&rsquo; , &lsquo;exports.foods.tasty&rsquo; : true },<br>
+&hellip; { _id : 0, name : 1 }<br>
+&hellip; )<br>
+{ &ldquo;name&rdquo; : &ldquo;United States&rdquo; }<br>
+{ &ldquo;name&rdquo; : &ldquo;Canada&rdquo; }<!-- raw HTML omitted --></p>
+<ul>
+<li>
+<h3 id="boolean-operators">Boolean Operators</h3>
+</li>
+</ul>
+<p><strong>$or</strong> a prefix for criteria to return document that match either
+condition1 or condition2. There is a a lot of
+<a href="http://docs.mongodb.org/manual/reference/operator/" title="Query, Update and Projection Operators">operators</a>
+you can use.<br>
+<!-- raw HTML omitted -->&gt; db.countries.find({<br>
+&hellip; $or : [ { _id : &ldquo;mx&rdquo; } , { name : &ldquo;United States&rdquo; } ] },<br>
+&hellip; {_id : 1} )<br>
+{ &ldquo;_id&rdquo; : &ldquo;us&rdquo; }<br>
+{ &ldquo;_id&rdquo; : &ldquo;mx&rdquo; }<!-- raw HTML omitted --></p>
+<h3 id="update">Update</h3>
+<dl>
+<dt>The find() function toke two parameters, criteria and list of fields to</dt>
+<dt>return. The update() function works the same way. The first parameter is</dt>
+<dt>a criteria (the same way you will use to retreive the document through</dt>
+<dt>find()). The second parameter is an object whose fields will replace the</dt>
+<dt>matched document(s) or a modifier operation (<strong>$set</strong> to set a field</dt>
+<dt>value, $unset to delete a field, <strong>$inc</strong> to increment a field value by</dt>
+<dt>a number).</dt>
+<dt>The following query will set the field state with the string OR for the</dt>
+<dt>matching document.</dt>
+<dt>db.towns.update( { _id : ObjectId(&ldquo;4d0ada87bb30773266f39fe5&rdquo;) }, { $set</dt>
+<dd>{ &ldquo;state&rdquo; : &ldquo;OR&rdquo; } } )<br>
+but the f ollowing query will replace the matching document with a new
+document { state : “OR”}<br>
+db.towns.update( { _id : ObjectId(&ldquo;4d0ada87bb30773266f39fe5&rdquo;) }, {
+state : &ldquo;OR&rdquo; } )</dd>
+</dl>
+<h3 id="references">References</h3>
+<p>Although MongoDB is schema-less but you can make one document reference
+another document using a construct like { $ref : “<em>collection_name</em>”,
+$id : “<em>reference_id</em>” }. In the following query we linking New York
+town with the country US. Notice the display of the new country field in
+the New York town document.<br>
+<!-- raw HTML omitted -->&gt; db.towns.update(<br>
+&hellip; { _id : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) },<br>
+&hellip; { $set : { country : { $ref : &ldquo;countries&rdquo;, $id : &ldquo;us&rdquo; } } }<br>
+&hellip; )<br>
+&gt; db.towns.find( { _id : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) } )<br>
+{ &ldquo;_id&rdquo; : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;), <!-- raw HTML omitted -->&quot;country&rdquo; : DBRef(&ldquo;countries&rdquo;, &ldquo;us&rdquo;)<!-- raw HTML omitted -->,
+&ldquo;famous_for&rdquo; : [  &ldquo;statue of liberty&rdquo;,  &ldquo;food&rdquo; ], &ldquo;last_census&rdquo; :
+ISODate(&ldquo;2009-07-31T00:00:00Z&rdquo;), &ldquo;mayor&rdquo; : { &ldquo;na<br>
+me&rdquo; : &ldquo;Michael Bloomberg&rdquo;, &ldquo;party&rdquo; : &ldquo;I&rdquo; }, &ldquo;name&rdquo; : &ldquo;New York&rdquo;,
+&ldquo;population&rdquo; : 22200000 }<!-- raw HTML omitted --><!-- raw HTML omitted -->Now we can
+retrieve New york from towns collection, then use it to retrieve its
+country <!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->&gt; var NY = db.towns.findOne( { _id :
+ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) } )<br>
+&gt; db.countries.findOne( { _id : NY.country.$id })<br>
+{<br>
+        &ldquo;_id&rdquo; : &ldquo;us&rdquo;,<br>
+        &ldquo;name&rdquo; : &ldquo;United States&rdquo;,<br>
+        &ldquo;exports&rdquo; : {<br>
+                &ldquo;foods&rdquo; : [<br>
+                        {<br>
+                                &ldquo;name&rdquo; : &ldquo;bacon&rdquo;,<br>
+                                &ldquo;tasty&rdquo; : true<br>
+                        },<br>
+                        {<br>
+                                &ldquo;name&rdquo; : &ldquo;burgers&rdquo;<br>
+                        }<br>
+                ]<br>
+        }<br>
+}<!-- raw HTML omitted --><br>
+or in a different way <!-- raw HTML omitted -->&gt; db[
+NY.country.$ref ].findOne( { _id : NY.country.$id} )<!-- raw HTML omitted --></p>
+<h3 id="delete">Delete</h3>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Removing documents
+from a collections is simple, use your criteria with a call to
+<strong>remove()</strong> function and all matching documents will be removed. It’s a
+recommended practice to build your criteria in an object, use that
+criteria to ensure that matching documents are the expected ones, pass
+this criteria to remove() function.<!-- raw HTML omitted --><!-- raw HTML omitted --><br>
+&gt; var bad_bacon = { &lsquo;exports.foods&rsquo; : {<br>
+&hellip; $elemMatch : { name : &lsquo;bacon&rsquo;, tasty : false }<br>
+&hellip; } }<br>
+&gt; db.countries.find ( bad_bacon)<br>
+{ &ldquo;_id&rdquo; : &ldquo;ca&rdquo;, &ldquo;name&rdquo; : &ldquo;Canada&rdquo;, &ldquo;exports&rdquo; : { &ldquo;foods&rdquo; : [   
+{       &ldquo;name&rdquo; : &ldquo;bacon&rdquo;,       &ldquo;tasty&rdquo; : false },      {       &ldquo;name&rdquo; :
+&ldquo;syrup&rdquo;,       &ldquo;tasty&rdquo; : true } ] } }<br>
+&gt; db.coun tries.remove( bad_bacon)<br>
+&gt; db.countries.count()<br>
+2</p>
+<h3 id="reading-with-code">Reading with Code</h3>
+<p>You could ask MongoDb to run a decision function across documents.</p>
+<blockquote>
+<p><!-- raw HTML omitted -->db.towns.find(  function() {<br>
+return this.population &gt; 6000 &amp;&amp; this.population &lt; 600000;<br>
+} )<!-- raw HTML omitted --></p>
+</blockquote>
+<p>or in a short-hand format <!-- raw HTML omitted -->db.towns.find(&ldquo;this.population &gt; 6000 &amp;&amp;
+this.population &lt; 600000&rdquo;)<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->or combine custom code with other criteria
+using <strong>$where</strong><!-- raw HTML omitted --></p>
+<blockquote>
+<p><!-- raw HTML omitted -->db.towns.find( {<br>
+$where : &ldquo;this.population &gt; 6000 &amp;&amp; this.population &lt; 600000&rdquo;,<br>
+famous_for : /groundhog/<br>
+} )<!-- raw HTML omitted --></p>
+</blockquote>
+<p>Custom code should be your last resort due to the following:</p>
+<ol>
+<li>Custom code queries run slower than regular queries.</li>
+<li>Custom code queries can’t be indexed.</li>
+<li>MongoDb can’t optimize custom code queries.</li>
+<li>If your custom code assume the existence of a particular field and
+this field is missing in a single, the entire query will fail.</li>
+</ol>
+<p>In this post we explored the basics of MongoDB, a rising star in the
+NoSQL family and the most common document database. We saw how to
+install and configure it. We saw how we can store nested structured data
+as JSON objects and query that data at any depth. We How we can update
+and delete data. In the next post we going to dig deep into MongoDB.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 12, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-12-getting-started-with-mongodb-part-2.html/">Getting Started with MongoDB – Part 2</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 9, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-09-getting-started-with-apache-cassandra.html/">Getting Started with Apache Cassandra</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 3, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-03-redis-101-part-2.html/">Redis 101– Part 2</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

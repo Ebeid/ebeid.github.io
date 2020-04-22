@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Using Python Scripts with IIS 7</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2009-08-15-using-python-scripts-with-iis-7.html/">Using Python Scripts with IIS 7</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          August 15, 2009
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Python</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Here are the steps you should make if you want to use python scripts on
+IIS 7:</p>
+<ul>
+<li>Please make sure Python is installed properly or refer to <a href="http://ebeid-soliman.blogspot.com/2009/03/python-notes-1.html">Python
+Notes – 1 :
+Setup</a>
+for installation steps.</li>
+<li>Make sure CGI module is installed in IIS 7.</li>
+</ul>
+<p><strong>Control Panel</strong> -&gt; <strong>Programs</strong> -&gt; <strong>Program and Features</strong>
+-&gt; <strong>Turn Windows features on and off</strong> -&gt; <strong>Internet Information
+Services</strong> -&gt; <strong>World Wide Web Services</strong> -&gt; <strong>Application
+Development Features</strong> -&gt; <strong>CGI module</strong> (Ensure that it is
+selected).</p>
+<blockquote>
+<p><a href="http://lh5.ggpht.com/_R1exOFT_lVs/SoZHsToFdQI/AAAAAAAAAFg/lNjCD_Z3qnI/s1600-h/Screenshot%20Studio%20capture%20%231%5B5%5D.jpg"><!-- raw HTML omitted --></a></p>
+</blockquote>
+<ul>
+<li>Add web application for Python, In IIS Manager, right click
+<strong>Sites</strong> –&gt; <strong>Add Web Site..</strong></li>
+</ul>
+<blockquote>
+<p><a href="http://lh5.ggpht.com/_R1exOFT_lVs/SoZHzBoygmI/AAAAAAAAAE4/Rw7jkbRy-kM/s1600-h/Screenshot%20Studio%20capture%20%232%5B3%5D.jpg"><!-- raw HTML omitted --></a></p>
+</blockquote>
+<ul>
+<li>In the <strong>Add Web Site</strong> dialog box, set <strong>Site name</strong> e.g.:
+PythonTest, and make it pointing to some folder like C:\PythonTest,
+then click <strong>OK</strong></li>
+</ul>
+<blockquote>
+<p><a href="http://lh6.ggpht.com/_R1exOFT_lVs/SoZH3Cw_GFI/AAAAAAAAAFw/1t7xc7r9ktA/s1600-h/Screenshot%20Studio%20capture%20%234%5B4%5D.jpg"><!-- raw HTML omitted --></a></p>
+</blockquote>
+<ul>
+<li>In <strong>Features View</strong>, open <strong>Handler Mappings</strong></li>
+</ul>
+<blockquote>
+<p><a href="http://lh6.ggpht.com/_R1exOFT_lVs/SoZH7iHBHQI/AAAAAAAAAGA/cbowuq2B8bg/s1600-h/Screenshot%20Studio%20capture%20%235%5B6%5D.jpg"><!-- raw HTML omitted --></a></p>
+</blockquote>
+<ul>
+<li>On the left pane click <strong>Add Script Map &hellip;</strong></li>
+</ul>
+<blockquote>
+<p><a href="http://lh5.ggpht.com/_R1exOFT_lVs/SoZIArQsLjI/AAAAAAAAAGQ/E5u9nOTSKqA/s1600-h/Screenshot%20Studio%20capture%20%237%5B4%5D.jpg"><!-- raw HTML omitted --></a></p>
+</blockquote>
+<ul>
+<li>In <strong>Request</strong> path, put &ldquo;*.py&rdquo; as the script files extension, In
+<strong>Executable</strong> select &amp;qu ot;C:\Python25\Python.exe %s %s&rdquo;, or
+change it according to your Python installation path. (The two &ldquo;%s&rdquo;
+after the executable are required for console-based script
+interpreters but would not be required for an Internet Server API
+[ISAPI]-based script interpreter). Then give the script mapping an
+appropriate Name, like Python. Click <strong>OK</strong>.</li>
+</ul>
+<blockquote>
+<p><a href="http://lh5.ggpht.com/_R1exOFT_lVs/SoZIEUnp4NI/AAAAAAAAAFY/Ua1obD_qe24/s1600-h/Screenshot%20Studio%20capture%20%238%5B3%5D.jpg"><!-- raw HTML omitted --></a></p>
+</blockquote>
+<ul>
+<li>Create a test.py into the virtual directory (C:\PythonTest), and
+copy the following script into it.</li>
+</ul>
+<blockquote>
+<p>print</p>
+<p>print &lsquo;Status: 200 OK&rsquo;</p>
+<p>print &lsquo;Content-type: text/html&rsquo;</p>
+<p>print</p>
+<p>print &lsquo;&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;Python Sample
+CGI&lt;/TITLE&gt;&lt;/HEAD&gt;&rsquo; print &lsquo;&lt;BODY&gt;&rsquo;</p>
+<p>print &lsquo;&lt;H1&gt;This is a header&lt;/H1&gt;&rsquo;</p>
+<p>print &lsquo;&lt;p&gt;&rsquo; #this is a comment</p>
+<p>print &lsquo;See this is just like most other HTML&rsquo;</p>
+<p>print &lsquo;&lt;br&gt;&rsquo;</p>
+<p>print &lsquo;&lt;/BODY&gt;&rsquo;</p>
+</blockquote>
+<ul>
+<li>Then type <a href="http://localhost/pythontest/test.py">http://localhost/pythontest/test.py</a> into your IE URL bar
+to verify it is working.</li>
+</ul>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 28, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-03-28-python-notes-10.html/">Python Notes – 10 : Threading</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 27, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-03-27-python-notes-9.html/">Python Notes – 9 : Serialization</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        March 27, 2009
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2009-03-27-python-notes-8.html/">Python Notes – 8 : Object-Oriented Basics</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

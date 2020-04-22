@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Getting Started with Java PathFinder</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-03-30-getting-started-with-java-pathfinder.html/">Getting Started with Java PathFinder</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          March 30, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">JPF</span>
+            
+            <span class="label label-success">Model Checking</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Java™ Pathfinder, or <em><strong>&ldquo;JPF&rdquo;</strong></em> as we call it from here, is a highly
+customizable execution environment for verification of Java™ bytecode
+programs. <strong><a href="http://babelfish.arc.nasa.gov/trac/jpf/">JPF</a></strong> was
+developed at the <a href="http://www.arc.nasa.gov">NASA Ames Research Center</a>,
+open sourced in 2005, and is freely available
+<a href="http://babelfish.arc.nasa.gov/trac/jpf/">here</a> under the <a href="http://javapathfinder.sourceforge.net/NOSA-1.3-JPF.txt">NOSA
+1.3</a> license.
+<strong>JPF</strong> started as a software model checker but it integrates model
+checking, program analysis and testing.</p>
+<p>In this post  we will go in a step by step process to setup the 
+environment where Java Path Finder can be used within Eclipse IDE
+environment. We will show a simple example of using JPF.</p>
+<p>Step 1. Install Eclipse</p>
+<ul>
+<li>Step 1.1 : Download and install the latest JDK fro your platform
+from
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">here</a>.</li>
+<li>Step 1.2 : Download the latest Eclipse from
+<a href="http://www.eclipse.org/downloads/">here</a>. Once you have unzipped
+the previously downloaded file, you will see a folder named
+eclipse.  In that folder you will find the eclipse application.  We
+recommend you create a shortcut on the desktop to simplify the
+launching of eclipse.  Notice that unlike Java, Eclipse does not
+have an installation process. Once you have unzipped the file you
+are done.</li>
+</ul>
+<p>Step 2. Download JPF</p>
+<p>Step 2.1 : Download Mercurial plug-in for Eclipse</p>
+<ul>
+<li>Launch Eclipse. Go to Help &gt;&gt; Install New Software</li>
+<li><a href="http://lh5.ggpht.com/-HYIUlscDsVA/UVd9pd6k2SI/AAAAAAAABFs/BbvO6YeOdTU/s1600-h/2013-03-28%25252013_54_12-Java%252520-%252520jpf_junit_demo_src_TestGenerator.java%252520-%252520Eclipse%252520SDK%25255B3%25255D.png"><!-- raw HTML omitted --></a></li>
+<li>Click Add</li>
+<li><a href="http://lh5.ggpht.com/-Wv_H6c2jpCI/UVd9qxOm5tI/AAAAAAAABF8/DHOM1VPKIwk/s1600-h/2013-03-28%25252014_01_12-Install%25255B2%25255D.png"><!-- raw HTML omitted --></a></li>
+<li>Insert “Mercurial” in the Name box. Insert
+“<a href="http://mercurialeclipse.eclipselabs.org.codespot.com/hg.wiki/update_site/stable/">http://mercurialeclipse.eclipselabs.org.codespot.com/hg.wiki/update_site/stable/</a>”
+in the Address box. Click Ok.</li>
+<li>In the install dialog select the newly added site from Work with
+drop down box. The list below it will show the available software at
+this site, select the item named MercurialEclipse and click Next,
+then finish..</li>
+<li><a href="http://lh3.ggpht.com/-ALvEbOTkbrc/UVd9trTFDhI/AAAAAAAABGM/PqYSeIqeDYc/s1600-h/2013-03-28%25252014_05_37-Install%25255B2%25255D.png"><!-- raw HTML omitted --></a></li>
+</ul>
+<p>Step 2.2 : Download the JPF source code</p>
+<ul>
+<li>In Eclipse menu : File &gt;&gt; Import &gt;&gt; Mercurial &gt;&gt;
+Clone Existing Mercurial Repository &gt;&gt; Next.</li>
+<li><a href="http://lh6.ggpht.com/-qYEeVNtyWVc/UVd9yFOK_MI/AAAAAAAABGc/_V3bbdgi2M4/s1600-h/2013-03-28%25252014_42_31-Mercurial%252520clone%252520repository%252520wizard%25255B2%25255D.png"><!-- raw HTML omitted --></a></li>
+<li>In the repository location URL, insert
+“<a href="http://babelfish.arc.nasa.gov/hg/jpf/jpf-core">http://babelfish.arc.nasa.gov/hg/jpf/jpf-core</a>”. Click Next, then
+Finish. The JPF project files will be downloaded to your local
+computer.</li>
+</ul>
+<p>Step 2.3 : Build the JPF</p>
+<p>In the package explorer, select the build.xml, right click on it, select
+“run as” &gt;&gt; “Run as Ant build “.</p>
+<p>Eclipse will build JPF and a new folder named “build” will appear in the
+package explorer (it may not appear even the build was successful,
+double check the windows explorer for it.)</p>
+<p>If the build failed due to error missing JDK:</p>
+<ul>
+<li>On Eclipse menu : Project &gt;&gt; Properties. Select Builders from
+the lift hand side list</li>
+<li><a href="http://lh3.ggpht.com/-O6sm0jEDP2U/UVeOGdW2oWI/AAAAAAAABHk/Fs1Err8h38M/s1600-h/2013-03-30%25252019_52_18-Java%252520-%252520jpf_junit_demo_test_CalculatorTest.java%252520-%252520Eclipse%252520SDK%25255B2%25255D.png"><!-- raw HTML omitted --></a></li>
+<li>Select Ant Builder and click New.</li>
+<li>Select Ant Builder and click New.</li>
+<li>In the Edit Configuration dialog, select the “JRE” tab, then select
+“Separate JRE” from the “Runtime JRE section”. In the drop down
+list, select JDK:</li>
+<li><a href="http://lh6.ggpht.com/-swJUlkWwjYg/UVeOHl2Er2I/AAAAAAAABH0/k0F3r4Kz7NA/s1600-h/2013-03-30%25252020_01_41-Edit%252520Configuration%25255B2%25255D.png"><!-- raw HTML omitted --></a></li>
+<li>If you couldn’t find the JDK in the drop down list, click “Installed
+JRE …”</li>
+<li><a href="http://lh4.ggpht.com/-LiaktXhtNMw/UVeOKP4cKII/AAAAAAAABIE/P5qm-GezC6s/s1600-h/2013-03-30%25252020_05_18-Preferences%252520%252528Filtered%252529%25255B2%25255D.png"><!-- raw HTML omitted --></a></li>
+<li>In the “Preferences” dialog, click “Add”</li>
+<li><a href="http://lh5.ggpht.com/-eKXWQowTn8M/UVeOMPK%0AtwkI/AAAAAAAABIU/GiU5g3wEH5A/s1600-h/2013-03-30%25252020_07_40-Preferences%252520%252528Filtered%252529%25255B2%25255D.png"><!-- raw HTML omitted --></a></li>
+<li>Select “Standard VM” and click “Next”</li>
+<li><a href="http://lh5.ggpht.com/-J09x3j81-wM/UVeOPc4Y77I/AAAAAAAABIk/eCZYDu5b4GM/s1600-h/2013-03-30%25252020_10_06-Edit%252520Configuration%25255B2%25255D.png"><!-- raw HTML omitted --></a></li>
+<li>Click “Directory” and navigate to your JDK installation directory.
+Then click “Finish” to return to the previous dialog.</li>
+<li><a href="http://lh3.ggpht.com/-vejQMAEEj30/UVeOQ_D4UOI/AAAAAAAABI0/b_94P5tqtbs/s1600-h/2013-03-30%25252020_11_56-Preferences%252520%252528Filtered%252529%25255B2%25255D.png"><!-- raw HTML omitted --></a>  </li>
+<li>Select the JDK and click Ok.</li>
+<li>Select JDK in the drop down box and click OK</li>
+<li><a href="http://lh3.ggpht.com/-sSwQsWzybOc/UVeOSSOKmiI/AAAAAAAABJE/bKkeyZsxJCE/s1600-h/2013-03-30%25252020_13_43-Edit%252520Configuration%25255B2%25255D.png"><!-- raw HTML omitted --></a></li>
+</ul>
+<p>Step 3 : Install and configure JPF</p>
+<ul>
+<li>Step 3.1 : Install JPF files : Copy the whole jpf-core project
+folder into &lt;user.home&gt;/projects/jpf</li>
+<li>Step 3.2 : Create site.properties
+<ul>
+<li>
+<p>Create site.properties under &lt;user.home&gt;/.jpf folder.</p>
+</li>
+<li>
+<p>To create the folder on windows, use the following command on
+the command window after navigating to the user home: <!-- raw HTML omitted -->mkdir .jpf<!-- raw HTML omitted --> .</p>
+</li>
+<li>
+<p>Paste the following content into the site.properties file.</p>
+<pre><code># JPF site configuration
+
+jpf.home = ${user.home}/projects/jpf
+
+# can only expand system properties
+jpf-core = ${user.home}/projects/jpf/jpf-core
+
+# annotation properties extension
+jpf-aprop = ${jpf.home}/jpf-aprop
+extensions+=,${jpf-aprop}
+# numeric extension
+jpf-numeric = ${jpf.home}/jpf-numeric
+extensions+=,${jpf-numeric}
+# concurrent extension
+#jpf-concurrent = ${jpf.home}/jpf-concurrent
+#extensions+=,${jpf-concurrent}
+jpf-shell = ${jpf.home}/jpf-shell
+extensions+=,${jpf-shell}
+jpf-awt = ${jpf.home}/jpf-awt
+extensions+=,${jpf-awt}
+
+jpf-awt-shell = ${jpf.home}/jpf-awt-shell
+extensions+=,${jpf-awt-shell}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Step 3.3 : Install Eclipse plug-in
+<ul>
+<li>The JPF Eclipse plug-in allows you to invoke JPF directly from
+Eclipse.</li>
+<li>In Eclipse go to Help &gt;&gt; Install New Software.</li>
+<li>In the new window click Add. In the name insert JPF. In the
+location insert
+“<a href="http://babelfish.arc.nasa.gov/trac/jpf/raw-attachme%0Ant/wiki/install/eclipse-plugin/update/">http://babelfish.arc.nasa.gov/trac/jpf/raw-attachment/wiki/install/eclipse-plugin/update/</a>”
+then click Ok.</li>
+<li>From the “Work with:” drop down menu select the newly added
+site.</li>
+<li>In the list, check “Eclipse-JPF”, click Next, then Finish.</li>
+</ul>
+</li>
+</ul>
+<p>Step 4 : Start the demo project</p>
+<p>Step 4.1 : Create and configure project</p>
+<ul>
+<li>In Eclipse menu : File &gt;&gt; New &gt;&gt; Java project : project
+name = jpf_junit_demo</li>
+<li>In the package explorer, right click on the project name. Choose
+“Build Path” &gt;&gt; “Add libraries”</li>
+<li><a href="http://lh5.ggpht.com/-CSdE3fDs--E/UVd9z0SedPI/AAAAAAAABGs/4NFtDrpspG4/s1600-h/2013-03-28%25252015_41_55-Add%252520Library%25255B2%25255D.png"><!-- raw HTML omitted --></a> </li>
+<li>Select User Library and click Next.</li>
+<li>Click User libraries. Then New. You will see a window for creating a
+library. Put “jpf” as the library name and click Ok to return to the
+previous dialog.</li>
+<li>Select the newly added jpf library and click “Add External JARs …”.</li>
+<li>Select all the jar files under &lt;user.home&gt;/jpf/jpf-core/build
+and click “Open” to add them under library jpf</li>
+<li>Click New to create a new user library. Name it “jpf-support”.</li>
+<li>Select the newly added jpf-support library and click “Add External
+JARs …”.</li>
+<li>Select all the jar files under &lt;user.home&gt;/jpf/jpf-core/lib
+and click “Open” to add them under library jpf-support</li>
+<li>Now the User Libraries should look like the following:</li>
+<li><a href="http://lh6.ggpht.com/-zm0xQa0YzKI/UVd92I5WpiI/AAAAAAAABG8/uNSizUroHEY/s1600-h/2013-03-28%25252015_54_32-Preferences%252520%252528Filtered%252529%25255B2%25255D.png"><!-- raw HTML omitted --></a> </li>
+<li>Right click on the project name and select : New &gt;&gt; Folder,
+name the folder as test. Right click on the newly created test
+folder and select : Build Path &gt;&gt; Use as Source Folder. This
+folder will be used in the future to hold the JUnit test classes.</li>
+<li>Now the project folder should look like the following:</li>
+<li><a href="http://lh6.ggpht.com/-MH-Gau2Bbl4/UVd942dbyGI/AAAAAAAABHM/0eD7quCXC5c/s1600-h/2013-03-28%25252016_00_38-Java%252520-%252520jpf_junit_demo_src_TestGenerator.java%252520-%252520Eclipse%252520SDK%25255B2%25255D.png"><!-- raw HTML omitted --></a></li>
+</ul>
+<p>Step 4.2 : Create a class (program under test)</p>
+<ul>
+<li>
+<p>Right click on the “src” folder and choose: New &gt;&gt; Class. Name
+it Calculator and click Finish.</p>
+</li>
+<li>
+<p>This is the content of the very simple Calculator.java which prints
+the sum of two integers. The Verify statements are the only JPF
+statements, the rest is pure java. We will explain the JPF
+statements through its results in the next step.</p>
+<pre><code>import gov.nasa.jpf.jvm.Verify;
+
+public class Calculator {
+    int add (int a, int b)
+    {
+        return a+b;
+    }
+    public static void main(String[] args)
+    {
+        int a = Verify.getInt(1,3);
+        int b = Verify.getInt(5,8);
+        Calculator cal = new Calculator();
+        System.out.println(a + &quot;+&quot; + b + &quot;=&quot; + cal.add(a, b));
+    }
+}
+</code></pre>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>Step 4.3 : Run JPF from Eclipse
+<ul>
+<li>
+<p>Right click on the project name and select: New &gt;&gt; File.
+Name the file “jpf_junit_demo.jpf”.</p>
+</li>
+<li>
+<p>This is the content of the newly added file</p>
+<p>+classpath=${config_path}/bin<br>
+target=TestGenerator</p>
+</li>
+<li>
+<p>In the package explorer, right click on the
+“jpf_junit_demo.jpf” and select “Verify …”.</p>
+</li>
+<li>
+<p>If you couldn’t see the “Verify…” option, this means that you
+didn’t installed the JPF plug-in properly.  See step 3.3.</p>
+</li>
+<li>
+<p>JPF will get started and you will see its output in the console
+pane. It will be like the following:</p>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<pre><code>Executing command: java -jar C:\Users\Ebeid\projects\jpf\jpf-core\build\RunJPF.jar +shell.port=4242 C:\Users\Ebeid\projects\jpf_junit_demo\jpf_junit.demo.jpf
+JavaPathfinder v6.0 (rev 960+) - (C) RIACS/NASA Ames Research Center
+
+====================================================== system under test
+application: Calculator.java
+
+====================================================== search started: 3/28/13 4:41 PM
+1+5=6
+1+6=7
+1+7=8
+1+8=9
+2+5=7
+2+6=8
+2+7=9
+2+8=10
+3+5=8
+3+6=9
+3+7=10
+3+8=11
+
+====================================================== results
+no errors detected
+
+====================================================== statistics
+elapsed time:       00:00:02
+states:             new=5, visited=11, backtracked=16, end=12
+search:             maxDepth=3, constraints hit=0
+choice generators:  thread=1 (signal=0, lock=1, shared ref=0), data=4
+heap:               new=545, released=197, max live=353, gc-cycles=13
+instructions:       5098
+max memory:         55MB
+loaded code:        classes=82, methods=1362
+
+====================================================== search finished: 3/28/13 4:41 PM
+</code></pre>
+<p>According to our program code and the JPF results, you may already
+guessed what the verify statements are doing in the following lines of
+code:</p>
+<p>int a = Verify.getInt(1,3);<br>
+int b = Verify.getInt(5,8);</p>
+<ul>
+<li>Simply, Verify.getInt(x, y) get a new integer within the range
+[x,y].</li>
+<li>That is it ?</li>
+<li>Partially yes.</li>
+<li>But how JPF get 12 print outputs ?</li>
+<li>Ok Actually JPF starts a new clone of the program for each value
+resulted from a Verify.getInt() statement.</li>
+<li>This means that JPF will create 3 versions of the program, each one
+of these versions runs with a different value of a (1, 2, 3).</li>
+<li>Each version of these three versions will be used as a base to
+create another 4 versions of the program for variable b, each one of
+these versions runs with a different value of b (5, 6, 7, 8).</li>
+</ul>
+<p>So, the total versions of the program running by JPF is 3 * 4 = 12. Its
+like a tree where the leafs are the print statements :</p>
+<ul>
+<li>a = 1
+<ul>
+<li>a = 1, b = 5    |    System.out.println(a + &ldquo;+&rdquo; + b + &ldquo;=&rdquo; +
+cal.add(a, b));    |    1+5=6</li>
+<li>a = 1, b = 6    |    System.out.println(a + &ldquo;+&rdquo; + b + &ldquo;=&rdquo; +
+cal.add(a, b));    |    1+6=7</li>
+<li>a = 1, b = 7    |    System.out.println(a + &ldquo;+&rdquo; + b + &ldquo;=&rdquo; +
+cal.add(a, b));    |    1+7=8</li>
+<li>a = 1, b = 8    |    System.out.println(a + &ldquo;+&rdquo; + b + &ldquo;=&rdquo; +
+cal.add(a, b));    |    1+8=9</li>
+</ul>
+</li>
+<li>a = 2
+<ul>
+<li>a = 1, b = 5    |    System.out.println(a + &ldquo;+&rdquo; + b + &ldquo;=&rdquo; +
+cal.add(a, b));    |    2+5=7</li>
+<li>a = 1, b = 6    |    System.out.println(a + &ldquo;+&rdquo; + b + &ldquo;=&rdquo; +
+cal.add(a, b));    |    2+6=8</li>
+<li>a = 1, b = 7    |    System.out.println(a + &ldquo;+&rdquo; + b + &ldquo;=&rdquo; +
+cal.add(a, b));    |    2+7=9</li>
+<li>a = 1, b = 8    |    System.out.println(a + &ldquo;+&rdquo; + b + &ldquo;=&rdquo; +
+cal.add(a, b));    |    2+8=10</li>
+</ul>
+</li>
+<li>a = 3
+<ul>
+<li>a = 1, b = 5    |    System.out.println(a + &ldquo;+&rdquo; + b + &ldquo;=&rdquo; +
+cal.add(a, b));    |    3+5=8</li>
+<li>a = 1, b = 6    |    System.out.println(a + &ldquo;+&rdquo; + b + &ldquo;=&rdquo; +
+cal.add(a, b));    |    3+6=9</li>
+<li>a = 1, b = 7    |    System.out.println(a + &ldquo;+&rdquo; + b + &ldquo;=&rdquo; +
+cal.add(a, b));    |    3+7=10</li>
+<li>a = 1, b = 8    |    System.out.println(a + &ldquo;+&rdquo; + b + &ldquo;=&rdquo; +
+cal.add(a, b));    |    3+8=11</li>
+</ul>
+</li>
+</ul>
+<p>you can use JPF for your JUnit tests to generate explore your code
+states as we did; just keep in mind that a small increase in the number
+of states of variables could result in huge number of total program
+states.</p>
+<p>I hope you enjoyed it, and see you later in more posts about JPF.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

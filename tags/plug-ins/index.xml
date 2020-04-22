@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plug-ins on Ebeid ElSayed</title>
+    <link>https://ebeid.github.io/tags/plug-ins/</link>
+    <description>Recent content in Plug-ins on Ebeid ElSayed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 23 Mar 2012 15:49:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://ebeid.github.io/tags/plug-ins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Microsoft Dynamics CRM 2011 for Developers | Plug-ins</title>
+      <link>https://ebeid.github.io/blog/2012-03-23-microsoft-dynamics-crm-2011-for_23.html/</link>
+      <pubDate>Fri, 23 Mar 2012 15:49:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2012-03-23-microsoft-dynamics-crm-2011-for_23.html/</guid>
+      <description>Contents  Introduction Common Uses of Plug-ins Plug-ins Basics  Event Framework Event Execution Pipeline Pipeline Stages Message Processing Inclusion in Database Transactions  Plug-in Isolation Trusts   Develop Plug-ins Register Plug-ins  Introduction
+A plug-in is .Net assembly that can be used to intercept events generated from the CRM system. Plug-ins subscribe to a set of events and run when the events occur regardless of how the event raised (or the method that is used to perform the activity that raised the event).</description>
+    </item>
+    
+  </channel>
+</rss>

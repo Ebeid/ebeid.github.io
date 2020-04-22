@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Parameterized Test Patterns using Microsoft Pex</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-05-02-parameterized-test-patterns-using.html/">Parameterized Test Patterns using Microsoft Pex</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          May 2, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Microsoft Pex</span>
+            
+            <span class="label label-success">Parameterized Unit Tests</span>
+            
+            <span class="label label-success">Unit Tests</span>
+            
+            <span class="label label-success">Unit testing</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>We talked before about the difference between unit tests and
+parameterized unit tests. In this post we will talk about common
+patterns for writing good parameterized unit tests. Keep in mind that we
+will use these tests with Microsoft Pex (as an automatic test input
+generation tool) to get test inputs that trigger all the possible
+scenarios of the code-under-test.</p>
+<blockquote>
+<p>Before anything, let’s clarify what are the questions we want to
+answer using the parameterized unit tests. There are  two core
+questions:</p>
+<ul>
+<li>What are good scenarios (sequences of method calls) to exercise
+the code-under-test? (Coverage)</li>
+<li>What are good assertions that can be stated easily without
+re-implementing the algorithm? (Verification)</li>
+</ul>
+<p>A parameterized unit test is only useful if it provides answers for
+both questions:</p>
+<ul>
+<li>Without sufficient coverage, i.e. if the scenario is too narrow to
+reach all the code-under-test, the extent of the test is limited.</li>
+<li>Without sufficient verification of the computed results, i.e. if
+the test does not contain enough assertions, the test does not
+check that the code is doing the right thing. All it would check
+for is that the code-under-test does not crash.</li>
+</ul>
+</blockquote>
+<h3 id="test-patterns">Test Patterns</h3>
+<h4 id="1--arrange-act-assert">1- Arrange, Act, Assert</h4>
+<p>The ’AAA’ (Triple-A) is a well-known pattern for writing unit tests. It
+applies to parameterized unit tests as well. A parameterized unit test
+using this patter is organized in three sections:</p>
+<ul>
+<li><strong>Arrange</strong>: set up the unit under test</li>
+<li><strong>Act</strong>: exercise the unit under test, capturing any resulting state</li>
+<li><strong>Assert</strong>: verify the behavior through assertions</li>
+</ul>
+<p>An example of this pattern in a traditional unit test:</p>
+<pre><code>[Test]
+pubic void AddItem()
+{
+      // arrange
+      var list = new ArrayList();
+      var item = new object();
+      // act
+      list.Add(item);
+      // assert
+      Assert.IsTrue(list.Count == 1);
+}
+</code></pre>
+<p>An example of this pattern in a parameterized unit test:</p>
+<pre><code>[PexMethod]
+pubic void AddItem(object item)
+{
+      // arrange
+      var list = new ArrayList();
+      // act
+      list.Add(item);
+      // assert
+      Assert.IsTrue(list.Count == 1);
+}
+</code></pre>
+<h4 id="2--assume-arrange-act-assert">2- Assume, Arrange, Act, Assert</h4>
+<p>This pattern is an extension of the first pattern where an Assumption
+section is added at the beginning. An <strong>assumption</strong> restricts possible
+test inputs, acting as a filter. A parameterized unit test using this
+pattern is organized in four sections:</p>
+<ul>
+<li><strong>Assume</strong>: assume preconditions over the test inputs</li>
+<li><strong>Arrange</strong>: set up the unit under test</li>
+<li><strong>Act</strong>: exercise the unit under test, capturing any resulting state</li>
+<li><strong>Assert</strong>: verify the behavior through assertions</li>
+</ul>
+<p>The following example tests that adding an element to any list
+increments the Count property. We use an assumption to filter out the
+case where list is a null reference.</p>
+<pre><code>[PexMethod]
+void AssumeActAssert(ArrayList list, object item)
+{
+     // assume
+     PexAssume.IsNotNull(list);
+     // arrange
+     var count = list.Count;
+     // act
+     list.Add(item);
+     // assert
+     Assert.IsTrue(list.Count == count + 1);
+}
+</code></pre>
+<h4 id="3--parameterized-stubs">3- Parameterized Stubs</h4>
+<p>If the code-under-test already contains many assertion statements that
+verify its behavior, an effective parameterized unit test might be quite
+simple in itself, because it can leverage the assertions in the code.</p>
+<pre><code>[PexMethod] 
+public void Add( [PexAssumeUnderTest]Array
+List list, object item) 
+{ 
+ list.Add(item); 
+</code></pre>
+<p>The attribute PexAssumeUnderTest is a short-hand notation to make sure
+that the parameter is not null, and has exactly the type indicated by
+its declaration (not a subtype).</p>
+<h4 id="4--observed-values">4- Observed Values</h4>
+<p>At any point in the parameterized unit test, if you want to log the
+value of any variable or parameter, just use</p>
+<pre><code>PexObserve.ValueForViewing(&quot;Variable Name&quot;, var_name);
+</code></pre>
+<h4 id="5--allowed-exceptions">5- Allowed Exceptions</h4>
+<p>Traditional unit test frameworks support the concept of expected
+exception, where a test case or API call is expected to throw an
+exception. If the test does not throw the exception or throws an
+exception that does not match the criteria, the execution fails. The
+same concept applied to parameterized unit tests.</p>
+<pre><code>[PexMethod][PexAllowedException(typeof(ArgumentNullException))] 
+void Constructor(string value) 
+{ 
+ // throws ArgumentNullException if value is null 
+ var myClass = new MyClass(value); 
+}
+</code></pre>
+<h4 id="6--state-relation">6- State Relation</h4>
+<p>This pattern applies when an API call causes an internal state change
+that can be (partially) observed through other API calls. A classic
+example of such a pattern is the combination of Insert and Contains
+operation on any collection type:</p>
+<pre><code>[PexMethod] 
+void InsertContains(stringvalue) 
+{ 
+ var list = new List(); 
+ list.Add(value); 
+ Assert.IsTrue(list.Contains(value)); 
+}
+</code></pre>
+<h4 id="7--roundtrip">7- Roundtrip</h4>
+<p>This pattern applies to an API that transforms its inputs in a
+reversible way: When the API has a function <em>f</em> and an inverse function
+<em>f_1</em>, then it should hold that <em>f_1(f(x))=x</em> for all <em>x</em>. A classic
+example of such pattern is property setters and getters, where the test
+fails when the setter rejects a particular argument value.</p>
+<pre><code>[PexMethod] 
+void PropertyRoundtrip(string value) 
+{ 
+ // arrange 
+ var target = new MyClass(); 
+ 
+ // two-way roundtrip 
+ target.Name = value;   // calls setter 
+ var roundtripped = target.Name; // calls getter 
+
+ // assert 
+ Assert.AreEqual(value, roundtripped); 
+}
+</code></pre>
+<p>Another example is serialization and deserialization of values.</p>
+<pre><code>[PexMethod] 
+void ToStringParseRoundtrip(int value) 
+{ 
+ // two-way roundtrip 
+ string s = value.ToString(); 
+ int parsed = int.Parse(s); 
+
+ // assert Assert.AreEqual(value, parsed); 
+}
+</code></pre>
+<h4 id="8--normalized-roundtrip">8- Normalized Roundtrip</h4>
+<p>The Pattern Roundtrip showed how to test a method for which in inverse
+operation exists. For example, <strong>int.Parse</strong> is the inverse of
+<strong>int.ToString</strong>. This is not the case in the other direction:
+<strong>int.ToString</strong> is not exactly the inverse of <strong>int.Parse</strong>, because
+the parsing ignores whitespace (some kind of data normalization):</p>
+<pre><code>int.Parse(&quot; 5&quot;).ToString() == &quot;5&quot;;
+</code></pre>
+<p>This pattern is applied when the API has a function <strong>f</strong> and an inverse
+function <strong>f_1</strong>, then it should hold that <strong>f_1(f(f_1(x)))=f_1(x)</strong>
+for all <strong>x</strong> where <strong>f_1(x)</strong> is defined.</p>
+<pre><code>[PexMethod] 
+void ThreeWayRoundtrip(string value) 
+{ 
+ // ’hello%20world’ &lt;= ’hello world’ 
+ var normalized = Uri.EscapeDataString(value); 
+ 
+ // ’helloworld’ &lt;= ’hello%20world’ 
+ var intermediate = Uri.UnescapeDataString(normalized); 
+
+ // ’hello%20world’ &lt;= ’hello world’ 
+ var roundtripped = Uri.EscapeDataString(intermediate); 
+
+ // assert 
+ Assert.AreEqual(normalized, roundtripped); 
+}
+&lt;
+br /&gt;
+</code></pre>
+<h4 id="9--reachability">9- Reachability</h4>
+<p>If your test assumptions are so complicated and it is not clear whether
+there is any test input that fulfills them. You could use
+<strong>PexAssert.ReachEventually(&ldquo;GoalName&rdquo;)</strong> wherever in your test to make
+sure that there is at least one input that reach this point in your
+test. The goal name have to be passed to the
+<strong>PexAssertReachEventuallyAttribute</strong> constructor. A parameterized unit
+test fails when Pex does not find a way to reach a goal, indicated by
+calling the <strong>PexAssert.Reached</strong> method in a parameterized unit test
+annotated with the <strong>PexAssertReachEventuallyAttribute</strong>.</p>
+<pre><code>[PexMethod] 
+[PexAssertReachEventually(&quot;passed&quot;, StopWhenAllReached = true)] 
+public void ParsingSuccesful(string input) 
+{ 
+ // complicated parsing code 
+ DateTime date; 
+ if (DateTime.TryParse(input, out date)) 
+ { 
+  // and we want to see at least one case where parsing is successful. 
+  PexAssert.ReachEventually(&quot;passed&quot;); 
+ } 
+}
+</code></pre>
+<p>Multiple goals can be combined in a single parameterized unit test for
+more advanced scenarios by passing a list of goal identifiers in the
+constructor of the PexAssertReachEventuallyAttribute. Each goal
+identifier must be reached and notified in order for the parameterized
+unit test to succeed.</p>
+<pre><code>[PexMethod] 
+[PexAssertReachEventually(&quot;parsed&quot;, &quot;y2k&quot;, StopWhenAllReached = true)] 
+public void ParsingSuccesfulWithMoreGoals(string input) 
+{ 
+ // complicated parsing code 
+ DateTime date;
+ if (DateTime.TryParse(input, out date)) 
+ { 
+  // and we want to see at least one case where parsing is successful. 
+  PexAssert.ReachEventually(&quot;parsed&quot;); 
+ } 
+ if (date.Year == 2000) 
+ {
+  // we want to see at least one test with the year 2000 
+  PexAssert.ReachEventually(&quot;y2k&quot;); 
+ }
+}
+</code></pre>
+<h4 id="10--reachable-implication">10- Reachable Implication</h4>
+<p>Implications assert a property when a predicate (condition) is true. Use
+<strong>PexAssert.ImpliesEventually</strong> to make an implication that should be
+true and that should be executed at least once. The test have to be
+annotated with the <strong>PexAssertReachEventuallyAttribute</strong>. A
+parameterized unit test fails when Pex does not find a way to make the
+predicate of <strong>PexAssert.ImpliesEventually</strong> evaluates true at least
+once.</p>
+<pre><code>[PexMethod] 
+[PexAssertReachEventually] 
+public void ParseImpliesParse(string input) 
+{ 
+ bool value; 
+ // if TryParse succeeds, Parse should succeed too. Also make sure TryParse succeeds at least once 
+ PexAssert.ImpliesEventually( bool.TryParse(input, out value), () =&gt; bool.Parse(input) );
+}
+</code></pre>
+<h4 id="11--seed-values-to-help-pex">11- Seed Values to Help Pex</h4>
+<p>A parameterized unit test needs concrete input data to be executed.
+Pex&rsquo;s role is to automatically generate relevant input data via code
+analysis. Sometimes it might be desirable or even necessary to provide
+manually chosen seed values to Pex to guide the automated code
+exploration. In effect, Pex will fuzz the provided values in ways that
+cause alternative execution paths to be taken. The
+<strong>PexArgumentsAttribute</strong> can be used to provide primitive data. Each
+instance of this attribute gives a list of values that must match the
+parameter types of the parameterized unit test (and in the same
+parameters order).</p>
+<pre><code>[PexMethod]
+[PexArguments(&quot;var i = 0;&quot;, 0)]
+[PexArguments(&quot;class Foo {}&quot;, 12)]
+public void ParseTest(string text, int line)
+{
+ var parser = new Parser();
+ parser.SetLine(line);
+ var node = parser.Parse(text);
+
+}
+</code></pre>
+<p>Before analyzing the branch conditions in the code, Pex will first
+execute the parameterized unit test with the provided values. This way,
+Pex acquires knowledge about the code reachable from a test, and during
+the subsequence code exploration Pex will try to further increase code
+coverage by slightly modifying the values to trigger different execution
+paths. In effect, Pex will
+<a href="http://en.wikipedia.org/wiki/Fuzz_testing">fuzz</a> the provided values.</p>
+<h4 id="12--regression-tests">12- Regression Tests</h4>
+<p>In these tests some we could persist a computed value in the generated
+test so when the generated test is executed in the future, it verifies
+that the (possible changed) code-under-test still computes the same
+value. There are several ways how outputs can be logged. For a single
+output value, one can use the return value of the parameterized unit
+test:</p>
+<pre><code>[PexMethod]
+public int Add(int a, int b)
+{
+ return a + b;
+}
+</code></pre>
+<p>Pex will recursively traverse the observable properties and fields of
+the value and add assertions in the generated test for each one of them:</p>
+<pre><code>[Test]
+[PexGeneratedBy(typeof(Program))]
+public void Add866()
+{
+    int i;
+    i = this.Add(0, 0);
+    PexAssert.AreEqual(0, i);
+}
+</code></pre>
+<p>For multiple values, use <strong>out</strong> parameters in the parameterized unit
+tests</p>
+<pre><code>[PexMethod]
+public void Add(int a, int b, out int result)
+{
+ result = a + b;
+}
+</code></pre>
+<p>Which Pex will use to generate the following</p>
+<pre><code>[Test]
+[PexGeneratedBy(typeof(Program))]
+public void Add13()
+{
+    int i = 0;
+    this.Add(0, 0, out i);
+    PexAssert.AreEqual(0, i);
+}
+</code></pre>
+<p>If the number of values might be dynamic, you could log these values
+using
+<strong><a href="http://research.microsoft.com/en-us/um/redmond/projects/pex/wiki/PexObserve.html">PexObserve</a>.Value</strong>
+and observe it later using the
+<strong><a href="http://research.microsoft.com/en-us/um/redmond/projects/pex/wiki/PexObserve.html">PexObserve</a>.ValueAtEndOfTest</strong>
+method:</p>
+<pre><code>[PexMethod]
+void Add(int a, int b)
+{
+ int result = a * b;
+ PexObserve.Value(&quot;result&quot;, result);
+}
+</code></pre>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 13, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-13-how-to-debug-your-pex-parameterized.html/">How to debug your Pex parameterized unit tests</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        August 1, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-08-01-convert-microsoft-pex-path-conditions.html/">Convert Microsoft Pex path conditions from Z3 native format to SMT-LIB</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        July 24, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-07-24-get-path-conditions-from-microsoft-pex.html/">Get path conditions from Microsoft Pex</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Introduction to Mining Software Engineering Data</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2009-02-26-introduction-to-mining-software.html/">Introduction to Mining Software Engineering Data</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          February 26, 2009
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p> </p>
+<p>Tao Xie | North Carolina State University | <a href="mailto:xie@csc.ncsu.edu">xie@csc.ncsu.edu</a></p>
+<p>Ahmed E. Hassan | University of Victoria | <a href="mailto:ahmed@uvic.ca">ahmed@uvic.ca</a></p>
+<p>Part I</p>
+<p>Mining Software Engineering Data goals:</p>
+<ul>
+<li>Transform static record-keeping SE data to active data.</li>
+<li>Make SE data actionable by uncovering hidden patterns and trends.</li>
+</ul>
+<p>Uses of mining SE data:</p>
+<ul>
+<li>Gain empirically-based understanding of software development.</li>
+<li>Predict, plan, and understand various aspects of a project.</li>
+<li>Support future development and project management activities.</li>
+</ul>
+<p><a href="http://lh3.ggpht.com/_R1exOFT_lVs/SaatPqA-b_I/AAAAAAAAABc/e5Pi6diYAjA/s1600-h/clip_image001%5B3%5D.png"><!-- raw HTML omitted --></a></p>
+<p>Types of SE Data:</p>
+<ul>
+<li>Historical data</li>
+</ul>
+<p>Used primarily for record-keeping activities (checking the status of a
+bug, retrieving old code)</p>
+<ul>
+<li>Version or source control:
+<ul>
+<li>cvs, subversion, perforce.</li>
+<li>Store changes to the data</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>Bug systems:
+<ul>
+<li>bugzilla, GNATS, JIRA.</li>
+<li>Follow the resolution of defects.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>Mailing lists:
+<ul>
+<li>Mbox</li>
+<li>Record rationale for decisions throughout the life of a project.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>Multi-run and Multi-site data
+<ul>
+<li>Execution traces</li>
+<li>Deployment logs</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://lh6.ggpht.com/_R1exOFT_lVs/SaatQ6t8yYI/AAAAAAAAABk/HSWWUsDklPg/s1600-h/clip_image002%5B3%5D.png"><!-- raw HTML omitted --></a></p>
+<p>Software Maintenance Activities</p>
+<ul>
+<li>Perfective: add new functionality</li>
+<li>Corrective: fix faults</li>
+<li>Adaptive: new file formats, refactoring</li>
+</ul>
+<p>Source Control Repositories</p>
+<p>A source control system tracks changes to ChangeUnits.</p>
+<p>Examples of ChangeUnits:</p>
+<ul>
+<li>File</li>
+<li>Function</li>
+<li>Dependency (e.g. Call )</li>
+</ul>
+<p>For each ChangeUnit, it tracks the developer, time, change message,
+co-changing Units.</p>
+<p><a href="http://lh6.ggpht.com/_R1exOFT_lVs/SaatR5gwbXI/AAAAAAAAABs/ZZipjyMgw1U/s1600-h/clip_image003%5B3%5D.jpg"><!-- raw HTML omitted --></a></p>
+<p>Change Propagation</p>
+<p><a href="http://lh5.ggpht.com/_R1exOFT_lVs/SaatS7YDNaI/AAAAAAAAAB0/MtuxFhn-pH0/s1600-h/clip_image004%5B3%5D.png"><!-- raw HTML omitted --></a></p>
+<p>Measuring Change Propagation</p>
+<p><a href="http://lh5.ggpht.com/_R1exOFT_lVs/SaatUdOdvJI/AAAAAAAAACE/rdvmvb70_hI/s1600-h/clip_image005%5B3%5D.png"><!-- raw HTML omitted --></a></p>
+<p><a href="http://lh3.ggpht.com/_R1exOFT_lVs/SaatVW27xHI/AAAAAAAAACM/EZemx9UBL8Y/s1600-h/clip_image006%5B3%5D.png"><!-- raw HTML omitted --></a></p>
+<p>We want:</p>
+<ul>
+<li>High precision to avoid wasting time</li>
+<li>High recall to avoid bugs</li>
+</ul>
+<p>Guiding Change Propagation</p>
+<p>Mine association rules from change history.</p>
+<p>Use rules to help propagate changes:</p>
+<ul>
+<li>Recall as high as 44%</li>
+<li>Precision around 30%</li>
+</ul>
+<p>High precision and recall reached in &lt; 1mth</p>
+<p>Prediction accuracy improves prior to a release (i.e., during
+maintenance phase)</p>
+<p>Code Sticky Notes</p>
+<p>Traditional dependency graphs and program understanding models usually
+do not use historical information.</p>
+<p>Static dependencies capture only a static view of a system - not enough
+detail!</p>
+<p>Development history can help understand the current structure
+(architecture) of a software system.</p>
+<p>Studying Conway&rsquo;s Law</p>
+<p>&ldquo;The structure of a software system is a direct reflection of the
+structure of the development team&rdquo;</p>
+<p><a href="http://lh4.ggpht.com/_R1exOFT_lVs/SaatWYncpBI/AAAAAAAAACU/8UuHXSipFdo/s1600-h/clip_image007%5B3%5D.png"><!-- raw HTML omitted --></a></p>
+<p>Predicting Bugs</p>
+<p>Studies have shown that most complexity metrics correlate well with LOC
+! (Lines of Code)</p>
+<p>Noteworthy findings:</p>
+<ul>
+<li>Previous bugs are good predictor of future bugs.</li>
+<li>The more a file changes, the more likely it will have bugs in it.</li>
+<li>Recent changes affect more the bug potential of a file over older
+changes (weighted time damp models)</li>
+<li>Number of developers is of little help in predicting bugs.</li>
+<li>Hard to generalize bug predictors across projects unless in similar
+domains.</li>
+</ul>
+<p>Example 1 : using imports in Eclipse to predict bugs</p>
+<ul>
+<li>71% of files that import compiler packages, had to be fixed later
+on.</li>
+<li>14% of all files that import ui packages, had to be fixed later on.</li>
+</ul>
+<p>Example 2 : don&rsquo;t program on fridays</p>
+<p>Percentage of bug-introducing changes for eclipse, most high in Friday.</p>
+<p>Classifying changes as Buggy or Clean</p>
+<p>Given a change can we warn a developer that there is a bug in it ?</p>
+<ul>
+<li>Recall/Precision in 50-60% range.</li>
+</ul>
+<p>Project Communication - Mailing lists</p>
+<p>Most open source projects communicate through mailing lists or IRC
+channels.</p>
+<p>Rich source of information about the inner workings of large projects.</p>
+<p>Discussion cover topics such as future plans, design decision, project
+policies, code or path reviews.</p>
+<p>Social network analysis could be performed on discussion threads.</p>
+<p>Social Network Analysis</p>
+<p>Mail list activity</p>
+<ul>
+<li>Strongly correlates with code change activity.</li>
+<li>Moderately correlates with document change activity.</li>
+</ul>
+<p>Social network measures (in-degree, out-degree, between&rsquo;s) indicate that
+committers play much more significant roles in the mailing list
+community that non-committers.</p>
+<p>Immigration rate of developers</p>
+<p>When will a developer be invited to join a project?</p>
+<ul>
+<li>Expertise vs. interest</li>
+</ul>
+<p>The patch review process</p>
+<p>Two review styles</p>
+<ul>
+<li>RTC : Review-then-Commit</li>
+<li>CTR : Commit-then-Review</li>
+</ul>
+<p>80% patches reviewed within 3.5 days and 50% reviewed in &lt; 19 hrs</p>
+<p>Measure a team&rsquo;s morale around release time</p>
+<p>Study the content of messages before and after release.</p>
+<p>Use dimensions from a psychometric text analysis tool.</p>
+<p>Program Source Code</p>
+<p>Code Entities</p>
+<p><a href="http://lh5.ggpht.com/_R1exOFT_lVs/SaatXRFxCtI/AAAAAAAAACc/b36b_fM0Xz4/s1600-h/clip_image008%5B3%5D.png"><!-- raw HTML omitted --></a></p>
+<p>Mining API Usage Patterns</p>
+<p>How should an API be used correctly?</p>
+<ul>
+<li>An API may serve multiple functionalities &ndash;&gt; Different styles of
+API usage</li>
+</ul>
+<p>&ldquo;I know what type of object I need, but I don&rsquo;t know how to write the
+code to get the object&rdquo;</p>
+<ul>
+<li>Can we synthesize jungloid code fragments automatically?</li>
+<li>Given a simple query describing the desired code in terms of input
+and output types, return a code segement.</li>
+</ul>
+<p>&ldquo;I know what method call I need, but I don&rsquo;t know how to write code
+before and after this method call&rdquo;</p>
+<p>Relationships between Code Entities</p>
+<ul>
+<li>
+<p>Mine framework reuse patterns</p>
+<ul>
+<li>Membership relationships
+<ul>
+<li>A class contains membership functions</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>Reuse relationships
+<ul>
+<li>Class inheritance / instantiation</li>
+<li>Function invocations / overriding</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>Mine software plagiarism
+<ul>
+<li>Program dependence graphs</li>
+</ul>
+</li>
+</ul>
+<p>Program Execution Traces</p>
+<p>Method-Entry/Exit States</p>
+<p>Goal: Mine specifications (pre/post conditions) or object behavior
+(object transition diagrams)</p>
+<p>State of an object: values of transitively reachable fields.</p>
+<p>Method-entry state: Receiver-object state, method argument values.</p>
+<p>Method-exit state: Receiver-object state, updated method argument
+values, method return value.</p>
+<p>Other Profiled program states</p>
+<p>Goal: detect or locate bugs.</p>
+<p>Values of variables at certain code locations</p>
+<p>Object/static field read/write</p>
+<p>Method-call arguments</p>
+<p>Method returns</p>
+<p>Sampled predictions on values of variables</p>
+<p>Executed Structural Entities</p>
+<p>Goal: Locate bugs.</p>
+<p>Executed branches/paths, def-use pairs.</p>
+<p>Executed function/method calls.</p>
+<p>Group methods invoked on the same object</p>
+<p>Profiling options</p>
+<p>Execution hit vs. count</p>
+<p>Execution order (sequences)</p>
+<p>Part II</p>
+<p>How can you mine Software Engineering data?</p>
+<p>Overview of data mining techniques</p>
+<p>Association rules and frequent patterns</p>
+<p>Classification</p>
+<p>Clustering</p>
+<p>Misc.</p>
+<p>Association Rules</p>
+<p>Example:</p>
+<p>Finding highly correlated method call pairs.</p>
+<p>Check the revisions (fixes to bugs), find the pairs of method calls
+whose confidences have improved dramatically by frequent added fixes.</p>
+<p>Those are the matching method call pairs that may often be violated by
+programmers</p>
+<p>Conflicting Patterns</p>
+<p>999 out of 1000 times spin_lock is followed by spin_unlock</p>
+<p>The single time that spin_unlock does not follow may likely be an
+error.</p>
+<p>We can detect an error without knowing the correctness rules.</p>
+<p>Detect Copy-Paste Code</p>
+<p>Apply closed sequential pattern mining techniques.</p>
+<p>Customizing the techniques:</p>
+<ul>
+<li>A copy-paste segment typically does not have big gaps .
+<ul>
+<li>Use a maximum gap threshold to control.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>Output the instances of patterns ( i.e., the copy-pasted code
+segments) instead of the patterns.</li>
+<li>Use small copy-pasted segments to form larger ones.</li>
+<li>Prune false positives: tiny segments, unmappable segments,
+overlapping segments, and segments with large gaps.</li>
+</ul>
+<p>Find Bugs in Copy-Pasted Segments</p>
+<p>For two copy-pasted segments, are the modifications consistent?</p>
+<ul>
+<li>Identifier a in segment S1 is changed to b in segment S3 3 times,
+but remains unchanged once - likely a bug</li>
+<li>The heuristics may not be correct all the time</li>
+</ul>
+<p>The lower the unchanged rate of an identifier, the more likely there is
+a bug.</p>
+<p>Mining Rules in Traces</p>
+<p>Mining association rules or sequential patterns S &ndash;&gt; F, where S is a
+statement and F is the status of program failure.</p>
+<p>The higher the confidence, the more likely S is faulty or related to a
+fault.</p>
+<p>Using only one statement at the left side of the rule can be misleading,
+since a fault may led by a combination of statements.</p>
+<p>Frequent patterns can be used to improve.</p>
+<p>Mining Emerging Patterns in Traces</p>
+<p>A method executed only in failing runs is likely to point to the defect.</p>
+<p>Comparing the coverage of passing and failing program runs helps.</p>
+<p>Mining patterns frequent in failing program runs but infrequent in
+passing program runs.</p>
+<p>Sequential patterns may be used.</p>
+<p>Classification</p>
+<p>Classification: A 2-step Process</p>
+<p>Model construction: describe a set of predetermined classes</p>
+<ul>
+<li>Training dataset: tuples for model construction
+<ul>
+<li>Each tuples/sample belongs to a predefined class</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>Classification rules, decision trees, or math formulae</li>
+</ul>
+<p>Model application: classify unseen objects</p>
+<ul>
+<li>Estimate accuracy of the model using an independent test set.</li>
+<li>Acceptable accuracy &ndash;&gt; apply the model to classify tuples with
+known class labels.</li>
+</ul>
+<p>Supervised learning (Classification)</p>
+<ul>
+<li>Supervision: objects in the training data set have labels</li>
+<li>New data is classified based on the training set</li>
+</ul>
+<p>Unsupervised learning (Clustering)</p>
+<ul>
+<li>The class labels of training data are unknown</li>
+<li>Given a set of measurements, observations, etc. with the aim of
+establishing the existence of classes or clusters in the data.</li>
+</ul>
+<p>GUI-Application Stabilizer</p>
+<p>Given a program state S and an event e, predict whether e likely results
+in a bug</p>
+<ul>
+<li>Positive samples: past bugs</li>
+<li>Negative samples: not bug reports</li>
+</ul>
+<p>A K-NN based approach</p>
+<ul>
+<li>Consider the k closest cases reported before</li>
+<li>Compare sum 1/d for bug cases and not-bug cases, where d is the
+similarity between the current state and the reported states.</li>
+<li>If the current state is more similar to bugs, predict a bug.</li>
+</ul>
+<p>Clustering</p>
+<p>What is clustering ==&gt; group data into clusters.</p>
+<p>Similar to one another within the same cluster.</p>
+<p>Dissimilar to the objects in other clusters.</p>
+<p>Unsupervised learning: no predefined classes.</p>
+<p>Clustering and Categorization</p>
+<p>Software categorization</p>
+<p>Partitioning software systems into categories</p>
+<p>Categories predefined - a classification problem</p>
+<p>Categories discovered automatically - a clustering problem</p>
+<p>Software Categorization - MUDABlue</p>
+<p>Understanding source code</p>
+<ul>
+<li>Use Latent Semantic Analysis (LSA) to find similarity between
+software systems.</li>
+<li>Use identifiers (e.g., variable names, function names) as features
+<ul>
+<li>&ldquo;gtk_window&rdquo; represents some wi ndow</li>
+<li>The source code near &ldquo;gtk_window&rdquo; contains some GUI operation
+on the window.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>Extracting categories using frequent identifiers
+<ul>
+<li>&ldquo;gtk_window&rdquo;, &ldquo;gtk_main&rdquo;, and &ldquo;gpointer&rdquo; &ndash;&gt; GTK related
+software system</li>
+<li>Use LSA to find relationships between identifiers</li>
+</ul>
+</li>
+</ul>
+<p>Other Mining Techniques</p>
+<p>Automation/grammar/regular expression learning</p>
+<p>Searching/matching</p>
+<p>Concept analysis</p>
+<p>Template-based analysis</p>
+<p>Abstraction-based analysis</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

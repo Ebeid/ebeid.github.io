@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SharePoint Designer 2010 on Ebeid ElSayed</title>
+    <link>https://ebeid.github.io/tags/sharepoint-designer-2010/</link>
+    <description>Recent content in SharePoint Designer 2010 on Ebeid ElSayed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 17 Jul 2013 10:20:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://ebeid.github.io/tags/sharepoint-designer-2010/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create a new Web Part Page with Quick Launch menu</title>
+      <link>https://ebeid.github.io/blog/2013-07-17-create-new-web-part-page-with-quick.html/</link>
+      <pubDate>Wed, 17 Jul 2013 10:20:00 -0500</pubDate>
+      
+      <guid>https://ebeid.github.io/blog/2013-07-17-create-new-web-part-page-with-quick.html/</guid>
+      <description>This post is about a simple task we do daily in SharePoint 2010, creating a new Web Part page. Every time we need a new Web Part page, we go to All Site Content &amp;gt; Create &amp;gt; Web Part Page &amp;gt; Create. Now we have a Web Part page but no quick launch menu on the left.
+To show the quick launch menu on the new created page:
+ Open the page for editing in SharePoint 2010.</description>
+    </item>
+    
+  </channel>
+</rss>

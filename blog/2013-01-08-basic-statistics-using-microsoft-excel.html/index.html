@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ebeid ElSayed" />
+    <meta name="description" content="Ebeid&#39;s website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
+    <title>Basic statistics using Microsoft Excel</title>
+    <meta name="generator" content="Hugo 0.69.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://ebeid.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/pdf/resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://ebeid.github.io/blog/2013-01-08-basic-statistics-using-microsoft-excel.html/">Basic statistics using Microsoft Excel</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          January 8, 2013
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Microsoft Excel</span>
+            
+            <span class="label label-success">Statistics</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Microsoft Excel is a powerful software that have been used my end users
+and professionals for many years for various purposes. In this post we
+going to introduce basic statistical features of Excel. This post is
+using Microsoft Excel 2013, but it is easy to map it to your Excel
+version.</p>
+<h3 id="basic-formulas"><strong>Basic Formulas</strong></h3>
+<p>Computations in Excel are carried out using formulas. A formula is a
+mathematical expression that is used to calculate a value. In Excel, a
+formula is entered into the active cell by typing an expression. In
+certain situations, Excel will automatically insert a formula for you.</p>
+<p>Excel formulas are <em><!-- raw HTML omitted -->always<!-- raw HTML omitted --></em> entered
+beginning with an = sign and followed by the expression. Without an =
+sign, the expression will be treated as text. The expression will
+consist of cell references and/or numbers, and contain one or more
+arithmetic operators such as +, -, *, / or ^. The operator, ^,
+represents exponentiation. If an expression contains more than one
+arithmetic operator, the computations are performed in a certain
+sequence called the <em><!-- raw HTML omitted -->order of
+precedence<!-- raw HTML omitted --></em>. The rules in the order of precedence are as follows:</p>
+<ol>
+<li>Exponentiation (^)</li>
+<li>Multiplication (*) or Division (/), whichever comes first working
+from left to right</li>
+<li>Addition (+) or subtraction (-), whichever comes first working from
+left to right</li>
+</ol>
+<p>If there are any parentheses in the formula, Excel executes the inner
+most parenthesis first and then works outwards. Within the parenthesis,
+the order of precedence also holds. Assume you had the following formula
+in an Excel cell:</p>
+<p>=8+(2*(6+5^2*4))</p>
+<p>When executed, this formula will enter a value of 220 in that cell. Here
+is how this value is calculated. First, the inner most parenthesis
+(6+5^2*4) will be executed. Within this set of parenthesis, the
+exponentiation will be computed first (5^2=25) to reduce the expression
+in the inner parenthesis to (6+25*4). Next, the multiplication
+(25*4=100) is done giving (6+100). This is followed by the addition
+(6+100=106). This reduces the original formula to =8+(2*106). Next,
+Excel executes the parenthesis (2*106) giving us 212. Finally, the
+addition 8+212 is done for a total of 220. Note that if the expression
+is =8+(2*6+5^2*4), that is without the inner set of parenthesis, the
+value would be 120.</p>
+<p>Ways to enter formulas (like A1+B1+C1 ) :</p>
+<ol>
+<li>Enter the whole formula in the cell that will store the result (
+=A1+B1+C1 ) and press Enter.</li>
+<li>Enter = and then click on cell A1 then enter the + sign using the
+keyboard then click on cell B1 then enter the + sign using the
+keyboard then click on cell C1 and press Enter.</li>
+<li>If the cells to be added are adjacent, you can identify these cells
+using a range that could be passed to functions. In our case enter
+=SUM(A1:C2)</li>
+<li>Many formulas have shortcut command on the Excel ribbon. In our case
+AutoSum command (represented by the
+button,<a href="http://lh6.ggpht.com/-E3hmY9eZhsQ/UOxsBj-v0AI/AAAAAAAAAjk/Cqx4VGydwqA/s1600-h/clip_image0023.gif"><!-- raw HTML omitted --></a>,
+in the Editing group on the Home ribbon tab) is used to sum adjacent
+horizontal or vertical cells.</li>
+</ol>
+<p>In many cases you need to repeat the equation for many cells (e.g. to
+sum all the rows the in the sheet below)</p>
+<p><a href="http://lh3.ggpht.com/-7KhRA2euyhg/UOxsCn8cE8I/AAAAAAAAAjw/xvfQKCJIXZ0/s1600-h/_2013-01-07_15-48-334.jpg"><!-- raw HTML omitted --></a></p>
+<p>To repeat the equation for for the rest of D column, you could:</p>
+<ol>
+<li>Select D1, Copy, select D2, Past, and repeat the operation for the
+D3, D4, D5, D6</li>
+<li>Hover the mouse over the left bottom corner of D1 till the curser
+became small black square (called Fill Handle), then click and drag
+it to the desired range (D2:D6). Once you release the mouse button,
+Excel will execute the formula for your range.</li>
+</ol>
+<p>You wondering that the equation we copied was for A1+B1+C1, how it
+worked for the second row and the next rows ? The answer is that Excel
+automatically adjusted the locations of the cells when the equation was
+copied from cell D1 to cell D2 since the cells in the expression were
+all relative reference cells. A <strong>relative reference</strong> is a cell
+reference that changes or shifts when the cell is copied to another
+location. In contrast, an <strong>absolute reference</strong> is a cell reference
+that does not change when you copy that cell to another location. There
+is also a <strong>mixed reference</strong> for cells. A mixed reference only changes
+either the row reference or the column reference, depending on how the
+mixed reference is set up.</p>
+<p>All cell references are relative reference cells unless designated
+otherwise. That is, a cell has to be designated an absolute reference or
+a mixed reference cell. <!-- raw HTML omitted -->To create an absolute
+reference, you have to preface the cell row and column designations with
+a dollar sign ($)<!-- raw HTML omitted -->. For example, to make Cell A1 an absolute
+reference cell, it would have to referred as $A$1. Without these dollar
+prefixes, a cell is <em><!-- raw HTML omitted -->always<!-- raw HTML omitted --></em> considered a
+relative location cell. The relative reference works as follows: When
+you enter the formula, =A1+B1+C1, into Cell D1, the relative location of
+Cell A1 to Cell D1 is three cells to the left. Similarly, Cell B1 is two
+cells to the left of Cell D2, and Cell C1 is one cell left. When the
+equation is copied down to Cell D2, the first cell in this equation will
+still be the cell three cells to the left. However, the cell three cells
+to the left of D2 is now Cell A2. Similarly, the cell two cells to the
+left of D2 is Cell B2, and so on. That is why when the equation is
+copied down one cell, it makes the automatic adjustment for the new
+relative locations. Similarly, if the equation is copied down to Cell
+D3, the equation in Cell D3 would be copied as =A3+B3+C3. If there was
+an absolute reference cell in this equation, its reference would not
+change when the equation is copied to another location. The same
+processing happens when using the Fill Handle.</p>
+<h3 id="basic-functions">Basic Functions</h3>
+<p>Excel have many functions like MIN, MAX, AVERAGE which work on ranges.</p>
+<p><a href="http://lh6.ggpht.com/-2rZ2NIVe2oo/UOxsD8DS7-I/AAAAAAAAAkE/_8ueYHrgMYk/s1600-h/Book1---Excel_2013-01-07_17-36-374.jpg"><!-- raw HTML omitted --></a></p>
+<h3 id="logical-functions">Logical Functions</h3>
+<p>Logic is handled within Excel by logical functions. A logical function
+is a “logical” statement that determines whether a condition is true or
+false. Excel has several logical functions. The most commonly used of
+these is the <strong>IF</strong> function. The general form of the IF function is:
+=IF (<em>logical-test, value-if-true, value-if-false</em>)</p>
+<p>Example  =IF (A2&gt;=5, “Greater Than 5”, “Less Than 5”)</p>
+<p>This function works as follows: <em>logical-test</em> is an expression that is
+either true or false. If the expression is true, then the expression
+<em>value-if-true</em> is executed. If the expression is false, then the
+expression <em>value-if-false</em> is executed. The <em>logical-test</em> is
+constructed using <strong>comparison operators</strong>. A comparison operator
+compares two expressions according to the comparison operator. There are
+six comparison operators. They are:</p>
+<ul>
+<li>Greater than &gt;</li>
+<li>Less than &lt;</li>
+<li>Equal to =</li>
+<li>Greater than or equal to &gt;=</li>
+<li>Less than or equal to &lt;=</li>
+<li>Not equal to &lt;&gt;</li>
+</ul>
+<h3 id="the-and-function">The AND Function</h3>
+<p>The IF function example above only used one logical test. It can be
+easily extended to include multiple logical tests. When there are
+multiple conditions involved, the AND function is used within the IF
+function as follows: =IF (AND(<em>logical-test 1, logical-test 2,</em> …..),
+<em>value-if-true, value-if-false</em>)</p>
+<p>Each <em>logical-test</em> is an expression that can true or false. If both
+logical-test <em>1</em> and <em>logical-test 2</em> are true, the AND function returns
+the value true. Otherwise, it returns the value false. If the AND
+function returns the value true, the <em>value-if-true</em> expression is
+executed. If the AND function returns the value false, the
+<em>value-if-false</em> expression is executed.</p>
+<p>Example =IF(AND(A2&gt;=5,B2&gt;=5), “Both A and B Greater than 5”,
+“Either A or B Less than 5”)</p>
+<h3 id="the-or-function">The OR Function</h3>
+<p>The OR function is also a multiple logical test. When there are multiple
+conditions involved, the OR function is used within the IF function as
+follows: =IF (OR (<em>logical-test 1, logical-test 2,</em> …..),
+<em>value-if-true, value-if-false</em>)</p>
+<p>Just like the AND function, each <em>logical-test</em> is an expression that
+can be true or false. However, with the OR function, if <strong><!-- raw HTML omitted -->either<!-- raw HTML omitted --></strong> <em>logical-test 1</em> <strong><!-- raw HTML omitted -->or<!-- raw HTML omitted --></strong> <em>logical-test 2</em> is true, the OR function
+returns the value true. If both tests are false, it returns the value
+false. If the OR function returns the value true, the <em>value-if-true</em>
+expression is executed. If the OR function returns the value false, the
+<em>value-if-false</em> expression is executed.</p>
+<p>Example =IF(OR(A2&gt;=5,B2&gt;=5), “Either A or B Greater than 5”, “Both
+A and B Less than 5”)</p>
+<h3 id="lookup">Lookup</h3>
+<p>Suppose you want to categorize your data or assign certain classes to
+your data (like assign class grades based on the total percentage).
+Excel provides VLOOKUP function. A VLOOKUP function is simply a table
+with the ranges built in. Excel then matches a data value against these
+ranges to determine a category or class (grade in our example). To use
+the VLOOKUP table, you have to first create the VLOOKUP table and then
+access this VLOOKUP tab le by using the VLOOKUP function within an Excel
+statement. The VLOOKUP table can be created anywhere in your sheet. like
+the one below</p>
+<p><a href="http://lh5.ggpht.com/-7pKolpKhDTs/UOxsFuKOGGI/AAAAAAAAAkQ/Dfu8HtE7B_E/s1600-h/Book1---Excel_2013-01-07_18-22-504.jpg"><!-- raw HTML omitted --></a></p>
+<p>Now we need to use the VLOOKUP function to access the VLOOKUP table to
+assign grades to column B cells. The general form for VLOOKUP is 
+=VLOOKUP(<em>lookup-value, table-array range, col-index-number, [range
+lookup]</em>)</p>
+<p>where:</p>
+<ul>
+<li><em><strong>lookup-value</strong></em> is the cell reference of the cell that contains
+the value to be looked up. In this case, the value will be the final
+percentage scores from the course. That is, the percentage scores in
+Column O.</li>
+<li><em><strong>table-array range</strong></em> is the range of the VLOOKUP table. Note that
+the headers are not included in this range. Also, the range of the
+table is <em><!-- raw HTML omitted -->always<!-- raw HTML omitted --></em> entered using
+<em><!-- raw HTML omitted -->absolute references<!-- raw HTML omitted --></em>.</li>
+<li><em><strong>col-index-number</strong></em> is the column number of the value of interest
+in the VLOOKUP table. For example, in this table, the value of
+interest is the grade which is in Column 2. Therefore, the
+col-index-number is 2. If the value of interest is the grade point,
+then the col-index-number will be 3.</li>
+<li><em><strong>[range lookup]</strong></em> is an optional argument with a value of true
+or false. A true value means that look-up value is being evaluated
+against ranges in the table-array. A false value means that the
+look-up value must exactly match the value in the table-array. Since
+this argument is optional, the default value is true.</li>
+</ul>
+<p>With the total percentage for the first record in cell A2, the VLOOKUP
+statement in cell B2 is entered as =VLOOKUP(A2, $E$2:$F$11,2,TRUE)</p>
+<p>This statement works as follows: The score in Cell A2 is checked against
+the first range. Excel forms the first range using the values in Rows 1
+and 2 from Column 1 of the VLOOKUP table. These values are 0% and 70%.
+Therefore, Excel sets the range as 0-70%. Logically, the range is set up
+as &gt;=0% and &lt;70%. Thus, a score of exactly 70% is not part of this
+range. If the score from Cell A2 is in this range, a grade of F is
+returned and recorded in Cell B2. If it is not in this range, Excel
+forms the second range using the values in Rows 2 and 3 from Column 1.
+That is, 70% and 72%. As before, this range is set up as &gt;=70% and
+&lt;72%. If the score is in this range, a grade of C- is returned and
+recorded in Cell B2. If it is not in this range, Excel forms the third
+range using the values in Rows 3 and 4 of Column 1 of the VLOOKUP table.
+That is, 72% and 77%. This range is interpreted as &gt;=72% and &lt;77%.
+If the score is in this range, a grade of C is returned and recorded in
+Cell B2. If it is not in this range, Excel continues by forming the
+fourth range using the values in Rows 4 and 5 of Column 1, and then the
+fifth range and so on until it finds a range for the score in Cell A2.
+The last range formed in this table will be 92% to 97% using the values
+in Rows 9 and 10 of Column 1. If the score is not in this range, then it
+assigns a grade of A+, the last grade, by default.</p>
+<p>To calculate the rest of the grades using this grade criterion, the
+VLOOKUP function in Cell B2 is copied down to Cell B24.</p>
+<p><strong>Basics Of Probability</strong></p>
+<p><strong>Probability</strong> : a number between 0 and 1 that indicates how likely it
+is that some event, or set of events, will occur. A probability of 0
+indicates it will never occur. A probability of 1 indicates it will
+always occur. P(event) = 0.2</p>
+<p><strong>Experiment :</strong> any situation capable of being replicated under
+essentially stable conditions. The replications may be feasible, such as
+flipping a coin over and over. Or, the experiment may only replicated in
+theory, such as investing $1,000 in a friend’s promising invention. In
+this case you could imagine repeating such an investment over and over
+many times, even though you intend to do it only once. When an
+experiment is defined it is important to carefully specify all possible
+<strong><em>sample outcomes</em>.</strong> These are all the possible results of the
+experiment. For example, if a coin is tossed once, then the sample
+outcomes are {Head, Tail}. If the experiment is defined as tossing a
+coin <!-- raw HTML omitted -->twice<!-- raw HTML omitted -->, then one way of specifying
+the sample outcomes would be: {Head, Head}, {Head, Tail}, {Tail, Head},
+and {Tail, Tail}. The outcomes of an experiment must be <strong>mutually
+exclusive</strong>. Mutually exclusive means there is no overlap between the
+outcomes. The outcomes of an experiment must also <strong>exhaustive</strong>. This
+means one of the defined sample outcomes must occur. There are two basic
+properties necessary for defining the probability of an outcome:</p>
+<ul>
+<li>0 ≤ P(Outcome) ≤ 1</li>
+<li> <a href="http://lh5.ggpht.com/-XAk183bMwpE/UOxsHNt0E4I/AAAAAAAAAkk/p5iupyDMjXQ/s1600-h/clip_image002%25255B3%25255D.gif"><!-- raw HTML omitted --></a>P(Outcomes)
+= 1</li>
+</ul>
+<p>Probability Rules:</p>
+<ul>
+<li>Rule for Complements:
+P(<a href="http://lh3.ggpht.com/-DR6-wQOTPpc/UOxsIdqtfYI/AAAAAAAAAkw/Auyz38Ll09U/s1600-h/clip_image002%25255B4%25255D%25255B2%25255D.gif"><!-- raw HTML omitted --></a>)
+= 1 – P(A).
+<a href="http://lh4.ggpht.com/-HnC4LDcQlHQ/UOxsJxggB-I/AAAAAAAAAlE/AHm7RE9s0cw/s1600-h/clip_image002%25255B4%25255D%25255B4%25255D.gif"><!-- raw HTML omitted --></a>represents
+all sample outcomes except A</li>
+<li>Additive Rule for Mutually Exclusive Events: P(A <em>or</em> B) = P(A) +
+P(B)</li>
+<li>Joint Probability for Two Independent Events**:** P(A *and* B) =
+P(A)*P(B). Independent means that the occurrence of A have ne
+influence on the occurrence of B.</li>
+</ul>
+<p><strong>Random Variables</strong> : The outcomes of an experiment are said to take
+place <strong>random ly</strong>, since they cannot, by definition, occur in any
+particular order or pattern. Such outcomes, called <strong>random variables.</strong>
+Once an experiment and its outcomes have been clearly stated, and the
+random variable of interest has been defined, then the probability of
+each value for the random variable can be specified. This specification
+is called a <em><strong>probability mass function</strong></em>. A probability mass function
+(p.m.f.) gives the probability for each outcome of a random variable.</p>
+<p><strong>Example</strong> : Let take a statistics course, receive a grade, letting
+random variable Y = grade point equivalent.</p>
+<!-- raw HTML omitted -->
+<p><a href="http://lh6.ggpht.com/-AJCuf1ynGIU/UOxsLY5YX_I/AAAAAAAAAlU/i2D9g0yIi_c/s1600-h/Untitled%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p><a href="http://lh3.ggpht.com/-l-RKtMOQDHg/UOxs4eUpJQI/AAAAAAAAAls/irro1m_jaxQ/s1600-h/clip_image002%25255B3%25255D.jpg"><strong>Expected Value
+:</strong></a>
+An expected value is the average or mean of a random variable. The
+expected value of the random variable X is denoted by the symbol E[X],
+where E[X] =
+<a href="http://lh5.ggpht.com/-h_F4l1ayRT0/UOxs448Nh3I/AAAAAAAAAl0/jpQDehrBLBc/s1600-h/clip_image002%25255B9%25255D.gif"><!-- raw HTML omitted --></a>XP(X)</p>
+<p><a href="http://lh5.ggpht.com/-nbshogKNet4/UOxs51N1TmI/AAAAAAAAAmE/yRmYP3QwP40/s1600-h/image%25255B3%25255D.pn%0Ag"><!-- raw HTML omitted --></a></p>
+<p><strong>Standard Deviation</strong> : The <strong>standard deviation</strong> of a random variable
+X measures the average amount by which the values of the random variable
+X deviate from their expected value. This standard deviation is denoted
+by σ<!-- raw HTML omitted -->X<!-- raw HTML omitted -->, where σ is the Greek letter sigma.</p>
+<p><strong>Discrete random variable</strong>: a variable whose values can be separated
+from one another and counted then the probability of each value for the
+random variable can be specified. This specification is called a
+<em><strong>probability mass function.</strong></em></p>
+<p><strong>Continuous random variable</strong>: a variable whose values cannot be
+separated from one another, and are measured rather than counted.
+Continuous probability distributions are often called <strong>probability
+density functions</strong> because it defined over a range of X values (X
+represents the random variable). The probability that any specific value
+within this range is so small that it is assumed to be equal zero.
+Probability P(a &lt; X &lt; b) is the Shaded Area</p>
+<p><a href="http://lh4.ggpht.com/-Ykaie6o8MoA/UOxs7NavgnI/AAAAAAAAAmU/AhXLabh-MxU/s1600-h/clip_image002%25255B5%25255D%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p><strong>Determining Normal Probabilities</strong> : For data that follow normal
+distribution this cumulative probability for a normal random variable X
+P(X&lt;k) is calculated using the following Excel command: =NORM.DIST(k,
+mean-of-X , Standard-Deviation-of-X,1)</p>
+<p><strong>Example</strong>: Suppose that the average person’s IQ in US is 100 and the
+standard deviations for past IQs is 15, then the probability a randomly
+selected person in the U.S. will have an IQ between 110 and 120 is P(110
+&lt; X &lt; 120) = NORMDIST(120,100,15,1)- NORMDIST(110,100,15,1) =
+0.9088 - 0.7475 = 0.1613</p>
+<p><a href="http://lh6.ggpht.com/-jqll3kM-fG8/UOxs8WXICnI/AAAAAAAAAmg/sp-Xnt6bbHU/s1600-h/image%25255B7%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><strong>Normal Inverse</strong> : If we want to reverse the previous process, get the
+X value giving its probability. This is done using the Excel command :
+=NORM.INV(Probability,mean-of-X , Standard-Deviation-of-X)</p>
+<h3 id="histograms">Histograms</h3>
+<p>Histograms allow you to summarize large amounts of data graphically by
+determining the frequencies over set ranges of specified size (called
+classes). The width of a class in Excel is called a bin width. The
+ranges of the classes are called class intervals. The graph of a
+frequency distribution is called a histogram and is the same as a column
+chart. To construct a histogram in Excel, we first have to determine the
+bin width. If you want equal bin widths like the ones below, enter the
+first and second values (4.20, 4.40), then select both cells and use the
+fill handle to fill more cells using the same incremental value used in
+the first two cells  (0.20). In order to create histograms, we need to
+initialize the analysis toolpak addin that comes with Excel.</p>
+<p><a href="http://lh3.ggpht.com/-qxOHnuh-LB8/UOxs9kPIwXI/AAAAAAAAAm0/kn-R8WvA74s/s1600-h/Book1.xlsx%252520-%252520Excel_2013-01-08_12-22-06%25255B4%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p><strong>Initialize the Analysis Toolpak</strong>: Click on the Office button
+<strong>&gt;&gt;</strong> Excel Options in the lower right hand corner <strong>&gt;&gt;</strong>
+choose the Add-ins section on the left hand side &gt;&gt; click the Go
+button next to the Manage Excel Add-ins drop down box &gt;&gt; check the
+box next to Analysis Toolpak and Analysis Toolpak VBA &gt;&gt; press OK.</p>
+<p>To create your histogram, go to the Data ribbon tab and click on the
+Data Analysis button in the Analysis group. In the dialog box that
+appears, choose Histogram and click Ok. In the resulting dialog table,
+enter the Input Range (A4:A26), the Bin Range (C2:C15), the worksheet
+name (histogram1), check the Chart Output option and click on OK. These
+steps will give a “basic” histogram (like the one below) which can be
+formatted later.</p>
+<p><a href="http://lh4.ggpht.com/-h2t15o3wSnc/UOxs-k_tCJI/AAAAAAAAAnE/AyqX5l8jVyA/s1600-h/Book1.xlsx%252520-%252520Excel_2013-01-08_12-41-46%25255B4%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>A common addition to histogram representation, is to convert the
+frequencies into percentages. For histogram1, calculate the total number
+of data items by entering a sum function in cell B17. In cell B17, type
+the formula: =SUM(B2:B16)</p>
+<p>Then in cell C2, type the following formula and copy it down to cell
+C16: = B2/$B$17</p>
+<p>Lastly, format C2:C16 to be percentage with one decimal place. From
+ribbon Home tab, Number group</p>
+<p><a href="http://lh4.ggpht.com/-Hhc6nTzw_6Q/UOxtAJqjiVI/AAAAAAAAAnY/kj7whvAH7No/s1600-h/Book1.xlsx%252520-%252520Excel_2013-01-08_12-52-16%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>In this post we introduced basic statistics operation that can be done
+easily in Excel. To explain these operations we reviewed some statistics
+background and general Excel knowledge. In the upcoming posts we will
+dig deeper using Excel and other specialized software like SAS and R
+language.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 11, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-01-11-introduction-to-r-removing-missing.html/">Introduction to R – Removing missing values</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 9, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/2013-01-09-introduction-to-r-getting-started.html/">Introduction to R – Getting Started</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ebeid.github.io/js/docs.min.js"></script>
+<script src="https://ebeid.github.io/js/main.js"></script>
+
+<script src="https://ebeid.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>
