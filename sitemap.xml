@@ -63,66 +63,6 @@
   </url>
   
   <url>
-    <loc>https://ebeid.github.io/blog/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/blog/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/categories/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/blog/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/categories/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/tags/hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/tags/templates/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/blog/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ebeid.github.io/tags/microsoft-roslyn/</loc>
     <lastmod>2013-08-23T17:56:00-05:00</lastmod>
   </url>
@@ -770,6 +710,54 @@
   <url>
     <loc>https://ebeid.github.io/blog/2008-02-01-birth-of-new-blogger/</loc>
     <lastmod>2008-02-01T13:54:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ebeid.github.io/blog/goisforlovers/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ebeid.github.io/blog/creating-a-new-theme/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ebeid.github.io/categories/development/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ebeid.github.io/tags/development/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ebeid.github.io/blog/hugoisforlovers/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ebeid.github.io/tags/go/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ebeid.github.io/tags/golang/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ebeid.github.io/categories/golang/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ebeid.github.io/tags/hugo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ebeid.github.io/blog/migrate-from-jekyll/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ebeid.github.io/tags/templates/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ebeid.github.io/tags/themes/</loc>
   </url>
   
 </urlset>

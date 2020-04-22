@@ -70,38 +70,34 @@
           <div class="panel-body">
             <div class="blogpost">
               <p>As part of my effort to refresh my memory in the areas of algorithms, data structures and mathematics, I&rsquo;m going to use problems from <a href="https://projecteuler.net">Project Euler</a>. Now, let&rsquo;s get to problem 1.</p>
-<p>{% highlight C# %}
-/// <!-- raw HTML omitted -->
-/// Project Euler - Problem 1 - Multiples of 3 and 5 [ https://projecteuler.net/problem=1 ]
-/// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
-/// Find the sum of all the multiples of 3 or 5 below 1000.
-/// <!-- raw HTML omitted -->
-/// <!-- raw HTML omitted -->This is a generic implementation of the solution.<!-- raw HTML omitted -->
-/// Input Format:
-///     The first line of the input contains the multiples ( 3 and 5 in our case).
-///     The second line of input contains the upper bound (1000 in our case).
-public static void Problem1()
-{
-string multiplesRawInput = Console.ReadLine();
-int upperBound = int.Parse(Console.ReadLine());
-int[] multiples = new int[(multiplesRawInput.Split(&rdquo; &ldquo;.ToCharArray())).Count()];
-int i = 0;
-foreach (string multiple in multiplesRawInput.Split(&rdquo; &ldquo;.ToCharArray()))
-{
-multiples[i] = int.Parse(multiple);
-i++;
-}</p>
-<pre><code>        int result = 0;
-        for (int j = 1; j &lt; upperBound; j++)
-        {
-            if (((j % 3) == 0) || ((j % 5) == 0))
-                result = result + j;
-        }
-        Console.WriteLine(result);
-    }
-</code></pre>
-<p>{% endhighlight %}</p>
+<pre><code>/*
+Project Euler - Problem 1 - Multiples of 3 and 5 [ https://projecteuler.net/problem=1 ]
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
+The sum of these multiples is 23.
+Find the sum of all the multiples of 3 or 5 below 1000.
 
+This is a generic implementation of the solution.
+Input Format: 
+The first line of the input contains the multiples ( 3 and 5 in our case).
+The second line of input contains the upper bound (1000 in our case).
+*/
+public static void Problem1() {
+	string multiplesRawInput = Console.ReadLine();
+	int upperBound = int.Parse(Console.ReadLine());
+	int[] multiples = new int[(multiplesRawInput.Split(&quot; &quot;.ToCharArray())).Count()];
+	int i = 0;
+	foreach(string multiple in multiplesRawInput.Split(&quot; &quot;.ToCharArray())) {
+		multiples[i] = int.Parse(multiple);
+		i++;
+	}
+
+	int result = 0;
+	for (int j = 1; j &lt; upperBound; j++) {
+		if (((j % 3) == 0) || ((j % 5) == 0)) result = result + j;
+	}
+	Console.WriteLine(result);
+}
+</code></pre>
               <hr>
               <div class="related-posts">
                 <h5>Related Posts</h5>

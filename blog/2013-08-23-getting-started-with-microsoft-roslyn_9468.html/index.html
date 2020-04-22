@@ -164,7 +164,8 @@ method to replace the <em>using System.Collections;</em> directive with the
 <em>using System.Collections.Generic;</em> directive. We then constructed a new
 SyntaxTree using the modified root and print it. You should see the
 modified HelloWorld
-program:<a href="http://lh4.ggpht.com/-t0gfBkNjX-M/Uhd4BF8o72I/AAAAAAAAB6A/ec4zCJYhKtQ/s1600-h/fileFProjectsRoslynDemo4RoslynDemo4binDebugRoslynDemo4.EXE_2013-08-23_09-38-56%25255B4%25255D.png"><!-- raw HTML omitted --></a></p>
+program:</p>
+<p><img src="/img/0001.png" alt="alt text" title="Logo Title Text 1"></p>
 <h3 id="modifying-syntax-trees-using-syntaxrewriters">Modifying Syntax Trees using SyntaxRewriters</h3>
 <p>In a previous
 <a href="http://ebeid-soliman.blogspot.com/2013/08/getting-started-with-microsoft-roslyn.html" title="Getting started with Microsoft Roslyn Syntax Analysis">post</a>
@@ -328,10 +329,10 @@ return the resulted Compilation object.</p>
 <p>When you run the project, you will see a modified version of the
 Program.cs file. Notice that our myRewriter class replaced the type used
 in all variables declarations to be of type <em>var</em>.</p>
-<p><a href="http://lh6.ggpht.com/-L36L9BUDvEk/UhflwCwirMI/AAAAAAAAB6Y/EMlpBv0QsWU/s1600-h/fileFProjectsRoslynDemo5RoslynDemo5binDebugRoslynDemo5.EXE_2013-08-23_13-28-40%25255B4%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0002.png" alt="alt text" title="Logo Title Text 1"></p>
 <p>pressing Enter will bring the modified version of myRewriter.cs file,
 which have the same kind of change.</p>
-<p><a href="http://lh4.ggpht.com/-pNltonsaGUk/Uhflw8LN2eI/AAAAAAAAB6k/fqVyrh7nAvY/s1600-h/fileFProjectsRoslynDemo5RoslynDemo5binDebugRoslynDemo5.EXE_2013-08-23_17-33-15%25255B4%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0003.png" alt="alt text" title="Logo Title Text 1"></p>
 <p>We have used the Roslyn Compiler APIs to write our own <em>SyntaxRewriter</em>
 that searches all files in a C# project for certain syntactic pattern,
 analyzes the semantics of source code that matches that pattern, and

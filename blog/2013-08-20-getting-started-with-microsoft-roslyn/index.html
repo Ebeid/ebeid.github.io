@@ -75,7 +75,218 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              <!-- raw HTML omitted -->
+              <p>In a previous
+<a href="http://ebeid-soliman.blogspot.com/2013/08/overview-of-microsoft-roslyn-first.html">post</a>
+we talked about Microsoft
+<a href="http://msdn.microsoft.com/en-us/vstudio/roslyn.aspx" title="Microsoft® “Roslyn” CTP">Roslyn</a>.
+In this post will get our hands dirty with Roslyn syntax analysis in
+order to develop our first code-focused program. We will see how the
+SyntaxTree of HelloWorld program look like and how we can traverse and
+query it.</p>
+<p>The <strong>Syntax API</strong> exposes the syntax trees the compilers use to
+understand Visual Basic and C# programs. They are produced by the same
+parser that runs when a project is built or a developer hits F5. The
+four primary building blocks of syntax trees are:</p>
+<ul>
+<li>The <strong>SyntaxTree</strong> class, an instance of which represents an entire
+parse tree.</li>
+<li>The <strong>SyntaxNode</strong> class, instances of which represent syntactic
+constructs such as declarations, statements, clauses, and
+expressions.</li>
+<li>The <strong>SyntaxToken</strong> structure, which represents an individual
+keyword, identifier, operator, or punctuation.</li>
+<li>And lastly the <strong>SyntaxTrivia</strong> structure, which represents
+syntactically insignificant bits of information such as the
+whitespace between tokens, preprocessor directives, and comments.</li>
+</ul>
+<h3 id="traversing-syntax-trees">Traversing Syntax Trees</h3>
+<p>First, download Microsoft Roslyn CTP from
+<a href="http://www.microsoft.com/en-us/download/details.aspx?id=34685" title="Microsoft Download Center">here</a>.
+and Install it.You will need <a href="http://go.microsoft.com/fwlink/?linkid=255983">Visual Studio
+2012</a> and <a href="http://go.microsoft.com/?linkid=9810482">Visual Studio
+2012 SDK</a> in order to install
+Roslyn.</p>
+<p>Now open your Visual Studio 2012 and create a new Console Application
+project. Add the following to your project references</p>
+<p><img src="/img/0007.png" alt="alt text" title="Logo Title Text 1"></p>
+<p>Now edit your code to look like:</p>
+<pre><code class="language-{.prettyprint" data-lang="{.prettyprint">using System;
+using System;
+using Roslyn.Compilers;
+using Roslyn.Compilers.CSharp;
+
+namespace RoslynDemo1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SyntaxTree tree = SyntaxTree.ParseText(
+                @&quot;using System;
+ 
+                namespace HelloWorld
+                {
+                    class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                            Console.WriteLine(&quot;&quot;Hello, World!&quot;&quot;);
+                        }
+                    }
+                }&quot;);
+
+            foreach (SyntaxNode node in tree.GetRoot().ChildNodesAndTokens())
+                PrintSyntaxTree(node);
+
+            Console.ReadLine();
+        }
+        static void PrintSyntaxTree(SyntaxNode node)
+        {
+            if (node != null)
+            {
+                Console.WriteLine(node.Kind + &quot; | &quot; + node.ToString());
+                foreach (SyntaxNode child in node.ChildNodes())
+                    PrintSyntaxTree(child);
+            }
+        }
+    }
+}
+</code></pre><p>Now, run our program. You should see an output similar to the following:</p>
+<p><img src="/img/0008.png" alt="alt text" title="Logo Title Text 1"></p>
+<p>Now let&rsquo;s explain what we already did. First, we included the needed
+namespaces. The common Syntax APIs are found in the Roslyn.Compilers and
+the Roslyn.Compilers.Common namespace, while the language specific
+Syntax APIs are found in Roslyn.Compilers.CSharp and
+Roslyn.Compilers.VisualBasic.</p>
+<p>Second, we tried to get a syntax tree corresponding to our HelloWorld
+program using the <em>SyntaxTree.ParseText</em> function, which produces a
+syntax tree by parsing the passed source code.</p>
+<p>Third, in order to traverse the syntax tree we get its root, then get
+its child nodes. Then loop on these child nodes and their children
+recursively to print its kind and the string representation. C# node
+kind is on of the kinds in enum <em>Roslyn.Compilers.CSharp.SymbolKind</em>.</p>
+<p>Inside the PrintSyntaxTree method, by playing in the order of node
+printing and the recursive call, you can apply your tree traversal
+logic. You can also inspect specific elements of the tree:</p>
+<pre><code class="language-{.prettyprint" data-lang="{.prettyprint">var root = (CompilationUnitSyntax)tree.GetRoot(); 
+var helloWorldDeclaration = (NamespaceDeclarationSyntax)root.Members[0];
+var programDeclaration = (TypeDeclarationSyntax)helloWorldDeclaration.Members[0];
+var mainDeclaration = (MethodDeclarationSyntax)programDeclaration.Members[0];
+var argsParameter = mainDeclaration.ParameterList.Parameters[0];
+Console.WriteLine(argsParameter.ToString() );
+</code></pre><h3 id="query-methods">Query Methods</h3>
+<p>In addition to traversing syntax trees you can also explore the syntax
+tree using the query methods defined on <em>SyntaxNode</em>. These methods are
+similar to XPath. You can also use these methods with LINQ to quickly
+find things in a tree. For example, the following statements uses a LINQ
+expression and the <strong>DescendantNodes</strong> method to locate the same
+parameter as in the previous example:</p>
+<pre><code class="language-{.prettyprint" data-lang="{.prettyprint">            var firstParameters = from methodDeclaration in root.DescendantNodes()
+                                                    .OfType()
+                                  where methodDeclaration.Identifier.ValueText == &quot;Main&quot;
+                                  select methodDeclaration.ParameterList.Parameters.First();
+
+            var argsParameter2 = firstParameters.Single();
+            Console.WriteLine(argsParameter2.ToString());
+</code></pre><h3 id="syntaxwalkers">SyntaxWalkers</h3>
+<p>If you want to find all nodes of a specific type in a syntax tree, for
+example, every property declaration in a file, you can do that by
+extending the <em>SyntaxWalker</em> class and overriding the
+<em>VisitPropertyDeclaration</em> method, you can process every property
+declaration in a syntax tree without knowing its structure beforehand.</p>
+<p>Now let&rsquo;s implement, as an example, a SyntaxWalker that examines the
+entire syntax tree and collects any using directives it find which
+aren&rsquo;t importing a System namespace.</p>
+<p>Create a new C# Console application and edit it to look like:</p>
+<pre><code class="language-{.prettyprint" data-lang="{.prettyprint">using System;
+using Roslyn.Compilers;
+using Roslyn.Compilers.CSharp;
+
+namespace RoslynDemo2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SyntaxTree tree = SyntaxTree.ParseText(
+@&quot;using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Roslyn.Compilers;
+using Roslyn.Compilers.CSharp;
+ 
+namespace TopLevel
+{
+    using Microsoft;
+    using System.ComponentModel;
+ 
+    namespace Child1
+    {
+        using Microsoft.Win32;
+        using System.Runtime.InteropServices;
+ 
+        class Foo { }
+    }
+ 
+    namespace Child2
+    {
+        using System.CodeDom;
+        using Microsoft.CSharp;
+ 
+        class Bar { }
+    }
+}&quot;);
+
+            var root = (CompilationUnitSyntax)tree.GetRoot();
+        }
+    }
+}
+</code></pre><p>As you noticed, this source text contains <strong>using</strong> directives scattered
+across four different locations: the file-level, in the top-level
+namespace, and in the two nested namespaces.</p>
+<p>Now, add a new class to your project and edit it to look like the next
+code. Basically we inherit from the <em>SyntaxWalker</em> class, and over the
+<em>VisitUsingDirective</em> method. This method is called by <em>Visit</em> method,
+which recursively visits a node and each of its children.
+VisitUsingDirective method is called for using directives only, inside
+it we collect the namespaces that starts with &ldquo;System.&rdquo; but not equal to
+&ldquo;System&rdquo;.</p>
+<pre><code class="language-{.prettyprint" data-lang="{.prettyprint">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Roslyn.Compilers;
+using Roslyn.Compilers.CSharp;
+
+namespace RoslynDemo2
+{
+    class myWalker : SyntaxWalker   
+    {
+        public readonly List Usings = new List();
+
+        public override void VisitUsingDirective(UsingDirectiveSyntax node)
+        {
+            if (node.Name.GetText().ToString() != &quot;System&quot; &amp;&amp;
+                !node.Name.GetText().ToString().StartsWith(&quot;System.&quot;))
+            {
+                this.Usings.Add(node);
+            }
+        }
+    }
+}
+</code></pre><p>Now let&rsquo;s go back to the <em>Main</em> method and use our walker by adding the
+following code snippet to the end of Main method. Basically it passes
+the syntax tree root to <em>myWalker.Visit</em> method, which internally call
+the <em>VisitUsingDirective</em> method. Then we loop and print the collected
+usings.</p>
+<p>When you run your program, you should see an output similar to the
+following:</p>
+<p><img src="/img/0009.png" alt="alt text" title="Logo Title Text 1"></p>
+<p>In this post we gave a quick example about obtaining a SyntaxTree of
+HelloWorld program and explored its nodes. We also built a SyntaxWalker
+that walk the syntax tree and collect the nodes of our interest only.
+Later we will see how to fully manipulate SyntaxNodes and SyntaxTrees.</p>
 
               <hr>
               <div class="related-posts">
