@@ -713,19 +713,11 @@
   </url>
   
   <url>
-    <loc>https://ebeid.github.io/blog/goisforlovers/</loc>
-  </url>
-  
-  <url>
     <loc>https://ebeid.github.io/blog/creating-a-new-theme/</loc>
   </url>
   
   <url>
-    <loc>https://ebeid.github.io/categories/development/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/tags/development/</loc>
+    <loc>https://ebeid.github.io/blog/goisforlovers/</loc>
   </url>
   
   <url>
@@ -733,31 +725,7 @@
   </url>
   
   <url>
-    <loc>https://ebeid.github.io/tags/go/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/tags/golang/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/categories/golang/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/tags/hugo/</loc>
-  </url>
-  
-  <url>
     <loc>https://ebeid.github.io/blog/migrate-from-jekyll/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/tags/templates/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/tags/themes/</loc>
   </url>
   
 </urlset>
