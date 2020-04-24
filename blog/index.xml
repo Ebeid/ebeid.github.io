@@ -79,8 +79,7 @@ The Roslyn project aims to open compilers for developers and offer it as service
       <guid>https://ebeid.github.io/blog/2013-08-13-how-to-debug-your-pex-parameterized.html/</guid>
       <description>We talked before about Microsoft Pex, and how it choose the shown inputs. We then talked more about building blocks of parameterized unit tests and its patterns.
 What we missed till now is how to debug your parameterized unit tests. In order to debug your parameterized unit tests, do the following:
- Go to Tools &amp;gt;&amp;gt; Options &amp;gt;&amp;gt; Pex &amp;gt;&amp;gt; Diagnostic. Change the BreakOnStart option to True.  
- Now set a break point at any line of code inside your parameterized unit test.</description>
+ Go to Tools &amp;gt;&amp;gt; Options &amp;gt;&amp;gt; Pex &amp;gt;&amp;gt; Diagnostic. Change the BreakOnStart option to True.   Now set a break point at any line of code inside your parameterized unit test.</description>
     </item>
     
     <item>

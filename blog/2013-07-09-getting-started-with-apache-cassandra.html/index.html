@@ -93,23 +93,23 @@ according to the following concepts:</p>
 <ul>
 <li><strong>Column</strong> is a key-value pair.</li>
 </ul>
-<p><a href="http://lh4.ggpht.com/-Nm7Y_Z0Xj7c/UdSeu3ZA_FI/AAAAAAAABp0/CKu7ogaPdQk/s1600-h/Cassandra_DataModel_CheatSheet.pdf%252520-%252520Adobe%252520Reader_2013-07-03_15-59-51%25255B2%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0020.png" alt="alt text" title="Logo Title Text 1"></p>
 <ul>
 <li><strong>Column Family</strong> is a set of key-value pairs (columns in
 Cassandra’s terminology). They are sorted by their keys. Families
 are referenced and sorted by row keys.</li>
 </ul>
-<p><a href="http://lh5.ggpht.com/-KQ-fcGadYec/UdSevuHSxFI/AAAAAAAABqE/NZFQ8j55DaY/s1600-h/Cassandra_DataModel_CheatSheet.pdf%252520-%252520Adobe%252520Reader_2013-07-03_16-03-39%25255B5%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0021.png" alt="alt text" title="Logo Title Text 1"></p>
 <ul>
 <li><strong>Super Column</strong> the value of a key-value pair can be a sequence of
 key-value pairs as well. In this case, the outer column would be
 called <em>super column</em>.</li>
 </ul>
-<p><a href="http://lh3.ggpht.com/-e67Sbx-MBZI/UdSewXapJpI/AAAAAAAABqU/5Yhu4wezOCw/s1600-h/Cassandra_DataModel_CheatSheet.pdf%252520-%252520Adobe%252520Reader_2013-07-03_16-39-29%25255B2%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0022.png" alt="alt text" title="Logo Title Text 1"></p>
 <ul>
 <li>Columns and Super Columns can equally be used within Column Families</li>
 </ul>
-<p><a href="http://lh6.ggpht.com/-cX1ZLQgqBJ8/UdSexIyVfQI/A%0AAAAAAAABqg/_mOTEsywGqo/s1600-h/Cassandra_DataModel_CheatSheet.pdf%252520-%252520Adobe%252520Reader_2013-07-03_16-44-41%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0023.png" alt="alt text" title="Logo Title Text 1"></p>
 <ul>
 <li>Columns or Super Columns are stored ordered by names within their
 Column Families</li>
@@ -156,19 +156,19 @@ Cassandra directory (C:\apache-cassandra-1.2.6\bin in my case).</li>
 messages coming out. If everything goes fine, it will end up with
 something like this:</li>
 </ol>
-<p><a href="http://lh3.ggpht.com/-UnPiaJX8RoY/UdRyUOwWQBI/AAAAAAAABpM/5XG9a3FWj4k/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra%252520%252520-f_2013-07-03_11-18-19%25255B4%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0024.png" alt="alt text" title="Logo Title Text 1"></p>
 <p>Now we have a running Cassandra server is expecting incoming connections
 on port 9160.</p>
 <p>Once Cassandra is up and running on your machine, we can connect to the
 running instance using the Cassandra command-line interface, launched by
 running “cassandra-cli.bat”, from the Cassandra “bin” directory.</p>
-<p><a href="http://lh6.ggpht.com/-vurPz2Ai75k/UdRyUwqKVDI/AAAAAAAABpc/q_TMwpoNSpE/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-03_12-16-36%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0025.png" alt="alt text" title="Logo Title Text 1"></p>
 <h4 id="commads">Commads</h4>
 <ul>
 <li><strong>show api version;</strong> to show the current api version.</li>
 <li><strong>describe cluster;</strong> to show a description of the current cluster.</li>
 </ul>
-<p><a href="http://lh6.ggpht.com/-E6BbthLOQG0/UddSpGviRLI/AAAAAAAABq8/RJxQT9gGMiM/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_12-59-46%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0026.png" alt="alt text" title="Logo Title Text 1"></p>
 <ul>
 <li><strong>create keyspace</strong> <em>TestKS;</em> to create a keyspace and it have to be
 a unique name.</li>
@@ -194,28 +194,28 @@ about set command: <strong>type help set;</strong></li>
 </li>
 <li><code>get TestCF[ascii(&quot;TestKey&quot;)]; to retrieve the value stored in the key TestKey within the column family TestCF</code></li>
 </ul>
-<p><a href="http://lh3.ggpht.com/-Hn5eUsyN27I/UddSp6PwwrI/AAAAAAAABrM/GULnZQPMVF0/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_11-15-32%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0027.png" alt="alt text" title="Logo Title Text 1"></p>
 <ul>
 <li><strong>del</strong> <em>TestCF[ascii(‘TestKey’)][ascii(‘column2’)];</em> rows and
 columns can be deleted by specifying the row key and/or the column
 name<br>
 with the del (delete) command.</li>
 </ul>
-<p><a href="http://lh4.ggpht.com/--hQRoa3rknY/UddSqlWO_gI/AAAAAAAABrY/FYwX-Qf8PIY/s160%0A0-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_15-29-44%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0028.png" alt="alt text" title="Logo Title Text 1"></p>
 <ul>
 <li><strong>list</strong> <em>TestCF;</em> list the data inside a column family</li>
 </ul>
-<p><a href="http://lh3.ggpht.com/-pShPLfMYEdk/UddSrTgOB_I/AAAAAAAABro/wvTp08iV5V8/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_16-05-31%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0029.png" alt="alt text" title="Logo Title Text 1"></p>
 <ul>
 <li><strong>drop column family</strong> <em>TestCF;</em> removes a column family.</li>
 <li><strong>drop</strong> <strong>keyspace</strong> <em>TestKS;</em> removes a key space.</li>
 </ul>
-<p><a href="http://lh4.ggpht.com/-02x8jN7oqZU/UddSr2JdHKI/AAAAAAAABr4/zfbolqgsGZ8/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_16-25-05%25255B3%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0030.png" alt="alt text" title="Logo Title Text 1"></p>
 <p>==&gt; You can insert to super columns much like inserting to normal
 columns. They can be read with get, written with set, and deleted with
 del. The super column version of these commands uses an extra [&lsquo;xxx&rsquo;]
 to represent the extra sub-index level.</p>
-<p><a href="http://lh3.ggpht.com/-fHySsJpN8OU/UddSs3kUrNI/AAAAAAAABsM/zG7er1ADQJA/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_17-07-44%25255B5%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0031.png" alt="alt text" title="Logo Title Text 1"></p>
 <ul>
 <li><strong>assume</strong> <em>TestCF</em> <strong>comparator as ascii;</strong> it decodes and helps
 display results of get and list requests inside the command-line
@@ -225,7 +225,7 @@ a hex format. This is done because row keys, column names, and
 column values are byte arrays. After using assume the column and
 value will be displayed rather than the hex code.</li>
 </ul>
-<p><a href="http://lh6.ggpht.com/-5-u5Iae2Wr8/UddStkmE9oI/AAAAAAAABsY/YZOLw550oUo/s1600-h/CWindowssystem32cmd.exe%252520-%252520cassandra-cli.bat_2013-07-05_17-29-07%25255B4%25255D.png"><!-- raw HTML omitted --></a></p>
+<p><img src="/img/0032.png" alt="alt text" title="Logo Title Text 1"></p>
 <ul>
 <li><strong>Type Enforcement</strong> : Cassandra is designed to store and retrieve
 simple byte arrays but it also have support for <a href="http://www.datastax.com/docs/1.1/references/cql/cql_data_types" title="CQL Data Types">built-in
