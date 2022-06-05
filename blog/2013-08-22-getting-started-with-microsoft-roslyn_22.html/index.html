@@ -8,7 +8,7 @@
     <meta name="description" content="Ebeid&#39;s website">
     <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
     <title>Semantic Analysis using Microsoft Roslyn</title>
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.100.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -217,13 +217,13 @@ information about that node. You could use the code below to get the
 node that represent the “Hello, World!” string in our code snippet, get
 information about its symbol type (System.String) , and even get
 information about the assembly that contains this type.</p>
-<pre><code>                var helloWorldString = root.DescendantNodes()
+<pre tabindex="0"><code>                var helloWorldString = root.DescendantNodes()
                                            .OfType()
                                            .First();
                 var literalInfo = model.GetTypeInfo(helloWorldString);
                 Console.WriteLine(literalInfo.Type.ContainingAssembly.BaseName);
 </code></pre><p>or enumerate the public methods of the <em>System.String</em> class</p>
-<pre><code>                var stringTypeSymbol = (NamedTypeSymbol)literalInfo.Type;
+<pre tabindex="0"><code>                var stringTypeSymbol = (NamedTypeSymbol)literalInfo.Type;
      
                 Console.Clear();
                 foreach (var name in (from method in stringTypeSymbol.GetMembers()

@@ -8,7 +8,7 @@
     <meta name="description" content="Ebeid&#39;s website">
     <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
     <title>Getting Started with MongoDB – Part 1</title>
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.100.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -115,8 +115,8 @@ mongo.exe from the bin directory.<br>
 c:\mongodb\log\mongo.log ).</li>
 <li>Create a data directory for MongoDB (in my case c:\mongodb\data ).</li>
 <li>Open the command prompt window as an administrator.</li>
-<li>Run the following command <!-- raw HTML omitted -->*C:\mongodb\bin&gt;mongod.exe –install –rest
-–master &ndash;logpath &ldquo;c:\mongodb\log\mongo.log&rdquo;*<!-- raw HTML omitted --></li>
+<li>Run the following command <!-- raw HTML omitted --><em>C:\mongodb\bin&gt;mongod.exe –install –rest
+–master &ndash;logpath &ldquo;c:\mongodb\log\mongo.log&rdquo;</em><!-- raw HTML omitted --></li>
 <li>Run <!-- raw HTML omitted -->regedit<!-- raw HTML omitted --> from start menu.</li>
 <li>Go to <em>HKEY_LOCAL_MACHINE &gt;&gt; SYSTEM &gt;&gt;
 CurrentControlSet &gt;&gt; services</em></li>
@@ -261,13 +261,13 @@ construct operations as we would construct objects. In the following
 query, we build a criteria where the population must be between 10.000
 and 1 million. Ranges work also on dates.<br>
 <!-- raw HTML omitted -->&gt; var population_range = {}<br>
-&gt; population_range[&lsquo;$lt&rsquo;] = 100000<br>
+&gt; population_range[&rsquo;$lt&rsquo;] = 100000<br>
 100000<br>
-&gt; population_range[&lsquo;$gt&rsquo;] = 10000<br>
+&gt; population_range[&rsquo;$gt&rsquo;] = 10000<br>
 10000<br>
-&gt; population_range[&lsquo;$lt&rsquo;] = 1000000<br>
+&gt; population_range[&rsquo;$lt&rsquo;] = 1000000<br>
 1000000<br>
-&gt; population_range[&lsquo;$gt&rsquo;] = 10000<br>
+&gt; population_range[&rsquo;$gt&rsquo;] = 10000<br>
 10000<br>
 &gt; db.towns.find( {name : /^P/, population : population_range },
 {name: 1})<br>
@@ -352,7 +352,7 @@ Now if we need to select countries that export tasty bacon, we should
 $elemMatch in a query like:<br>
 <!-- raw HTML omitted -->&gt; db.countries.find(<br>
 &hellip; {<br>
-&hellip;   &lsquo;exports.foods&rsquo; : {<br>
+&hellip;   &rsquo;exports.foods&rsquo; : {<br>
 &hellip;    $elemMatch : {<br>
 &hellip;      name : &ldquo;bacon&rdquo;,<br>
 &hellip;      tasty : true<br>
@@ -365,7 +365,7 @@ $elemMatch in a query like:<br>
 If we didn’t used $elemMatch and wrote a query like the following, it
 will return countries that export bacon or tasty food, not tasty bacon<br>
 <!-- raw HTML omitted -->&gt; db.countries.find(<br>
-&hellip; { &lsquo;exports.foods.name&rsquo; : &lsquo;bacon&rsquo; , &lsquo;exports.foods.tasty&rsquo; : true },<br>
+&hellip; { &rsquo;exports.foods.name&rsquo; : &lsquo;bacon&rsquo; , &rsquo;exports.foods.tasty&rsquo; : true },<br>
 &hellip; { _id : 0, name : 1 }<br>
 &hellip; )<br>
 { &ldquo;name&rdquo; : &ldquo;United States&rdquo; }<br>
@@ -413,7 +413,7 @@ the New York town document.<br>
 &hellip; { $set : { country : { $ref : &ldquo;countries&rdquo;, $id : &ldquo;us&rdquo; } } }<br>
 &hellip; )<br>
 &gt; db.towns.find( { _id : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) } )<br>
-{ &ldquo;_id&rdquo; : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;), <!-- raw HTML omitted -->&quot;country&rdquo; : DBRef(&ldquo;countries&rdquo;, &ldquo;us&rdquo;)<!-- raw HTML omitted -->,
+{ &ldquo;_id&rdquo; : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;), <!-- raw HTML omitted -->&ldquo;country&rdquo; : DBRef(&ldquo;countries&rdquo;, &ldquo;us&rdquo;)<!-- raw HTML omitted -->,
 &ldquo;famous_for&rdquo; : [  &ldquo;statue of liberty&rdquo;,  &ldquo;food&rdquo; ], &ldquo;last_census&rdquo; :
 ISODate(&ldquo;2009-07-31T00:00:00Z&rdquo;), &ldquo;mayor&rdquo; : { &ldquo;na<br>
 me&rdquo; : &ldquo;Michael Bloomberg&rdquo;, &ldquo;party&rdquo; : &ldquo;I&rdquo; }, &ldquo;name&rdquo; : &ldquo;New York&rdquo;,
@@ -447,7 +447,7 @@ from a collections is simple, use your criteria with a call to
 recommended practice to build your criteria in an object, use that
 criteria to ensure that matching documents are the expected ones, pass
 this criteria to remove() function.<!-- raw HTML omitted --><!-- raw HTML omitted --><br>
-&gt; var bad_bacon = { &lsquo;exports.foods&rsquo; : {<br>
+&gt; var bad_bacon = { &rsquo;exports.foods&rsquo; : {<br>
 &hellip; $elemMatch : { name : &lsquo;bacon&rsquo;, tasty : false }<br>
 &hellip; } }<br>
 &gt; db.countries.find ( bad_bacon)<br>

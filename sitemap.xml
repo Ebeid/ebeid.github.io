@@ -1,715 +1,431 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://ebeid.github.io/blog/</loc>
     <lastmod>2019-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/categories/</loc>
     <lastmod>2019-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/cloud/</loc>
     <lastmod>2019-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/categories/concepts/</loc>
     <lastmod>2019-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://ebeid.github.io/</loc>
+    <lastmod>2019-10-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://ebeid.github.io/tags/</loc>
     <lastmod>2019-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/twelve-factor-applications/</loc>
     <lastmod>2019-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/projects/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/projects/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/categories/projects/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://ebeid.github.io/projects/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+  </url><url>
     <loc>https://ebeid.github.io/categories/jekyll-update/</loc>
     <lastmod>2016-05-29T15:58:38-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2016-09-29-project-euler-proplem1/</loc>
     <lastmod>2016-05-29T15:58:38-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/microsoft-roslyn/</loc>
     <lastmod>2013-08-23T17:56:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-08-23-getting-started-with-microsoft-roslyn_9468.html/</loc>
     <lastmod>2013-08-23T17:56:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/syntax-trees/</loc>
     <lastmod>2013-08-23T17:56:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-08-22-getting-started-with-microsoft-roslyn_22.html/</loc>
     <lastmod>2013-08-22T13:11:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/compilers/</loc>
     <lastmod>2013-08-20T15:49:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-08-20-getting-started-with-microsoft-roslyn/</loc>
     <lastmod>2013-08-20T15:49:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-08-19-overview-of-microsoft-roslyn-first.html/</loc>
     <lastmod>2013-08-19T21:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-08-13-how-to-debug-your-pex-parameterized.html/</loc>
     <lastmod>2013-08-13T13:43:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/microsoft-pex/</loc>
     <lastmod>2013-08-13T13:43:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-08-01-convert-microsoft-pex-path-conditions.html/</loc>
     <lastmod>2013-08-01T16:24:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/smt-lib/</loc>
     <lastmod>2013-08-01T16:24:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/z3/</loc>
     <lastmod>2013-08-01T16:24:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/satiability-modulo-theories/</loc>
     <lastmod>2013-07-30T06:30:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-07-30-the-z3-constraint-solver-developer.html/</loc>
     <lastmod>2013-07-30T06:30:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-07-24-get-path-conditions-from-microsoft-pex.html/</loc>
     <lastmod>2013-07-24T17:26:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-07-23-bring-sign-in-as-different-user-back-to.html/</loc>
     <lastmod>2013-07-23T17:36:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/sharepoint-2013/</loc>
     <lastmod>2013-07-23T17:36:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-07-17-create-new-web-part-page-with-quick.html/</loc>
     <lastmod>2013-07-17T10:20:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/sharepoint-2010/</loc>
     <lastmod>2013-07-17T10:20:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/sharepoint-designer-2010/</loc>
     <lastmod>2013-07-17T10:20:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-2.html/</loc>
     <lastmod>2013-07-12T17:15:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/json/</loc>
     <lastmod>2013-07-12T17:15:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/mongodb/</loc>
     <lastmod>2013-07-12T17:15:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/nosql/</loc>
     <lastmod>2013-07-12T17:15:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-1.html/</loc>
     <lastmod>2013-07-12T13:46:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/apache-cassandra/</loc>
     <lastmod>2013-07-09T17:27:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/cassandra/</loc>
     <lastmod>2013-07-09T17:27:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-07-09-getting-started-with-apache-cassandra.html/</loc>
     <lastmod>2013-07-09T17:27:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/redis/</loc>
     <lastmod>2013-07-03T12:47:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-07-03-redis-101-part-2.html/</loc>
     <lastmod>2013-07-03T12:47:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-07-02-running-multiple-redis-instances-on.html/</loc>
     <lastmod>2013-07-02T11:42:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-06-26-redis-101.html/</loc>
     <lastmod>2013-06-26T15:29:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-05-02-parameterized-test-patterns-using.html/</loc>
     <lastmod>2013-05-02T16:08:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/parameterized-unit-tests/</loc>
     <lastmod>2013-05-02T16:08:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/unit-testing/</loc>
     <lastmod>2013-05-02T16:08:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/unit-tests/</loc>
     <lastmod>2013-05-02T16:08:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-04-29-microsoft-pex-understanding-assumptions.html/</loc>
     <lastmod>2013-04-29T15:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-04-26-getting-started-with-microsoft-code.html/</loc>
     <lastmod>2013-04-26T03:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-04-25-why-pex-choose-these-inputs.html/</loc>
     <lastmod>2013-04-25T03:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-04-24-getting-started-with-microsoft-pex.html/</loc>
     <lastmod>2013-04-24T03:06:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/nunit/</loc>
     <lastmod>2013-04-24T03:06:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-04-22-unit-tests-vs-parameterized-unit-tests.html/</loc>
     <lastmod>2013-04-22T17:17:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-03-30-getting-started-with-java-pathfinder.html/</loc>
     <lastmod>2013-03-30T19:06:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/jpf/</loc>
     <lastmod>2013-03-30T19:06:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/model-checking/</loc>
     <lastmod>2013-03-30T19:06:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-01-21-introduction-to-r-charts-and-graphics.html/</loc>
     <lastmod>2013-01-21T09:40:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/r-programming-language/</loc>
     <lastmod>2013-01-21T09:40:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-01-17-introduction-to-r-random-variables.html/</loc>
     <lastmod>2013-01-17T17:07:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-01-16-introduction-to-r-basic-debugging.html/</loc>
     <lastmod>2013-01-16T17:38:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-01-15-introduction-to-r-control-structures.html/</loc>
     <lastmod>2013-01-15T16:43:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-01-13-introduction-to-r-functions.html/</loc>
     <lastmod>2013-01-13T14:42:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-01-12-introduction-to-r-matrix-operations.html/</loc>
     <lastmod>2013-01-12T13:53:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-01-11-introduction-to-r-removing-missing.html/</loc>
     <lastmod>2013-01-11T13:53:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/statistics/</loc>
     <lastmod>2013-01-11T13:53:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-01-09-introduction-to-r-importingexporting.html/</loc>
     <lastmod>2013-01-09T17:56:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-01-09-introduction-to-r-getting-started.html/</loc>
     <lastmod>2013-01-09T10:19:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2013-01-08-basic-statistics-using-microsoft-excel.html/</loc>
     <lastmod>2013-01-08T13:01:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/microsoft-excel/</loc>
     <lastmod>2013-01-08T13:01:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/dynamics-crm-plug-in-registration-tool/</loc>
     <lastmod>2012-03-23T15:49:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/microsoft-dynamics-crm-2011/</loc>
     <lastmod>2012-03-23T15:49:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2012-03-23-microsoft-dynamics-crm-2011-for_23.html/</loc>
     <lastmod>2012-03-23T15:49:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/plug-ins/</loc>
     <lastmod>2012-03-23T15:49:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/wcf/</loc>
     <lastmod>2012-03-23T15:49:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/business-intelligence-development-studio-crm-report-authoring-extension/</loc>
     <lastmod>2012-03-13T17:47:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/fetchxml-business-intelligence-development-studio/</loc>
     <lastmod>2012-03-13T17:47:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2012-03-13-microsoft-dynamics-crm-2011-for_14.html/</loc>
     <lastmod>2012-03-13T17:47:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ebeid.github.io/tags/sql/</loc>
-    <lastmod>2012-03-13T17:47:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/sql-server-reporting-services/</loc>
     <lastmod>2012-03-13T17:47:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2012-03-11-microsoft-dynamics-crm-2011-for.html/</loc>
     <lastmod>2012-03-11T06:10:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/microsoft-dynamics-crm-dashboards/</loc>
     <lastmod>2012-03-11T06:10:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/microsoft-dynamics-crm-forms/</loc>
     <lastmod>2012-03-11T06:10:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/microsoft-dynamics-crm-sitemap/</loc>
     <lastmod>2012-03-11T06:10:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/microsoft-dynamics-crm-solution-configuration-page/</loc>
     <lastmod>2012-03-11T06:10:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/web-resources/</loc>
     <lastmod>2012-03-11T06:10:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/early-binding/</loc>
     <lastmod>2012-03-02T16:28:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/late-binding/</loc>
     <lastmod>2012-03-02T16:28:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2012-03-02-accessing-microsoft-dynamics-crm-2011.html/</loc>
     <lastmod>2012-03-02T16:28:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2011-12-01-jsonyet-another-tutorial.html/</loc>
     <lastmod>2011-12-01T17:43:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2011-11-22-in-previous-post-we-explored-very-basic.html/</loc>
     <lastmod>2011-11-22T11:52:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/msmq/</loc>
     <lastmod>2011-11-22T11:52:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2011-11-17-introduction-to-microsoft-message.html/</loc>
     <lastmod>2011-11-17T06:49:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2011-10-21-asserts-in-nunit.html/</loc>
     <lastmod>2011-10-21T12:19:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2011-10-21-structuring-unit-tests-in-nunit.html/</loc>
     <lastmod>2011-10-21T12:19:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2011-10-21-introduction-to-nunit.html/</loc>
     <lastmod>2011-10-21T12:17:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2011-10-16-log4net-extended-tutorial.html/</loc>
     <lastmod>2011-10-16T21:48:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/csdp/</loc>
     <lastmod>2010-12-27T18:54:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2010-12-27-how-i-prepared-for-csdp.html/</loc>
     <lastmod>2010-12-27T18:54:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/software-engineering-education/</loc>
     <lastmod>2010-12-27T18:54:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/swebok/</loc>
     <lastmod>2010-12-27T18:54:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2010-12-17-business-analysis-requirements.html/</loc>
     <lastmod>2010-12-17T08:02:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/requirements-engineering/</loc>
     <lastmod>2010-12-17T08:02:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2010-09-01-how-to-educate-next-generation-of.html/</loc>
     <lastmod>2010-09-01T05:51:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://ebeid.github.io/tags/sql/</loc>
+    <lastmod>2010-04-11T11:44:00-05:00</lastmod>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2010-04-11-sql-server-metadata.html/</loc>
     <lastmod>2010-04-11T11:44:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2010-04-11-sql-server-dedicated-administrator.html/</loc>
     <lastmod>2010-04-11T05:08:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/test/</loc>
     <lastmod>2010-04-11T05:08:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2010-04-10-what-is-swebok-guide.html/</loc>
     <lastmod>2010-04-10T20:41:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2010-04-10-im-certified-software-development.html/</loc>
     <lastmod>2010-04-10T17:48:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2010-03-26-bugs-in-generated-code-of-repository.html/</loc>
     <lastmod>2010-03-26T09:54:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/programming-thoughts/</loc>
     <lastmod>2009-08-26T00:32:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-08-26-wisdom-of-experts-programming-in-vs.html/</loc>
     <lastmod>2009-08-26T00:32:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/python/</loc>
     <lastmod>2009-08-15T00:31:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-08-15-using-python-scripts-with-iis-7.html/</loc>
     <lastmod>2009-08-15T00:31:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-05-24-introduction-to-peer-to-peer-computing.html/</loc>
     <lastmod>2009-05-24T23:10:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/tags/peer-to-peer/</loc>
     <lastmod>2009-05-24T23:10:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-05-15-python-notes-14-advanced-network.html/</loc>
     <lastmod>2009-05-15T21:07:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-05-15-python-notes-13-network-servers.html/</loc>
     <lastmod>2009-05-15T18:38:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-05-15-python-notes-12-network-clients.html/</loc>
     <lastmod>2009-05-15T18:17:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-05-15-python-notes-11-introduction-to-network.html/</loc>
     <lastmod>2009-05-15T03:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-03-28-python-notes-10.html/</loc>
     <lastmod>2009-03-28T07:55:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-03-27-python-notes-9.html/</loc>
     <lastmod>2009-03-27T01:53:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-03-27-python-notes-8.html/</loc>
     <lastmod>2009-03-27T01:51:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-03-23-python-notes-7.html/</loc>
     <lastmod>2009-03-23T10:12:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-03-23-python-notes-6.html/</loc>
     <lastmod>2009-03-23T09:06:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-03-23-python-notes-5.html/</loc>
     <lastmod>2009-03-23T07:49:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-03-23-python-notes-4.html/</loc>
     <lastmod>2009-03-23T05:13:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-03-19-python-notes-3.html/</loc>
     <lastmod>2009-03-19T08:59:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-03-18-python-notes-2.html/</loc>
     <lastmod>2009-03-18T15:25:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-03-18-python-notes-1.html/</loc>
     <lastmod>2009-03-18T08:55:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-03-04-type-checking-in-programming-languages.html/</loc>
     <lastmod>2009-03-04T08:44:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-02-26-introduction-to-mining-software.html/</loc>
     <lastmod>2009-02-26T08:55:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-02-22-center-of-innovation-competitiveness.html/</loc>
     <lastmod>2009-02-22T03:51:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-02-05-bug-counts-vs-test-coverage.html/</loc>
     <lastmod>2009-02-05T05:31:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2009-02-05-7-habits-of-highly-insecure-software.html/</loc>
     <lastmod>2009-02-05T05:22:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2008-12-01-ict-centers-in-egypt.html/</loc>
     <lastmod>2008-12-01T05:27:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2008-07-22-what-great-net-developers-ought-to-know.html/</loc>
     <lastmod>2008-07-22T11:04:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2008-07-13-im-software-engineer.html/</loc>
     <lastmod>2008-07-13T04:32:00-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2008-02-04-software-engineers-self-development.html/</loc>
     <lastmod>2008-02-04T04:11:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2008-02-04-data-mining-software-engineering.html/</loc>
     <lastmod>2008-02-04T01:18:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2008-02-03-software-development-process-automation.html/</loc>
     <lastmod>2008-02-03T02:48:00-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ebeid.github.io/blog/2008-02-01-birth-of-new-blogger/</loc>
     <lastmod>2008-02-01T13:54:00-06:00</lastmod>
   </url>
-  
 </urlset>

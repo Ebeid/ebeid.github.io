@@ -6,11 +6,7 @@
     <description>Recent content in Statistics on Ebeid ElSayed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 11 Jan 2013 13:53:00 -0600</lastBuildDate>
-    
-	<atom:link href="https://ebeid.github.io/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 11 Jan 2013 13:53:00 -0600</lastBuildDate><atom:link href="https://ebeid.github.io/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction to R – Removing missing values</title>
       <link>https://ebeid.github.io/blog/2013-01-11-introduction-to-r-removing-missing.html/</link>
@@ -18,9 +14,7 @@
       
       <guid>https://ebeid.github.io/blog/2013-01-11-introduction-to-r-removing-missing.html/</guid>
       <description>A common task in preparing you data is to remove missing values(NAs). One way to do that is to retrieve a vector of the missing values in your data, and then filter them out from your structure.
-
 If you want to filter out the missing values from more than one vector , you can use complete.cases() to get the indices that contains good data in both vectors.
-
 Here good will contain TRUE only for indices that hold good data in both vectors; FALSE otherwise.</description>
     </item>
     
@@ -30,7 +24,7 @@ Here good will contain TRUE only for indices that hold good data in both vectors
       <pubDate>Wed, 09 Jan 2013 10:19:00 -0600</pubDate>
       
       <guid>https://ebeid.github.io/blog/2013-01-09-introduction-to-r-getting-started.html/</guid>
-      <description>R is an open source programming language and software environment for statistical computing and graphics. The R language is widely used among statisticians for developing statistical software and data analysis. R was created by Ross Ihakaand Robert Gentlemanat the University of Auckland, New Zealand, and now, R is developed by the R Development Core Team. To download R and install it on your computer, you can get it at the Comprehensive R Archive Network (http://cran.</description>
+      <description>R is an open source programming language and software environment for statistical computing and graphics. The R language is widely used among statisticians for developing statistical software and data analysis. R was created by Ross Ihaka and Robert Gentleman at the University of Auckland, New Zealand, and now, R is developed by the R Development Core Team. To download R and install it on your computer, you can get it at the Comprehensive R Archive Network (http://cran.</description>
     </item>
     
     <item>

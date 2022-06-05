@@ -8,7 +8,7 @@
     <meta name="description" content="Ebeid&#39;s website">
     <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
     <title>Log4net Extended Tutorial</title>
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.100.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -103,11 +103,11 @@ distribution.</p>
 <p>8:              log4net.Config.BasicConfigurator.Configure();</p>
 <p>9:              log4net.ILog log = log4net.LogManager.GetLogger(typeof(Program));</p>
 <p>10:   </p>
-<p>11:              log.Debug(&ldquo;Hello World!&quot;);</p>
-<p>12:              log.Info(&ldquo;Just info.&quot;);</p>
-<p>13:              log.Warn(&ldquo;careful this is a warning.&quot;);</p>
-<p>14:              log.Error(&ldquo;Bad news: Error occurred.&quot;);</p>
-<p>15:              log.Fatal(&ldquo;Here is the end.&quot;);</p>
+<p>11:              log.Debug(&ldquo;Hello World!&rdquo;);</p>
+<p>12:              log.Info(&ldquo;Just info.&rdquo;);</p>
+<p>13:              log.Warn(&ldquo;careful this is a warning.&rdquo;);</p>
+<p>14:              log.Error(&ldquo;Bad news: Error occurred.&rdquo;);</p>
+<p>15:              log.Fatal(&ldquo;Here is the end.&rdquo;);</p>
 <p>16:          }</p>
 <p>17:      }</p>
 <p>18:  }</p>
@@ -142,13 +142,13 @@ conditions, assumedly resulting in program termination.</li>
 changed the configurator to XmlConfigurator and run the application you
 will get the following output error:</p>
 <p>log4net:ERROR XmlConfigurator: Failed to find configuration section
-&lsquo;log4net&rsquo; in</p>
+&rsquo;log4net&rsquo; in</p>
 <p>the application&rsquo;s .config file. Check your .config file for the
 &lt;log4net&gt; and &lt;</p>
 <p>configSections&gt; elements. The configuration section should look like:
 &lt;section n</p>
-<p>ame=&quot;log4net&rdquo;
-type=&quot;log4net.Config.Log4NetConfigurationSectionHandler,log4net&rdquo; /</p>
+<p>ame=&ldquo;log4net&rdquo;
+type=&ldquo;log4net.Config.Log4NetConfigurationSectionHandler,log4net&rdquo; /</p>
 <p>&gt;</p>
 <p>This error resulted because XMLConfigurator relies on an XML document to
 supply configuration for log4net. The static Configure method have 10
@@ -1688,7 +1688,7 @@ property</p>
 onto the log context stack.  This will allow you to determine the caller
 of the shared code that logged a particular message.</p>
 <p>7- Whenever you use a formatted log statement, surround the format
-argument placeholders (the {}&lsquo;s) with brackets or parentheses. This will
+argument placeholders (the {}&rsquo;s) with brackets or parentheses. This will
 mark the areas in each log message. This make the log scan a bit easier
 and makes empty or null formatting arguments more obvious. </p>
 <h2 id="suggested-logging-levels">Suggested logging levels</h2>

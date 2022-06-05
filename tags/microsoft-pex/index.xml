@@ -6,11 +6,7 @@
     <description>Recent content in Microsoft Pex on Ebeid ElSayed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 13 Aug 2013 13:43:00 -0500</lastBuildDate>
-    
-	<atom:link href="https://ebeid.github.io/tags/microsoft-pex/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 13 Aug 2013 13:43:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/microsoft-pex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to debug your Pex parameterized unit tests</title>
       <link>https://ebeid.github.io/blog/2013-08-13-how-to-debug-your-pex-parameterized.html/</link>
@@ -19,7 +15,7 @@
       <guid>https://ebeid.github.io/blog/2013-08-13-how-to-debug-your-pex-parameterized.html/</guid>
       <description>We talked before about Microsoft Pex, and how it choose the shown inputs. We then talked more about building blocks of parameterized unit tests and its patterns.
 What we missed till now is how to debug your parameterized unit tests. In order to debug your parameterized unit tests, do the following:
- Go to Tools &amp;gt;&amp;gt; Options &amp;gt;&amp;gt; Pex &amp;gt;&amp;gt; Diagnostic. Change the BreakOnStart option to True.   Now set a break point at any line of code inside your parameterized unit test.</description>
+Go to Tools &amp;gt;&amp;gt; Options &amp;gt;&amp;gt; Pex &amp;gt;&amp;gt; Diagnostic. Change the BreakOnStart option to True. Now set a break point at any line of code inside your parameterized unit test.</description>
     </item>
     
     <item>
@@ -49,7 +45,7 @@ To show how it works, let’s create a new C# console application.</description>
       
       <guid>https://ebeid.github.io/blog/2013-05-02-parameterized-test-patterns-using.html/</guid>
       <description>We talked before about the difference between unit tests and parameterized unit tests. In this post we will talk about common patterns for writing good parameterized unit tests. Keep in mind that we will use these tests with Microsoft Pex (as an automatic test input generation tool) to get test inputs that trigger all the possible scenarios of the code-under-test.
- Before anything, let’s clarify what are the questions we want to answer using the parameterized unit tests.</description>
+Before anything, let’s clarify what are the questions we want to answer using the parameterized unit tests.</description>
     </item>
     
     <item>

@@ -6,18 +6,14 @@
     <description>Recent content in Microsoft Dynamics CRM 2011 on Ebeid ElSayed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 23 Mar 2012 15:49:00 -0500</lastBuildDate>
-    
-	<atom:link href="https://ebeid.github.io/tags/microsoft-dynamics-crm-2011/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 23 Mar 2012 15:49:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/microsoft-dynamics-crm-2011/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Microsoft Dynamics CRM 2011 for Developers | Plug-ins</title>
       <link>https://ebeid.github.io/blog/2012-03-23-microsoft-dynamics-crm-2011-for_23.html/</link>
       <pubDate>Fri, 23 Mar 2012 15:49:00 -0500</pubDate>
       
       <guid>https://ebeid.github.io/blog/2012-03-23-microsoft-dynamics-crm-2011-for_23.html/</guid>
-      <description>Contents  Introduction Common Uses of Plug-ins Plug-ins Basics  Event Framework Event Execution Pipeline Pipeline Stages Message Processing Inclusion in Database Transactions  Plug-in Isolation Trusts   Develop Plug-ins Register Plug-ins  Introduction
+      <description>Contents Introduction Common Uses of Plug-ins Plug-ins Basics Event Framework Event Execution Pipeline Pipeline Stages Message Processing Inclusion in Database Transactions Plug-in Isolation Trusts Develop Plug-ins Register Plug-ins Introduction
 A plug-in is .Net assembly that can be used to intercept events generated from the CRM system. Plug-ins subscribe to a set of events and run when the events occur regardless of how the event raised (or the method that is used to perform the activity that raised the event).</description>
     </item>
     
@@ -27,7 +23,7 @@ A plug-in is .Net assembly that can be used to intercept events generated from t
       <pubDate>Tue, 13 Mar 2012 17:47:00 -0500</pubDate>
       
       <guid>https://ebeid.github.io/blog/2012-03-13-microsoft-dynamics-crm-2011-for_14.html/</guid>
-      <description>Contents  Introduction Setup the Development Environment Report Development Process Create Custom Reports Using Business Intelligence Development Studio  Create a Custom SQL-Based Report Create a Custom Fetch-Based Report   Import Custom Reports into Dynamics CRM  Introduction
+      <description>Contents Introduction Setup the Development Environment Report Development Process Create Custom Reports Using Business Intelligence Development Studio Create a Custom SQL-Based Report Create a Custom Fetch-Based Report Import Custom Reports into Dynamics CRM Introduction
 Microsoft Dynamics CRM provides many out-of-box reports for viewing business data. You can view a list of reports you have access to by navigating to Workplace &amp;gt; My Work &amp;gt; Reports. You can also see a list of all reports available by navigating to Settings &amp;gt; Customization &amp;gt; Customizations &amp;gt; Customize the System &amp;gt; Report [left navigation].</description>
     </item>
     
@@ -37,7 +33,7 @@ Microsoft Dynamics CRM provides many out-of-box reports for viewing business dat
       <pubDate>Fri, 02 Mar 2012 16:28:00 -0600</pubDate>
       
       <guid>https://ebeid.github.io/blog/2012-03-02-accessing-microsoft-dynamics-crm-2011.html/</guid>
-      <description>Contents  Introduction Creating a client application Using the Discovery Service Using the Organization Service Working with CRM Data  Late Binding Approach  Using RetrieveMultiple method Using Retrieve method Using Update method Using Delete method Using Create method   Early binding Approach  generating Client Types Enable ProxyTypeBehavior Using RetrieveMultiple method Using Retrieve method Using Create method      Introduction Microsoft Dynamics CRM is a Customer Relationship Management software package developed to focus mainly on Sales, Marketing, and Service (help desk) sectors.</description>
+      <description>Contents Introduction Creating a client application Using the Discovery Service Using the Organization Service Working with CRM Data Late Binding Approach Using RetrieveMultiple method Using Retrieve method Using Update method Using Delete method Using Create method Early binding Approach generating Client Types Enable ProxyTypeBehavior Using RetrieveMultiple method Using Retrieve method Using Create method Introduction Microsoft Dynamics CRM is a Customer Relationship Management software package developed to focus mainly on Sales, Marketing, and Service (help desk) sectors.</description>
     </item>
     
   </channel>

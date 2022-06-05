@@ -6,11 +6,7 @@
     <description>Recent content in Peer-to-Peer on Ebeid ElSayed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 May 2009 23:10:00 -0500</lastBuildDate>
-    
-	<atom:link href="https://ebeid.github.io/tags/peer-to-peer/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 24 May 2009 23:10:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/peer-to-peer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction to Peer-to-Peer Computing</title>
       <link>https://ebeid.github.io/blog/2009-05-24-introduction-to-peer-to-peer-computing.html/</link>
@@ -20,7 +16,7 @@
       <description>Peer-to-peer (P2P) has become a buzzword that subsumes concepts used in communication technologies, distributed system models, applications, platforms, etc. It is not a particular initiative, nor architecture or specific technology; it rather describes a set of concepts and mechanisms for decentralized distributed computing and direct peer-to-peer information and data interchange.
 So, What is Peer-to-Peer Computing ?
 There is no one definition of P2P.
- P2P is a class of applications that takes advantages of resources available at the edges of the internet.</description>
+P2P is a class of applications that takes advantages of resources available at the edges of the internet.</description>
     </item>
     
   </channel>

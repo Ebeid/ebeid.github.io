@@ -6,11 +6,7 @@
     <description>Recent content in JSON on Ebeid ElSayed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 12 Jul 2013 17:15:00 -0500</lastBuildDate>
-    
-	<atom:link href="https://ebeid.github.io/tags/json/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 12 Jul 2013 17:15:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/json/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with MongoDB – Part 2</title>
       <link>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-2.html/</link>
@@ -38,7 +34,7 @@ Indexing Whenever a new collection is created, MongoDB automatically creates an 
       <guid>https://ebeid.github.io/blog/2011-12-01-jsonyet-another-tutorial.html/</guid>
       <description>What is JSON? JSON (or JavaScript Object Notation) is a highly portable data interchange format. While its structure is recognized natively by Javascript (as it is Javascript), its formatting conventions are easily recognized by other C-like languages.
 JSON is built on two structures:
- A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array. Example:  var jason = { &amp;quot;age&amp;quot; : &amp;quot;28&amp;quot;, &amp;quot;hometown&amp;quot; : &amp;quot;Cairo, Egypt&amp;quot;, &amp;quot;gender&amp;quot; : &amp;quot;male&amp;quot; };   The object created in the example could be accessed like any other object.</description>
+A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array. Example: var jason = { &amp;quot;age&amp;quot; : &amp;quot;28&amp;quot;, &amp;quot;hometown&amp;quot; : &amp;quot;Cairo, Egypt&amp;quot;, &amp;quot;gender&amp;quot; : &amp;quot;male&amp;quot; }; The object created in the example could be accessed like any other object.</description>
     </item>
     
   </channel>

@@ -8,7 +8,7 @@
     <meta name="description" content="Ebeid&#39;s website">
     <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
     <title>Python Notes – 6 : Tuples &amp; Dictionaries</title>
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.100.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -77,12 +77,12 @@ we will talk about tuples and dictionaries.</p>
 <p>Tuples are similar to lists but its elements can&rsquo;t be modified.
 Syntactically, a tuple is a comma-separated list of values:</p>
 <blockquote>
-<p>&gt;&gt;&gt; tuple = &lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &lsquo;d&rsquo;, &lsquo;e&rsquo;</p>
+<p>&gt;&gt;&gt; tuple = &lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;, &rsquo;e&rsquo;</p>
 </blockquote>
 <p>Although it is not necessary, it is conventional to enclose tuples in
 parentheses:</p>
 <blockquote>
-<p>&gt;&gt;&gt; tuple = (&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &lsquo;d&rsquo;, &lsquo;e&rsquo;)</p>
+<p>&gt;&gt;&gt; tuple = (&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;, &rsquo;e&rsquo;)</p>
 </blockquote>
 <p>To create a tuple with a single element, we have to include the ¯nal
 comma:</p>
@@ -93,7 +93,7 @@ comma:</p>
 <p>&gt;&gt;&gt; type(t1)</p>
 </blockquote>
 <blockquote>
-<p>&lt;type &lsquo;tuple&rsquo;&gt;</p>
+<p>&lt;type &rsquo;tuple&rsquo;&gt;</p>
 </blockquote>
 <p>Without the comma, Python treats (&lsquo;a&rsquo;) as a string in parentheses:</p>
 <blockquote>
@@ -127,24 +127,24 @@ Dictionaries are not ordered.</p>
 <p>&gt;&gt;&gt; eng2sp[&lsquo;one&rsquo;] = &lsquo;uno&rsquo;</p>
 </blockquote>
 <blockquote>
-<p>&gt;&gt;&gt; eng2sp[&lsquo;two&rsquo;] = &lsquo;dos&rsquo;</p>
+<p>&gt;&gt;&gt; eng2sp[&rsquo;two&rsquo;] = &lsquo;dos&rsquo;</p>
 </blockquote>
 <blockquote>
 <p>&gt;&gt;&gt; print eng2sp</p>
 </blockquote>
 <blockquote>
-<p>{&lsquo;one&rsquo;: &lsquo;uno&rsquo;, &lsquo;two&rsquo;: &lsquo;dos&rsquo;}</p>
+<p>{&lsquo;one&rsquo;: &lsquo;uno&rsquo;, &rsquo;two&rsquo;: &lsquo;dos&rsquo;}</p>
 </blockquote>
 <p>You can also create the dictionary by providing a list of key-value
 pairs:</p>
 <blockquote>
-<p>&gt;&gt;&gt; eng2sp = {&lsquo;one&rsquo;: &lsquo;uno&rsquo;, &lsquo;two&rsquo;: &lsquo;dos&rsquo;, &lsquo;three&rsquo;: &lsquo;tres&rsquo;}</p>
+<p>&gt;&gt;&gt; eng2sp = {&lsquo;one&rsquo;: &lsquo;uno&rsquo;, &rsquo;two&rsquo;: &lsquo;dos&rsquo;, &rsquo;three&rsquo;: &rsquo;tres&rsquo;}</p>
 </blockquote>
 <blockquote>
 <p>&gt;&gt;&gt; print eng2sp</p>
 </blockquote>
 <blockquote>
-<p>{&lsquo;one&rsquo;: &lsquo;uno&rsquo;, &lsquo;three&rsquo;: &lsquo;tres&rsquo;, &lsquo;two&rsquo;: &lsquo;dos&rsquo;}</p>
+<p>{&lsquo;one&rsquo;: &lsquo;uno&rsquo;, &rsquo;three&rsquo;: &rsquo;tres&rsquo;, &rsquo;two&rsquo;: &lsquo;dos&rsquo;}</p>
 </blockquote>
 <h4 id="dictionary-operations">Dictionary Operations</h4>
 <p>del statement removes a key-value pair from a dictionary.</p>
@@ -181,7 +181,7 @@ key-value pairs:</p>
 <p>&lt; p&gt;&gt;&gt;&gt; eng2sp.keys()</p>
 </blockquote>
 <blockquote>
-<p>[&lsquo;one&rsquo;, &lsquo;three&rsquo;, &lsquo;two&rsquo;]</p>
+<p>[&lsquo;one&rsquo;, &rsquo;three&rsquo;, &rsquo;two&rsquo;]</p>
 </blockquote>
 <p>The values method is similar; it returns a list of the values in the
 dictionary:</p>
@@ -189,7 +189,7 @@ dictionary:</p>
 <p>&gt;&gt;&gt; eng2sp.values()</p>
 </blockquote>
 <blockquote>
-<p>[&lsquo;uno&rsquo;, &lsquo;tres&rsquo;, &lsquo;dos&rsquo;]</p>
+<p>[&lsquo;uno&rsquo;, &rsquo;tres&rsquo;, &lsquo;dos&rsquo;]</p>
 </blockquote>
 <p>The items method returns both, in the form of a list of tuples|one for
 each key-value pair:</p>
@@ -197,7 +197,7 @@ each key-value pair:</p>
 <p>&gt;&gt;&gt; eng2sp.items()</p>
 </blockquote>
 <blockquote>
-<p>[(&lsquo;one&rsquo;,&lsquo;uno&rsquo;), (&lsquo;three&rsquo;, &lsquo;tres&rsquo;), (&lsquo;two&rsquo;, &lsquo;dos&rsquo;)]</p>
+<p>[(&lsquo;one&rsquo;,&lsquo;uno&rsquo;), (&rsquo;three&rsquo;, &rsquo;tres&rsquo;), (&rsquo;two&rsquo;, &lsquo;dos&rsquo;)]</p>
 </blockquote>
 <p>The method has_key takes a key and returns true (1) if the key appears
 in the dictionary:</p>
@@ -216,7 +216,7 @@ in the dictionary:</p>
 <h4 id="aliasing-and-copying">Aliasing and copying</h4>
 <p>Dictionaries are objects that can be aliased like that:</p>
 <blockquote>
-<p>&gt;&gt;&gt; opposites = {&lsquo;up&rsquo;: &lsquo;down&rsquo;, &lsquo;right&rsquo;: &lsquo;wrong&rsquo;, &lsquo;true&rsquo;:
+<p>&gt;&gt;&gt; opposites = {&lsquo;up&rsquo;: &lsquo;down&rsquo;, &lsquo;right&rsquo;: &lsquo;wrong&rsquo;, &rsquo;true&rsquo;:
 &lsquo;false&rsquo;}</p>
 </blockquote>
 <blockquote>

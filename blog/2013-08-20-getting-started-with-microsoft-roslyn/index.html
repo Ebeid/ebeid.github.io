@@ -8,7 +8,7 @@
     <meta name="description" content="Ebeid&#39;s website">
     <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
     <title>Syntax Analysis using Microsoft Roslyn</title>
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.100.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -110,7 +110,7 @@ Roslyn.</p>
 project. Add the following to your project references</p>
 <p><img src="/img/0007.png" alt="alt text" title="Logo Title Text 1"></p>
 <p>Now edit your code to look like:</p>
-<pre><code class="language-{.prettyprint" data-lang="{.prettyprint">using System;
+<pre tabindex="0"><code class="language-{.prettyprint" data-lang="{.prettyprint">using System;
 using System;
 using Roslyn.Compilers;
 using Roslyn.Compilers.CSharp;
@@ -122,7 +122,7 @@ namespace RoslynDemo1
         static void Main(string[] args)
         {
             SyntaxTree tree = SyntaxTree.ParseText(
-                @&quot;using System;
+                @&#34;using System;
  
                 namespace HelloWorld
                 {
@@ -130,10 +130,10 @@ namespace RoslynDemo1
                     {
                         static void Main(string[] args)
                         {
-                            Console.WriteLine(&quot;&quot;Hello, World!&quot;&quot;);
+                            Console.WriteLine(&#34;&#34;Hello, World!&#34;&#34;);
                         }
                     }
-                }&quot;);
+                }&#34;);
 
             foreach (SyntaxNode node in tree.GetRoot().ChildNodesAndTokens())
                 PrintSyntaxTree(node);
@@ -144,7 +144,7 @@ namespace RoslynDemo1
         {
             if (node != null)
             {
-                Console.WriteLine(node.Kind + &quot; | &quot; + node.ToString());
+                Console.WriteLine(node.Kind + &#34; | &#34; + node.ToString());
                 foreach (SyntaxNode child in node.ChildNodes())
                     PrintSyntaxTree(child);
             }
@@ -168,7 +168,7 @@ kind is on of the kinds in enum <em>Roslyn.Compilers.CSharp.SymbolKind</em>.</p>
 <p>Inside the PrintSyntaxTree method, by playing in the order of node
 printing and the recursive call, you can apply your tree traversal
 logic. You can also inspect specific elements of the tree:</p>
-<pre><code class="language-{.prettyprint" data-lang="{.prettyprint">var root = (CompilationUnitSyntax)tree.GetRoot(); 
+<pre tabindex="0"><code class="language-{.prettyprint" data-lang="{.prettyprint">var root = (CompilationUnitSyntax)tree.GetRoot(); 
 var helloWorldDeclaration = (NamespaceDeclarationSyntax)root.Members[0];
 var programDeclaration = (TypeDeclarationSyntax)helloWorldDeclaration.Members[0];
 var mainDeclaration = (MethodDeclarationSyntax)programDeclaration.Members[0];
@@ -181,9 +181,9 @@ similar to XPath. You can also use these methods with LINQ to quickly
 find things in a tree. For example, the following statements uses a LINQ
 expression and the <strong>DescendantNodes</strong> method to locate the same
 parameter as in the previous example:</p>
-<pre><code class="language-{.prettyprint" data-lang="{.prettyprint">            var firstParameters = from methodDeclaration in root.DescendantNodes()
+<pre tabindex="0"><code class="language-{.prettyprint" data-lang="{.prettyprint">            var firstParameters = from methodDeclaration in root.DescendantNodes()
                                                     .OfType()
-                                  where methodDeclaration.Identifier.ValueText == &quot;Main&quot;
+                                  where methodDeclaration.Identifier.ValueText == &#34;Main&#34;
                                   select methodDeclaration.ParameterList.Parameters.First();
 
             var argsParameter2 = firstParameters.Single();
@@ -198,7 +198,7 @@ declaration in a syntax tree without knowing its structure beforehand.</p>
 entire syntax tree and collects any using directives it find which
 aren&rsquo;t importing a System namespace.</p>
 <p>Create a new C# Console application and edit it to look like:</p>
-<pre><code class="language-{.prettyprint" data-lang="{.prettyprint">using System;
+<pre tabindex="0"><code class="language-{.prettyprint" data-lang="{.prettyprint">using System;
 using Roslyn.Compilers;
 using Roslyn.Compilers.CSharp;
 
@@ -209,7 +209,7 @@ namespace RoslynDemo2
         static void Main(string[] args)
         {
             SyntaxTree tree = SyntaxTree.ParseText(
-@&quot;using System;
+@&#34;using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -236,7 +236,7 @@ namespace TopLevel
  
         class Bar { }
     }
-}&quot;);
+}&#34;);
 
             var root = (CompilationUnitSyntax)tree.GetRoot();
         }
@@ -252,7 +252,7 @@ which recursively visits a node and each of its children.
 VisitUsingDirective method is called for using directives only, inside
 it we collect the namespaces that starts with &ldquo;System.&rdquo; but not equal to
 &ldquo;System&rdquo;.</p>
-<pre><code class="language-{.prettyprint" data-lang="{.prettyprint">using System;
+<pre tabindex="0"><code class="language-{.prettyprint" data-lang="{.prettyprint">using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -267,8 +267,8 @@ namespace RoslynDemo2
 
         public override void VisitUsingDirective(UsingDirectiveSyntax node)
         {
-            if (node.Name.GetText().ToString() != &quot;System&quot; &amp;&amp;
-                !node.Name.GetText().ToString().StartsWith(&quot;System.&quot;))
+            if (node.Name.GetText().ToString() != &#34;System&#34; &amp;&amp;
+                !node.Name.GetText().ToString().StartsWith(&#34;System.&#34;))
             {
                 this.Usings.Add(node);
             }

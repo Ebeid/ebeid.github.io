@@ -6,11 +6,7 @@
     <description>Recent content in MongoDB on Ebeid ElSayed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 12 Jul 2013 17:15:00 -0500</lastBuildDate>
-    
-	<atom:link href="https://ebeid.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 12 Jul 2013 17:15:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with MongoDB – Part 2</title>
       <link>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-2.html/</link>

@@ -8,7 +8,7 @@
     <meta name="description" content="Ebeid&#39;s website">
     <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
     <title>Python Notes – 2 : Variables, Statements, Expressions, Operators, and Functions</title>
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.100.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -86,7 +86,7 @@ programs whatever its final size</p>
 <blockquote>
 <p>&gt;&gt;&gt; pi = 3.14159</p>
 </blockquote>
-<p>Python is a dynamically typed language. Which means that variables&rsquo;
+<p>Python is a dynamically typed language. Which means that variables'
 types don&rsquo;t have to be defined before the variables use. The python
 interpreter figure out what type a variable is when you first assign it
 a value.</p>
@@ -133,7 +133,7 @@ it and displays the result:</p>
 Boolean expressions are expressions that uses logical operators. There
 are three logical operators: and, or, not. The operands of logical
 operands should be boolean expressions. In Python there is no boolean
-data type instead 0, &lsquo;', [], (), {}, and None are false in a boolean
+data type instead 0, &lsquo;&rsquo;, [], (), {}, and None are false in a boolean
 context; everything else is true. The absence of boolean data types
 results in the following behavior of logical operators:</p>
 <ul>
@@ -149,10 +149,10 @@ returns the last value.</li>
 <p>&lsquo;b&rsquo;</p>
 </blockquote>
 <blockquote>
-<p>&gt;&gt;&gt; ' ' and &lsquo;b&rsquo;</p>
+<p>&gt;&gt;&gt; &rsquo; &rsquo; and &lsquo;b&rsquo;</p>
 </blockquote>
 <blockquote>
-<p>' '</p>
+<p>&rsquo; '</p>
 </blockquote>
 <blockquote>
 <p>&gt;&gt;&gt; &lsquo;a&rsquo; and &lsquo;b&rsquo; and &lsquo;c&rsquo;</p>
@@ -171,13 +171,13 @@ returns the last value</li>
 <p>&lsquo;a&rsquo;</p>
 </blockquote>
 <blockquote>
-<p>&gt;&gt;&gt; ' ' or &lsquo;b&rsquo;</p>
+<p>&gt;&gt;&gt; &rsquo; &rsquo; or &lsquo;b&rsquo;</p>
 </blockquote>
 <blockquote>
 <p>&lsquo;b&rsquo;</p>
 </blockquote>
 <blockquote>
-<p>&gt;&gt;&gt; ' ' or [] or {}</p>
+<p>&gt;&gt;&gt; &rsquo; &rsquo; or [] or {}</p>
 </blockquote>
 <blockquote>
 <p>{}</p>
@@ -354,7 +354,7 @@ function and will mark the function termination.</li>
 <p>def sum(x, y):</p>
 </blockquote>
 <blockquote>
-<p>&lt; font color=&rdquo;#0000ff&rdquo;&gt;    print x + y</p>
+<p>&lt; font color=&quot;#0000ff&quot;&gt;    print x + y</p>
 </blockquote>
 <ul>
 <li>To call a function just use the function name followed by the list

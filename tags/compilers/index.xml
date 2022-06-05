@@ -6,11 +6,7 @@
     <description>Recent content in Compilers on Ebeid ElSayed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 20 Aug 2013 15:49:00 -0500</lastBuildDate>
-    
-	<atom:link href="https://ebeid.github.io/tags/compilers/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 20 Aug 2013 15:49:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/compilers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Syntax Analysis using Microsoft Roslyn</title>
       <link>https://ebeid.github.io/blog/2013-08-20-getting-started-with-microsoft-roslyn/</link>

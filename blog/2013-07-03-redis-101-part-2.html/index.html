@@ -8,7 +8,7 @@
     <meta name="description" content="Ebeid&#39;s website">
     <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
     <title>Redis 101– Part 2</title>
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.100.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -167,7 +167,7 @@ c283d93ac9528f986023793b411e4ba2:</p>
 <p>If we attempt to execute FLUSHALL against this server, we’ll be hit with
 an error. We can also disable the command entirely by setting it to a
 blank string.</p>
-<p>rename-command FLUSHALL &quot;&rdquo;</p>
+<p>rename-command FLUSHALL &quot;&quot;</p>
 <p>You can set any number of commands to a blank string to allow only a
 customized subset of the Redis’s commands.</p>
 <h4 id="benchmarking">Benchmarking</h4>

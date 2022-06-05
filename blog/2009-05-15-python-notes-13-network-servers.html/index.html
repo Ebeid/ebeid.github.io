@@ -8,7 +8,7 @@
     <meta name="description" content="Ebeid&#39;s website">
     <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
     <title>Python Notes 13: Network servers</title>
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.100.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -81,7 +81,7 @@ process requires the following four steps:</p>
 </ol>
 <p>Example of these steps:</p>
 <blockquote>
-<p>host = '&rsquo; # Bind to all interfaces<br>
+<p>host = &rsquo;&rsquo; # Bind to all interfaces<br>
 port = 51423<br>
 # Step 1 (Create the socket object)<br>
 s = socket. socket(socket.AF_INET, socket.SOCK_STREAM)<br>
@@ -122,7 +122,7 @@ connections, this is usually done with a carefully designed infinite
 loop. Example:</p>
 <blockquote>
 <p>import socket<br>
-host = '&rsquo; # Bind to all interfaces<br>
+host = &rsquo;&rsquo; # Bind to all interfaces<br>
 port = 51423<br>
 s = socket.socket(socket.AF_INET, socket.SOCKJTREAM)<br>
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, l)<br>
@@ -144,7 +144,7 @@ Because UDP is connectionless, this is all you need to be able to send
 back a reply. Example, echo server:</p>
 <blockquote>
 <p>import socket, traceback<br>
-host = '&rsquo; # Bind to all interfaces<br>
+host = &rsquo;&rsquo; # Bind to all interfaces<br>
 port = 51423<br>
 s = socket.socket(socket.AF_INET, socket.SOCK_DCRAM)<br>
 s. setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, l)<br>

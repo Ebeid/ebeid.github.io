@@ -8,7 +8,7 @@
     <meta name="description" content="Ebeid&#39;s website">
     <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
     <title>Python Notes – 4 : Lists</title>
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.100.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -152,7 +152,7 @@ could be any integer expression.</p>
 as a single</p>
 <p>element. The length of this list is four:</p>
 <blockquote>
-<p><!-- raw HTML omitted -->[&lsquo;spam!', 1, [&lsquo;Brie&rsquo;, &lsquo;Roquefort&rsquo;, &lsquo;Pol
+<p><!-- raw HTML omitted -->[&lsquo;spam!&rsquo;, 1, [&lsquo;Brie&rsquo;, &lsquo;Roquefort&rsquo;, &lsquo;Pol
 le Veq&rsquo;], [1, 2, 3]]<!-- raw HTML omitted --></p>
 </blockquote>
 <h4 id="lists---operators">Lists - operators</h4>
@@ -259,8 +259,8 @@ element.</p>
 </blockquote>
 <h4 id="list---slices">List - slices</h4>
 <blockquote>
-<p><!-- raw HTML omitted -->&gt;&gt;&gt; list = [&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &lsquo;d&rsquo;,
-&lsquo;e&rsquo;, &lsquo;f&rsquo;]<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; list = [&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;,
+&rsquo;e&rsquo;, &lsquo;f&rsquo;]<!-- raw HTML omitted --></p>
 </blockquote>
 <blockquote>
 <p><!-- raw HTML omitted -->&gt;&gt;&gt; list[1:3]<!-- raw HTML omitted --></p>
@@ -272,25 +272,25 @@ element.</p>
 <p><!-- raw HTML omitted -->&gt;&gt;&gt; list[:4]<!-- raw HTML omitted --></p>
 </blockquote>
 <blockquote>
-<p><!-- raw HTML omitted -->[&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &lsquo;d&rsquo;]<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->[&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;]<!-- raw HTML omitted --></p>
 </blockquote>
 <blockquote>
 <p><!-- raw HTML omitted -->&gt;&gt;&gt; list[3:]<!-- raw HTML omitted --></p>
 </blockquote>
 <blockquote>
-<p><!-- raw HTML omitted -->[&lsquo;d&rsquo;, &lsquo;e&rsquo;, &lsquo;f&rsquo;]<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->[&rsquo;d&rsquo;, &rsquo;e&rsquo;, &lsquo;f&rsquo;]<!-- raw HTML omitted --></p>
 </blockquote>
 <blockquote>
 <p><!-- raw HTML omitted -->&gt;&gt;&gt; list[:]<!-- raw HTML omitted --></p>
 </blockquote>
 <blockquote>
-<p><!-- raw HTML omitted -->[&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &lsquo;d&rsquo;, &lsquo;e&rsquo;, &lsquo;f&rsquo;]<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->[&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;, &rsquo;e&rsquo;, &lsquo;f&rsquo;]<!-- raw HTML omitted --></p>
 </blockquote>
 <h4 id="list---deletion">List - deletion</h4>
 <p>del removes an element from a list:</p>
 <blockquote>
-<p><!-- raw HTML omitted -->&gt;&gt;&gt; a = [&lsquo;one&rsquo;, &lsquo;two&rsquo;,
-&lsquo;three&rsquo;]<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; a = [&lsquo;one&rsquo;, &rsquo;two&rsquo;,
+&rsquo;three&rsquo;]<!-- raw HTML omitted --></p>
 </blockquote>
 <blockquote>
 <p><!-- raw HTML omitted -->&gt;&gt;&gt; del a[1]<!-- raw HTML omitted --></p>
@@ -299,12 +299,12 @@ element.</p>
 <p><!-- raw HTML omitted -->&gt;&gt;&gt; a<!-- raw HTML omitted --></p>
 </blockquote>
 <blockquote>
-<p><!-- raw HTML omitted -->[&lsquo;one&rsquo;, &lsquo;three&rsquo;]<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->[&lsquo;one&rsquo;, &rsquo;three&rsquo;]<!-- raw HTML omitted --></p>
 </blockquote>
 <p>You can use a slice as an index for del:</p>
 <blockquote>
-<p><!-- raw HTML omitted -->&gt;&gt;&gt; list = [&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &lsquo;d&rsquo;,
-&lsquo;e&rsquo;, &lsquo;f&rsquo;]<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; list = [&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;,
+&rsquo;e&rsquo;, &lsquo;f&rsquo;]<!-- raw HTML omitted --></p>
 </blockquote>
 <blockquote>
 <p><!-- raw HTML omitted -->&gt;&gt;&gt; del list[1:5]<!-- raw HTML omitted --></p>

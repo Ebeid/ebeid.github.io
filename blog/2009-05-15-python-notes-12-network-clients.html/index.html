@@ -8,7 +8,7 @@
     <meta name="description" content="Ebeid&#39;s website">
     <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
     <title>Python Notes 12 : Network clients</title>
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.100.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -109,7 +109,7 @@ code like this:</p>
 socket, you&rsquo;ll generally need to provide a tuple containing the remote
 hostname or IP address and the remote port. Connecting a socket
 typically looks like this:<br>
-s.connect((&ldquo;<a href="http://www.example.com">www.example.com</a>&rdquo;, 80))</p>
+s.connect((&ldquo;<a href="https://www.example.com">www.example.com</a>&rdquo;, 80))</p>
 <p><strong>Finding the port number</strong></p>
 <p>Most operating systems ship with a list of well-known server port
 numbers which you can query. On windows systems, you can find this file
@@ -167,7 +167,7 @@ except ValueError:<br>
     # That didn&rsquo;t work, so it&rsquo;s probably a protocol name.<br>
     # Look it up instead,<br>
 try:<br>
-    port = socket.getservbyname(textport, &lsquo;tcp&rsquo;)<br>
+    port = socket.getservbyname(textport, &rsquo;tcp&rsquo;)<br>
     except socket.error, e:<br>
     print &ldquo;Couldn&rsquo;t find your port: %s&rdquo; % e<br>
     sys.exit(i)</p>

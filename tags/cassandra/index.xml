@@ -6,11 +6,7 @@
     <description>Recent content in Cassandra on Ebeid ElSayed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 09 Jul 2013 17:27:00 -0500</lastBuildDate>
-    
-	<atom:link href="https://ebeid.github.io/tags/cassandra/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 09 Jul 2013 17:27:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/cassandra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with Apache Cassandra</title>
       <link>https://ebeid.github.io/blog/2013-07-09-getting-started-with-apache-cassandra.html/</link>

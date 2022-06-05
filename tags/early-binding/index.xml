@@ -6,18 +6,14 @@
     <description>Recent content in Early Binding on Ebeid ElSayed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 02 Mar 2012 16:28:00 -0600</lastBuildDate>
-    
-	<atom:link href="https://ebeid.github.io/tags/early-binding/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 02 Mar 2012 16:28:00 -0600</lastBuildDate><atom:link href="https://ebeid.github.io/tags/early-binding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Microsoft Dynamics CRM 2011 for Developers - Accessing Microsoft Dynamics CRM 2011 using WCF</title>
       <link>https://ebeid.github.io/blog/2012-03-02-accessing-microsoft-dynamics-crm-2011.html/</link>
       <pubDate>Fri, 02 Mar 2012 16:28:00 -0600</pubDate>
       
       <guid>https://ebeid.github.io/blog/2012-03-02-accessing-microsoft-dynamics-crm-2011.html/</guid>
-      <description>Contents  Introduction Creating a client application Using the Discovery Service Using the Organization Service Working with CRM Data  Late Binding Approach  Using RetrieveMultiple method Using Retrieve method Using Update method Using Delete method Using Create method   Early binding Approach  generating Client Types Enable ProxyTypeBehavior Using RetrieveMultiple method Using Retrieve method Using Create method      Introduction Microsoft Dynamics CRM is a Customer Relationship Management software package developed to focus mainly on Sales, Marketing, and Service (help desk) sectors.</description>
+      <description>Contents Introduction Creating a client application Using the Discovery Service Using the Organization Service Working with CRM Data Late Binding Approach Using RetrieveMultiple method Using Retrieve method Using Update method Using Delete method Using Create method Early binding Approach generating Client Types Enable ProxyTypeBehavior Using RetrieveMultiple method Using Retrieve method Using Create method Introduction Microsoft Dynamics CRM is a Customer Relationship Management software package developed to focus mainly on Sales, Marketing, and Service (help desk) sectors.</description>
     </item>
     
   </channel>

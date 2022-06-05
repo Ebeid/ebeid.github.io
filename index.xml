@@ -6,11 +6,7 @@
     <description>Recent content on Ebeid ElSayed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
-    
-	<atom:link href="https://ebeid.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ebeid.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Twelve-Factor Applications</title>
       <link>https://ebeid.github.io/blog/twelve-factor-applications/</link>
@@ -88,7 +84,7 @@ The Roslyn project aims to open compilers for developers and offer it as service
       <guid>https://ebeid.github.io/blog/2013-08-13-how-to-debug-your-pex-parameterized.html/</guid>
       <description>We talked before about Microsoft Pex, and how it choose the shown inputs. We then talked more about building blocks of parameterized unit tests and its patterns.
 What we missed till now is how to debug your parameterized unit tests. In order to debug your parameterized unit tests, do the following:
- Go to Tools &amp;gt;&amp;gt; Options &amp;gt;&amp;gt; Pex &amp;gt;&amp;gt; Diagnostic. Change the BreakOnStart option to True.   Now set a break point at any line of code inside your parameterized unit test.</description>
+Go to Tools &amp;gt;&amp;gt; Options &amp;gt;&amp;gt; Pex &amp;gt;&amp;gt; Diagnostic. Change the BreakOnStart option to True. Now set a break point at any line of code inside your parameterized unit test.</description>
     </item>
     
     <item>
@@ -129,7 +125,7 @@ What SAT means ? SAT refers to Boolean satisfiability problem where we want to d
       <guid>https://ebeid.github.io/blog/2013-07-23-bring-sign-in-as-different-user-back-to.html/</guid>
       <description>If you new to SharePoint 2013 like me and get confused looking for “Sign in as a Different User” menu command, don’t worry it is not there by design but we can easily bring it back.
 Do the following steps to get the link back:
- Locate the file \15\TEMPLATE\CONTROLTEMPLATES\Welcome.ascx and open it for editing. Add the following snippet before the existing element that have id of “ID_RequestAccess”.   Text=&amp;quot;&amp;lt;%$Resources:wss,personalactions_loginasdifferentuser%&amp;gt;&amp;quot; Description=&amp;quot;&amp;lt;%$Resources:wss,personalactions_loginasdifferentuserdescription%&amp;gt;&amp;quot; MenuGroupId=&amp;quot;100&amp;quot; Sequence=&amp;quot;100&amp;quot; UseShortId=&amp;quot;true&amp;quot; /&amp;gt;  Save and close the file.</description>
+Locate the file \15\TEMPLATE\CONTROLTEMPLATES\Welcome.ascx and open it for editing. Add the following snippet before the existing element that have id of “ID_RequestAccess”. Text=&amp;quot;&amp;lt;%$Resources:wss,personalactions_loginasdifferentuser%&amp;gt;&amp;quot; Description=&amp;quot;&amp;lt;%$Resources:wss,personalactions_loginasdifferentuserdescription%&amp;gt;&amp;quot; MenuGroupId=&amp;quot;100&amp;quot; Sequence=&amp;quot;100&amp;quot; UseShortId=&amp;quot;true&amp;quot; /&amp;gt; Save and close the file.</description>
     </item>
     
     <item>
@@ -140,7 +136,7 @@ Do the following steps to get the link back:
       <guid>https://ebeid.github.io/blog/2013-07-17-create-new-web-part-page-with-quick.html/</guid>
       <description>This post is about a simple task we do daily in SharePoint 2010, creating a new Web Part page. Every time we need a new Web Part page, we go to All Site Content &amp;gt; Create &amp;gt; Web Part Page &amp;gt; Create. Now we have a Web Part page but no quick launch menu on the left.
 To show the quick launch menu on the new created page:
- Open the page for editing in SharePoint 2010.</description>
+Open the page for editing in SharePoint 2010.</description>
     </item>
     
     <item>
@@ -210,7 +206,7 @@ Download Redis installer from here.</description>
       
       <guid>https://ebeid.github.io/blog/2013-05-02-parameterized-test-patterns-using.html/</guid>
       <description>We talked before about the difference between unit tests and parameterized unit tests. In this post we will talk about common patterns for writing good parameterized unit tests. Keep in mind that we will use these tests with Microsoft Pex (as an automatic test input generation tool) to get test inputs that trigger all the possible scenarios of the code-under-test.
- Before anything, let’s clarify what are the questions we want to answer using the parameterized unit tests.</description>
+Before anything, let’s clarify what are the questions we want to answer using the parameterized unit tests.</description>
     </item>
     
     <item>
@@ -280,7 +276,7 @@ In this post we will go in a step by step process to setup the environment whe
       
       <guid>https://ebeid.github.io/blog/2013-01-21-introduction-to-r-charts-and-graphics.html/</guid>
       <description>R includes several packages for visualizing data:
- graphics contains plotting functions for the “base” graphing systems, including plot, hist, boxplot and many others. lattice contains code for producing Trellis graphics, which are independent of the “base” graphics system; including functions like xyplot, bwplot, levelplot. It built on grid which implements a different graphing system independent of the “base” system. grDevices contains all code implementing the various graphics devices, including X11, PDF, PostScript, PNG, etc.</description>
+graphics contains plotting functions for the “base” graphing systems, including plot, hist, boxplot and many others. lattice contains code for producing Trellis graphics, which are independent of the “base” graphics system; including functions like xyplot, bwplot, levelplot. It built on grid which implements a different graphing system independent of the “base” system. grDevices contains all code implementing the various graphics devices, including X11, PDF, PostScript, PNG, etc.</description>
     </item>
     
     <item>
@@ -291,7 +287,8 @@ In this post we will go in a step by step process to setup the environment whe
       <guid>https://ebeid.github.io/blog/2013-01-17-introduction-to-r-random-variables.html/</guid>
       <description>Simulation is important topic for statistical applications and scientific purposes in general.
 Generating Random Numbers The first step in simulation is to generate random values based on your variables distribution. R has a large number of functions that generate the standard random variables.
-for Normal random variable generationrnorm() simulate a simple random normal variable with a given mean and standard deviation and generate as many random values as requested.</description>
+for Normal random variable generation
+rnorm() simulate a simple random normal variable with a given mean and standard deviation and generate as many random values as requested.</description>
     </item>
     
     <item>
@@ -301,7 +298,7 @@ for Normal random variable generationrnorm() simulate a simple random normal var
       
       <guid>https://ebeid.github.io/blog/2013-01-16-introduction-to-r-basic-debugging.html/</guid>
       <description>In this post we will talk about native debugging support in R. Mostly, you start debugging when something goes wrong, which have many indications:
- message A generic notification/diagnostic message produced by the message function; execution of the function continues. warning An indication that something is wrong but not necessarily fatal; execution of the function continues; generated by the warning function; you got it after the function completion. error An indication that a fatal problem has occurred; execution stops; produced by the stop function.</description>
+message A generic notification/diagnostic message produced by the message function; execution of the function continues. warning An indication that something is wrong but not necessarily fatal; execution of the function continues; generated by the warning function; you got it after the function completion. error An indication that a fatal problem has occurred; execution stops; produced by the stop function.</description>
     </item>
     
     <item>
@@ -312,10 +309,9 @@ for Normal random variable generationrnorm() simulate a simple random normal var
       <guid>https://ebeid.github.io/blog/2013-01-15-introduction-to-r-control-structures.html/</guid>
       <description>Like every other programing language, R have control structures that allow you control the flow of your code execution.
 If, else for testing a condition. else section is optional.
-
 if it’s all about assigning a value to a variable, you can do like this
-
-for for executing a loop for a fixed number of times. It takes a variable and assign it successive values from a sequence or vector.</description>
+for for executing a loop for a fixed number of times. It takes a variable and assign it successive values from a sequence or vector.
+while for executing a loop while a condition is true.</description>
     </item>
     
     <item>
@@ -326,7 +322,7 @@ for for executing a loop for a fixed number of times. It takes a variable and as
       <guid>https://ebeid.github.io/blog/2013-01-13-introduction-to-r-functions.html/</guid>
       <description>Functions Functions are just like what you remember from math class. Most functions are in the following form: f(argument1, argument2, &amp;hellip;) Where f is the name of the function, and argument1, argument2, . . . are the arguments
 to the function. Here are a few examples of built-in functions:
-Note in the last example that if you give the argument in the default order, you can omit the names. Some built-in functions have operator form like the following examples:</description>
+Note in the last example that if you give the argument in the default order, you can omit the names. Some built-in functions have operator form like the following examples: A function in R is just another object that is assigned to a symbol.</description>
     </item>
     
     <item>
@@ -336,9 +332,7 @@ Note in the last example that if you give the argument in the default order, you
       
       <guid>https://ebeid.github.io/blog/2013-01-12-introduction-to-r-matrix-operations.html/</guid>
       <description>Operations can be done on matrices in two fashions:
- Element-wise : where operations performed on corresponding elements in the matrices. Just use the desired operator.  
- Matrix-wise: where operations are performed on the whole matrices in the way you used to do in math. Use the desired operator between a couple of % %  
-Stay tuned for more R notes.</description>
+Element-wise : where operations performed on corresponding elements in the matrices. Just use the desired operator. Matrix-wise: where operations are performed on the whole matrices in the way you used to do in math. Use the desired operator between a couple of % % Stay tuned for more R notes.</description>
     </item>
     
     <item>
@@ -348,9 +342,7 @@ Stay tuned for more R notes.</description>
       
       <guid>https://ebeid.github.io/blog/2013-01-11-introduction-to-r-removing-missing.html/</guid>
       <description>A common task in preparing you data is to remove missing values(NAs). One way to do that is to retrieve a vector of the missing values in your data, and then filter them out from your structure.
-
 If you want to filter out the missing values from more than one vector , you can use complete.cases() to get the indices that contains good data in both vectors.
-
 Here good will contain TRUE only for indices that hold good data in both vectors; FALSE otherwise.</description>
     </item>
     
@@ -362,7 +354,7 @@ Here good will contain TRUE only for indices that hold good data in both vectors
       <guid>https://ebeid.github.io/blog/2013-01-09-introduction-to-r-importingexporting.html/</guid>
       <description>There are many functions that read/write data in R and export it files
 read.table, read.csv for reading tabular data and return it in data frames from delimited files. read.csv is identical to read.table except that default separator is coma. There are so many arguments for these functions, the most commonly used arguments are:
- file : string –&amp;gt; file name or URL header : logical –&amp;gt; TRUE if the file first line is a header line, FALSE if first line is data.</description>
+file : string –&amp;gt; file name or URL header : logical –&amp;gt; TRUE if the file first line is a header line, FALSE if first line is data.</description>
     </item>
     
     <item>
@@ -371,7 +363,7 @@ read.table, read.csv for reading tabular data and return it in data frames from 
       <pubDate>Wed, 09 Jan 2013 10:19:00 -0600</pubDate>
       
       <guid>https://ebeid.github.io/blog/2013-01-09-introduction-to-r-getting-started.html/</guid>
-      <description>R is an open source programming language and software environment for statistical computing and graphics. The R language is widely used among statisticians for developing statistical software and data analysis. R was created by Ross Ihakaand Robert Gentlemanat the University of Auckland, New Zealand, and now, R is developed by the R Development Core Team. To download R and install it on your computer, you can get it at the Comprehensive R Archive Network (http://cran.</description>
+      <description>R is an open source programming language and software environment for statistical computing and graphics. The R language is widely used among statisticians for developing statistical software and data analysis. R was created by Ross Ihaka and Robert Gentleman at the University of Auckland, New Zealand, and now, R is developed by the R Development Core Team. To download R and install it on your computer, you can get it at the Comprehensive R Archive Network (http://cran.</description>
     </item>
     
     <item>
@@ -390,7 +382,7 @@ Basic Formulas Computations in Excel are carried out using formulas. A formula i
       <pubDate>Fri, 23 Mar 2012 15:49:00 -0500</pubDate>
       
       <guid>https://ebeid.github.io/blog/2012-03-23-microsoft-dynamics-crm-2011-for_23.html/</guid>
-      <description>Contents  Introduction Common Uses of Plug-ins Plug-ins Basics  Event Framework Event Execution Pipeline Pipeline Stages Message Processing Inclusion in Database Transactions  Plug-in Isolation Trusts   Develop Plug-ins Register Plug-ins  Introduction
+      <description>Contents Introduction Common Uses of Plug-ins Plug-ins Basics Event Framework Event Execution Pipeline Pipeline Stages Message Processing Inclusion in Database Transactions Plug-in Isolation Trusts Develop Plug-ins Register Plug-ins Introduction
 A plug-in is .Net assembly that can be used to intercept events generated from the CRM system. Plug-ins subscribe to a set of events and run when the events occur regardless of how the event raised (or the method that is used to perform the activity that raised the event).</description>
     </item>
     
@@ -400,7 +392,7 @@ A plug-in is .Net assembly that can be used to intercept events generated from t
       <pubDate>Tue, 13 Mar 2012 17:47:00 -0500</pubDate>
       
       <guid>https://ebeid.github.io/blog/2012-03-13-microsoft-dynamics-crm-2011-for_14.html/</guid>
-      <description>Contents  Introduction Setup the Development Environment Report Development Process Create Custom Reports Using Business Intelligence Development Studio  Create a Custom SQL-Based Report Create a Custom Fetch-Based Report   Import Custom Reports into Dynamics CRM  Introduction
+      <description>Contents Introduction Setup the Development Environment Report Development Process Create Custom Reports Using Business Intelligence Development Studio Create a Custom SQL-Based Report Create a Custom Fetch-Based Report Import Custom Reports into Dynamics CRM Introduction
 Microsoft Dynamics CRM provides many out-of-box reports for viewing business data. You can view a list of reports you have access to by navigating to Workplace &amp;gt; My Work &amp;gt; Reports. You can also see a list of all reports available by navigating to Settings &amp;gt; Customization &amp;gt; Customizations &amp;gt; Customize the System &amp;gt; Report [left navigation].</description>
     </item>
     
@@ -410,7 +402,7 @@ Microsoft Dynamics CRM provides many out-of-box reports for viewing business dat
       <pubDate>Sun, 11 Mar 2012 06:10:00 -0500</pubDate>
       
       <guid>https://ebeid.github.io/blog/2012-03-11-microsoft-dynamics-crm-2011-for.html/</guid>
-      <description>Contents  Introduction Types of Web Resources Where can Web Resources be Used ? Web Resources Limitations Web Resources Management Using Web Resources on a Form Using Web Resources from the Form Navigation  Using Web Resources on a Dashboard Using Web Resources Direct from SiteMap  Using Web Resources as a Solution Configuration Page Referencing Other Web Resources  Introduction
+      <description>Contents Introduction Types of Web Resources Where can Web Resources be Used ? Web Resources Limitations Web Resources Management Using Web Resources on a Form Using Web Resources from the Form Navigation Using Web Resources on a Dashboard Using Web Resources Direct from SiteMap Using Web Resources as a Solution Configuration Page Referencing Other Web Resources Introduction
 Web resources are a new feature of Dynamics CRM 2011 that allows storing of client side content in the CRM server database in order to be used for extending the Dynamics CRM web application.</description>
     </item>
     
@@ -420,7 +412,7 @@ Web resources are a new feature of Dynamics CRM 2011 that allows storing of clie
       <pubDate>Fri, 02 Mar 2012 16:28:00 -0600</pubDate>
       
       <guid>https://ebeid.github.io/blog/2012-03-02-accessing-microsoft-dynamics-crm-2011.html/</guid>
-      <description>Contents  Introduction Creating a client application Using the Discovery Service Using the Organization Service Working with CRM Data  Late Binding Approach  Using RetrieveMultiple method Using Retrieve method Using Update method Using Delete method Using Create method   Early binding Approach  generating Client Types Enable ProxyTypeBehavior Using RetrieveMultiple method Using Retrieve method Using Create method      Introduction Microsoft Dynamics CRM is a Customer Relationship Management software package developed to focus mainly on Sales, Marketing, and Service (help desk) sectors.</description>
+      <description>Contents Introduction Creating a client application Using the Discovery Service Using the Organization Service Working with CRM Data Late Binding Approach Using RetrieveMultiple method Using Retrieve method Using Update method Using Delete method Using Create method Early binding Approach generating Client Types Enable ProxyTypeBehavior Using RetrieveMultiple method Using Retrieve method Using Create method Introduction Microsoft Dynamics CRM is a Customer Relationship Management software package developed to focus mainly on Sales, Marketing, and Service (help desk) sectors.</description>
     </item>
     
     <item>
@@ -431,7 +423,7 @@ Web resources are a new feature of Dynamics CRM 2011 that allows storing of clie
       <guid>https://ebeid.github.io/blog/2011-12-01-jsonyet-another-tutorial.html/</guid>
       <description>What is JSON? JSON (or JavaScript Object Notation) is a highly portable data interchange format. While its structure is recognized natively by Javascript (as it is Javascript), its formatting conventions are easily recognized by other C-like languages.
 JSON is built on two structures:
- A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array. Example:  var jason = { &amp;quot;age&amp;quot; : &amp;quot;28&amp;quot;, &amp;quot;hometown&amp;quot; : &amp;quot;Cairo, Egypt&amp;quot;, &amp;quot;gender&amp;quot; : &amp;quot;male&amp;quot; };   The object created in the example could be accessed like any other object.</description>
+A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array. Example: var jason = { &amp;quot;age&amp;quot; : &amp;quot;28&amp;quot;, &amp;quot;hometown&amp;quot; : &amp;quot;Cairo, Egypt&amp;quot;, &amp;quot;gender&amp;quot; : &amp;quot;male&amp;quot; }; The object created in the example could be accessed like any other object.</description>
     </item>
     
     <item>
@@ -470,7 +462,7 @@ Installing MSMQ The procedures to install MSMQ on Windows Server 2008, Winows Se
       
       <guid>https://ebeid.github.io/blog/2011-10-21-structuring-unit-tests-in-nunit.html/</guid>
       <description>Our goal in the previous post Introduction to NUnit, was just to introduce the unit testing using NUnit as simple as possible. Now it is the time to elaborate more on NUnit framework, structuring and organizing your test cases. If you examined the test code again:
- 1: using System; 2: using NUnit.Framework; 3: namespace ClassLibrary1 4: { 5: [TestFixture] 6: public class CmpTest 7: { 8: [Test] 9: public void LargestOf3() 10: { 11: int[] numbers = new int[] { 8, 9, 7 }; 12: Assert.</description>
+1: using System; 2: using NUnit.Framework; 3: namespace ClassLibrary1 4: { 5: [TestFixture] 6: public class CmpTest 7: { 8: [Test] 9: public void LargestOf3() 10: { 11: int[] numbers = new int[] { 8, 9, 7 }; 12: Assert.</description>
     </item>
     
     <item>
@@ -479,7 +471,8 @@ Installing MSMQ The procedures to install MSMQ on Windows Server 2008, Winows Se
       <pubDate>Fri, 21 Oct 2011 12:17:00 -0500</pubDate>
       
       <guid>https://ebeid.github.io/blog/2011-10-21-introduction-to-nunit.html/</guid>
-      <description>**What is unit testing?**According to Jeff Canna, unit testing ensures that a particular method of a class successfully performs a set of specific tasks. Each test confirms that a method produces the expected output when given a known input.
+      <description>What is unit testing?
+According to Jeff Canna, unit testing ensures that a particular method of a class successfully performs a set of specific tasks. Each test confirms that a method produces the expected output when given a known input.
 What is NUnit? NUnit is an open source framework that facilitates unit testing for all .NET languages. It allows you to build your test cases directly into the code of the project.</description>
     </item>
     
@@ -491,8 +484,8 @@ What is NUnit? NUnit is an open source framework that facilitates unit testing f
       <guid>https://ebeid.github.io/blog/2011-10-16-log4net-extended-tutorial.html/</guid>
       <description>Logging is one of the most effective debugging and troubleshooting techniques although some engineers claim that it is not that helpful or it will slow the application. My experience with it is always positive.
 I use log4net from the Apache Software Foundation as my logging layer for .Net applications. log4net is available here as a zip archive.
-Hello World Example [uses BasicConfigurator]   Download log4net from here.
-  Open Visual Studio and create a new Console application project.</description>
+Hello World Example [uses BasicConfigurator] Download log4net from here.
+Open Visual Studio and create a new Console application project.</description>
     </item>
     
     <item>
@@ -514,7 +507,7 @@ Who is eligible to take the CSDP?</description>
       <guid>https://ebeid.github.io/blog/2010-12-17-business-analysis-requirements.html/</guid>
       <description>I was searching for certifications on requirements engineering and I found that there is a lot of mixing between business analysis and requirements engineering. This mix exists both on the daily use, professional certifications and organizations.
 Starting by the definitions:
- Business analysis is the discipline of identifying business needs and determining solutions to business problems. Solutions often include a systems development component, but may also consist of process improvement, organizational change or strategic planning and policy development.</description>
+Business analysis is the discipline of identifying business needs and determining solutions to business problems. Solutions often include a systems development component, but may also consist of process improvement, organizational change or strategic planning and policy development.</description>
     </item>
     
     <item>
@@ -524,7 +517,7 @@ Starting by the definitions:
       
       <guid>https://ebeid.github.io/blog/2010-09-01-how-to-educate-next-generation-of.html/</guid>
       <description>After my completion of my master in software engineering at Nile University which we faced many problems at it (I hope it be better in the future), I tried to search for what globally constitutes a master of software engineering and I found the following:
- The last effort to create a reference curriculum for graduate software engineering education was by the SEI in the early 1990s. There were, in effect, no current community-endorsed recommendations on what to teach software engineers.</description>
+The last effort to create a reference curriculum for graduate software engineering education was by the SEI in the early 1990s. There were, in effect, no current community-endorsed recommendations on what to teach software engineers.</description>
     </item>
     
     <item>
@@ -565,7 +558,7 @@ To use SQL Server Management Studio with the DAC, connect to an instance of the 
       <description>It is my pleasure to share with you my recent achievement. Now I’m IEEE Computer Society Certified Software Development Professional CSDP.
 The CSDP credential is intended for mid-career software development professionals that want to confirm their proficiency of standard software development practices and advance in their careers.
 Certified Software Development Professional should:
- Possesses fundamental knowledge and understanding of computing principles and concepts and their application to the definition, design, construction, testing of software.</description>
+Possesses fundamental knowledge and understanding of computing principles and concepts and their application to the definition, design, construction, testing of software.</description>
     </item>
     
     <item>
@@ -576,7 +569,6 @@ Certified Software Development Professional should:
       <guid>https://ebeid.github.io/blog/2010-03-26-bugs-in-generated-code-of-repository.html/</guid>
       <description>If you are considering using repository factory for visual studio 2008 in your next project, please be aware that it had 2 bugs in code generation. These are in the generated Remove method in the repository classes of the DAL. This happens only if the corresponding table is a bridge table that links two tables together.
 If you had simple three tables in your database like the following:
-
 The generated Remove method in User_RoleRepository class will be like the following:</description>
     </item>
     
@@ -598,7 +590,7 @@ Programmers who program “into” a language, first decide what thoughts they w
       
       <guid>https://ebeid.github.io/blog/2009-08-15-using-python-scripts-with-iis-7.html/</guid>
       <description>Here are the steps you should make if you want to use python scripts on IIS 7:
- Please make sure Python is installed properly or refer to Python Notes – 1 : Setup for installation steps. Make sure CGI module is installed in IIS 7.  Control Panel -&amp;gt; Programs -&amp;gt; Program and Features -&amp;gt; Turn Windows features on and off -&amp;gt; Internet Information Services -&amp;gt; World Wide Web Services -&amp;gt; Application Development Features -&amp;gt; CGI module (Ensure that it is selected).</description>
+Please make sure Python is installed properly or refer to Python Notes – 1 : Setup for installation steps. Make sure CGI module is installed in IIS 7. Control Panel -&amp;gt; Programs -&amp;gt; Program and Features -&amp;gt; Turn Windows features on and off -&amp;gt; Internet Information Services -&amp;gt; World Wide Web Services -&amp;gt; Application Development Features -&amp;gt; CGI module (Ensure that it is selected).</description>
     </item>
     
     <item>
@@ -610,7 +602,7 @@ Programmers who program “into” a language, first decide what thoughts they w
       <description>Peer-to-peer (P2P) has become a buzzword that subsumes concepts used in communication technologies, distributed system models, applications, platforms, etc. It is not a particular initiative, nor architecture or specific technology; it rather describes a set of concepts and mechanisms for decentralized distributed computing and direct peer-to-peer information and data interchange.
 So, What is Peer-to-Peer Computing ?
 There is no one definition of P2P.
- P2P is a class of applications that takes advantages of resources available at the edges of the internet.</description>
+P2P is a class of applications that takes advantages of resources available at the edges of the internet.</description>
     </item>
     
     <item>
@@ -631,7 +623,7 @@ Normally, sockets are bidirectional—data can be sent across them in both direc
       
       <guid>https://ebeid.github.io/blog/2009-05-15-python-notes-13-network-servers.html/</guid>
       <description>For a client, the process of establishing a TCP connection is a two-step process that includes the creation of the socket object and a call to connect() to establish a connection to the server. For a server, the process requires the following four steps:
- Create the socket object. Set the socket options (optional). Bind to a port (and, optionally, a specific network card). Listen for connections.  Example of these steps:</description>
+Create the socket object. Set the socket options (optional). Bind to a port (and, optionally, a specific network card). Listen for connections. Example of these steps:</description>
     </item>
     
     <item>
@@ -653,9 +645,9 @@ Sockets are an extension to the operating system&amp;rsquo;s I/O system that ena
       <guid>https://ebeid.github.io/blog/2009-05-15-python-notes-11-introduction-to-network.html/</guid>
       <description>Network Overview
 Python provides a wide assortment of network support.
- Low-level programming with sockets (if you want to create a protocol). Support for existing network protocols (HTTP, FTP, SMTP, etc&amp;hellip;). Web programming (CGI scripting and HTTP servers). Data encoding  Network Basics: TCP/IP
+Low-level programming with sockets (if you want to create a protocol). Support for existing network protocols (HTTP, FTP, SMTP, etc&amp;hellip;). Web programming (CGI scripting and HTTP servers). Data encoding Network Basics: TCP/IP
 Python’s networking modules primarily support TCP/IP.
- TCP - A reliable connection-oriented protocol (streams). UDP - An unreliable packet-oriented protocol (datagrams).  TCP is the most common (HTTP, FTP, SMTP, etc&amp;hellip;).</description>
+TCP - A reliable connection-oriented protocol (streams). UDP - An unreliable packet-oriented protocol (datagrams). TCP is the most common (HTTP, FTP, SMTP, etc&amp;hellip;).</description>
     </item>
     
     <item>
@@ -686,9 +678,9 @@ The following commands create an entirely new process: fork(),system(), popen(),
       <guid>https://ebeid.github.io/blog/2009-03-27-python-notes-8.html/</guid>
       <description>Welcome to our eighth note in our Python learning process. This note will talk about object oriented features in Python.
 Classes and Objects A class definition looks like this:
- class Point:
-   pass
- Class definitions can appear anywhere in a program, but they are usually near the beginning (after the import statements). By creating the Point class, we created a new type, also called Point. The members of this type are called instances of the type or objects.</description>
+class Point:
+pass
+Class definitions can appear anywhere in a program, but they are usually near the beginning (after the import statements). By creating the Point class, we created a new type, also called Point. The members of this type are called instances of the type or objects.</description>
     </item>
     
     <item>
@@ -699,7 +691,11 @@ Classes and Objects A class definition looks like this:
       <guid>https://ebeid.github.io/blog/2009-03-23-python-notes-7.html/</guid>
       <description>Welcome to our seventh note in our Python learning process. This note will talk specifically about files, directories, and exceptions.
 Files Opening a file creates a file object. Syntax is like that:
- &amp;gt;&amp;gt;&amp;gt; f = open(&amp;ldquo;test.dat&amp;rdquo;,&amp;ldquo;w&amp;rdquo;)  &amp;gt;&amp;gt;&amp;gt; print f  &amp;lt;open file &amp;lsquo;test.dat&amp;rsquo;, mode &amp;lsquo;w&amp;rsquo; at fe820&amp;gt; The first parameter to open is the file name, the second parameter is the mode. Modes are: w for write, r for read.</description>
+&amp;gt;&amp;gt;&amp;gt; f = open(&amp;ldquo;test.dat&amp;rdquo;,&amp;ldquo;w&amp;rdquo;)
+&amp;gt;&amp;gt;&amp;gt; print f
+&amp;lt;open file &amp;rsquo;test.dat&amp;rsquo;, mode &amp;lsquo;w&amp;rsquo; at fe820&amp;gt;
+The first parameter to open is the file name, the second parameter is the mode. Modes are: w for write, r for read.
+To write data in the file we invoke the write method on the file object:</description>
     </item>
     
     <item>
@@ -710,9 +706,9 @@ Files Opening a file creates a file object. Syntax is like that:
       <guid>https://ebeid.github.io/blog/2009-03-23-python-notes-6.html/</guid>
       <description>Welcome to our sixth note in our Python learning process. In this note we will talk about tuples and dictionaries.
 Tuples Tuples are similar to lists but its elements can&amp;rsquo;t be modified. Syntactically, a tuple is a comma-separated list of values:
- &amp;gt;&amp;gt;&amp;gt; tuple = &amp;lsquo;a&amp;rsquo;, &amp;lsquo;b&amp;rsquo;, &amp;lsquo;c&amp;rsquo;, &amp;lsquo;d&amp;rsquo;, &amp;lsquo;e&amp;rsquo;
- Although it is not necessary, it is conventional to enclose tuples in parentheses:
- &amp;gt;&amp;gt;&amp;gt; tuple = (&amp;lsquo;a&amp;rsquo;, &amp;lsquo;b&amp;rsquo;, &amp;lsquo;c&amp;rsquo;, &amp;lsquo;d&amp;rsquo;, &amp;lsquo;e&amp;rsquo;)</description>
+&amp;gt;&amp;gt;&amp;gt; tuple = &amp;lsquo;a&amp;rsquo;, &amp;lsquo;b&amp;rsquo;, &amp;lsquo;c&amp;rsquo;, &amp;rsquo;d&amp;rsquo;, &amp;rsquo;e&amp;rsquo;
+Although it is not necessary, it is conventional to enclose tuples in parentheses:
+&amp;gt;&amp;gt;&amp;gt; tuple = (&amp;lsquo;a&amp;rsquo;, &amp;lsquo;b&amp;rsquo;, &amp;lsquo;c&amp;rsquo;, &amp;rsquo;d&amp;rsquo;, &amp;rsquo;e&amp;rsquo;)</description>
     </item>
     
     <item>
@@ -724,7 +720,13 @@ Tuples Tuples are similar to lists but its elements can&amp;rsquo;t be modified.
       <description>Welcome to our fifth note in our Python learning process. In this note we will talk about one of the core concepts of the Python language semantics .
 Objects and Values
 An object is something a variable can refer to. Every object has a unique identifier, which we can obtain with the id function.
- &amp;gt;&amp;gt;&amp;gt; a = &amp;ldquo;banana&amp;quot;  &amp;gt;&amp;gt;&amp;gt; b = &amp;ldquo;banana&amp;quot;  &amp;gt;&amp;gt;&amp;gt; id(a)  135044008  &amp;gt;&amp;gt;&amp;gt; id(b)  135044008 Interestingly, lists behave differently.</description>
+&amp;gt;&amp;gt;&amp;gt; a = &amp;ldquo;banana&amp;rdquo;
+&amp;gt;&amp;gt;&amp;gt; b = &amp;ldquo;banana&amp;rdquo;
+&amp;gt;&amp;gt;&amp;gt; id(a)
+135044008
+&amp;gt;&amp;gt;&amp;gt; id(b)
+135044008
+Interestingly, lists behave differently.</description>
     </item>
     
     <item>
@@ -735,7 +737,8 @@ An object is something a variable can refer to. Every object has a unique identi
       <guid>https://ebeid.github.io/blog/2009-03-23-python-notes-4.html/</guid>
       <description>Welcome to our third note in our Python learning process. In this note we will talk mainly about lists, its functions and how to use it.
 Lists - Creation A list is an ordered set of values, where each value is identified by an index. The values that make up a list are called its elements. You could create it like:
- &amp;gt;&amp;gt;&amp;gt; X = [12, 56, 87]  &amp;gt;&amp;gt;&amp;gt; print X  [12, 56, 87]  &amp;gt;&amp;gt;&amp;gt; Y = [&amp;ldquo;one&amp;rdquo;, &amp;ldquo;three&amp;rdquo;, &amp;ldquo;five&amp;rdquo;]  &amp;gt;&amp;gt;&amp;gt; print Y  [&amp;ldquo;one&amp;rdquo;, &amp;ldquo;three&amp;rdquo;, &amp;ldquo;five&amp;rdquo;] The list elements don&amp;rsquo;t have to be the same type.</description>
+&amp;gt;&amp;gt;&amp;gt; X = [12, 56, 87]
+&amp;gt;&amp;gt;&amp;gt; print X</description>
     </item>
     
     <item>
@@ -746,7 +749,7 @@ Lists - Creation A list is an ordered set of values, where each value is identif
       <guid>https://ebeid.github.io/blog/2009-03-19-python-notes-3.html/</guid>
       <description>Welcome to our third note in our Python learning process. In this note we will talk about conditional statements, iteration and keyboard input.
 Conditional Statements The normal flow of statements execution is sequential where the interpreter executes the statements in the same sequence that it appears in the script. If your program logic requires a different flow than the that, you should use conditional statements. The syntax looks like:
- if x%2 == 0:  print x, &amp;ldquo;is even&amp;quot;  else:  print x, &amp;ldquo;is odd&amp;quot; The statement indentation is the only statement scope identifier.</description>
+if x%2 == 0:</description>
     </item>
     
     <item>
@@ -757,10 +760,10 @@ Conditional Statements The normal flow of statements execution is sequential whe
       <guid>https://ebeid.github.io/blog/2009-03-18-python-notes-2.html/</guid>
       <description>Welcome to our second note in our Python learning process. In this note we will talk about variables, statements, expressions, operators, comments, and functions. These are the very basic building blocks of you programs whatever its final size
 Variables The assignment statement creates new variables and gives them values
- &amp;gt;&amp;gt;&amp;gt; message = &amp;ldquo;What&amp;rsquo;s up, Doc?&amp;rdquo;
-  &amp;gt;&amp;gt;&amp;gt; n = 17
-  &amp;gt;&amp;gt;&amp;gt; pi = 3.14159
- Python is a dynamically typed language.</description>
+&amp;gt;&amp;gt;&amp;gt; message = &amp;ldquo;What&amp;rsquo;s up, Doc?&amp;rdquo;
+&amp;gt;&amp;gt;&amp;gt; n = 17
+&amp;gt;&amp;gt;&amp;gt; pi = 3.14159
+Python is a dynamically typed language. Which means that variables&#39; types don&amp;rsquo;t have to be defined before the variables use.</description>
     </item>
     
     <item>
@@ -770,7 +773,7 @@ Variables The assignment statement creates new variables and gives them values
       
       <guid>https://ebeid.github.io/blog/2009-03-18-python-notes-1.html/</guid>
       <description>I write this notes about Python during my learning process of it. I&amp;rsquo;m not an expert in Python. I&amp;rsquo;m just writing this notes while I learn Python aiming to help others who are learning it too. Never hesitate to comment on anything you want.
-Origins of Python  Developed by Guido van Rossum. Derived from ABC, a teaching language that was developed in 1980s.  Why Pyhton ?  Python code is pretty simple, compact and easy to learn.</description>
+Origins of Python Developed by Guido van Rossum. Derived from ABC, a teaching language that was developed in 1980s. Why Pyhton ? Python code is pretty simple, compact and easy to learn.</description>
     </item>
     
     <item>
@@ -782,7 +785,7 @@ Origins of Python  Developed by Guido van Rossum. Derived from ABC, a teaching l
       <description>To discuss type checking in programming languages we have to define type checking. Simply,Type checking is how type errors are checked.
 Type checking could happen at compile-time or at run-time. When type checking happens at the compile-time it is called Static Type Checking. When type checking happens at the run-time it is called Dynamic Type Checking.
 Programming Languages differs in
- when they check types. Were it enforces types or not.</description>
+when they check types. Were it enforces types or not. Based on these two factors, programming languages could be classified from the type checking perspective into the following classes:</description>
     </item>
     
     <item>
@@ -795,8 +798,8 @@ Programming Languages differs in
 Ahmed E. Hassan | University of Victoria | ahmed@uvic.ca
 Part I
 Mining Software Engineering Data goals:
- Transform static record-keeping SE data to active data. Make SE data actionable by uncovering hidden patterns and trends.  Uses of mining SE data:
- Gain empirically-based understanding of software development. Predict, plan, and understand various aspects of a project. Support future development and project management activities.</description>
+Transform static record-keeping SE data to active data. Make SE data actionable by uncovering hidden patterns and trends. Uses of mining SE data:
+Gain empirically-based understanding of software development. Predict, plan, and understand various aspects of a project. Support future development and project management activities.</description>
     </item>
     
     <item>
@@ -814,7 +817,8 @@ Mining Software Engineering Data goals:
       <pubDate>Thu, 05 Feb 2009 05:31:00 -0600</pubDate>
       
       <guid>https://ebeid.github.io/blog/2009-02-05-bug-counts-vs-test-coverage.html/</guid>
-      <description>**What to Do When Bug Counts Don’t Speak for Themselves?**Bug counts on a project speak volumes about the quality of testing for a particular product and how vigorous the test team is working to &amp;ldquo;assure quality.&amp;rdquo; Bug counts are invariably a primary area of test metrics that are reported to management. What is the rationale behind drawing so much attention to the number of bugs being found through the course of a project?</description>
+      <description>What to Do When Bug Counts Don’t Speak for Themselves?
+Bug counts on a project speak volumes about the quality of testing for a particular product and how vigorous the test team is working to &amp;ldquo;assure quality.&amp;rdquo; Bug counts are invariably a primary area of test metrics that are reported to management. What is the rationale behind drawing so much attention to the number of bugs being found through the course of a project?</description>
     </item>
     
     <item>
@@ -836,8 +840,7 @@ Mining Software Engineering Data goals:
 Then question become wider; what are the ICT centers do we have in Egypt ?
 During my search and my experince I have found many centers in egypt working in relation to the communications and Information Technology.
 And here what I got:
-· Data Mining and Computer Modeling Center[MCIT]
-· Wireless Communication and Electronic Design Center[MCIT]</description>
+· Data Mining and Computer Modeling Center [MCIT]</description>
     </item>
     
     <item>
@@ -846,7 +849,7 @@ And here what I got:
       <pubDate>Tue, 22 Jul 2008 11:04:00 -0500</pubDate>
       
       <guid>https://ebeid.github.io/blog/2008-07-22-what-great-net-developers-ought-to-know.html/</guid>
-      <description>Everyone who writes code  Describe the difference between a Thread and a Process? What is a Windows Service and how does its lifecycle differ from a &amp;ldquo;standard&amp;rdquo; EXE? What is the maximum amount of memory any single process on Windows can address? Is this different than the maximum virtual memory for the system? How would this affect a system design? What is the difference between an EXE and a DLL?</description>
+      <description>Everyone who writes code Describe the difference between a Thread and a Process? What is a Windows Service and how does its lifecycle differ from a &amp;ldquo;standard&amp;rdquo; EXE? What is the maximum amount of memory any single process on Windows can address? Is this different than the maximum virtual memory for the system? How would this affect a system design? What is the difference between an EXE and a DLL? What is strong-typing versus weak-typing?</description>
     </item>
     
     <item>
@@ -875,9 +878,9 @@ Fresh graduates when hired have different reactions about this new job title whi
       
       <guid>https://ebeid.github.io/blog/2008-02-04-data-mining-software-engineering.html/</guid>
       <description>So many efforts have been done in data mining field from thousands of researchers and developers both in academia and enterprise. This can be rationale due to the following reasons:
- The vast ways in collecting and storing data in all aspects of life.
+The vast ways in collecting and storing data in all aspects of life.
 The huge data collected in the enterprise lead to overwhelming information workers.
-This lead to one fact, which is “We rich in data but poor in information”.</description>
+This lead to one fact, which is “We rich in data but poor in information”. So we seek the solution in the area of data mining.</description>
     </item>
     
     <item>

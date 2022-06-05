@@ -8,7 +8,7 @@
     <meta name="description" content="Ebeid&#39;s website">
     <link rel="shortcut icon" type="image/x-icon" href="https://ebeid.github.io/img/favicon.ico">
     <title>Getting Started with MongoDB – Part 2</title>
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.100.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://ebeid.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -123,7 +123,7 @@ to output details of a given operation and can help us here.</p>
 <blockquote>
 <p>&gt; db.phones.find( { display : &ldquo;+1 800-5650001&rdquo; } ).explain()<br>
 {<br>
-        &ldquo;cursor&rdquo; : &ldquo;<strong><!-- raw HTML omitted -->BasicCursor<!-- raw HTML omitted --></strong>&quot;,<br>
+        &ldquo;cursor&rdquo; : &ldquo;<strong><!-- raw HTML omitted -->BasicCursor<!-- raw HTML omitted --></strong>&rdquo;,<br>
         &ldquo;isMultiKey&rdquo; : false,<br>
         &ldquo;n&rdquo; : 0,<br>
         &ldquo;nscannedObjects&rdquo; : 100000,<br>
@@ -165,7 +165,7 @@ Query execution time improved, from 134 down to 16.</p>
 <p>&gt; db.phones.find( { display : &ldquo;+1 800-5650001&rdquo; } ).explain()<br>
 {<br>
         &ldquo;cursor&rdquo; : &ldquo;<strong><!-- raw HTML omitted -->BtreeCursor
-display_1<!-- raw HTML omitted --></strong>&quot;,<br>
+display_1<!-- raw HTML omitted --></strong>&rdquo;,<br>
         &ldquo;isMultiKey&rdquo; : false,<br>
         &ldquo;n&rdquo; : 0,<br>
         &ldquo;nscannedObjects&rdquo; : 0,<br>
@@ -291,7 +291,7 @@ distinct numbers (this step is not a MapReduce step).</p>
 <blockquote>
 <p>&gt; distinctDigits = function(phone) {<br>
 &hellip; var<br>
-&hellip; number = phone.components.number + &lsquo;',<br>
+&hellip; number = phone.components.number + &lsquo;&rsquo;,<br>
 &hellip; seen = [],<br>
 &hellip; result = [],<br>
 &hellip; i = number.length;<br>
@@ -308,7 +308,7 @@ distinct numbers (this step is not a MapReduce step).</p>
 </blockquote>
 <blockquote>
 <p>&gt; db.eval(&ldquo;distinctDigits(db.phones.findOne({ &lsquo;components.number&rsquo; :
-5551213 }))&quot;)<br>
+5551213 }))&rdquo;)<br>
 [ 1, 2, 3, 5 ]</p>
 </blockquote>
 <p>Now let’s find find distinct numbers of each country. Since we need to
@@ -402,7 +402,7 @@ Type &ldquo;it&rdquo; for more</p>
 <p>or</p>
 <blockquote>
 <dl>
-<dt>&gt; db.phones.report.find({'_id.country&rsquo; : 8})</dt>
+<dt>&gt; db.phones.report.find({&rsquo;_id.country&rsquo; : 8})</dt>
 <dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  4,  5,  6 ], &ldquo;country&rdquo; :</dt>
 <dt>8 }, &ldquo;value&rdquo; : { &ldquo;count&rdquo; : 32 } }</dt>
 <dt>{ &ldquo;_id&rdquo; : { &ldquo;digits&rdquo; : [  0,  1,  2,  3,  5 ], &ldquo;country&rdquo; : 8 },</dt>
