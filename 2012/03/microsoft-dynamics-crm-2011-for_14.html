@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#experience"
+                >EXPERIENCE</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/2012">2012th</a></span></li><li class="breadcrum-item"><span><a href="/2012/03">3rd</a></span></li><li class="breadcrum-item"><span><a href="/2012/03/microsoft-dynamics-crm-2011-for_14.html">Microsoft dynamics crm 2011 for 14.html</a></span></li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/2012/03/microsoft-dynamics-crm-2011-for_14.html">Microsoft Dynamics CRM 2011 for Developers | Creating Custom Reports Using Microsoft SQL Server 2008 Reporting Services</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Tue Mar 13, 2012</h4>
+              ·
+              <h4 id="wordcount">1773 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/microsoft-dynamics-crm-2011/">Microsoft Dynamics CRM 2011</a></li>
+              
+              <li><a href="/tags/fetchxml/">FetchXML</a></li>
+              
+              <li><a href="/tags/business-intelligence-development-studio/">Business Intelligence Development Studio</a></li>
+              
+              <li><a href="/tags/business-intelligence-development-studio-crm-report-authoring-extension/">Business Intelligence Development Studio CRM Report Authoring Extension</a></li>
+              
+              <li><a href="/tags/sql-server-reporting-services/">SQL Server Reporting Services</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><h4 id="contents"><strong>Contents</strong></h4>
+<ol>
+<li>Introduction</li>
+<li>Setup the Development Environment</li>
+<li>Report Development Process</li>
+<li>Create Custom Reports Using Business Intelligence Development Studio
+<ol>
+<li>Create a Custom SQL-Based Report</li>
+<li>Create a Custom Fetch-Based Report</li>
+</ol>
+</li>
+<li>Import Custom Reports into Dynamics CRM</li>
+</ol>
+<p><strong>Introduction</strong></p>
+<p>Microsoft Dynamics CRM provides many out-of-box reports for viewing business data. You can view a list of reports you have access to by navigating to Workplace &gt; My Work &gt; Reports. You can also see a list of all reports available by navigating to Settings &gt; Customization &gt; Customizations &gt; Customize the System &gt; Report [left navigation]. In both lists, you can select a report and click Run Report from the ribbon to preview the report in running mode.</p>
+<p>You can create custom reports using one of the out-of-box reports as templates, or create a custom report from scratch. There are two types of reports in Microsoft Dynamics CRM:</p>
+<ul>
+<li><strong>SQL-Based Reports</strong> Use SQL queries to retrieve data from filtered views defined by the system. The default out-of-box reports are SQL-based reports. You can’t deploy SQL-based reports for Dynamics CRM online.</li>
+<li><strong>Fetch-Based Reports</strong> Use FetchXML queries to retrieve data. They are introduced in Dynamics CRM 2011 and can be deployed both on on-premise and online. All reports created using the Report Wizard in the web interface, are fetch-based reports.</li>
+</ul>
+<p><strong>Setup the Development Environment</strong></p>
+<p>To write custom reports for Microsoft Dynamics CRM you need the following:</p>
+<ul>
+<li>Microsoft SQL Server 2008 Reporting Services (or 2008 R2) in native mode installation.</li>
+<li>Business Intelligence Development Studio. This is the report authoring environment in Visual Studio that hosts the Report Designer (available on the Microsoft SQL Server setup CD).</li>
+<li>Microsoft Dynamics CRM Report Authoring Extension. You will need this when creating a custom fetch-based reports. You can install it from <a href="http://www.microsoft.com/download/en/details.aspx?id=27823" title="http://www.microsoft.com/download/en/details.aspx?id=27823">http://www.microsoft.com/download/en/details.aspx?id=27823</a> or from the BIDSExtension folder in the Microsoft Dynamics CRM setup DVD.</li>
+</ul>
+<p><strong>Report Development Process</strong></p>
+<p>The following lists the steps for developing custom Microsoft Dynamics CRM reports. You may have to repeat some steps while you develop a report:</p>
+<ol>
+<li>Develop a report concept or specification based on what business information is to be displayed.</li>
+<li>Decide on the type of report you want to create: SQL-based or Fetch-based. Microsoft Dynamics CRM Online users can only create custom Fetch-based reports.</li>
+<li>Download an existing Microsoft Dynamics CRM report definition (.rdl), and modify it or create a new report by using Business Intelligence Development Studio.</li>
+<li>Create basic report parameters.</li>
+<li>Specify datasets and filtering criteria for retrieving data:
+<ul>
+<li>For SQL-based reports, create datasets that contain Microsoft Dynamics CRM data obtained from the filtered views.</li>
+<li>Enable pre-filtering on the primary entities.</li>
+</ul>
+</li>
+<li>Define the basic layout of the report, including headers and footers.</li>
+<li>Add report items as required based on the report specification.</li>
+<li>Preview the report in Microsoft Visual Studio, and resolve any errors.</li>
+<li>Deploy the report to the reporting server by using Microsoft Dynamics CRM.</li>
+<li>Run the deployed report to verify.</li>
+</ol>
+<p><strong>Create Custom Reports Using Business Intelligence Development Studio</strong></p>
+<p><strong>Create a Custom SQL-Based Report</strong></p>
+<p>To create a custom SQL-based report using Business Intelligence Development Studio:</p>
+<p>1- Open Business Intelligence Development Studio, and create a report server project.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTHMGezdBAiSyI0zCF6hvVq4Th4vT8ZmqsQ6XV86MgObJbbCaRp35cy1bU8nkBjMHK9J0b1dlDm2Y3zfp5GDpdQzDrVhsBBTm0Uet_ptbohnxu_nAak7bujyA4ogSPfP3MvXDzsy1pag/s1600-h/xRM_Demo2---Microsoft-Visual-Studio_%25255B9%25255D.jpg"><img alt="xRM_Demo2 - Microsoft Visual Studio_2012-03-12_17-50-44" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHrBDQZP7aSR7xQNrxlHfUdL_RJOHkVCbWg6eiv3o85ndACBXovhkGJBx85eEv9Bo4Za0FVMv2ctAT78Fx0YeiaI7JV77zUfV-pZxi8BIEp4Baiv8MgTJ2nAMv_rxt68_1-aWMKbmmOQ/?imgmax=800" title="xRM_Demo2 - Microsoft Visual Studio_2012-03-12_17-50-44"></a></p>
+<p>2- In Solution Explorer, right-click the <strong>Reports</strong> folder, and then click <strong>Add New Report</strong>.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjP6s0ZXJJrmdHBkUqyCRmT7G6NTpU-dbrAeZQlof-KE4xAEZDQ4nSc8TNzD9nJQEkfimcvdFMsFuR6_lTzD1ts4sca7c9lLajNQH5NhFeZTk0l-trA_UOlG-s1USq9CJ6DyNFBj5r-2g/s1600-h/xRM_Demo2---Microsoft-Visual-Studio_%25255B11%25255D.jpg"><img alt="xRM_Demo2 - Microsoft Visual Studio_2012-03-12_17-51-26" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnWkHr5ST19WEzL63yFMJoeDCU67FVGUJBi4m-kKRxd-F2HV6ed_GsvhBSh-BUUMUgOTnj-j_f6BKqu8v3zUaeF7uQaPcUsn4cgrsYCh4nWr5zDlsNU0X5ILvSnBTadBmpKc2erIsMMw/?imgmax=800" title="xRM_Demo2 - Microsoft Visual Studio_2012-03-12_17-51-26"></a></p>
+<p>3- Click <strong>Next</strong> on the Report Wizard welcome screen.</p>
+<p>4- On the Select the Data Source page, click <strong>New Data Source</strong>, and specify the following details:</p>
+<ul>
+<li><strong>Name</strong>: Type a name for the data source.</li>
+<li><strong>Type</strong>: Select <strong>Microsoft SQL Server</strong>.</li>
+</ul>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEwecuQp3ohBvtUAgARruNL7JyL6zZZLXY1WOM518UZca-kbVjqi4QoxzXcXaki24DKv6dcBLNHZuyLHjiG9yeGBmkJvEZjEZXLJeZ3LQMaA4vxU5atnPFLOMUxM0wRpWkgLquqtX3NA/s1600-h/Report-Wizard_2012-03-12_17-53-253.jpg"><img alt="Report Wizard_2012-03-12_17-53-25" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEaSOkoqeVALzK8txJ2og2fK4YOst-fykrXMezDY8cXlMQVnvn43eowvbGxVAijyyiimqu47xPKGe-i4BST8Cm0NG8N4xZnK6XircDh8eoGWin00O5qAFUYK4OUs8G5X2m348pStbDEQ/?imgmax=800" title="Report Wizard_2012-03-12_17-53-25"></a></p>
+<ul>
+<li><strong>Connection String</strong>: Specify the connection string to connect to the instance of the Microsoft SQL Server database. To build the connection string, click <strong>Edit</strong>. To supply credentials, click <strong>Credentials</strong>. Click <strong>Next</strong>.</li>
+</ul>
+<blockquote>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1eHOkqn4ragwHViekyMuY5Qkd9NzRRlSLMM5-69dfqqFhZjS5Vlr1uR09HBDMdiek1EzLib-bXUx_-GJmh5VkJTMnoRA4UIBoYbjFSYzxKmfGXedmJmVgMjHD0zcE2RRtolIHABDcfQ/s1600-h/Connection-Properties_2012-03-12_17-%25255B1%25255D.jpg"><img alt="Connection Properties_2012-03-12_17-54-53" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLeBfyodAk5IU5UysZglMwc5rrgAG4GsLAmHVZI3uu0ctHV-1XQauqlm6grZX-idwCf5SLtR7hrKouDn8nNTyy8cDOHMTRUATOi-83pvMeSASUwKkIIrY-6DIVpMPS54d20FjU_7MlBQ/?imgmax=800" title="Connection Properties_2012-03-12_17-54-53"></a></p>
+</blockquote>
+<p>3- On the Design the Query page, type the SQL query to use in the report. You could also click Query Builder button to open the Query Builder window. Right click in the empty area at the top of the dialog and choose Add Table</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVVkE92FefdKNN4WKLZu-sr-yP8ofw4wDJWnIQfatPTZ_2qjA_Xg86gtlbigp9n0uSta-yptRldbw4sh1MteQkRFplZQbv2jaJqwErsUV7oLXtH-AlLPq2kuFHVxnyyKTtYm3pxFQL_A/s1600-h/xRM_Demo2---Microsoft-Visual-Studio_%25255B8%25255D.jpg"><img alt="xRM_Demo2 - Microsoft Visual Studio_2012-03-12_17-58-43" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTIt-BwZMMeh1wgq65TxpBu5fsca05kVw71I98RFTc_DwcNsI74yepvvlFDiZDdsW3ZPZixDBLKttJg2C-cqfRoP9HXeItbbJplHeEOlWvutDXzjJBNZCUGOkRa12fPrEDnrG0jCbIFQ/?imgmax=800" title="xRM_Demo2 - Microsoft Visual Studio_2012-03-12_17-58-43"></a></p>
+<p>then click on the Views tab, hold the CTRL key and and select the views that you will use in your report and click Add</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgM6Jh91hYG4TgnwYSFiS_MgcfL-z9Br76-GaVFEHLw6YBfm4Cwz3FfMKN45e7hcY1u_NHV7uNmsOeTEN7Gasj6Rrh0YXtZM6m9ic5S-HhldXiligx76rkVevuhY9UblJ5c7GFC-Z4xuA/s1600-h/Add-Table_2012-03-12_17-59-134.jpg"><img alt="Add Table_2012-03-12_17-59-13" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifLSSgMiqqRiprPwMLCA8mxLrrBcP2GEC-HXJoNknf9Px31fuLT1GEvP74FbMHyyWhruJRSzUvD6OuAvr3cqydl2O7yvzCX1jbgOxrnCGzoe7b8rruaFukv9ghVp8XTCEnUrh-jr_mbg/?imgmax=800" title="Add Table_2012-03-12_17-59-13"></a></p>
+<p>select the columns you want, test your query results [We just retrieved the account name, city, country]</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjuv-4khIxK3l5ZABn87pDfOK29NdZ0iJ3Uylso_YGGmd6gvI7A-PAQ59xuvn_AQYfR-aj5PWxKMP7DQmvlo8xedyOO7u-jWpjqCi1NCvh1SeblrImZv5a1D2SFVw_CIjAvVfeDr47W3A/s1600-h/Query-Designer_2012-03-12_18-02-203.jpg"><img alt="Query Designer_2012-03-12_18-02-20" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh93pcxWcLHSjv-AoQ4kGlkvfRIxmHgOvCejMmE6SKCJT6bhJQ6n0DIHWOCTH4sj4ZSrBiVpWZ4TibwM2t-9C_BgAUsADVAyF3F4YaheEZWzNME0nrh-Pru9MJZiRU5BuDwHYg5HxgpyQ/?imgmax=800" title="Query Designer_2012-03-12_18-02-20"></a></p>
+<p>when you satisfied with your query results, click Ok to use the query in the report</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQAxX0s2_CchCWiiG1YPIb8DiJgrWjCNjxcRawzQdSaqblTt6wZEE_g8ySZ9fkfZRFes7xtjZG4jktP9IYmv3Yn7SNN-A2BwM4QeJMSx8qt42tLA_hxXCRE5xpP3LzrkFjfJRXdwi_tA/s1600-h/Report-Wizard_2012-03-12_18-03-193.jpg"><img alt="Report Wizard_2012-03-12_18-03-19" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNpacAlPfcndmHoAataqZ1H5ciqKa_QxfFOB7VX7T_MCNk36Uu-8U3TAtwhwTcqifpsoG39upqrgcvUPDQ4TbiGd1Az3zYftqXAD6kHj3QEyKF7o8qfbyQW5A7BYlmfWA0ftuFmGP1Tw/?imgmax=800" title="Report Wizard_2012-03-12_18-03-19"></a></p>
+<p>click <strong>Next</strong>.</p>
+<p>4- On the Select the Report Type page, select a <strong>Tabular</strong> report or a <strong>Matrix</strong> report, and click <strong>Next</strong>. [we used Tabular, which is the most common report format]</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTuR6vxdn0jV4rfg5rCFXbV8od06NuwnHFBiyO4fk1Um91rph3Cfou-IixNsB99O2KVGcPBoPR8RqsTIEl2GpOnYC98fQa4W5oXXIR8LbJSQSRifzvap5FJN1bbva8EyH5D3DotvDHrQ/s1600-h/Report-Wizard_2012-03-12_18-03-243.jpg"><img alt="Report Wizard_2012-03-12_18-03-24" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVejM0JigoO5pgGF3b2OwOh-Qc9XOVNIEEDed0qhyphenhyphenDh9Hl5JxUa95tYrVf_HGx_wU3xX2yrDiNhNqMBxSFxA69cKnrNR6bhFc_oJhE8kqVkIEZLB6KesoCPQZcgqykoI34y9zHdbQYRQ/?imgmax=800" title="Report Wizard_2012-03-12_18-03-24"></a></p>
+<p>5- Specify the fields that will be included in the report. You can add fields in three different sections [Page, Group, Details]. Page can be used for granular grouping like Country in our case, it will displayed on the page header only. Group can be used to more specific grouping within the page, like City in our case. Details is the place where individual records will be rendered, like our accounts names. Select each column name from the list on the left and click the designated section button to add the column to it.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizuNE120JT1GKNM5DlfcQt8t-Uvo4ZIUxjYTF_RVpjO9F7CNvIWqyCBX7PBDUtYjIU1JRTcfBJUaNdRLREXTVkizlADCjYA4ybxUQ_KTDl9w8pK_gM7LjbRCVtgDKDXzy1psCk9lJ9OQ/s1600-h/Report-Wizard_2012-03-12_18-04-413.jpg"><img alt="Report Wizard_2012-03-12_18-04-41" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheahch93LfCH0dZW4wm9N85QO9CuPMA3Wl5phushzMhXKeQuhJWSJCuOorAqjlmKoz83UUfvceQ28GG52XEAzw3cPdvb2v_z_OwXSXcmjwkzE3mYZb-9JnNWXDqKC8IB1vAaUak1MQ-A/?imgmax=800" title="Report Wizard_2012-03-12_18-04-41"></a></p>
+<p>Then click <strong>Next</strong>.</p>
+<p>6- Select a stepped layout and click <strong>Next</strong>.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbNQzvw__02PK9snKFxjmZ8lD45N0337yde7P_RXkra6HcbMiQuyWwbiAFW4RWwhnH0C8WvOx0NP_yZPvvcbWVXpM_LyF3HAtLFtGY6iGcG7J2H5z2y7e7iWmqFcGmRI9uIkEDkDUu7w/s1600-h/Report-Wizard_2012-03-12_18-05-163.jpg"><img alt="Report Wizard_2012-03-12_18-05-16" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuTKCwX_Nutjbhx4U871Tjtws5g21-jLz8Q9nacam4HeyX7ERPbJfDm50jBu7kZOPmCmpYfUn2WOgxxuT1X92QYW7GTf14bnIctO5tNIsHLCbm7Fg_6-k1_7amW_OtdaHxq0PLnEc1qg/?imgmax=800" title="Report Wizard_2012-03-12_18-05-16"></a></p>
+<p>7- Select a style to apply to the report, and then click <strong>Next</strong>.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-dcpemEKyfmTc401MxloIK4ulv9Qpu2uCAoioTJBWCFhUydm6OdBEZPqwQs6DZaIb98y-hQemd2Ig7ocrk40Wi13vvi6n640hdzX8cOZzSF-ZsNGp7MXFEvGRk4Jvu1QAJQlZn2Ix_Q/s1600-h/Report-Wizard_2012-03-12_18-05-223.jpg"><img alt="Report Wizard_2012-03-12_18-05-22" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2kJ0ntL8oS5UM5PguCNTwm5cnWo7U5bCEqEzDl7cyJUYSpTJRRxQIifsWNBtzMd_qowHWRVJSaZ-v8BG3y1nfueIg67vxHyxwGU3lJ7lko8c7-UbpBJ-HyEEkahKuP5zN8YLDSphYKw/?imgmax=800" title="Report Wizard_2012-03-12_18-05-22"></a></p>
+<p>8- Verify the fields that will be included in the report, and name the report. Click <strong>Finish</strong>.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVxZuUTKu_Ab7s5vj5UwnViuOovaPdvD3UQ_tGcJJMniWs5nt004YFKXMF3ekQYXul_dHf_4Pz9QldU1btv5Va5yjkqmpIwIqPLh1OufEr5H1gkemOJqe6c_xreSaxc1_eCQ2qb3cn4w/s1600-h/Report-Wizard_2012-03-12_18-05-283.jpg"><img alt="Report Wizard_2012-03-12_18-05-28" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrYjK_bsj_kZ0TsEQMY_bC6IgApYwxoe8eXvHxbYScyTvRbuYSvyLm9kOgAw_SlxFC9ZWdaDD3G2TT9jHErmC-qS49xM53PGaDsJTT7DG0X51pAOdOZhDyzjEiaZW-J7ipxNc-s3rsrg/?imgmax=800" title="Report Wizard_2012-03-12_18-05-28"></a></p>
+<p>This will generate an .rdl file with the specified report name. You can use the .rdl file to publish your custom report in Microsoft Dynamics CRM.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjW1hsJmdqUfiw4UCVwn6lsVs9UPH-i2F7dJ21bYPPfa8XvPDAhnWqA_jtm8LK96sREcUD4AWt05cCLXQb47VwD3UlG0pp1catYpJjHcS11PfDN4MmRSzA5VYRuUIHfPqwn4Oi_s91eHQ/s1600-h/xRM_Demo2---Microsoft-Visual-Studio_%25255B5%25255D.jpg"><img alt="xRM_Demo2 - Microsoft Visual Studio_2012-03-12_18-07-31" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5-e61klgw2D3qPAYb7JZtLPfC1oh4MufyZQC5H22I9jlGi2KqKNREY7_f46SS8G8yynsbKIKKUm4_3YDx4KfIVUGE3Rf2Q_6tvsPiTTv6USSkIRjFa0HY1R8L1Cgr_1rG5-fEgQgyHQ/?imgmax=800" title="xRM_Demo2 - Microsoft Visual Studio_2012-03-12_18-07-31"></a></p>
+<p><strong>Create a Custom Fetch-Based Report</strong></p>
+<p>Creating a custom Fetch-based report is similar to creating a custom SQL-based report except for the data source name and the report query specified while creating the report definition.</p>
+<p>Since you have the capability to create SQL-based reports for on-premise, most people will not use Fetch-based reports for on-premise. Let’s learn how to get the data source name for our CRM On-Line organization. It consists of:</p>
+<ul>
+<li>Organization URL something like <a href="https://xrmdemo5.crm.dynamics.com" title="https://xrmdemo5.crm.dynamics.com">https://xrmdemo5.crm.dynamics.com</a></li>
+<li>Organization unique name you can get it by navigating to Settings &gt; Customization &gt; Customizations &gt; Developer Resources &gt; it will be on this page</li>
+</ul>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbrIuzVFsiNCAAiV1j1IpS57ftTDb1AOmDTn2xN7V94vlVCpc6rk3j85dsV9A0qNvg6cmpHUbLPF8vhZVSzBFv7MN4m1CzqtIW0e2XVn_IWgeE8UFa9uRjNfJTmqHj8qJ-Tr8ntMf13A/s1600-h/Developer%252520res%25255B3%25255D.jpg"><img alt="Developer res" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVF_GZYUdyOEljaI570kdPos8f-Fn8Xtl0fksXB1iZZMb7mwJwXrhy-zG2Rt43XrEpsV1QBkw0AKSNqQVE7zir73S5OCHrpNLsM4GEAeeeX8fTUxtignb6KrqaMmp6if8r1xxirXZYmg/?imgmax=800" title="Developer res"></a></p>
+<p>Put the two parts separated by semi-colon will form your connection string, like <a href="https://xrmdemo5.crm.dynamics.com" title="https://xrmdemo5.crm.dynamics.com"></a><a href="https://xrmdemo5.crm.dynamics.com;4c69b8c565264033b4707c804cba7aa2">https://xrmdemo5.crm.dynamics.com</a>;4c69b8c565264033b4707c804cba7aa2 put that connection string in a text file for later use.</p>
+<p>Now, lets learn how to create a query for our Fetch-based report. There are two ways to do that:</p>
+<ol>
+<li>Manually type the FetchXML query (which I don’t personally prefer)</li>
+<li>Obtain the FetchXML queries from the CRM web client and then modify it.</li>
+</ol>
+<p>To obtain FetchXML queries you can navigate to any entity listing in CRM web client, like Accounts. Then click Advanced Find on the ribbon</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7QdV14PZ3VAKHauPlSbl9ioiyLFCHqBwhBcJDY5nYrqzF-2AAQEzJgXNNUpepX8-VffeVxV7Tz40e2TjLYg84gdXDXUqO2DMfots2uyWXGAlNigQWEB676luLc8gdZUhp6hYoZ2DvCw/s1600-h/adv%252520fnd%25255B3%25255D.png"><img alt="adv fnd" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiF-VDYOISLlj1DCjCX_FtTHlo2fYImBEKDX9SQCVu2JPy3ActPh21Wo5PQmXIPAai91V34RvKfFL_nfPbHApQWYGyBMtjFOBcIswPWtOnTHKZBPCkE3LqfEdLkxhVS10PWuMh_j4rD_w/?imgmax=800" title="adv fnd"></a></p>
+<p>This will open the Advanced Find dialog</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHtvEB0ZSaCNAOcKPGlnLoLISNY4ZrMnVFBFuDSpSSehJB2kWsjlOVHhlg-DJnZgPG4a2dmMvzUC5-lW6ChjNtwhL8G6ffiJ5kt94kxbLqnOVXWAvYOgUV4HRMHNql6l-gKbxcb_gk3w/s1600-h/adv%252520fnd%2525202%25255B3%25255D.jpg"><img alt="adv fnd 2" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgf0V14djiLH8HfV3fIBXKAKKUQVBXekzjjErTlaXhIieQkgveHu3_ZN0XiIu38CimJ5Tv7jHDcz17RvU9c5Xc27TLB6pVV17oeDiIryic-uuWciMnpryCjU8cQKf6V7zUgZlny5erzsA/?imgmax=800" title="adv fnd 2"></a></p>
+<p>Then click New to start creating a new query.</p>
+<p>1- You can select the Entity (Table) from the Look For combo-box.</p>
+<p>2- You can create your query where conditions. Click Select link to select the desired column</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjtb7dGH4qU_0khG8UGE_ppkV3vQ95-z1BLAh9w5ZhDHQujf03XO8b3pZcL3PXj6k4gJ7xP-YjkjXdADwJBYKcTg85C8ELYexllmyHs4otvrQwvqGKDUYZA8ilPFf0E1ihI21EoC4-Cw/s1600-h/adv%252520fnd%2525203%25255B4%25255D.jpg"><img alt="adv fnd 3" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhSHwl2QIniMp4fitOYvTVmBl8hsT-oWE0hvVsUBYtcStGGFL1T4RYdObDezg-eBMgzHugMWeyaKdKKsld3gjweDgFlGmasCpYS6-gdgR2MkmS4Eb-AqlbUZcNkhKDrcTjzcvVT-Cd-2w/?imgmax=800" title="adv fnd 3"></a></p>
+<p>You can then click Equals link to specify the operator used in the where condition. You can then click Enter Text link to specify the value used in the condition</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiLOodUen-62akzFDnKz0f449haV-7Pbccoz-QU2bWUmjWlVO6xoTe0iPP6tlDUc5Slfp838ktZelYcWQyPzj2jkHGCZRCteBQdvjwxAlQ0HSuphEFNwP5fJcY_-6gRKFlHdAJ0M9Uew/s1600-h/adv%252520fnd%2525204%25255B6%25255D.jpg"><img alt="adv fnd 4" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWqrN0tB53mjfHy4ldY22WzzM-r3d-ohJYpTGyF26ULLWHgaHYKjZQwUIuSvU3tDhTEKYEV9Quu6ik_cfem4y_U5GFu58Vwbg7dobLTAaSR3ey9jyBvQ3lwmPwyT5eSYhWsbDORbHEKg/?imgmax=800" title="adv fnd 4"></a><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhECK1SOcVcHHKXMJS8z6R0RHQS6WvwnJeVE5CyydPMzpV123yOVceAEkIcya0RikJIiWcyKMAR-te9eChBBIDctanEkvIPLY-q7wIKiDJrmGaDAHotKMXpRqAVeK0NSjDiHzK6l6v4Nw/s1600-h/adv%252520fnd%2525205%25255B4%25255D.jpg"><img alt="adv fnd 5" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtJdp4MqCY8jUV_pA_UzI7WbbIp6ji9GpEY5r1k2EG4g7hNlNRutVkFFbt5YMl_TnvFneip9YUCTyck3H7tby7Ar8hynq4R9rp_uQUwp9ymsEplY-ZPSPfwGQz34WoDgBtQLxC3b-psA/?imgmax=800" title="adv fnd 5"></a></p>
+<p>when you have multiple conditions, you can select them and use the Group AND and Group OR on the ribbon to build your query logic.</p>
+<p>3- You can specify the columns you want retrieve. Click Edit Columns in the ribbon, this will open the Edit Columns dialog</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXOq2S3h09EowhAy9hFY937_l8Pe0dVvxpXSwy1tHgxfvMjeoEjaVfI52qt8r9KFAVPuRTTUhX6iyqYRx1r6eseo0lR1Yi6MAaAZis-dAeI2O1gufoUxDekqaInMf5y2jX6pKHN_tpUQ/s1600-h/Edit%252520Columns%252520--%252520Webpage%252520Dialog_2012-03-13_13-07-57%25255B3%25255D.jpg"><img alt="Edit Columns &ndash; Webpage Dialog_2012-03-13_13-07-57" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjMB_m-foRmSflufgSk3vBdW83lVoKrAQQ_PnZLwksmxqmfFuZ5hutTSZoWxNFYpgS1c2ChDRFGEANjGwHmpi35R8OR8tjcV5dEcgu1RARYzPKZQ1Kjxg7NxSiEDzIj4ik2KESHiL6uQ/?imgmax=800" title="Edit Columns -- Webpage Dialog_2012-03-13_13-07-57"></a></p>
+<p>The area on the left shows the query columns and the sequence they appear. You can click Add Columns from the left to add more columns from this entity or any of entities related to it.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZSaxYFqS15Y-Nm66lJ1dNU_K0D-hn7XBzXHW4Y753YMCD-X_oHsABoesD6zq4UHJt_Yi6TLj0nkaFXjlLmYxcu3Msht3lRyZVEuRjrFDaDsGbjjqdIfOON0K_pWWI2FtjJJAxXn6ZgA/s1600-h/Add%252520Columns%252520--%252520Webpage%252520Dialog_2012-03-13_13-10-04%25255B3%25255D.jpg"><img alt="Add Columns &ndash; Webpage Dialog_2012-03-13_13-10-04" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgP1B57tlYbkE8gG3CrAhn5Bk09wZIzDpL-y7Yagy97PSeEG-tK8kTyRvLsHAKu4ru3CZZ58XdkSdXnZa99jmnJ7S4Jn8wyVaUbHJRlCvtPoteWOByiLGNGeIBXVWcWMFRIizyFaPIGhg/?imgmax=800" title="Add Columns -- Webpage Dialog_2012-03-13_13-10-04"></a></p>
+<p>Select Address 1: City and Address 1: Country and click Ok.</p>
+<p>4- You can specify the query sorting. Click Configure Sorting on the left to open the Configure Sort Order dialog</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiANAjuv38TUV2Y9DUsjJAY1b7oqc1ECtE1wNSCXuiTqeMxfMwRAPF-x5jBkInmiaPCthJemCXv-rVhP41LSuw9vIKmB-sjV_aFl4cgYgt-vorIzpANCqk_UtKx_DVNWiTRGuXO2B36Xw/s1600-h/Configure%252520Sort%252520Order%25255B3%25255D.jpg"><img alt="Configure Sort Order" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8R6hWO4V2i-eqrHfRgBtZlJEa6S743M9CdXQQySU3qJDr3pZ47MEHzqiLgCV3AQ9tSzabYBf290XAxr-zm9Kb1kPFYw_dbBum3eUw1fP6bwoaZUlMhtj6iB1zkPsvJZAwgZdtxyw2hA/?imgmax=800" title="Configure Sort Order"></a></p>
+<p>You can specify two columns only for the sorting criteria.</p>
+<p>5- You can remove any column by click its name on the right and click Remove from the left.</p>
+<p>When you done with editing the query columns click OK to return to the Advanced Find window. Now, click Download Fetch XML on the ribbon to download the Fetch query in a .xml file format to use inside SQL Business Intelligence Development Studio.</p>
+<p>Now to add a custom Fetch-based report to our Report project, Right click <strong>Reports</strong> folder and click <strong>Add New Report</strong>. Click Next on the Report Wizard welcome screen.</p>
+<p>1- On the Select the Data Source page, click <strong>New Data Source</strong>, and specify the following details:</p>
+<ul>
+<li><strong>Name</strong>: Type a name for the data source.</li>
+<li><strong>Type</strong>: Select <strong>Microsoft Dynamics CRM Fetch</strong>.</li>
+<li><strong>Connection String</strong>: copy the connection string we prepared earlier and past it here.</li>
+<li>Click on Credentials and enter your live account and password you used in CRM Online and click Ok. Then click Next</li>
+</ul>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcehIwxJgCvoiQsOWa74a8cnO9KDXMdi1B4OhROLc_sUMrtjtzF_WOTfS3ztRuoL3Ds85iVstUTfM5W0iLziasxDvrcrM92XKQkPrFoL-XqNUX6zgXEuvfPhx5-FTW2FeaY2-dR65fJw/s1600-h/Data%252520Source%252520Credentials_2012-03-13_15-07-56%25255B3%25255D.jpg"><img alt="Data Source Credentials_2012-03-13_15-07-56" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsqudw0Anuzyi18f-0_UEA2qjrhb4DW1MESdEJw3yGpoMryhr6D-8rx6HnpEWSnCyPNWhjuYwD7ATeC64mRT1g5T3VE6urCWEMXdmqF-I04x7V6iRHx-0HUcBnXUZaqBo9kx-3h_0Vqg/?imgmax=800" title="Data Source Credentials_2012-03-13_15-07-56"></a></p>
+<p>2- On the Design the Query page, click on Query Builder. On the Query Designer dialog, click Import and browse to the xml file you downloaded earlier.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnq82fJCHmD1YuMX10sYgornXINMnrC_acE83eiaNUaVwydTrkPXXSChC60WdY_OhwDlaliYh5j7FpUU7vvQQAklLVRKefSAXZtGN7WOV9m2nViWIv2cu42WKYOyR-I24-1Dpqwvs4gA/s1600-h/Query%252520Designer_2012-03-13_15-24-04%25255B4%25255D.jpg"><img alt="Query Designer_2012-03-13_15-24-04" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnWyTcDUzk5CPOpjn76RooMLMjhyJw7Y1ARS3C_5aV3SEGoYpHQLzPlRJ20G8D-R6bJnZlw_KGEF8behHV9pHZNwWSHnOFxq98TS9fiOJedilETjtan2_tcsYWXu5I1IkzaqwjAxcINA/?imgmax=800" title="Query Designer_2012-03-13_15-24-04"></a> </p>
+<p>You can click on Run to test the query. Click Ok to close the Query Designer dialog, and Click Next.</p>
+<p>Complete the Wizard steps just like the SQL-based report, it is the same.</p>
+<p>As you can create queries using Business Intelligence Development Studio, you can also use it to modify complex queries.</p>
+<p><strong>Import Custom Reports into Dynamics CRM</strong></p>
+<p>To complete the cycle and let the report used by your organization, you need to import it into CRM. Follow the following steps to import our report:</p>
+<p>1- Navigate to My Work &gt; Reports &gt; click New on the ribbon. The New Report window will open.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifWjr4dcI2cd4qNjOipUSpBJj6fUIuYs-BhzV_hmoYwW-Mv_g_3YdrTcjfAkWACDxZFQdfJoaah63MWSvmdguQKE8mcQQCjXAIiFh6g3leTIzwdtjvjiO3UpC1q6trZposB-cIt0QTGQ/s1600-h/Report%252520New%252520-%252520Windows%252520Internet%252520Explorer_2012-03-13_17-07-32%25255B4%25255D.jpg"><img alt="Report New - Windows Internet Explorer_2012-03-13_17-07-32" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBuqI_XrwoVTYM3S5oC79lNwdEtyoDig1M1lxYozqYEuL_Cy6xV_U8-EkhVrCwN3pFzAq4CYYQGMxSBuMwx49zWaXLnWOgzr9B_3MQmEbvlJQiZzE4f0crMPmZiomk99AitQsfpKaQ3w/?imgmax=800" title="Report New - Windows Internet Explorer_2012-03-13_17-07-32"></a></p>
+<p>Click Browse and select your .rdl report file. Enter the report name. Near the bottom of the window there is a Display In field which decides areas where your reports will be displayed. By default new reports will be displayed in Reports area,  You can click the eclipse button if you want to make it displayed in forms or lists of the related entities, then select desired values and move them to Selected Values list.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTD-7443QH1c_1SqtBrJnBUGeZk_LzgEuP4jdz4iuV9jbIGRiCrxJTlfxNFHfpSEFbzniIGE0-1QY_cL3G-6OIXm-nct2K1Oj0l-BNvltNL0i7nc7DI936mL0SMYs-IMW32QBg0jLrAQ/s1600-h/Select%252520Values%252520--%252520Webpage%252520Dialog_2012-03-13_17-20-21%25255B3%25255D.jpg"><img alt="Select Values &ndash; Webpage Dialog_2012-03-13_17-20-21" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEnWy5Na2Uz3P_z-xeBiFahozLYPeC6GT34Qgrk_rOVRKI9UYnXy7Y1iKcwaUoo5R8MjwDFxhIqq_U_9KmTsEwXnqZOaDUQLb71xOSJ_5Qjx9H1UbAtqRydZO1zPwTQ4syr9HYAIr-Uw/?imgmax=800" title="Select Values -- Webpage Dialog_2012-03-13_17-20-21"></a></p>
+<p>In the New Report window, if you want to make the report accessible by the whole organization click the Administration tab and change the Viewable By field from Individual to Organization.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPjXAS-v1D72v9Wq_ZhbcYiOIhqU5iaYtG3dkhOfcOUYmQlyafWxo50oyR71AQhiHp7U_ShQgbaP__f3XILYg5r0PFI6TEolR4eht4XOLkNtTUreuKlbYwKnWIhO8i2r4ZMxk08uGGOg/s1600-h/Report%252520New%252520-%252520Windows%252520Internet%252520Explorer_2012-03-13_17-14-18%25255B5%25255D.jpg"><img alt="Report New - Windows Internet Explorer_2012-03-13_17-14-18" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnTlU8NtBOrLAeOpiErvIFXZB-PEoHitqM_YHr5dalO2RhbZwNk55yLN17VNIt8t3Fa9E99r3GatTD0JnnCNOPeLh_H552U0o9TzqiVLDWOfe_Kr96frzLxkJob8YVOKeUj1Owj50rXg/?imgmax=800" title="Report New - Windows Internet Explorer_2012-03-13_17-14-18"></a></p>
+<p>Click Save and Close. Now our report will be available in the Reports area of configured accessibility level [Organization or Individual].</p>
+<blockquote>
+<p>To copy a report between organizations or deployments, include the report and any custom entities the report uses in a solution. This ensures that the entity types are mapped automatically by the system</p>
+</blockquote>
+<p>In this post we used the Business Intelligence Development Studio to create both SQL-based and Fetch-based custom reports for on-premise and on-line CRM deployments. We also learned how to upload our reports to Dynamics CRM and make them accessible to the whole organization and through many access points.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/2012/03/microsoft-dynamics-crm-2011-for.html">↩ Microsoft Dynamics CRM 2011 for Developers | Web Resources Part 1</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/blog/swap/"> SWAP ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        <a href="https://themes.gohugo.io/themes/adritian-free-hugo-theme">© Adritian</a>. Free Hugo theme by <a href="https://www.adrianmoreno.info">Adrián Moreno Peña</a>.</br><a href="https://github.com/Ebeid/ebeid.github.io">Site content and code available in GitHub</a>.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

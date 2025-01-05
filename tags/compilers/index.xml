@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Compilers on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/compilers/</link>
-    <description>Recent content in Compilers on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Tue, 20 Aug 2013 15:49:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/compilers/index.xml" rel="self" type="application/rss+xml" />
+    <title>Compilers on </title>
+    <link>http://localhost:1313/tags/compilers/</link>
+    <description>Recent content in Compilers on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Aug 2013 15:49:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/compilers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Syntax Analysis using Microsoft Roslyn</title>
-      <link>https://ebeid.github.io/blog/2013-08-20-getting-started-with-microsoft-roslyn/</link>
+      <link>http://localhost:1313/2013/08/getting-started-with-microsoft-roslyn.html</link>
       <pubDate>Tue, 20 Aug 2013 15:49:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-08-20-getting-started-with-microsoft-roslyn/</guid>
-      <description>In a previous post we talked about Microsoft Roslyn. In this post will get our hands dirty with Roslyn syntax analysis in order to develop our first code-focused program. We will see how the SyntaxTree of HelloWorld program look like and how we can traverse and query it.
-The Syntax API exposes the syntax trees the compilers use to understand Visual Basic and C# programs. They are produced by the same parser that runs when a project is built or a developer hits F5.</description>
+      <guid>http://localhost:1313/2013/08/getting-started-with-microsoft-roslyn.html</guid>
+      <description>&lt;p&gt;In a previous &lt;a href=&#34;http://ebeid-soliman.blogspot.com/2013/08/overview-of-microsoft-roslyn-first.html&#34;&gt;post&lt;/a&gt; we talked about Microsoft &lt;a href=&#34;http://msdn.microsoft.com/en-us/vstudio/roslyn.aspx&#34; title=&#34;Microsoft® “Roslyn” CTP&#34;&gt;Roslyn&lt;/a&gt;. In this post will get our hands dirty with Roslyn syntax analysis in order to develop our first code-focused program. We will see how the SyntaxTree of HelloWorld program look like and how we can traverse and query it.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;strong&gt;Syntax API&lt;/strong&gt; exposes the syntax trees the compilers use to understand Visual Basic and C# programs. They are produced by the same parser that runs when a project is built or a developer hits F5. The four primary building blocks of syntax trees are:&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Overview of Microsoft Roslyn – The first compiler-as-service product</title>
-      <link>https://ebeid.github.io/blog/2013-08-19-overview-of-microsoft-roslyn-first.html/</link>
+      <title>Overview of Microsoft Roslyn – The first compiler-as-service product.</title>
+      <link>http://localhost:1313/2013/08/overview-of-microsoft-roslyn-first.html</link>
       <pubDate>Mon, 19 Aug 2013 21:00:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-08-19-overview-of-microsoft-roslyn-first.html/</guid>
-      <description>Introduction From developer perspective, compilers are black boxes &amp;ndash; source code goes in one end, magic happens in the middle, and object files or assemblies come out the other end. During their job, compilers build up a deep understanding of our code. For decades this valuable information was unreachable.
-The Roslyn project aims to open compilers for developers and offer it as services. Through Roslyn, compilers become services with APIs that can be used for code related tasks in your tools and applications.</description>
+      <guid>http://localhost:1313/2013/08/overview-of-microsoft-roslyn-first.html</guid>
+      <description>&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;p&gt;From developer perspective, compilers are black boxes &amp;ndash; source code goes in one end, magic happens in the middle, and object files or assemblies come out the other end. During their job, compilers build up a deep understanding of our code. For decades this valuable information was unreachable.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;http://msdn.microsoft.com/en-us/vstudio/roslyn.aspx&#34; title=&#34;Microsoft® “Roslyn” CTP&#34;&gt;Roslyn project&lt;/a&gt; aims to open compilers for developers and offer it as services. Through Roslyn, compilers become services with APIs that can be used for code related tasks in your tools and applications.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

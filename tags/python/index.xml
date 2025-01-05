@@ -1,135 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/python/</link>
-    <description>Recent content in Python on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sat, 15 Aug 2009 00:31:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <title>Python on </title>
+    <link>http://localhost:1313/tags/python/</link>
+    <description>Recent content in Python on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 15 Aug 2009 00:31:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Python Scripts with IIS 7</title>
-      <link>https://ebeid.github.io/blog/2009-08-15-using-python-scripts-with-iis-7.html/</link>
+      <link>http://localhost:1313/2009/08/using-python-scripts-with-iis-7.html</link>
       <pubDate>Sat, 15 Aug 2009 00:31:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2009-08-15-using-python-scripts-with-iis-7.html/</guid>
-      <description>Here are the steps you should make if you want to use python scripts on IIS 7:
-Please make sure Python is installed properly or refer to Python Notes – 1 : Setup for installation steps. Make sure CGI module is installed in IIS 7. Control Panel -&amp;gt; Programs -&amp;gt; Program and Features -&amp;gt; Turn Windows features on and off -&amp;gt; Internet Information Services -&amp;gt; World Wide Web Services -&amp;gt; Application Development Features -&amp;gt; CGI module (Ensure that it is selected).</description>
+      <guid>http://localhost:1313/2009/08/using-python-scripts-with-iis-7.html</guid>
+      <description>&lt;p&gt;Here are the steps you should make if you want to use python scripts on IIS 7:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Please make sure Python is installed properly or refer to &lt;a href=&#34;http://ebeid-soliman.blogspot.com/2009/03/python-notes-1.html&#34;&gt;Python Notes – 1 : Setup&lt;/a&gt; for installation steps.&lt;/li&gt;&#xA;&lt;li&gt;Make sure CGI module is installed in IIS 7.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Control Panel&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Programs&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Program and Features&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Turn Windows features on and off&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Internet Information Services&lt;/strong&gt; -&amp;gt; &lt;strong&gt;World Wide Web Services&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Application Development Features&lt;/strong&gt; -&amp;gt; &lt;strong&gt;CGI module&lt;/strong&gt; (Ensure that it is selected).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Python Notes – 10 : Threading</title>
-      <link>https://ebeid.github.io/blog/2009-03-28-python-notes-10.html/</link>
+      <link>http://localhost:1313/2009/03/python-notes-10.html</link>
       <pubDate>Sat, 28 Mar 2009 07:55:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2009-03-28-python-notes-10.html/</guid>
-      <description>Welcome to our tenth note in the Python learning process. In this note we will talk about threading, threads communication and synchronization.
-Threads basics A running program is called a &amp;ldquo;process&amp;rdquo;. Each process has memory, list of open files, stack, program counter, etc…. Normally, a process executes statements in a single sequence of control-flow.
-The following commands create an entirely new process: fork(),system(), popen(), etc… This child process runs independently of the parent.</description>
+      <guid>http://localhost:1313/2009/03/python-notes-10.html</guid>
+      <description>&lt;p&gt;Welcome to our tenth note in the Python learning process. In this note we will talk about threading, threads communication and synchronization.&lt;/p&gt;&#xA;&lt;h4 id=&#34;threads-basics&#34;&gt;Threads basics&lt;/h4&gt;&#xA;&lt;p&gt;A running program is called a &amp;ldquo;process&amp;rdquo;. Each process has memory, list of open files, stack, program counter, etc…. Normally, a process executes statements in a single sequence of control-flow.&lt;/p&gt;&#xA;&lt;p&gt;The following commands create an entirely new process: fork(),system(), popen(), etc… This child process runs independently of the parent. Has own set of resources. There is minimal sharing of information between parent and child.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Python Notes – 9 : Serialization</title>
-      <link>https://ebeid.github.io/blog/2009-03-27-python-notes-9.html/</link>
+      <link>http://localhost:1313/2009/03/python-notes-9.html</link>
       <pubDate>Fri, 27 Mar 2009 01:53:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2009-03-27-python-notes-9.html/</guid>
-      <description>Welcome to our ninth note in our Python learning process. We talked previously about files and how to handle it but we talked about writing and reading only the primitive data types as integers and strings. We also talked about objects and classes. Now, what if we want to write a compound data type or a complex object to a file. This note will talk about writing objects to files, which is called object serialization.</description>
+      <guid>http://localhost:1313/2009/03/python-notes-9.html</guid>
+      <description>&lt;p&gt;Welcome to our ninth note in our Python learning process. We talked previously about files and how to handle it but we talked about writing and reading only the primitive data types as integers and strings. We also talked about objects and classes. Now, what if we want to write a compound data type or a complex object to a file. This note will talk about writing objects to files, which is called object serialization.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Python Notes – 8 : Object-Oriented Basics</title>
-      <link>https://ebeid.github.io/blog/2009-03-27-python-notes-8.html/</link>
+      <link>http://localhost:1313/2009/03/python-notes-8.html</link>
       <pubDate>Fri, 27 Mar 2009 01:51:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2009-03-27-python-notes-8.html/</guid>
-      <description>Welcome to our eighth note in our Python learning process. This note will talk about object oriented features in Python.
-Classes and Objects A class definition looks like this:
-class Point:
-pass
-Class definitions can appear anywhere in a program, but they are usually near the beginning (after the import statements). By creating the Point class, we created a new type, also called Point. The members of this type are called instances of the type or objects.</description>
+      <guid>http://localhost:1313/2009/03/python-notes-8.html</guid>
+      <description>&lt;p&gt;Welcome to our eighth note in our Python learning process. This note will talk about object oriented features in Python.&lt;/p&gt;&#xA;&lt;h4 id=&#34;classes-and-objects&#34;&gt;Classes and Objects&lt;/h4&gt;&#xA;&lt;p&gt;A class definition looks like this:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;class Point:&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;    pass&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Class definitions can appear anywhere in a program, but they are usually near the beginning (after the import statements). By creating the Point class, we created a new type, also called Point. The members of this type are called instances of the type or objects. Creating a new instance is called instantiation. To instantiate a Point object, we call a function named Point:&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Python Notes – 7 : Files &amp; directories</title>
-      <link>https://ebeid.github.io/blog/2009-03-23-python-notes-7.html/</link>
+      <title>Python Notes – 7 : Files &amp;amp; directories</title>
+      <link>http://localhost:1313/2009/03/python-notes-7.html</link>
       <pubDate>Mon, 23 Mar 2009 10:12:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2009-03-23-python-notes-7.html/</guid>
-      <description>Welcome to our seventh note in our Python learning process. This note will talk specifically about files, directories, and exceptions.
-Files Opening a file creates a file object. Syntax is like that:
-&amp;gt;&amp;gt;&amp;gt; f = open(&amp;ldquo;test.dat&amp;rdquo;,&amp;ldquo;w&amp;rdquo;)
-&amp;gt;&amp;gt;&amp;gt; print f
-&amp;lt;open file &amp;rsquo;test.dat&amp;rsquo;, mode &amp;lsquo;w&amp;rsquo; at fe820&amp;gt;
-The first parameter to open is the file name, the second parameter is the mode. Modes are: w for write, r for read.
-To write data in the file we invoke the write method on the file object:</description>
+      <guid>http://localhost:1313/2009/03/python-notes-7.html</guid>
+      <description>&lt;p&gt;Welcome to our seventh note in our Python learning process. This note will talk specifically about files, directories, and exceptions.&lt;/p&gt;&#xA;&lt;h4 id=&#34;files&#34;&gt;Files&lt;/h4&gt;&#xA;&lt;p&gt;Opening a file creates a file object. Syntax is like that:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; f = open(&amp;ldquo;test.dat&amp;rdquo;,&amp;ldquo;w&amp;rdquo;)&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; print f&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;lt;open file &amp;rsquo;test.dat&amp;rsquo;, mode &amp;lsquo;w&amp;rsquo; at fe820&amp;gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;The first parameter to open is the file name, the second parameter is the mode. Modes are: w for write, r for read.&lt;/p&gt;&#xA;&lt;p&gt;To write data in the file we invoke the write method on the file object:&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Python Notes – 6 : Tuples &amp; Dictionaries</title>
-      <link>https://ebeid.github.io/blog/2009-03-23-python-notes-6.html/</link>
+      <title>Python Notes – 6 : Tuples &amp;amp; Dictionaries</title>
+      <link>http://localhost:1313/2009/03/python-notes-6.html</link>
       <pubDate>Mon, 23 Mar 2009 09:06:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2009-03-23-python-notes-6.html/</guid>
-      <description>Welcome to our sixth note in our Python learning process. In this note we will talk about tuples and dictionaries.
-Tuples Tuples are similar to lists but its elements can&amp;rsquo;t be modified. Syntactically, a tuple is a comma-separated list of values:
-&amp;gt;&amp;gt;&amp;gt; tuple = &amp;lsquo;a&amp;rsquo;, &amp;lsquo;b&amp;rsquo;, &amp;lsquo;c&amp;rsquo;, &amp;rsquo;d&amp;rsquo;, &amp;rsquo;e&amp;rsquo;
-Although it is not necessary, it is conventional to enclose tuples in parentheses:
-&amp;gt;&amp;gt;&amp;gt; tuple = (&amp;lsquo;a&amp;rsquo;, &amp;lsquo;b&amp;rsquo;, &amp;lsquo;c&amp;rsquo;, &amp;rsquo;d&amp;rsquo;, &amp;rsquo;e&amp;rsquo;)</description>
+      <guid>http://localhost:1313/2009/03/python-notes-6.html</guid>
+      <description>&lt;p&gt;Welcome to our sixth note in our Python learning process. In this note we will talk about tuples and dictionaries.&lt;/p&gt;&#xA;&lt;h4 id=&#34;tuples&#34;&gt;Tuples&lt;/h4&gt;&#xA;&lt;p&gt;Tuples are similar to lists but its elements can&amp;rsquo;t be modified. Syntactically, a tuple is a comma-separated list of values:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; tuple = &amp;lsquo;a&amp;rsquo;, &amp;lsquo;b&amp;rsquo;, &amp;lsquo;c&amp;rsquo;, &amp;rsquo;d&amp;rsquo;, &amp;rsquo;e&amp;rsquo;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Although it is not necessary, it is conventional to enclose tuples in parentheses:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; tuple = (&amp;lsquo;a&amp;rsquo;, &amp;lsquo;b&amp;rsquo;, &amp;lsquo;c&amp;rsquo;, &amp;rsquo;d&amp;rsquo;, &amp;rsquo;e&amp;rsquo;)&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Python Notes – 5 : Objects &amp; Values</title>
-      <link>https://ebeid.github.io/blog/2009-03-23-python-notes-5.html/</link>
+      <title>Python Notes – 5 : Objects &amp;amp; Values</title>
+      <link>http://localhost:1313/2009/03/python-notes-5.html</link>
       <pubDate>Mon, 23 Mar 2009 07:49:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2009-03-23-python-notes-5.html/</guid>
-      <description>Welcome to our fifth note in our Python learning process. In this note we will talk about one of the core concepts of the Python language semantics .
-Objects and Values
-An object is something a variable can refer to. Every object has a unique identifier, which we can obtain with the id function.
-&amp;gt;&amp;gt;&amp;gt; a = &amp;ldquo;banana&amp;rdquo;
-&amp;gt;&amp;gt;&amp;gt; b = &amp;ldquo;banana&amp;rdquo;
-&amp;gt;&amp;gt;&amp;gt; id(a)
-135044008
-&amp;gt;&amp;gt;&amp;gt; id(b)
-135044008
-Interestingly, lists behave differently.</description>
+      <guid>http://localhost:1313/2009/03/python-notes-5.html</guid>
+      <description>&lt;p&gt;Welcome to our fifth note in our Python learning process. In this note we will talk about one of the core concepts of the Python language semantics .&lt;/p&gt;&#xA;&lt;p&gt;Objects and Values&lt;/p&gt;&#xA;&lt;p&gt;An object is something a variable can refer to. Every object has a unique identifier, which we can obtain with the id function.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; a = &amp;ldquo;banana&amp;rdquo;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; b = &amp;ldquo;banana&amp;rdquo;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; id(a)&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;135044008&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; id(b)&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;135044008&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Interestingly, lists behave differently. When we create two lists, we get two&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>Python Notes – 4 : Lists</title>
+      <link>http://localhost:1313/2009/03/python-notes-4.html</link>
+      <pubDate>Mon, 23 Mar 2009 05:13:00 -0500</pubDate>
+      <guid>http://localhost:1313/2009/03/python-notes-4.html</guid>
+      <description>&lt;p&gt;Welcome to our third note in our Python learning process. In this note we will talk mainly about lists, its functions and how to use it.&lt;/p&gt;&#xA;&lt;h4 id=&#34;lists---creation&#34;&gt;Lists - Creation&lt;/h4&gt;&#xA;&lt;p&gt;A list is an ordered set of values, where each value is identified by an index. The values that make up a list are called its elements. You could create it like:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; X = [12, 56, 87]&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; print X&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;[12, 56, 87]&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Python Notes – 3 : Control Statements</title>
-      <link>https://ebeid.github.io/blog/2009-03-19-python-notes-3.html/</link>
+      <link>http://localhost:1313/2009/03/python-notes-3.html</link>
       <pubDate>Thu, 19 Mar 2009 08:59:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2009-03-19-python-notes-3.html/</guid>
-      <description>Welcome to our third note in our Python learning process. In this note we will talk about conditional statements, iteration and keyboard input.
-Conditional Statements The normal flow of statements execution is sequential where the interpreter executes the statements in the same sequence that it appears in the script. If your program logic requires a different flow than the that, you should use conditional statements. The syntax looks like:
-if x%2 == 0:</description>
+      <guid>http://localhost:1313/2009/03/python-notes-3.html</guid>
+      <description>&lt;p&gt;Welcome to our third note in our Python learning process. In this note we will talk about conditional statements, iteration and keyboard input.&lt;/p&gt;&#xA;&lt;h4 id=&#34;conditional-statements&#34;&gt;Conditional Statements&lt;/h4&gt;&#xA;&lt;p&gt;The normal flow of statements execution is sequential where the interpreter executes the statements in the same sequence that it appears in the script. If your program logic requires a different flow than the that, you should use conditional statements. The syntax looks like:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;if x%2 == 0:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Python Notes – 2 : Variables, Statements, Expressions, Operators, and Functions</title>
-      <link>https://ebeid.github.io/blog/2009-03-18-python-notes-2.html/</link>
+      <link>http://localhost:1313/2009/03/python-notes-2.html</link>
       <pubDate>Wed, 18 Mar 2009 15:25:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2009-03-18-python-notes-2.html/</guid>
-      <description>Welcome to our second note in our Python learning process. In this note we will talk about variables, statements, expressions, operators, comments, and functions. These are the very basic building blocks of you programs whatever its final size
-Variables The assignment statement creates new variables and gives them values
-&amp;gt;&amp;gt;&amp;gt; message = &amp;ldquo;What&amp;rsquo;s up, Doc?&amp;rdquo;
-&amp;gt;&amp;gt;&amp;gt; n = 17
-&amp;gt;&amp;gt;&amp;gt; pi = 3.14159
-Python is a dynamically typed language. Which means that variables&#39; types don&amp;rsquo;t have to be defined before the variables use.</description>
+      <guid>http://localhost:1313/2009/03/python-notes-2.html</guid>
+      <description>&lt;p&gt;Welcome to our second note in our Python learning process. In this note we will talk about variables, statements, expressions, operators, comments, and functions. These are the very basic building blocks of you programs whatever its final size&lt;/p&gt;&#xA;&lt;h4 id=&#34;variables&#34;&gt;Variables&lt;/h4&gt;&#xA;&lt;p&gt;The assignment statement creates new variables and gives them values&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; message = &amp;ldquo;What&amp;rsquo;s up, Doc?&amp;rdquo;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; n = 17&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;gt;&amp;raquo; pi = 3.14159&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Python is a dynamically typed language. Which means that variables&amp;rsquo; types don&amp;rsquo;t have to be defined before the variables use. The python interpreter figure out what type a variable is when you first assign it a value.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Python Notes – 1 : Setup</title>
-      <link>https://ebeid.github.io/blog/2009-03-18-python-notes-1.html/</link>
+      <link>http://localhost:1313/2009/03/python-notes-1.html</link>
       <pubDate>Wed, 18 Mar 2009 08:55:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2009-03-18-python-notes-1.html/</guid>
-      <description>I write this notes about Python during my learning process of it. I&amp;rsquo;m not an expert in Python. I&amp;rsquo;m just writing this notes while I learn Python aiming to help others who are learning it too. Never hesitate to comment on anything you want.
-Origins of Python Developed by Guido van Rossum. Derived from ABC, a teaching language that was developed in 1980s. Why Pyhton ? Python code is pretty simple, compact and easy to learn.</description>
+      <guid>http://localhost:1313/2009/03/python-notes-1.html</guid>
+      <description>&lt;p&gt;I write this notes about Python during my learning process of it. I&amp;rsquo;m not an expert in Python. I&amp;rsquo;m just writing this notes while I learn Python aiming to help others who are learning it too. Never hesitate to comment on anything you want.&lt;/p&gt;&#xA;&lt;h4 id=&#34;origins-of-python&#34;&gt;Origins of Python&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Developed by Guido van Rossum.&lt;/li&gt;&#xA;&lt;li&gt;Derived from ABC, a teaching language that was developed in 1980s.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;why-pyhton-&#34;&gt;Why Pyhton ?&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Python code is pretty simple, compact and easy to learn.&lt;/li&gt;&#xA;&lt;li&gt;Code simplicity let you focus on the core program functionality.&lt;/li&gt;&#xA;&lt;li&gt;Suitable for programming languages introductory courses.&lt;/li&gt;&#xA;&lt;li&gt;Provides a balance between the practical and the conceptual. You start writing after the first tutorial; and if you want to go further in advanced topics you will find a large library of modules that can be used to do all sorts of tasks ranging from web-programming to graphics.&lt;/li&gt;&#xA;&lt;li&gt;Python borrows features from both functional programming languages and object-oriented programming languages, which enables it to serve as an excellent foundation for introducing important computer science concepts.&lt;/li&gt;&#xA;&lt;li&gt;Python allow you to see higher level of success and a lower level of frustration :)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;how-to-setup-python-&#34;&gt;How to setup Python ?&lt;/h4&gt;&#xA;&lt;p&gt;Python is free downloadable from many source, and it have also many IDEs and editors. Aiming to start coding quickly without wasting time in IDE exploration, setup, configuration problems; we will use just the &lt;a href=&#34;http://downloads.activestate.com/ActivePython/windows/2.6/ActivePython-2.6.1.1-win32-x86.msi&#34;&gt;ActivePython.&lt;/a&gt; Let&amp;rsquo;s see how to do that:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

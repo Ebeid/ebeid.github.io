@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#portfolio"
+                >PORTFOLIO</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/blog">Blog</a></span></li><li class="breadcrum-item"><span><a href="/blog/blog">Blog</a></span></li><li class="breadcrum-item current">An introduction to Microsoft Message Queuing</li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/blog/blog/2011-11-17-introduction-to-microsoft-message.html/">An introduction to Microsoft Message Queuing</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Thu Nov 17, 2011</h4>
+              ·
+              <h4 id="wordcount">730 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/msmq/">MSMQ</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p><strong>What is MSMQ ?</strong> Message Queuing (also known as MSMQ) is a messaging
+infrastructure and a development tool for creating distributed messaging
+applications for Microsoft Windows operating systems. Applications
+developed for Message Queuing send messages to queues, which are
+temporary storage locations, from which messages can proceed to their
+final destination as conditions permit.</p>
+<p><strong>Installing MSMQ</strong> The procedures to install MSMQ on Windows Server
+2008, Winows Server 2008 R2, Windows 7, Windows Vista, Windows XP, and
+Windows Server 2003 are available
+<a href="http://msdn.microsoft.com/en-us/library/aa967729.aspx" title="Installing Message Queuing (MSMQ)">here</a></p>
+<p><strong>Basic Messaging</strong></p>
+<p><a href="http://lh4.ggpht.com/-BIn-NR6GGNQ/TsUC7bfFDKI/AAAAAAAAAKo/nn1sOeBP1ow/s1600-h/MSMQ1%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>The image shows the basic messaging scenario. You have two applications:
+a sending application and a receiving application. A sending application
+prepares a message and puts it into a queue. A message can be any piece
+of information that the receiving application understands. The receiving
+application receives the message from the queue and processes it. One
+thing to note here is that the sender and the receiver are not tightly
+coupled and they can work without the other application being online.</p>
+<p><strong>Messaging in .Net</strong> To build a messaging application we need to create
+at least three components: queue, application to send messages, and
+another application to receive these messages.</p>
+<p><strong>Types of queues</strong> The basic types of MSMQ queues are: private and
+public. Public queues are those that are published in the active
+directory. So, applications running on different servers throughout the
+network can find and use public queues through the active directory.
+Private queues on the other hand are available locally on a particular
+machine and are not published in the active directory.</p>
+<p><strong>Creating a Queue</strong> Queues can be created either programmatically or
+through the computer management snap-in (if you installed MSMQ on your
+machine).</p>
+<ul>
+<li>
+<p><strong>Programmatically</strong> The System.Messaging.M<code>essageQueue </code>class
+provides all the necessary functionality to work with and manipulate
+MSMQ queues. It is like a wrapper around message queuing.
+MessageQueue.Create(path) creates a non-transactional message queue
+at the specified path (we will talk about transactional and
+non-transactional queues later). For public queues, path is
+MachineName\QueueName. For private queues,
+MachineName\Private$\QueueName. You can use &ldquo;.&rdquo; for the local
+computer. Code should look like:</p>
+<p>MessageQueue privateQueue = MessageQueue.Create(&quot;.\Private$\privateQueue&quot;);</p>
+</li>
+<li>
+<p><strong>Through the computer management snap-in</strong> Open the computer
+management snap-in (right click computer, then manage). Navigate to
+Services and Applications, then Message Queuing. Right click on
+Private Queues –&gt; New –&gt; Private Queue. Or right click on
+public Queues –&gt; New –&gt; Public Queue.</p>
+</li>
+</ul>
+<p><a href="http://lh6.ggpht.com/--VAHZ6yAB10/TsVgDjIqZ8I/AAAAAAAAAKw/GdRORuiOjfI/s1600-h/MMC%25255B5%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p><strong>Sending a message</strong> Use Send() method of your previously created
+MessageQueue object like so</p>
+<pre><code>privateQueue.Send(&quot;Message Body (could be any managed object)&quot;, &quot;Message Label&quot;);
+</code></pre>
+<p><strong>Receiving a message</strong> There are two types of operations with respect
+to reading a message fom the Queue: Peeking and Receiving. When we
+receive a message from the queue, the message is removed from the queue.
+Peeking is similar to Receiving but here the message is not removed from
+the queue. Code could look like</p>
+<pre><code>MessageQueue anotherPrivateQueue = new MessageQueue(&quot;.\\Private$\\privateQueue&quot;);
+
+
+
+
+System.Messaging.Message msg = anotherPrivateQueue.Receive();
+</code></pre>
+<p><strong>Additional Considerations</strong> before writing the first complete
+messaging application</p>
+<ul>
+<li>You have to check if there is already a Message Queuing queue with
+the same name before creating your new queue. Use
+MessageQueue.Exists(path) to check for queue existence.</li>
+<li>When receiving a message and before accessing its body, you have to
+set the Formatter property of the Message object. There is a lot of
+built-in formatters. For now, we can use XMLFormatter.</li>
+</ul>
+<p>Now, let’s get things together into a “Hello, World” example. Open
+Visual Studio, New project, Windows forms. All reference to
+System.Messaging namespace. Then edit your code to look like so:</p>
+<pre><code>using System;
+
+using System.Collections.Generic;
+
+using System.Linq;
+
+using System.Text;
+
+using System.Messaging;
+
+
+
+namespace MSMQ_Demo
+
+{
+
+    class Program
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+            try
+
+            {
+
+                MessageQueue privateQueue;
+
+                if (!MessageQueue.Exists(&quot;.\\Private$\\privateQueue&quot;))
+
+                    privateQueue = MessageQueue.Create(&quot;.\\Private$\\privateQueue&quot;);
+
+                else
+
+                    privateQueue = new MessageQueue(&quot;.\\Private$\\privateQueue&quot;);
+
+
+
+                privateQueue.Send(&quot;Hello, World !&quot;, &quot;Message Label&quot;);
+
+                MessageQueue anotherPrivateQueue = new MessageQueue(&quot;.\\Private$\\privateQueue&quot;);
+
+                System.Messaging.Message msg = anotherPrivateQueue.Receive();
+
+                msg.Formatter = new System.Messaging.XmlMessageFormatter(new Type[1] { typeof(string) });
+
+                Console.WriteLine(msg.Body.ToString());
+
+            }
+
+            catch (Exception ex)
+
+            {
+
+                Console.WriteLine(ex.Message);
+
+            }
+
+        }
+
+    }
+
+}
+</code></pre>
+<p>If you run the project, you will see a message-box displaying “Hello,
+World !”. This message content created by had been sent from MSMQ queue,
+received by another MSMQ, and processed. In our example both the sending
+and the receiving queues exist in the same application for the sake of
+simplicity. In real world applications they reside in very different
+areas.</p>
+<p>This is a very basic introduction to MSMQ and non-transactional queues.
+In future posts, we will explore more advanced topics in MSMQ.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/blog/blog/2011-10-21-asserts-in-nunit.html/">↩ Asserts in NUnit</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/blog/blog/2011-11-22-in-previous-post-we-explored-very-basic.html/"> An introduction to Microsoft Message Queuing–Part 2 ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        © Adritian. Free Hugo theme by Adrián Moreno Peña.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#portfolio">PORTFOLIO</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+      <nav class="language-selector">
+        <ul>
+          
+            
+            <li class="dropdown">
+              <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="languages-dropdown">
+                <span class="label">Language</span>    
+              </button>
+            <ul class="dropdown__menu" id="languages-dropdown">
+              <li class="current"><span>✔️ English</span></li>
+              
+              
+            
+              
+            
+              
+              
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

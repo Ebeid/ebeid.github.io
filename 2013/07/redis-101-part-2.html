@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#experience"
+                >EXPERIENCE</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/2013">2013th</a></span></li><li class="breadcrum-item"><span><a href="/2013/07">7th</a></span></li><li class="breadcrum-item"><span><a href="/2013/07/redis-101-part-2.html">Redis 101 part 2.html</a></span></li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/2013/07/redis-101-part-2.html">Redis 101– Part 2</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Wed Jul 3, 2013</h4>
+              ·
+              <h4 id="wordcount">795 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/redis/">Redis</a></li>
+              
+              <li><a href="/tags/nosql/">NoSQL</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p>We introduced many of the <a href="http://redis.io/" title="Redis">Redis</a>’s fundamental concepts and commands in the last post. In this post we going to introduce some advanced features.</p>
+<h4 id="publish-subscribe">Publish-Subscribe</h4>
+<p>Previously we queued data that could be read by a blocking pop command. Using that queue, we made a very basic publish-subscribe model. Any number of messages could be pushed to this queue, and a single queue reader would pop messages as they were available. This is powerful but limited. Redis provides some specialized publish-subscribe (or pub-sub) commands.</p>
+<ul>
+<li><strong>SUBSCRIBE</strong> subscribe a client to a key, known as a channel in pub-sub terminology; client will block until messages are available.</li>
+</ul>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMlSGXKPf5_H8yGrRwLoNuh_J2o-6IR2gB6gJG7x0-Furq9mcz2n_lhCK2Iupjm8_vbfQId0_PXVL8jhXkLC7q64xRs_LFHmInjBh7FFKsktHGYkp81t4by16QuWSACb97ZLY6PtwwkA/s1600-h/Redis%252520Client_2013-07-01_16-25-11%25255B3%25255D.png"><img alt="Redis Client_2013-07-01_16-25-11" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEip_rPKeJ1NpXyTnpHm1gG5oOWM8wcAjMEEjN0xF0XwEv1EFiFVw3XD-An1D2AN47qijPmkHNDNJa94sYWUzrJ5wdVpj6RQTU4icX03FqbQtgV3rfJ4Pswg14TQj5LEZqBFLo7kJykDcQ/?imgmax=800" title="Redis Client_2013-07-01_16-25-11"></a></p>
+<ul>
+<li>
+<p><strong>PUBLISH</strong> will push message into the channel returning how many subscribers have received it</p>
+</li>
+<li>
+<p>Publisher window <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMZxalDWkAJxguo9mNAfkwG2iZWGon8uIs_C5pCw0uGsayHJ2l3WDXxZ-NTMoSgQ9apZ2_wl1BiCGVL-XtoexvBnYQbCqDSfQs3WqLbGQB3h7HxSuXV0nPYIq50IUgCY8oqV0dzsDWKA/s1600-h/Redis%252520Client_2013-07-01_16-27-41%25255B5%25255D.png"><img alt="Redis Client_2013-07-01_16-27-41" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEii84qjPghCJzV8zEh4eXDZ8rMBoeemK-lrD-UBKuWaenMcRcz2XwbZ477HmAlXX1ya0WLhJgSrPlywbc1Jr6hr7ZWM4BoYItT-8TCB_gPtAP8S4LDO8SCPqUJoGze56UyDQ-BoUPWS2A/?imgmax=800" title="Redis Client_2013-07-01_16-27-41"></a></p>
+</li>
+<li>
+<p>Subscriber window receives : the string “message”, the channel name, the published message value <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimmQdXTnAoa_jvKHUsXgFiWTUacJUWoxf3nxbj8RniQonTLjxOxQ2bnJGIK1SunN_LU1USlV1j0y6CqwdldXQP42htNpeB1r1tdHHxc5AyaK40vkcraW72eCIHdtQ-VactRucgK5eJnw/s1600-h/Redis%252520Client_2013-07-01_16-28-53%25255B5%25255D.png"><img alt="Redis Client_2013-07-01_16-28-53" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvWShFExdKF3ffzu9ra2uoVC-F1V7xzusCTzgBZ1qZIXBTgUpgeKrMo8FIkTLuGO_YNaMHWXWAAlQvSV000oRFUEkAkIzd9aoVcqFxIy9n8V-htO5Vm0lIPCKiH78_hW06JTAUpBolkw/?imgmax=800" title="Redis Client_2013-07-01_16-28-53"></a></p>
+</li>
+<li>
+<p>UNSUBSCRIBE unsubscribe or disconnect from the specified channel. If no channel name provided, it will disconnect from all channels.</p>
+</li>
+</ul>
+<h4 id="server-information">Server Information</h4>
+<ul>
+<li><strong>INFO</strong> returns a list of server data, including version, process ID, memory used, and uptime.</li>
+</ul>
+<p>In order to change any of the Redis’s default configurations, you need to edit redis.config file at C:\Program Files\Redis\conf . It is fairly self-explanatory.</p>
+<h4 id="durability">Durability</h4>
+<p>Redis has a few persistence options:</p>
+<ul>
+<li>
+<p>No persistence at all, which simply keeps all values in main memory.</p>
+</li>
+<li>
+<p>Forced save</p>
+</li>
+<li>
+<p>Use command <strong>SAVE</strong> to force server to save database to disk.</p>
+</li>
+<li>
+<p>Use command <strong>BGSAVE</strong> to force server to save database to disk asynchronously in the background.</p>
+</li>
+<li>
+<p>Use command <strong>LASTSAVE</strong> to get a timestamp of the last time a Redis disk write succeeded (also provided through the <em>last_save_time</em> field in the server <strong>INFO</strong> output).</p>
+</li>
+</ul>
+<h4 id="snapshotting">Snapshotting</h4>
+<p>By default Redis saves snapshots of the dataset on disk, in a binary file called dump.rdb. You can configure Redis to have it save the dataset every N seconds if there are at least M changes in the dataset, or you can manually force it by calling the SAVE or BGSAVE commands as we said before. For example, the following configuration will make Redis automatically dump the dataset to disk every 60 seconds if at least 1000 keys changed (This strategy is known as <em>snapshotting</em>.):</p>
+<p>save 60 1000 </p>
+<h4 id="append-only-file">Append-only file</h4>
+<p>Snapshotting is not very durable. If your computer running Redis stops, the latest data written on Redis will get lost. While this may not be a big deal for some applications, there are use cases for full durability, and in these cases Redis was not a viable option.</p>
+<p>The <em>append-only file</em> is an alternative, fully-durable strategy for Redis. It became available in version 1.1. You can turn on the AOF in your configuration file:</p>
+<p>appendonly yes</p>
+<p>Then we must decide how often a command is appended to the file. Setting <em>always</em> is the more durable, since every command is saved. By default <em>everysec</em> is enabled, which saves up and writes commands only once a second. This is a decent trade-off, since it’s fast enough, and worst case you’ll lose only the last one second of data. Finally, <em>no</em> is an option, which just lets the OS handle flushing. It can be fairly infrequent, and not recommended.</p>
+<p>appendfsync always</p>
+<p># appendfsync everysec</p>
+<p># appendfsync no</p>
+<p>From now on, every time Redis receives a command that changes the dataset (e.g. SET) it will append it to the AOF. When you restart Redis it will re-play the AOF to rebuild the state. Append-only has more detailed parameters, you could refer to the online documentation for more details.</p>
+<h4 id="security">Security</h4>
+<p>Redis provides command-level security through obscurity, by allowing you to hide or suppress commands. This will rename the FLUSHALL command (remove all keys from the system) into some hard-to-guess value like c283d93ac9528f986023793b411e4ba2:</p>
+<p>rename-command FLUSHALL c283d93ac9528f986023793b411e4ba2</p>
+<p>If we attempt to execute FLUSHALL against this server, we’ll be hit with an error. We can also disable the command entirely by setting it to a blank string.</p>
+<p>rename-command FLUSHALL &quot;&quot;</p>
+<p>You can set any number of commands to a blank string to allow only a customized subset of the Redis’s commands.</p>
+<h4 id="benchmarking">Benchmarking</h4>
+<p>Redis provides an excellent benchmarking tool. It connects locally to port 6379 by default and issues 10,000 requests using 50 parallel clients. Tool test many commands and have a long output report. Tool is in C:\Program Files\Redis\</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2lY-BkxedOV8tfSews2zK9gkRWMgr72erS3fKUJyP0Unsi9sdmR1LMMY7ez5kTaysxjM51JTCAej6l7wGHP3cHBCDUlxdh4hEMZ6WSBtkL6MbJfXaI71atpwJbsQkTIbQBM3A5xxIgg/s1600-h/CWindowssystem32cmd.exe_2013-07-02_09-15-52%25255B3%25255D.png"><img alt="CWindowssystem32cmd.exe_2013-07-02_09-15-52" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFkKkyntKxJwAmF7ZxyZHVe7B5WGrS7o6_puBxOD1-FftJzdJBQG-YPUdkLCYSzFvtQLaBEplFRBk1B0ZUZWd4YOINvPKtTvBzZCimPSurBJzvznTUcUWNBAy1BWJilb3KQY7YKJ9-6A/?imgmax=800" title="CWindowssystem32cmd.exe_2013-07-02_09-15-52"></a></p>
+<h4 id="replication">Replication</h4>
+<p>Redis supports master-slave replication. One server is the master by default if you don’t set it as a slave of anything. Data will be replicated to any number of slave servers. Configuring master-slave setting is the same as running another instance with the slaveof option in the salve’s conf file set to the master IP and port. Refer to our previous <a href="http://ebeid-soliman.blogspot.com/2013/07/running-multiple-redis-instances-on.html" title="Running multiple Redis instances on the same server">post</a> for more details.</p>
+<p>This concludes out Redis 101 tutorial, we tried to touch all basic and moderate features in it. Later we going to show how to write C# programs against Redis.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/2013/07/running-multiple-redis-instances-on.html">↩ Running multiple Redis instances on the same server</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/2013/07/blog-post.html"> جريدة الشروق : تقرير شهادات سكان عمارات العبور ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        <a href="https://themes.gohugo.io/themes/adritian-free-hugo-theme">© Adritian</a>. Free Hugo theme by <a href="https://www.adrianmoreno.info">Adrián Moreno Peña</a>.</br><a href="https://github.com/Ebeid/ebeid.github.io">Site content and code available in GitHub</a>.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

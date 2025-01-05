@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#experience"
+                >EXPERIENCE</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/2011">2011th</a></span></li><li class="breadcrum-item"><span><a href="/2011/10">10th</a></span></li><li class="breadcrum-item"><span><a href="/2011/10/structuring-unit-tests-in-nunit.html">Structuring unit tests in nunit.html</a></span></li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/2011/10/structuring-unit-tests-in-nunit.html">Structuring unit tests in NUnit</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Fri Oct 21, 2011</h4>
+              ·
+              <h4 id="wordcount">1177 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/nunit/">NUnit</a></li>
+              
+              <li><a href="/tags/unit-testing/">Unit Testing</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p>Our goal in the previous post Introduction to NUnit, was just to introduce the unit testing using NUnit as simple as possible. Now it is the time to elaborate more on NUnit framework, structuring and organizing your test cases. If you examined the test code again:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode, .csharpcode pre<!-- raw HTML omitted -->{<!-- raw HTML omitted --> font-size: small;<!-- raw HTML omitted --> color: black;<!-- raw HTML omitted --> font-family: consolas, &ldquo;Courier New&rdquo;, courier, monospace;<!-- raw HTML omitted --> background-color: #ffffff;<!-- raw HTML omitted --> /*white-space: pre;*/<!-- raw HTML omitted -->}<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode pre { margin: 0em; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .rem { color: #008000; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .kwrd { color: #0000ff; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .str { color: #006080; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .op { color: #0000c0; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .preproc { color: #cc6633; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .asp { background-color: #ffff00; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .html { color: #800000; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .attr { color: #ff0000; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .alt <!-- raw HTML omitted -->{<!-- raw HTML omitted --> background-color: #f4f4f4;<!-- raw HTML omitted --> width: 100%;<!-- raw HTML omitted --> margin: 0em;<!-- raw HTML omitted -->}<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .lnum { color: #606060; }</p>
+<pre tabindex="0"><code> 1: using System;
+</code></pre><pre tabindex="0"><code> 2: using NUnit.Framework;
+</code></pre><pre tabindex="0"><code> 3: namespace ClassLibrary1
+</code></pre><pre tabindex="0"><code> 4: {
+</code></pre><pre tabindex="0"><code> 5:    \[TestFixture\]
+</code></pre><pre tabindex="0"><code> 6:    public class CmpTest
+</code></pre><pre tabindex="0"><code> 7:    {
+</code></pre><pre tabindex="0"><code> 8:        \[Test\]
+</code></pre><pre tabindex="0"><code> 9:        public void LargestOf3()
+</code></pre><pre tabindex="0"><code> 10:        {
+</code></pre><pre tabindex="0"><code> 11:            int\[\] numbers = new int\[\] { 8, 9, 7 };
+</code></pre><pre tabindex="0"><code> 12:            Assert.That(Cmp.Largest(numbers), Is.EqualTo(9));
+</code></pre><pre tabindex="0"><code> 13:        }
+</code></pre><pre tabindex="0"><code> 14:    }
+</code></pre><pre tabindex="0"><code> 15: }
+</code></pre><p>The code is pretty straightforward. The using statement on line 2 brings in the necessary NUnit classes.</p>
+<p>Next, we have the class definition on line 6: each class that contains tests must be annotated with a [TestFixture] attribute. The class have to be public, so the test runners can run it. The class must have a public, no-parameter constructor.</p>
+<p>Finally, the test class contains individual methods annotated with [Test] attributes. Any public, parameterless method specified with a [Test] attribute will be run automatically by NUnit.</p>
+<p><strong>Structuring Unit Tests</strong></p>
+<p>As a good object-oriented design concept, a class should be focused on one responsibility and only one. This applies to test fixtures as well. Test fixtures should be focused on verifying behavior in a specific scenario. Its name should reflect this scenario. Tests inside that fixture should test different behaviors within this scenario. Tests should be organized around <em>behaviors</em>, not necessarily individual methods. To keep things readable and clear in the test runner output, favor putting fixture classes under a namespace that includes the name of the class that the fixture are testing. <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode, .csharpcode pre<!-- raw HTML omitted -->{<!-- raw HTML omitted --> font-size: small;<!-- raw HTML omitted --> color: black;<!-- raw HTML omitted --> font-family: consolas, &ldquo;Courier New&rdquo;, courier, monospace;<!-- raw HTML omitted --> background-color: #ffffff;<!-- raw HTML omitted --> /*white-space: pre;*/<!-- raw HTML omitted -->}<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode pre { margin: 0em; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .rem { color: #008000; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .kwrd { color: #0000ff; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .str { color: #006080; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .op { color: #0000c0; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .preproc { color: #cc6633; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .asp { background-color: #ffff00; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .html { color: #800000; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .attr { color: #ff0000; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .alt <!-- raw HTML omitted -->{<!-- raw HTML omitted --> background-color: #f4f4f4;<!-- raw HTML omitted --> width: 100%;<!-- raw HTML omitted --> margin: 0em;<!-- raw HTML omitted -->}<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .lnum { color: #606060; }</p>
+<pre tabindex="0"><code> 1: namespace solutionName.Test.ShoppingCartTest
+</code></pre><pre tabindex="0"><code> 2: {
+</code></pre><pre tabindex="0"><code> 3:    \[TestFixture\]
+</code></pre><pre tabindex="0"><code> 4:    public class EmptyCartFixture
+</code></pre><pre tabindex="0"><code> 5:    {
+</code></pre><pre tabindex="0"><code> 6:        \[Test\]
+</code></pre><pre tabindex="0"><code> 7:        public void OverallRateIsZero() { }
+</code></pre><pre tabindex="0"><code> 8:    }
+</code></pre><pre tabindex="0"><code> 9: }
+</code></pre><p><strong>Categories</strong></p>
+<p>NUnit provides an easy way to mark and run individual test and fixtures by using categories. A category is just a name that we define. We can associate different test methods with one or more categories, that enable us to select which categories we want to exclude (or include) when running the tests. A category is specified as an attribute. <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode, .csharpcode pre<!-- raw HTML omitted -->{<!-- raw HTML omitted --> font-size: small;<!-- raw HTML omitted --> color: black;<!-- raw HTML omitted --> font-family: consolas, &ldquo;Courier New&rdquo;, courier, monospace;<!-- raw HTML omitted --> background-color: #ffffff;<!-- raw HTML omitted --> /*white-space: pre;*/<!-- raw HTML omitted -->}<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode pre { margin: 0em; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .rem { color: #008000; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .kwrd { color: #0000ff; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .str { color: #006080; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .op { color: #0000c0; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .preproc { color: #cc6633; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .asp { background-color: #ffff00; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .html { color: #800000; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .attr { color: #ff0000; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .alt <!-- raw HTML omitted -->{<!-- raw HTML omitted --> background-color: #f4f4f4;<!-- raw HTML omitted --> width: 100%;<!-- raw HTML omitted --> margin: 0em;<!-- raw HTML omitted -->}<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .lnum { color: #606060; }</p>
+<pre tabindex="0"><code> 1: using System;
+</code></pre><pre tabindex="0"><code> 2: using NUnit.Framework;
+</code></pre><pre tabindex="0"><code> 3: namespace ClassLibrary1
+</code></pre><pre tabindex="0"><code> 4: {
+</code></pre><pre tabindex="0"><code> 5:    \[TestFixture\]
+</code></pre><pre tabindex="0"><code> 6:    public class CmpTest
+</code></pre><pre tabindex="0"><code> 7:    {
+</code></pre><pre tabindex="0"><code> 8:        \[Test\]
+</code></pre><pre tabindex="0"><code> 9:        \[Category(&#34;Short&#34;)\]
+</code></pre><pre tabindex="0"><code> 10:        public void LargestOf3()
+</code></pre><pre tabindex="0"><code> 11:        {
+</code></pre><pre tabindex="0"><code> 12:            int\[\] numbers = new int\[\] { 8, 9, 7 };
+</code></pre><pre tabindex="0"><code> 13:            Assert.That(Cmp.Largest(numbers), Is.EqualTo(9));
+</code></pre><pre tabindex="0"><code> 14:        }
+</code></pre><pre tabindex="0"><code> 15:  
+</code></pre><pre tabindex="0"><code> 16:        \[Test\]
+</code></pre><pre tabindex="0"><code> 17:        \[Category(&#34;Long&#34;)\]
+</code></pre><pre tabindex="0"><code> 18:        \[Category(&#34;Fred&#34;)\]
+</code></pre><pre tabindex="0"><code> 19:        public void LargestOf3Alt()
+</code></pre><pre tabindex="0"><code> 20:        {
+</code></pre><pre tabindex="0"><code> 21:            int\[\] numbers = new int\[3\];
+</code></pre><pre tabindex="0"><code> 22:            numbers\[0\] = 1;
+</code></pre><pre tabindex="0"><code> 23:            numbers\[1\] = 1;
+</code></pre><pre tabindex="0"><code> 24:            numbers\[2\] = 1;
+</code></pre><pre tabindex="0"><code> 25:            Assert.That(Cmp.Largest(numbers), Is.EqualTo(1));
+</code></pre><pre tabindex="0"><code> 26:        }
+</code></pre><pre tabindex="0"><code> 27:  
+</code></pre><pre tabindex="0"><code> 28:        \[SetUp\]
+</code></pre><pre tabindex="0"><code> 29:        public void LargestOf3Alt2()
+</code></pre><pre tabindex="0"><code> 30:        {
+</code></pre><pre tabindex="0"><code> 31:            int\[\] numbers = new int\[1\];
+</code></pre><pre tabindex="0"><code> 32:            numbers\[0\] = 0;
+</code></pre><pre tabindex="0"><code> 33:            Assert.That(Cmp.Largest(numbers), Is.EqualTo(0));
+</code></pre><pre tabindex="0"><code> 34:        }
+</code></pre><pre tabindex="0"><code> 35:    }
+</code></pre><pre tabindex="0"><code> 36: }
+</code></pre><p>In the GUI, if you excluded “Short” methods from run, only LargestOf3() will be selected and executed.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIvhqVBoYMfJYP5GnI1KN8fo4L2BuZdezxUXHiaGcgmNrJh25Iqxf45F1y5sOafLfiFpNV-5uwIG4ozVV9-Cwd36_wjsNwQUdfmcJxPsRuIYkKA66kH7V_iYjgBba76_MUmP4-R_HRBw/s1600-h/NUnit35.jpg"><img alt="NUnit3" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-1fA6DhLNv9vP_pAZ0DNSSDodlYvkC6I1lb_7nGd0jhXzso4BSZM_KwnMN0-1CAZBmGHQqQTielgfiCPFG1UJSJu65UexQAH4Kr4GYut1-jjcikdKDwEX-rbvY3jKNwd2aY8BsIqmOg/?imgmax=800" title="NUnit3"></a></p>
+<p>When categories are used, only the tests in the selected categories will be run. Those tests in categories that are not selected are not reported at all. If no category selected in the GUI, then all methods will be executed unless it is tagged with Explicit attribute. The Explicit attribute causes a test or test fixture to be ignored unless it is explicitly selected for running.</p>
+<p><strong>Per-Method Setup and Teardown</strong> We should write our test in order that each test can run independently of other tests; this allows us to run any test at any time in any order. In order to accomplish that we may need to reset things between tests or clean up after a test has run. [Setup] and [TearDown] attributes are used for these tasks.</p>
+<p><strong>Per-Fixture Setup and Teardown</strong> If we need to set something up or clean up after the entire test class has run, use [TestFixtureSetup] and [TestFixtureTearDown] for that.</p>
+<p>Although setup and teardown methods generally come in pair, they don’t have to do so.</p>
+<p>Suppose we need some sort of database connection for each test. Rather than duplicating code in each test method that connects to and disconnects from the database, we could use SetUp and TearDown methods. Since creating the initial connection to the database can be slow, we may want to do that only once before all the tests run by using TestFixtureSetUp. <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode, .csharpcode pre<!-- raw HTML omitted -->{<!-- raw HTML omitted --> font-size: small;<!-- raw HTML omitted --> color: black;<!-- raw HTML omitted --> font-family: consolas, &ldquo;Courier New&rdquo;, courier, monospace;<!-- raw HTML omitted --> background-color: #ffffff;<!-- raw HTML omitted --> /*white-space: pre;*/<!-- raw HTML omitted -->}<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode pre { margin: 0em; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .rem { color: #008000; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .kwrd { color: #0000ff; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .str { color: #006080; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .op { color: #0000c0; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .preproc { color: #cc6633; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .asp { background-color: #ffff00; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .html { color: #800000; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .attr { color: #ff0000; }<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .alt <!-- raw HTML omitted -->{<!-- raw HTML omitted --> background-color: #f4f4f4;<!-- raw HTML omitted --> width: 100%;<!-- raw HTML omitted --> margin: 0em;<!-- raw HTML omitted -->}<!-- raw HTML omitted --><!-- raw HTML omitted -->.csharpcode .lnum { color: #606060; }</p>
+<pre tabindex="0"><code> 1: \[TestFixture\]
+</code></pre><pre tabindex="0"><code> 2: public class DBTest
+</code></pre><pre tabindex="0"><code> 3: {
+</code></pre><pre tabindex="0"><code> 4:    private SqlConnection dbConn;
+</code></pre><pre tabindex="0"><code> 5:            
+</code></pre><pre tabindex="0"><code> 6:    \[TestFixtureSetUp\]
+</code></pre><pre tabindex="0"><code> 7:    public void PerFixtureSetup()
+</code></pre><pre tabindex="0"><code> 8:    {
+</code></pre><pre tabindex="0"><code> 9:        dbConn = new SqlConnection(&#34;ConnectionString&#34;);
+</code></pre><pre tabindex="0"><code> 10:        dbConn.Open();
+</code></pre><pre tabindex="0"><code> 11:    }
+</code></pre><pre tabindex="0"><code> 12:  
+</code></pre><pre tabindex="0"><code> 13:    \[SetUp\]
+</code></pre><pre tabindex="0"><code> 14:    public void PerTestSetup()
+</code></pre><pre tabindex="0"><code> 15:    {
+</code></pre><pre tabindex="0"><code> 16:        //populate database with test data
+</code></pre><pre tabindex="0"><code> 17:    }
+</code></pre><pre tabindex="0"><code> 18:  
+</code></pre><pre tabindex="0"><code> 19:    \[TearDown\]
+</code></pre><pre tabindex="0"><code> 20:    public void PerTestTearDown()
+</code></pre><pre tabindex="0"><code> 21:    {
+</code></pre><pre tabindex="0"><code> 22:        // clean up database
+</code></pre><pre tabindex="0"><code> 23:    }
+</code></pre><pre tabindex="0"><code> 24:  
+</code></pre><pre tabindex="0"><code> 25:    \[TestFixtureTearDown\]
+</code></pre><pre tabindex="0"><code> 26:    public void PerFixtureTearDown()
+</code></pre><pre tabindex="0"><code> 27:    {
+</code></pre><pre tabindex="0"><code> 28:        dbConn.Close();
+</code></pre><pre tabindex="0"><code> 29:        dbConn.Dispose();
+</code></pre><pre tabindex="0"><code> 30:    }
+</code></pre><pre tabindex="0"><code> 31:  
+</code></pre><pre tabindex="0"><code> 32:    \[Test\]
+</code></pre><pre tabindex="0"><code> 33:    public void AccountAccess()
+</code></pre><pre tabindex="0"><code> 34:    {
+</code></pre><pre tabindex="0"><code> 35:        // Uses dbConn
+</code></pre><pre tabindex="0"><code> 36:    }
+</code></pre><pre tabindex="0"><code> 37:  
+</code></pre><pre tabindex="0"><code> 38:    \[Test\]
+</code></pre><pre tabindex="0"><code> 39:    public void EmployeeAccess()
+</code></pre><pre tabindex="0"><code> 40:    {
+</code></pre><pre tabindex="0"><code> 41:        // Uses dbConn
+</code></pre><pre tabindex="0"><code> 42:    }
+</code></pre><pre tabindex="0"><code> 43: }
+</code></pre><p>In this example, here is the methods run sequence: PerFixtureSetup &raquo; PerTestSetup &raquo; AccountAccess &raquo; PerTestTearDown &raquo; PerFixtureTearDown &raquo; PerFixtureSetup &raquo; PerTestSetup &raquo; EmployeeAccess &raquo; PertestTearDown &raquo; PerFixtureTearDown.</p>
+<p>In this post we tried to elaborate more on the NUnit framework and how we structure and organize test cases in NUnit.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/2011/10/introduction-to-nunit.html">↩ Introduction to NUnit</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/2011/10/asserts-in-nunit.html"> Asserts in NUnit ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        <a href="https://themes.gohugo.io/themes/adritian-free-hugo-theme">© Adritian</a>. Free Hugo theme by <a href="https://www.adrianmoreno.info">Adrián Moreno Peña</a>.</br><a href="https://github.com/Ebeid/ebeid.github.io">Site content and code available in GitHub</a>.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

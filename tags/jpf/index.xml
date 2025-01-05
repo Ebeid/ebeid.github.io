@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JPF on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/jpf/</link>
-    <description>Recent content in JPF on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sat, 30 Mar 2013 19:06:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/jpf/index.xml" rel="self" type="application/rss+xml" />
+    <title>JPF on </title>
+    <link>http://localhost:1313/tags/jpf/</link>
+    <description>Recent content in JPF on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 30 Mar 2013 19:06:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/jpf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with Java PathFinder</title>
-      <link>https://ebeid.github.io/blog/2013-03-30-getting-started-with-java-pathfinder.html/</link>
+      <link>http://localhost:1313/2013/03/getting-started-with-java-pathfinder.html</link>
       <pubDate>Sat, 30 Mar 2013 19:06:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-03-30-getting-started-with-java-pathfinder.html/</guid>
-      <description>Java™ Pathfinder, or &amp;ldquo;JPF&amp;rdquo; as we call it from here, is a highly customizable execution environment for verification of Java™ bytecode programs. JPF was developed at the NASA Ames Research Center, open sourced in 2005, and is freely available here under the NOSA 1.3 license. JPF started as a software model checker but it integrates model checking, program analysis and testing.
-In this post we will go in a step by step process to setup the environment where Java Path Finder can be used within Eclipse IDE environment.</description>
+      <guid>http://localhost:1313/2013/03/getting-started-with-java-pathfinder.html</guid>
+      <description>&lt;p&gt;Java™ Pathfinder, or &lt;strong&gt;&lt;em&gt;&amp;ldquo;JPF&amp;rdquo;&lt;/em&gt;&lt;/strong&gt; as we call it from here, is a highly customizable execution environment for verification of Java™ bytecode programs. &lt;strong&gt;&lt;a href=&#34;http://babelfish.arc.nasa.gov/trac/jpf/&#34;&gt;JPF&lt;/a&gt;&lt;/strong&gt; was developed at the &lt;a href=&#34;http://www.arc.nasa.gov&#34;&gt;NASA Ames Research Center&lt;/a&gt;, open sourced in 2005, and is freely available &lt;a href=&#34;http://babelfish.arc.nasa.gov/trac/jpf/&#34;&gt;here&lt;/a&gt; under the &lt;a href=&#34;http://javapathfinder.sourceforge.net/NOSA-1.3-JPF.txt&#34;&gt;NOSA 1.3&lt;/a&gt; license. &lt;strong&gt;JPF&lt;/strong&gt; started as a software model checker but it integrates model checking, program analysis and testing.&lt;/p&gt;&#xA;&lt;p&gt;In this post  we will go in a step by step process to setup the  environment where Java Path Finder can be used within Eclipse IDE environment. We will show a simple example of using JPF.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

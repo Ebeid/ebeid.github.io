@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#portfolio"
+                >PORTFOLIO</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/blog">Blog</a></span></li><li class="breadcrum-item"><span><a href="/blog/blog">Blog</a></span></li><li class="breadcrum-item current">SQL Server Dedicated Administrator Connection</li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/blog/blog/2010-04-11-sql-server-dedicated-administrator.html/">SQL Server Dedicated Administrator Connection</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Sun Apr 11, 2010</h4>
+              ·
+              <h4 id="wordcount">264 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/test/">Test</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p>Microsoft SQL Server provides a dedicated administrator connection (DAC)
+which allows an administrator to access a running instance of SQL Server
+Database Engine to troubleshoot problems on the server—even when the
+server is unresponsive to other client connections. The DAC is available
+through the <strong>sqlcmd</strong> utility and SQL Server Management Studio. The
+connection is only allowed from a client running on the server. No
+network connections are permitted.</p>
+<p>To use SQL Server Management Studio with the DAC, connect to an instance
+of the SQL Server Database Engine with Query Editor by typing <strong>ADMIN:</strong>
+before the server name. Object Explorer cannot connect using the DAC.</p>
+<p>To connect to a server using the DAC</p>
+<ol>
+<li>
+<p>In SQL Server Management Studio, with no other DACs open, on the
+toolbar, click <strong>Database Engine Query</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Connect to Database Engine</strong> dialog box, in the <strong>Server
+name</strong> box, type <strong>ADMIN:</strong> followed by the name of the server
+instance. For example, to connect to a server instance named
+<strong>ACCT\PAYABLE</strong>, type <strong>ADMIN:ACCT\PAYABLE</strong>.</p>
+</li>
+<li>
+<p>Complete the <strong>Authentication</strong> section, providing credentials for a
+member of the <strong>sysadmin</strong> group, and then click <strong>Connect</strong>.</p>
+<p>The connection is made.</p>
+<p>If the DAC is already in use, the connection will fail with an error
+indicating it cannot connect.</p>
+</li>
+</ol>
+<p>If you are trying to that and got the following error:</p>
+<blockquote>
+<p>Dedicated administrator connections are not supported.
+(ObjectExplorer)</p>
+</blockquote>
+<p>It means that you are trying to connect Object Explorer using the DAC.
+Object Explorer cannot connect using the DAC; only Query Window can.
+That means that you cannot press the New Query button; you have to use
+the Database Engine Query button.</p>
+<p><a href="http://photos1.blogger.com/blogger2/7616/913/1600/pic2440.2.png"><!-- raw HTML omitted --></a></p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/blog/blog/2010-04-10-what-is-swebok-guide.html/">↩ What is the SWEBOK Guide?</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/blog/blog/2010-04-11-sql-server-metadata.html/"> SQL Server Metadata ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        © Adritian. Free Hugo theme by Adrián Moreno Peña.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#portfolio">PORTFOLIO</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+      <nav class="language-selector">
+        <ul>
+          
+            
+            <li class="dropdown">
+              <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="languages-dropdown">
+                <span class="label">Language</span>    
+              </button>
+            <ul class="dropdown__menu" id="languages-dropdown">
+              <li class="current"><span>✔️ English</span></li>
+              
+              
+            
+              
+            
+              
+              
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

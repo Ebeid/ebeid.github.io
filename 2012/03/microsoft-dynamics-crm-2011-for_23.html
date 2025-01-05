@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#experience"
+                >EXPERIENCE</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/2012">2012th</a></span></li><li class="breadcrum-item"><span><a href="/2012/03">3rd</a></span></li><li class="breadcrum-item"><span><a href="/2012/03/microsoft-dynamics-crm-2011-for_23.html">Microsoft dynamics crm 2011 for 23.html</a></span></li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/2012/03/microsoft-dynamics-crm-2011-for_23.html">Microsoft Dynamics CRM 2011 for Developers | Plug-ins</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Fri Mar 23, 2012</h4>
+              ·
+              <h4 id="wordcount">1977 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/dynamics-crm-plug-in-registration-tool/">Dynamics CRM Plug-in Registration Tool</a></li>
+              
+              <li><a href="/tags/microsoft-dynamics-crm-2011/">Microsoft Dynamics CRM 2011</a></li>
+              
+              <li><a href="/tags/plug-ins/">Plug-Ins</a></li>
+              
+              <li><a href="/tags/wcf/">WCF</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><h4 id="contents"><strong>Contents</strong></h4>
+<ol>
+<li>Introduction</li>
+<li>Common Uses of Plug-ins</li>
+<li>Plug-ins Basics
+<ol>
+<li>Event Framework</li>
+<li>Event Execution Pipeline</li>
+<li>Pipeline Stages</li>
+<li>Message Processing</li>
+<li>Inclusion in Database Transactions </li>
+<li>Plug-in Isolation</li>
+<li>Trusts</li>
+</ol>
+</li>
+<li>Develop Plug-ins</li>
+<li>Register Plug-ins</li>
+</ol>
+<p><strong>Introduction</strong></p>
+<p>A plug-in is .Net assembly that can be used to intercept events generated from the CRM system. Plug-ins subscribe to a set of events and run when the events occur regardless of how the event raised (or the method that is used to perform the activity that raised the event).</p>
+<p>Any number of plug-ins can be associated with a given entity and event. When multiple plug-ins are registered for the same event on the same entity, they are called in a sequence based on the order specified on the step registration. This value is specified as the Rank and it is supplied when the plug-in is registered. This allows developer control over the sequence.</p>
+<p><strong>Common Uses of Plug-ins</strong></p>
+<p>Plug-ins have many uses like:</p>
+<ul>
+<li>Performing complex business logic data validation</li>
+<li>Performing complex update routines on CRM entities and/or attributes when it is impractical to use JavaScript.</li>
+<li>Grabbing data from another system and updating CRM when an entity instance is being created or updated.</li>
+<li>Updating another system programmatically from CRM</li>
+</ul>
+<p><strong>Plug-ins Basics</strong></p>
+<p><strong>Event Framework</strong> Event framework is the term that is used to describe the technology and mechanisms available in Microsoft Dynamics CRM to enable you to extend or customize functionality with custom code. Your custom code will run on top of Dynamics CRM either synchronously as part of the main Microsoft Dynamics CRM execution path, or asynchronously from a managed queue.</p>
+<p><strong>Event Execution Pipeline</strong> Event framework executes plug-ins based on a message pipeline execution model. A user action in the Microsoft Dynamics CRM Web application or an SDK method call by a plug-in or other application results in a message being sent to the organization Web service. The message contains business entity information and core operation information. The message is passed through the event execution pipeline where it can be read or modified by the platform core operation and any registered plug-ins.</p>
+<p>The event execution pipeline processes events either synchronously or asynchronously. The platform core operation and any plug-ins registered for synchronous execution are executed immediately. Synchronous plug-ins that are registered for the event are executed in a well-defined order. Plug-ins registered for asynchronous execution are queued by the Asynchronous Queue Agent and executed at a later time by the asynchronous service.</p>
+<p><strong>Pipeline Stages</strong> The event execution pipeline is divided into multiple stages, four of them are available to register custom developed plug-ins. Multiple plug-ins that are registered in each stage can be further be ordered (ranked) within that stage during plug-in registration.</p>
+<p><strong>Event</strong></p>
+<p><strong>Stage name</strong></p>
+<p><strong>Stage number</strong></p>
+<p><strong>Description</strong></p>
+<p>Pre-Event</p>
+<p>Pre-validation</p>
+<p>10</p>
+<ul>
+<li>
+<p>For plug-ins that execute before the main system operation.</p>
+</li>
+<li>
+<p>Plug-ins may execute outside the database transaction.</p>
+</li>
+<li>
+<p>For plug-ins run prior to making security checks on the calling user.  </p>
+</li>
+</ul>
+<p>Pre-Event</p>
+<p>Pre-operation</p>
+<p>20</p>
+<ul>
+<li>
+<p>For plug-ins that execute before the main system operation.</p>
+</li>
+<li>
+<p>Plug-ins execute within the database transaction.</p>
+</li>
+</ul>
+<p>Platform Core Operation</p>
+<p>MainOperation</p>
+<p>30</p>
+<ul>
+<li>Dedicated to main system operations.</li>
+<li>For internal use only, no custom plug-ins can register in this stage.</li>
+</ul>
+<p>Post-Event</p>
+<p>Post-operation</p>
+<p>40</p>
+<ul>
+<li>For plug-ins that execute after the main operation.</li>
+<li>Plug-ins execute within the database transaction.</li>
+</ul>
+<p>Post-Event</p>
+<p>Post-operation<br>
+(Deprecated)</p>
+<p>50</p>
+<ul>
+<li>For Dynamics CRM 4.0 based plug-ins ONLY.</li>
+</ul>
+<p><strong>Message Processing</strong> as we saw in a previous <a href="http://ebeid-soliman.blogspot.com/2012/03/accessing-microsoft-dynamics-crm-2011.html">post</a>, any web service method call is done through OrganizationRequest message. This call raises an event. Information in this message is passed to first plug-in registered for that event. Plug-in receives the message information in the form of context that is passed to its Execute method, where it can be read or modify its contents before passing it to the next registered plug-in for that event and so on. The message then passed to the platform core operation. After the core platform operation has completed, the message is then known as the OrganizationResponse. This response is passed to the registered post-event plug-ins which may modify it before a copy of the response is passed to any registered asynchronous plug-ins. Finally, the response is returned to the application or workflow that initiated the original Web service method call.</p>
+<p>Because a single Microsoft Dynamics CRM server can host more than one organization, the execution pipeline is organization specific. Plug-ins registered with the pipeline can only process business data for a single organization.</p>
+<p><strong>Inclusion in Database Transactions</strong> Plug-ins can execute or not execute within the database transaction of the Dynamics CRM platform. Within the plug-in, you can detect that through the IsInTransaction property in IPluginExecutionContext that is passed to the plug-in. Any registered plug-in that executes during the database transaction and that passes an exception back to the platform cancels the core operation. This results in a rollback of the core operation. In addition, any pre-event or post event registered plug-ins that have not yet executed and any workflow that is triggered by the same event that the plug-in was registered for will not execute.</p>
+<p><strong>Plug-in Isolation</strong> The execution of plug-ins can be in an isolated environment, known as a <em>sandbox</em>, where a plug-in can access and use the organization Web service only. Plug-ins can’t access system resources but can access to external endpoints (only through HTTP and HTTPS). CRM platform collects run-time statistics and monitors plug-ins that execute in the sandbox, if it exceeded certain thresholds or became unresponsive, it kills the sandbox worker process (this makes all currently executing plug-ins in the current organization fail).</p>
+<p><strong>Trusts</strong></p>
+<ul>
+<li>Full trust Plug-ins run outside the sandbox, available in on-premises and internet facing deployments.</li>
+<li>Partial trust Plug-ins run inside the sandbox, available in all deployments.</li>
+</ul>
+<p><strong>Develop Plug-ins</strong></p>
+<p>Simply plug-ins are classes that implement the IPlugin interface. You can write a plug-in in any .NET Framework 4 CLR-compliant language.</p>
+<p>Now let’s consider a simple case that plug-ins may be its appropriate solution. Let say that your company wants leads to be numbered automatically when they are created. In order to achieve our goal, we will add a custom field to the Lead entity and add it to the form. We will disable this field on the form. We will create a plug-in and register it for the Pre-event for the Create message on the Lead entity. When a lead is created, it will look for the next available number in the system and assign it to the newly created Lead.</p>
+<p><strong>Step 1: Create Customizations</strong></p>
+<p>Now we will quickly customize the Lead entity and form to accommodate our solution. Navigate to Settings &gt; Customizations &gt; Customize the System. In the left navigation pane, expand Entities, expand Lead, select Fields, and click New.  <br>
+In the New for Lead form, set the Display Name to Auto Number, the Type to Whole Number, and then click Save and Close. In the left navigation Pane, select Forms. Click the Main Information form &gt; Drag the field, new_autonumber, to the Name section of the General section. Select the field, click Change Properties, mark the Field is read-only check box, and then click OK. Click Save and Close, and then Publish.</p>
+<p><strong>Step 2: Create the Plug-in</strong></p>
+<p>1- Open Visual Studio and Create a new project of type Class Library.</p>
+<p>2- Add references to Microsoft.Xrm.Client.dll, Microsoft.Xrm.Sdk.dll, and Microsoft.crm.sdk.proxy.dll [located at %SDK%\bin folder].</p>
+<p>3- Add references to System.Data.Services, System.Data.Services.Client, System.Runtime.Serialization, and System.ServiceModel.</p>
+<p>4- Add reference to Microsoft.IdentityModel.dll from &ldquo;C:\Program Files\Reference Assemblies\Microsoft\Windows Identity Foundation\v3.5\”. Then go to reference properties and set Copy Local to True for the DLL. The DLL will be included in the package. If you don’t have the dll you need to install <a href="http://www.microsoft.com/download/en/details.aspx?id=17331">Windows Identity Foundation</a>.</p>
+<p>5- Make your class implement the IPlugin interface, and implement its member method Execute method. This identifies your class as a plugin to the CRM platform when registering your assembly later. Plug-in code will be placed in the Execute method which takes a parameter of type IServiceProvider. This parameter is a container of many objects that will be utilized by our code.</p>
+<p>First get the IPluginExecutionContext. This context object gives you access to all the property values associated with the entity and event context where the method is being executed.</p>
+<pre tabindex="0"><code>IPluginExecutionContext context = (IPluginExecutionContext) serviceProvider.GetService(typeof(IPluginExecutionContext));
+</code></pre><p>InputParameters property of the context is a collection of the request parameters associated with the event. We use it to check the entity of which the event is fired.</p>
+<pre tabindex="0"><code>if (context.InputParameters.Contains(&#34;Target&#34;) &amp;&amp; context.InputParameters\[&#34;Target&#34;\] is Entity)  
+            {  
+                Entity entity = (Entity)context.InputParameters\[&#34;Target&#34;\];  
+                if (entity.LogicalName != &#34;lead&#34;)  
+                    return;
+</code></pre><p>Then we get the OrganizationServiceFactory to use it to create an OrganizationService. We also get the TracingService. Then we edited our auto number field with the next maximum number in the organization. GetMaxLeadNumber is a typical method that passes a QueryExpression to the OrganizationService to get the next max lead number.</p>
+<pre tabindex="0"><code>IOrganizationServiceFactory orgServiceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));  
+                ITracingService tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));  
+                IOrganizationService orgService = orgServiceFactory.CreateOrganizationService(context.UserId);  
+  
+                try  
+                {                                    
+                    entity.Attributes\[&#34;new\_autonumber&#34;\] = GetMaxLeadNumber(orgService);              
+                }  
+                catch (Exception ex)  
+                {  
+                    tracingService.Trace(&#34;xRM\_Demo03 | {0}&#34;, ex.ToString());  
+                    throw;   
+                }                  
+            }  
+        }
+</code></pre><p>Now your class should look like:</p>
+<pre tabindex="0"><code>using System;  
+using System.ComponentModel;  
+using System.Diagnostics;  
+using System.Security;  
+using System.ServiceModel.Description;  
+using Microsoft.Xrm.Sdk;  
+using Microsoft.Xrm.Sdk.Client;  
+using Microsoft.Xrm.Sdk.Query;  
+using System.Collections;  
+  
+namespace xRM\_Demo03  
+{  
+    public class Plugin:IPlugin   
+    {  
+        public void Execute(IServiceProvider serviceProvider)  
+        {  
+            IPluginExecutionContext context =   
+                (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));  
+  
+            if (context.InputParameters.Contains(&#34;Target&#34;) &amp;&amp; context.InputParameters\[&#34;Target&#34;\] is Entity)  
+            {  
+                Entity entity = (Entity)context.InputParameters\[&#34;Target&#34;\];  
+                if (entity.LogicalName != &#34;lead&#34;)  
+                    return;  
+  
+                IOrganizationServiceFactory orgServiceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));  
+                IOrganizationService orgService = orgServiceFactory.CreateOrganizationService(context.UserId);  
+                ITracingService tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));  
+  
+                try  
+                {                      
+                    Random rand = new Random();                      
+                    entity.Attributes\[&#34;new\_autonumber&#34;\] = GetMaxLeadNumber(orgService);              
+                }  
+                catch (Exception ex)  
+                {  
+                    tracingService.Trace(&#34;xRM\_Demo03 | {0}&#34;, ex.ToString());  
+                    throw;   
+                }                  
+            }  
+        }  
+  
+        private int GetMaxLeadNumber(IOrganizationService orgService)  
+        {      
+            QueryExpression qe = new QueryExpression(&#34;lead&#34;);  
+            qe.ColumnSet.AddColumn(&#34;new\_autonumber&#34;);           
+            qe.AddOrder(&#34;new\_autonumber&#34;, OrderType.Descending);  
+            qe.PageInfo.Count = 1;  
+            qe.PageInfo.PageNumber = 1;  
+  
+            Entity entity = (Entity)orgService.RetrieveMultiple(qe)\[0\];  
+            if (entity.Attributes\[&#34;new\_autonumber&#34;\].ToString()!= string.Empty)  
+                return int.Parse(entity.Attributes\[&#34;new\_autonumber&#34;\].ToString()) + 1;  
+            else  
+                return 1;  
+        }  
+    }  
+}
+</code></pre><p>Now the last step is to sign your assembly. Double click Properties under your plugin project.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjD3NW_8dBuu7QA4TWjzDgW4_px5e0Hz_Ja7RnyuhjHQjSunSh6HaloeZkxNNwl_H8wdBqJHdP3qF1SA6GG892yXzRPhB63nQPgqOwTgrWQbYV3p9NP8rCfvqo1wZ7FCklloA6ar_kD2g/s1600-h/xRM_Demo03%252520-%252520Microsoft%252520Visual%252520Studio%252520%252528Administrator%252529_2012-03-19_12-33-32%25255B2%25255D.png"><img alt="xRM_Demo03 - Microsoft Visual Studio (Administrator)_2012-03-19_12-33-32" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5IcIsHDtKryjygYNEdfp_OBQSUreCpyCWh7-s0vzFfmVJdMHH9L_qttMWHi09zp-HixU1T7DgWoPhVieUieRPzCSPaxpU5_9ubYoioBXNcpBwLSQyEtjkXyGA5q5RJeJwE_Nv87xrHg/?imgmax=800" title="xRM_Demo03 - Microsoft Visual Studio (Administrator)_2012-03-19_12-33-32"></a></p>
+<p>then click Signing from the left tabs</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiW88etRy_20gzojqhxXLHln64GLzwUR1Ofgl8CzseZk9SoD99RJoPSYHShLqb-8dLcM_Dtz6sdNBg_PWO6sfLF_439Llpz2uvBhvOoQW9iAhnNQFUAs934RkAYMvs1Gg2aeqYIGzK6Eg/s1600-h/xRM_Demo03%252520-%252520Microsoft%252520Visual%252520Studio%252520%252528Administrator%252529_2012-03-19_12-34-21%25255B3%25255D.png"><img alt="xRM_Demo03 - Microsoft Visual Studio (Administrator)_2012-03-19_12-34-21" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5DGPCc0HX9K5-d5ICLyrv5-SpsD7zr2uGJ3uAF14eu74Q_UiHhzAcXLcNj91j_14dn9zBP3VPNQxoGFdweQaEKcXKS8N9tZTd2DF_uqr7aExNxammbbOXXVGlKllSplIFNgO5vH4AMg/?imgmax=800" title="xRM_Demo03 - Microsoft Visual Studio (Administrator)_2012-03-19_12-34-21"></a></p>
+<p>select Sign the assembly checkbox, choose New from the dropbox or choose an existing key. Build the project. Now we are ready to register our plugin into Dynamics CRM.</p>
+<p><strong>Step 3: Register the Plug-in</strong></p>
+<p>The Dynamics CRM SDK have a tool to register plugins located as a source code at %CRMSDK%\tools\pluginregistration. Open the solution, build it, and run it.</p>
+<p>1- Click the Create New Connection on the toolbar. Enter a name for the connection, organization URL, and the email you used for creating this organization.<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCd9t5de_19LvXJ08ruK_6EjRjj-9t9T9j31JJpUPurIUvlF87HjSdK4IEC_CEhxiFNUvjer6dmrU8IHZBefOTnd4ya7v2aXIjazAltPalrDsWpojXRb_qBNSGxi2J_4qjqQ5lYQRMgw/s1600-h/Plugin%252520Registration%252520Tool_2012-03-19_12-20-45%25255B3%25255D.png"><img alt="Plugin Registration Tool_2012-03-19_12-20-45" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlpV62x67nGJN0u_wEBK9_56twyaJW70ROER2Hm5pS0eWfTyfa452Tki6mWRH227BMZfOxZDzD3qZZ3Rc-ebSwwZLpb2csZIMXz2N5FxcG147jX8QL1JSo6Pcbb8yOgmC9KRgOxsDCUQ/?imgmax=800" title="Plugin Registration Tool_2012-03-19_12-20-45"></a></p>
+<p>Click Connect, it will ask you for the password.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdCUfuRtXHWjlaPWPyImTrwYPBw00ghzNzuupxONzOIETqNi4TSkic_7xMllqiKUX296CpDu891WFxGYXvQogXynXfqEzp953xBfD0m3coxBIS7dRePdSlImMJg6RQiZ5leY0zb4qI-w/s1600-h/Connect%252520to%252520CRM%252520Web%252520Service_2012-03-19_12-21-24%25255B2%25255D.png"><img alt="Connect to CRM Web Service_2012-03-19_12-21-24" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0AM2wZrGIefqeSHpqFXlkjEA66aLABGVLDPKVcX5etCIJpoiClyLnJbQRGs7s1_rQFeQn_kLSBXyNImcUVLPTvBFRgUH5P0ONMKNewlqAjSZQGZ5pvcFUtzpzC0qRhMvlSjN5vZ1gJg/?imgmax=800" title="Connect to CRM Web Service_2012-03-19_12-21-24"></a></p>
+<p>Enter your password and click Ok to connect to the CRM organization web service.</p>
+<p>After getting connected click Register &gt; Register New Assembly</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwTrO8-VSLZfgJsZs1-QQlU9dBP2C3n5o6NF0rsqZVcDOxwh78nGPFLfGxOkse1cSkbHCzyqWZK4v9-vzsShst89HxVK1BukJhV0b8UIL_DEJvcIIDRbSxWXVzj6FnpRPEiWAcqsvaTA/s1600-h/Plugin%252520Registration%252520Tool_2012-03-19_12-27-20%25255B2%25255D.png"><img alt="Plugin Registration Tool_2012-03-19_12-27-20" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaU4pmpxu8ZAarNMk1zsoAzm7_GGWwawuhr0p_FZODig_Y13Y8HRDBHhfl5ngfTyOM-wJ8mlziWA_c6B3n7qJIyqtonZ0kFh6f739HTZtKLwPNqDqBrYb_1OY3Ows6v1aNowTUT0s03Q/?imgmax=800" title="Plugin Registration Tool_2012-03-19_12-27-20"></a></p>
+<p>This will open Register New Plugin dialog.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjU4B4ofVWVLhOvguc954rBE-2XgIgm-iz9cE2ZQAYHbfmCgIWIQ2-6-eFBJu9VvqvQbapMFZWfhyphenhyphenkG-GeK0cNfOYLS8eReABaIYSYLCH0DTQ9gEzyXxJsLn9yDAJ5MhPERWYafdunKqQ/s1600-h/Register%252520New%252520Plugin_2012-03-19_12-27-57%25255B5%25255D.png"><img alt="Register New Plugin_2012-03-19_12-27-57" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgv71WOMCKc5moawXw4k58ncAvzkxG-ftSN-t1DGIuUQLefgnDp2EyrVbrbBZs048MnRdDBlJyBVdLI4jAvToodbE6cA6OP6NYw0_pCZURJjbn_Iou3tUdQsra7apnvpqj7ylFf2VaUTQ/?imgmax=800" title="Register New Plugin_2012-03-19_12-27-57"></a></p>
+<p>Click the three dots button in the top right of the dialog, browse to your plugin dll. Ensure that your plugin is listed and checked. Also ensure that you selected Sandbox as isolation mode, and to store your assembly in the Database as shown below.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_3Eqgw9XAtnIKHujJ2yIaL62fLFioGZLC1aWa15Q1oVX_PGziwvnFT9HhbI99Zbk7SmfXLSC9EvO85DFGYMSK7bE5C2XXpKQL9zo7iAJKKs_bd-nYXY5bwji03Nh9kRzsR3bPddogJA/s1600-h/Register%252520New%252520Plugin_2012-03-19_12-29-50%25255B5%25255D.png"><img alt="Register New Plugin_2012-03-19_12-29-50" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjI15E-bxhelD2ptmn-DaiOt3WIRu5UWkBkhnFdNZGVxXBaZhVZdUwcZmUNYVbEy_jD680YPvDqR4ZdX9_lfhLjbS1N5bNNnkV3ji2iN6JtEgCGFUyhwI8aWAzvRtQqb-bKElz0vXe8gw/?imgmax=800" title="Register New Plugin_2012-03-19_12-29-50"></a></p>
+<p>Click Register Selected Plugins. You will see in the log the steps done by the tool and when it is done it will show message box showing how many assemblies and plugins have been registered (you could have multiple plugins in one assembly). Click Ok.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_5GmWsMnhpnWQJTbHhiGv1aUxVZjNTwmoAdC2gvwsa5uQ_MRaLi8DLyMd30KGXBaJVIUs6FsLc_oIktkfYtKFV6G8UjOImIrkC2B4kPjU2HOgI9lExqjyStQj9urKq_LJRGH8PAeQsA/s1600-h/xRM_Demo03%252520-%252520Microsoft%252520Visual%252520Studio%252520%252528Administrator%252529_2012-03-19_12-36-58%25255B4%25255D.png"><img alt="xRM_Demo03 - Microsoft Visual Studio (Administrator)_2012-03-19_12-36-58" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYfOhsX02AwWx0b5UnTekQcuJ4Nf9crJEF59KBOLJuPsM5HVuav8mfEg3s73jr9_F66a-U10po3FfbkB-DULZpAhc2ad_96zeEXYvt5Rr6qdjgzPkQjE2uzqWdtmDyYQoXwT5dceSFdA/?imgmax=800" title="xRM_Demo03 - Microsoft Visual Studio (Administrator)_2012-03-19_12-36-58"></a></p>
+<p>Now select your assembly from the list</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRENTwnD8YvykvP82rGo2UkhKBPjezKnkcC-tdqPdJs7Y4HgF0n33KZamY0wPLuMTvWeq7niFyEmvquxvGTm8lzXyonsw1JNGD_pmWenOIjCBqwzi8C6GIh8ievXMhDi0lDoa5JbgR9w/s1600-h/Plugin%252520Registration%252520Tool_2012-03-19_12-39-46%25255B4%25255D.png"><img alt="Plugin Registration Tool_2012-03-19_12-39-46" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieLFy8e8oNGZ3dwvUnJPD7emkveuD7BCxZKO1m81GV4VyXJ5qs5fb9MN5yBbI9dtimKEH_S5AwS45IMWEP6lPzCkCkLiXZ0fKC-txl3nC0VIHuB3R5f9kuRaZonzNpvk9ormzvA1l-cQ/?imgmax=800" title="Plugin Registration Tool_2012-03-19_12-39-46"></a></p>
+<p>and click Register &gt; Register New Step. This will open Register New Step dialog. This dialog used to define mainly the message, the entity, and the stage that your plugin will execute within. We will register for Message <em>Create</em>, Entity <em>lead</em>, <em>Pre-operaton</em> stage. Click Register New Step.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgciZzhzKjhR44-RoRjXAlpk6D35jAOCAW7Vom5nk5aMvuj7_igeb78TD1-UUhgO_XewhwZDKMhebQIwtGtjdX8-x6lpfeRuQAx8aF_dXcSIgAEw8idq_j31T7Oq_5UPpk8LNrCQHLD4A/s1600-h/Register%252520New%252520Step_2012-03-19_12-42-08%25255B3%25255D.png"><img alt="Register New Step_2012-03-19_12-42-08" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCCNvhJFJtFimW1cNAI_w1lUALdyLx1At8wDyImmleaAiDzc8GIkuuaFD5J-6OFaGK_YmvcCTkfImr8DdquHcefSKF60uSS9M2XUnrUCV-L4SFW3r6_462iy0cIfhIradSU_rn2ti8kw/?imgmax=800" title="Register New Step_2012-03-19_12-42-08"></a></p>
+<p>You will see child step added under your assembly.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKIFokjGJ5JjN6TBsBqhcT801D-0K5jfpkTywBGSrtFUfmprn6TP2BdXP7DKJtxomqNdUMuziha9GaF670K3QrV0OW_P7lY8r_uWTYITC5oPwGnowSQRi1g-9AjoyUhX_7Sq7x1S2y5g/s1600-h/Plugin%252520Registration%252520Tool_2012-03-19_12-43-20%25255B5%25255D.png"><img alt="Plugin Registration Tool_2012-03-19_12-43-20" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUazQ8raE5uZRElLosJ5paYvz4Q077H6S6xI6Rk-mCqJeBJgBF_fssk_yS2aqIguSKmDDoHwUY4942p3G_8yvcLXmh7dWDPs4jxnfOm6khXP_owLTukkDq91phi0jes4EXewnnQ0N30A/?imgmax=800" title="Plugin Registration Tool_2012-03-19_12-43-20"></a></p>
+<p>Now our assembly is registered and our plugin will run for create messages on the lead entity. Go to the CRM web interface and create a new lead, save it, open it again and see the Auto Number populated.</p>
+<p>In this post we explored the plug-in basics, and developed a simple plug-in. To complete the picture, you also explored how to register our plug-in into Dynamics CRM and see it in action.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/blog/swap/">↩ SWAP</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/2013/01/basic-statistics-using-microsoft-excel.html"> Basic statistics using Microsoft Excel ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        <a href="https://themes.gohugo.io/themes/adritian-free-hugo-theme">© Adritian</a>. Free Hugo theme by <a href="https://www.adrianmoreno.info">Adrián Moreno Peña</a>.</br><a href="https://github.com/Ebeid/ebeid.github.io">Site content and code available in GitHub</a>.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

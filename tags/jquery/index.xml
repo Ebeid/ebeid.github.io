@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JQuery on </title>
+    <link>http://localhost:1313/tags/jquery/</link>
+    <description>Recent content in JQuery on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 16 Nov 2011 19:15:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An introduction to jQuery</title>
+      <link>http://localhost:1313/blog/an-introduction-to-jquery/</link>
+      <pubDate>Wed, 16 Nov 2011 19:15:00 -0600</pubDate>
+      <guid>http://localhost:1313/blog/an-introduction-to-jquery/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;What is jQuery ?&lt;/strong&gt; &lt;a href=&#34;http://jquery.com/&#34;&gt;jQuery&lt;/a&gt; is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Get jQUery&lt;/strong&gt; jQuery is licensed under MIT and GPL. You can downlad the latest version from &lt;a href=&#34;http://docs.jquery.com/Downloading_jQuery&#34;&gt;http://docs.jquery.com/Downloading_jQuery&lt;/a&gt;. In this post we will use release 1.7.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Getting started&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;To get started with jQuery, create a folder for our demos. Create a new file in it (e.g. HTMLPage1.htm). Create a folder in it (e.g. Script). Copy the downloaded &lt;em&gt;jquery-1.7.js&lt;/em&gt; to it. Now edit your HTML page to look like so:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

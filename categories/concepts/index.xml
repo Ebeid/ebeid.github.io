@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>concepts on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/categories/concepts/</link>
-    <description>Recent content in concepts on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ebeid.github.io/categories/concepts/index.xml" rel="self" type="application/rss+xml" />
+    <title>Concepts on </title>
+    <link>http://localhost:1313/categories/concepts/</link>
+    <description>Recent content in Concepts on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/concepts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Twelve-Factor Applications</title>
-      <link>https://ebeid.github.io/blog/twelve-factor-applications/</link>
+      <link>http://localhost:1313/blog/twelve-factor-applications/</link>
       <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/twelve-factor-applications/</guid>
-      <description>This post is just my notes about Twelve-Factor Applications. You can consider it my extended version of the original website.
-&amp;ldquo;Twelve-factor applications&amp;rdquo; is a methodology that focus mainly on developing software-as-a-service applications (or SAAS for short). Although that&amp;rsquo;s was the main concern, factors in this methodology can be used or inspire engineering practices in other types of software development.
-Facor 1 - Codebase One codebase tracked in revision control, many deploys.</description>
+      <guid>http://localhost:1313/blog/twelve-factor-applications/</guid>
+      <description>&lt;p&gt;This post is just my notes about &lt;a href=&#34;https://www.12factor.net/&#34;&gt;Twelve-Factor Applications&lt;/a&gt;. You can consider it my extended version of the original website.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Twelve-factor applications&amp;rdquo; is a methodology that focus mainly on developing software-as-a-service applications (or SAAS for short).  Although that&amp;rsquo;s was the main concern, factors in this methodology can be used or &lt;strong&gt;inspire&lt;/strong&gt; engineering practices in other types of software development.&lt;/p&gt;&#xA;&lt;h2 id=&#34;facor-1---codebase&#34;&gt;Facor 1 - Codebase&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;One codebase tracked in revision control, many deploys.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

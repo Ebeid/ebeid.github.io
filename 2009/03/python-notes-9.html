@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#experience"
+                >EXPERIENCE</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/2009">2009th</a></span></li><li class="breadcrum-item"><span><a href="/2009/03">3rd</a></span></li><li class="breadcrum-item"><span><a href="/2009/03/python-notes-9.html">Python notes 9.html</a></span></li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/2009/03/python-notes-9.html">Python Notes – 9 : Serialization</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Fri Mar 27, 2009</h4>
+              ·
+              <h4 id="wordcount">546 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/python/">Python</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p>Welcome to our ninth note in our Python learning process. We talked previously about files and how to handle it but we talked about writing and reading only the primitive data types as integers and strings. We also talked about objects and classes. Now, what if we want to write a compound data type or a complex object to a file. This note will talk about writing objects to files, which is called object serialization.</p>
+<h4 id="pickle">pickle</h4>
+<p>The pickle module is a Python built-in module that object serialization and de-serialization. To store a data structure, use the dump method and then close the file in the usual way:</p>
+<blockquote>
+<p>&gt;&raquo; pickle.dump(12.3, f)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; pickle.dump([1,2,3], f)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; f.close()</p>
+</blockquote>
+<p>Then we can open the file for reading and load the data structures we dumped:</p>
+<blockquote>
+<p>&gt;&raquo; f = open(&ldquo;test.pck&rdquo;,&ldquo;r&rdquo;)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; x = pickle.load(f)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; x</p>
+</blockquote>
+<blockquote>
+<p>12.3</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; type(x)</p>
+</blockquote>
+<blockquote>
+<p>&lt;type &lsquo;float&rsquo;&gt;</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; y = pickle.load(f)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; y</p>
+</blockquote>
+<blockquote>
+<p>[1, 2, 3]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; type(y)</p>
+</blockquote>
+<blockquote>
+<p>&lt;type &rsquo;list'&gt;</p>
+</blockquote>
+<p>Each time we invoke load, we get a single value from the file, complete with its original type.</p>
+<h4 id="what-can-be-serialized-and-de-serialized">What can be serialized and de-serialized</h4>
+<p>The following types can be serialized and de-serialized using pickle:</p>
+<ul>
+<li>None, True, and False</li>
+<li>integers, long integers, floating point numbers, complex numbers</li>
+<li>normal and Unicode strings</li>
+<li>tuples, lists, sets, and dictionaries containing only picklable objects</li>
+<li>functions defined at the top level of a module</li>
+<li>built-in functions defined at the top level of a module</li>
+<li>classes that are defined at the top level of a module</li>
+<li>instances of such classes whose__dict__ or __setstate__() is picklable</li>
+</ul>
+<h4 id="things-to-consider-when-using-pickle">Things to consider when using pickle</h4>
+<ul>
+<li>Attempts to pickle unpicklable objects will raise the picklingError exception; when this happens, an unspecified number of bytes may have already been written to the underlying file.</li>
+<li>Trying to pickle a highly recursive data structure may exceed the maximum recursion depth, a RuntimeError will be raised in this case. You can carefully raise this limit with sys.setrecursionlimit().</li>
+</ul>
+<h4 id="cpickle">cPickle</h4>
+<p>The cPickle is an optimized version of pickle written in C, so it can be up to 1000 faster than pickle.</p>
+<h4 id="marshal">marshal</h4>
+<p>The marshal module can also be used for serialization. Marshal is similar to pickle, but is intended only for simple objects. Can’t handle recursion or class instances. On the plus side, it’s pretty fast if you just want to save simple objects to a file. Data is stored in a binary architecture independent format.To serialize:</p>
+<blockquote>
+<p>import marshal</p>
+</blockquote>
+<blockquote>
+<p>marshal.dump(obj,file)                  # Write obj to file</p>
+</blockquote>
+<p>To unserialize:</p>
+<blockquote>
+<p>obj = marshal.load(file)</p>
+</blockquote>
+<h4 id="shelve">shelve</h4>
+<p>The shelve module provides a persistent dictionary. It is works like a dictionary, but data is stored on disk.</p>
+<p>Keys must be strings. Data can be any object serializable with pickle.</p>
+<blockquote>
+<p>import shelve</p>
+</blockquote>
+<blockquote>
+<p>d = shelve.open(&ldquo;data&rdquo;) # Open a ’shelf’</p>
+</blockquote>
+<blockquote>
+<p>d[’foo’] = 42 # Save data</p>
+</blockquote>
+<blockquote>
+<p>x = d[’bar’] # Retrieve data</p>
+</blockquote>
+<h4 id="shelf-operations">Shelf operations</h4>
+<blockquote>
+<p>d[key] = obj              # Store an object</p>
+</blockquote>
+<blockquote>
+<p>obj = d[key]              # Retrieve an object</p>
+</blockquote>
+<blockquote>
+<p>del d[key]                 # Delete an object</p>
+</blockquote>
+<blockquote>
+<p>d.has_key(key)          # Test for existence of key</p>
+</blockquote>
+<blockquote>
+<p>d.keys()                   # Return a list of all keys</p>
+</blockquote>
+<blockquote>
+<p>d.close()                  # Close the shelf</p>
+</blockquote>
+<p>In this note will talked about writing objects to files, which is called object serialization. Object serialization is very useful in persisting your application logic to resume its execution later, transfer of execution to remote machine, and many other applications scenarios.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/2009/03/python-notes-8.html">↩ Python Notes – 8 : Object-Oriented Basics</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/2009/03/python-notes-10.html"> Python Notes – 10 : Threading ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        <a href="https://themes.gohugo.io/themes/adritian-free-hugo-theme">© Adritian</a>. Free Hugo theme by <a href="https://www.adrianmoreno.info">Adrián Moreno Peña</a>.</br><a href="https://github.com/Ebeid/ebeid.github.io">Site content and code available in GitHub</a>.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

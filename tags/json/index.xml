@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JSON on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/json/</link>
-    <description>Recent content in JSON on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 12 Jul 2013 17:15:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    <title>JSON on </title>
+    <link>http://localhost:1313/tags/json/</link>
+    <description>Recent content in JSON on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 12 Jul 2013 17:15:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/json/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with MongoDB – Part 2</title>
-      <link>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-2.html/</link>
+      <link>http://localhost:1313/2013/07/getting-started-with-mongodb-part-2.html</link>
       <pubDate>Fri, 12 Jul 2013 17:15:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-2.html/</guid>
-      <description>In the previous post we explored the basics of MongoDB. In this post we going to dig deeper in MongoDB.
-Indexing Whenever a new collection is created, MongoDB automatically creates an index by the _id field. These indexes can be found in the system.indexes collection. You can show all indexes in the database using db.system.indexes.find() . Most queries will include more fields than just the _id, so we need to make indexes on those fields.</description>
+      <guid>http://localhost:1313/2013/07/getting-started-with-mongodb-part-2.html</guid>
+      <description>&lt;p&gt;In the previous post we explored the basics of MongoDB. In this post we going to dig deeper in MongoDB.&lt;/p&gt;&#xA;&lt;h3 id=&#34;indexing&#34;&gt;Indexing&lt;/h3&gt;&#xA;&lt;p&gt;Whenever a new collection is created, MongoDB automatically creates an index by the &lt;em&gt;_id&lt;/em&gt; field. These indexes can be found in the system.indexes collection. You can show all indexes in the database using db.system.indexes.find() . Most queries will include more fields than just the _id, so we need to make indexes on those fields.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Getting Started with MongoDB – Part 1</title>
-      <link>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-1.html/</link>
+      <link>http://localhost:1313/2013/07/getting-started-with-mongodb-part-1.html</link>
       <pubDate>Fri, 12 Jul 2013 13:46:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-1.html/</guid>
-      <description>MongoDB (from &amp;ldquo;humongous&amp;rdquo;) is an open source document-oriented database system developed and supported by 10gen (founded by Dwight Merriman). First publicly released in 2009, and since then it have been a rising star in the NoSQL world. MongoDB stores structured data as JSON-like documents with dynamic schemas (technically data is stored in a binary form of JSON known as BSON), making the integration of data in certain types of applications easier and faster.</description>
+      <guid>http://localhost:1313/2013/07/getting-started-with-mongodb-part-1.html</guid>
+      <description>&lt;p&gt;&lt;strong&gt;MongoDB&lt;/strong&gt; (from &amp;ldquo;hu&lt;strong&gt;mongo&lt;/strong&gt;us&amp;rdquo;) is an open source &lt;a href=&#34;http://en.wikipedia.org/wiki/Document-oriented_database&#34;&gt;document-oriented database&lt;/a&gt; system developed and supported by &lt;a href=&#34;http://www.blogger.com/www.10gen.com&#34;&gt;10gen&lt;/a&gt; (founded by &lt;a href=&#34;https://twitter.com/dmerr&#34;&gt;Dwight Merriman&lt;/a&gt;). First publicly released in 2009, and since then it have been a rising star in the NoSQL world. MongoDB stores structured data as &lt;a href=&#34;http://en.wikipedia.org/wiki/JSON&#34;&gt;JSON&lt;/a&gt;-like documents with dynamic schemas (technically data is stored in a binary form of JSON known as &lt;a href=&#34;http://en.wikipedia.org/wiki/BSON&#34;&gt;BSON&lt;/a&gt;), making the integration of data in certain types of applications easier and faster.&lt;/p&gt;&#xA;&lt;h4 id=&#34;installation&#34;&gt;Installation&lt;/h4&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Download the latest mongoDB version from &lt;a href=&#34;http://www.mongodb.org/downloads&#34; title=&#34;downloads page&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Extract the archive to your preferred location (in my case C:\mongodb). MongoDB is self-contained and does not have any other system dependencies. You can run MongoDB from any folder you choose. You may install MongoDB in any directory.&lt;/li&gt;&#xA;&lt;li&gt;MongoDB requires a data folder to store its files (default is C:\data\db ). You may specify a different path with the dbpath setting when lunching mongod.exe.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h4 id=&#34;starting-the-server&#34;&gt;Starting the Server&lt;/h4&gt;&#xA;&lt;p&gt;To start MongoDB, open the command prompt window, and run mongod.exe from the bin directory (specify the data path if needed)&lt;br&gt;&#xA;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLYFSj0QJkVFK1yydUedpIvsd5YeopM1lneMymjWznveiO1n_DqfUCP4zUsBLVKwdx4HXed2dQD72RIItYTUjOmvCuvBQaYLS2v03h076etNiBBbKtEUcqaT-qLoQK-Z479QcHlpJ9Nw/s1600-h/CWindowssystem32cmd.exe%252520-%252520mongod.exe%252520%252520--dbpath%252520Cmongodbdata_2013-07-09_16-10-49.png&#34;&gt;&lt;img alt=&#34;CWindowssystem32cmd.exe - mongod.exe  &amp;ndash;dbpath Cmongodbdata_2013-07-09_16-10-49&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPTHC1HLhFaXGuBtIV2LSZtW_OSVNQM46E5nKA0OrqlRa3_pDuScmfpzBAeVYSJ6CCSMa_FnHRYaxC0vzVS6No-5eWc78QNIbhV6-E7VhpttbknSrxdD3Db5uCCG0DeR08kKxpr64e0Q/?imgmax=800&#34; title=&#34;CWindowssystem32cmd.exe - mongod.exe  --dbpath Cmongodbdata_2013-07-09_16-10-49&#34;&gt;&lt;/a&gt;The waiting for connections message in the console output indicates that the mongod.exe process is running successfully and waiting for connections on port 27017&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>JSON–yet another tutorial :)</title>
-      <link>https://ebeid.github.io/blog/2011-12-01-jsonyet-another-tutorial.html/</link>
+      <link>http://localhost:1313/2011/12/jsonyet-another-tutorial.html</link>
       <pubDate>Thu, 01 Dec 2011 17:43:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2011-12-01-jsonyet-another-tutorial.html/</guid>
-      <description>What is JSON? JSON (or JavaScript Object Notation) is a highly portable data interchange format. While its structure is recognized natively by Javascript (as it is Javascript), its formatting conventions are easily recognized by other C-like languages.
-JSON is built on two structures:
-A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array. Example: var jason = { &amp;quot;age&amp;quot; : &amp;quot;28&amp;quot;, &amp;quot;hometown&amp;quot; : &amp;quot;Cairo, Egypt&amp;quot;, &amp;quot;gender&amp;quot; : &amp;quot;male&amp;quot; }; The object created in the example could be accessed like any other object.</description>
+      <guid>http://localhost:1313/2011/12/jsonyet-another-tutorial.html</guid>
+      <description>&lt;h4 id=&#34;what-is-json&#34;&gt;What is JSON?&lt;/h4&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;http://json.org/&#34;&gt;JSON&lt;/a&gt;&lt;/strong&gt; (or &lt;strong&gt;J&lt;/strong&gt;ava&lt;strong&gt;S&lt;/strong&gt;cript &lt;strong&gt;O&lt;/strong&gt;bject &lt;strong&gt;N&lt;/strong&gt;otation) is a highly portable data interchange format. While its structure is recognized natively by Javascript (as it &lt;em&gt;is&lt;/em&gt; Javascript), its formatting conventions are easily recognized by other C-like languages.&lt;/p&gt;&#xA;&lt;p&gt;JSON is built on two structures:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array. Example:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;var jason = {  &#xA; &amp;#34;age&amp;#34; : &amp;#34;28&amp;#34;,  &#xA; &amp;#34;hometown&amp;#34; : &amp;#34;Cairo, Egypt&amp;#34;,  &#xA; &amp;#34;gender&amp;#34; : &amp;#34;male&amp;#34;  &#xA; };&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;The object created in the example could be accessed like any other object.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

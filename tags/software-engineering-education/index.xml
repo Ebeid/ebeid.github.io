@@ -1,43 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Software Engineering Education on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/software-engineering-education/</link>
-    <description>Recent content in Software Engineering Education on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Mon, 27 Dec 2010 18:54:00 -0600</lastBuildDate><atom:link href="https://ebeid.github.io/tags/software-engineering-education/index.xml" rel="self" type="application/rss+xml" />
+    <title>Software Engineering Education on </title>
+    <link>http://localhost:1313/tags/software-engineering-education/</link>
+    <description>Recent content in Software Engineering Education on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 27 Dec 2010 18:54:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/software-engineering-education/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I prepared for CSDP ?</title>
-      <link>https://ebeid.github.io/blog/2010-12-27-how-i-prepared-for-csdp.html/</link>
+      <link>http://localhost:1313/2010/12/how-i-prepared-for-csdp.html</link>
       <pubDate>Mon, 27 Dec 2010 18:54:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2010-12-27-how-i-prepared-for-csdp.html/</guid>
-      <description>After I became an IEEE Certified Software Development Professional, many of my friends asked me about it and how to prepare for it. As a CSDP holder, let me introduce CSDP for you and how I prepared for it.
-The CSDP credential is intended for mid-career software development professionals that want to confirm their proficiency of standard software development practices and advance in their careers.
-Who is eligible to take the CSDP?</description>
+      <guid>http://localhost:1313/2010/12/how-i-prepared-for-csdp.html</guid>
+      <description>&lt;p&gt;After I became an &lt;strong&gt;&lt;a href=&#34;http://www.computer.org/portal/web/certification/csdp&#34;&gt;IEEE Certified Software Development Professional&lt;/a&gt;&lt;/strong&gt;, many of my friends asked me about it and how to prepare for it. As a CSDP holder, let me introduce CSDP for you and how I prepared for it.&lt;/p&gt;&#xA;&lt;p&gt;The CSDP credential is intended for mid-career software development professionals that want to confirm their proficiency of standard software development practices and advance in their careers.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Who is eligible to take the CSDP?&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Business analysis &amp; Requirements Engineering Certifications</title>
-      <link>https://ebeid.github.io/blog/2010-12-17-business-analysis-requirements.html/</link>
+      <title>Business analysis &amp;amp; Requirements Engineering Certifications</title>
+      <link>http://localhost:1313/2010/12/business-analysis-requirements.html</link>
       <pubDate>Fri, 17 Dec 2010 08:02:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2010-12-17-business-analysis-requirements.html/</guid>
-      <description>I was searching for certifications on requirements engineering and I found that there is a lot of mixing between business analysis and requirements engineering. This mix exists both on the daily use, professional certifications and organizations.
-Starting by the definitions:
-Business analysis is the discipline of identifying business needs and determining solutions to business problems. Solutions often include a systems development component, but may also consist of process improvement, organizational change or strategic planning and policy development.</description>
+      <guid>http://localhost:1313/2010/12/business-analysis-requirements.html</guid>
+      <description>&lt;p&gt;I was searching for certifications on requirements engineering and I found that there is a lot of mixing between business analysis and requirements engineering. This mix exists both on the daily use, professional certifications and organizations.&lt;/p&gt;&#xA;&lt;p&gt;Starting by the definitions:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Business analysis&lt;/strong&gt; is the discipline of identifying business needs and determining solutions to business problems. Solutions often include a systems development component, but may also consist of process improvement, organizational change or strategic planning and policy development. (Kathleen B Hass, Richard Vander Horst, Kimi Ziemski (2008). &lt;em&gt;From Analyst to Leader: Elevating the Role of the Business Analyst&lt;/em&gt; Management Concepts, 2008. ISBN 1567262139. p94: &amp;ldquo;As the discipline of business analysis becomes professionalized&amp;rdquo;)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Requirement engineering&lt;/strong&gt; according to Laplante is &amp;ldquo;a sub-discipline of systems engineering and software engineering that is concerned with determining the goals, functions, and constraints of hardware and software systems.&amp;rdquo;. (Phillip A. Laplante (2007) &lt;em&gt;What Every Engineer Should Know about Software Engineering&lt;/em&gt;. ISBN 0849372283 p44)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This may lead us to conclude that business analysis as a discipline has a heavy overlap with requirements engineering, but focuses on identifying the changes to an organization that are required for it to achieve strategic goals. These changes include changes to strategies, structures, policies, processes, and information systems.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How to educate the next generation of software engineers ?</title>
-      <link>https://ebeid.github.io/blog/2010-09-01-how-to-educate-next-generation-of.html/</link>
+      <link>http://localhost:1313/2010/09/how-to-educate-next-generation-of.html</link>
       <pubDate>Wed, 01 Sep 2010 05:51:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2010-09-01-how-to-educate-next-generation-of.html/</guid>
-      <description>After my completion of my master in software engineering at Nile University which we faced many problems at it (I hope it be better in the future), I tried to search for what globally constitutes a master of software engineering and I found the following:
-The last effort to create a reference curriculum for graduate software engineering education was by the SEI in the early 1990s. There were, in effect, no current community-endorsed recommendations on what to teach software engineers.</description>
+      <guid>http://localhost:1313/2010/09/how-to-educate-next-generation-of.html</guid>
+      <description>&lt;p&gt;After my completion of my master in software engineering at &lt;a href=&#34;http://www.nileu.edu.eg/&#34;&gt;Nile University&lt;/a&gt; which we faced many problems at it (I hope it be better in the future), I tried to search for what globally constitutes a master of software engineering and I found the following:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The last effort to create a reference curriculum for graduate software engineering education was by the SEI in the early 1990s.&lt;/li&gt;&#xA;&lt;li&gt;There were, in effect, no current community-endorsed recommendations on what to teach software engineers.&lt;/li&gt;&#xA;&lt;li&gt;Response: create a project to create a new reference curriculum in software engineering (iSSec Project)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Integrated Software and&lt;br&gt;&#xA;Systems Engineering Curriculum iSSec Project&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

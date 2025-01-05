@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Propability on </title>
+    <link>http://localhost:1313/tags/propability/</link>
+    <description>Recent content in Propability on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 01 Feb 2013 16:55:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/propability/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Probability</title>
+      <link>http://localhost:1313/blog/introduction-to-probability/</link>
+      <pubDate>Fri, 01 Feb 2013 16:55:00 -0600</pubDate>
+      <guid>http://localhost:1313/blog/introduction-to-probability/</guid>
+      <description>&lt;h3 id=&#34;1---what-is-probability-&#34;&gt;1 - What is probability ?&lt;/h3&gt;&#xA;&lt;p&gt;There is three different interpretations of probability :&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;The Frequency Interpretation of Probability : The probability that some specific outcome of a process will be obtained can be interpreted to mean the &lt;strong&gt;&lt;em&gt;relative frequency&lt;/em&gt;&lt;/strong&gt; with which that outcome would be obtained if the process were repeated a large number of times under similar conditions. In this case probability is based on history.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;what exactly large number means ?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

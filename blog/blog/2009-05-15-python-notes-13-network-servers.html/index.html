@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#portfolio"
+                >PORTFOLIO</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/blog">Blog</a></span></li><li class="breadcrum-item"><span><a href="/blog/blog">Blog</a></span></li><li class="breadcrum-item current">Python Notes 13: Network servers</li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/blog/blog/2009-05-15-python-notes-13-network-servers.html/">Python Notes 13: Network servers</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Fri May 15, 2009</h4>
+              ·
+              <h4 id="wordcount">529 Words</h4>
+            </section>
+             
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p>For a client, the process of establishing a TCP connection is a two-step
+process that includes the creation of the socket object and a call to
+connect() to establish a connection to the server. For a server, the
+process requires the following four steps:</p>
+<ol>
+<li>Create the socket object.</li>
+<li>Set the socket options (optional).</li>
+<li>Bind to a port (and, optionally, a specific network card).</li>
+<li>Listen for connections.</li>
+</ol>
+<p>Example of these steps:</p>
+<blockquote>
+<p>host = &rsquo;&rsquo; # Bind to all interfaces<br>
+port = 51423<br>
+# Step 1 (Create the socket object)<br>
+s = socket. socket(socket.AF_INET, socket.SOCK_STREAM)<br>
+# Step 2 (Set the socket options)<br>
+s.setsockopt(socket.SOL_SOCKET, socket.SOREUSEADDR, l)<br>
+# Step 3 (Bind to a port and interface)<br>
+s.bind((host, port))<br>
+# Step 4 (Listen for connections)<br>
+s.listen(5)</p>
+</blockquote>
+<p><strong>Setting and Getting Socket Options</strong><br>
+There are many different options that can be set for a socket. For
+general-purpose servers, the socket option of greatest interest is
+called SOREUSEADDR. Normally, after a server process terminates, the
+operating system reserves its port for a few minutes, thereby preventing
+any other process (even another instance of your server itself) from
+opening it until the timeout expires. If you set the SOREUSEADDR flag to
+true, the operating system releases the server port as soon as the
+server socket is closed or the server process terminates.This is done
+through:</p>
+<p>s.setsockopt(socket.SOL_SOCKET, socket.SOJEUSEADDR, l)</p>
+<p><strong>Binding the Socket</strong></p>
+<p>The next step is to claim a port number for the server. This process is
+called binding. To bind to a port, you call:<br>
+s.bind((‘’, 111))</p>
+<p>The first argument to bind() specifies the IP address to bind to it.
+It&rsquo;s generally left blank, which means &ldquo;bind to all interfaces and
+addresses.&rdquo;</p>
+<p><strong>Listening for Connections</strong><br>
+The last step before actually accepting client connections is to call
+listen(). This call tells the operating system to prepare to receive
+connections. It takes a single parameter, which indicates how many
+pending connections the operating system should allow to remain in queue
+before the server actually gets around to processing them.</p>
+<p><strong>Accepting Connections</strong></p>
+<p>Most servers designed to run indefinitely and service multiple
+connections, this is usually done with a carefully designed infinite
+loop. Example:</p>
+<blockquote>
+<p>import socket<br>
+host = &rsquo;&rsquo; # Bind to all interfaces<br>
+port = 51423<br>
+s = socket.socket(socket.AF_INET, socket.SOCKJTREAM)<br>
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, l)<br>
+s.bind((host, port))<br>
+print &ldquo;Waiting for connections&hellip;&rdquo;<br>
+s.listen(l)<br>
+while l:<br>
+    clientsock, clientaddr = s.acceptQ<br>
+    print &ldquo;Got connection from&rdquo;, clientsock.getpeername()<br>
+    clientsock.close()</p>
+</blockquote>
+<p><strong>Using User Datagram Protocol</strong></p>
+<p>To use UDP on the server, you create a socket, set the options, and bind
+() just like with TCP However, there&rsquo;s no need for listen () or accept
+()—just use recvf rom().<br>
+This function actually returns two pieces of information: the received
+data, and the address and port number of the program that sent the data.
+Because UDP is connectionless, this is all you need to be able to send
+back a reply. Example, echo server:</p>
+<blockquote>
+<p>import socket, traceback<br>
+host = &rsquo;&rsquo; # Bind to all interfaces<br>
+port = 51423<br>
+s = socket.socket(socket.AF_INET, socket.SOCK_DCRAM)<br>
+s. setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, l)<br>
+s.bind((host, port))<br>
+while l:<br>
+    try:<br>
+        message, address = s.recvfrom(8l92)<br>
+        print &ldquo;Cot data from&rdquo;, address<br>
+        s.sendto(message, address)   #Echo it back<br>
+    except (Keyboardlnterrupt, SystemExit):<br>
+        raise<br>
+    except:<br>
+        traceback.print_exc()</p>
+</blockquote>
+<p>In this post we have clarified some points in network servers.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/blog/blog/2009-05-15-python-notes-12-network-clients.html/">↩ Python Notes 12 : Network clients</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/blog/blog/2009-05-15-python-notes-14-advanced-network.html/"> Python Notes 14: Advanced Network Operations ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        © Adritian. Free Hugo theme by Adrián Moreno Peña.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#portfolio">PORTFOLIO</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+      <nav class="language-selector">
+        <ul>
+          
+            
+            <li class="dropdown">
+              <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="languages-dropdown">
+                <span class="label">Language</span>    
+              </button>
+            <ul class="dropdown__menu" id="languages-dropdown">
+              <li class="current"><span>✔️ English</span></li>
+              
+              
+            
+              
+            
+              
+              
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

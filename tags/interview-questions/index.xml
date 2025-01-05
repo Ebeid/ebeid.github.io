@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interview Questions on </title>
+    <link>http://localhost:1313/tags/interview-questions/</link>
+    <description>Recent content in Interview Questions on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 22 Jul 2008 11:04:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/interview-questions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What Great .NET Developers Ought To Know [Answers]</title>
+      <link>http://localhost:1313/2008/07/what-great-net-developers-ought-to-know.html</link>
+      <pubDate>Tue, 22 Jul 2008 11:04:00 -0500</pubDate>
+      <guid>http://localhost:1313/2008/07/what-great-net-developers-ought-to-know.html</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Everyone who writes code&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Describe the difference between a Thread and a Process?&lt;/li&gt;&#xA;&lt;li&gt;What is a Windows Service and how does its lifecycle differ from a &amp;ldquo;standard&amp;rdquo; EXE?&lt;/li&gt;&#xA;&lt;li&gt;What is the maximum amount of memory any single process on Windows can address? Is this different than the maximum virtual memory for the system? How would this affect a system design?&lt;/li&gt;&#xA;&lt;li&gt;What is the difference between an EXE and a DLL?&lt;/li&gt;&#xA;&lt;li&gt;What is strong-typing versus weak-typing? Which is preferred? Why?&lt;/li&gt;&#xA;&lt;li&gt;Corillian&amp;rsquo;s product is a &amp;ldquo;Component Container.&amp;rdquo; Name at least 3 component containers that ship now with the Windows Server Family.&lt;/li&gt;&#xA;&lt;li&gt;What is a PID? How is it useful when troubleshooting a system?&lt;/li&gt;&#xA;&lt;li&gt;How many processes can listen on a single TCP/IP port?&lt;/li&gt;&#xA;&lt;li&gt;What is the GAC? What problem does it solve ?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Mid-Level .NET Developer&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

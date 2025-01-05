@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Programming Thoughts on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/programming-thoughts/</link>
-    <description>Recent content in Programming Thoughts on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Wed, 26 Aug 2009 00:32:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/programming-thoughts/index.xml" rel="self" type="application/rss+xml" />
+    <title>Programming Thoughts on </title>
+    <link>http://localhost:1313/tags/programming-thoughts/</link>
+    <description>Recent content in Programming Thoughts on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 26 Aug 2009 00:32:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/programming-thoughts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wisdom of Experts: Programming in vs. Programming into a language</title>
-      <link>https://ebeid.github.io/blog/2009-08-26-wisdom-of-experts-programming-in-vs.html/</link>
+      <link>http://localhost:1313/2009/08/wisdom-of-experts-programming-in-vs.html</link>
       <pubDate>Wed, 26 Aug 2009 00:32:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2009-08-26-wisdom-of-experts-programming-in-vs.html/</guid>
-      <description>David Gries (1981) pointed out that “your programming tools don’t have to determine how you think about programming”. He also made a distinction between programming in a language vs. programming into a language.
-Programmers who program “in” a language limit their thoughts to constructs that the language directly supports. If the language tools are primitive, the programmers thoughts will be also be primitive.
-Programmers who program “into” a language, first decide what thoughts they want to express, and then they determine how to express thoughts using the tools provided by their specific language.</description>
+      <guid>http://localhost:1313/2009/08/wisdom-of-experts-programming-in-vs.html</guid>
+      <description>&lt;p&gt;David Gries (1981)  pointed out that “your programming tools don’t have to determine how you think about programming”. He also made a distinction between programming &lt;em&gt;&lt;strong&gt;in&lt;/strong&gt;&lt;/em&gt; a language vs. programming &lt;strong&gt;&lt;em&gt;into&lt;/em&gt;&lt;/strong&gt; a language.&lt;/p&gt;&#xA;&lt;p&gt;Programmers who program “in” a language limit their thoughts to constructs that the language directly supports. If the language tools are primitive, the programmers thoughts will be also be primitive.&lt;/p&gt;&#xA;&lt;p&gt;Programmers who program “into” a language, first decide what thoughts they want to express, and then they determine how to express thoughts using the tools provided by their specific language.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

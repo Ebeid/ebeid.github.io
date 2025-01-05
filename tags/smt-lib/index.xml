@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SMT-LIB on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/smt-lib/</link>
-    <description>Recent content in SMT-LIB on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Thu, 01 Aug 2013 16:24:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/smt-lib/index.xml" rel="self" type="application/rss+xml" />
+    <title>SMT-LIB on </title>
+    <link>http://localhost:1313/tags/smt-lib/</link>
+    <description>Recent content in SMT-LIB on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 01 Aug 2013 16:24:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/smt-lib/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Convert Microsoft Pex path conditions from Z3 native format to SMT-LIB</title>
-      <link>https://ebeid.github.io/blog/2013-08-01-convert-microsoft-pex-path-conditions.html/</link>
+      <link>http://localhost:1313/2013/08/convert-microsoft-pex-path-conditions.html</link>
       <pubDate>Thu, 01 Aug 2013 16:24:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-08-01-convert-microsoft-pex-path-conditions.html/</guid>
-      <description>We talked before about getting the code path conditions from Microsoft Pex as in Z3 native format(.z3 file).
-Sometimes you may need to convert from Z3 native format to SMT-LIB standard. You can do that using the Z3 C# APIs. The only trick here is: you have to use the Microsoft.Z3.dll that come with your current Microsoft Pex installation (C:\Program Files\Microsoft Pex\bin\Microsoft.Z3.dll).
-To show how it works, let’s create a new C# console application.</description>
+      <guid>http://localhost:1313/2013/08/convert-microsoft-pex-path-conditions.html</guid>
+      <description>&lt;p&gt;We talked before about &lt;a href=&#34;http://ebeid-soliman.blogspot.com/2013/07/get-path-conditions-from-microsoft-pex.html&#34; title=&#34;Get path conditions from Microsoft Pex&#34;&gt;getting the code path conditions from Microsoft Pex&lt;/a&gt; as in &lt;a href=&#34;http://research.microsoft.com/en-us/um/redmond/projects/z3/old/index.html&#34; title=&#34;Z3 : An Efficient Theorem Prover&#34;&gt;Z3&lt;/a&gt; native format(.z3 file).&lt;/p&gt;&#xA;&lt;p&gt;Sometimes you may need to convert from Z3 native format to &lt;a href=&#34;http://www.smt-lib.org/&#34; title=&#34;SMT-LIB The Satisfiability Modulo Theories Library&#34;&gt;SMT-LIB&lt;/a&gt; standard. You can do that using the &lt;a href=&#34;http://ebeid-soliman.blogspot.com/2013/07/the-z3-constraint-solver-developer.html&#34; title=&#34;The Z3 Constraint Solver, a developer perspective&#34;&gt;Z3 C# APIs&lt;/a&gt;. The only trick here is: you have to use the Microsoft.Z3.dll that come with your current Microsoft Pex installation (C:\Program Files\Microsoft Pex\bin\Microsoft.Z3.dll).&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

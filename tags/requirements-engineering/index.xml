@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Requirements Engineering on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/requirements-engineering/</link>
-    <description>Recent content in Requirements Engineering on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 17 Dec 2010 08:02:00 -0600</lastBuildDate><atom:link href="https://ebeid.github.io/tags/requirements-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <title>Requirements Engineering on </title>
+    <link>http://localhost:1313/tags/requirements-engineering/</link>
+    <description>Recent content in Requirements Engineering on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 17 Dec 2010 08:02:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/requirements-engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Business analysis &amp; Requirements Engineering Certifications</title>
-      <link>https://ebeid.github.io/blog/2010-12-17-business-analysis-requirements.html/</link>
+      <title>Business analysis &amp;amp; Requirements Engineering Certifications</title>
+      <link>http://localhost:1313/2010/12/business-analysis-requirements.html</link>
       <pubDate>Fri, 17 Dec 2010 08:02:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2010-12-17-business-analysis-requirements.html/</guid>
-      <description>I was searching for certifications on requirements engineering and I found that there is a lot of mixing between business analysis and requirements engineering. This mix exists both on the daily use, professional certifications and organizations.
-Starting by the definitions:
-Business analysis is the discipline of identifying business needs and determining solutions to business problems. Solutions often include a systems development component, but may also consist of process improvement, organizational change or strategic planning and policy development.</description>
+      <guid>http://localhost:1313/2010/12/business-analysis-requirements.html</guid>
+      <description>&lt;p&gt;I was searching for certifications on requirements engineering and I found that there is a lot of mixing between business analysis and requirements engineering. This mix exists both on the daily use, professional certifications and organizations.&lt;/p&gt;&#xA;&lt;p&gt;Starting by the definitions:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Business analysis&lt;/strong&gt; is the discipline of identifying business needs and determining solutions to business problems. Solutions often include a systems development component, but may also consist of process improvement, organizational change or strategic planning and policy development. (Kathleen B Hass, Richard Vander Horst, Kimi Ziemski (2008). &lt;em&gt;From Analyst to Leader: Elevating the Role of the Business Analyst&lt;/em&gt; Management Concepts, 2008. ISBN 1567262139. p94: &amp;ldquo;As the discipline of business analysis becomes professionalized&amp;rdquo;)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Requirement engineering&lt;/strong&gt; according to Laplante is &amp;ldquo;a sub-discipline of systems engineering and software engineering that is concerned with determining the goals, functions, and constraints of hardware and software systems.&amp;rdquo;. (Phillip A. Laplante (2007) &lt;em&gt;What Every Engineer Should Know about Software Engineering&lt;/em&gt;. ISBN 0849372283 p44)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This may lead us to conclude that business analysis as a discipline has a heavy overlap with requirements engineering, but focuses on identifying the changes to an organization that are required for it to achieve strategic goals. These changes include changes to strategies, structures, policies, processes, and information systems.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

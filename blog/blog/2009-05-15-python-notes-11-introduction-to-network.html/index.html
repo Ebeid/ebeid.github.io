@@ -1,0 +1,622 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#portfolio"
+                >PORTFOLIO</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/blog">Blog</a></span></li><li class="breadcrum-item"><span><a href="/blog/blog">Blog</a></span></li><li class="breadcrum-item current">Python Notes 11 : Introduction to Network Programming</li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/blog/blog/2009-05-15-python-notes-11-introduction-to-network.html/">Python Notes 11 : Introduction to Network Programming</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Fri May 15, 2009</h4>
+              ·
+              <h4 id="wordcount">1154 Words</h4>
+            </section>
+             
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p><strong>Network Overview</strong></p>
+<p>Python provides a wide assortment of network support.</p>
+<ul>
+<li>Low-level programming with sockets (if you want to create a
+protocol).</li>
+<li>Support for existing network protocols (HTTP, FTP, SMTP, etc&hellip;).</li>
+<li>Web programming (CGI scripting and HTTP servers).</li>
+<li>Data encoding</li>
+</ul>
+<p><strong>Network Basics: TCP/IP</strong></p>
+<p>Python’s networking modules primarily support TCP/IP.</p>
+<ul>
+<li>TCP - A reliable connection-oriented protocol (streams).</li>
+<li>UDP - An unreliable packet-oriented protocol (datagrams).</li>
+</ul>
+<p>TCP is the most common (HTTP, FTP, SMTP, etc&hellip;). Both protocols are
+supported using &ldquo;sockets&rdquo;.</p>
+<p>A socket is a file-like object. Allows data to be sent and received
+across the network like a file. But it also includes functions to accept
+and establish connections. Before two machines can establish a
+connection, both must create a socket</p>
+<p><strong>Network Basics: Ports</strong></p>
+<p>In order to receive a connection, a socket must be bound to a port (by
+the server). A port is a number in the range 0-65535 that’s managed by
+the OS. Used to identify a particular network service (or listener).
+Ports 0-1023 are reserved by the system and used for common protocols:</p>
+<ul>
+<li>FTP Port 20</li>
+<li>Telnet Port 23</li>
+<li>SMTP (Mail) Port 25</li>
+<li>HTTP (WWW) Port 80</li>
+</ul>
+<p>Ports above 1024 are reserved for user processes.</p>
+<p><strong>Socket programming in a nutshell</strong></p>
+<ul>
+<li>Server creates a socket, binds it to some well-known port number,
+and starts listening.</li>
+<li>Client creates a socket and tries to connect it to the server
+(through the above port).</li>
+<li>Server-client exchange some data.</li>
+<li>Close the connection (of course the server continues to listen for
+more clients).</li>
+</ul>
+<p><strong>Socket Programming Example</strong></p>
+<p><strong>The socket module</strong></p>
+<p>Provides access to low-level network programming functions. The
+following example is a simple server that returns the current time</p>
+<blockquote>
+<p>import time, socket</p>
+</blockquote>
+<blockquote>
+<p>s = socket(AF_INET, SOCK_STREAM)#Create TCP socket</p>
+</blockquote>
+<blockquote>
+<p>s.bind((&quot;&quot;,8888))                      #Bind to port 8888</p>
+</blockquote>
+<blockquote>
+<p>s.listen(5)                                #Start listening</p>
+</blockquote>
+<blockquote>
+<p>while 1:</p>
+</blockquote>
+<blockquote>
+<p>    client,addr = s.accept()          #Wait for a connection</p>
+</blockquote>
+<blockquote>
+<p>    print &ldquo;Got a connection from &ldquo;, addr</p>
+</blockquote>
+<blockquote>
+<p>    client.send(time.ctime(time.time())) #Send time back</p>
+<blockquote>
+<p>    client.close()</p>
+</blockquote>
+<p><strong>Notes</strong>: The socket first opened by server is not the same one used
+to exchange data.Instead, the accept() function returns a new socket
+for this (’client’ above).listen() specifies max number of pending
+connections</p>
+<p>The following example is the client program for the above time server
+which connect to time server and get current time.</p>
+<blockquote>
+<p>from socket import *</p>
+</blockquote>
+<blockquote>
+<p>s = socket(AF_INET,SOCK_STREAM) #Create TCP socket</p>
+</blockquote>
+<blockquote>
+<p>s.connect((&ldquo;google.com&rdquo;,8888))       #Connect to server</p>
+</blockquote>
+<blockquote>
+<p>tm = s.recv(1024)                #Receive up to 1024 bytes</p>
+</blockquote>
+<blockquote>
+<p>s.close()                             # Close connection</p>
+</blockquote>
+<blockquote>
+<p>print &ldquo;The time is&rdquo;, tm</p>
+</blockquote>
+<p><strong>Notes:</strong> Once connection is established, server/client communicate
+using send() and recv(). Aside from connection process, it’s
+relatively straightforward. Of course, the devil is in the details.
+And are there ever a LOT of details.</p>
+<p><strong>The Socket Module</strong></p>
+<p>The socket module used for all low-level networking, creation and
+manipulation of sockets, and general purpose network functions
+(hostnames, data conversion, etc&hellip;). It’s a direct translation of the
+BSD socket interface.</p>
+<p><strong>Utility Functions</strong></p>
+<ul>
+<li>socket.gethostbyname(hostname) # Get IP address for a host</li>
+<li>socket.gethostname() # Name of local machine</li>
+<li>socket.ntohl(x) # Convert 32-bit integer to host order</li>
+<li>socket.ntohs(x) # Convert 16-bit integer to host order</li>
+<li>socket.htonl(x) # Convert 32-bit integer to network order</li>
+<li>socket.htons(x) # Convert 16-bit integer to network order</li>
+</ul>
+<p><strong>Comments:</strong> Network order for integers is big-endian. Host order may
+be little-endian or big-endian (depends on the machine).</p>
+<p>The socket(family, type, proto) function creates a new socket object.
+<em>Family</em> is usually set to AF_INET. <em>Type</em> is one of:</p>
+<ul>
+<li>SOCK_STREAM          Stream socket (TCP)</li>
+<li>SOCK_DGRAM           Datagram socket (UDP)</li>
+<li>SOCK_RAW               Raw socket</li>
+</ul>
+<p><em>Proto</em> is usually only used with raw sockets:</p>
+<ul>
+<li>IPPROTO_ICMP</li>
+<li>IPPROTO_IP</li>
+<li>IPPROTO_RAW</li>
+<li>IPPROT O_TCP</li>
+<li>IPPROTO_UDP</li>
+</ul>
+<p><strong>Socket methods</strong></p>
+<ul>
+<li>s.accept()                  # Accept a new connection</li>
+<li>s.bind(address)          # Bind to an address and port</li>
+<li>s.close()                    # Close the socket</li>
+<li>s.connect(address)      # Connect to remote socket</li>
+<li>s.fileno()                   # Return integer file descriptor</li>
+<li>s.getpeername()         # Get name of remote machine</li>
+<li>s.getsockname()    #Get socket address as (ipaddr,port)</li>
+<li>s.getsockopt(&hellip;)        # Get socket options</li>
+<li>s.listen(backlog)        # Start listening for connections</li>
+<li>s.makefile(mode)   # Turn socket into a file like object</li>
+<li>s.recv(bufsize)           # Receive data</li>
+<li>s.recvfrom(bufsize)    # Receive data (UDP)</li>
+<li>s.send(string)           # Send data</li>
+<li>s.sendto(string, address)    # Send packet (UDP)</li>
+<li>s.setblocking(flag)   #Set blocking or nonblocking mode</li>
+<li>s.setsockopt(&hellip;)      #Set socket options</li>
+<li>s.shutdown(how)     #Shutdown one or both halves of connection</li>
+</ul>
+<p>There are a huge variety of configuration/connection options. You’ll
+definitely want a good reference at your side</p>
+<p><strong>The SocketServer Module</strong></p>
+<p>Provides a high-level class-based interface to sockets. Each protocol
+is encapsulated in a class (TCPServer, UDPServer, etc.). It also
+provides a series of handler classes that specify additional server
+behavior.</p>
+<p>To create a network service, need to inherit from both a protocol and
+handler class. Example, the same time server we done before:</p>
+<blockquote>
+<p>import SocketServer</p>
+</blockquote>
+<blockquote>
+<p>import time</p>
+</blockquote>
+<blockquote>
+<p># This class actually implements the server functionality</p>
+</blockquote>
+<blockquote>
+<p>class TimeHandler(SocketServer.BaseRequestHandler):</p>
+</blockquote>
+<blockquote>
+<p>    def handle(self):</p>
+</blockquote>
+<blockquote>
+<p>        self.request.send(time.ctime(time.time()))</p>
+</blockquote>
+<blockquote>
+<p># Create the server</p>
+</blockquote>
+<blockquote>
+<p>server = SocketServer.TCPServer(&rdquo;&quot;,8888),TimeHandler)</p>
+</blockquote>
+<blockquote>
+<p>server.serve_forever()</p>
+</blockquote>
+<p><strong>Not es:</strong> The module provides a number of specialized server and
+handler types. Ex: ForkingTCPServer, ThreadingTCPServer,
+StreamRequestHandler, etc.</p>
+<p><strong>Common Network Protocols</strong></p>
+<p>Modules are available for a variety of network protocols:</p>
+<ul>
+<li>ftplib                FTP protocol</li>
+<li>smtplib             SMTP (mail) protocol</li>
+<li>nntplib              News</li>
+<li>gopherlib          Gopher</li>
+<li>poplib               POP3 mail server</li>
+<li>imaplib             IMAP4 mail server</li>
+<li>telnetlib            Telnet protocol</li>
+<li>httplib              HTTP protocol</li>
+</ul>
+<p>These modules are built using sockets, but operate on a very
+low-level. Working with them requires a good understand of the
+underlying protocol. But can be quite powerful if you know exactly
+what you are doing</p>
+<p><strong>The httplib Module</strong></p>
+<p>Implements the HTTP 1.0 protocol and can use to talk to a web server.</p>
+<p>HTTP in two bullets:</p>
+<ul>
+<li>Client (e.g., a browser) sends a request to the server</li>
+</ul>
+<blockquote>
+<p>GET /index.html HTTP/1.0</p>
+</blockquote>
+<blockquote>
+<p>Connection: Keep-Alive</p>
+</blockquote>
+<blockquote>
+<p>Host: <a href="http://www.python.org">www.python.org</a></p>
+</blockquote>
+<blockquote>
+<p>User-Agent: Mozilla/4.61 [en] (X11; U; SunOS 5.6 sun4u)</p>
+</blockquote>
+<blockquote>
+<p>[blank line]</p>
+</blockquote>
+<ul>
+<li>Server responds with something like this:</li>
+</ul>
+<blockquote>
+<p>HTTP/1.0 200 OK</p>
+</blockquote>
+<blockquote>
+<p>Content-type: text/html</p>
+</blockquote>
+<blockquote>
+<p>Content-length: 72883</p>
+</blockquote>
+<blockquote>
+<p>Headers: blah</p>
+</blockquote>
+<blockquote>
+<p>[blank line]</p>
+</blockquote>
+<blockquote>
+<p>Data</p>
+</blockquote>
+<blockquote>
+<p>&hellip;</p>
+</blockquote>
+<p><strong>Making an HTTP connection</strong></p>
+<blockquote>
+<p>import httplib</p>
+</blockquote>
+<blockquote>
+<p>h = httplib.HTTP(&ldquo;<a href="https://www.python.org">www.python.org</a>&rdquo;)</p>
+</blockquote>
+<blockquote>
+<p>h.putrequest(’GET’,’/index.html’)</p>
+</blockquote>
+<blockquote>
+<p>h.putheader(’User-Agent’,’Lame Tutorial Code’)</p>
+</blockquote>
+<blockquote>
+<p>h.putheader(’Accept’,’text/html’)</p>
+</blockquote>
+<blockquote>
+<p>h.endheaders()</p>
+</blockquote>
+<blockquote>
+<p>errcode,errmsg, headers = h.getreply()</p>
+</blockquote>
+<blockquote>
+<p>f = h.getfile()        # G et file object for reading data</p>
+</blockquote>
+<blockquote>
+<p>data = f.read()</p>
+</blockquote>
+<blockquote>
+<p>f.close()</p>
+</blockquote>
+<p>You should understand some HTTP to work with httplib.</p>
+<p><strong>The urllib Module</strong></p>
+<p>A high-level interface to HTTP and FTP which provides a file-like
+object that can be used to connect to remote servers</p>
+<blockquote>
+<p>import urllib</p>
+</blockquote>
+<blockquote>
+<p>f = urllib.urlopen(&ldquo;<a href="http://www.python.org/index.html%22">http://www.python.org/index.html"</a>)</p>
+</blockquote>
+<blockquote>
+<p>data = f.read()</p>
+</blockquote>
+<blockquote>
+<p>f.close()</p>
+</blockquote>
+<p><strong>Utility functions</strong></p>
+<ul>
+<li>urllib.quote(str)         # Quotes a string for use in a URL</li>
+<li>urllib.quote_plus(str)    # Also replaces spaces with ’+’</li>
+<li>urllib.unquote(str)         # Opposite of quote()</li>
+<li>urllib.unquote_plus(str)  # Opposite of quote_plus()</li>
+<li>urllib.urlencode(dict)</li>
+<li># Turns a dictionary of key=value pairs into a HTTP query-string</li>
+</ul>
+<p>Examples</p>
+<p>urllib.quote(&ldquo;ebeid@ieee&rdquo;)         #Produces &ldquo;ebeid%40ieee&rdquo;</p>
+<p>urllib.unquote(&quot;%23%21/bin/sh&rdquo;)    #Produces &ldquo;/bin/sh&rdquo;</p>
+<p><strong>The urlparse Module</strong></p>
+<p>Contains functions for manipulating URLs</p>
+<ul>
+<li>URL’s have the following general format</li>
+</ul>
+<blockquote>
+<p>scheme:/netloc/path;parameters?query#fragment</p>
+</blockquote>
+<ul>
+<li>urlparse(urlstring) - Parses a URL into components</li>
+</ul>
+<blockquote>
+<p>import urlparse</p>
+</blockquote>
+<blockquote>
+<p>t = urlparse.urlparse(&ldquo;<a href="http://www.python.org/index.html%22">http://www.python.org/index.html"</a>)</p>
+</blockquote>
+<blockquote>
+<p>#Produces
+(’http’,’<a href="http://www.python.org%E2%80%99,%E2%80%99/index.html">www.python.org’,’/index.html</a>’,’’,’’,’’)</p>
+</blockquote>
+<ul>
+<li>urlunparse(tuple) - Turns tuple of components back into a URL
+string</li>
+</ul>
+<blockquote>
+<p>url = urlparse.urlunparse((’http’,’www.python.org’,’foo.html’,
+’bar=spam’,’’))</p>
+</blockquote>
+<blockquote>
+<p># Produces &ldquo;<a href="http://www.python.org/foo.html?bar=spam">http://www.python.org/foo.html?bar=spam</a>&rdquo;</p>
+</blockquote>
+<ul>
+<li>urljoin(base, url) - Combines a base and relative URL</li>
+</ul>
+<blockquote>
+<p>urlparse.urljoin(&ldquo;<a href="http://www.python.org/index.html%22,%22help.html%22">http://www.python.org/index.html","help.html"</a>)</p>
+</blockquote>
+<blockquote>
+<p># Produces &ldquo;<a href="http://www.python.org/help.html">http://www.python.org/help.html</a>&rdquo;</p>
+</blockquote>
+<p>In this note we explored horizontally the network programming
+capabilities of Python. Every single module and topic mentioned here,
+needs multiple posts to cover it. In the upcoming posts, we will dig
+into network programming in detail.</p>
+</blockquote>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/blog/blog/2009-03-28-python-notes-10.html/">↩ Python Notes – 10 : Threading</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/blog/blog/2009-05-15-python-notes-12-network-clients.html/"> Python Notes 12 : Network clients ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        © Adritian. Free Hugo theme by Adrián Moreno Peña.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#portfolio">PORTFOLIO</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+      <nav class="language-selector">
+        <ul>
+          
+            
+            <li class="dropdown">
+              <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="languages-dropdown">
+                <span class="label">Language</span>    
+              </button>
+            <ul class="dropdown__menu" id="languages-dropdown">
+              <li class="current"><span>✔️ English</span></li>
+              
+              
+            
+              
+            
+              
+              
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

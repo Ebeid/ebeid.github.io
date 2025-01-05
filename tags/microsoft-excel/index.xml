@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Microsoft Excel on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/microsoft-excel/</link>
-    <description>Recent content in Microsoft Excel on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Tue, 08 Jan 2013 13:01:00 -0600</lastBuildDate><atom:link href="https://ebeid.github.io/tags/microsoft-excel/index.xml" rel="self" type="application/rss+xml" />
+    <title>Microsoft Excel on </title>
+    <link>http://localhost:1313/tags/microsoft-excel/</link>
+    <description>Recent content in Microsoft Excel on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 08 Jan 2013 13:01:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/microsoft-excel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Basic statistics using Microsoft Excel</title>
-      <link>https://ebeid.github.io/blog/2013-01-08-basic-statistics-using-microsoft-excel.html/</link>
+      <link>http://localhost:1313/2013/01/basic-statistics-using-microsoft-excel.html</link>
       <pubDate>Tue, 08 Jan 2013 13:01:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-08-basic-statistics-using-microsoft-excel.html/</guid>
-      <description>Microsoft Excel is a powerful software that have been used my end users and professionals for many years for various purposes. In this post we going to introduce basic statistical features of Excel. This post is using Microsoft Excel 2013, but it is easy to map it to your Excel version.
-Basic Formulas Computations in Excel are carried out using formulas. A formula is a mathematical expression that is used to calculate a value.</description>
+      <guid>http://localhost:1313/2013/01/basic-statistics-using-microsoft-excel.html</guid>
+      <description>&lt;p&gt;Microsoft Excel is a powerful software that have been used my end users and professionals for many years for various purposes. In this post we going to introduce basic statistical features of Excel. This post is using Microsoft Excel 2013, but it is easy to map it to your Excel version.&lt;/p&gt;&#xA;&lt;h3 id=&#34;basic-formulas&#34;&gt;&lt;strong&gt;Basic Formulas&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Computations in Excel are carried out using formulas. A formula is a mathematical expression that is used to calculate a value. In Excel, a formula is entered into the active cell by typing an expression. In certain situations, Excel will automatically insert a formula for you.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

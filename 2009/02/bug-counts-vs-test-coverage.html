@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#experience"
+                >EXPERIENCE</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/2009">2009th</a></span></li><li class="breadcrum-item"><span><a href="/2009/02">2nd</a></span></li><li class="breadcrum-item"><span><a href="/2009/02/bug-counts-vs-test-coverage.html">Bug counts vs test coverage.html</a></span></li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/2009/02/bug-counts-vs-test-coverage.html">Bug Counts vs. Test Coverage</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Thu Feb 5, 2009</h4>
+              ·
+              <h4 id="wordcount">862 Words</h4>
+            </section>
+             
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p><strong>What to Do When Bug Counts Don’t Speak for Themselves?</strong></p>
+<p>Bug counts on a project speak volumes about the quality of testing for a particular product and how vigorous the test team is working to &ldquo;assure quality.&rdquo; Bug counts are invariably a primary area of test metrics that are reported to management. What is the rationale behind drawing so much attention to the number of bugs being found through the course of a project?<br>
+I have heard it said that QE’s job is to find bugs. If this is the assumption of management, bug counts will be an important indicator to them that QE is doing its job. They expect to see bug counts rise dramatically in the early stages of testing, and they expect to see the find rate decrease as the project comes to an end. These are management’s statistical expectations when they believe bug counts are a metric to assess quality of testing.<br>
+If high bug counts, then, are an indicator that quality is going up, low bug counts can be seen as an indicator that something just isn’t right with the testing process. Management might imagine different problems that are preventing bugs from being found:</p>
+<ul>
+<li>Test coverage isn’t complete; maybe major areas of functionality aren’t being tested.</li>
+<li>Testing is only scratching the surface of all functionality, not digging in to the real complexities of the code.</li>
+<li>Our testers just aren’t that good.</li>
+</ul>
+<p>Management might see red flags when bug counts are low, but a number of causes may contribute to low bug counts. On the second or third iteration of a product, the bulk of the defects may have been found on an earlier cycle. Or especially good development practices may have been implemented: strong unit testing, code reviews, good documentation, and not working developers to death. These are supposed to result in lower bug counts.<br>
+Ultimately, however, QE will justify low bug counts when it can justify its test coverage. If the product under test is being tested with thorough coverage, the bug count should be treated only as a supporting statistic, not the primary one. After all, <strong>we all know that a quality product hasn’t been reached when a certain bug count is reached. Quality is achieved when test coverage is maximized and bug finds decrease to a minimum.</strong><br>
+There are several things you can do when bug counts are low and management is questioning the quality of testing:</p>
+<ol>
+<li><strong>Take stock</strong>. Call a meeting with your test team, go through the areas of test, possibly even some test cases themselves, and get a general feel for how much test coverage you really have. Maybe you’ll discover that an area of test really is being missed. Perhaps there is some misunderstanding of who should be testing what and some functionality fell between the cracks. Brainstorm more testing methods and techniques, and generate ideas of how your team can broaden the testing efforts. Before going to other groups or departments, get a solid understanding of where your team is in the process.</li>
+<li><strong>Talk to development</strong>. Go over your current test coverage with development, and see if they have any input on areas you might also investigate. Ask them what the trouble spots are, if they can suggest lower-level tests that may ferret out more bugs, and possibly even conduct a test case review with them. On my last project, we sent out the test cases of a certain functionality to the appropriate developer for review. Though many times developers can be reluctant to help testers, demonstrate to them that it is in their best interest that we thoroughly test their code—if it’s solid, they have nothing to worry about.</li>
+<li><strong>Communicate with management</strong>. When bug counts are low, use test coverage to justify them. This doesn’t mean dismissing the fact that the bug count is low. It means using the bug count as an indicator to do some analysis into the testing practices you are doing, and verifying that high test coverage is being achieved. If it is, explain to management your findings. Demonstrate by solid metrics that you are performing thorough testing, that you can’t force bug counts to go up, and that maybe—just maybe—a low bug count means you’ve got a quality product on your hands!</li>
+</ol>
+<p>One thing to bear in mind: while you can use the above methods during testing cycles to understand and cope with a low bug count, the ideas are still applicable before testing even begins, while test cases are being written for a project, and while development is still in full swing. Good test coverage is something to be planned ahead of time, and having gone through the effort of mapping coverage and functional test cases early in the project, you will prevent yourself from spending valuable testing cycles repeating tasks.<br>
+While low bug counts can cause people in both development and management to question the effectiveness of the testing, do not be defensive about it. Use it as a trigger to prove what you should already know—your testing efforts are appropriate, effective, and your coverage is maximized. Don’t let your bug counts do the talking—your test coverage should say it all.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/2009/02/7-habits-of-highly-insecure-software.html">↩ 7 Habits of Highly Insecure Software</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/2009/02/center-of-innovation-competitiveness.html"> Center of Innovation &amp; Competitiveness (INCOM) - Nile University ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        <a href="https://themes.gohugo.io/themes/adritian-free-hugo-theme">© Adritian</a>. Free Hugo theme by <a href="https://www.adrianmoreno.info">Adrián Moreno Peña</a>.</br><a href="https://github.com/Ebeid/ebeid.github.io">Site content and code available in GitHub</a>.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Microsoft Dynamics CRM Dashboards on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/microsoft-dynamics-crm-dashboards/</link>
-    <description>Recent content in Microsoft Dynamics CRM Dashboards on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sun, 11 Mar 2012 06:10:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/microsoft-dynamics-crm-dashboards/index.xml" rel="self" type="application/rss+xml" />
+    <title>Microsoft Dynamics CRM Dashboards on </title>
+    <link>http://localhost:1313/tags/microsoft-dynamics-crm-dashboards/</link>
+    <description>Recent content in Microsoft Dynamics CRM Dashboards on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 11 Mar 2012 06:10:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/microsoft-dynamics-crm-dashboards/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Microsoft Dynamics CRM 2011 for Developers | Web Resources Part 1</title>
-      <link>https://ebeid.github.io/blog/2012-03-11-microsoft-dynamics-crm-2011-for.html/</link>
+      <link>http://localhost:1313/2012/03/microsoft-dynamics-crm-2011-for.html</link>
       <pubDate>Sun, 11 Mar 2012 06:10:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2012-03-11-microsoft-dynamics-crm-2011-for.html/</guid>
-      <description>Contents Introduction Types of Web Resources Where can Web Resources be Used ? Web Resources Limitations Web Resources Management Using Web Resources on a Form Using Web Resources from the Form Navigation Using Web Resources on a Dashboard Using Web Resources Direct from SiteMap Using Web Resources as a Solution Configuration Page Referencing Other Web Resources Introduction
-Web resources are a new feature of Dynamics CRM 2011 that allows storing of client side content in the CRM server database in order to be used for extending the Dynamics CRM web application.</description>
+      <guid>http://localhost:1313/2012/03/microsoft-dynamics-crm-2011-for.html</guid>
+      <description>&lt;h4 id=&#34;contents&#34;&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/h4&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Introduction&lt;/li&gt;&#xA;&lt;li&gt;Types of Web Resources&lt;/li&gt;&#xA;&lt;li&gt;Where can Web Resources be Used ?&lt;/li&gt;&#xA;&lt;li&gt;Web Resources Limitations&lt;/li&gt;&#xA;&lt;li&gt;Web Resources Management&lt;/li&gt;&#xA;&lt;li&gt;Using Web Resources on a Form&lt;/li&gt;&#xA;&lt;li&gt;Using Web Resources from the Form Navigation &lt;/li&gt;&#xA;&lt;li&gt;Using Web Resources on a Dashboard&lt;/li&gt;&#xA;&lt;li&gt;Using Web Resources Direct from SiteMap  &lt;/li&gt;&#xA;&lt;li&gt;Using Web Resources as a Solution Configuration Page&lt;/li&gt;&#xA;&lt;li&gt;Referencing Other Web Resources&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Web resources are a new feature of Dynamics CRM 2011 that allows storing of client side content in the CRM server database in order to be used for extending the Dynamics CRM web application. That content is then available to be delivered to users as needed during their interaction with the user interface. These resources can be used by URL, which also allows relative path referencing.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

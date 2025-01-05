@@ -1,38 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/categories/</link>
-    <description>Recent content in Categories on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ebeid.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <title>Categories on </title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>concepts</title>
-      <link>https://ebeid.github.io/categories/concepts/</link>
+      <title>Concepts</title>
+      <link>http://localhost:1313/categories/concepts/</link>
       <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ebeid.github.io/categories/concepts/</guid>
+      <guid>http://localhost:1313/categories/concepts/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>projects</title>
-      <link>https://ebeid.github.io/categories/projects/</link>
-      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      
-      <guid>https://ebeid.github.io/categories/projects/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jekyll update</title>
-      <link>https://ebeid.github.io/categories/jekyll-update/</link>
+      <title>Jekyll Update</title>
+      <link>http://localhost:1313/categories/jekyll-update/</link>
       <pubDate>Sun, 29 May 2016 15:58:38 -0700</pubDate>
-      
-      <guid>https://ebeid.github.io/categories/jekyll-update/</guid>
+      <guid>http://localhost:1313/categories/jekyll-update/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

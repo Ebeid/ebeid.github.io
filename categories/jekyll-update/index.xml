@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jekyll update on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/categories/jekyll-update/</link>
-    <description>Recent content in jekyll update on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sun, 29 May 2016 15:58:38 -0700</lastBuildDate><atom:link href="https://ebeid.github.io/categories/jekyll-update/index.xml" rel="self" type="application/rss+xml" />
+    <title>Jekyll Update on </title>
+    <link>http://localhost:1313/categories/jekyll-update/</link>
+    <description>Recent content in Jekyll Update on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 29 May 2016 15:58:38 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/jekyll-update/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project Euler - Problem 1 - Multiples of 3 and 5</title>
-      <link>https://ebeid.github.io/blog/2016-09-29-project-euler-proplem1/</link>
+      <link>http://localhost:1313/blog/2016-09-29-project-euler-proplem1/</link>
       <pubDate>Sun, 29 May 2016 15:58:38 -0700</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2016-09-29-project-euler-proplem1/</guid>
-      <description>As part of my effort to refresh my memory in the areas of algorithms, data structures and mathematics, I&amp;rsquo;m going to use problems from Project Euler. Now, let&amp;rsquo;s get to problem 1.
-/* Project Euler - Problem 1 - Multiples of 3 and 5 [ https://projecteuler.net/problem=1 ] If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</description>
+      <guid>http://localhost:1313/blog/2016-09-29-project-euler-proplem1/</guid>
+      <description>&lt;p&gt;As part of my effort to refresh my memory in the areas of algorithms, data structures and mathematics, I&amp;rsquo;m going to use problems from &lt;a href=&#34;https://projecteuler.net&#34;&gt;Project Euler&lt;/a&gt;. Now, let&amp;rsquo;s get to problem 1.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/*&#xA;Project Euler - Problem 1 - Multiples of 3 and 5 [ https://projecteuler.net/problem=1 ]&#xA;If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. &#xA;The sum of these multiples is 23.&#xA;Find the sum of all the multiples of 3 or 5 below 1000.&#xA;&#xA;This is a generic implementation of the solution.&#xA;Input Format: &#xA;The first line of the input contains the multiples ( 3 and 5 in our case).&#xA;The second line of input contains the upper bound (1000 in our case).&#xA;*/&#xA;public static void Problem1() {&#xA;&#x9;string multiplesRawInput = Console.ReadLine();&#xA;&#x9;int upperBound = int.Parse(Console.ReadLine());&#xA;&#x9;int[] multiples = new int[(multiplesRawInput.Split(&amp;#34; &amp;#34;.ToCharArray())).Count()];&#xA;&#x9;int i = 0;&#xA;&#x9;foreach(string multiple in multiplesRawInput.Split(&amp;#34; &amp;#34;.ToCharArray())) {&#xA;&#x9;&#x9;multiples[i] = int.Parse(multiple);&#xA;&#x9;&#x9;i++;&#xA;&#x9;}&#xA;&#xA;&#x9;int result = 0;&#xA;&#x9;for (int j = 1; j &amp;lt; upperBound; j++) {&#xA;&#x9;&#x9;if (((j % 3) == 0) || ((j % 5) == 0)) result = result + j;&#xA;&#x9;}&#xA;&#x9;Console.WriteLine(result);&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
   </channel>
 </rss>

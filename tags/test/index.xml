@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>test on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/test/</link>
-    <description>Recent content in test on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sun, 11 Apr 2010 05:08:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <title>Test on </title>
+    <link>http://localhost:1313/tags/test/</link>
+    <description>Recent content in Test on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 11 Apr 2010 05:08:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/test/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL Server Dedicated Administrator Connection</title>
-      <link>https://ebeid.github.io/blog/2010-04-11-sql-server-dedicated-administrator.html/</link>
+      <link>http://localhost:1313/blog/2010-04-11-sql-server-dedicated-administrator.html/</link>
       <pubDate>Sun, 11 Apr 2010 05:08:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2010-04-11-sql-server-dedicated-administrator.html/</guid>
-      <description>Microsoft SQL Server provides a dedicated administrator connection (DAC) which allows an administrator to access a running instance of SQL Server Database Engine to troubleshoot problems on the server—even when the server is unresponsive to other client connections. The DAC is available through the sqlcmd utility and SQL Server Management Studio. The connection is only allowed from a client running on the server. No network connections are permitted.
-To use SQL Server Management Studio with the DAC, connect to an instance of the SQL Server Database Engine with Query Editor by typing ADMIN: before the server name.</description>
+      <guid>http://localhost:1313/blog/2010-04-11-sql-server-dedicated-administrator.html/</guid>
+      <description>&lt;p&gt;Microsoft SQL Server provides a dedicated administrator connection (DAC)&#xA;which allows an administrator to access a running instance of SQL Server&#xA;Database Engine to troubleshoot problems on the server—even when the&#xA;server is unresponsive to other client connections. The DAC is available&#xA;through the &lt;strong&gt;sqlcmd&lt;/strong&gt; utility and SQL Server Management Studio. The&#xA;connection is only allowed from a client running on the server. No&#xA;network connections are permitted.&lt;/p&gt;&#xA;&lt;p&gt;To use SQL Server Management Studio with the DAC, connect to an instance&#xA;of the SQL Server Database Engine with Query Editor by typing &lt;strong&gt;ADMIN:&lt;/strong&gt;&#xA;before the server name. Object Explorer cannot connect using the DAC.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

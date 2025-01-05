@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#experience"
+                >EXPERIENCE</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/2013">2013th</a></span></li><li class="breadcrum-item"><span><a href="/2013/04">4th</a></span></li><li class="breadcrum-item"><span><a href="/2013/04/getting-started-with-microsoft-code.html">Getting started with microsoft code.html</a></span></li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/2013/04/getting-started-with-microsoft-code.html">Getting started with Microsoft Code Digger</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Fri Apr 26, 2013</h4>
+              ·
+              <h4 id="wordcount">391 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/microsoft-pex/">Microsoft Pex</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p>Microsoft Code Digger is Visual Studio 2012 extension that have been released few days ago by RiSE team at Microsoft Research (the same team who developed Pex). You can download the it from the Visual Studio Gallery <a href="http://visualstudiogallery.msdn.microsoft.com/fb5badda-4ea3-4314-a723-a1975cbdabb4">here</a>.</p>
+<p>Microsoft Code Digger uses the same engine that Pex uses, and the same techniques under the hood (dynamic symbolic execution and constraint solvers). The only constrain that Code Digger have is that it only works on public .NET code in Portable Class Libraries.</p>
+<h3 id="lets-try-it">Let’s try it</h3>
+<p>After installing the Code Digger extension for Visual Studio 2012, create a Portable Class Library. Let’s use the Triang() method we used in previous posts as an example here. Your code should look like:</p>
+<pre tabindex="0"><code>using System;  
+using System.Collections.Generic;  
+using System.Linq;  
+using System.Text;  
+  
+namespace PortableClassLibrary1  
+{  
+    public class Class1  
+    {  
+        public static int Triang(int Side1, int Side2, int Side3)  
+        {  
+            int triOut;  
+  
+            // triOut is output from the routine:  
+            //   Triang = 1 if triangle is scalene  
+            //   Triang = 2 if triangle is isosceles  
+            //   Triang = 3 if triangle is equilateral  
+            //   Triang = 4 if not a triangle  
+  
+            // A quick confirmation that it&#39;s a valid triangle  
+            if (Side1 &lt;= 0 || Side2 &lt;= 0 || Side3 &lt;= 0)  
+            {  
+                triOut = 4;  
+                return (triOut);  
+            }  
+  
+            // Detect any sides of equal sides  
+            triOut = 0;  
+            if (Side1 == Side2)  
+                triOut = triOut + 1;  
+            if (Side1 == Side3)  
+                triOut = triOut + 2;  
+            if (Side2 == Side3)  
+                triOut = triOut + 3;  
+            if (triOut == 0)  
+            {  
+                if ((Side1 + Side2 &lt;= Side3) || (Side2 + Side3 &lt;= Side1) || (Side1 + Side3 &lt;= Side2)) // confirm that it is a valid triangle   
+                    triOut = 4;  
+                else  
+                    triOut = 1;  
+                return (triOut);  
+            }  
+  
+            if (triOut &gt; 3)  
+                triOut = 3;  
+            else if ((triOut == 1) &amp;&amp; (Side1 + Side2 &gt; Side3))  
+                triOut = 2;  
+            else if ((triOut == 2) &amp;&amp; (Side1 + Side3 &gt; Side2))  
+                triOut = 2;  
+            else if ((triOut == 3) &amp;&amp; (Side2 + Side3 &gt; Side1))  
+                triOut = 2;  
+            else  
+                triOut = 4;  
+            return (triOut);  
+        }  
+    }  
+}  
+</code></pre><p>Right click inside Triang() method and wait for few seconds. You will see the below Inputs / Outputs pane.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgNEcipgiWFyGCJ3opXnfLqNOsy91dwy7e2JYzxIBPKDE6nrk8c2gN_FeRxFqa_9KmSCwak8HPTewT1Zhdl1fGZCUQ8sB6chnVw9PeVE9OZBOtaP5rf7swtKktEtT9wR497JbdXZmhpwA/s1600-h/PortableClassLibrary1%252520-%252520Microsoft%252520Visual%252520Studio_2013-04-24_14-17-51%25255B4%25255D.jpg"><img alt="PortableClassLibrary1 - Microsoft Visual Studio_2013-04-24_14-17-51" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUU3ne3xMp-kQSGfJXgsQ1sX8mTeah_AsFGmOjt1xH-F759a9JlLS3jfpoYn_p8D7jPNHWR0HQ5Cdta6sVNinqKpPUJMocNUT6Ngi_N05AATicFHxG4tXWpuJ7rO5mQK4pg0K5W9qcaQ/?imgmax=800" title="PortableClassLibrary1 - Microsoft Visual Studio_2013-04-24_14-17-51"></a> </p>
+<p>It’s the same set we got before from Pex and for the same reasons. No surprises, both tools use the same engine under hood.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/2013/04/why-pex-choose-these-inputs.html">↩ Why Pex Choose These Inputs</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/2013/04/microsoft-pex-understanding-assumptions.html"> Microsoft Pex: Understanding Assumptions, Assertions, and Test-Case Failures ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        <a href="https://themes.gohugo.io/themes/adritian-free-hugo-theme">© Adritian</a>. Free Hugo theme by <a href="https://www.adrianmoreno.info">Adrián Moreno Peña</a>.</br><a href="https://github.com/Ebeid/ebeid.github.io">Site content and code available in GitHub</a>.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Statistics on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/statistics/</link>
-    <description>Recent content in Statistics on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 11 Jan 2013 13:53:00 -0600</lastBuildDate><atom:link href="https://ebeid.github.io/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <title>Statistics on </title>
+    <link>http://localhost:1313/tags/statistics/</link>
+    <description>Recent content in Statistics on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 01 Feb 2013 16:55:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Probability</title>
+      <link>http://localhost:1313/blog/introduction-to-probability/</link>
+      <pubDate>Fri, 01 Feb 2013 16:55:00 -0600</pubDate>
+      <guid>http://localhost:1313/blog/introduction-to-probability/</guid>
+      <description>&lt;h3 id=&#34;1---what-is-probability-&#34;&gt;1 - What is probability ?&lt;/h3&gt;&#xA;&lt;p&gt;There is three different interpretations of probability :&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;The Frequency Interpretation of Probability : The probability that some specific outcome of a process will be obtained can be interpreted to mean the &lt;strong&gt;&lt;em&gt;relative frequency&lt;/em&gt;&lt;/strong&gt; with which that outcome would be obtained if the process were repeated a large number of times under similar conditions. In this case probability is based on history.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;what exactly large number means ?&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Introduction to R – Removing missing values</title>
-      <link>https://ebeid.github.io/blog/2013-01-11-introduction-to-r-removing-missing.html/</link>
+      <link>http://localhost:1313/2013/01/introduction-to-r-removing-missing.html</link>
       <pubDate>Fri, 11 Jan 2013 13:53:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-11-introduction-to-r-removing-missing.html/</guid>
-      <description>A common task in preparing you data is to remove missing values(NAs). One way to do that is to retrieve a vector of the missing values in your data, and then filter them out from your structure.
-If you want to filter out the missing values from more than one vector , you can use complete.cases() to get the indices that contains good data in both vectors.
-Here good will contain TRUE only for indices that hold good data in both vectors; FALSE otherwise.</description>
+      <guid>http://localhost:1313/2013/01/introduction-to-r-removing-missing.html</guid>
+      <description>&lt;p&gt;A common task in preparing you data is to remove missing values(NAs). One way to do that is to retrieve a vector of the missing values in your data, and then filter them out from your structure.&lt;br&gt;&#xA;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-tkGjyOKy8IvODPxVXCgx5TNO-SuokAhiyMUDhT1gWCzv4YFvf83rZym01gRJj1zd-bAL9DwJz7l74hAFadtc9ikPxewadtfXq3cvgleRr2QvclqGf_8A0UkvuDnvhJ5vULCcHmh0aQ/s1600-h/RGui%252520%25252864-bit%252529_2013-01-09_13-17-45%25255B3%25255D.jpg&#34;&gt;&lt;img alt=&#34;RGui (64-bit)_2013-01-09_13-17-45&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEypioB8HojS51tn4ECVjQdae6zjvY9ep4s-0I80BfKyG2-cjFanL6dv3utFrLNM8FMvYTCplFQMJxrsDJA4nFp3eIjmikBAu4hZwWRvdiWLklnpUB-QOwK6sURsCeLXM9uV-WRSdsMA/?imgmax=800&#34; title=&#34;RGui (64-bit)_2013-01-09_13-17-45&#34;&gt;&lt;/a&gt;&lt;br&gt;&#xA;If you want to filter out the missing values from more than one vector , you can use complete.cases() to get the indices that contains good data in both vectors.&lt;br&gt;&#xA;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-zrVNajt1EerMK_tPQgXhVLZoNkl78-zYyYrtkyWIX0vb52BBbkipVM6vey8xrmDSR1PFX7UBdloX7a7OWXt9L7RkZRsA5DO3Mme-GVaRXZ3mcotoRNOFM0QE9Ldf9z0arAZ38i72Jg/s1600-h/RGui%252520%25252864-bit%252529_2013-01-09_13-25-29%25255B3%25255D.jpg&#34;&gt;&lt;img alt=&#34;RGui (64-bit)_2013-01-09_13-25-29&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLMSVYPmKOAYae8F2aOcbMb_c9nTnlXVLFuaC03ux-2ZnSoST7bPs52En7I7JTSGoE1RHCzTEF4aWzZj4haroJvwQZUuZuUGE8zi5BFVkNiooMRwwrwrZi2o9A3yywWvTfJnXc94olYg/?imgmax=800&#34; title=&#34;RGui (64-bit)_2013-01-09_13-25-29&#34;&gt;&lt;/a&gt;&lt;br&gt;&#xA;Here good will contain TRUE only for indices that hold good data in both vectors; FALSE otherwise. complete.cases() works with data frames also. In that case it removes any row that contains NA in any column.The returned data frame will not contain any NAs.&lt;br&gt;&#xA;Stay tuned for more R notes.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Introduction to R – Getting Started</title>
-      <link>https://ebeid.github.io/blog/2013-01-09-introduction-to-r-getting-started.html/</link>
+      <link>http://localhost:1313/2013/01/introduction-to-r-getting-started.html</link>
       <pubDate>Wed, 09 Jan 2013 10:19:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-09-introduction-to-r-getting-started.html/</guid>
-      <description>R is an open source programming language and software environment for statistical computing and graphics. The R language is widely used among statisticians for developing statistical software and data analysis. R was created by Ross Ihaka and Robert Gentleman at the University of Auckland, New Zealand, and now, R is developed by the R Development Core Team. To download R and install it on your computer, you can get it at the Comprehensive R Archive Network (http://cran.</description>
+      <guid>http://localhost:1313/2013/01/introduction-to-r-getting-started.html</guid>
+      <description>&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt; is an open source programming language and software environment for statistical computing and graphics. The R language is widely used among statisticians for developing statistical software and data analysis. R was created by &lt;a href=&#34;https://www.facebook.com/pages/w/103371346383347&#34;&gt;Ross Ihaka&lt;/a&gt; and &lt;a href=&#34;https://www.facebook.com/pages/w/126921034017343&#34;&gt;Robert Gentleman&lt;/a&gt; at the &lt;a href=&#34;https://www.facebook.com/pages/w/105560002810339&#34;&gt;University of Auckland&lt;/a&gt;, New Zealand, and now, R is developed by the &lt;em&gt;R Development Core Team&lt;/em&gt;.&lt;br&gt;&#xA;To download R and install it on your computer, you can get it at the Comprehensive R Archive Network (&lt;a href=&#34;http://cran.r-project.org/&#34;&gt;http://cran.r-project.org&lt;/a&gt;). One option that you may want to explore is RStudio (&lt;a href=&#34;http://rstudio.org/&#34;&gt;http://rstudio.org&lt;/a&gt;) which is a very nice front-end to R and works on all platforms.&lt;br&gt;&#xA;The R System is divided into 2 conceptual parts:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Basic statistics using Microsoft Excel</title>
-      <link>https://ebeid.github.io/blog/2013-01-08-basic-statistics-using-microsoft-excel.html/</link>
+      <link>http://localhost:1313/2013/01/basic-statistics-using-microsoft-excel.html</link>
       <pubDate>Tue, 08 Jan 2013 13:01:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-08-basic-statistics-using-microsoft-excel.html/</guid>
-      <description>Microsoft Excel is a powerful software that have been used my end users and professionals for many years for various purposes. In this post we going to introduce basic statistical features of Excel. This post is using Microsoft Excel 2013, but it is easy to map it to your Excel version.
-Basic Formulas Computations in Excel are carried out using formulas. A formula is a mathematical expression that is used to calculate a value.</description>
+      <guid>http://localhost:1313/2013/01/basic-statistics-using-microsoft-excel.html</guid>
+      <description>&lt;p&gt;Microsoft Excel is a powerful software that have been used my end users and professionals for many years for various purposes. In this post we going to introduce basic statistical features of Excel. This post is using Microsoft Excel 2013, but it is easy to map it to your Excel version.&lt;/p&gt;&#xA;&lt;h3 id=&#34;basic-formulas&#34;&gt;&lt;strong&gt;Basic Formulas&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Computations in Excel are carried out using formulas. A formula is a mathematical expression that is used to calculate a value. In Excel, a formula is entered into the active cell by typing an expression. In certain situations, Excel will automatically insert a formula for you.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#experience"
+                >EXPERIENCE</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/2010">2010th</a></span></li><li class="breadcrum-item"><span><a href="/2010/04">4th</a></span></li><li class="breadcrum-item"><span><a href="/2010/04/sql-server-metadata.html">SQL server metadata.html</a></span></li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/2010/04/sql-server-metadata.html">SQL Server Metadata</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Sun Apr 11, 2010</h4>
+              ·
+              <h4 id="wordcount">529 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/sql/">SQL</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p>Many times when you need to troubleshoot an SQL Server issue, you will need to collect metadata about the server, databases, and server resources in general. Here we will briefly review the mechanisms to collect these metadata.</p>
+<h3 id="system-base-tables">System Base Tables</h3>
+<p>SQL server maintains a set of tables that store information about all the objects, data types, constraints, configuration options, and resources available to SQL Server. These tables are called the <em>system base tables.</em></p>
+<ul>
+<li>Some of these tables exist in <em>master</em> database –&gt; contain system-wide information.</li>
+<li>Some exist in every database –&gt; contain database specific information.</li>
+</ul>
+<p>You can access these tables names only if you are logged in as a system administrator. You can access through:</p>
+<ul>
+<li>
+<p>Run sp_help</p>
+</li>
+<li>
+<p>Run```</p>
+<pre tabindex="0"><code>[use](http://search.microsoft.com/default.asp?so=RECCNT&amp;siteid=us%2Fdev&amp;p=1&amp;nq=NEW&amp;qu=use&amp;IntlSearch=&amp;boolean=PHRASE&amp;ig=01&amp;i=09&amp;i=99) master;   
+</code></pre><p><a href="http://search.microsoft.com/default.asp?so=RECCNT&siteid=us%2Fdev&p=1&nq=NEW&qu=select&IntlSearch=&boolean=PHRASE&ig=01&i=09&i=99">select</a> name <a href="http://search.microsoft.com/default.asp?so=RECCNT&siteid=us%2Fdev&p=1&nq=NEW&qu=from&IntlSearch=&boolean=PHRASE&ig=01&i=09&i=99">from</a> sys.objects</p>
+<pre tabindex="0"><code>[where](http://search.microsoft.com/default.asp?so=RECCNT&amp;siteid=us%2Fdev&amp;p=1&amp;nq=NEW&amp;qu=where&amp;IntlSearch=&amp;boolean=PHRASE&amp;ig=01&amp;i=09&amp;i=99) type\_desc = &#39;SYSTEM\_TABLE&#39;;  
+
+```
+```  
+</code></pre></li>
+</ul>
+<p>If you tried to select data from any of these system tables, you will got 208 error indicating that the object name is invalid. The only way to access these data is through <a href="http://ebeid-soliman.blogspot.com/2010/04/sql-server-dedicated-administrator.html" title="dedicated administrator connection (DAC)">dedicated administrator connection (DAC)</a>.</p>
+<p>Keep in mind that these system base tables are used for internal purposes only within the database engine and are not intended for general use. They are subject to change and compatibility is not guaranteed.</p>
+<h3 id="compatibility-views">Compatibility Views</h3>
+<p>Although it is possible to see data in the system tables in versions of SQL Server before 2005, it wasn’t recommended. For compatibility, SQL server 2005 and 2008 provided a set of <a href="http://msdn.microsoft.com/en-us/library/ms187376.aspx" title="Compatibility Views on MSDN">compatibility views</a> that allow access to a subset of the SQL server 2000 system tables. These views should be used for backward compatibility only; going forward, you should use catalog views.</p>
+<h3 id="catalog-views">Catalog Views</h3>
+<p>SQL Server 2005 introduced a set of catalog views as a general interface to the persisted system metadata. All the catalog views are in the sys schema, and you must reference the schema name when access the objects like:</p>
+<pre tabindex="0"><code></code></pre><p><a href="http://search.microsoft.com/default.asp?so=RECCNT&siteid=us%2Fdev&p=1&nq=NEW&qu=select&IntlSearch=&boolean=PHRASE&ig=01&i=09&i=99">select</a> name <a href="http://search.microsoft.com/default.asp?so=RECCNT&siteid=us%2Fdev&p=1&nq=NEW&qu=from&IntlSearch=&boolean=PHRASE&ig=01&i=09&i=99">from</a> sys.databases;</p>
+<pre tabindex="0"><code></code></pre><p>For a complete list of catalog views categories, please consult <a href="http://msdn.microsoft.com/en-us/library/ms174365.aspx." title="http://msdn.microsoft.com/en-us/library/ms174365.aspx">http://msdn.microsoft.com/en-us/library/ms174365.aspx.</a></p>
+<h3 id="information-schema-views">Information Schema Views</h3>
+<p>The information schema views comply with SQL-92 standard and all of it are in a schema called INFORMATION_SCHEMA. If you need to write a portable application that access the metadata you should use these views. This compliance come with the price of limited provided information (it provide the standard defined information only). If you need metadata about non-standard features, use catalog views.</p>
+<p>For a complete list of Information schema views and its closest map to catalog views, please consult <a href="http://msdn.microsoft.com/en-us/library/ms186778.aspx" title="http://msdn.microsoft.com/en-us/library/ms186778.aspx">http://msdn.microsoft.com/en-us/library/ms186778.aspx</a></p>
+<h3 id="system-functions">System Functions</h3>
+<p>Give us individual property values for many SQL Server instance, objects, databases. The values returned by system functions are scalar, so they can be used as values returned by <em>SELECT</em> statements like:</p>
+<pre tabindex="0"><code></code></pre><p><a href="http://search.microsoft.com/default.asp?so=RECCNT&siteid=us%2Fdev&p=1&nq=NEW&qu=select&IntlSearch=&boolean=PHRASE&ig=01&i=09&i=99">select</a> DATABASEPROPERTYEX(&lsquo;msdb&rsquo;,&lsquo;Recovery&rsquo;);</p>
+<pre tabindex="0"><code></code></pre><p>For a complete list of system functions and its types, review <a href="http://msdn.microsoft.com/en-us/library/ms187786.aspx" title="http://msdn.microsoft.com/en-us/library/ms187786.aspx">http://msdn.microsoft.com/en-us/library/ms187786.aspx</a></p>
+<h3 id="system-stored-procedures">System Stored Procedures</h3>
+<p>System Stored Procedures are the original metadata access tool but it had a drawback, basically you have to accept the data that it returns. Some of the procedures allow parameters but they are very limited. Catalog views are more enhanced and flexible in controlling what data appears.</p>
+<p>I hope this brief post gives you an overall image about SQL Server metadata access mechanisms and which one to use according to your situation.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/2010/04/sql-server-dedicated-administrator.html">↩ SQL Server Dedicated Administrator Connection</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/2010/09/how-to-educate-next-generation-of.html"> How to educate the next generation of software engineers ? ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        <a href="https://themes.gohugo.io/themes/adritian-free-hugo-theme">© Adritian</a>. Free Hugo theme by <a href="https://www.adrianmoreno.info">Adrián Moreno Peña</a>.</br><a href="https://github.com/Ebeid/ebeid.github.io">Site content and code available in GitHub</a>.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

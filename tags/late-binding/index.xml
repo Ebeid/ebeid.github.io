@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Late Binding on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/late-binding/</link>
-    <description>Recent content in Late Binding on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 02 Mar 2012 16:28:00 -0600</lastBuildDate><atom:link href="https://ebeid.github.io/tags/late-binding/index.xml" rel="self" type="application/rss+xml" />
+    <title>Late Binding on </title>
+    <link>http://localhost:1313/tags/late-binding/</link>
+    <description>Recent content in Late Binding on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 02 Mar 2012 16:28:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/late-binding/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Microsoft Dynamics CRM 2011 for Developers - Accessing Microsoft Dynamics CRM 2011 using WCF</title>
-      <link>https://ebeid.github.io/blog/2012-03-02-accessing-microsoft-dynamics-crm-2011.html/</link>
+      <title>Microsoft Dynamics CRM 2011 for Developers | Accessing Microsoft Dynamics CRM 2011 using WCF</title>
+      <link>http://localhost:1313/2012/03/accessing-microsoft-dynamics-crm-2011.html</link>
       <pubDate>Fri, 02 Mar 2012 16:28:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2012-03-02-accessing-microsoft-dynamics-crm-2011.html/</guid>
-      <description>Contents Introduction Creating a client application Using the Discovery Service Using the Organization Service Working with CRM Data Late Binding Approach Using RetrieveMultiple method Using Retrieve method Using Update method Using Delete method Using Create method Early binding Approach generating Client Types Enable ProxyTypeBehavior Using RetrieveMultiple method Using Retrieve method Using Create method Introduction Microsoft Dynamics CRM is a Customer Relationship Management software package developed to focus mainly on Sales, Marketing, and Service (help desk) sectors.</description>
+      <guid>http://localhost:1313/2012/03/accessing-microsoft-dynamics-crm-2011.html</guid>
+      <description>&lt;h4 id=&#34;contents&#34;&gt;Contents&lt;/h4&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Introduction&lt;/li&gt;&#xA;&lt;li&gt;Creating a client application&lt;/li&gt;&#xA;&lt;li&gt;Using the Discovery Service&lt;/li&gt;&#xA;&lt;li&gt;Using the Organization Service&lt;/li&gt;&#xA;&lt;li&gt;Working with CRM Data&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Late Binding Approach&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Using RetrieveMultiple method&lt;/li&gt;&#xA;&lt;li&gt;Using Retrieve method&lt;/li&gt;&#xA;&lt;li&gt;Using Update method&lt;/li&gt;&#xA;&lt;li&gt;Using Delete method&lt;/li&gt;&#xA;&lt;li&gt;Using Create method&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Early binding Approach&#xA;&lt;ol&gt;&#xA;&lt;li&gt;generating Client Types&lt;/li&gt;&#xA;&lt;li&gt;Enable ProxyTypeBehavior&lt;/li&gt;&#xA;&lt;li&gt;Using RetrieveMultiple method&lt;/li&gt;&#xA;&lt;li&gt;Using Retrieve method&lt;/li&gt;&#xA;&lt;li&gt;Using Create method&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Microsoft Dynamics CRM&lt;/strong&gt; is a Customer Relationship Management software package developed to focus mainly on Sales, Marketing, and Service (help desk) sectors. The Microsoft Dynamics family of business applications includes other related products such as Microsoft Dynamics AX, Microsoft Dynamics GP, Microsoft Dynamics NAV, and Microsoft Dynamics SL.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

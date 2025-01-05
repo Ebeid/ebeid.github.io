@@ -1,40 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Microsoft Dynamics CRM 2011 on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/microsoft-dynamics-crm-2011/</link>
-    <description>Recent content in Microsoft Dynamics CRM 2011 on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 23 Mar 2012 15:49:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/microsoft-dynamics-crm-2011/index.xml" rel="self" type="application/rss+xml" />
+    <title>Microsoft Dynamics CRM 2011 on </title>
+    <link>http://localhost:1313/tags/microsoft-dynamics-crm-2011/</link>
+    <description>Recent content in Microsoft Dynamics CRM 2011 on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 23 Mar 2012 15:49:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/microsoft-dynamics-crm-2011/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Microsoft Dynamics CRM 2011 for Developers | Plug-ins</title>
-      <link>https://ebeid.github.io/blog/2012-03-23-microsoft-dynamics-crm-2011-for_23.html/</link>
+      <link>http://localhost:1313/2012/03/microsoft-dynamics-crm-2011-for_23.html</link>
       <pubDate>Fri, 23 Mar 2012 15:49:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2012-03-23-microsoft-dynamics-crm-2011-for_23.html/</guid>
-      <description>Contents Introduction Common Uses of Plug-ins Plug-ins Basics Event Framework Event Execution Pipeline Pipeline Stages Message Processing Inclusion in Database Transactions Plug-in Isolation Trusts Develop Plug-ins Register Plug-ins Introduction
-A plug-in is .Net assembly that can be used to intercept events generated from the CRM system. Plug-ins subscribe to a set of events and run when the events occur regardless of how the event raised (or the method that is used to perform the activity that raised the event).</description>
+      <guid>http://localhost:1313/2012/03/microsoft-dynamics-crm-2011-for_23.html</guid>
+      <description>&lt;h4 id=&#34;contents&#34;&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/h4&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Introduction&lt;/li&gt;&#xA;&lt;li&gt;Common Uses of Plug-ins&lt;/li&gt;&#xA;&lt;li&gt;Plug-ins Basics&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Event Framework&lt;/li&gt;&#xA;&lt;li&gt;Event Execution Pipeline&lt;/li&gt;&#xA;&lt;li&gt;Pipeline Stages&lt;/li&gt;&#xA;&lt;li&gt;Message Processing&lt;/li&gt;&#xA;&lt;li&gt;Inclusion in Database Transactions &lt;/li&gt;&#xA;&lt;li&gt;Plug-in Isolation&lt;/li&gt;&#xA;&lt;li&gt;Trusts&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Develop Plug-ins&lt;/li&gt;&#xA;&lt;li&gt;Register Plug-ins&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;A plug-in is .Net assembly that can be used to intercept events generated from the CRM system. Plug-ins subscribe to a set of events and run when the events occur regardless of how the event raised (or the method that is used to perform the activity that raised the event).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microsoft Dynamics CRM 2011 for Developers | Creating Custom Reports Using Microsoft SQL Server 2008 Reporting Services</title>
-      <link>https://ebeid.github.io/blog/2012-03-13-microsoft-dynamics-crm-2011-for_14.html/</link>
+      <link>http://localhost:1313/2012/03/microsoft-dynamics-crm-2011-for_14.html</link>
       <pubDate>Tue, 13 Mar 2012 17:47:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2012-03-13-microsoft-dynamics-crm-2011-for_14.html/</guid>
-      <description>Contents Introduction Setup the Development Environment Report Development Process Create Custom Reports Using Business Intelligence Development Studio Create a Custom SQL-Based Report Create a Custom Fetch-Based Report Import Custom Reports into Dynamics CRM Introduction
-Microsoft Dynamics CRM provides many out-of-box reports for viewing business data. You can view a list of reports you have access to by navigating to Workplace &amp;gt; My Work &amp;gt; Reports. You can also see a list of all reports available by navigating to Settings &amp;gt; Customization &amp;gt; Customizations &amp;gt; Customize the System &amp;gt; Report [left navigation].</description>
+      <guid>http://localhost:1313/2012/03/microsoft-dynamics-crm-2011-for_14.html</guid>
+      <description>&lt;h4 id=&#34;contents&#34;&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/h4&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Introduction&lt;/li&gt;&#xA;&lt;li&gt;Setup the Development Environment&lt;/li&gt;&#xA;&lt;li&gt;Report Development Process&lt;/li&gt;&#xA;&lt;li&gt;Create Custom Reports Using Business Intelligence Development Studio&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Create a Custom SQL-Based Report&lt;/li&gt;&#xA;&lt;li&gt;Create a Custom Fetch-Based Report&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Import Custom Reports into Dynamics CRM&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Microsoft Dynamics CRM provides many out-of-box reports for viewing business data. You can view a list of reports you have access to by navigating to Workplace &amp;gt; My Work &amp;gt; Reports. You can also see a list of all reports available by navigating to Settings &amp;gt; Customization &amp;gt; Customizations &amp;gt; Customize the System &amp;gt; Report [left navigation]. In both lists, you can select a report and click Run Report from the ribbon to preview the report in running mode.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Microsoft Dynamics CRM 2011 for Developers - Accessing Microsoft Dynamics CRM 2011 using WCF</title>
-      <link>https://ebeid.github.io/blog/2012-03-02-accessing-microsoft-dynamics-crm-2011.html/</link>
+      <title>Microsoft Dynamics CRM 2011 for Developers | Accessing Microsoft Dynamics CRM 2011 using WCF</title>
+      <link>http://localhost:1313/2012/03/accessing-microsoft-dynamics-crm-2011.html</link>
       <pubDate>Fri, 02 Mar 2012 16:28:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2012-03-02-accessing-microsoft-dynamics-crm-2011.html/</guid>
-      <description>Contents Introduction Creating a client application Using the Discovery Service Using the Organization Service Working with CRM Data Late Binding Approach Using RetrieveMultiple method Using Retrieve method Using Update method Using Delete method Using Create method Early binding Approach generating Client Types Enable ProxyTypeBehavior Using RetrieveMultiple method Using Retrieve method Using Create method Introduction Microsoft Dynamics CRM is a Customer Relationship Management software package developed to focus mainly on Sales, Marketing, and Service (help desk) sectors.</description>
+      <guid>http://localhost:1313/2012/03/accessing-microsoft-dynamics-crm-2011.html</guid>
+      <description>&lt;h4 id=&#34;contents&#34;&gt;Contents&lt;/h4&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Introduction&lt;/li&gt;&#xA;&lt;li&gt;Creating a client application&lt;/li&gt;&#xA;&lt;li&gt;Using the Discovery Service&lt;/li&gt;&#xA;&lt;li&gt;Using the Organization Service&lt;/li&gt;&#xA;&lt;li&gt;Working with CRM Data&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Late Binding Approach&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Using RetrieveMultiple method&lt;/li&gt;&#xA;&lt;li&gt;Using Retrieve method&lt;/li&gt;&#xA;&lt;li&gt;Using Update method&lt;/li&gt;&#xA;&lt;li&gt;Using Delete method&lt;/li&gt;&#xA;&lt;li&gt;Using Create method&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Early binding Approach&#xA;&lt;ol&gt;&#xA;&lt;li&gt;generating Client Types&lt;/li&gt;&#xA;&lt;li&gt;Enable ProxyTypeBehavior&lt;/li&gt;&#xA;&lt;li&gt;Using RetrieveMultiple method&lt;/li&gt;&#xA;&lt;li&gt;Using Retrieve method&lt;/li&gt;&#xA;&lt;li&gt;Using Create method&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Microsoft Dynamics CRM&lt;/strong&gt; is a Customer Relationship Management software package developed to focus mainly on Sales, Marketing, and Service (help desk) sectors. The Microsoft Dynamics family of business applications includes other related products such as Microsoft Dynamics AX, Microsoft Dynamics GP, Microsoft Dynamics NAV, and Microsoft Dynamics SL.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

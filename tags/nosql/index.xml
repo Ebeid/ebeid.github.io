@@ -1,71 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NoSQL on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/nosql/</link>
-    <description>Recent content in NoSQL on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 12 Jul 2013 17:15:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    <title>NoSQL on </title>
+    <link>http://localhost:1313/tags/nosql/</link>
+    <description>Recent content in NoSQL on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jul 2013 17:19:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting started with Neo4j</title>
+      <link>http://localhost:1313/blog/getting-started-with-neo4j/</link>
+      <pubDate>Wed, 17 Jul 2013 17:19:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/getting-started-with-neo4j/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.neo4j.org&#34; title=&#34;Neo4j official website&#34;&gt;Neo4j&lt;/a&gt; is an open-source graph database implemented in Java. The developers describe Neo4j as &amp;ldquo;embedded, disk-based, fully transactional Java persistence engine that stores data structured in graphs rather than in tables&amp;rdquo;. According to DB-Engines &lt;a href=&#34;http://db-engines.com/en/ranking/graph+dbms&#34; title=&#34;DB-Engines Ranking of Graph DBMS&#34;&gt;report&lt;/a&gt;, Neo4j is the most popular graph database.&lt;/p&gt;&#xA;&lt;p&gt;As a graph database, Neo4j focuses more on the relationships between values than on the commonalities among sets of values (such as collections of documents or tables of rows). Neo4j is small enough to be embedded into nearly any application. On the other hand, Neo4j can store tens of billions of nodes and as many edges. Let’s get started with Neo4j !&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Getting Started with MongoDB – Part 2</title>
-      <link>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-2.html/</link>
+      <link>http://localhost:1313/2013/07/getting-started-with-mongodb-part-2.html</link>
       <pubDate>Fri, 12 Jul 2013 17:15:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-2.html/</guid>
-      <description>In the previous post we explored the basics of MongoDB. In this post we going to dig deeper in MongoDB.
-Indexing Whenever a new collection is created, MongoDB automatically creates an index by the _id field. These indexes can be found in the system.indexes collection. You can show all indexes in the database using db.system.indexes.find() . Most queries will include more fields than just the _id, so we need to make indexes on those fields.</description>
+      <guid>http://localhost:1313/2013/07/getting-started-with-mongodb-part-2.html</guid>
+      <description>&lt;p&gt;In the previous post we explored the basics of MongoDB. In this post we going to dig deeper in MongoDB.&lt;/p&gt;&#xA;&lt;h3 id=&#34;indexing&#34;&gt;Indexing&lt;/h3&gt;&#xA;&lt;p&gt;Whenever a new collection is created, MongoDB automatically creates an index by the &lt;em&gt;_id&lt;/em&gt; field. These indexes can be found in the system.indexes collection. You can show all indexes in the database using db.system.indexes.find() . Most queries will include more fields than just the _id, so we need to make indexes on those fields.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Getting Started with MongoDB – Part 1</title>
-      <link>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-1.html/</link>
+      <link>http://localhost:1313/2013/07/getting-started-with-mongodb-part-1.html</link>
       <pubDate>Fri, 12 Jul 2013 13:46:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-07-12-getting-started-with-mongodb-part-1.html/</guid>
-      <description>MongoDB (from &amp;ldquo;humongous&amp;rdquo;) is an open source document-oriented database system developed and supported by 10gen (founded by Dwight Merriman). First publicly released in 2009, and since then it have been a rising star in the NoSQL world. MongoDB stores structured data as JSON-like documents with dynamic schemas (technically data is stored in a binary form of JSON known as BSON), making the integration of data in certain types of applications easier and faster.</description>
+      <guid>http://localhost:1313/2013/07/getting-started-with-mongodb-part-1.html</guid>
+      <description>&lt;p&gt;&lt;strong&gt;MongoDB&lt;/strong&gt; (from &amp;ldquo;hu&lt;strong&gt;mongo&lt;/strong&gt;us&amp;rdquo;) is an open source &lt;a href=&#34;http://en.wikipedia.org/wiki/Document-oriented_database&#34;&gt;document-oriented database&lt;/a&gt; system developed and supported by &lt;a href=&#34;http://www.blogger.com/www.10gen.com&#34;&gt;10gen&lt;/a&gt; (founded by &lt;a href=&#34;https://twitter.com/dmerr&#34;&gt;Dwight Merriman&lt;/a&gt;). First publicly released in 2009, and since then it have been a rising star in the NoSQL world. MongoDB stores structured data as &lt;a href=&#34;http://en.wikipedia.org/wiki/JSON&#34;&gt;JSON&lt;/a&gt;-like documents with dynamic schemas (technically data is stored in a binary form of JSON known as &lt;a href=&#34;http://en.wikipedia.org/wiki/BSON&#34;&gt;BSON&lt;/a&gt;), making the integration of data in certain types of applications easier and faster.&lt;/p&gt;&#xA;&lt;h4 id=&#34;installation&#34;&gt;Installation&lt;/h4&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Download the latest mongoDB version from &lt;a href=&#34;http://www.mongodb.org/downloads&#34; title=&#34;downloads page&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Extract the archive to your preferred location (in my case C:\mongodb). MongoDB is self-contained and does not have any other system dependencies. You can run MongoDB from any folder you choose. You may install MongoDB in any directory.&lt;/li&gt;&#xA;&lt;li&gt;MongoDB requires a data folder to store its files (default is C:\data\db ). You may specify a different path with the dbpath setting when lunching mongod.exe.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h4 id=&#34;starting-the-server&#34;&gt;Starting the Server&lt;/h4&gt;&#xA;&lt;p&gt;To start MongoDB, open the command prompt window, and run mongod.exe from the bin directory (specify the data path if needed)&lt;br&gt;&#xA;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLYFSj0QJkVFK1yydUedpIvsd5YeopM1lneMymjWznveiO1n_DqfUCP4zUsBLVKwdx4HXed2dQD72RIItYTUjOmvCuvBQaYLS2v03h076etNiBBbKtEUcqaT-qLoQK-Z479QcHlpJ9Nw/s1600-h/CWindowssystem32cmd.exe%252520-%252520mongod.exe%252520%252520--dbpath%252520Cmongodbdata_2013-07-09_16-10-49.png&#34;&gt;&lt;img alt=&#34;CWindowssystem32cmd.exe - mongod.exe  &amp;ndash;dbpath Cmongodbdata_2013-07-09_16-10-49&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPTHC1HLhFaXGuBtIV2LSZtW_OSVNQM46E5nKA0OrqlRa3_pDuScmfpzBAeVYSJ6CCSMa_FnHRYaxC0vzVS6No-5eWc78QNIbhV6-E7VhpttbknSrxdD3Db5uCCG0DeR08kKxpr64e0Q/?imgmax=800&#34; title=&#34;CWindowssystem32cmd.exe - mongod.exe  --dbpath Cmongodbdata_2013-07-09_16-10-49&#34;&gt;&lt;/a&gt;The waiting for connections message in the console output indicates that the mongod.exe process is running successfully and waiting for connections on port 27017&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Getting Started with Apache Cassandra</title>
-      <link>https://ebeid.github.io/blog/2013-07-09-getting-started-with-apache-cassandra.html/</link>
+      <link>http://localhost:1313/2013/07/getting-started-with-apache-cassandra.html</link>
       <pubDate>Tue, 09 Jul 2013 17:27:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-07-09-getting-started-with-apache-cassandra.html/</guid>
-      <description>Apache Cassandra is “an open source, distributed, decentralized, elastically scalable, highly available, fault-tolerant, tuneably consistent, column-oriented database that bases its distribution design on Amazon’s Dynamo and its data model on Google’s Bigtable” (source: “Cassandra: The Definitive Guide,” O’Reilly Media, 2010, p. 14).
-Cassandra is built to store lots of data across a variety of machines arranged in a ring, in other words scaling horizontally, rather than vertically.
-Data Model Cassandra is based on a key-value model and it is organized according to the following concepts:</description>
+      <guid>http://localhost:1313/2013/07/getting-started-with-apache-cassandra.html</guid>
+      <description>&lt;p&gt;Apache &lt;a href=&#34;http://cassandra.apache.org/&#34;&gt;Cassandra&lt;/a&gt; is “an open source, distributed, decentralized, elastically scalable, highly available, fault-tolerant, tuneably consistent, column-oriented database that bases its distribution design on Amazon’s &lt;a href=&#34;http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf&#34; title=&#34;Dynamo: Amazon’s Highly Available Key-value Store&#34;&gt;Dynamo&lt;/a&gt; and its data model on Google’s &lt;a href=&#34;http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/bigtable-osdi06.pdf&#34; title=&#34;Bigtable: A Distributed Storage System for Structured Data&#34;&gt;Bigtable&lt;/a&gt;” (source: “Cassandra: The Definitive Guide,” O’Reilly Media, 2010, p. 14).&lt;/p&gt;&#xA;&lt;p&gt;Cassandra is built to store lots of data across a variety of machines arranged in a ring, in other words scaling horizontally, rather than vertically.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Redis 101– Part 2</title>
-      <link>https://ebeid.github.io/blog/2013-07-03-redis-101-part-2.html/</link>
+      <link>http://localhost:1313/2013/07/redis-101-part-2.html</link>
       <pubDate>Wed, 03 Jul 2013 12:47:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-07-03-redis-101-part-2.html/</guid>
-      <description>We introduced many of the Redis’s fundamental concepts and commands in the last post. In this post we going to introduce some advanced features.
-Publish-Subscribe Previously we queued data that could be read by a blocking pop command. Using that queue, we made a very basic publish-subscribe model. Any number of messages could be pushed to this queue, and a single queue reader would pop messages as they were available. This is powerful but limited.</description>
+      <guid>http://localhost:1313/2013/07/redis-101-part-2.html</guid>
+      <description>&lt;p&gt;We introduced many of the &lt;a href=&#34;http://redis.io/&#34; title=&#34;Redis&#34;&gt;Redis&lt;/a&gt;’s fundamental concepts and commands in the last post. In this post we going to introduce some advanced features.&lt;/p&gt;&#xA;&lt;h4 id=&#34;publish-subscribe&#34;&gt;Publish-Subscribe&lt;/h4&gt;&#xA;&lt;p&gt;Previously we queued data that could be read by a blocking pop command. Using that queue, we made a very basic publish-subscribe model. Any number of messages could be pushed to this queue, and a single queue reader would pop messages as they were available. This is powerful but limited. Redis provides some specialized publish-subscribe (or pub-sub) commands.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Running multiple Redis instances on the same server</title>
-      <link>https://ebeid.github.io/blog/2013-07-02-running-multiple-redis-instances-on.html/</link>
+      <link>http://localhost:1313/2013/07/running-multiple-redis-instances-on.html</link>
       <pubDate>Tue, 02 Jul 2013 11:42:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-07-02-running-multiple-redis-instances-on.html/</guid>
-      <description>Redis runs as a background process that listens to a specific port (6379 by default) for incoming requests from clients. Running multiple instances requires a separate conf file and a new init script. The conf file specifies details for the new instance, and the init script handles starting/stopping of the instance background process.
-Make a copy of the redis.conf file at C:\Program Files\Redis\Conf and give it a new name redis-s1.conf. Leave both files in the same directory C:\Program Files\Redis\Conf</description>
+      <guid>http://localhost:1313/2013/07/running-multiple-redis-instances-on.html</guid>
+      <description>&lt;p&gt;Redis runs as a background process that listens to a specific port (6379 by default) for incoming requests from clients. Running multiple instances requires a separate conf file and a new init script. The conf file specifies details for the new instance, and the init script handles starting/stopping of the instance background process.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Make a copy of the &lt;a href=&#34;http://redis.io/&#34; title=&#34;Redis&#34;&gt;redis&lt;/a&gt;.conf file at C:\Program Files\Redis\Conf and give it a new name redis-s1.conf. Leave both files in the same directory C:\Program Files\Redis\Conf&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Redis 101</title>
-      <link>https://ebeid.github.io/blog/2013-06-26-redis-101.html/</link>
+      <link>http://localhost:1313/2013/06/redis-101.html</link>
       <pubDate>Wed, 26 Jun 2013 15:29:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-06-26-redis-101.html/</guid>
-      <description>Redis (REmote DIctionary Service) is an open-source networked in-memory key-value data store. First released in 2009, currently sponsored by VMware, and since then it have been ranked the most popular key-value store by DB-Engine. Redis creator Salvatore Sanfilippo refers to his project as a “data structure server” to capture its unique handling of complex data types and other features. Interested ? Enough talking, let’s get down to business.
-Download Redis installer from here.</description>
+      <guid>http://localhost:1313/2013/06/redis-101.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://redis.io/&#34; title=&#34;Redis&#34;&gt;Redis&lt;/a&gt; (REmote DIctionary Service) is an open-source networked in-memory key-value data store. First released in 2009, currently sponsored by &lt;a href=&#34;http://www.vmware.com/&#34;&gt;VMware&lt;/a&gt;, and since then it have been ranked &lt;a href=&#34;http://db-engines.com/en/ranking/key-value+store&#34; title=&#34;DB-Engines Ranking of Key-value Stores&#34;&gt;the most popular key-value store by DB-Engine&lt;/a&gt;. Redis creator &lt;a href=&#34;http://invece.org/&#34; title=&#34;Salvatore Sanfilippo aka antirez&#34;&gt;Salvatore Sanfilippo&lt;/a&gt; refers to his project as a “data structure server” to capture its unique handling of complex data types and other features. Interested ? Enough talking, let’s get down to business.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

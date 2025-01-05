@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#portfolio"
+                >PORTFOLIO</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/blog">Blog</a></span></li><li class="breadcrum-item"><span><a href="/blog/blog">Blog</a></span></li><li class="breadcrum-item current">Python Notes – 7 : Files &amp; directories</li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/blog/blog/2009-03-23-python-notes-7.html/">Python Notes – 7 : Files &amp; directories</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Mon Mar 23, 2009</h4>
+              ·
+              <h4 id="wordcount">595 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/python/">Python</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p>Welcome to our seventh note in our Python learning process. This note
+will talk specifically about files, directories, and exceptions.</p>
+<h4 id="files">Files</h4>
+<p>Opening a file creates a file object. Syntax is like that:</p>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; f =
+open(&ldquo;test.dat&rdquo;,&ldquo;w&rdquo;)<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; print f<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->&lt;open file &rsquo;test.dat&rsquo;, mode &lsquo;w&rsquo; at
+fe820&gt;<!-- raw HTML omitted --></p>
+</blockquote>
+<p>The first parameter to open is the file name, the second parameter is
+the mode. Modes are: w for write, r for read.</p>
+<p>To write data in the file we invoke the write method on the file object:</p>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; f.write(&ldquo;Now is the
+time&rdquo;)<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; f.write(&ldquo;to close the
+file&rdquo;)<!-- raw HTML omitted --></p>
+</blockquote>
+<p>After we done we can close the file like that:</p>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; f.close()<!-- raw HTML omitted --></p>
+</blockquote>
+<p>The read method reads data from the file. With no arguments, it reads
+the entire contents of the file:</p>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; text = f.read()<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; print text<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->Now is the time to close the file<!-- raw HTML omitted --></p>
+</blockquote>
+<p>read can also take an argument that indicates how many characters to
+read.</p>
+<p>If not enough characters are left in the file, read returns the
+remaining characters. When we get to the end of the file, read returns
+the empty string:</p>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; print f.read(5)<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->Now i<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; print f.read(1000006)<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->s the timeto close the file<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; print f.read()<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt;<!-- raw HTML omitted --></p>
+</blockquote>
+<p>The write method write data to the file. It takes strings only.</p>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; x = 52<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; f.write (str(x))<!-- raw HTML omitted --></p>
+</blockquote>
+<h4 id="directories">Directories</h4>
+<p>When you create a new file by opening it and writing, the new file goes
+in the current directory (wherever you were when you ran the program).
+Similarly, when you open a file for reading, Python looks for it in the
+current directory. If you want to open a file somewhere else, you have
+to specify the path to the file, which is the name of the directory (or
+folder) where the file is located:</p>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; f =
+open(&quot;/usr/share/dict/words&quot;,&ldquo;r&rdquo;)<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; print f.readline()<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->Whatever exist<!-- raw HTML omitted --></p>
+</blockquote>
+<h4 id="glob-module">glob module</h4>
+<p>Returns filenames in a directory that match a pattern.</p>
+<blockquote>
+<p><!-- raw HTML omitted -->import glob<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->a = glob.glob(&quot;*.html&quot;)<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->b =
+glob.glob(&ldquo;image[0-5]*.gif&rdquo;)<!-- raw HTML omitted --></p>
+</blockquote>
+<p>Pattern matching is performed using rules of Unix shell. Tilde (~) and
+variable expansion is not performed.</p>
+<h4 id="fnmatch-module">fnmatch module</h4>
+<p>Matches filenames according to rules of Unix shell.</p>
+<blockquote>
+<p><!-- raw HTML omitted --> import fnmatch<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->if fnmatch(filename,&quot;*.html&quot;):<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->&hellip;<!-- raw HTML omitted --></p>
+</blockquote>
+<p>Case-sensitivity depends on the operating system.</p>
+<h4 id="other-file-related-modules">Other File-Related Modules</h4>
+<ul>
+<li>
+<h5 id="fcntl--provides-access-to-the-fcntl-system-call-and-file-locking-operations">fcntl : Provides access to the fcntl() system call and file-locking operations</h5>
+</li>
+</ul>
+<blockquote>
+<p><!-- raw HTML omitted -->import fcntl, FCNTL<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->fcntl.flock(f.fileno(),FCNTL.LOCK_EX) #
+Lock a file<!-- raw HTML omitted --></p>
+</blockquote>
+<ul>
+<li>
+<h5 id="tempfile--creates-temporary-files">tempfile : Creates temporary files</h5>
+</li>
+<li>
+<h5 id="gzip--creates-file-objects-with-compressiondecompression-compatible-with-the-gnu-gzip-program">gzip : Creates file objects with compression/decompression. Compatible with the GNU gzip program.</h5>
+</li>
+</ul>
+<blockquote>
+<p><!-- raw HTML omitted -->import gzip<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->f = gzip.open(&ldquo;foo&rdquo;,&ldquo;wb&rdquo;)<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->f.write(data)<!-- raw HTML omitted --></p>
+</blockquote>
+<h4 id="exceptions">Exceptions</h4>
+<p>Whenever a runtime error occurs, it creates an exception. Usually, the
+program stops and Python prints an error message.</p>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; print 55/0<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->ZeroDivisionError: integer division or
+modulo<!-- raw HTML omitted --></p>
+</blockquote>
+<p>We can handle the exception using the try and except statements.</p>
+<blockquote>
+<p><!-- raw HTML omitted -->filename = raw_input(&lsquo;Enter a file name:
+&lsquo;)<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->try:<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->f = open (filename, &ldquo;r&rdquo;)<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->except:<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->print &lsquo;There is no file named&rsquo;,
+filename<!-- raw HTML omitted --></p>
+</blockquote>
+<p>The try statement executes the statements in the first block. If no
+exceptions occur, it ignores the except statement. If any exception
+occurs, it executes the statements in the except branch and then
+continues.</p>
+<p>If your program detects an error condition, you can make it raise an
+exception.</p>
+<blockquote>
+<p><!-- raw HTML omitted -->def inputNumber () :<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->x = input (&lsquo;Pick a number: &lsquo;)<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->if x == 17 :<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->raise &lsquo;BadNumberError&rsquo;, &lsquo;17 is a bad
+number&rsquo;<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->return x<!-- raw HTML omitted --></p>
+</blockquote>
+<p>The raise statement takes two arguments: the exception type and specific</p>
+<p>information about the error. And here how the previous example appears:</p>
+<blockquote>
+<p><!-- raw HTML omitted -->&gt;&gt;&gt; inputNumber ()<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->Pick a number: 17<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p><!-- raw HTML omitted -->BadNumberError: 17 is a bad number<!-- raw HTML omitted --></p>
+</blockquote>
+<p>This note talked about files, directories, and exceptions. The next note
+will go into the object oriented features of Python.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/blog/blog/2009-03-23-python-notes-6.html/">↩ Python Notes – 6 : Tuples &amp; Dictionaries</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/blog/blog/2009-03-27-python-notes-8.html/"> Python Notes – 8 : Object-Oriented Basics ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        © Adritian. Free Hugo theme by Adrián Moreno Peña.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#portfolio">PORTFOLIO</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+      <nav class="language-selector">
+        <ul>
+          
+            
+            <li class="dropdown">
+              <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="languages-dropdown">
+                <span class="label">Language</span>    
+              </button>
+            <ul class="dropdown__menu" id="languages-dropdown">
+              <li class="current"><span>✔️ English</span></li>
+              
+              
+            
+              
+            
+              
+              
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

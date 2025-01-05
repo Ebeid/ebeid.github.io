@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#experience"
+                >EXPERIENCE</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/2009">2009th</a></span></li><li class="breadcrum-item"><span><a href="/2009/03">3rd</a></span></li><li class="breadcrum-item"><span><a href="/2009/03/python-notes-8.html">Python notes 8.html</a></span></li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/2009/03/python-notes-8.html">Python Notes – 8 : Object-Oriented Basics</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Fri Mar 27, 2009</h4>
+              ·
+              <h4 id="wordcount">1134 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/python/">Python</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p>Welcome to our eighth note in our Python learning process. This note will talk about object oriented features in Python.</p>
+<h4 id="classes-and-objects">Classes and Objects</h4>
+<p>A class definition looks like this:</p>
+<blockquote>
+<p>class Point:</p>
+</blockquote>
+<blockquote>
+<p>    pass</p>
+</blockquote>
+<p>Class definitions can appear anywhere in a program, but they are usually near the beginning (after the import statements). By creating the Point class, we created a new type, also called Point. The members of this type are called instances of the type or objects. Creating a new instance is called instantiation. To instantiate a Point object, we call a function named Point:</p>
+<blockquote>
+<p>&gt;&raquo; blank = Point()</p>
+</blockquote>
+<p>The variable blank is assigned a reference to a new Point object. A function like Point that creates new objects is called a constructor. If you tried to get the type of blank, you got instance:</p>
+<blockquote>
+<p>&gt;&raquo; type(blank)</p>
+</blockquote>
+<blockquote>
+<p>&lt;type &lsquo;instance&rsquo;&gt;</p>
+</blockquote>
+<p>If you tried to print blank:</p>
+<blockquote>
+<p>&gt;&raquo; print blank</p>
+</blockquote>
+<blockquote>
+<p>&lt;__main__.point instance at 0x01922AF8&gt;</p>
+</blockquote>
+<p>The result indicates that blank is an instance of the Point class and it was defined in __main__ . 0x01922AF8 is the unique identifier for this object, written in hexadecimal (base 16).</p>
+<h4 id="attributes">Attributes</h4>
+<p>We can add new data to an instance using dot notation:</p>
+<blockquote>
+<p>&gt;&raquo; blank.x = 3.0</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; blank.y = 4.0</p>
+</blockquote>
+<p>These new data items called attributes.</p>
+<blockquote>
+<p>&gt;&raquo; print blank.y</p>
+</blockquote>
+<blockquote>
+<p>4.0</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; x = blank.x</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; print x</p>
+</blockquote>
+<blockquote>
+<p>3.0</p>
+</blockquote>
+<h4 id="sameness">Sameness</h4>
+<p>To find out if two references refer to the same object, use the == operator. For example:</p>
+<blockquote>
+<p>&gt;&raquo; p1 = Point()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p1.x = 3</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p1.y = 4</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p2 = Point()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p2.x = 3</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p2.y = 4</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p1 == p2</p>
+</blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+<p>Even though p1 and p2 contain the same coordinates, they are not the same object. If we assign p1 to p2, then the two variables are aliases of the same object:</p>
+<blockquote>
+<p>&gt;&raquo; p2 = p1</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p1 == p2</p>
+</blockquote>
+<blockquote>
+<p>1</p>
+</blockquote>
+<p>This type of equality is called <em>shallow equality</em> because it compares only the references, not the contents of the objects. To compare the contents of the objects - <em>deep equality</em> - we can write our own function to do that, like that:</p>
+<blockquote>
+<p>def samePoint(p1, p2) :</p>
+</blockquote>
+<blockquote>
+<p>    return (p1.x == p2.x) and (p1.y == p2.y)</p>
+</blockquote>
+<p>Now if we create two different objects that contain the same data, we can use samePoint to find out if they represent the same point.</p>
+<blockquote>
+<p>&gt;&raquo; p1 = Point()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p1.x = 3</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p1.y = 4</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p2 = Point()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p2.x = 3</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p2.y = 4</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; samePoint(p1, p2)</p>
+</blockquote>
+<blockquote>
+<p>1</p>
+</blockquote>
+<h4 id="copying">Copying</h4>
+<p>Aliasing can make a program difficult to read because changes made in one place might have unexpected effects in another place. Copying an object is often an alternative to aliasing. The copy module contains a function called copy that can duplicate any object:</p>
+<blockquote>
+<p>&gt;&raquo; import copy</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p1 = Point()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p1.x = 3</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p1.y = 4</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p2 = copy.copy(p1)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p1 == p2</p>
+</blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; samePoint(p1, p2)</p>
+</blockquote>
+<blockquote>
+<p>1</p>
+</blockquote>
+<p>Copy works fine for objects that doesn&rsquo;t contain any embedded objects. If the object contains references to other objects, Copy will copy the embedded references to the destination. This ends up that the both copies reference the same internal objects.</p>
+<p>You can use deepcopy which copies not only the object but also any embedded objects.</p>
+<blockquote>
+<p>&gt;&raquo; b2 = copy.deepcopy(b1)</p>
+</blockquote>
+<p>Now b1 and b2 are completely separate objects.</p>
+<h4 id="the-initialization-method">The initialization method</h4>
+<p>The initialization method is a special method that is invoked when an object is created. The name of this method is __init__.</p>
+<blockquote>
+<p>class point:</p>
+</blockquote>
+<blockquote>
+<p>    def __init__(self, x = 0, y = 0):</p>
+</blockquote>
+<blockquote>
+<p>        Self.x = x</p>
+</blockquote>
+<blockquote>
+<p>        Slef.y = y</p>
+</blockquote>
+<p>When we invoke the point constructor, the arguments we provide are passed along to init:</p>
+<blockquote>
+<p>&gt;&raquo; first = point(5,7)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; first.x</p>
+</blockquote>
+<blockquote>
+<p>5</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; first.y</p>
+</blockquote>
+<blockquote>
+<p>7</p>
+</blockquote>
+<p>Because the parameters are optional, we can omit them:</p>
+<blockquote>
+<p>&gt;&raquo; second = point()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; second.x</p>
+</blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; second.y</p>
+</blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+<p>We can also provide a subset of the parameters by naming them explicitly:</p>
+<blockquote>
+<p>&gt;&raquo; third = point(y=10)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; third.x</p>
+</blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; third.y</p>
+</blockquote>
+<blockquote>
+<p>10</p>
+</blockquote>
+<h4 id="the-__str__-method">The __str__ method</h4>
+<p>The __str__ method of any class is called by the Python in any operation that requires the class instance to be converted to string. Operations like that are print. Syntax like that:</p>
+<blockquote>
+<p>class xyz:</p>
+</blockquote>
+<blockquote>
+<p>    def __str__(self):</p>
+</blockquote>
+<blockquote>
+<p>        return &ldquo;Our class xyz&rdquo;</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; a = xyz()</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; a</p>
+</blockquote>
+<blockquote>
+<p>&lt;__main__.xyz instance at 0x02627300&gt;</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; print y</p>
+</blockquote>
+<blockquote>
+<p>Our class xyz</p>
+</blockquote>
+<h4 id="instances-as-parameters">Instances as parameters</h4>
+<p>You can pass an instance as a parameter in the usual way. For example:</p>
+<blockquote>
+<p>def printPoint(p):</p>
+</blockquote>
+<blockquote>
+<p>    print &lsquo;(&rsquo; + str(p.x) + &lsquo;, &rsquo; + str(p.y) + &lsquo;)&rsquo;</p>
+</blockquote>
+<h4 id="instances-as-return-values">Instances as return values</h4>
+<p>Functions can return instances. For example:</p>
+<blockquote>
+<p>def sumPoints(A,B)</p>
+</blockquote>
+<blockquote>
+<p>    Z = Point ()</p>
+</blockquote>
+<blockquote>
+<p>    Z.x = A.x + B.x</p>
+</blockquote>
+<blockquote>
+<p>    Z.y = A.y + B.y</p>
+</blockquote>
+<blockquote>
+<p>    return Z</p>
+</blockquote>
+<h4 id="operator-overloading">Operator overloading</h4>
+<p>Operator overloading means changing the definition and behavior of the built-in operators when they are applied to user-defined types. For example, to override the addition operator + , we provide a method named __add__ in our point class :</p>
+<blockquote>
+<p>class Point:</p>
+<p>    def __add__(self, other):</p>
+</blockquote>
+<blockquote>
+<p>        return Point(self.x + other.x, self.y + other.y)</p>
+</blockquote>
+<p>the first parameter is the object on which the method is invoked. The second parameter is conveniently named other to distinguish it from self. Now, when we apply the + operator to Point objects, Python invokes add :</p>
+<blockquote>
+<p>&gt;&raquo; p1 = Point(3, 4)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p2 = Point(5, 7)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; p3 = p1 + p2</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; print p3</p>
+</blockquote>
+<blockquote>
+<p>(8, 11)</p>
+</blockquote>
+<p>The expression p1 + p2 is equivalent to p1. add (p2), but obviously more elegant. You can change the behavior of many operators through overloading their respective functions, which are available at <a href="http://www.python.org/doc/2.2/ref/numeric-types.html">http://www.python.org/doc/2.2/ref/numeric-types.html</a></p>
+<h4 id="inheritance">Inheritance</h4>
+<p>Inheritance is the ability to define a new class that is a modified version of an existing class. The new class inherits all of the methods of the existing class. The new class may be called child class or subclass. The syntax is like:</p>
+<blockquote>
+<p>class class1(object):</p>
+</blockquote>
+<blockquote>
+<p>    K = 7</p>
+</blockquote>
+<blockquote>
+<p>    def __init__(self, color=&lsquo;green&rsquo;):</p>
+</blockquote>
+<blockquote>
+<p>        Self.color = color</p>
+</blockquote>
+<blockquote>
+<p>    def Hello1(self):</p>
+</blockquote>
+<blockquote>
+<p>        Print &ldquo;Hello from class1&rdquo;</p>
+</blockquote>
+<blockquote>
+<p>    def printColor(self):</p>
+</blockquote>
+<blockquote>
+<p>        print &ldquo;preferred &ldquo;, self.color</p>
+</blockquote>
+<blockquote>
+<p>class class2(class1):</p>
+</blockquote>
+<blockquote>
+<p>    def Hello2(self):</p>
+</blockquote>
+<blockquote>
+<p>    print &ldquo;Hello from class2&rdquo;</p>
+</blockquote>
+<blockquote>
+<p>    print self.k</p>
+</blockquote>
+<p>Here class2 is the child of class1.</p>
+<blockquote>
+<p>&gt;&raquo; c1 = class1(&lsquo;blue&rsquo;)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; c2 = class2(&lsquo;red&rsquo;)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; c1.Hello1()</p>
+</blockquote>
+<blockquote>
+<p>Hello from class1</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; c2.Hello2()</p>
+</blockquote>
+<blockquote>
+<p>Hello from class2</p>
+</blockquote>
+<blockquote>
+<p>7</p>
+</blockquote>
+<p>Child class can access parent class methods</p>
+<blockquote>
+<p>&gt;&raquo; c2.Hello1()</p>
+</blockquote>
+<blockquote>
+<p>Hello from class1</p>
+<p>The parent constructor called automatically for Childs, as following:</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; c1.printColor()</p>
+</blockquote>
+<blockquote>
+<p>preferred blue</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; c2.printColor()</p>
+</blockquote>
+<blockquote>
+<p>preferred red</p>
+</blockquote>
+<p>You can check for class methods, attributes using hasattr method:</p>
+<blockquote>
+<p>if hasattr(class1, &ldquo;Hello2&rdquo;):</p>
+</blockquote>
+<blockquote>
+<p>    print c1.Hello2()</p>
+</blockquote>
+<blockquote>
+<p>else:</p>
+</blockquote>
+<blockquote>
+<p>    print &ldquo;Class1 does not contain method Hello2()&rdquo;</p>
+<p>Class1 does not contain method Hello2()</p>
+</blockquote>
+<p>To check the inheritance relation between two class :</p>
+<blockquote>
+<p>if issubclass(class2, class1)</p>
+</blockquote>
+<blockquote>
+<p>     Print &ldquo;Class2 is a subclass of Class1”</p>
+</blockquote>
+<p>In this note we tried to cover as much as we can of the Python object oriented features. We give it a more advanced note in the future.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/2009/03/python-notes-7.html">↩ Python Notes – 7 : Files &amp;amp; directories</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/2009/03/python-notes-9.html"> Python Notes – 9 : Serialization ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        <a href="https://themes.gohugo.io/themes/adritian-free-hugo-theme">© Adritian</a>. Free Hugo theme by <a href="https://www.adrianmoreno.info">Adrián Moreno Peña</a>.</br><a href="https://github.com/Ebeid/ebeid.github.io">Site content and code available in GitHub</a>.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

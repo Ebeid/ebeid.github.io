@@ -1,470 +1,390 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/</link>
-    <description>Recent content in Tags on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://ebeid.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <title>Tags on </title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>cloud</title>
-      <link>https://ebeid.github.io/tags/cloud/</link>
+      <title>Cloud</title>
+      <link>http://localhost:1313/tags/cloud/</link>
       <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/cloud/</guid>
+      <guid>http://localhost:1313/tags/cloud/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>projects</title>
-      <link>https://ebeid.github.io/tags/projects/</link>
-      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/projects/</guid>
-      <description></description>
-    </item>
-    
     <item>
       <title>Microsoft Roslyn</title>
-      <link>https://ebeid.github.io/tags/microsoft-roslyn/</link>
+      <link>http://localhost:1313/tags/microsoft-roslyn/</link>
       <pubDate>Fri, 23 Aug 2013 17:56:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/microsoft-roslyn/</guid>
+      <guid>http://localhost:1313/tags/microsoft-roslyn/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Syntax Trees</title>
-      <link>https://ebeid.github.io/tags/syntax-trees/</link>
+      <link>http://localhost:1313/tags/syntax-trees/</link>
       <pubDate>Fri, 23 Aug 2013 17:56:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/syntax-trees/</guid>
+      <guid>http://localhost:1313/tags/syntax-trees/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Compilers</title>
-      <link>https://ebeid.github.io/tags/compilers/</link>
+      <link>http://localhost:1313/tags/compilers/</link>
       <pubDate>Tue, 20 Aug 2013 15:49:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/compilers/</guid>
+      <guid>http://localhost:1313/tags/compilers/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Microsoft Pex</title>
-      <link>https://ebeid.github.io/tags/microsoft-pex/</link>
+      <link>http://localhost:1313/tags/microsoft-pex/</link>
       <pubDate>Tue, 13 Aug 2013 13:43:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/microsoft-pex/</guid>
+      <guid>http://localhost:1313/tags/microsoft-pex/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SMT-LIB</title>
-      <link>https://ebeid.github.io/tags/smt-lib/</link>
+      <link>http://localhost:1313/tags/smt-lib/</link>
       <pubDate>Thu, 01 Aug 2013 16:24:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/smt-lib/</guid>
+      <guid>http://localhost:1313/tags/smt-lib/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Z3</title>
-      <link>https://ebeid.github.io/tags/z3/</link>
+      <link>http://localhost:1313/tags/z3/</link>
       <pubDate>Thu, 01 Aug 2013 16:24:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/z3/</guid>
+      <guid>http://localhost:1313/tags/z3/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Satiability Modulo Theories</title>
-      <link>https://ebeid.github.io/tags/satiability-modulo-theories/</link>
+      <link>http://localhost:1313/tags/satiability-modulo-theories/</link>
       <pubDate>Tue, 30 Jul 2013 06:30:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/satiability-modulo-theories/</guid>
+      <guid>http://localhost:1313/tags/satiability-modulo-theories/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SharePoint 2013</title>
-      <link>https://ebeid.github.io/tags/sharepoint-2013/</link>
+      <link>http://localhost:1313/tags/sharepoint-2013/</link>
       <pubDate>Tue, 23 Jul 2013 17:36:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/sharepoint-2013/</guid>
+      <guid>http://localhost:1313/tags/sharepoint-2013/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>SharePoint 2010</title>
-      <link>https://ebeid.github.io/tags/sharepoint-2010/</link>
-      <pubDate>Wed, 17 Jul 2013 10:20:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/sharepoint-2010/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SharePoint Designer 2010</title>
-      <link>https://ebeid.github.io/tags/sharepoint-designer-2010/</link>
-      <pubDate>Wed, 17 Jul 2013 10:20:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/sharepoint-designer-2010/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JSON</title>
-      <link>https://ebeid.github.io/tags/json/</link>
-      <pubDate>Fri, 12 Jul 2013 17:15:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/json/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MongoDB</title>
-      <link>https://ebeid.github.io/tags/mongodb/</link>
-      <pubDate>Fri, 12 Jul 2013 17:15:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/mongodb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NoSQL</title>
-      <link>https://ebeid.github.io/tags/nosql/</link>
-      <pubDate>Fri, 12 Jul 2013 17:15:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/nosql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Apache Cassandra</title>
-      <link>https://ebeid.github.io/tags/apache-cassandra/</link>
-      <pubDate>Tue, 09 Jul 2013 17:27:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/apache-cassandra/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cassandra</title>
-      <link>https://ebeid.github.io/tags/cassandra/</link>
-      <pubDate>Tue, 09 Jul 2013 17:27:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/cassandra/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Redis</title>
-      <link>https://ebeid.github.io/tags/redis/</link>
-      <pubDate>Wed, 03 Jul 2013 12:47:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/redis/</guid>
-      <description></description>
-    </item>
-    
     <item>
       <title>Parameterized Unit Tests</title>
-      <link>https://ebeid.github.io/tags/parameterized-unit-tests/</link>
-      <pubDate>Thu, 02 May 2013 16:08:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/parameterized-unit-tests/</guid>
+      <link>http://localhost:1313/tags/parameterized-unit-tests/</link>
+      <pubDate>Tue, 23 Jul 2013 17:34:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/parameterized-unit-tests/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Unit testing</title>
-      <link>https://ebeid.github.io/tags/unit-testing/</link>
-      <pubDate>Thu, 02 May 2013 16:08:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/unit-testing/</guid>
+      <title>Unit Testing</title>
+      <link>http://localhost:1313/tags/unit-testing/</link>
+      <pubDate>Tue, 23 Jul 2013 17:34:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/unit-testing/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Unit Tests</title>
-      <link>https://ebeid.github.io/tags/unit-tests/</link>
-      <pubDate>Thu, 02 May 2013 16:08:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/unit-tests/</guid>
+      <link>http://localhost:1313/tags/unit-tests/</link>
+      <pubDate>Tue, 23 Jul 2013 17:34:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/unit-tests/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>NoSQL</title>
+      <link>http://localhost:1313/tags/nosql/</link>
+      <pubDate>Wed, 17 Jul 2013 17:19:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/nosql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SharePoint 2010</title>
+      <link>http://localhost:1313/tags/sharepoint-2010/</link>
+      <pubDate>Wed, 17 Jul 2013 10:20:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/sharepoint-2010/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SharePoint Designer 2010</title>
+      <link>http://localhost:1313/tags/sharepoint-designer-2010/</link>
+      <pubDate>Wed, 17 Jul 2013 10:20:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/sharepoint-designer-2010/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JSON</title>
+      <link>http://localhost:1313/tags/json/</link>
+      <pubDate>Fri, 12 Jul 2013 17:15:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/json/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MongoDB</title>
+      <link>http://localhost:1313/tags/mongodb/</link>
+      <pubDate>Fri, 12 Jul 2013 17:15:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Apache Cassandra</title>
+      <link>http://localhost:1313/tags/apache-cassandra/</link>
+      <pubDate>Tue, 09 Jul 2013 17:27:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/apache-cassandra/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cassandra</title>
+      <link>http://localhost:1313/tags/cassandra/</link>
+      <pubDate>Tue, 09 Jul 2013 17:27:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/cassandra/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redis</title>
+      <link>http://localhost:1313/tags/redis/</link>
+      <pubDate>Wed, 03 Jul 2013 12:47:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/redis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PostgreSQL</title>
+      <link>http://localhost:1313/tags/postgresql/</link>
+      <pubDate>Mon, 24 Jun 2013 16:59:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/postgresql/</guid>
+      <description></description>
+    </item>
     <item>
       <title>NUnit</title>
-      <link>https://ebeid.github.io/tags/nunit/</link>
+      <link>http://localhost:1313/tags/nunit/</link>
       <pubDate>Wed, 24 Apr 2013 03:06:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/nunit/</guid>
+      <guid>http://localhost:1313/tags/nunit/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>JPF</title>
-      <link>https://ebeid.github.io/tags/jpf/</link>
+      <link>http://localhost:1313/tags/jpf/</link>
       <pubDate>Sat, 30 Mar 2013 19:06:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/jpf/</guid>
+      <guid>http://localhost:1313/tags/jpf/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Model Checking</title>
-      <link>https://ebeid.github.io/tags/model-checking/</link>
+      <link>http://localhost:1313/tags/model-checking/</link>
       <pubDate>Sat, 30 Mar 2013 19:06:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/model-checking/</guid>
+      <guid>http://localhost:1313/tags/model-checking/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>R Programming Language</title>
-      <link>https://ebeid.github.io/tags/r-programming-language/</link>
-      <pubDate>Mon, 21 Jan 2013 09:40:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/r-programming-language/</guid>
+      <title>Propability</title>
+      <link>http://localhost:1313/tags/propability/</link>
+      <pubDate>Fri, 01 Feb 2013 16:55:00 -0600</pubDate>
+      <guid>http://localhost:1313/tags/propability/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Statistics</title>
-      <link>https://ebeid.github.io/tags/statistics/</link>
-      <pubDate>Fri, 11 Jan 2013 13:53:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/statistics/</guid>
+      <link>http://localhost:1313/tags/statistics/</link>
+      <pubDate>Fri, 01 Feb 2013 16:55:00 -0600</pubDate>
+      <guid>http://localhost:1313/tags/statistics/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>R Programming Language</title>
+      <link>http://localhost:1313/tags/r-programming-language/</link>
+      <pubDate>Mon, 21 Jan 2013 09:40:00 -0600</pubDate>
+      <guid>http://localhost:1313/tags/r-programming-language/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Microsoft Excel</title>
-      <link>https://ebeid.github.io/tags/microsoft-excel/</link>
+      <link>http://localhost:1313/tags/microsoft-excel/</link>
       <pubDate>Tue, 08 Jan 2013 13:01:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/microsoft-excel/</guid>
+      <guid>http://localhost:1313/tags/microsoft-excel/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Dynamics CRM Plug-in Registration Tool</title>
-      <link>https://ebeid.github.io/tags/dynamics-crm-plug-in-registration-tool/</link>
+      <link>http://localhost:1313/tags/dynamics-crm-plug-in-registration-tool/</link>
       <pubDate>Fri, 23 Mar 2012 15:49:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/dynamics-crm-plug-in-registration-tool/</guid>
+      <guid>http://localhost:1313/tags/dynamics-crm-plug-in-registration-tool/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Microsoft Dynamics CRM 2011</title>
-      <link>https://ebeid.github.io/tags/microsoft-dynamics-crm-2011/</link>
+      <link>http://localhost:1313/tags/microsoft-dynamics-crm-2011/</link>
       <pubDate>Fri, 23 Mar 2012 15:49:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/microsoft-dynamics-crm-2011/</guid>
+      <guid>http://localhost:1313/tags/microsoft-dynamics-crm-2011/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Plug-ins</title>
-      <link>https://ebeid.github.io/tags/plug-ins/</link>
+      <title>Plug-Ins</title>
+      <link>http://localhost:1313/tags/plug-ins/</link>
       <pubDate>Fri, 23 Mar 2012 15:49:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/plug-ins/</guid>
+      <guid>http://localhost:1313/tags/plug-ins/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>WCF</title>
-      <link>https://ebeid.github.io/tags/wcf/</link>
+      <link>http://localhost:1313/tags/wcf/</link>
       <pubDate>Fri, 23 Mar 2012 15:49:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/wcf/</guid>
+      <guid>http://localhost:1313/tags/wcf/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Business Intelligence Development Studio</title>
+      <link>http://localhost:1313/tags/business-intelligence-development-studio/</link>
+      <pubDate>Tue, 13 Mar 2012 17:47:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/business-intelligence-development-studio/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Business Intelligence Development Studio CRM Report Authoring Extension</title>
-      <link>https://ebeid.github.io/tags/business-intelligence-development-studio-crm-report-authoring-extension/</link>
+      <link>http://localhost:1313/tags/business-intelligence-development-studio-crm-report-authoring-extension/</link>
       <pubDate>Tue, 13 Mar 2012 17:47:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/business-intelligence-development-studio-crm-report-authoring-extension/</guid>
+      <guid>http://localhost:1313/tags/business-intelligence-development-studio-crm-report-authoring-extension/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>FetchXML - Business Intelligence Development Studio</title>
-      <link>https://ebeid.github.io/tags/fetchxml-business-intelligence-development-studio/</link>
+      <title>FetchXML</title>
+      <link>http://localhost:1313/tags/fetchxml/</link>
       <pubDate>Tue, 13 Mar 2012 17:47:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/fetchxml-business-intelligence-development-studio/</guid>
+      <guid>http://localhost:1313/tags/fetchxml/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SQL Server Reporting Services</title>
-      <link>https://ebeid.github.io/tags/sql-server-reporting-services/</link>
+      <link>http://localhost:1313/tags/sql-server-reporting-services/</link>
       <pubDate>Tue, 13 Mar 2012 17:47:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/sql-server-reporting-services/</guid>
+      <guid>http://localhost:1313/tags/sql-server-reporting-services/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Microsoft Dynamics CRM Dashboards</title>
-      <link>https://ebeid.github.io/tags/microsoft-dynamics-crm-dashboards/</link>
+      <link>http://localhost:1313/tags/microsoft-dynamics-crm-dashboards/</link>
       <pubDate>Sun, 11 Mar 2012 06:10:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/microsoft-dynamics-crm-dashboards/</guid>
+      <guid>http://localhost:1313/tags/microsoft-dynamics-crm-dashboards/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Microsoft Dynamics CRM Forms</title>
-      <link>https://ebeid.github.io/tags/microsoft-dynamics-crm-forms/</link>
+      <link>http://localhost:1313/tags/microsoft-dynamics-crm-forms/</link>
       <pubDate>Sun, 11 Mar 2012 06:10:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/microsoft-dynamics-crm-forms/</guid>
+      <guid>http://localhost:1313/tags/microsoft-dynamics-crm-forms/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Microsoft Dynamics CRM SiteMap</title>
-      <link>https://ebeid.github.io/tags/microsoft-dynamics-crm-sitemap/</link>
+      <link>http://localhost:1313/tags/microsoft-dynamics-crm-sitemap/</link>
       <pubDate>Sun, 11 Mar 2012 06:10:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/microsoft-dynamics-crm-sitemap/</guid>
+      <guid>http://localhost:1313/tags/microsoft-dynamics-crm-sitemap/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Microsoft Dynamics CRM Solution Configuration Page</title>
-      <link>https://ebeid.github.io/tags/microsoft-dynamics-crm-solution-configuration-page/</link>
+      <link>http://localhost:1313/tags/microsoft-dynamics-crm-solution-configuration-page/</link>
       <pubDate>Sun, 11 Mar 2012 06:10:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/microsoft-dynamics-crm-solution-configuration-page/</guid>
+      <guid>http://localhost:1313/tags/microsoft-dynamics-crm-solution-configuration-page/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Web Resources</title>
-      <link>https://ebeid.github.io/tags/web-resources/</link>
+      <link>http://localhost:1313/tags/web-resources/</link>
       <pubDate>Sun, 11 Mar 2012 06:10:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/web-resources/</guid>
+      <guid>http://localhost:1313/tags/web-resources/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Early Binding</title>
-      <link>https://ebeid.github.io/tags/early-binding/</link>
+      <link>http://localhost:1313/tags/early-binding/</link>
       <pubDate>Fri, 02 Mar 2012 16:28:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/early-binding/</guid>
+      <guid>http://localhost:1313/tags/early-binding/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Late Binding</title>
-      <link>https://ebeid.github.io/tags/late-binding/</link>
+      <link>http://localhost:1313/tags/late-binding/</link>
       <pubDate>Fri, 02 Mar 2012 16:28:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/late-binding/</guid>
+      <guid>http://localhost:1313/tags/late-binding/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>MSMQ</title>
-      <link>https://ebeid.github.io/tags/msmq/</link>
+      <link>http://localhost:1313/tags/msmq/</link>
       <pubDate>Tue, 22 Nov 2011 11:52:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/msmq/</guid>
+      <guid>http://localhost:1313/tags/msmq/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>JQuery</title>
+      <link>http://localhost:1313/tags/jquery/</link>
+      <pubDate>Wed, 16 Nov 2011 19:15:00 -0600</pubDate>
+      <guid>http://localhost:1313/tags/jquery/</guid>
+      <description></description>
+    </item>
     <item>
       <title>CSDP</title>
-      <link>https://ebeid.github.io/tags/csdp/</link>
+      <link>http://localhost:1313/tags/csdp/</link>
       <pubDate>Mon, 27 Dec 2010 18:54:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/csdp/</guid>
+      <guid>http://localhost:1313/tags/csdp/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Software Engineering Education</title>
-      <link>https://ebeid.github.io/tags/software-engineering-education/</link>
+      <link>http://localhost:1313/tags/software-engineering-education/</link>
       <pubDate>Mon, 27 Dec 2010 18:54:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/software-engineering-education/</guid>
+      <guid>http://localhost:1313/tags/software-engineering-education/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SWEBOK</title>
-      <link>https://ebeid.github.io/tags/swebok/</link>
+      <link>http://localhost:1313/tags/swebok/</link>
       <pubDate>Mon, 27 Dec 2010 18:54:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/swebok/</guid>
+      <guid>http://localhost:1313/tags/swebok/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Requirements Engineering</title>
-      <link>https://ebeid.github.io/tags/requirements-engineering/</link>
+      <link>http://localhost:1313/tags/requirements-engineering/</link>
       <pubDate>Fri, 17 Dec 2010 08:02:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/requirements-engineering/</guid>
+      <guid>http://localhost:1313/tags/requirements-engineering/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SQL</title>
-      <link>https://ebeid.github.io/tags/sql/</link>
+      <link>http://localhost:1313/tags/sql/</link>
       <pubDate>Sun, 11 Apr 2010 11:44:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/sql/</guid>
+      <guid>http://localhost:1313/tags/sql/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>test</title>
-      <link>https://ebeid.github.io/tags/test/</link>
-      <pubDate>Sun, 11 Apr 2010 05:08:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/test/</guid>
-      <description></description>
-    </item>
-    
     <item>
       <title>Programming Thoughts</title>
-      <link>https://ebeid.github.io/tags/programming-thoughts/</link>
+      <link>http://localhost:1313/tags/programming-thoughts/</link>
       <pubDate>Wed, 26 Aug 2009 00:32:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/programming-thoughts/</guid>
+      <guid>http://localhost:1313/tags/programming-thoughts/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Python</title>
-      <link>https://ebeid.github.io/tags/python/</link>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Sat, 15 Aug 2009 00:31:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/python/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Peer-to-Peer</title>
-      <link>https://ebeid.github.io/tags/peer-to-peer/</link>
+      <link>http://localhost:1313/tags/peer-to-peer/</link>
       <pubDate>Sun, 24 May 2009 23:10:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/tags/peer-to-peer/</guid>
+      <guid>http://localhost:1313/tags/peer-to-peer/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Interview Questions</title>
+      <link>http://localhost:1313/tags/interview-questions/</link>
+      <pubDate>Tue, 22 Jul 2008 11:04:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/interview-questions/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -1,41 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unit Tests on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/unit-tests/</link>
-    <description>Recent content in Unit Tests on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Thu, 02 May 2013 16:08:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/unit-tests/index.xml" rel="self" type="application/rss+xml" />
+    <title>Unit Tests on </title>
+    <link>http://localhost:1313/tags/unit-tests/</link>
+    <description>Recent content in Unit Tests on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 23 Jul 2013 17:34:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/unit-tests/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing stateful components using Microsoft Pex</title>
+      <link>http://localhost:1313/blog/testing-stateful-components-using-microsoft-pex/</link>
+      <pubDate>Tue, 23 Jul 2013 17:34:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/testing-stateful-components-using-microsoft-pex/</guid>
+      <description>&lt;p&gt;&amp;lt;&amp;gt;&lt;br&gt;&#xA;Pattern. This pattern applies for statefull component x that expose members that may transition the state. For each member f(x), one defines a transition type Tf (x; o) which contains a method to invoke f(x) and where o is the test oracle.&lt;br&gt;&#xA;Let us illustrate this pattern with the XmlWriter class from the System.Xml library. This class contains a number of methods (Write&amp;hellip;) which have to be called in a particular order to build valid XML documents. The writer also exposes a WriteState property which gives a partial view on the state of the writer:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Parameterized Models Patterns using Microsoft Pex</title>
+      <link>http://localhost:1313/blog/parameterized-models-patterns-using-microsoft-pex/</link>
+      <pubDate>Thu, 02 May 2013 16:45:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/parameterized-models-patterns-using-microsoft-pex/</guid>
+      <description>&lt;p&gt;Pex provides an infrastructure to implement parameterized models. We refer to parameterized models as they build on top of Pex infrastructure to generate new parameters on the fly, which we usually refer as &lt;strong&gt;choices&lt;/strong&gt;. Parameterized models can be used to replace traditional mocked-based testing as a single model captures all possible behavior.&lt;br&gt;&#xA;For a modeled component, instead of defining a single input/output pair as with mock objects, a parameterized model can specify a general input/output relationship, and it can use test parameters to act in various ways. In unit testing, mock objects are used to simulate the behavior of external components in order to test each component in isolation.&lt;br&gt;&#xA;Although mock object frameworks have greatly improve the usability in recent years, mock-based testing is still a tedious task. Note that the term mock object is used for somewhat different concepts by developers practicing unit testing. The meaning ranges from very simple (empty) stubs to complex and precise behavior with expected inputs and correctly computed outputs.&lt;br&gt;&#xA;Martin Fowler discusses this in detail &lt;a href=&#34;http://www.martinfowler.com/articles/mocksArentStubs.html&#34;&gt;here&lt;/a&gt;. In this sense, the first parameterized model patterns we present start out as simple stubs, but the patterns allow sophisticated models that assert expected inputs and restrict possible outputs.&lt;br&gt;&#xA;There are many frameworks that make it easy to write mock objects—for example, for .NET. Similar to how NUnit relates to Pex, these existing frameworks make it easy to manage mock objects—for example, by reducing the amount of code that must be written—but they do not help in exploring different behaviors. Note that Pex comes with a simple stubs framework. This framework was designed to be friendly with the kind of code analysis Pex does.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Parameterized Test Patterns using Microsoft Pex</title>
-      <link>https://ebeid.github.io/blog/2013-05-02-parameterized-test-patterns-using.html/</link>
+      <link>http://localhost:1313/2013/05/parameterized-test-patterns-using.html</link>
       <pubDate>Thu, 02 May 2013 16:08:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-05-02-parameterized-test-patterns-using.html/</guid>
-      <description>We talked before about the difference between unit tests and parameterized unit tests. In this post we will talk about common patterns for writing good parameterized unit tests. Keep in mind that we will use these tests with Microsoft Pex (as an automatic test input generation tool) to get test inputs that trigger all the possible scenarios of the code-under-test.
-Before anything, let’s clarify what are the questions we want to answer using the parameterized unit tests.</description>
+      <guid>http://localhost:1313/2013/05/parameterized-test-patterns-using.html</guid>
+      <description>&lt;p&gt;We talked before about the difference between unit tests and parameterized unit tests. In this post we will talk about common patterns for writing good parameterized unit tests. Keep in mind that we will use these tests with Microsoft Pex (as an automatic test input generation tool) to get test inputs that trigger all the possible scenarios of the code-under-test.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Before anything, let’s clarify what are the questions we want to answer using the parameterized unit tests. There are  two core questions:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Getting started with Microsoft Pex</title>
-      <link>https://ebeid.github.io/blog/2013-04-24-getting-started-with-microsoft-pex.html/</link>
+      <link>http://localhost:1313/2013/04/getting-started-with-microsoft-pex.html</link>
       <pubDate>Wed, 24 Apr 2013 03:06:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-04-24-getting-started-with-microsoft-pex.html/</guid>
-      <description>Microsoft Pex is a white box test generation for .NET that came out of Microsoft Research and have been successfully integrated into Visual Studio 2010. It have been a result of collaborative work between Microsoft Research and the Automated Software Engineering Research Group at North Carolina State University led by Dr. Tao Xie.
-You can download and install Microsoft Pex for Visual Studio 2010 from here. We have talked in a previous post about parameterized unit tests and the possibilities it brings.</description>
+      <guid>http://localhost:1313/2013/04/getting-started-with-microsoft-pex.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://research.microsoft.com/en-us/projects/pex/&#34;&gt;Microsoft Pex&lt;/a&gt; is a &lt;a href=&#34;http://research.microsoft.com/pubs/81193/fulltext.pdf&#34;&gt;white box test generation for .NET&lt;/a&gt; that came out of Microsoft Research and have been successfully integrated into Visual Studio 2010. It have been a result of collaborative work between Microsoft Research and the &lt;a href=&#34;https://sites.google.com/site/asergrp/&#34;&gt;Automated Software Engineering Research Group&lt;/a&gt; at &lt;a href=&#34;http://www.ncsu.edu/&#34;&gt;North Carolina State University&lt;/a&gt; led by  &lt;a href=&#34;http://www.csc.ncsu.edu/faculty/xie/&#34;&gt;Dr. Tao Xie&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can download and install Microsoft Pex for Visual Studio 2010 from &lt;a href=&#34;http://research.microsoft.com/en-us/projects/pex/downloads.aspx&#34;&gt;here&lt;/a&gt;. We have talked in a previous &lt;a href=&#34;http://ebeid-soliman.blogspot.com/2013/04/unit-tests-vs-parameterized-unit-tests.html&#34;&gt;post&lt;/a&gt; about parameterized unit tests and the possibilities it brings. In this post and the following we will explore Microsoft Pex and how it can help you in understanding the input/output behavior of your code, finding inputs that cause the code-under-test to crash, and exploring parameterized unit tests to check whether your code implements the desired functionality for all inputs.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Unit Tests vs Parametrized Unit Tests</title>
-      <link>https://ebeid.github.io/blog/2013-04-22-unit-tests-vs-parameterized-unit-tests.html/</link>
+      <link>http://localhost:1313/2013/04/unit-tests-vs-parameterized-unit-tests.html</link>
       <pubDate>Mon, 22 Apr 2013 17:17:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-04-22-unit-tests-vs-parameterized-unit-tests.html/</guid>
-      <description>Unit Tests Using the conventions of NUnit unit tests as test methods contained in test classes. A parameterless method decorated with a custom attribute like [TestMethod] is a test method. Usually, each unit test explores a particular aspect of the behavior of the class-under-test.
-Here is a unit test written in C# that adds an element to a .NET ArrayList instance. The test first creates a new array list, where the parameter to the constructor is the initial capacity, then adds a new object to the array list, and finally checks that the addition was correctly performed by verifying that a subsequent index lookup operation returns the new object.</description>
+      <guid>http://localhost:1313/2013/04/unit-tests-vs-parameterized-unit-tests.html</guid>
+      <description>&lt;h3 id=&#34;unit-tests&#34;&gt;Unit Tests&lt;/h3&gt;&#xA;&lt;p&gt;Using the conventions of NUnit unit tests as test methods contained in test classes. A parameterless method decorated with a custom attribute like [TestMethod] is a test method. Usually, each unit test explores a particular aspect of the behavior of the class-under-test.&lt;/p&gt;&#xA;&lt;p&gt;Here is a unit test written in C# that adds an element to a .NET ArrayList instance. The test first creates a new array list, where the parameter to the constructor is the initial capacity, then adds a new object to the array list, and finally checks that the addition was correctly performed by verifying that a subsequent index lookup operation returns the new object.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

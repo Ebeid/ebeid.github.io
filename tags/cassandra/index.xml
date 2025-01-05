@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cassandra on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/cassandra/</link>
-    <description>Recent content in Cassandra on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Tue, 09 Jul 2013 17:27:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/cassandra/index.xml" rel="self" type="application/rss+xml" />
+    <title>Cassandra on </title>
+    <link>http://localhost:1313/tags/cassandra/</link>
+    <description>Recent content in Cassandra on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 09 Jul 2013 17:27:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cassandra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with Apache Cassandra</title>
-      <link>https://ebeid.github.io/blog/2013-07-09-getting-started-with-apache-cassandra.html/</link>
+      <link>http://localhost:1313/2013/07/getting-started-with-apache-cassandra.html</link>
       <pubDate>Tue, 09 Jul 2013 17:27:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-07-09-getting-started-with-apache-cassandra.html/</guid>
-      <description>Apache Cassandra is “an open source, distributed, decentralized, elastically scalable, highly available, fault-tolerant, tuneably consistent, column-oriented database that bases its distribution design on Amazon’s Dynamo and its data model on Google’s Bigtable” (source: “Cassandra: The Definitive Guide,” O’Reilly Media, 2010, p. 14).
-Cassandra is built to store lots of data across a variety of machines arranged in a ring, in other words scaling horizontally, rather than vertically.
-Data Model Cassandra is based on a key-value model and it is organized according to the following concepts:</description>
+      <guid>http://localhost:1313/2013/07/getting-started-with-apache-cassandra.html</guid>
+      <description>&lt;p&gt;Apache &lt;a href=&#34;http://cassandra.apache.org/&#34;&gt;Cassandra&lt;/a&gt; is “an open source, distributed, decentralized, elastically scalable, highly available, fault-tolerant, tuneably consistent, column-oriented database that bases its distribution design on Amazon’s &lt;a href=&#34;http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf&#34; title=&#34;Dynamo: Amazon’s Highly Available Key-value Store&#34;&gt;Dynamo&lt;/a&gt; and its data model on Google’s &lt;a href=&#34;http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/bigtable-osdi06.pdf&#34; title=&#34;Bigtable: A Distributed Storage System for Structured Data&#34;&gt;Bigtable&lt;/a&gt;” (source: “Cassandra: The Definitive Guide,” O’Reilly Media, 2010, p. 14).&lt;/p&gt;&#xA;&lt;p&gt;Cassandra is built to store lots of data across a variety of machines arranged in a ring, in other words scaling horizontally, rather than vertically.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

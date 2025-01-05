@@ -1,0 +1,839 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#portfolio"
+                >PORTFOLIO</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/blog">Blog</a></span></li><li class="breadcrum-item"><span><a href="/blog/blog">Blog</a></span></li><li class="breadcrum-item current">Structuring unit tests in NUnit</li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/blog/blog/2011-10-21-structuring-unit-tests-in-nunit.html/">Structuring unit tests in NUnit</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Fri Oct 21, 2011</h4>
+              ·
+              <h4 id="wordcount">881 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/nunit/">NUnit</a></li>
+              
+              <li><a href="/tags/unit-testing/">Unit Testing</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p>Our goal in the previous post Introduction to NUnit, was just to
+introduce the unit testing using NUnit as simple as possible. Now it is
+the time to elaborate more on NUnit framework, structuring and
+organizing your test cases. If you examined the test code again:</p>
+<pre><code>   1:  using System;
+
+
+
+
+   2:  using NUnit.Framework;
+
+
+
+
+   3:  namespace ClassLibrary1
+
+
+
+
+   4:  {
+
+
+
+
+   5:      [TestFixture]
+
+
+
+
+   6:      public class CmpTest
+
+
+
+
+   7:      {
+
+
+
+
+   8:          [Test]
+
+
+
+
+   9:          public void LargestOf3()
+
+
+
+
+  10:          {
+
+
+
+
+  11:              int[] numbers = new int[] { 8, 9, 7 };
+
+
+
+
+  12:              Assert.That(Cmp.Largest(numbers), Is.EqualTo(9));
+
+
+
+
+  13:          }
+
+
+
+
+  14:      }
+
+
+
+
+  15:  }
+</code></pre>
+<p>The code is pretty straightforward. The using statement on line 2 brings
+in the necessary NUnit classes.</p>
+<p>Next, we have the class definition on line 6: each class that contains
+tests must be annotated with a [TestFixture] attribute. The class have
+to be public, so the test runners can run it. The class must have a
+public, no-parameter constructor.</p>
+<p>Finally, the test class contains individual methods annotated with
+[Test] attributes. Any public, parameterless method specified with a
+[Test] attribute will be run automatically by NUnit.</p>
+<p><strong><!-- raw HTML omitted -->Structuring Unit Tests<!-- raw HTML omitted --></strong></p>
+<p>As a good object-oriented design concept, a class should be focused on
+one responsibility and only one. This applies to test fixtures as well.
+Test fixtures should be focused on verifying behavior in a specific
+scenario. Its name should reflect this scenario. Tests inside that
+fixture should test different behaviors within this scenario. Tests
+should be organized around <em>behaviors</em>, not necessarily individual
+methods. To keep things readable and clear in the test runner output,
+favor putting fixture classes under a namespace that includes the name
+of the class that the fixture are testing.</p>
+<pre><code>   1:  namespace solutionName.Test.ShoppingCartTest
+
+
+
+
+   2:  {
+
+
+
+
+   3:      [TestFixture]
+
+
+
+
+   4:      public class EmptyCartFixture
+
+
+
+
+   5:      {
+
+
+
+
+   6:          [Test]
+
+
+
+
+   7:          public void OverallRateIsZero() { }
+
+
+
+
+   8:      }
+
+
+
+
+   9:  }
+</code></pre>
+<p><strong><!-- raw HTML omitted -->Categories<!-- raw HTML omitted --></strong></p>
+<p>NUnit provides an easy way to mark and run individual test and fixtures
+by using categories. A category is just a name that we define. We can
+associate different test methods with one or more categories, that
+enable us to select which categories we want to exclude (or include)
+when running the tests. A category is specified as an attribute.</p>
+<pre><code>   1:  using System;
+
+
+
+
+   2:  using NUnit.Framework;
+
+
+
+
+   3:  namespace ClassLibrary1
+
+
+
+
+   4:  {
+
+
+
+
+   5:      [TestFixture]
+
+
+
+
+   6:      public class CmpTest
+
+
+
+
+   7:      {
+
+
+
+
+   8:          [Test]
+
+
+
+
+   9:          [Category(&quot;Short&quot;)]
+
+
+
+
+  10:          public void LargestOf3()
+
+
+
+
+  11:          {
+
+
+
+
+  12:              int[] numbers = new int[] { 8, 9, 7 };
+
+
+
+
+  13:              Assert.That(Cmp.Largest(numbers), Is.EqualTo(9));
+
+
+
+
+  14:          }
+
+
+
+
+  15:   
+
+
+
+
+  16:          [Test]
+
+
+
+
+  17:          [Category(&quot;Long&quot;)]
+
+
+
+
+  18:          [Category(&quot;Fred&quot;)]
+
+
+
+
+  19:          public void LargestOf3Alt()
+
+
+
+
+  20:          {
+
+
+
+
+  21:              int[] numbers = new int[3];
+
+
+
+
+  22:              numbers[0] = 1;
+
+
+
+
+  23:              numbers[1] = 1;
+
+
+
+
+  24:              numbers[2] = 1;
+
+
+
+
+  25:              Assert.That(Cmp.Largest(numbers), Is.EqualTo(1));
+
+
+
+
+  26:          }
+
+
+
+
+  27:   
+
+
+
+
+  28:          [SetUp]
+
+
+
+
+  29:          public void LargestOf3Alt2()
+
+
+
+
+  30:          {
+
+
+
+
+  31:              int[] numbers = new int[1];
+
+
+
+
+  32:              numbers[0] = 0;
+
+
+
+
+  33:              Assert.That(Cmp.Largest(numbers), Is.EqualTo(0));
+
+
+
+
+  34:          }
+
+
+
+
+  35:      }
+
+
+
+
+  36:  }
+</code></pre>
+<p>In the GUI, if you excluded “Short” methods from run, only LargestOf3()
+will be selected and executed.</p>
+<p><a href="http://lh3.ggpht.com/-nXyJ5v9aObs/TqGpgt33HLI/AAAAAAAAAJo/zjY9Qasyy7A/s1600-h/NUnit35.jpg"><!-- raw HTML omitted --></a></p>
+<p>When categories are used, only the tests in the selected categories will
+be run. Those tests in categories that are not selected are not reported
+at all. If no category selected in the GUI, then all methods will be
+executed unless it is tagged with Explicit attribute. The Explicit
+attribute causes a test or test fixture to be ignored unless it is
+explicitly selected for running.</p>
+<p>**<!-- raw HTML omitted -->Per-Method Setup and Teardown<!-- raw HTML omitted --> ** We
+should write our test in order that each test can run independently of
+other tests; this allows us to run any test at any time in any order. In
+order to accomplish that we may need to reset things between tests or
+clean up after a test has run. [Setup] and [TearDown] attributes are
+used for these tasks.</p>
+<p>**<!-- raw HTML omitted -->Per-Fixture Setup and Teardown<!-- raw HTML omitted --> ** If we
+need to set something up or clean up after the entire test class has
+run, use [TestFixtureSetup] and [TestFixtureTearDown] for that.</p>
+<p>Although setup and teardown methods generally come in pair, they don’t
+have to do so.</p>
+<p>Suppose we need some sort of database connection for each test. Rather
+than duplicating code in each test method that connects to and
+disconnects from the database, we could use SetUp and TearDown methods.
+Since creating the initial connection to the database can be slow, we
+may want to do that only once before all the tests run by using
+TestFixtureSetUp.</p>
+<pre><code>   1:  [TestFixture]
+
+
+
+
+   2:  public class DBTest
+
+
+
+
+   3:  {
+
+
+
+
+   4:      private SqlConnection dbConn;
+
+
+
+
+   5:              
+
+
+
+
+   6:      [TestFixtureSetUp]
+
+
+
+
+   7:      public void PerFixtureSetup()
+
+
+
+
+   8:      {
+
+
+
+
+   9:          dbConn = new SqlConnection(&quot;ConnectionString&quot;);
+
+
+
+
+  10:          dbConn.Open();
+
+
+
+
+  11:      }
+
+
+
+
+  12:   
+
+
+
+
+  13:      [SetUp]
+
+
+
+
+  14:      public void PerTestSetup()
+
+
+
+
+  15:      {
+
+
+
+
+  16:          //populate database with test data
+
+
+
+
+  17:      }
+
+
+
+
+  18:   
+
+
+
+
+  19:      [TearDown]
+
+
+
+
+  20:      public void PerTestTearDown()
+
+
+
+
+  21:      {
+
+
+
+
+  22
+:          // clean up database
+
+
+
+
+  23:      }
+
+
+
+
+  24:   
+
+
+
+
+  25:      [TestFixtureTearDown]
+
+
+
+
+  26:      public void PerFixtureTearDown()
+
+
+
+
+  27:      {
+
+
+
+
+  28:          dbConn.Close();
+
+
+
+
+  29:          dbConn.Dispose();
+
+
+
+
+  30:      }
+
+
+
+
+  31:   
+
+
+
+
+  32:      [Test]
+
+
+
+
+  33:      public void AccountAccess()
+
+
+
+
+  34:      {
+
+
+
+
+  35:          // Uses dbConn
+
+
+
+
+  36:      }
+
+
+
+
+  37:   
+
+
+
+
+  38:      [Test]
+
+
+
+
+  39:      public void EmployeeAccess()
+
+
+
+
+  40:      {
+
+
+
+
+  41:          // Uses dbConn
+
+
+
+
+  42:      }
+
+
+
+
+  43:  }
+</code></pre>
+<p>In this example, here is the methods run sequence: PerFixtureSetup
+&gt;&gt; PerTestSetup &gt;&gt; AccountAccess &gt;&gt; PerTestTearDown
+&gt;&gt; PerFixtureTearDown &gt;&gt; PerFixtureSetup &gt;&gt;
+PerTestSetup &gt;&gt; EmployeeAccess &gt;&gt; PertestTearDown &gt;&gt;
+PerFixtureTearDown.</p>
+<p>In this post we tried to elaborate more on the NUnit framework and how
+we structure and organize test cases in NUnit.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/blog/blog/2011-10-21-introduction-to-nunit.html/">↩ Introduction to NUnit</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/blog/blog/2011-10-21-asserts-in-nunit.html/"> Asserts in NUnit ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        © Adritian. Free Hugo theme by Adrián Moreno Peña.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#portfolio">PORTFOLIO</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+      <nav class="language-selector">
+        <ul>
+          
+            
+            <li class="dropdown">
+              <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="languages-dropdown">
+                <span class="label">Language</span>    
+              </button>
+            <ul class="dropdown__menu" id="languages-dropdown">
+              <li class="current"><span>✔️ English</span></li>
+              
+              
+            
+              
+            
+              
+              
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

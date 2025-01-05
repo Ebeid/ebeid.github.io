@@ -1,51 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NUnit on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/nunit/</link>
-    <description>Recent content in NUnit on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Wed, 24 Apr 2013 03:06:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/nunit/index.xml" rel="self" type="application/rss+xml" />
+    <title>NUnit on </title>
+    <link>http://localhost:1313/tags/nunit/</link>
+    <description>Recent content in NUnit on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Apr 2013 03:06:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nunit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting started with Microsoft Pex</title>
-      <link>https://ebeid.github.io/blog/2013-04-24-getting-started-with-microsoft-pex.html/</link>
+      <link>http://localhost:1313/2013/04/getting-started-with-microsoft-pex.html</link>
       <pubDate>Wed, 24 Apr 2013 03:06:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-04-24-getting-started-with-microsoft-pex.html/</guid>
-      <description>Microsoft Pex is a white box test generation for .NET that came out of Microsoft Research and have been successfully integrated into Visual Studio 2010. It have been a result of collaborative work between Microsoft Research and the Automated Software Engineering Research Group at North Carolina State University led by Dr. Tao Xie.
-You can download and install Microsoft Pex for Visual Studio 2010 from here. We have talked in a previous post about parameterized unit tests and the possibilities it brings.</description>
+      <guid>http://localhost:1313/2013/04/getting-started-with-microsoft-pex.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://research.microsoft.com/en-us/projects/pex/&#34;&gt;Microsoft Pex&lt;/a&gt; is a &lt;a href=&#34;http://research.microsoft.com/pubs/81193/fulltext.pdf&#34;&gt;white box test generation for .NET&lt;/a&gt; that came out of Microsoft Research and have been successfully integrated into Visual Studio 2010. It have been a result of collaborative work between Microsoft Research and the &lt;a href=&#34;https://sites.google.com/site/asergrp/&#34;&gt;Automated Software Engineering Research Group&lt;/a&gt; at &lt;a href=&#34;http://www.ncsu.edu/&#34;&gt;North Carolina State University&lt;/a&gt; led by  &lt;a href=&#34;http://www.csc.ncsu.edu/faculty/xie/&#34;&gt;Dr. Tao Xie&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can download and install Microsoft Pex for Visual Studio 2010 from &lt;a href=&#34;http://research.microsoft.com/en-us/projects/pex/downloads.aspx&#34;&gt;here&lt;/a&gt;. We have talked in a previous &lt;a href=&#34;http://ebeid-soliman.blogspot.com/2013/04/unit-tests-vs-parameterized-unit-tests.html&#34;&gt;post&lt;/a&gt; about parameterized unit tests and the possibilities it brings. In this post and the following we will explore Microsoft Pex and how it can help you in understanding the input/output behavior of your code, finding inputs that cause the code-under-test to crash, and exploring parameterized unit tests to check whether your code implements the desired functionality for all inputs.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Asserts in NUnit</title>
-      <link>https://ebeid.github.io/blog/2011-10-21-asserts-in-nunit.html/</link>
+      <link>http://localhost:1313/2011/10/asserts-in-nunit.html</link>
       <pubDate>Fri, 21 Oct 2011 12:19:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2011-10-21-asserts-in-nunit.html/</guid>
-      <description>Assertions (or asserts for short) are helper methods that can assist us in determining whether a method under test is performing correctly or not. They let us assert conditions, data, and so on. All assertion methods will report failures (that’s when the assertion is false) or errors (that’s when we get an unexpected exception) and report these through the NUnit test runner. when a failure or error occurs, execution of the current test method is aborted.</description>
+      <guid>http://localhost:1313/2011/10/asserts-in-nunit.html</guid>
+      <description>&lt;p&gt;Assertions (or asserts for short) are helper methods that can assist us in determining whether a method under test is performing correctly or not. They let us assert conditions, data, and so on. All assertion methods will report failures (that’s when the assertion is false) or errors (that’s when we get an unexpected exception) and report these through the NUnit test runner. when a failure or error occurs, execution of the current test method is aborted. Other Test within the same test fixture will still be run.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Structuring unit tests in NUnit</title>
-      <link>https://ebeid.github.io/blog/2011-10-21-structuring-unit-tests-in-nunit.html/</link>
+      <link>http://localhost:1313/2011/10/structuring-unit-tests-in-nunit.html</link>
       <pubDate>Fri, 21 Oct 2011 12:19:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2011-10-21-structuring-unit-tests-in-nunit.html/</guid>
-      <description>Our goal in the previous post Introduction to NUnit, was just to introduce the unit testing using NUnit as simple as possible. Now it is the time to elaborate more on NUnit framework, structuring and organizing your test cases. If you examined the test code again:
-1: using System; 2: using NUnit.Framework; 3: namespace ClassLibrary1 4: { 5: [TestFixture] 6: public class CmpTest 7: { 8: [Test] 9: public void LargestOf3() 10: { 11: int[] numbers = new int[] { 8, 9, 7 }; 12: Assert.</description>
+      <guid>http://localhost:1313/2011/10/structuring-unit-tests-in-nunit.html</guid>
+      <description>&lt;p&gt;Our goal in the previous post Introduction to NUnit, was just to introduce the unit testing using NUnit as simple as possible. Now it is the time to elaborate more on NUnit framework, structuring and organizing your test cases. If you examined the test code again:&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.csharpcode, .csharpcode pre&lt;!-- raw HTML omitted --&gt;{&lt;!-- raw HTML omitted --&gt; font-size: small;&lt;!-- raw HTML omitted --&gt; color: black;&lt;!-- raw HTML omitted --&gt; font-family: consolas, &amp;ldquo;Courier New&amp;rdquo;, courier, monospace;&lt;!-- raw HTML omitted --&gt; background-color: #ffffff;&lt;!-- raw HTML omitted --&gt; /*white-space: pre;*/&lt;!-- raw HTML omitted --&gt;}&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.csharpcode pre { margin: 0em; }&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.csharpcode .rem { color: #008000; }&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.csharpcode .kwrd { color: #0000ff; }&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.csharpcode .str { color: #006080; }&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.csharpcode .op { color: #0000c0; }&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.csharpcode .preproc { color: #cc6633; }&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.csharpcode .asp { background-color: #ffff00; }&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.csharpcode .html { color: #800000; }&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.csharpcode .attr { color: #ff0000; }&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.csharpcode .alt &lt;!-- raw HTML omitted --&gt;{&lt;!-- raw HTML omitted --&gt; background-color: #f4f4f4;&lt;!-- raw HTML omitted --&gt; width: 100%;&lt;!-- raw HTML omitted --&gt; margin: 0em;&lt;!-- raw HTML omitted --&gt;}&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.csharpcode .lnum { color: #606060; }&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Introduction to NUnit</title>
-      <link>https://ebeid.github.io/blog/2011-10-21-introduction-to-nunit.html/</link>
+      <link>http://localhost:1313/2011/10/introduction-to-nunit.html</link>
       <pubDate>Fri, 21 Oct 2011 12:17:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2011-10-21-introduction-to-nunit.html/</guid>
-      <description>What is unit testing?
-According to Jeff Canna, unit testing ensures that a particular method of a class successfully performs a set of specific tasks. Each test confirms that a method produces the expected output when given a known input.
-What is NUnit? NUnit is an open source framework that facilitates unit testing for all .NET languages. It allows you to build your test cases directly into the code of the project.</description>
+      <guid>http://localhost:1313/2011/10/introduction-to-nunit.html</guid>
+      <description>&lt;p&gt;&lt;strong&gt;What is unit testing?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;According to &lt;a href=&#34;http://www-128.ibm.com/developerworks/library/j-test.html&#34;&gt;Jeff Canna&lt;/a&gt;, unit testing ensures that a particular method of a class successfully performs a set of specific tasks. Each test confirms that a method produces the expected output when given a known input.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;What is NUnit?&lt;/strong&gt; NUnit is an open source framework that facilitates unit testing for all .NET languages. It allows you to build your test cases directly into the code of the project.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

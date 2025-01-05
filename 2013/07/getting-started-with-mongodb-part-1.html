@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#experience"
+                >EXPERIENCE</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/2013">2013th</a></span></li><li class="breadcrum-item"><span><a href="/2013/07">7th</a></span></li><li class="breadcrum-item"><span><a href="/2013/07/getting-started-with-mongodb-part-1.html">Getting started with mongodb part 1.html</a></span></li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/2013/07/getting-started-with-mongodb-part-1.html">Getting Started with MongoDB – Part 1</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Fri Jul 12, 2013</h4>
+              ·
+              <h4 id="wordcount">2276 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/mongodb/">MongoDB</a></li>
+              
+              <li><a href="/tags/json/">JSON</a></li>
+              
+              <li><a href="/tags/nosql/">NoSQL</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p><strong>MongoDB</strong> (from &ldquo;hu<strong>mongo</strong>us&rdquo;) is an open source <a href="http://en.wikipedia.org/wiki/Document-oriented_database">document-oriented database</a> system developed and supported by <a href="http://www.blogger.com/www.10gen.com">10gen</a> (founded by <a href="https://twitter.com/dmerr">Dwight Merriman</a>). First publicly released in 2009, and since then it have been a rising star in the NoSQL world. MongoDB stores structured data as <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>-like documents with dynamic schemas (technically data is stored in a binary form of JSON known as <a href="http://en.wikipedia.org/wiki/BSON">BSON</a>), making the integration of data in certain types of applications easier and faster.</p>
+<h4 id="installation">Installation</h4>
+<ol>
+<li>Download the latest mongoDB version from <a href="http://www.mongodb.org/downloads" title="downloads page">here</a>.</li>
+<li>Extract the archive to your preferred location (in my case C:\mongodb). MongoDB is self-contained and does not have any other system dependencies. You can run MongoDB from any folder you choose. You may install MongoDB in any directory.</li>
+<li>MongoDB requires a data folder to store its files (default is C:\data\db ). You may specify a different path with the dbpath setting when lunching mongod.exe.</li>
+</ol>
+<h4 id="starting-the-server">Starting the Server</h4>
+<p>To start MongoDB, open the command prompt window, and run mongod.exe from the bin directory (specify the data path if needed)<br>
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLYFSj0QJkVFK1yydUedpIvsd5YeopM1lneMymjWznveiO1n_DqfUCP4zUsBLVKwdx4HXed2dQD72RIItYTUjOmvCuvBQaYLS2v03h076etNiBBbKtEUcqaT-qLoQK-Z479QcHlpJ9Nw/s1600-h/CWindowssystem32cmd.exe%252520-%252520mongod.exe%252520%252520--dbpath%252520Cmongodbdata_2013-07-09_16-10-49.png"><img alt="CWindowssystem32cmd.exe - mongod.exe  &ndash;dbpath Cmongodbdata_2013-07-09_16-10-49" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPTHC1HLhFaXGuBtIV2LSZtW_OSVNQM46E5nKA0OrqlRa3_pDuScmfpzBAeVYSJ6CCSMa_FnHRYaxC0vzVS6No-5eWc78QNIbhV6-E7VhpttbknSrxdD3Db5uCCG0DeR08kKxpr64e0Q/?imgmax=800" title="CWindowssystem32cmd.exe - mongod.exe  --dbpath Cmongodbdata_2013-07-09_16-10-49"></a>The waiting for connections message in the console output indicates that the mongod.exe process is running successfully and waiting for connections on port 27017</p>
+<h4 id="connecting-to-the-server">Connecting to the Server</h4>
+<p>To connect to the server, open another command prompt window and run mongo.exe from the bin directory.<br>
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgs47KNf4kKqdeUR-NCIjrLBDlPVXsLfmFiNV80Tz5aJrUyQudthu0uZHiQNgDJJGtSd1pVtFIzEaRrlFrrvn6FIsJMWlB2IgVSRXnnAK4y1fohK5NcS9np3Y59vDAUwcfVLSz3sScs7w/s1600-h/CWindowssystem32cmd.exe%252520-%252520mongo_2013-07-09_16-27-37%25255B3%25255D.png"><img alt="CWindowssystem32cmd.exe - mongo_2013-07-09_16-27-37" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUUkpiVUNQJ5DMlD0cYnovlY-7HCjir7CBenHIKXxYPDhu24r0e_4MTBfMsUbTqaC6-htoD2sUOOvSnaIRV5hPCz7lQIfLsVxRLs8zRp7KtKqg-OoA7S0r7CtnihknbXJ2SYIZ6W_smQ/?imgmax=800" title="CWindowssystem32cmd.exe - mongo_2013-07-09_16-27-37"></a></p>
+<h4 id="run-mongodb-as-a-windows-service">Run MongoDB as a Windows Service</h4>
+<ol>
+<li>Create a log file for MongoDB (in my case c:\mongodb\log\mongo.log ).</li>
+<li>Create a data directory for MongoDB (in my case c:\mongodb\data ).</li>
+<li>Open the command prompt window as an administrator.</li>
+<li>Run the following command <em>C:\mongodb\bin&gt;mongod.exe –install –rest –master &ndash;logpath &ldquo;c:\mongodb\log\mongo.log&rdquo;</em></li>
+<li>Run regedit from start menu.</li>
+<li>Go to <em>HKEY_LOCAL_MACHINE &raquo; SYSTEM &raquo; CurrentControlSet &raquo; services</em></li>
+<li>Find the MongoDB directory &amp; edit the <em>ImagePath</em> key.</li>
+<li>Set value as <em>c:\mongodb\bin\mongod &ndash;service  &ndash;rest  &ndash;master  &ndash;logpath=C:\mongodb\log\mongo.log  &ndash;dbpath=C:\mongodb\data</em></li>
+<li>Save and exit registry editor</li>
+<li>Open ComponentServices from Start menu &raquo; Run</li>
+<li>Locate the Mongo DB service, and reigh click &raquo; Properties.</li>
+<li>Set the Startup Type to Automatic. Then start the service.
+1.  To run the MongoDB service from command window, use <em>net start MongoDB</em></li>
+<li>Check at <a href="http://localhost:28017/">http://localhost:28017/</a> to see , MongoDB should return stats.</li>
+</ol>
+<p>In case you want to remove MongoDB service <em>C:\mongodb\bin\mongod.exe –remove</em></p>
+<h4 id="data-model">Data Model</h4>
+<p>Data in MongoDB has a <em>flexible</em> schema.</p>
+<ul>
+<li>Database consists on a set of collections.</li>
+<li>Collections consists of a set of documents.
+<ul>
+<li>Documents in the same collection do not need to have the same set of fields or structure.</li>
+<li>Common fields in a collection’s documents can hold different types of data.</li>
+</ul>
+</li>
+</ul>
+<p>Based on what we mentioned, you could say that MongoDB is schema-less. But you may refer to this <a href="http://docs.mongodb.org/manual/core/data-modeling/" title="Data Modeling Considerations for MongoDB Applications">data modeling article</a> before doing real work on MongoDB.</p>
+<h4 id="crud-operations">CRUD operations</h4>
+<ul>
+<li>When you start the mongo shell, it connect to test database by default. To create a new database or switch to another database, use <strong><em>use newdb</em></strong></li>
+<li>To show a list of databases, use <strong><em>show dbs</em></strong> (databases are created when you insert the first values in it. This means that any database have been created but no values inserted in it, it really doesn’t exist).</li>
+<li>To confirm the current session database, use <strong><em>db</em></strong></li>
+<li>To create a collection, just insert an initial record to it. Since Mongo is schema-less, there is no need to define anything up front. The following code creates/inserts a towns collection:</li>
+</ul>
+<p>db.towns.insert({<br>
+name: &ldquo;New York&rdquo;,<br>
+population: 22200000,<br>
+last_census: ISODate(&ldquo;2009-07-31&rdquo;),<br>
+famous_for: [ &ldquo;statue of liberty&rdquo;, &ldquo;food&rdquo; ],<br>
+mayor : {<br>
+name : &ldquo;Michael Bloomberg&rdquo;,<br>
+party : &ldquo;I&rdquo;<br>
+}<br>
+})</p>
+<ul>
+<li>
+<p>brackets like {&hellip;} denote an object with key-value pairs.</p>
+</li>
+<li>
+<p>brackets like [&hellip;] denote an array.</p>
+</li>
+<li>
+<p>You can nest these values to any depth.</p>
+</li>
+<li>
+<p>To show a list of collections, use <strong><em>show collections</em></strong>.</p>
+</li>
+<li>
+<p>To list the contents of a collection, use <strong><em>db.towns.find()</em></strong></p>
+<ul>
+<li>You will see a system generated field <strong>_id</strong> ( composed of a timestamp, client machine ID, client process ID, and a 3-byte incremented counter) (you can override this system generated</li>
+</ul>
+</li>
+<li>
+<p>MongoDB commands are JavaScript functions.</p>
+<ul>
+<li><strong>db</strong> is a JavaScript object that contains information about the current database. Try <strong>typeof db</strong></li>
+<li><strong>db.<em>x</em></strong> is a JavaScript object that represent a collection named <em>x</em> within the current database. Try <strong>typeof db.towns</strong></li>
+<li><strong>db.<em>x</em>.help()</strong> will list available functions related to the given object. Try <strong>typeof db.towns.insert</strong></li>
+<li>If you want to inspect the source code of a function, call it without parameter or parentheses.</li>
+</ul>
+</li>
+<li>
+<p><strong>Functions</strong> You can create JavaScript functions and call them on the mongo shell like:</p>
+</li>
+</ul>
+<blockquote>
+<p>function insertCity( name, population, last_census, famous_for, mayor_info) {<br>
+db.towns.insert({<br>
+name:name,<br>
+population:population,<br>
+last_census: ISODate(last_census),<br>
+famous_for:famous_for,<br>
+mayor : mayor_info<br>
+});<br>
+}<br>
+insertCity(&ldquo;Punxsutawney&rdquo;, 6200, &lsquo;2008-31-01&rsquo;, [&ldquo;phil the groundhog&rdquo;], { name : &ldquo;Jim Wehrle&rdquo; } )<br>
+insertCity(&ldquo;Portland&rdquo;, 582000, &lsquo;2007-20-09&rsquo;, [&ldquo;beer&rdquo;, &ldquo;food&rdquo;], { name : &ldquo;Sam Adams&rdquo;, party : &ldquo;D&rdquo; } )<br>
+Now have three towns in our collection<br>
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghMmyr4XBeRMWdOiM8DzOEbLl743GfO1fQGf6eLiqUAeOSdhpEUNKioBGmw3ttzzMNMc_4qA1VTqoiGOpSdhhc6pOHfg0SUTONv5XT7Vr5RgNZ-5nQ1xnIynmvm8H0gDDRmYufVerHvQ/s1600-h/Command%252520Prompt%252520-%252520mongo_2013-07-11_14-35-39%25255B1%25255D.png"><img alt="Command Prompt - mongo_2013-07-11_14-35-39" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4sUrdtaHbJwSEB6IZhCL7_D38oDwu3Vj2MmCfuj1uiI_q3meWLYfad2kHs6bTgWPDBccryT2LbjJipPj9fbtYfu5HPzAr1GiZOmCKjyoujb8SVWRr3Lw0EBCsVHNZHIQetYRikQiQIQ/?imgmax=800" title="Command Prompt - mongo_2013-07-11_14-35-39"></a></p>
+</blockquote>
+<ul>
+<li>To get a specific document, we only need _id passed to <strong>find()</strong> function in type ObjectId(<strong>findOne()</strong> retrieves only one matching document). String can be converted to ObjectId using <strong>ObjectId(str)</strong> function.</li>
+</ul>
+<p> db.towns.find({ &ldquo;_id&rdquo; : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) })</p>
+<ul>
+<li>The find() function also accepts an optional second parameter: a fields object we can use to filter which fields are retrieved. If we want only the town name (along with _id), pass in name with a value resolving to 1 (or true).</li>
+</ul>
+<p>db.towns.find({ &ldquo;_id&rdquo; : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) }, { name : 1})</p>
+<ul>
+<li>To retrieve all fields except name, set name to 0 (or false or null).</li>
+</ul>
+<p>db.towns.find({ &ldquo;_id&rdquo; : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) }, { name : 0})</p>
+<ul>
+<li>You can retrieve documents based on criteria other than _id. You can use regular expressions or any <a href="http://docs.mongodb.org/manual/reference/operator/" title="Query, Update and Projection Operators">operator</a>.</li>
+</ul>
+<p>db.towns.find( { name : /^P/, population : { $lt : 10000 } }, { name : 1, population : 1 } )<br>
+We said before that the query language is JavaScript, which means we can construct operations as we would construct objects. In the following query, we build a criteria where the population must be between 10.000 and 1 million. Ranges work also on dates.<br>
+&gt; var population_range = {}<br>
+&gt; population_range[&rsquo;$lt&rsquo;] = 100000<br>
+100000<br>
+&gt; population_range[&rsquo;$gt&rsquo;] = 10000<br>
+10000<br>
+&gt; population_range[&rsquo;$lt&rsquo;] = 1000000<br>
+1000000<br>
+&gt; population_range[&rsquo;$gt&rsquo;] = 10000<br>
+10000<br>
+&gt; db.towns.find( {name : /^P/, population : population_range }, {name: 1})<br>
+{ &ldquo;_id&rdquo; : ObjectId(&ldquo;51df08e72476b99608460870&rdquo;), &ldquo;name&rdquo; : &ldquo;Portland&rdquo; }</p>
+<ul>
+<li>You can also query based on values in nested arrays, either matching exact values or matching partial values or all matching values or the lack of matching values.</li>
+</ul>
+<p>&gt; db.towns.find( { famous_for : &lsquo;food&rsquo; }, { _id : 0, name : 1, famous_for : 1 } )<br>
+{ &ldquo;name&rdquo; : &ldquo;New York&rdquo;, &ldquo;famous_for&rdquo; : [  &ldquo;statue of liberty&rdquo;,  &ldquo;food&rdquo; ] }<br>
+{ &ldquo;name&rdquo; : &ldquo;Portland&rdquo;, &ldquo;famous_for&rdquo; : [  &ldquo;beer&rdquo;,  &ldquo;food&rdquo; ] }<br>
+&gt; db.towns.find( { famous_for : /statue/ }, { _id : 0, name : 1, famous_for : 1 } )<br>
+{ &ldquo;name&rdquo; : &ldquo;New York&rdquo;, &ldquo;famous_for&rdquo; : [  &ldquo;statue of liberty&rdquo;,  &ldquo;food&rdquo; ] }<br>
+&gt; db.towns.find( { famous_for : { $all : [&lsquo;food&rsquo;, &lsquo;beer&rsquo;] } }, { _id : 0, name:1, famous_for:1 } )<br>
+{ &ldquo;name&rdquo; : &ldquo;Portland&rdquo;, &ldquo;famous_for&rdquo; : [  &ldquo;beer&rdquo;,  &ldquo;food&rdquo; ] }<br>
+&gt; db.towns.find( { famous_for : { $nin : [&lsquo;food&rsquo;, &lsquo;beer&rsquo;] } }, { _id : 0, name : 1, famous_for : 1 } )<br>
+{ &ldquo;name&rdquo; : &ldquo;Punxsutawney&rdquo;, &ldquo;famous_for&rdquo; : [  &ldquo;phil the groundhog&rdquo; ] }</p>
+<ul>
+<li>You can query a sub-document by giving the field name as a string separating nested layers with a dot.</li>
+</ul>
+<p>&gt; db.towns.find( { &lsquo;mayor.party&rsquo; : &lsquo;I&rsquo; }, { _id : 0, name : 1, mayor : 1 } )<br>
+{ &ldquo;name&rdquo; : &ldquo;New York&rdquo;, &ldquo;mayor&rdquo; : { &ldquo;name&rdquo; : &ldquo;Michael Bloomberg&rdquo;, &ldquo;party&rdquo; : &ldquo;I&rdquo; } }</p>
+<ul>
+<li>To query the nonexistence of a field value</li>
+</ul>
+<p>&gt; db.towns.find( { &lsquo;mayor.party&rsquo; : { $exists : false } }, { _id : 0, name : 1, mayor : 1 } )<br>
+{ &ldquo;name&rdquo; : &ldquo;Punxsutawney&rdquo;, &ldquo;mayor&rdquo; : { &ldquo;name&rdquo; : &ldquo;jim Wehrle&rdquo; } }</p>
+<ul>
+<li>
+<h3 id="elemmatch">elemMatch</h3>
+</li>
+</ul>
+<p>$elemMatch helps us specify if a document or a nested document matches all of our criteria, the document counts as a match and returned. We can use any advanced operators within this criteria. To show it in action, let’s insert some data into a new collection <em>countries</em><br>
+&gt; db.countries.insert({ _id : &ldquo;us&rdquo;,<br>
+&hellip; name : &ldquo;United States&rdquo;,<br>
+&hellip; exports : {<br>
+&hellip;  foods : [<br>
+&hellip;   { name : &ldquo;bacon&rdquo;, tasty : true },<br>
+&hellip;   { name : &ldquo;burgers&rdquo; }<br>
+&hellip;          ]<br>
+&hellip;            }<br>
+&hellip; })<br>
+&gt; db.countries.insert({ _id : &ldquo;ca&rdquo;,<br>
+&hellip; name : &ldquo;Canada&rdquo;,<br>
+&hellip; exports : {<br>
+&hellip;  foods : [<br>
+&hellip;   { name : &ldquo;bacon&rdquo;, tasty : false },<br>
+&hellip;   { name : &ldquo;syrup&rdquo;, tasty : true }<br>
+&hellip;          ]<br>
+&hellip;             }<br>
+&hellip; })<br>
+&gt; db.countries.insert({ _id : &ldquo;mx&rdquo;,<br>
+&hellip; name : &ldquo;Mexico&rdquo;,<br>
+&hellip; exports : {<br>
+&hellip;  foods : [<br>
+&hellip;   { name : &ldquo;salsa&rdquo;, tasty : true, condiment : true }<br>
+&hellip;          ]<br>
+&hellip;           }<br>
+&hellip; })<br>
+&gt; print( db.countries.count() )<br>
+3<br>
+Now if we need to select countries that export tasty bacon, we should $elemMatch in a query like:<br>
+&gt; db.countries.find(<br>
+&hellip; {<br>
+&hellip;   &rsquo;exports.foods&rsquo; : {<br>
+&hellip;    $elemMatch : {<br>
+&hellip;      name : &ldquo;bacon&rdquo;,<br>
+&hellip;      tasty : true<br>
+&hellip;     }<br>
+&hellip;   }<br>
+&hellip; },<br>
+&hellip; { _id : 0, name : 1 }<br>
+&hellip; )<br>
+{ &ldquo;name&rdquo; : &ldquo;United States&rdquo; }<br>
+If we didn’t used $elemMatch and wrote a query like the following, it will return countries that export bacon or tasty food, not tasty bacon<br>
+&gt; db.countries.find(<br>
+&hellip; { &rsquo;exports.foods.name&rsquo; : &lsquo;bacon&rsquo; , &rsquo;exports.foods.tasty&rsquo; : true },<br>
+&hellip; { _id : 0, name : 1 }<br>
+&hellip; )<br>
+{ &ldquo;name&rdquo; : &ldquo;United States&rdquo; }<br>
+{ &ldquo;name&rdquo; : &ldquo;Canada&rdquo; }</p>
+<ul>
+<li>
+<h3 id="boolean-operators">Boolean Operators</h3>
+</li>
+</ul>
+<p><strong>$or</strong> a prefix for criteria to return document that match either condition1 or condition2. There is a a lot of <a href="http://docs.mongodb.org/manual/reference/operator/" title="Query, Update and Projection Operators">operators</a> you can use.<br>
+&gt; db.countries.find({<br>
+&hellip; $or : [ { _id : &ldquo;mx&rdquo; } , { name : &ldquo;United States&rdquo; } ] },<br>
+&hellip; {_id : 1} )<br>
+{ &ldquo;_id&rdquo; : &ldquo;us&rdquo; }<br>
+{ &ldquo;_id&rdquo; : &ldquo;mx&rdquo; }</p>
+<h3 id="update">Update</h3>
+<p>The find() function toke two parameters, criteria and list of fields to return. The update() function works the same way. The first parameter is a criteria (the same way you will use to retreive the document through find()). The second parameter is an object whose fields will replace the matched document(s) or a modifier operation (<strong>$set</strong> to set a field value, $unset to delete a field, <strong>$inc</strong> to increment a field value by a number).<br>
+The following query will set the field state with the string OR for the matching document.<br>
+db.towns.update( { _id : ObjectId(&ldquo;4d0ada87bb30773266f39fe5&rdquo;) }, { $set : { &ldquo;state&rdquo; : &ldquo;OR&rdquo; } } )<br>
+but the following query will replace the matching document with a new document { state : “OR”}<br>
+db.towns.update( { _id : ObjectId(&ldquo;4d0ada87bb30773266f39fe5&rdquo;) }, { state : &ldquo;OR&rdquo; } )</p>
+<h3 id="references">References</h3>
+<p>Although MongoDB is schema-less but you can make one document reference another document using a construct like { $ref : “<em>collection_name</em>”, $id : “<em>reference_id</em>” }. In the following query we linking New York town with the country US. Notice the display of the new country field in the New York town document.<br>
+&gt; db.towns.update(<br>
+&hellip; { _id : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) },<br>
+&hellip; { $set : { country : { $ref : &ldquo;countries&rdquo;, $id : &ldquo;us&rdquo; } } }<br>
+&hellip; )<br>
+&gt; db.towns.find( { _id : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) } )<br>
+{ &ldquo;_id&rdquo; : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;), &ldquo;country&rdquo; : DBRef(&ldquo;countries&rdquo;, &ldquo;us&rdquo;), &ldquo;famous_for&rdquo; : [  &ldquo;statue of liberty&rdquo;,  &ldquo;food&rdquo; ], &ldquo;last_census&rdquo; : ISODate(&ldquo;2009-07-31T00:00:00Z&rdquo;), &ldquo;mayor&rdquo; : { &ldquo;na<br>
+me&rdquo; : &ldquo;Michael Bloomberg&rdquo;, &ldquo;party&rdquo; : &ldquo;I&rdquo; }, &ldquo;name&rdquo; : &ldquo;New York&rdquo;, &ldquo;population&rdquo; : 22200000 }Now we can retrieve New york from towns collection, then use it to retrieve its country<br>
+&gt; var NY = db.towns.findOne( { _id : ObjectId(&ldquo;51def56c1cf66f4c40bb7f4a&rdquo;) } )<br>
+&gt; db.countries.findOne( { _id : NY.country.$id })<br>
+{<br>
+        &ldquo;_id&rdquo; : &ldquo;us&rdquo;,<br>
+        &ldquo;name&rdquo; : &ldquo;United States&rdquo;,<br>
+        &ldquo;exports&rdquo; : {<br>
+                &ldquo;foods&rdquo; : [<br>
+                        {<br>
+                                &ldquo;name&rdquo; : &ldquo;bacon&rdquo;,<br>
+                                &ldquo;tasty&rdquo; : true<br>
+                        },<br>
+                        {<br>
+                                &ldquo;name&rdquo; : &ldquo;burgers&rdquo;<br>
+                        }<br>
+                ]<br>
+        }<br>
+}<br>
+or in a different way &gt; db[ NY.country.$ref ].findOne( { _id : NY.country.$id} )</p>
+<h3 id="delete">Delete</h3>
+<p>Removing documents from a collections is simple, use your criteria with a call to <strong>remove()</strong> function and all matching documents will be removed. It’s a recommended practice to build your criteria in an object, use that criteria to ensure that matching documents are the expected ones, pass this criteria to remove() function.<br>
+&gt; var bad_bacon = { &rsquo;exports.foods&rsquo; : {<br>
+&hellip; $elemMatch : { name : &lsquo;bacon&rsquo;, tasty : false }<br>
+&hellip; } }<br>
+&gt; db.countries.find ( bad_bacon)<br>
+{ &ldquo;_id&rdquo; : &ldquo;ca&rdquo;, &ldquo;name&rdquo; : &ldquo;Canada&rdquo;, &ldquo;exports&rdquo; : { &ldquo;foods&rdquo; : [    {       &ldquo;name&rdquo; : &ldquo;bacon&rdquo;,       &ldquo;tasty&rdquo; : false },      {       &ldquo;name&rdquo; : &ldquo;syrup&rdquo;,       &ldquo;tasty&rdquo; : true } ] } }<br>
+&gt; db.countries.remove( bad_bacon)<br>
+&gt; db.countries.count()<br>
+2</p>
+<h3 id="reading-with-code">Reading with Code</h3>
+<p>You could ask MongoDb to run a decision function across documents.</p>
+<blockquote>
+<p>db.towns.find(  function() {<br>
+return this.population &gt; 6000 &amp;&amp; this.population &lt; 600000;<br>
+} )</p>
+</blockquote>
+<p>or in a short-hand format db.towns.find(&ldquo;this.population &gt; 6000 &amp;&amp; this.population &lt; 600000&rdquo;)<br>
+or combine custom code with other criteria using <strong>$where</strong></p>
+<blockquote>
+<p>db.towns.find( {<br>
+$where : &ldquo;this.population &gt; 6000 &amp;&amp; this.population &lt; 600000&rdquo;,<br>
+famous_for : /groundhog/<br>
+} )</p>
+</blockquote>
+<p>Custom code should be your last resort due to the following:</p>
+<ol>
+<li>Custom code queries run slower than regular queries.</li>
+<li>Custom code queries can’t be indexed.</li>
+<li>MongoDb can’t optimize custom code queries.</li>
+<li>If your custom code assume the existence of a particular field and this field is missing in a single, the entire query will fail.</li>
+</ol>
+<p>In this post we explored the basics of MongoDB, a rising star in the NoSQL family and the most common document database. We saw how to install and configure it. We saw how we can store nested structured data as JSON objects and query that data at any depth. We How we can update and delete data. In the next post we going to dig deep into MongoDB.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/2013/07/getting-started-with-apache-cassandra.html">↩ Getting Started with Apache Cassandra</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/2013/07/getting-started-with-mongodb-part-2.html"> Getting Started with MongoDB – Part 2 ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        <a href="https://themes.gohugo.io/themes/adritian-free-hugo-theme">© Adritian</a>. Free Hugo theme by <a href="https://www.adrianmoreno.info">Adrián Moreno Peña</a>.</br><a href="https://github.com/Ebeid/ebeid.github.io">Site content and code available in GitHub</a>.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

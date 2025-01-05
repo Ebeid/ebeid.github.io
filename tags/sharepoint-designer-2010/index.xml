@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SharePoint Designer 2010 on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/sharepoint-designer-2010/</link>
-    <description>Recent content in SharePoint Designer 2010 on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Wed, 17 Jul 2013 10:20:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/sharepoint-designer-2010/index.xml" rel="self" type="application/rss+xml" />
+    <title>SharePoint Designer 2010 on </title>
+    <link>http://localhost:1313/tags/sharepoint-designer-2010/</link>
+    <description>Recent content in SharePoint Designer 2010 on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jul 2013 10:20:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/sharepoint-designer-2010/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Create a new Web Part Page with Quick Launch menu</title>
-      <link>https://ebeid.github.io/blog/2013-07-17-create-new-web-part-page-with-quick.html/</link>
+      <link>http://localhost:1313/2013/07/create-new-web-part-page-with-quick.html</link>
       <pubDate>Wed, 17 Jul 2013 10:20:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-07-17-create-new-web-part-page-with-quick.html/</guid>
-      <description>This post is about a simple task we do daily in SharePoint 2010, creating a new Web Part page. Every time we need a new Web Part page, we go to All Site Content &amp;gt; Create &amp;gt; Web Part Page &amp;gt; Create. Now we have a Web Part page but no quick launch menu on the left.
-To show the quick launch menu on the new created page:
-Open the page for editing in SharePoint 2010.</description>
+      <guid>http://localhost:1313/2013/07/create-new-web-part-page-with-quick.html</guid>
+      <description>&lt;p&gt;This post is about a simple task we do daily in SharePoint 2010, creating a new Web Part page. Every time we need a new Web Part page, we go to &lt;em&gt;All Site Content&lt;/em&gt; &amp;gt; &lt;em&gt;Create&lt;/em&gt; &amp;gt; &lt;em&gt;Web Part Page&lt;/em&gt; &amp;gt; &lt;em&gt;Create&lt;/em&gt;. Now we have a Web Part page but no quick launch menu on the left.&lt;/p&gt;&#xA;&lt;p&gt;To show the quick launch menu on the new created page:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Open the page for editing in SharePoint 2010.&lt;/li&gt;&#xA;&lt;li&gt;Switch to the Code view.&lt;/li&gt;&#xA;&lt;li&gt;Click on the Advanced Mode button on the ribbon.&lt;/li&gt;&#xA;&lt;li&gt;Now look for the following code snippet and delete it.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;lt;SharePoint:UIVersionedContent ID=&amp;ldquo;WebPartPageHideQLStyles&amp;rdquo; UIVersion=&amp;ldquo;4&amp;quot;runat=&amp;ldquo;server&amp;rdquo;&amp;gt;&lt;br&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;br&gt;&#xA;body # {s4-leftpanel&lt;br&gt;&#xA;display: none;&lt;br&gt;&#xA;}&lt;br&gt;&#xA;. s4 {ca-&lt;br&gt;&#xA;margin-left: 0px;&lt;br&gt;&#xA;}&lt;br&gt;&#xA;&amp;lt;/ style&amp;gt;&lt;br&gt;&#xA;&amp;lt;/ ContentTemplate&amp;gt;&lt;br&gt;&#xA;&amp;lt;/ SharePoint: UIVersionedContent&amp;gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,904 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#portfolio"
+                >PORTFOLIO</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/blog">Blog</a></span></li><li class="breadcrum-item"><span><a href="/blog/blog">Blog</a></span></li><li class="breadcrum-item current">Microsoft Dynamics CRM 2011 for Developers - Accessing Microsoft Dynamics CRM 2011 using WCF</li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/blog/blog/2012-03-02-accessing-microsoft-dynamics-crm-2011.html/">Microsoft Dynamics CRM 2011 for Developers - Accessing Microsoft Dynamics CRM 2011 using WCF</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Fri Mar 2, 2012</h4>
+              ·
+              <h4 id="wordcount">3340 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/microsoft-dynamics-crm-2011/">Microsoft Dynamics CRM 2011</a></li>
+              
+              <li><a href="/tags/early-binding/">Early Binding</a></li>
+              
+              <li><a href="/tags/late-binding/">Late Binding</a></li>
+              
+              <li><a href="/tags/wcf/">WCF</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><h4 id="contents">Contents</h4>
+<ol>
+<li>Introduction</li>
+<li>Creating a client application</li>
+<li>Using the Discovery Service</li>
+<li>Using the Organization Service</li>
+<li>Working with CRM Data
+<ol>
+<li>Late Binding Approach
+<ol>
+<li>Using RetrieveMultiple method</li>
+<li>Using Retrieve method</li>
+<li>Using Update method</li>
+<li>Using Delete method</li>
+<li>Using Create method</li>
+</ol>
+</li>
+<li>Early binding Approach
+<ol>
+<li>generating Client Types</li>
+<li>Enable ProxyTypeBehavior</li>
+<li>Using RetrieveMultiple method</li>
+<li>Using Retrieve method</li>
+<li>Using Create method</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="introduction">Introduction</h3>
+<p><strong>Microsoft Dynamics CRM</strong> is a Customer Relationship Management
+software package developed to focus mainly on Sales, Marketing, and
+Service (help desk) sectors. The Microsoft Dynamics family of business
+applications includes other related products such as Microsoft Dynamics
+AX, Microsoft Dynamics GP, Microsoft Dynamics NAV, and Microsoft
+Dynamics SL.</p>
+<p>Basically, Dynamics CRM is a client-server web application that supports
+extensive web services interfaces. Dynamics CRM 2011 introduces a new
+WCF interface for working with data, services and metadata.</p>
+<p>Microsoft Dynamics CRM supports two kinds of deployments: Online,
+on-premises. You can signup for 30 days free trial at
+<a href="http://crm.dynamics.com/en-us/trial-overview">http://crm.dynamics.com/en-us/trial-overview</a>. This will provide you
+with 30 days full functioning online version of Dynamics CRM. We will
+you this version in this post and the upcoming posts.</p>
+<p>There is a lot of situations where organizations want to gain more
+benefit of its Dynamics CRM deployment than what Dynamics CRM can offer
+through its built-in customization tools. Based on the situation, you as
+a developer may be required to develop applications that interact with
+Dynamics CRM through its web services interfaces or develop applications
+that run within Dynamics CRM itself.</p>
+<p>In this post we will explore one of the techniques of interacting with
+Dynamics CRM through its web services interfaces. We will build a
+windows forms application that connects to the online version of
+Dynamics CRM 2011, retrieve data from it, and manipulate its data. To
+continue with this post you need to signup for an online trial version
+and to install Microsoft Dynamics CRM 2011 Software Development Kit
+(SDK) ( download from
+<a href="http://www.microsoft.com/download/en/details.aspx?id=24004">http://www.microsoft.com/download/en/details.aspx?id=24004</a> )</p>
+<p><strong>Step 1: Create a client application</strong></p>
+<p>Simply create a new windows forms application. Right click your project
+in the solution explorer and select properties, locate the Target
+Framework drop down and change it from .Net Framework 4 Client Profile
+to .Net Framework 4. Add references to
+<em>System.Runtime.Serialization.dll</em> and <em>System.ServiceModel.dll</em> and
+<em>System.Security.</em> Add references to <em>Microsoft.Xrm.Sdk.dll</em> and
+<em>Microsoft.Crm.Sdk.Proxy.dll</em> (both files located in the Bin folder in
+your CRM SDK installation directory). Right click on the project in the
+solution explorer and click Add existing, browse to
+%CRMSDK%\samplecode\cs\helpercode\deviceidmanager.cs</p>
+<p>The DeviceIdManager class is included in the Dynamics CRM SDK to
+register a computing device with Windows Live ID through the generation
+of a Device ID and password. Then it optionally stores that information
+in an encrypted format on the local disk for later use. This
+functionality is required when authenticating with Microsoft Dynamics
+CRM online. The device registration is stored in
+%USERPROFILE%\LiveDeviceID\LiveDevice.xml. It looks like:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+
+  
+AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAooZFtct7dEyyPUNu1eZujgAAAAACAAAAAAADZgAAqAAAABAAAAD0860vIxbs57z9CgRRPAtTAAAAAASAAACgAAAAEAAAAFL9eqV3G5WLFhHYAkX1/z8gAAAAZjBYCltk8cNwuydeQK70t9/txdmoJhIGeN2StJbyx9EUAAAAY10YU7QprX0EO5Fq43A/S2Wer2I=
+</code></pre>
+<p>The CRM SDK team is separating the more CRM specific types from the xRM
+Application Framework related types.  The Microsoft.Xrm.Sdk assembly
+will provide all the low-level types necessary for basic operation
+against the xRM Application Framework. The Microsoft.Crm.Sdk.Proxy.dll 
+assembly will abstract away much of the complexity of dealing with the
+WCF services directly.</p>
+<p>Now, try to make your application interface like the one in the image
+below.</p>
+<p><a href="http://lh6.ggpht.com/-kHmVhKSR0uA/T1f6zZ4t-qI/AAAAAAAAALg/LQWWR6L4Lks/s1600-h/app3.jpg"><!-- raw HTML omitted --></a></p>
+<p>Now we created the application interface, added the required references,
+and ready for the real thing :)</p>
+<p><strong>Step 2: Using the Discovery Service</strong></p>
+<p>The discovery service allows you to explore and enumerate the
+organizations on a certain CRM server and the web services endpoint URL
+needed to access the Organization Services web service for each of these
+organizations (The CRM server can contain multiple organizations). We
+will use this information later to configure the organization web
+service proxy and call web service methods to access the organization’s
+data and metadata. The service respects security such that it will only
+return those organizations to which a user has access. The discovery
+service is accessed using methods on the <strong>IDiscoveryService</strong>
+interface. The <strong>DiscoveryServiceProxy</strong> class is a helper class to make
+it easier to get instances of <strong>IDiscoveryService</strong> without having to
+deal with all the WCF low-level details.</p>
+<p>Now on the forms designer surface double click on the Discover button to
+add event handler and open the MainWindow.xaml.cs code behind file. In
+the code behind, add the following using statements:</p>
+<pre><code>using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Client;
+using Microsoft.Xrm.Sdk.Discovery;
+using System.ServiceModel.Description;
+using Microsoft.Crm.Services.Utility;
+using Microsoft.Xrm.Sdk.Query;
+using Microsoft.Xrm.Sdk.Messages;
+</code></pre>
+<p>Inside the frmMain class, add the following private properties to hold
+references to the organization details (the Discovery service and the
+Organization service).</p>
+<pre><code>private OrganizationDetail CurrentOrganizationDetail { get; set; }
+private IDiscoveryService DiscoveryService { get; set; }
+private OrganizationServiceProxy OrgService { get; set; }
+private ClientCredentials _ClientCreds { get; set; }
+private ClientCredentials _DeviceCreds { get; set; }
+private bool IsLiveID { get; set; }
+</code></pre>
+<p>Now, let&rsquo;s add to frmMain class a helper method to builds the full Uri
+of the discovery service.</p>
+<pre><code>        public Uri GetDiscoveryServiceUri(string serverName)
+        {
+            string discoSuffix = @&quot;/XRMServices/2011/Discovery.svc&quot;;
+
+            return new Uri(string.Format(&quot;{0}{1}&quot;, serverName, discoSuffix));
+        }
+</code></pre>
+<p>Next, In the event handler for the Discover button, add the following
+code to use the <strong>ServiceConfigurationFactory</strong> helper class to get an
+instance of the Discovery service configuration. This returned as an
+<strong>IServiceConfiguration&lt;IDiscoveryService&gt;</strong> type that hides and
+simplifies some of the lower level WCF configuration.</p>
+<pre><code>var discoUri = GetDiscoveryServiceUri(ServerURL.Text);
+IServiceConfiguration dinfo =                   ServiceConfigurationFactory.CreateConfiguration(discoUri);
+</code></pre>
+<p>Different credentials are needed for CRM online vs. on premises. To
+differentiate between them we will add the following <strong>GetServerType</strong>
+helper method.</p>
+<pre><code>public AuthenticationProviderType GetServerType(Uri uri)
+{
+   return ServiceConfigurationFactory.CreateConfiguration(uri).AuthenticationType;
+}
+</code></pre>
+<p>Now, we will return to the Discover button handler. The follwoing code
+will create a DiscoveryServiceProxy instance based on the server type we
+connecting to (on-line or on-premises). Note that DeviceIdManager class
+have been used only in the on-line scenario. Then we use this instance
+(DiscoveryServiceProxy) to connect to the server, authenticate, and
+execute our RetrieveOrganizationsRequest to get
+RetrieveOrganizationResponse. This response has a property
+OrganizationDetails that is an array of OrganizationDetail objects which
+we will use to fill the oragnizations combo box. Add the following code
+to the couple of lines that you are added to btnDiscover_click handler.</p>
+<pre><code>_ClientCreds = new ClientCredentials();
+DiscoveryServiceProxy dsp;
+
+if (GetServerType(discoUri) == AuthenticationProviderType.LiveId)
+{
+    _ClientCreds.UserName.UserName = username.Text;
+    _ClientCreds.UserName.Password = password.Text;
+
+    _DeviceCreds = DeviceIdManager.LoadOrRegisterDevice();
+
+    dsp = new DiscoveryServiceProxy(discoUri, null, _ClientCreds, _DeviceCreds);
+    IsLiveID = true;
+}
+else
+{
+    _ClientCreds.Windows.ClientCredential.UserName = username.Text;
+    _ClientCreds.Windows.ClientCredential.Password = password.Text;
+    _ClientCreds.Windows.ClientCredential.Domain = domain.Text;
+
+    dsp = new DiscoveryServiceProxy(dinfo, _ClientCreds);
+    IsLiveID = false;
+}
+
+dsp.Authenticate();
+var orgRequest = new RetrieveOrganizationsRequest();
+var orgResponse = dsp.Execute(orgRequest) as RetrieveOrganizationsResponse;
+comboOrgs.ItemsSource = orgResponse.Details;
+</code></pre>
+<p>You can now check your frmMain.cs aginst the below code. If everything
+is Ok, hit F5, enter the user name/password you used in your 30-days
+free trial signup (or your active directory credentials, if you test
+against your on-premises deployment), click Discover button. You will
+see the organizations combo box filled with the available organizations
+on this server that you have access to.</p>
+<pre><code>using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Collections;
+
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Client;
+using Microsoft.Xrm.Sdk.Discovery;
+using System.ServiceModel.Description;
+using Microsoft.Crm.Services.Utility;
+
+using Microsoft.Xrm.Sdk.Query;
+using Microsoft.Xrm.Sdk.Messages;
+
+namespace xRM_Demo01
+{
+    public partial class frmMain : Form
+    {
+        private OrganizationDetail CurrentOrganizationDetail { get; set; }
+        private IDiscoveryService DiscoveryService { get; set; }
+        private IOrganizationService OrgService { get; set; }
+        private ClientCredentials _ClientCreds { get; set; }
+        private ClientCredentials _DeviceCreds { get; set; }
+        private bool IsLiveID {
+get; set; }
+        public frmMain()
+        {
+            InitializeComponent();
+        }
+
+        private void btnDiscover_Click(object sender, EventArgs e)
+        {
+            var discoUri = GetDiscoveryServiceUri(txtServer.Text);
+
+            IServiceConfiguration dinfo =
+                ServiceConfigurationFactory.CreateConfiguration(discoUri);
+            _ClientCreds = new ClientCredentials();
+            DiscoveryServiceProxy dsp;
+
+            if (GetServerType(discoUri) == AuthenticationProviderType.LiveId)
+            {
+                _ClientCreds.UserName.UserName = txtUserName.Text;
+                _ClientCreds.UserName.Password = txtPassword.Text;
+
+                _DeviceCreds = DeviceIdManager.LoadOrRegisterDevice();
+
+                dsp = new DiscoveryServiceProxy(discoUri, null, _ClientCreds, _DeviceCreds);
+                IsLiveID = true;
+            }
+            else
+            {
+                MessageBox.Show(&quot;This is not a valid Microsoft Dynamics CRM online URL&quot;);
+                return;
+            }
+
+            dsp.Authenticate();
+            var orgRequest = new RetrieveOrganizationsRequest();
+            var orgResponse = dsp.Execute(orgRequest) as RetrieveOrganizationsResponse;
+            comboOrgs.DataSource = orgResponse.Details;
+            comboOrgs.DisplayMember = &quot;FriendlyName&quot;;
+            comboOrgs.ValueMember = &quot;UrlName&quot;;
+        }
+        public Uri GetDiscoveryServiceUri(string serverName)
+        {
+            string discoSuffix = @&quot;/XRMServices/2011/Discovery.svc&quot;;
+
+            return new Uri(string.Format(&quot;{0}{1}&quot;, serverName, discoSuffix));
+        }
+        public AuthenticationProviderType GetServerType(Uri uri)
+        {
+            return ServiceConfigurationFactory.CreateConfiguration(uri).AuthenticationType;
+        }
+</code></pre>
+<p><strong>Step 3: Using the Organization Service</strong></p>
+<p>The organization service is the endpoint that you will use to interact
+with an individual organization&rsquo;s data and metadata services. It
+accessed using the methods on the IOrganizationService interface. The
+<strong>OrganizationServiceProxy</strong> helper class is used to make it easier to
+get instance of IOrganizationService without dealing with the WCF
+low-level details. Double click on the Connect button to add an event
+handler for it and add the following code.</p>
+<pre><code>            if (comboOrgs.SelectedItem == null)
+            {
+                MessageBox.Show(&quot;You must select an organization before connecting&quot;);
+                return;
+            }
+            this.CurrentOrganizationDetail = comboOrgs.SelectedItem as OrganizationDetail;
+            Uri orgServiceUri = new Uri(CurrentOrganizationDetail.Endpoints[EndpointType.OrganizationService]);
+            if (IsLiveID)
+            {
+                OrgService = new OrganizationServiceProxy(orgServiceUri, null, _ClientCreds, _DeviceCreds);
+            }
+            else
+            {
+                IServiceConfiguration orgConfigInfo =
+                    ServiceConfigurationFactory.CreateConfiguration(orgServiceUri);
+                OrgService = new OrganizationServiceProxy(orgConfigInfo, _ClientCreds);
+            }
+</code></pre>
+<p>The added code checks that you selected an organization, get the select
+organization as an OrganizationDetail object, use the <strong>EndPoints</strong> of
+this object to get the Uri of the Organization Service. Then use this
+information and the client credentials and the device credentials to
+create an object of <strong>OrganizationServiceProxy</strong>.</p>
+<p>Now we are ready to start interacting with the organization service
+through this proxy (which will be the next step). If you want to ensure
+that you did everything right, you can try send a simple request to the
+organization service and see the result. To do so, we can send the
+WhoAmI message to the service and receive the response (the ID of the
+logged in used). Add a using statement for <em>Microsoft.Crm.Sdk.Messages</em>.
+Add the following code to the end of btnConnect_click to test your
+connectivity.</p>
+<pre><code>WhoAmIRequest req = new WhoAmIRequest();
+var response = OrgService.Execute(req) as WhoAmIResponse;
+MessageBox.Show(&quot;You are connected as userid &quot; + response.UserId.ToString());
+</code></pre>
+<p>Run, put your credentials an server, click Discover, choose your
+organization from the combo box and click connect. You will get
+something like the below image.</p>
+<p><a href="http://lh3.ggpht.com/-vvvHVO31EL0/T1f60IsjGeI/AAAAAAAAALw/YEv0COHR_pI/s1600-h/msg4.jpg"><!-- raw HTML omitted --></a></p>
+<p><strong>Step 4: Working with the CRM data</strong></p>
+<p><em>Early versus Late-Bounding</em> In Microsoft Dynamics CRM 2011, you can
+choose from several programming styles to find the model that best fits
+your situation.</p>
+<blockquote>
+<p>In <!-- raw HTML omitted -->Early-Bound<!-- raw HTML omitted --> style, you create a
+class for each business entity in your CRM deployment. You will use
+these classes to access business data in your CRM deployment. There is
+a code generation tool included in the %CRMSDK%\bin called
+crmsvcutil.exe that will generate early-bound entity classes for you.
+It works with on-premises and online deployments. Every time you make
+customizations to your entities, you have to run this tool to
+regenerate these classes again. The advantages of using early-bound
+entity classes is that all type references are checked at compile
+time. You will also enjoy the intellisense support.</p>
+<p>In <!-- raw HTML omitted -->Late-Bound<!-- raw HTML omitted --> style, you can work with
+the data in CRM without having classes representing each data entity
+in the organization. Most Probably, you will use this style when
+working with entities (or customizations) that you can’t anticipate at
+the development time.</p>
+</blockquote>
+<p>In this step we will work with the CRM data using late-bound style to
+retrieve all accounts data in our CRM, update it, save it, and add new
+records also.</p>
+<p><strong>Method</strong> : <strong>RetrieveMultiple</strong></p>
+<p>To retrieve multiple records from Dynamics CRM, we use the
+<strong>RetrieveMultiple</strong> of the organization service and pass a
+<strong>QueryExpression</strong> object to it. QueryExpression holds all the
+information required to get the desired data from Dynamics CRM. To
+construct the Query expression you need:</p>
+<ul>
+<li><strong>ColumnSet</strong> object to specify the columns we need to retrieve.</li>
+<li><strong>ConditionExpression</strong> object to hold any conditions we will use to
+filter the returned rows.</li>
+<li><strong>FilterExpression</strong> object to hold all the ConditionExpression
+objects we use in our query. This enables us to make complex
+queries.</li>
+<li><strong>EntityName</strong> a string property used to specify the entity the
+query runs against.</li>
+<li>You can also order the returned data through method
+<strong>AddOrder(“columnName”, OrderType).</strong> OrderType is an enumeration
+have the values Ascending and Descending.</li>
+</ul>
+<p>For Simplicity we will retrieve columns name and ac countid of all
+account type records in CRM. Because we using late-bound style, we get
+the results into EntityCollection collection. We enumerate through the
+returned collection, and put the entities into a list of custom objects
+of type Item. Then we bind our accounts combobox to this list.</p>
+<pre><code>            ColumnSet cs = new ColumnSet();
+            cs.AddColumns(&quot;name&quot;, &quot;accountid&quot;);
+
+            QueryExpression qe = new QueryExpression();
+            qe.ColumnSet = cs;
+            qe.EntityName = &quot;account&quot;;
+
+            EntityCollection accountList = OrgService.RetrieveMultiple(qe);
+            List accounts = new List();
+            comboAccounts.ValueMember = &quot;Value&quot;;
+            comboAccounts.DisplayMember = &quot;Name&quot;;
+            for (int i = 0; i &lt; accountList.Entities.Count; i++ )
+            {
+                accounts.Add(new Item(accountList[i].Attributes[&quot;name&quot;].ToString(),
+                    accountList[i].Attributes[&quot;accountid&quot;].ToString()));
+            }
+            comboAccounts.DataSource = accounts;
+}
+</code></pre>
+<p>Also add the following class into your solution namespace, which holds
+the acounts name and accountid to bind it to the combobox.</p>
+<pre><code>    class Item
+    {
+        private string _name;
+        private string _value;
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+        public string Value
+        {
+            get { return _value; }
+            set { _value = value; }
+        }
+        public Item(string p_name, string p_value)
+        {
+            Name = p_name; 
+            Value = p_value;
+        }
+    }
+</code></pre>
+<p>Now you can run the application, connect to your organization, and check
+that the combobox is filled of your accounts data.</p>
+<p><strong>Method :</strong> <strong>Retrieve</strong></p>
+<p>Now we will use the accountid of the selected account in the combobox to
+get the rest of the account data. In this case we will use the
+<strong>Retrieve</strong> method of the organization service. This method retrieves
+just one record of the type specified in the first argument, designated
+by the key passed in the second argument. Double click on the accounts
+combobox to add an event handler for the SelectedIndexChanged event. Add
+the following code to this event handler to fill the form with the
+account data.</p>
+<pre><code>            ColumnSet cs2 = new ColumnSet(new string[] {&quot;address1_city&quot;,&quot;address1_line1&quot;,&quot;address1_stateorprovince&quot;,
+                &quot;name&quot;,&quot;industrycode&quot;});
+            try
+            {
+                var account = OrgService.Retrieve(&quot;account&quot;, new Guid(comboAccounts.SelectedValue.ToString()), cs2);
+                txtName.Text = account.Attributes[&quot;name&quot;].ToString();
+                txtCity.Text = account.Attributes[&quot;address1_city&quot;].ToString();
+                txtAddress.Text = account.Attributes[&quot;address1_line1&quot;].ToString();
+                txtState.Text = account.Attributes[&quot;address1_stateorprovince&quot;].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(&quot;An error happened: &quot; + ex.Message);
+            }
+</code></pre>
+<p><strong>Method : Update</strong></p>
+<p>Now we can go farther and modify the current displayed account data and
+try to save it. To save any entity data into CRM, create an Entity
+object and pass the entity type into the constructor (it will be
+&ldquo;account&rdquo; in our case). Then set the attribute values you want and pass
+the updated entity to the organization service <strong>Update</strong> method. Add
+the following code the save button click event handler to realize the
+update operation.</p>
+<pre><code>try
+            {
+                Entity account = new Entity(&quot;account&quot;);
+                account.Attributes[&quot;accountid&quot;] = new Guid(comboAccounts.SelectedValue.ToString());
+                account.Attributes[&quot;name&quot;] = txtName.Text;
+                account.Attributes[&quot;address1_line1&quot;] = txtAddress.Text;
+                account.Attributes[&quot;address1_city&quot;] = txtCity.Text;
+                account.Attributes[&quot;address1_stateorprovince&quot;] = txtState.Text;
+                OrgService.Update(account);
+                MessageBox.Show(&quot;Account updated successfully&quot;);
+                // TODO: reload the accounts combobox.
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(&quot;An error occurred : &quot; + ex.Message);
+            }         
+</code></pre>
+<p><strong>Method : Delete</strong></p>
+<p>To delete a record you use the <strong>Delete</strong> method of the organization
+service, pass the entity type name and its key like the following.</p>
+<pre><code>try
+            {
+                OrgService.Delete(&quot;account&quot;, new Guid(comboAccounts.SelectedValue.ToString()));
+                MessageBox.Show(&quot;Account deleted successfully&quot;);
+                // TODO: reload the accounts combobox
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(&quot;An error occurred : &quot; + ex.Message);
+            }
+</code></pre>
+<p>Now let&rsquo;s add code to clear the form in the clear button click event
+handler.</p>
+<pre><code>            txtName.Text = &quot;&quot;;
+            txtCity.Text = &quot;&quot;;
+            txtAddress.Text = &quot;&quot;;
+            txtState.Text = &quot;&quot;;
+</code></pre>
+<p><strong>Method : Create</strong></p>
+<p>To insert a new record to CRM, we create an Entity object passing the
+entity name to its constructor, set its attributes, and pass it to the
+organization service <strong>Create</strong> method. Add the following code to the
+save new button click event handler.</p>
+<pre><code>try
+            {
+                Entity account = new Entity(&quot;account&quot;);
+                account.Attributes[&quot;name&quot;] = txtName.Text;
+                account.Attributes[&quot;address1_line1&quot;] = txtAddress.Text;
+                account.Attributes[&quot;address1_city&quot;] = txtCity.Text;
+                account.Attributes[&quot;address1_stateorprovince&quot;] = txtState.Text;
+                OrgService.Create(account);
+                MessageBox.Show(&quot;Account created successfully&quot;);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(&quot;An error occurred : &quot; + ex.Message);
+            }
+</code></pre>
+<p>No we have examined almost all basic data operations on the CRM data
+using late-bounding style: RetrieveMultiple, Retrieve, Update, Delete,
+and Create new record.</p>
+<p><strong>Generating Client Types for Early Binding</strong></p>
+<p>Now we will use a different style than the one we used above. We will
+use the SDK tool <strong>crmsvcutil.exe</strong> to generate the typed classes for
+our CRM entities bsed on the metadata service of our CRM organization.
+These generated typed classes will inherit from the Entity class we
+worked with earlier in this post. Now follow the following steps to
+generate your typed classes:</p>
+<ol>
+<li>Open the project included in the SDK at
+%SDK%\tools\deviceregistration folder and build it.</li>
+<li>Copy the Deviceid and Device Password to a notepad. (if you are not
+familiar with cmd, right click the inside the window and click
+highlight, then highlight the desired text, then right click the cmd
+window title bar and click Edit&gt;&gt; copy.)</li>
+<li>In the command window, change the directories to %SDK%\bin and
+create a command like the following:</li>
+</ol>
+<p>crmsvcutil.exe /url:&lt;CRM Online Organization service URL&gt;
+/out:&lt;Output file name&gt; /servicecontextName:&lt;Organization
+name&gt; /username:&lt;LiveID&gt; /password:&lt;LiveIDPassword&gt;</p>
+<p>/deviceid:&lt;Deviceid&gt; /devicepassword:&lt;DevicePassword&gt;
+/namespace:&lt;Namespace&gt;</p>
+<p>&lt;CRM Online Organization service URL&gt; will be like
+<a href="https://xrmdemo5.api.crm.dynamics.com/XRMServices/2011/Organization.svc">https://xrmdemo5.api.crm.dynamics.com/XRMServices/2011/Organization.svc</a>?
+. You can find your URL by going to Settings &gt;&gt; Customizations
+&gt;&gt; Developer Resources, your URL will be there.</p>
+<p>&lt;Output file name&gt; is the file name of the generated code (like
+GeneratedEntities.cs)</p>
+<p>&lt;Organization name&gt; is your organization name.</p>
+<p>&lt;LiveID&gt;, &lt;LiveIDPassword&gt; are your live credentials used
+for this organization.</p>
+<p>&lt;Deviceid&gt;, &lt;DevicePassword&gt; are provided from step 3.</p>
+<p>&lt;Namespace&gt; is the name space of the generated classes (may be
+YourCompanyname.YourOrganizationName)</p>
+<p>the complete command may look like</p>
+<p>crmsvcutil.exe
+/url:<a href="https://xrmdemo5.api.crm.dynamics.com/XRMServices/2011/Organization.svc">https://xrmdemo5.api.crm.dynamics.com/XRMServices/2011/Organization.svc</a>
+/out:GeneratedEntities.cs /servicecontextName:xrmdemo5
+/username:ebeid_soliman@hotmail.com /password:mypassword</p>
+<p>/deviceid:11denl276oo3fgxbakccnnq2x4
+/devicepassword:bH.iaG?c3rRi-`L,nKC0S4^^ /namespace:xRMDemo.Entities</p>
+<p>Now we created our early bound entity classes. Let’s modify our
+application to use the early-bound entity classes that we generated.</p>
+<p><strong>Step 1: Add the generated types to the project</strong></p>
+<p>Right click on the project in the solution explorer and click Add
+existing, browse to %CRMSDK%\bin and add your generated file (its
+GeneratedEntities.cs in my above command).</p>
+<p><strong>Step 2: Enable proxy types</strong></p>
+<p>In order to use the generated types when dealing with the organization
+service, you have to add the <em>ProxyTypesBehavior</em> to the endpoint
+<em>Behaviors</em> collection. This instructs the OrganizationServiceProxy to
+look in the assembly for classes with certain attributes to use. The
+generated classes are already attributed with these attributes. Simply,
+this makes all interactions with the organiza tion service to be done
+using the generated typed classes for each entity instead of the generic
+Entity class we used earlier.</p>
+<p>Open the frmMain.cs, locate btnConnect_Click event handler and add the
+following line of code after the last section line that creates the new
+instance of our OrganizationServiceProxy.</p>
+<pre><code>OrgService.ServiceConfiguration.CurrentServiceEndpoint.Behaviors.Add(new ProxyTypesBehavior());
+</code></pre>
+<p><strong>Method</strong> : <strong>RetrieveMultiple</strong></p>
+<p>It’s the same before. Now, let&rsquo;s modify the accounts combobox filling
+section to use the generated Account class instead of the Item class
+(you can get ride of it) that we created earlier. Modify the last
+section in btnConnect_Click event handler to look like the following.</p>
+<pre><code>List accounts = new List();
+            comboAccounts.ValueMember = &quot;accountid&quot;;
+            comboAccounts.DisplayMember = &quot;name&quot;;
+            for (int i = 0; i &lt; accountList.Entities.Count; i++)
+            {
+                accounts.Add((Account)accountList[i]);
+            }
+            comboAccounts.DataSource = accounts;
+</code></pre>
+<p><strong>Method : Retrieve</strong></p>
+<p>It almost the same, except we will use Account class and its properties
+instead of the Entity class and its attributes. Modify the
+comboAccounts_SelectedIndexChanged event handler to look like:</p>
+<pre><code>ColumnSet cs2 = new ColumnSet(new string[] {&quot;address1_city&quot;,&quot;address1_line1&quot;,&quot;address1_stateorprovince&quot;,
+                &quot;name&quot;,&quot;industrycode&quot;});
+            try
+            {
+                Account account = (Account)OrgService.Retrieve(&quot;account&quot;, new Guid(comboAccounts.SelectedValue.ToString()), cs2);
+                txtName.Text = account.Name;
+                txtCity.Text = account.Address1_City;
+                txtAddress.Text = account.Address1_Line1;
+                txtState.Text = account.Address1_StateOrProvince;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(&quot;An error happened: &quot; + ex.Message);
+            }
+</code></pre>
+<p>Delete method is solely done by the organization service, so it didn&rsquo;t
+change due the style we use.</p>
+<p><strong>Method : Create</strong></p>
+<p>It almost the same, except we will use Account class and its properties
+instead of the Entity class and its attributes. Modify the
+btnSaveNew_Click event handler to look like:</p>
+<pre><code>try
+            {
+                Account account = new Account();
+                account.Name = txtName.Text;
+                account.Address1_Line1 = txtAddress.Text;
+                account.Address1_City = txtCity.Text;
+                account.Address1_StateOrProvince = txtState.Text;
+                OrgService.Create(account);
+                MessageBox.Show(&quot;Account created successfully&quot;);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(&quot;An error occurred : &quot; + ex.Message);
+            }
+</code></pre>
+<p>This post is one of multiple posts to come under the same topic,
+Microsoft Dynamics CRM 2011 for Developers. Basicly we will deal with
+Dynamics CRM from the developer point of view. In this post we have
+tried to cover the basics of accessing Microsoft Dynamics CRM data using
+WCF. We tried the basic data operations: retrieve multiple records,
+retrieve one record, update, delete, and insert. We tried to cover both
+early-bounding and late-bounding approaches in our implementations.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/blog/blog/2011-12-01-jsonyet-another-tutorial.html/">↩ JSON–yet another tutorial :)</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/blog/blog/2012-03-11-microsoft-dynamics-crm-2011-for.html/"> Microsoft Dynamics CRM 2011 for Developers | Web Resources Part 1 ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        © Adritian. Free Hugo theme by Adrián Moreno Peña.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#portfolio">PORTFOLIO</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+      <nav class="language-selector">
+        <ul>
+          
+            
+            <li class="dropdown">
+              <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="languages-dropdown">
+                <span class="label">Language</span>    
+              </button>
+            <ul class="dropdown__menu" id="languages-dropdown">
+              <li class="current"><span>✔️ English</span></li>
+              
+              
+            
+              
+            
+              
+              
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,108 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R Programming Language on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/r-programming-language/</link>
-    <description>Recent content in R Programming Language on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Mon, 21 Jan 2013 09:40:00 -0600</lastBuildDate><atom:link href="https://ebeid.github.io/tags/r-programming-language/index.xml" rel="self" type="application/rss+xml" />
+    <title>R Programming Language on </title>
+    <link>http://localhost:1313/tags/r-programming-language/</link>
+    <description>Recent content in R Programming Language on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Jan 2013 09:40:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/r-programming-language/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction to R – Charts and Graphics</title>
-      <link>https://ebeid.github.io/blog/2013-01-21-introduction-to-r-charts-and-graphics.html/</link>
+      <link>http://localhost:1313/2013/01/introduction-to-r-charts-and-graphics.html</link>
       <pubDate>Mon, 21 Jan 2013 09:40:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-21-introduction-to-r-charts-and-graphics.html/</guid>
-      <description>R includes several packages for visualizing data:
-graphics contains plotting functions for the “base” graphing systems, including plot, hist, boxplot and many others. lattice contains code for producing Trellis graphics, which are independent of the “base” graphics system; including functions like xyplot, bwplot, levelplot. It built on grid which implements a different graphing system independent of the “base” system. grDevices contains all code implementing the various graphics devices, including X11, PDF, PostScript, PNG, etc.</description>
+      <guid>http://localhost:1313/2013/01/introduction-to-r-charts-and-graphics.html</guid>
+      <description>&lt;p&gt;R includes several packages for visualizing data:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;graphics&lt;/strong&gt; contains plotting functions for the “base” graphing systems, including plot, hist, boxplot and many others.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;lattice&lt;/strong&gt; contains code for producing Trellis graphics, which are independent of the “base” graphics system; including functions like xyplot, bwplot, levelplot. It built on &lt;strong&gt;grid&lt;/strong&gt; which implements a different graphing system independent of the “base” system.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;grDevices&lt;/strong&gt; contains all code implementing the various graphics devices, including X11, PDF, PostScript, PNG, etc.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;before making you chart, you need to think in the following:&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Introduction to R – Random Variables Generation &amp; Probability Distribution Functions</title>
-      <link>https://ebeid.github.io/blog/2013-01-17-introduction-to-r-random-variables.html/</link>
+      <title>Introduction to R – Random Variables Generation &amp;amp; Probability Distribution Functions</title>
+      <link>http://localhost:1313/2013/01/introduction-to-r-random-variables.html</link>
       <pubDate>Thu, 17 Jan 2013 17:07:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-17-introduction-to-r-random-variables.html/</guid>
-      <description>Simulation is important topic for statistical applications and scientific purposes in general.
-Generating Random Numbers The first step in simulation is to generate random values based on your variables distribution. R has a large number of functions that generate the standard random variables.
-for Normal random variable generation
-rnorm() simulate a simple random normal variable with a given mean and standard deviation and generate as many random values as requested.</description>
+      <guid>http://localhost:1313/2013/01/introduction-to-r-random-variables.html</guid>
+      <description>&lt;p&gt;Simulation is important topic for statistical applications and scientific purposes in general.&lt;/p&gt;&#xA;&lt;h2 id=&#34;generating-random-numbers&#34;&gt;Generating Random Numbers&lt;/h2&gt;&#xA;&lt;p&gt;The first step in simulation is to generate random values based on your variables distribution. R has a large number of functions that generate the standard random variables.&lt;/p&gt;&#xA;&lt;p&gt;for Normal random variable generation&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;rnorm()&lt;/strong&gt; simulate a simple random normal variable with a given mean and standard deviation and generate as many random values as requested.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Introduction to R – Basic Debugging</title>
-      <link>https://ebeid.github.io/blog/2013-01-16-introduction-to-r-basic-debugging.html/</link>
+      <link>http://localhost:1313/2013/01/introduction-to-r-basic-debugging.html</link>
       <pubDate>Wed, 16 Jan 2013 17:38:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-16-introduction-to-r-basic-debugging.html/</guid>
-      <description>In this post we will talk about native debugging support in R. Mostly, you start debugging when something goes wrong, which have many indications:
-message A generic notification/diagnostic message produced by the message function; execution of the function continues. warning An indication that something is wrong but not necessarily fatal; execution of the function continues; generated by the warning function; you got it after the function completion. error An indication that a fatal problem has occurred; execution stops; produced by the stop function.</description>
+      <guid>http://localhost:1313/2013/01/introduction-to-r-basic-debugging.html</guid>
+      <description>&lt;p&gt;In this post we will talk about native debugging support in R. Mostly, you start debugging when something goes wrong, which have many indications:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;message&lt;/strong&gt; A generic notification/diagnostic message produced by the message function; execution of the function continues.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;warning&lt;/strong&gt; An indication that something is wrong but not necessarily fatal; execution of the function continues; generated by the warning function; you got it after the function completion.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;error&lt;/strong&gt; An indication that a fatal problem has occurred; execution stops; produced by the stop function.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;condition&lt;/strong&gt; A generic concept for indicating that something unexpected can occur; programmers can create their own conditions.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The primary tools for debugging functions in R are:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Introduction to R – Control Structures</title>
-      <link>https://ebeid.github.io/blog/2013-01-15-introduction-to-r-control-structures.html/</link>
+      <link>http://localhost:1313/2013/01/introduction-to-r-control-structures.html</link>
       <pubDate>Tue, 15 Jan 2013 16:43:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-15-introduction-to-r-control-structures.html/</guid>
-      <description>Like every other programing language, R have control structures that allow you control the flow of your code execution.
-If, else for testing a condition. else section is optional.
-if it’s all about assigning a value to a variable, you can do like this
-for for executing a loop for a fixed number of times. It takes a variable and assign it successive values from a sequence or vector.
-while for executing a loop while a condition is true.</description>
+      <guid>http://localhost:1313/2013/01/introduction-to-r-control-structures.html</guid>
+      <description>&lt;p&gt;Like every other programing language, R have control structures that allow you control the flow of your code execution.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;If, else&lt;/strong&gt; for testing a condition. else section is optional.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnyx3LdN10pybDo3WkOmkO4xy9iGHJGxyktALLRPKtOqBMJYGvnRMkQpkDYBeAHqLdrBQOhAT20cE9Yjgx1XL64bxEQRQhSXiyn8VgPVFIWC9c2U3r9HDgLuCb03btauejZPIo7HFocQ/s1600-h/RGui%252520%25252864-bit%252529_2013-01-15_15-43-49%25255B5%25255D.jpg&#34;&gt;&lt;img alt=&#34;RGui (64-bit)_2013-01-15_15-43-49&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiosiARflsNiG8yMUC8DVopcx9BCeYxchc1KkCj4yMvlkI3h-bbyxvsEPY_gDbHLj1VcI2ACehUyj72Ru56Qf964Iq9E28qMDqbK_CGDH7XU8jmLY_8rAvFAPelcIFN6PEF6jfbz5J8ow/?imgmax=800&#34; title=&#34;RGui (64-bit)_2013-01-15_15-43-49&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;if it’s all about assigning a value to a variable, you can do like this&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_LGjEXwwie9QITS4OAJ49BFhAUfj2_GiMa7rJ06bhIhM2DCRBnfsqKMBQWtRDLrRKGkqbjCLTI7LguKw7GTfDVWeJtQEiK6Q-UUvQdvxajeI6ldxxYvVMaJ7tYkc_BhHeijZXtWkHuQ/s1600-h/RGui%252520%25252864-bit%252529_2013-01-15_15-46-22%25255B4%25255D.jpg&#34;&gt;&lt;img alt=&#34;RGui (64-bit)_2013-01-15_15-46-22&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_EbyBaJIRXKrFpknPI3BE8t-m4ILiD39jOcOdPYi6u5ZIafeO1zh7mUjKBOI9AieO08vg5OTyCbyqTlt5JRDQtA2H6QfXLgkaclniB1zGz4WB3RZuMzz7uTOL_ipQcMghdWe2SwdofA/?imgmax=800&#34; title=&#34;RGui (64-bit)_2013-01-15_15-46-22&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;for&lt;/strong&gt; for executing a loop for a fixed number of times. It takes a variable and assign it successive values from a sequence or vector.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Introduction to R – Functions</title>
-      <link>https://ebeid.github.io/blog/2013-01-13-introduction-to-r-functions.html/</link>
+      <link>http://localhost:1313/2013/01/introduction-to-r-functions.html</link>
       <pubDate>Sun, 13 Jan 2013 14:42:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-13-introduction-to-r-functions.html/</guid>
-      <description>Functions Functions are just like what you remember from math class. Most functions are in the following form: f(argument1, argument2, &amp;hellip;) Where f is the name of the function, and argument1, argument2, . . . are the arguments
-to the function. Here are a few examples of built-in functions:
-Note in the last example that if you give the argument in the default order, you can omit the names. Some built-in functions have operator form like the following examples: A function in R is just another object that is assigned to a symbol.</description>
+      <guid>http://localhost:1313/2013/01/introduction-to-r-functions.html</guid>
+      <description>&lt;h2 id=&#34;functions&#34;&gt;Functions&lt;/h2&gt;&#xA;&lt;p&gt;Functions are just like what you remember from math class. Most functions are in the following form: &lt;em&gt;f(argument1, argument2, &amp;hellip;)&lt;/em&gt; Where f is the name of the function, and argument1, argument2, . . . are the arguments&lt;br&gt;&#xA;to the function. Here are a few examples of built-in functions:&lt;br&gt;&#xA;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKwb7Exx_8d3fHHDvcC6c2RTzEPL6p58nvQG7RekPJ5xp18C-XW210dChiRbilT4gmOh29GEyLFlbpa_t2oVtxu7eWxGN92zCjOF45eZdm61_oiyhgPbD91mh-0pwG7ADvFTEyABf9fA/s1600-h/RGui-64-bit_2013-01-08_16-25-25_thum%25255B2%25255D.jpg&#34;&gt;&lt;img alt=&#34;RGui (64-bit)_2013-01-08_16-25-25_thumb[1]&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHizGchtEVRuwhDuZqfjidr5ONsOrQuuuT4LT3cdFH98BDCJ7-Vd4ytrJdtXQhOzt4okW0NTeemj62gkeKczpVVI89CGZ7XyezMVeT3gwT08qwa_uTFqNWp3pDNNeEpMZsjMtXSgSwMw/?imgmax=800&#34; title=&#34;RGui (64-bit)_2013-01-08_16-25-25_thumb[1]&#34;&gt;&lt;/a&gt;&lt;br&gt;&#xA;Note in the last example that if you give the argument in the default order, you can omit the names. Some built-in functions have operator form like the following examples:&lt;br&gt;&#xA;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLXUQrB4kYJ2Ckp6YI08Yyt_nikqVpO4g-zSKHBSc_agelcijVxHyw3nmgCRRsbUiv3x19qNJV8lb1xWoi8taq7vFCKXUEJEhWoL1VLYL__z4hgU0HeOBGTxYM8PjScGf56hBURARiXg/s1600-h/RGui-64-bit_2013-01-08_16-29-23_thum%25255B2%25255D.jpg&#34;&gt;&lt;img alt=&#34;RGui (64-bit)_2013-01-08_16-29-23_thumb[3]&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEOEh2dWXvaiUZ64XcCw23XDWxAPx6-aUEPUvBrR_DeAHlBTYbikz_fiIJsZuVg3cqR3YNv4puPmiiiMeFugRJEda30yo-Iw_2yorjo5_R_Cb9_Ca97kYgdCOfxRup8zuuhwDb2MWZhQ/?imgmax=800&#34; title=&#34;RGui (64-bit)_2013-01-08_16-29-23_thumb[3]&#34;&gt;&lt;/a&gt;&lt;br&gt;&#xA;A function in R is just another object that is assigned to a symbol. You can define your own functions in R, assign them a name, and then call them just like the built-in functions. Writing your function code on the R Console is hard, so R provided a simple text editor for that. To write your code go to File &amp;raquo; New Script. This will open the R Editor, enter the following code&lt;br&gt;&#xA;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqauut5wwS90gOXj3uuRw7Xzmdyr4ejTy8SeT9q5uJfcXYd0R-IHSMmluJr6zHdQGsPWOe0Om0aj4kQmHI04AeT_0XVKsIcujRonKDeAiWVfQ-sgSKTmsO7u_wt5OXArzgyveXw1fhvw/s1600-h/RGui%252520%25252864-bit%252529_2013-01-10_09-05-56%25255B3%25255D.jpg&#34;&gt;&lt;img alt=&#34;RGui (64-bit)_2013-01-10_09-05-56&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8Er4u5OhSwQxxXrJfv9lSz2LmNFMIPNXxnahaQzInHSwNuLCu0eHVwrHENmYKWEElOabCY03Q2ZkPnlr7Rk4cXdhNiggCxxaLqS8rEAzFTjlenCTz_-C2IDUQ7KvCh8bwjRMxDyiw5g/?imgmax=800&#34; title=&#34;RGui (64-bit)_2013-01-10_09-05-56&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Introduction to R – Matrix Operations</title>
-      <link>https://ebeid.github.io/blog/2013-01-12-introduction-to-r-matrix-operations.html/</link>
+      <link>http://localhost:1313/2013/01/introduction-to-r-matrix-operations.html</link>
       <pubDate>Sat, 12 Jan 2013 13:53:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-12-introduction-to-r-matrix-operations.html/</guid>
-      <description>Operations can be done on matrices in two fashions:
-Element-wise : where operations performed on corresponding elements in the matrices. Just use the desired operator. Matrix-wise: where operations are performed on the whole matrices in the way you used to do in math. Use the desired operator between a couple of % % Stay tuned for more R notes.</description>
+      <guid>http://localhost:1313/2013/01/introduction-to-r-matrix-operations.html</guid>
+      <description>&lt;p&gt;Operations can be done on matrices in two fashions:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Element-wise : where operations performed on corresponding elements in the matrices. Just use the desired operator.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYWZfz5H4ev5GaEDXMdAcjOWcyQU5Fj6IhFHOT4GRuWC-3VFoeMzn_CKH0zcWvYPj26s3Yn_iU0-_H0oS9eQFwrSTbjeAIGOk0p1ZtgzhKGe4ysMtS202-4jqbeaRE6HgcSO2tcVepUA/s1600-h/RGui%252520%25252864-bit%252529_2013-01-09_13-41-07%25255B3%25255D.jpg&#34;&gt;&lt;img alt=&#34;RGui (64-bit)_2013-01-09_13-41-07&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghSMHegx7Lvs1-pp7OUsZBbswnYW4kU8Zxz1py2ozH6X7vcY-5KAFGUmtPNfRBXfa16bfpMh-eGeuBCshhm5kVo0WX2GoMkI8Qa1yGx3cBOFBfb5aN3DYjJWqemDE4k8c0yODUu05MDA/?imgmax=800&#34; title=&#34;RGui (64-bit)_2013-01-09_13-41-07&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Matrix-wise: where operations are performed on the whole matrices in the way you used to do in math. Use the desired operator between a couple of % %&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjycG1GJTCYgzNOhOOB_EgMoqe1FVWzLScsBDj7O-6UbmW51jrVvBMzKCY52dLeX22QAZaZI2-3K9hFr-8-Acund8tXv89RsjgKypjmP8Mkogvg_98Hlpf5anwqUccTHcJFkq1SQTUK4g/s1600-h/RGui%252520%25252864-bit%252529_2013-01-09_13-44-44%25255B3%25255D.jpg&#34;&gt;&lt;img alt=&#34;RGui (64-bit)_2013-01-09_13-44-44&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTPGFezzYAHA7VosJPQYx6wu-_qZ-dC21-72BJgBR8nqTMjMP7irlYO7VWIc77EusJFhTcML0RvNCggwcB-udYETK7PkFb2U-rW65XkfeT4xIJtPZVTnHm3gpxsxBxzrNcBUjKPAGRpQ/?imgmax=800&#34; title=&#34;RGui (64-bit)_2013-01-09_13-44-44&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Stay tuned for more R notes.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Introduction to R – Removing missing values</title>
-      <link>https://ebeid.github.io/blog/2013-01-11-introduction-to-r-removing-missing.html/</link>
+      <link>http://localhost:1313/2013/01/introduction-to-r-removing-missing.html</link>
       <pubDate>Fri, 11 Jan 2013 13:53:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-11-introduction-to-r-removing-missing.html/</guid>
-      <description>A common task in preparing you data is to remove missing values(NAs). One way to do that is to retrieve a vector of the missing values in your data, and then filter them out from your structure.
-If you want to filter out the missing values from more than one vector , you can use complete.cases() to get the indices that contains good data in both vectors.
-Here good will contain TRUE only for indices that hold good data in both vectors; FALSE otherwise.</description>
+      <guid>http://localhost:1313/2013/01/introduction-to-r-removing-missing.html</guid>
+      <description>&lt;p&gt;A common task in preparing you data is to remove missing values(NAs). One way to do that is to retrieve a vector of the missing values in your data, and then filter them out from your structure.&lt;br&gt;&#xA;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-tkGjyOKy8IvODPxVXCgx5TNO-SuokAhiyMUDhT1gWCzv4YFvf83rZym01gRJj1zd-bAL9DwJz7l74hAFadtc9ikPxewadtfXq3cvgleRr2QvclqGf_8A0UkvuDnvhJ5vULCcHmh0aQ/s1600-h/RGui%252520%25252864-bit%252529_2013-01-09_13-17-45%25255B3%25255D.jpg&#34;&gt;&lt;img alt=&#34;RGui (64-bit)_2013-01-09_13-17-45&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEypioB8HojS51tn4ECVjQdae6zjvY9ep4s-0I80BfKyG2-cjFanL6dv3utFrLNM8FMvYTCplFQMJxrsDJA4nFp3eIjmikBAu4hZwWRvdiWLklnpUB-QOwK6sURsCeLXM9uV-WRSdsMA/?imgmax=800&#34; title=&#34;RGui (64-bit)_2013-01-09_13-17-45&#34;&gt;&lt;/a&gt;&lt;br&gt;&#xA;If you want to filter out the missing values from more than one vector , you can use complete.cases() to get the indices that contains good data in both vectors.&lt;br&gt;&#xA;&lt;a href=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-zrVNajt1EerMK_tPQgXhVLZoNkl78-zYyYrtkyWIX0vb52BBbkipVM6vey8xrmDSR1PFX7UBdloX7a7OWXt9L7RkZRsA5DO3Mme-GVaRXZ3mcotoRNOFM0QE9Ldf9z0arAZ38i72Jg/s1600-h/RGui%252520%25252864-bit%252529_2013-01-09_13-25-29%25255B3%25255D.jpg&#34;&gt;&lt;img alt=&#34;RGui (64-bit)_2013-01-09_13-25-29&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLMSVYPmKOAYae8F2aOcbMb_c9nTnlXVLFuaC03ux-2ZnSoST7bPs52En7I7JTSGoE1RHCzTEF4aWzZj4haroJvwQZUuZuUGE8zi5BFVkNiooMRwwrwrZi2o9A3yywWvTfJnXc94olYg/?imgmax=800&#34; title=&#34;RGui (64-bit)_2013-01-09_13-25-29&#34;&gt;&lt;/a&gt;&lt;br&gt;&#xA;Here good will contain TRUE only for indices that hold good data in both vectors; FALSE otherwise. complete.cases() works with data frames also. In that case it removes any row that contains NA in any column.The returned data frame will not contain any NAs.&lt;br&gt;&#xA;Stay tuned for more R notes.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Introduction to R – Importing/Exporting Data to External Files</title>
-      <link>https://ebeid.github.io/blog/2013-01-09-introduction-to-r-importingexporting.html/</link>
+      <link>http://localhost:1313/2013/01/introduction-to-r-importingexporting.html</link>
       <pubDate>Wed, 09 Jan 2013 17:56:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-09-introduction-to-r-importingexporting.html/</guid>
-      <description>There are many functions that read/write data in R and export it files
-read.table, read.csv for reading tabular data and return it in data frames from delimited files. read.csv is identical to read.table except that default separator is coma. There are so many arguments for these functions, the most commonly used arguments are:
-file : string –&amp;gt; file name or URL header : logical –&amp;gt; TRUE if the file first line is a header line, FALSE if first line is data.</description>
+      <guid>http://localhost:1313/2013/01/introduction-to-r-importingexporting.html</guid>
+      <description>&lt;p&gt;There are many functions that read/write data in R and export it files&lt;/p&gt;&#xA;&lt;p&gt;read.table, read.csv for reading tabular data and return it in data frames from delimited files. read.csv is identical to read.table except that default separator is coma. There are so many arguments for these functions, the most commonly used arguments are:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;file : string –&amp;gt; file name or URL&lt;/li&gt;&#xA;&lt;li&gt;header : logical –&amp;gt; TRUE if the file first line is a header line, FALSE if first line is data.&lt;/li&gt;&#xA;&lt;li&gt;sep : string –&amp;gt; represents the data separator&lt;/li&gt;&#xA;&lt;li&gt;quote “ string –&amp;gt; if character values are enclosed in quotes, this argument should specify the type of quotes.&lt;/li&gt;&#xA;&lt;li&gt;colClasses : string vector –&amp;gt; represent the data tyoe of each column in file.&lt;/li&gt;&#xA;&lt;li&gt;nrows : integer –&amp;gt; the number of rows in file (optional)&lt;/li&gt;&#xA;&lt;li&gt;comment.char : string –&amp;gt; the comment indicator string&lt;/li&gt;&#xA;&lt;li&gt;skip : integer –&amp;gt; number of lines to skip from the file beginning&lt;/li&gt;&#xA;&lt;li&gt;stringsAsFactors : logical –&amp;gt; should character variables be coded as factors?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;save the following file into your default user directory&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Introduction to R – Getting Started</title>
-      <link>https://ebeid.github.io/blog/2013-01-09-introduction-to-r-getting-started.html/</link>
+      <link>http://localhost:1313/2013/01/introduction-to-r-getting-started.html</link>
       <pubDate>Wed, 09 Jan 2013 10:19:00 -0600</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-01-09-introduction-to-r-getting-started.html/</guid>
-      <description>R is an open source programming language and software environment for statistical computing and graphics. The R language is widely used among statisticians for developing statistical software and data analysis. R was created by Ross Ihaka and Robert Gentleman at the University of Auckland, New Zealand, and now, R is developed by the R Development Core Team. To download R and install it on your computer, you can get it at the Comprehensive R Archive Network (http://cran.</description>
+      <guid>http://localhost:1313/2013/01/introduction-to-r-getting-started.html</guid>
+      <description>&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt; is an open source programming language and software environment for statistical computing and graphics. The R language is widely used among statisticians for developing statistical software and data analysis. R was created by &lt;a href=&#34;https://www.facebook.com/pages/w/103371346383347&#34;&gt;Ross Ihaka&lt;/a&gt; and &lt;a href=&#34;https://www.facebook.com/pages/w/126921034017343&#34;&gt;Robert Gentleman&lt;/a&gt; at the &lt;a href=&#34;https://www.facebook.com/pages/w/105560002810339&#34;&gt;University of Auckland&lt;/a&gt;, New Zealand, and now, R is developed by the &lt;em&gt;R Development Core Team&lt;/em&gt;.&lt;br&gt;&#xA;To download R and install it on your computer, you can get it at the Comprehensive R Archive Network (&lt;a href=&#34;http://cran.r-project.org/&#34;&gt;http://cran.r-project.org&lt;/a&gt;). One option that you may want to explore is RStudio (&lt;a href=&#34;http://rstudio.org/&#34;&gt;http://rstudio.org&lt;/a&gt;) which is a very nice front-end to R and works on all platforms.&lt;br&gt;&#xA;The R System is divided into 2 conceptual parts:&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>Introduction to R Programming Language</title>
+      <link>http://localhost:1313/blog/introduction-to-r-programming-language/</link>
+      <pubDate>Tue, 08 Jan 2013 13:44:00 -0600</pubDate>
+      <guid>http://localhost:1313/blog/introduction-to-r-programming-language/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt; is an open source programming language and software environment for statistical computing and graphics. The R language is widely used among statisticians for developing statistical software and data analysis. R was created by &lt;a href=&#34;https://www.facebook.com/pages/w/103371346383347&#34;&gt;Ross Ihaka&lt;/a&gt; and &lt;a href=&#34;https://www.facebook.com/pages/w/126921034017343&#34;&gt;Robert Gentleman&lt;/a&gt; at the &lt;a href=&#34;https://www.facebook.com/pages/w/105560002810339&#34;&gt;University of Auckland&lt;/a&gt;, New Zealand, and now, R is developed by the &lt;em&gt;R Development Core Team&lt;/em&gt;. To download R and install it on your computer, you can get it at the Comprehensive R Archive Network (&lt;a href=&#34;http://cran.r-project.org/&#34;&gt;http://cran.r-project.org&lt;/a&gt;). One option that you may want to explore is RStudio (&lt;a href=&#34;http://rstudio.org/&#34;&gt;http://rstudio.org&lt;/a&gt;) which is a very nice front-end to R and works on all platforms.&lt;br&gt;&#xA;The R System is divided into 2 conceptual parts:&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

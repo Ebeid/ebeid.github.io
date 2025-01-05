@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Business Intelligence Development Studio on </title>
+    <link>http://localhost:1313/tags/business-intelligence-development-studio/</link>
+    <description>Recent content in Business Intelligence Development Studio on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Mar 2012 17:47:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/business-intelligence-development-studio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Dynamics CRM 2011 for Developers | Creating Custom Reports Using Microsoft SQL Server 2008 Reporting Services</title>
+      <link>http://localhost:1313/2012/03/microsoft-dynamics-crm-2011-for_14.html</link>
+      <pubDate>Tue, 13 Mar 2012 17:47:00 -0500</pubDate>
+      <guid>http://localhost:1313/2012/03/microsoft-dynamics-crm-2011-for_14.html</guid>
+      <description>&lt;h4 id=&#34;contents&#34;&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/h4&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Introduction&lt;/li&gt;&#xA;&lt;li&gt;Setup the Development Environment&lt;/li&gt;&#xA;&lt;li&gt;Report Development Process&lt;/li&gt;&#xA;&lt;li&gt;Create Custom Reports Using Business Intelligence Development Studio&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Create a Custom SQL-Based Report&lt;/li&gt;&#xA;&lt;li&gt;Create a Custom Fetch-Based Report&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Import Custom Reports into Dynamics CRM&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Microsoft Dynamics CRM provides many out-of-box reports for viewing business data. You can view a list of reports you have access to by navigating to Workplace &amp;gt; My Work &amp;gt; Reports. You can also see a list of all reports available by navigating to Settings &amp;gt; Customization &amp;gt; Customizations &amp;gt; Customize the System &amp;gt; Report [left navigation]. In both lists, you can select a report and click Run Report from the ribbon to preview the report in running mode.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#experience"
+                >EXPERIENCE</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/2009">2009th</a></span></li><li class="breadcrum-item"><span><a href="/2009/03">3rd</a></span></li><li class="breadcrum-item"><span><a href="/2009/03/python-notes-4.html">Python notes 4.html</a></span></li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/2009/03/python-notes-4.html">Python Notes – 4 : Lists</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Mon Mar 23, 2009</h4>
+              ·
+              <h4 id="wordcount">632 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/python/">Python</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p>Welcome to our third note in our Python learning process. In this note we will talk mainly about lists, its functions and how to use it.</p>
+<h4 id="lists---creation">Lists - Creation</h4>
+<p>A list is an ordered set of values, where each value is identified by an index. The values that make up a list are called its elements. You could create it like:</p>
+<blockquote>
+<p>&gt;&raquo; X = [12, 56, 87]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; print X</p>
+</blockquote>
+<blockquote>
+<p>[12, 56, 87]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; Y = [&ldquo;one&rdquo;, &ldquo;three&rdquo;, &ldquo;five&rdquo;]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; print Y</p>
+</blockquote>
+<blockquote>
+<p>[&ldquo;one&rdquo;, &ldquo;three&rdquo;, &ldquo;five&rdquo;]</p>
+</blockquote>
+<p>The list elements don&rsquo;t have to be the same type.</p>
+<blockquote>
+<p>[&ldquo;hello&rdquo;, 2.0, 5, [10, 20]]</p>
+</blockquote>
+<p>A list within another list is said to be nested.</p>
+<p>Another way of creating special list of consecutive integers:</p>
+<blockquote>
+<p>&gt;&raquo; range(1,5)</p>
+</blockquote>
+<blockquote>
+<p>[1, 2, 3, 4]</p>
+</blockquote>
+<p>If there is no start of the range, it will create starting from the 0</p>
+<blockquote>
+<p>&gt;&raquo; range(10)</p>
+</blockquote>
+<blockquote>
+<p>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</p>
+</blockquote>
+<p>If there is a third argument, it specifies the space between successive values,</p>
+<p>which is called the step size</p>
+<blockquote>
+<p>&gt;&raquo; range(1, 10, 2)</p>
+</blockquote>
+<blockquote>
+<p>[1, 3, 5, 7, 9]</p>
+</blockquote>
+<h4 id="lists---accessing-elements">Lists - Accessing elements</h4>
+<p>You access list elements by index. Indices starts with zero. Indices could be any integer expression.</p>
+<blockquote>
+<p>&gt;&raquo; numbers = range(1,10)</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; print numbers[0]</p>
+</blockquote>
+<blockquote>
+<p>1</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; print numbers[5-3]</p>
+</blockquote>
+<blockquote>
+<p>3</p>
+</blockquote>
+<h4 id="lists---length">Lists - Length</h4>
+<p>You can get the list length using len() method. Syntax like that:</p>
+<blockquote>
+<p>&gt;&raquo; len(numbers)</p>
+</blockquote>
+<blockquote>
+<p>9</p>
+</blockquote>
+<p>Although a list can contain another list, the nested list still counts as a single</p>
+<p>element. The length of this list is four:</p>
+<blockquote>
+<p>[&lsquo;spam!&rsquo;, 1, [&lsquo;Brie&rsquo;, &lsquo;Roquefort&rsquo;, &lsquo;Pol le Veq&rsquo;], [1, 2, 3]]</p>
+</blockquote>
+<h4 id="lists---operators">Lists - operators</h4>
+<p>in is a boolean operator that tests membership in a sequence.</p>
+<blockquote>
+<p>&gt;&raquo; horsemen = [&lsquo;war&rsquo;, &lsquo;famine&rsquo;, &lsquo;pestilence&rsquo;, &lsquo;death&rsquo;]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; &lsquo;pestilence&rsquo; in horsemen</p>
+</blockquote>
+<blockquote>
+<p>1</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; &lsquo;debauchery&rsquo; in horsemen</p>
+</blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+<h4 id="lists---for-loops">Lists - for loops</h4>
+<p>The syntax is like:</p>
+<blockquote>
+<p>for VARIABLE in LIST:</p>
+</blockquote>
+<blockquote>
+<p>BODY</p>
+</blockquote>
+<blockquote>
+<p>for horseman in horsemen:</p>
+</blockquote>
+<blockquote>
+<p>print horseman</p>
+</blockquote>
+<p>This is equivalent to:</p>
+<blockquote>
+<p>i = 0</p>
+</blockquote>
+<blockquote>
+<p>while i &lt; len(LIST):</p>
+</blockquote>
+<blockquote>
+<p>VARIABLE = LIST[i]</p>
+</blockquote>
+<blockquote>
+<p>BODY</p>
+</blockquote>
+<blockquote>
+<p>i = i + 1</p>
+</blockquote>
+<p>Any list expression can be used in a for loop:</p>
+<blockquote>
+<p>for number in range(20):</p>
+</blockquote>
+<blockquote>
+<p>if number % 2 == 0:</p>
+</blockquote>
+<blockquote>
+<p>print number</p>
+</blockquote>
+<h4 id="list---operations">List - operations</h4>
+<p>The + operator concatenates lists:</p>
+<blockquote>
+<p>&gt;&raquo; a = [1, 2, 3]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; b = [4, 5, 6]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; c = a + b</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; print c</p>
+</blockquote>
+<blockquote>
+<p>[1, 2, 3, 4, 5, 6]</p>
+</blockquote>
+<p>Similarly, the * operator repeats a list a given number of times:</p>
+<blockquote>
+<p>&gt;&raquo; [0] * 4</p>
+</blockquote>
+<blockquote>
+<p>[0, 0, 0, 0]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; [1, 2, 3] * 3</p>
+</blockquote>
+<blockquote>
+<p>[1, 2, 3, 1, 2, 3, 1, 2, 3]</p>
+</blockquote>
+<p>The head function takes a list as a parameter and returns the first element.</p>
+<blockquote>
+<p>&gt;&raquo; a = [1, 2, 3]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; head(a)</p>
+</blockquote>
+<blockquote>
+<p>1</p>
+</blockquote>
+<h4 id="list---slices">List - slices</h4>
+<blockquote>
+<p>&gt;&raquo; list = [&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;, &rsquo;e&rsquo;, &lsquo;f&rsquo;]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; list[1:3]</p>
+</blockquote>
+<blockquote>
+<p>[&lsquo;b&rsquo;, &lsquo;c&rsquo;]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; list[:4]</p>
+</blockquote>
+<blockquote>
+<p>[&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; list[3:]</p>
+</blockquote>
+<blockquote>
+<p>[&rsquo;d&rsquo;, &rsquo;e&rsquo;, &lsquo;f&rsquo;]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; list[:]</p>
+</blockquote>
+<blockquote>
+<p>[&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;, &rsquo;e&rsquo;, &lsquo;f&rsquo;]</p>
+</blockquote>
+<h4 id="list---deletion">List - deletion</h4>
+<p>del removes an element from a list:</p>
+<blockquote>
+<p>&gt;&raquo; a = [&lsquo;one&rsquo;, &rsquo;two&rsquo;, &rsquo;three&rsquo;]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; del a[1]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; a</p>
+</blockquote>
+<blockquote>
+<p>[&lsquo;one&rsquo;, &rsquo;three&rsquo;]</p>
+</blockquote>
+<p>You can use a slice as an index for del:</p>
+<blockquote>
+<p>&gt;&raquo; list = [&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;, &rsquo;e&rsquo;, &lsquo;f&rsquo;]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; del list[1:5]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; print list</p>
+</blockquote>
+<blockquote>
+<p>[&lsquo;a&rsquo;, &lsquo;f&rsquo;]</p>
+</blockquote>
+<ul>
+<li>Strings are lists and can be treated the same way you treat lists.</li>
+</ul>
+<h4 id="nested-lists">Nested lists</h4>
+<p>A nested list is a list that appears as an element in another list. In this list, the</p>
+<p>three-eth element is a nested list:</p>
+<blockquote>
+<p>&gt;&raquo; list = [&ldquo;hello&rdquo;, 2.0, 5, [10, 20]]</p>
+</blockquote>
+<p>To extract an element from the nested list, we can proceed in two steps:</p>
+<blockquote>
+<p>&gt;&raquo; elt = list[3]</p>
+</blockquote>
+<blockquote>
+<p>&gt;&raquo; elt[0]</p>
+</blockquote>
+<blockquote>
+<p>10</p>
+</blockquote>
+<p>Or we can combine them:</p>
+<blockquote>
+<p>&gt;&raquo; list[3][1]</p>
+</blockquote>
+<blockquote>
+<p>20</p>
+</blockquote>
+<p>In this note we talked mainly lists which are very powerful feature in Python. We will continue our learning in the upcoming notes.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/2009/03/python-notes-3.html">↩ Python Notes – 3 : Control Statements</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/2009/03/python-notes-5.html"> Python Notes – 5 : Objects &amp;amp; Values ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        <a href="https://themes.gohugo.io/themes/adritian-free-hugo-theme">© Adritian</a>. Free Hugo theme by <a href="https://www.adrianmoreno.info">Adrián Moreno Peña</a>.</br><a href="https://github.com/Ebeid/ebeid.github.io">Site content and code available in GitHub</a>.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#portfolio"
+                >PORTFOLIO</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/blog">Blog</a></span></li><li class="breadcrum-item"><span><a href="/blog/blog">Blog</a></span></li><li class="breadcrum-item current">Microsoft Dynamics CRM 2011 for Developers | Web Resources Part 1</li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/blog/blog/2012-03-11-microsoft-dynamics-crm-2011-for.html/">Microsoft Dynamics CRM 2011 for Developers | Web Resources Part 1</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Sun Mar 11, 2012</h4>
+              ·
+              <h4 id="wordcount">2532 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/microsoft-dynamics-crm-dashboards/">Microsoft Dynamics CRM Dashboards</a></li>
+              
+              <li><a href="/tags/microsoft-dynamics-crm-solution-configuration-page/">Microsoft Dynamics CRM Solution Configuration Page</a></li>
+              
+              <li><a href="/tags/microsoft-dynamics-crm-forms/">Microsoft Dynamics CRM Forms</a></li>
+              
+              <li><a href="/tags/web-resources/">Web Resources</a></li>
+              
+              <li><a href="/tags/microsoft-dynamics-crm-sitemap/">Microsoft Dynamics CRM SiteMap</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><h4 id="contents"><strong>Contents</strong></h4>
+<ol>
+<li>Introduction</li>
+<li>Types of Web Resources</li>
+<li>Where can Web Resources be Used ?</li>
+<li>Web Resources Limitations</li>
+<li>Web Resources Management</li>
+<li>Using Web Resources on a Form</li>
+<li>Using Web Resources from the Form Navigation </li>
+<li>Using Web Resources on a Dashboard</li>
+<li>Using Web Resources Direct from SiteMap  </li>
+<li>Using Web Resources as a Solution Configuration Page</li>
+<li>Referencing Other Web Resources</li>
+</ol>
+<p><strong>Introduction</strong></p>
+<p>Web resources are a new feature of Dynamics CRM 2011 that allows storing
+of client side content in the CRM server database in order to be used
+for extending the Dynamics CRM web application. That content is then
+available to be delivered to users as needed during their interaction
+with the user interface. These resources can be used by URL, which also
+allows relative path referencing.</p>
+<p>Based on that and using the appropriate development tools, a fully
+functional web site can be created on a development server by using file
+types that are compatible with web resources. Then, if using a
+consistent naming convention and relative path references, the web site
+will function after uploading all the files into Microsoft Dynamics CRM.
+These web resources can then be exported in a solution and installed on
+any Microsoft Dynamics CRM deployment (both on-premises and on-line). It
+will also available to users of Microsoft Dynamics CRM for Microsoft
+Office Outlook with Offline Access when offline because they are
+synchronized with the user’s data.</p>
+<p><strong>Types of Web Resources</strong></p>
+<p>Microsoft Dynamics CRM allows ten types to create web resources which
+fall into seven type categories. We will explore them here:</p>
+<ul>
+<li><strong>HTML Web Pages</strong> You can upload *.htm or *.html files as web
+resources, or you can use the Text Editor in the CRM interface to
+create your HTML web resources. Web pages can’t contain any code
+that must be executed on the server (no ASP.NET support). Web pages
+can only accept one custom query string parameter called <em>data.</em></li>
+<li><strong>Images</strong> You can upload PNG, JPG, GIF, and ICO files. They can be
+used as icons for custom ribbon controls or Sitemape subareas,
+decoration for entity forms and web pages, background images.</li>
+<li><strong>Script</strong> Enables uploading JScripts for reuse of many parts in the
+CRM like web page, ribbon commands, or form and field-level events.</li>
+<li><strong>Style Sheet</strong> .css files linked to web page web resources to
+efficiently manage their appearance.</li>
+<li><strong>Data</strong> Enables you to upload some XML files to your system</li>
+<li><strong>Style Sheet</strong> enables you to upload *.xsl and *.xslt files to be
+used by Data and Web Page web resources, so you can apply the style
+on XML files.</li>
+<li>Silverlight enables you to upload *.xap files which is the output
+of Silverlight application build process. Silverlight applications
+can be used on forms to create a more rich and visual components for
+users.</li>
+</ul>
+<p><strong>Where can Web Resources be Used ?</strong></p>
+<p>All web resources (except XML, XSL, XSLT, CSS) can be used on forms, on
+dashboards, from SiteMap, or from the application ribbon. All web
+resources can be used in the context of Web Page web resources.</p>
+<p><strong>Web Resources Management</strong></p>
+<p>Web resources can be created in the context of any unmanaged solution
+inside a CRM organization.</p>
+<p>If you will create the web resource in the default solution navigate to
+<!-- raw HTML omitted -->Settings<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Customizations<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Customize the System<!-- raw HTML omitted --> &gt; click on <!-- raw HTML omitted -->Web Resources<!-- raw HTML omitted --> from the left navigation &gt;
+<!-- raw HTML omitted -->New<!-- raw HTML omitted -->. Enter the Name, Display Name, and
+select the web resource type. If you will create the web resource in a
+default solution other than the default solution, <!-- raw HTML omitted -->Settings<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Customizations<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Solutions<!-- raw HTML omitted --> &gt; and click your solution and
+complete in the same steps as above.</p>
+<p>After uploading a new or updating web resource, you have to publish the
+web resource before you use it in the application.</p>
+<p>You can remove an unmanaged Web Resource at any time as long as it is
+not currently being by any component. If you attempt to remove a web
+resource while it is in use by another component you will get an error
+message.</p>
+<blockquote>
+<p>Web Page web resources are the container that can host (or link to)
+all the other web resource types, so we will explain all the ways to
+incorporate Web Page web resources in Dynamics CRM. Then we will
+explain how to link and integrate other types of web resources.</p>
+</blockquote>
+<p>In order to proceed, we will create a simple &ldquo;Hello World&rdquo; page and
+upload it as a web resource. Create a simple page.html file like the
+following:</p>
+<p><a href="http://lh5.ggpht.com/-EIxrx_YyIeQ/T1yH2HnEXBI/AAAAAAAAAMA/P3HboZa2yR4/s1600-h/page3.jpg"><!-- raw HTML omitted --></a></p>
+<p>Now open your browser and navigate to your CRM organization, then
+navigate to <!-- raw HTML omitted -->Settings<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Customizations<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Customize the System<!-- raw HTML omitted --> &gt; click on <!-- raw HTML omitted -->Web Resources<!-- raw HTML omitted --> from the left navigation &gt;
+<!-- raw HTML omitted -->New<!-- raw HTML omitted -->. Enter a Name for our page, Display
+Name, and select Web Page (HTML) from the Type combo box. Click <!-- raw HTML omitted -->Save<!-- raw HTML omitted -->, then click <!-- raw HTML omitted -->Publish<!-- raw HTML omitted -->, then close the window.</p>
+<p><a href="http://lh3.ggpht.com/--BZwF_e0JB8/T1yH2_9vUXI/AAAAAAAAAMQ/r3XqttV4fCQ/s1600-h/Web-Resource-New4.jpg"><!-- raw HTML omitted --></a></p>
+<p>Now we create a simple web page web resource and ready to explore the
+different ways to use it in our Dynamics CRM. We will explore just the
+basic usage scenarios, advanced features will be explained in a future
+post.</p>
+<p><strong>Using Web Resources on a Form</strong></p>
+<p>Now let&rsquo;s put use our test HTML page web resource on a Form, e.g.
+Account. Navigate to <!-- raw HTML omitted -->Settings<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Customizations<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Customize the System<!-- raw HTML omitted --> &gt; from the left
+navigation expand <!-- raw HTML omitted -->Entities<!-- raw HTML omitted -->, then expand
+<!-- raw HTML omitted -->Account<!-- raw HTML omitted -->, then expand <!-- raw HTML omitted -->Forms<!-- raw HTML omitted -->, then click on the form named <!-- raw HTML omitted -->Information<!-- raw HTML omitted --> which have Main in the Form Type
+column. The form designer will open. Just to make things easier for you,
+collapse the regions on the form (called tabs in Dynamics CRM) by
+clicking the small blue rectangle on the left-top corner of each of
+them. Then Click on <!-- raw HTML omitted -->Insert<!-- raw HTML omitted --> in ribbon</p>
+<p> <a href="http://lh3.ggpht.com/-zY-UAuh9p00/T1yH3bJ5iGI/AAAAAAAAAMg/70ojh2Aka-A/s1600-h/insert2.jpg"><!-- raw HTML omitted --></a></p>
+<p>Then click <!-- raw HTML omitted -->One Column<!-- raw HTML omitted --> on the ribbon.</p>
+<p><a href="http://lh6.ggpht.com/-j9inEp1XVFs/T1yH4IqJaDI/AAAAAAAAAMw/A2oeFGIGOv4/s1600-h/one-column-tab2.jpg"><!-- raw HTML omitted --></a></p>
+<p>This will insert a one column region (called Tabs in Dynamics CRM) below
+the currently selected region.</p>
+<p><a href="http://lh3.ggpht.com/-SLF1KcvDS0w/T1yH5CPuXFI/AAAAAAAAANA/vylvOXshuoo/s1600-h/new-tab2.jpg"><!-- raw HTML omitted --></a></p>
+<p>While your new region is selected, click <!-- raw HTML omitted -->Web
+Resource<!-- raw HTML omitted --> on the ribbon.
+<a href="http://lh3.ggpht.com/-ENNceawAwY0/T1yH5ge41RI/AAAAAAAAANM/eh9ljd9dIBg/s1600-h/new-WR-ribbon2.jpg"><!-- raw HTML omitted --></a></p>
+<p>This will open the Add Web Resource dialog. In the Web Resource textbox
+click the look-up icon on the right and select our Web Page web resource
+from the list (you can also search for it by name). Fill the required
+<!-- raw HTML omitted -->Name<!-- raw HTML omitted --> and <!-- raw HTML omitted -->Label<!-- raw HTML omitted --> fields, and click Ok.</p>
+<p><a href="http://lh6.ggpht.com/-n2RniwSjp9A/T1yH6TNgNmI/AAAAAAAAANc/85sgpiUNTgI/s1600-h/Add-Web-Resource---filled4.jpg"><!-- raw HTML omitted --></a></p>
+<p>This will place our web page web resource on the new region we added
+previously to the form</p>
+<p><a href="http://lh4.ggpht.com/-Pp9BhDBNIyg/T1yH7CU_J3I/AAAAAAAAANs/mGuztuop4UM/s1600-h/Tab-filled2.jpg"><!-- raw HTML omitted --></a></p>
+<p>Now click <!-- raw HTML omitted -->Save<!-- raw HTML omitted --> on the form designer then
+click <!-- raw HTML omitted -->Publish<!-- raw HTML omitted --> to publish your for
+customizations, then click <!-- raw HTML omitted -->Save and Close<!-- raw HTML omitted -->
+to close the window. Click <!-- raw HTML omitted -->Publish All<!-- raw HTML omitted --> to
+ensure that everything is published fine, then close the solution
+window. Refresh your browser and navigate to the form you have
+customized, it will be Account in our case and open any record to check
+that our HTML page web resource is published on the form correctly.</p>
+<p><a href="http://lh6.ggpht.com/-VVLKV3myPC0/T1yH77fqBkI/AAAAAAAAAOA/urCAn0ijQy0/s1600-h/Account-Blue-Company---Microsoft-Dyn%25255B2%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p><strong>Using Web Resources from the Form Navigation</strong></p>
+<p>Using our web page web resource from the left navigation of a form is
+much more easier than using it on the form. There are two ways to do
+accomplish this task; one using the CRM web client interface and the
+other one is through editing the Entity Navigation via the <strong>FormXML</strong>
+directly. Now we will use the web interface and will talk about FormXML
+in a future post.</p>
+<p>Use the same steps we did in the previous example to open the form
+designer of the entity you want to customize, for example Account. Click
+on <!-- raw HTML omitted -->Navigation<!-- raw HTML omitted --> in the ribbon</p>
+<p><a href="http://lh3.ggpht.com/-ndmPH2Lac60/T1yH8WIR6eI/AAAAAAAAAOQ/chzuVXWRJGI/s1600-h/nav2.jpg"><!-- raw HTML omitted --></a></p>
+<p>This will disable the form controls except the left navigation area.
+Click on <!-- raw HTML omitted -->Insert<!-- raw HTML omitted --> tab on the ribbon. Then
+click <!-- raw HTML omitted -->Navigation Link<!-- raw HTML omitted --></p>
+<p><a href="http://lh4.ggpht.com/-JBCcxsdOfmo/T1yH9YMGJjI/AAAAAAAAAOg/GNsjPkZFzYI/s1600-h/nav-link2.jpg"><!-- raw HTML omitted --></a></p>
+<p>This will open the <!-- raw HTML omitted -->Navigation Link
+Properties<!-- raw HTML omitted --> dialog. Enter Name of the link which will be the text
+that will appear on the left navigation, then select our web page web
+resource from the Web Resource textbox (you can link to external URL
+which will be rendered inside the form at runtime).</p>
+<p><a href="http://lh4.ggpht.com/-hbtyOgJyqDI/T1yH9-q8fSI/AAAAAAAAAOw/RHlFUqsSLVk/s1600-h/nav-lnk3.jpg"><!-- raw HTML omitted --></a></p>
+<p>Now If you open any account record, you will see our link added on the
+left, if you click it our web page web resource will be rendered on the
+right.</p>
+<p><a href="http://lh3.ggpht.com/-uN8DSMHop7g/T1yH-vNU6TI/AAAAAAAAAPA/eIl33-8VXQM/s1600-h/acc3.jpg"><!-- raw HTML omitted --></a></p>
+<p><strong>Using Web Resources on a Dashboard</strong></p>
+<p>Using Web Page web resource on a CRM dashboard is pretty similar to
+using it on a form. The first step is to create a new dashboard by
+navigating to <!-- raw HTML omitted -->My Work<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Dashboards<!-- raw HTML omitted --> &gt; click <!-- raw HTML omitted -->New<!-- raw HTML omitted --> on the ribbon. This will open <!-- raw HTML omitted -->Select Dashboard Layout<!-- raw HTML omitted --> dialog, select the
+layout you want (for example, 3-Column Focused Dashboard), and click
+<!-- raw HTML omitted -->Create<!-- raw HTML omitted -->.</p>
+<p><a href="http://lh6.ggpht.com/-ShIxp8fxLqw/T1yH_RnoQCI/AAAAAAAAAPQ/0iWT-pbWY1s/s1600-h/Dashboard-Layouts3.jpg"><!-- raw HTML omitted --></a></p>
+<p>The dashboard designer window opens. Click on the Insert Web Resource
+icon on any region on the dashboard (indicated by arrows in the image)</p>
+<p><a href="http://lh6.ggpht.com/-ZAzIQsN09dw/T1yIAVeM6UI/AAAAAAAAAPg/Y078EJRYNe4/s1600-h/New-Dashboard-Designer3.jpg"><!-- raw HTML omitted --></a></p>
+<p>This will open the same <!-- raw HTML omitted -->Add Web Resource<!-- raw HTML omitted -->
+dialog we worked with before. Do the same steps to add the web page,
+then gave a name to your dashboard and click <!-- raw HTML omitted -->Save and Close<!-- raw HTML omitted -->. This will close the close the
+designer window and open the new dashboard in your CRM main window. For
+example, I added the web page web resource to the left region on the
+dashboard and named it Test Dashboard, and below what I got.</p>
+<p><a href="http://lh5.ggpht.com/-cucfXDnOFsI/T1yIAx5NqQI/AAAAAAAAAPw/5fW6FG4obOw/s1600-h/new-DB4.jpg"><!-- raw HTML omitted --></a></p>
+<p><strong>Using Web Resources Direct From SiteMap</strong></p>
+<p>In order to make our web resource accessible directly from Sitemap, we
+have to edit the SiteMap. Unfortunately there is now way to edit the
+SiteMap from the Dynamics CRM web interface, you have to export the
+SiteMap in a temporary unmanaged solution, edit the SiteMap XML, then
+import the solution back again.</p>
+<p>To create a new solution, navigate to Settings &gt; Customizations &gt;
+Solutions &gt;  New</p>
+<p><a href="http://lh5.ggpht.com/-zbZC5s9xFgw/T1yIBbgb7lI/AAAAAAAAAP8/tsxOSJWo9A4/s1600-h/s2.jpg"><!-- raw HTML omitted --></a></p>
+<p>This will open the New Solution window, enter a <!-- raw HTML omitted -->Display Name<!-- raw HTML omitted -->, <!-- raw HTML omitted -->Name<!-- raw HTML omitted -->, <!-- raw HTML omitted -->Version<!-- raw HTML omitted -->,
+select a <!-- raw HTML omitted -->Publisher<!-- raw HTML omitted -->, and click <!-- raw HTML omitted -->Save<!-- raw HTML omitted --></p>
+<p><a href="http://lh4.ggpht.com/-klCwvFC5mRQ/T1yICCpDaVI/AAAAAAAAAQM/ZP1ngdFft_M/s1600-h/new-s4.jpg"><!-- raw HTML omitted --></a></p>
+<p>After you click Save, the window will change to allow you adding your
+solution components. Click Add Existing &gt; SiteMap</p>
+<p><a href="http://lh4.ggpht.com/-zWzAL32YO28/T1yICx5MAxI/AAAAAAAAAQg/zqFetF1DFj4/s1600-h/n-s-m2.jpg"><!-- raw HTML omitted --></a></p>
+<p>Click on Export Solution icon</p>
+<p><a href="http://lh5.ggpht.com/-yixtk6z3MWU/T1yIED8k_QI/AAAAAAAAAQw/KDHsM3avlL4/s1600-h/expo%0Art3.jpg"><!-- raw HTML omitted --></a></p>
+<p>In the solution export dialog click Next &gt; Next &gt; ensure that the
+package type is Unmanaged then click Export. The Dynamics CRM server
+will package the solution files for you in a zip file and deliver it for
+you. You will see a file download message from your browser to download
+the zip file.</p>
+<p><a href="http://lh4.ggpht.com/-AF-eM-a6msc/T1yIE36MmgI/AAAAAAAAAQ4/xYNTR1Ry6pg/s1600-h/dn-n-s3.jpg"><!-- raw HTML omitted --></a></p>
+<p>Save the zip file, extract its contents, open the customizations.xml
+file in Visual Studio (or your favorite XML editor). If you collapsed
+all the nodes in the XML Editor, you will see that the SiteMap parent
+node have many <!-- raw HTML omitted -->Area<!-- raw HTML omitted --> nodes. Each node
+represents the major parts of CRM web client navigation, which are
+available on the left bottom part of the window.</p>
+<p><a href="http://lh6.ggpht.com/-eZmW2alBgfQ/T1yIF3xqwgI/AAAAAAAAARQ/Xa9-LiL-PTU/s1600-h/sm2.jpg"><!-- raw HTML omitted --></a> <a href="http://lh6.ggpht.com/-K5kwiVbIbQs/T1yIGXmsjgI/AAAAAAAAARg/j2BMfR1E5AU/s1600-h/Areas2.jpg"><!-- raw HTML omitted --></a></p>
+<p>Now expand the the area node with Id=”Workplace”, which represents the
+Workplace in the web client. You will see Group nodes for each
+sub-section of Workplace area</p>
+<p><a href="http://lh4.ggpht.com/-CDVsgEPEceA/T1yIHClnJ8I/AAAAAAAAARw/qyl9Mxc5aSg/s1600-h/sm-area2.jpg"><!-- raw HTML omitted --></a> <a href="http://lh5.ggpht.com/-6qgMnhLs8WQ/T1yIIPtwvdI/AAAAAAAAAR8/LQiI-B56RuE/s1600-h/wp2.jpg"><!-- raw HTML omitted --></a></p>
+<p>Now expand the group node with Id=”MyWork”, which represents <!-- raw HTML omitted -->MyWork<!-- raw HTML omitted --> in the web client. You will see SubArea
+nodes for each sub-section of the MyWork area.</p>
+<p><a href="http://lh3.ggpht.com/-7DmY5H5zTKw/T1yIIuoQ75I/AAAAAAAAASQ/qL4spZOIgIc/s1600-h/sm-group2.jpg"><!-- raw HTML omitted --></a> <a href="http://lh3.ggpht.com/-0PFASe1lC40/T1yIJaONA5I/AAAAAAAAASg/8X-vYMXRorU/s1600-h/mw2.jpg"><!-- raw HTML omitted --></a></p>
+<p>Now let’s say we want to add the link to our web page web resource just
+next to Dashboards under MyWork. Locate the SubArea with
+Id=&ldquo;nav_dashboards&rdquo; and insert the following XML after it to make our
+link</p>
+<p>This xml adds two links on the SiteMap, both of them links to our web
+page web resource. The first one uses the web resource direct URL which
+can be used to access the web resource even from external systems (vice
+versa, you can link other URLs directly to your CRM). To get the web
+resource URL, navigate to <!-- raw HTML omitted -->Settings<!-- raw HTML omitted --> &gt;
+<!-- raw HTML omitted -->Customizations<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Customize the System<!-- raw HTML omitted --> &gt; click <!-- raw HTML omitted -->Web Resources<!-- raw HTML omitted --> from left navigat &gt; double
+click the desired web resource to open its properties dialog, you will
+find the URL in the bottom of the form</p>
+<p><a href="http://lh3.ggpht.com/-G2Gab9LuQc4/T1yIKTHtB4I/AAAAAAAAASw/Fcfwf9oAU4Q/s1600-h/WR%252520url%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>The second link uses the keyword <strong>$webresource</strong> to reference the web
+resource by name. We will talk about $webresource keyword in the
+“Referencing Other Web Resources” section of this post.</p>
+<p>Now its time to get these SiteMap modifications into CRM. Save
+customizations.xml, Select all the exported solution files and add them
+to a .Zip file, navigate to <!-- raw HTML omitted -->Settings<!-- raw HTML omitted --> &gt;
+<!-- raw HTML omitted -->Customization<!-- raw HTML omitted --> &gt; <!-- raw HTML omitted -->Solutions<!-- raw HTML omitted --> &gt; and click <!-- raw HTML omitted -->Import<!-- raw HTML omitted -->. In the solution import dialog upload
+your .Zip file, and click <!-- raw HTML omitted -->Publish All
+Customizations<!-- raw HTML omitted --> at the end. If you navigate to your CRM home page
+and refreshed the page you will see the links on the left</p>
+<p><a href="http://lh3.ggpht.com/-l7mqVDP18lc/T1yIK4d3nqI/AAAAAAAAATA/fRzkFs_G-C4/s1600-h/VER%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p><strong>Using Web Resources as a Solution Configuration Page</strong></p>
+<p>Solutions are containers that track customizations and allow it to be
+moved around from server to server. When building a custom solution you
+may want to add a page where you provide details about your solution and
+its features. Configuration pages for solutions can fulfill your
+requirement for such a page. Let’s see how we can use our web page web
+resource as a solution configuration page. Navigate to Settings &gt;
+Custo mization &gt; Solutions &gt; click your solution &gt; on the
+Solution dialog click on the Information from the left navigation</p>
+<p><a href="http://lh6.ggpht.com/-O2fzEaxPTDg/T1yILuTHZBI/AAAAAAAAATU/g4JnEFvNozQ/s1600-h/sol%252520info%25255B2%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>Then choose our web page web resource in the Configuration Page textbox</p>
+<p><a href="http://lh3.ggpht.com/-51GfeXGxesI/T1yIMCJ2XkI/AAAAAAAAATg/FL7-4obmRRQ/s1600-h/sol%252520info%2525202%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>Then Click <!-- raw HTML omitted -->Save<!-- raw HTML omitted --> and then Click <!-- raw HTML omitted -->Publish<!-- raw HTML omitted -->. Now you will see a new link added on
+the left navigation after the <!-- raw HTML omitted -->Information<!-- raw HTML omitted -->
+link, it will be called <!-- raw HTML omitted -->Configuration<!-- raw HTML omitted --></p>
+<p><a href="http://lh6.ggpht.com/-W9TncUJ-q_o/T1yIMwsGCkI/AAAAAAAAAT0/1ZtYwWcaHp4/s1600-h/col%252520cnfg%25255B2%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p>if you click it, you will see our web page web resource on the right.</p>
+<p><a href="http://lh3.ggpht.com/-H46QUAoOR6k/T1yINivAqvI/AAAAAAAAAUE/srO-RAO8wt0/s1600-h/col%252520cnfg%2525202%25255B3%25255D.jpg"><!-- raw HTML omitted --></a></p>
+<p><strong>Referencing Other Web Resources</strong></p>
+<p>While some web resources can be added directly to a form or a dashboard,
+others can only be referenced through their relative path. There are
+many ways you can use to reference Web Resources:</p>
+<p><strong>$webresource Directive</strong> You should use it when referencing a web
+resource from XML like from a ribbon control, or a SiteMap sub area
+(like what we did before). When using the $webresource directive,
+Microsoft Dynamics CRM will create or update solution dependencies.</p>
+<p><strong>Relative URL</strong> You can use relative URL when referencing from HTML or
+other areas that doesn’t support using $webresource. To make this works,
+it is recommend that you use a consistent naming convention for the web
+resources that reflect a virtual file structure. The solution
+publisher’s customization prefix will always be included as a prefix to
+the name of the web resource. This can represent a virtual ”root” folder
+for all web resources added by that publisher. You can then use the
+forward slash character (/) to simulate a folder structure that will be
+honored by the web server.</p>
+<p>From another web resource, you should always use relative URLs to
+reference each other. For example, for the webpage web resource
+<code>new_/content/c ontentpage.htm</code> to reference the CSS web
+resource<code>new_/Styles/styles.css</code>, create the link as follows:</p>
+<p>For the webpage web resource new_/content/contentpage.htm to open the
+webpage web resource isv_/foldername/dialogpage.htm, create the link as
+follows:</p>
+<pre><code>Dialog Page
+</code></pre>
+<p>Full URL As web resources are URL accessible, you can open the
+information dialog of any web resource and copy the URL in the bottom of
+the window and use it anywhere you can use a URL (as we did before).</p>
+<p>In this post we introduced the web resources feature in Microsoft
+Dynamics CRM 2011. We started with exploring the different types of Web
+Resources, where can Web Resources be Used in our customization
+scenarios, and what is the limitations we have on using web resources.
+Because web Page web resources are the containers that can host (or link
+to) all the other web resource types, we explained all the ways to
+incorporate Web Page web resources in Dynamics CRM. Then we explained
+how to link to other types of web resources.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/blog/blog/2012-03-02-accessing-microsoft-dynamics-crm-2011.html/">↩ Microsoft Dynamics CRM 2011 for Developers - Accessing Microsoft Dynamics CRM 2011 using WCF</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/blog/blog/2012-03-13-microsoft-dynamics-crm-2011-for_14.html/"> Microsoft Dynamics CRM 2011 for Developers | Creating Custom Reports Using Microsoft SQL Server 2008 Reporting Services ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        © Adritian. Free Hugo theme by Adrián Moreno Peña.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#portfolio">PORTFOLIO</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+      <nav class="language-selector">
+        <ul>
+          
+            
+            <li class="dropdown">
+              <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="languages-dropdown">
+                <span class="label">Language</span>    
+              </button>
+            <ul class="dropdown__menu" id="languages-dropdown">
+              <li class="current"><span>✔️ English</span></li>
+              
+              
+            
+              
+            
+              
+              
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079" >
+
+
+
+<title>Ebeid ElSayed | Product Manager</title>
+<meta name="description" content='Ebeid ElSayed | Product Manager | Personal Site.'>
+
+
+<style data-generator="critical-css">
+
+</style>
+
+
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+    
+        
+        
+    
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.6e233ea8020133c8fdf840fc9876a529cacbe674c7d8193cc12963d7eb29f253.css" integrity="sha256-biM&#43;qAIBM8j9&#43;ED8mHalKcrL5nTH2Bk8wSlj1&#43;sp8lM=">
+
+
+
+
+
+
+
+ 
+
+
+<link
+  rel="preload"
+  href="/css/bundle.css"
+  as="style"
+  data-generator="purgeCSS"
+  onload="this.onload=null;this.rel='stylesheet'"
+  
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="/css/bundle.css"
+    
+  />
+</noscript>
+
+
+
+<script src='http://localhost:1313/js/library/lozad.min.js'></script>
+
+ 
+
+  </head>
+
+  <body>
+    
+
+<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="http://localhost:1313/">
+          <span>Ebeid</span>
+          <span>ElSayed</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent, #header"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:1313/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#about"
+                >ABOUT</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#portfolio"
+                >PORTFOLIO</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/blog"
+                >BLOG</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="/#contact"
+                >CONTACT</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<section id="breadcrumb-bar" class="breadcrumb-bar container">
+        <ul class="breadcrumbs">
+            <li class="breadcrum-item"><span><a href="/">Home</a></span></li><li class="breadcrum-item"><span><a href="/blog">Blog</a></span></li><li class="breadcrum-item"><span><a href="/blog/blog">Blog</a></span></li><li class="breadcrum-item current">Introduction to R – Random Variables Generation &amp; Probability Distribution Functions</li></ul>
+</section>
+
+
+    <section
+      id="blog-single"
+      class="section section--border-bottom rad-animation-group"
+    >
+      <div class="container">
+        <h1><a href="/blog/blog/2013-01-17-introduction-to-r-random-variables.html/">Introduction to R – Random Variables Generation &amp; Probability Distribution Functions</a></h1>
+
+        <aside id="meta" class="light-border-bottom">
+          <div>
+            <section>
+              Published en
+              <h4 id="date">Thu Jan 17, 2013</h4>
+              ·
+              <h4 id="wordcount">299 Words</h4>
+            </section>
+             
+            <ul id="tags">
+              
+              <li><a href="/tags/r-programming-language/">R Programming Language</a></li>
+              
+            </ul>
+            
+          </div>
+        </aside>
+
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+          <div class="col-12"><p>Simulation is important topic for statistical applications and
+scientific purposes in general.</p>
+<h2 id="generating-random-numbers">Generating Random Numbers</h2>
+<p>The first step in simulation is to generate random values based on your
+variables distribution. R has a large number of functions that generate
+the standard random variables.</p>
+<p>for <!-- raw HTML omitted -->Normal random variable generation<!-- raw HTML omitted --></p>
+<p><strong>rnorm()</strong> simulate a simple random normal variable with a given mean
+and standard deviation and generate as many random values as requested.</p>
+<p><a href="http://lh3.ggpht.com/-L1OgbWvZGQg/UPiEGXhhdOI/AAAAAAAAA9M/HIgesG3k6rM/s1600-h/RGui-64-bit_2013-01-17_10-01-509.jpg"><!-- raw HTML omitted --></a></p>
+<p>When generating any random variable setting the random number seed with
+set.seed ensures reproducibility. In the following example, notice that
+the first and the third sets are identical (both called set.seed with 1
+before generating the numbers), and the second is different (because we
+didn’t set the seed)</p>
+<p><a href="http://lh6.ggpht.com/-KeCPVNBsq9U/UPiEHqE70OI/AAAAAAAAA9Y/r8zJWZWmMRM/s1600-h/RGui-64-bit_2013-01-17_10-32-056.jpg"><!-- raw HTML omitted --></a></p>
+<p>for <!-- raw HTML omitted -->Poisson random variable generation<!-- raw HTML omitted --></p>
+<p><strong>rpois()</strong> simulate a Poisson random variable with a given rate
+(lambda) and generate as many random values as requested.</p>
+<p><a href="http://lh6.ggpht.com/-e-VGmx4XFak/UPiEJOH1QjI/AAAAAAAAA9s/IdlDTyGvWy8/s1600-h/RGui-64-bit_2013-01-17_10-39-537.jpg"><!-- raw HTML omitted --></a></p>
+<h2 id="radom-sampling">Radom sampling</h2>
+<p>The sample function draws randomly from a specified set of (scalar)
+objects allowing you to sample from arbitrary distributions (sample
+space).</p>
+<p><a href="http://lh3.ggpht.com/-_hfkS6ikEZU/UPiEKSKdK1I/AAAAAAAAA94/9lbqtAwPVJw/s1600-h/RGui-64-bit_2013-01-17_11-31-033.jpg"><!-- raw HTML omitted --></a></p>
+<p>if you didn’t specified the number of values you want, sample will give
+you random permutation of the sequence.</p>
+<p><a href="http://lh3.ggpht.com/-_HItEjFiA40/UPiELhIcaFI/AAAAAAAAA-M/V_KAoEGyuRU/s1600-h/RGui-64-bit_2013-01-17_11-32-513.jpg"><!-- raw HTML omitted --></a></p>
+<p>as you noticed, by default sample will not repeat values, set parameter
+replace= TRUE to make it repeat .</p>
+<p><a href="http://lh6.ggpht.com/-ZULOobh0XA0/UPiENGjFKpI/AAAAAAAAA-Y/Qt02UFLlf_4/s1600-h/RGui-64-bit_2013-01-17_11-36-093.jpg"><!-- raw HTML omitted --></a></p>
+<h2 id="probability-distribution-functions">Probability distribution functions</h2>
+<p>Probability distributions usually have four functions associated with
+them. The functions are prefixed with:</p>
+<ul>
+<li><strong>r</strong> for random number generation</li>
+<li><strong>d</strong> for density</li>
+<li><strong>p</strong> for cumulative distribution</li>
+<li><strong>q</strong> for quantile function</li>
+</ul>
+<p>some useful distributions are:</p>
+<!-- raw HTML omitted -->
+<p>function names are : prefix + distribution nickname. rnorm, rpois,
+rbinom,….. –&gt; for random number generation, and so on.</p>
+<p>In this note we introduced the basic functions for random number
+generation based on variable distribution type, arbitrary random
+sampling, and the associated probability distributions functions. Later
+will present each of them in detail.</p>
+<p>Stay tuned for more R notes.</p>
+</div>
+        </div>
+
+        <aside class="content-browser light-border-top">
+            Continue reading
+            <div>
+                
+                    <a class="previous" href="/blog/blog/2013-01-16-introduction-to-r-basic-debugging.html/">↩ Introduction to R – Basic Debugging</a>
+                
+                 ■ 
+                
+                    <a class="next" href="/blog/blog/2013-01-21-introduction-to-r-charts-and-graphics.html/"> Introduction to R – Charts and Graphics ↪</a>
+                
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        © Adritian. Free Hugo theme by Adrián Moreno Peña.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1313/">🏠 HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#portfolio">PORTFOLIO</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">CONTACT</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      
+      <nav class="language-selector">
+        <ul>
+          
+            
+            <li class="dropdown">
+              <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="languages-dropdown">
+                <span class="label">Language</span>    
+              </button>
+            <ul class="dropdown__menu" id="languages-dropdown">
+              <li class="current"><span>✔️ English</span></li>
+              
+              
+            
+              
+            
+              
+              
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+</footer>
+ <script>
+  window.addEventListener("load", function() {
+    try{
+      var observer = window.lozad(".lozad", {
+        rootMargin: window.innerHeight / 2 + "px 0px",
+        threshold: 0.01
+      }); 
+      observer.observe();
+    } catch(e) {
+      console.error(e);
+    }
+  });
+</script>
+<script defer src='http://localhost:1313/js/rad-animations.js'></script>
+<script defer src='http://localhost:1313/js/library/smooth-scroll.polyfills.min.js'></script>
+<script defer src='http://localhost:1313/js/sticky-header.js'></script>
+<script defer src='http://localhost:1313/js/smooth-scroll-init.js'></script>
+<script defer src='http://localhost:1313/js/library/bootstrap.min.js'></script>
+
+
+
+
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+
+
+
+  </body>
+</html>
+

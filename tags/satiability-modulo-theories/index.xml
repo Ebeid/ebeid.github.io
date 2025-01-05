@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Satiability Modulo Theories on Ebeid ElSayed</title>
-    <link>https://ebeid.github.io/tags/satiability-modulo-theories/</link>
-    <description>Recent content in Satiability Modulo Theories on Ebeid ElSayed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Tue, 30 Jul 2013 06:30:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/satiability-modulo-theories/index.xml" rel="self" type="application/rss+xml" />
+    <title>Satiability Modulo Theories on </title>
+    <link>http://localhost:1313/tags/satiability-modulo-theories/</link>
+    <description>Recent content in Satiability Modulo Theories on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 30 Jul 2013 06:30:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/satiability-modulo-theories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Z3 Constraint Solver, a developer perspective</title>
-      <link>https://ebeid.github.io/blog/2013-07-30-the-z3-constraint-solver-developer.html/</link>
+      <link>http://localhost:1313/2013/07/the-z3-constraint-solver-developer.html</link>
       <pubDate>Tue, 30 Jul 2013 06:30:00 -0500</pubDate>
-      
-      <guid>https://ebeid.github.io/blog/2013-07-30-the-z3-constraint-solver-developer.html/</guid>
-      <description>Z3 is a high-performance SMT solver developed at Microsoft Research. It have been integrated with many many tools that came out from Microsoft for program analysis, testing, and verification.
-What SAT means ? SAT refers to Boolean satisfiability problem where we want to determine if there exists an interpretation that satisfies a given Boolean formula. In other words, it establishes if the variables of a given Boolean formula can be assigned in such a way as to make the formula evaluate to true.</description>
+      <guid>http://localhost:1313/2013/07/the-z3-constraint-solver-developer.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://research.microsoft.com/en-us/um/redmond/projects/z3/old/&#34; title=&#34;Z3 : An Efficient Theorem Prover&#34;&gt;Z3&lt;/a&gt; is a high-performance SMT solver developed at &lt;a href=&#34;http://research.microsoft.com/en-us/&#34; title=&#34;Microsoft Research&#34;&gt;Microsoft Research&lt;/a&gt;. It have been integrated with many many tools that came out from Microsoft for program analysis, testing, and verification.&lt;/p&gt;&#xA;&lt;h4 id=&#34;what-sat-means-&#34;&gt;What SAT means ?&lt;/h4&gt;&#xA;&lt;p&gt;SAT refers to Boolean satisfiability problem where we want to determine if there exists an interpretation that satisfies a given Boolean formula. In other words, it establishes if the variables of a given Boolean formula can be assigned in such a way as to make the formula evaluate to true.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
