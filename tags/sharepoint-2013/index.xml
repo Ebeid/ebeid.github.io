@@ -1,19 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>SharePoint 2013 on </title>
-    <link>http://localhost:1313/tags/sharepoint-2013/</link>
-    <description>Recent content in SharePoint 2013 on </description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 23 Jul 2013 17:36:00 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/sharepoint-2013/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Bring “Sign in as Different User” back to SharePoint 2013</title>
-      <link>http://localhost:1313/2013/07/bring-sign-in-as-different-user-back-to.html</link>
-      <pubDate>Tue, 23 Jul 2013 17:36:00 -0500</pubDate>
-      <guid>http://localhost:1313/2013/07/bring-sign-in-as-different-user-back-to.html</guid>
-      <description>&lt;p&gt;If you new to SharePoint 2013 like me and get confused looking for “Sign in as a Different User” menu command, don’t worry it is not there by design but we can easily bring it back.&lt;/p&gt;&#xA;&lt;p&gt;Do the following steps to get the link back:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Locate the file \15\TEMPLATE\CONTROLTEMPLATES\Welcome.ascx and open it for editing.&lt;/li&gt;&#xA;&lt;li&gt;Add the following snippet before the existing element that have id of “ID_RequestAccess”.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  &#xA; Text=&amp;#34;&amp;lt;%$Resources:wss,personalactions\_loginasdifferentuser%&amp;gt;&amp;#34;  &#xA; Description=&amp;#34;&amp;lt;%$Resources:wss,personalactions\_loginasdifferentuserdescription%&amp;gt;&amp;#34;  &#xA; MenuGroupId=&amp;#34;100&amp;#34;  &#xA; Sequence=&amp;#34;100&amp;#34;  &#xA; UseShortId=&amp;#34;true&amp;#34;  &#xA; /&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Save and close the file. Now you should get the link “Sign in as Different User” back.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SharePoint 2013 on</title><link>https://ebeid.github.io/tags/sharepoint-2013/</link><description>Recent content in SharePoint 2013 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 23 Jul 2013 17:36:00 -0500</lastBuildDate><atom:link href="https://ebeid.github.io/tags/sharepoint-2013/index.xml" rel="self" type="application/rss+xml"/><item><title>Bring “Sign in as Different User” back to SharePoint 2013</title><link>https://ebeid.github.io/2013/07/bring-sign-in-as-different-user-back-to.html</link><pubDate>Tue, 23 Jul 2013 17:36:00 -0500</pubDate><guid>https://ebeid.github.io/2013/07/bring-sign-in-as-different-user-back-to.html</guid><description>&lt;p&gt;If you new to SharePoint 2013 like me and get confused looking for “Sign in as a Different User” menu command, don’t worry it is not there by design but we can easily bring it back.&lt;/p&gt;
+&lt;p&gt;Do the following steps to get the link back:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Locate the file \15\TEMPLATE\CONTROLTEMPLATES\Welcome.ascx and open it for editing.&lt;/li&gt;
+&lt;li&gt;Add the following snippet before the existing element that have id of “ID_RequestAccess”.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; 
+ Text=&amp;#34;&amp;lt;%$Resources:wss,personalactions\_loginasdifferentuser%&amp;gt;&amp;#34; 
+ Description=&amp;#34;&amp;lt;%$Resources:wss,personalactions\_loginasdifferentuserdescription%&amp;gt;&amp;#34; 
+ MenuGroupId=&amp;#34;100&amp;#34; 
+ Sequence=&amp;#34;100&amp;#34; 
+ UseShortId=&amp;#34;true&amp;#34; 
+ /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Save and close the file. Now you should get the link “Sign in as Different User” back.&lt;/p&gt;</description></item></channel></rss>
